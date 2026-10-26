@@ -29,9 +29,9 @@ Events are sent to Sekoia.io when one of the following conditions is met:
 ### 7. **Which operating systems are supported by the Sekoia.io Endpoint Agent?**
 
 The agent is compatible with the following 64-bit operating systems:
-- **Windows**
-- **Linux**
-- **MacOS**
+- **Windows**, on x86-64 and, from agent 1.12.0, ARM64
+- **Linux**, on x86-64 and ARM64
+- **MacOS**, on Apple Silicon and Intel
 
 For a detailed list of supported versions, please refer to [this link](/integration/categories/endpoint/sekoiaio.md).
 

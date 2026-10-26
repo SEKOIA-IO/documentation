@@ -41,6 +41,32 @@ The asset criticality value is a numerical indicator that represents the level o
 
 This value contributes to the [urgency score of alerts](/xdr/features/investigate/alerts.md). Hence it plays a key role in computing and prioritizing alerts related to assets, ensuring that your SOC team focuses on addressing the most critical security incidents promptly.
 
+
+### Asset risk score
+_This feature is part of the Reveal plan._
+
+The asset risk score indicates the current level of security risk associated with an asset. It combines persistent exposure and recent activity, then adjusts the result according to the asset's criticality.
+
+Criticality describes the importance of an asset to the organization. The risk score describes the current security risk affecting that asset. Criticality is one of the factors used to adjust the score.
+
+The score is adjusted by a criticality factor. A criticality value of 0 has no effect on the score.
+
+The risk bands are:
+
+| Band | Score range |
+| --- | --- |
+| Low | 0 to 24 |
+| Moderate | 25 to 49 |
+| High | 50 to 74 |
+| Critical | 75 to 100 |
+
+Use the `asset_risk_scores` SOL data source to query the current score. Use `asset_risk_score_history` to analyze the events that affected the score and its trajectory.
+
+See also:
+
+- [SOL technical reference: data sources](/xdr/features/investigate/sol_ref_datasources.md#asset_risk_scores)
+- [Asset risk score query examples](/xdr/features/investigate/sol_query_examples.md#asset-risk-score-query-examples)
+
 ### Detection Properties
 
 ![detection properties](/assets/operation_center/assets_v2/detection-properties.png){align="right", style="max-width:40%"}
@@ -343,3 +369,20 @@ This feature allows users to dive deeper into the specifics of each authenticati
   - The account's interaction history.
   - Any security incidents or breaches involving the account.
   - The account's access permissions and any recent changes.
+
+## Related articles
+
+### Asset risk and prioritization
+
+* [Alerts](/xdr/features/investigate/alerts.md): Understand how asset criticality contributes to the urgency score of alerts.
+* [Points of interest](/xdr/features/detect/points_of_interest.md): Discover the notable activity and UEBA signals that feed the asset risk score.
+
+### SOL data sources and queries
+
+* [SOL technical reference: Datasources](/xdr/features/investigate/sol_ref_datasources.md): Reference for the `asset_risk_scores` and `asset_risk_score_history` data sources, along with all other asset data sources.
+* [Asset risk score query examples](/xdr/features/investigate/sol_query_examples.md#asset-risk-score-query-examples): Ready-to-use SOL queries to report on asset risk scores and score-driving events.
+* [SOL Query Examples](/xdr/features/investigate/sol_query_examples.md): More SOL query examples, including asset management queries.
+
+### Going further
+
+* [Assets FAQ](/xdr/FAQ/Assets_qa.md): Answers to frequently asked questions about assets.

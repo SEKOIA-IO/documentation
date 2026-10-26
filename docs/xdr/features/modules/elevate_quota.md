@@ -45,3 +45,4 @@ Runs reset automatically at the start of next month.
 - [Elevate analysis states](/xdr/features/modules/elevate_analysis_states.md): Reference table of all possible AI analysis states including AI limit reached.
 - [Limit auto-analysis to specific rules](/xdr/features/modules/elevate_rule_filter.md): How to restrict which alerts Elevate analyzes to control consumption.
 - [Override Elevate settings for a community](/xdr/features/modules/elevate_community_override.md): How to disable Elevate for specific communities to reduce consumption.
+- [Elevate analytics](/xdr/features/modules/elevate_analytics.md): Reference for the Analytics page that measures Elevate speed, volume and verdict accuracy.

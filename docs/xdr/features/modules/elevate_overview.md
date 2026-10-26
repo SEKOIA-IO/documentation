@@ -52,3 +52,4 @@ Elevate operates on a monthly run pack. Each investigation the agent runs, wheth
 - [Activate Elevate on a workspace](/xdr/features/modules/elevate_activate.md): How to enable the Elevate agent and configure auto-analysis.
 - [Investigate an alert with Elevate](/xdr/features/modules/elevate_investigate_alert.md): How to read an AI investigation report and interpret findings.
 - [Audit an Elevate investigation with Traces](/xdr/features/modules/elevate_traces.md): How to review the full timeline of actions the agent performed.
+- [Elevate analytics](/xdr/features/modules/elevate_analytics.md): Reference for the Analytics page that measures Elevate speed, volume and verdict accuracy.

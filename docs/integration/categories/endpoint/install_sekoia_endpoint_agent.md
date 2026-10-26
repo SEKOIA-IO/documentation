@@ -15,7 +15,21 @@ Create a [new intake associated with the Sekoia Endpoint Agent](https://app.seko
 
 ## Step 2: Download the agent
 
-Use the download link provided in the intake description in the Sekoia interface.
+Use the download link provided in the intake description in the Sekoia interface. Pick the binary that matches the processor architecture of the host:
+
+| Operating system | Architecture | Binary |
+|------------------|--------------|--------|
+| Windows | x86-64 | `agent-latest.exe` |
+| Windows | ARM64 (agent 1.12.0 and newer) | `agent-latest-arm64.exe` |
+| Linux | x86-64 | `agent-latest` |
+| Linux | ARM64 | `agent-linux-latest-arm64` |
+| macOS | Apple Silicon | `agent-latest.zip` |
+| macOS | Intel | `agent-latest-x86.zip` |
+
+The commands below use the x86-64 binary names: replace them with the ARM64 name on an ARM64 host.
+
+!!! warning "Windows 8, Windows Server 2012 and Windows Server 2008"
+    Use the dedicated download link of the intake description, which provides the legacy build, and use the name of the downloaded file in the commands below. See [Legacy Windows release line](/integration/categories/endpoint/sekoiaio.md#legacy-windows-release-line).
 
 ## Step 3: Install the agent
 
@@ -133,12 +147,21 @@ For example, to use the `fra2` region:
     sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent install --intake-key <INTAKE_KEY> --region fra2
     ```
 
-## Enable Host Hygiene collection
+## Collect additional host asset context
 
 !!! note "Reveal module required"
-    Host Hygiene telemetry collection is a feature of the Sekoia Reveal module.
+    Host Hygiene and Application telemetry collection are features of the Sekoia Reveal module.
 
-You can enable Host Hygiene collection during installation or by editing the configuration file after installation.
+You can enable Host Hygiene and Application Discovery during agent installation or by updating the agent configuration file after installation.
+Enable the corresponding roles:
+
+**Host Hygiene:**
+
+```--compliance-collector```
+
+**Application Discovery:**
+
+```--software-collector```
 
 ### During installation
 
@@ -190,6 +213,7 @@ Append the `--compliance-collector` flag to the install command:
     roles:
       - event-collector
       - compliance-collector
+      - software-collector
     ```
 
 3. Restart the agent:

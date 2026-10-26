@@ -96,7 +96,7 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
-=== "test_event_nwc23464"
+=== "test_event_nwc23464_001"
 
     ```
 	id=firewall time="2025-09-29 07:44:12" pri=6 fw=1.2.3.4 vpn=VPN-NAME ivs=Default Network user=john.doe@company.fr realm="host.example.com" roles="Role_Test-integration" sessionID="1111111111" proto= src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="NWC23464: VPN Tunneling: Session started for user  (session:User1) with IPv4 address 5.6.7.8, hostname HOSTNAME"
@@ -104,7 +104,7 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
-=== "test_event_nwc23464_harmonized_mapping"
+=== "test_event_nwc23464_002"
 
     ```
 	id=firewall time="2026-09-22 07:38:14" pri=6 fw=203.0.113.26 vpn=ISA8000V-CID ivs=Default Network user=test.user@example.org realm="host.example.com" roles="Role_TEST_Integration" sessionID="4b8c853c05" proto= src=198.51.100.111 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 11) Pulse/22.8.1.31437" duration= msg="NWC23464: VPN Tunneling: Session started for user  (session:User1) with IPv4 address 192.0.2.40, hostname host.example.com"
@@ -112,7 +112,23 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
-=== "test_event_nwc23508"
+=== "test_event_nwc23464_003"
+
+    ```
+	id=firewall time="2026-09-22 07:38:14" pri=6 fw=203.0.113.26 vpn=ISA8000V-CID ivs=Default Network user=test.user@example.org realm="host.example.com" roles="Role_NET_Admin" sessionID="4b8c853c05" proto= src=198.51.100.111 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 11) Pulse/22.8.1.31437 NEUX" duration= msg="NWC23464: VPN Tunneling: Session started for user (session: User1) with IPv4 address 192.0.2.161, hostname host-01.example.org"
+    ```
+
+
+
+=== "test_event_nwc23464_004"
+
+    ```
+	id=firewall time="2026-09-22 07:38:14" pri=6 fw=203.0.113.26 vpn=ISA8000V-CID ivs=Default Network user=clara.morin@example.org realm="host.example.com" roles="Role_NET_Admin" sessionID="4b8c853c05" proto= src=198.51.100.111 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 11) Pulse/22.8.1.31437 NEUX" duration= msg="NWC23464: VPN Tunneling: Session started for user (session:User1) with IPv4 address 192.0.2.161, hostname host-01.example.org"
+    ```
+
+
+
+=== "test_event_nwc23508_001"
 
     ```
 	id=firewall time="2025-09-29 09:20:20" pri=6 fw=10.20.30.40 vpn=VPN-TEST-INTEGRATION ivs=Default Network user=john.doe@company.fr realm="host.example.com" roles="Role_Test_integration" sessionID="1111111111" proto= src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="NWC23508: Key Exchange number 7 occurred for user with NCIP 1.2.3.4 "
@@ -120,10 +136,18 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
-=== "test_event_nwc23508_2"
+=== "test_event_nwc23508_002"
 
     ```
 	id=firewall time="2025-09-29 08:00:19" pri=6 fw=1.2.3.4 vpn=VPN-TEST ivs=Default Network user=john.doe@company.fr realm="host.example.com" roles="Role_Test_integration" sessionID="1111111111" proto= src=5.6.7.8 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="NWC23508: Key Exchange number 2 occurred for user with NCIP 10.20.30.40 "
+    ```
+
+
+
+=== "test_event_nwc23508_003"
+
+    ```
+	id=firewall time="2026-09-22 08:00:21" pri=6 fw=203.0.113.26 vpn=ISA8000V-CID ivs=Default Network user=marie.dupont@example.org realm="host.example.com" roles="Role_NET" sessionID="00736f17ac" proto= src=198.51.100.142 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 11) Pulse/22.8.1.31437" duration= msg="NWC23508: Key Exchange number 4 occurred for user with NCIP 192.0.2.209 "
     ```
 
 

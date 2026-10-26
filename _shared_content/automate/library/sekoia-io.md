@@ -1003,17 +1003,61 @@ Enable a rule
 
 Execute a saved query in Sekoia and retrieve the results.
 
+For saved queries that use [SOL filters](/xdr/features/investigate/sol_how_to_guides.md#using-sol-filters-for-interactive-dashboards), provide the filter values in the `parameters` object. In the saved query, reference each filter with the `?filter_name` syntax. In the `parameters` object, use the filter name without the leading `?`.
+
 **Arguments**
 
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| `query_name` | `string` | Name of the saved query to execute. Either 'query_name' or 'query_uuid' must be provided. |
-| `query_uuid` | `string` | UUID of the saved query to execute. Either 'query_uuid' or 'query_name' must be provided. |
-| `parameters` | `object` | Query parameters for the query execution. |
-| `result_format` | `string` | Format of the query result to download. Supported formats are 'jsonl' and 'csv'. |
+| Name | Type | Description |
+| --- | --- | --- |
+| `query_name` | `string` | Name of the saved query to execute. Either `query_name` or `query_uuid` must be provided. |
+| `query_uuid` | `string` | UUID of the saved query to execute. Either `query_uuid` or `query_name` must be provided. |
+| `parameters` | `object` | Values for the SOL filters referenced in the saved query using the `?filter_name` syntax. Passed as query parameters when executing the query. |
+| `result_format` | `string` | Format of the query result to download. Supported formats are `jsonl` and `csv`. |
 | `to_file` | `boolean` | Whether the query result should be saved in a file or sent directly. |
 
+#### Example with a saved SOL query and SOL filters
 
+The following saved query uses the `?process_name` SOL filter:
+
+````sol
+events
+| where timestamp > ago(24h)
+| where process.name == ?process_name
+| select timestamp, host.name, process.name, process.command_line
+| order by timestamp desc
+| limit 100
+````
+
+Configure the action with the following arguments. The `parameters` object maps the filter name to its data type, selection type, and value:
+
+````json
+{
+  "query_name": "Suspicious processes",
+  "parameters": {
+    "process_name": {
+      "data_type": "string",
+      "type": "free_text",
+      "value": "powershell.exe"
+    }
+  },
+  "result_format": "jsonl",
+  "to_file": true
+}
+````
+
+The action executes the saved query with `process.name` set to `powershell.exe` and saves the result as a JSON Lines file.
+
+The value structure follows the query execution API. Each filter entry must include `data_type`, `type`, and `value`. For example, a multiple-selection filter uses an array for `value`:
+
+````json
+{
+  "hostnames": {
+    "data_type": "string",
+    "type": "multiple_selection",
+    "value": ["host-01", "host-02"]
+  }
+}
+````
 **Outputs**
 
 | Name      |  Type   |  Description  |
