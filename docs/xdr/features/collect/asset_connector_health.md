@@ -11,6 +11,12 @@ The asset connectors panel provides visibility into whether a connector is exper
 
 From this panel, you can review connector error states and open detailed logs for a specific connector.
 
+!!! note "Asset connector jobs running on a local runner"
+
+    Some asset connectors run from a local runner inside your environment. If a local connector job fails or stops retrieving assets, check the runner status before investigating the connector logs.
+
+    Navigate to **Configure > Assets > Local runners** and confirm that the selected runner is **Online**. Review its last activity, hostname, and version. If the runner is offline, see [Local runners](/xdr/features/automate/playbooks-on-premises.md) for proxy, Docker, and Endpoint Agent checks.
+
 ## View connector error states
 
 The asset connectors panel displays error states when issues affect a connector. If no error is affecting a connector, no error state is displayed.
@@ -79,3 +85,4 @@ Useful information about what happened during the run, including:
 - [Attack path visualization](/xdr/features/investigate/attack_path_visualization.md) — How attack path graph enrichment depends on asset connectors providing relationship and exposure data.
 - [Integration — Asset categories](/integration/assets_categories/overview.md) — Reference documentation for asset connector categories and integration setup.
 - [Collect — Assets](/xdr/features/collect/assets.md) — How assets are configured and discovered in Sekoia, including the role of asset connectors in the collection pipeline.
+- [Local runners](/xdr/features/automate/playbooks-on-premises.md): How to check the status and connectivity of runners used for local asset connector jobs.
