@@ -75,7 +75,6 @@ exec Diagnostic --set modules.diagnostic.targets=asset_discovery
 | AssetDiscoveryReconciliationDurationHigh | Warning, Error | A reconciliation cycle takes more than 5 seconds (warning) or 15 seconds (error), for 15 minutes. | The worker falls behind, and new assets take longer to appear. |
 | AssetDiscoveryReconciliationConflicts | Warning, Error | Reconciliation conflicts exceed 0.1 per second (warning) or 0.5 per second (error), for 15 minutes. | Conflicting discovery facts can lead to inconsistent asset merges. |
 | AssetDiscoveryFingerprintCollisions | Warning | Discovered assets are cancelled because of fingerprint collisions, for 15 minutes. | Legitimate assets can be dropped instead of merged. |
-| AssetDiscoveryXdrAgentFactsSilent | Warning | XDR agent events are ingested but have produced no asset discovery fact in the last 24 hours, for 1 hour. | Hosts managed by the agent are not discovered or refreshed as assets. |
 | TelemetryAssetDiscoveryRuleFailures | Warning | An asset discovery rule raises errors, for 5 minutes. | The rule stops emitting facts for the affected communities. |
 
 ## Asset management
