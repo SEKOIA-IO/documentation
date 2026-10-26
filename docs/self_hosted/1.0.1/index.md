@@ -46,6 +46,7 @@ If you are new to Sekoia Self-Hosted, follow this sequence:
 | [Import the CTI database](/self_hosted/1.0.1/operations/import_cti_database.md) | How to import the Sekoia CTI database into the platform with the SHC. |
 | [Back up the platform](/self_hosted/1.0.1/operations/backups.md) | How to turn on the backups of Vault, PostgreSQL, ArangoDB, and ClickHouse, trigger a backup, and check the backup status. |
 | [Update the security content](/self_hosted/1.0.1/operations/update_security_content.md) | How to update the detection rules and intake formats after the installation. |
+| [Apply a configuration change](/self_hosted/1.0.1/operations/apply_configuration_change.md) | How to change `config.yml` after the installation and apply it with an idempotent run of `Install`, and what the run restarts. |
 | [Rotate the certificate and credentials](/self_hosted/1.0.1/operations/rotate_certificate_and_credentials.md) | How to replace the platform TLS certificate and credentials, then restart the platform services to load them. |
 | [Patch and restart the nodes](/self_hosted/1.0.1/operations/node_maintenance.md) | How to patch the nodes one at a time without an outage, and how to run a cold restart of the whole cluster. |
 | [Reset or destroy the platform](/self_hosted/1.0.1/operations/reset_platform.md) | How to delete the platform workloads and keep the cluster, or destroy the platform and wipe the storage disks before a reinstallation. |

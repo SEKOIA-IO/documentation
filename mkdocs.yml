@@ -774,6 +774,7 @@ nav:
       - Import the CTI database: self_hosted/1.0.1/operations/import_cti_database.md
       - Back up the platform: self_hosted/1.0.1/operations/backups.md
       - Update the security content: self_hosted/1.0.1/operations/update_security_content.md
+      - Apply a configuration change: self_hosted/1.0.1/operations/apply_configuration_change.md
       - Rotate the certificate and credentials: self_hosted/1.0.1/operations/rotate_certificate_and_credentials.md
       - Patch and restart the nodes: self_hosted/1.0.1/operations/node_maintenance.md
       - Reset or destroy the platform: self_hosted/1.0.1/operations/reset_platform.md

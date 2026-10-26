@@ -515,5 +515,6 @@ The command reports missing required values, invalid formats, and unsupported ke
 ## Related links
 
 - [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md): Prepare the SHC execution script and install the platform.
+- [Apply a configuration change](/self_hosted/1.0.1/operations/apply_configuration_change.md): Change `config.yml` after the installation and apply it with `Install`.
 - [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md): Run configuration commands from the interactive interface.
 - [Debug your deployment](/self_hosted/1.0.1/troubleshooting/debug_tool.md): Resolve configuration and connectivity failures.
