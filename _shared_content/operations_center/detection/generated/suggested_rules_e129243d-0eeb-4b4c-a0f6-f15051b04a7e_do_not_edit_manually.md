@@ -123,12 +123,6 @@ The following Sekoia.io built-in rules match the intake **CyberArk Audit Logs**.
     
     - **Effort:** intermediate
 
-??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
-    
-    A user has attempted to login several times (brute-force) on Jumpcloud Portal and succeeded to login.
-    
-    - **Effort:** advanced
-
 ??? abstract "Microsoft Defender Antivirus History Deleted"
     
     Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.

@@ -93,9 +93,21 @@ The following Sekoia.io built-in rules match the intake **Gatewatcher AionIQ v10
     
     - **Effort:** master
 
-??? abstract "Gatewatcher AionIQ Network Alert"
+??? abstract "Gatewatcher AionIQ Network Alert High"
     
-    Forward network alerts reported by Gatewatcher AionIQ  
+    Forward network alerts reported by Gatewatcher AionIQ with a high severity.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ Network Alert Low"
+    
+    Forward network alerts reported by Gatewatcher AionIQ with a low severity.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ Network Alert Medium"
+    
+    Forward network alerts reported by Gatewatcher AionIQ with a medium severity.
     
     - **Effort:** master
 

@@ -1,4 +1,4 @@
-Changelog _last update on 2026-10-16_
+Changelog _last update on 2026-10-26_
 
 ## Changelog
 
@@ -7,6 +7,49 @@ Changelog _last update on 2026-10-16_
     
 ### Correlation Supicious Powershell Drop and Exec
   - 09/10/2026 - minor - Rule improvement to detect more use cases
+    
+### Gatewatcher AionIQ V103 Network Behavior Analytics High
+  - 08/10/2026 - major - Update rule to add severity.
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ V103 Dga Detect High
+  - 08/10/2026 - major - Update rule to add severity.
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ V103 Retrohunt High
+  - 08/10/2026 - major - Update rule to add severity.
+  - 05/03/2026 - minor - Update rule type to integration
+  - 30/06/2025 - minor - Changing similarity on threat name.
+    
+### Gatewatcher AionIQ V103 Shellcode Detect High
+  - 08/10/2026 - major - Update rule to add severity.
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ V103 Malicious Powershell Detect High
+  - 08/10/2026 - major - Update rule to add severity.
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ V103 Ransomware Detect High
+  - 08/10/2026 - major - Update rule to add severity.
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ V103 Beacon Detect High
+  - 07/10/2026 - major - Update rule to add severity.
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ V103 Malcore High
+  - 07/10/2026 - major - Update rule to add severity.
+  - 05/03/2026 - minor - Update rule type to integration
+  - 27/01/2025 - minor - Changing field and adding filter to reduce false positives.
+  - 24/01/2025 - minor - Adding filter to reduce false positives.
+    
+### Gatewatcher AionIQ V103 Active CTI High
+  - 06/10/2026 - major - Update rule to add severity.
+  - 05/03/2026 - minor - Update rule type to integration
+    
+### Gatewatcher AionIQ Network Alert High
+  - 06/10/2026 - major - Update rule to add severity.
+  - 05/03/2026 - minor - Update rule type to integration
     
 ### Sekoia.io Activity Logs Rule Deactivation Bulk
   - 22/09/2026 - minor - Adding specific dialect.
@@ -265,13 +308,7 @@ Changelog _last update on 2026-10-16_
 ### Gatewatcher AionIQ V103 Sigflow Alert
   - 05/03/2026 - minor - Update rule type to integration
     
-### Gatewatcher AionIQ V103 Beacon Detect
-  - 05/03/2026 - minor - Update rule type to integration
-    
 ### Suricata Exploit Kit Activity Detected High Severity Alert
-  - 05/03/2026 - minor - Update rule type to integration
-    
-### Gatewatcher AionIQ V103 Network Behavior Analytics
   - 05/03/2026 - minor - Update rule type to integration
     
 ### Suricata Attempted Administrator Privilege Gain High Severity Alert
@@ -280,25 +317,7 @@ Changelog _last update on 2026-10-16_
 ### Suricata Web Application Attack High Severity Alert
   - 05/03/2026 - minor - Update rule type to integration
     
-### Gatewatcher AionIQ V103 Malcore
-  - 05/03/2026 - minor - Update rule type to integration
-  - 27/01/2025 - minor - Changing field and adding filter to reduce false positives.
-  - 24/01/2025 - minor - Adding filter to reduce false positives.
-    
 ### Alert High Severity Sesame it Jizo NDR
-  - 05/03/2026 - minor - Update rule type to integration
-    
-### Gatewatcher AionIQ V103 Dga Detect
-  - 05/03/2026 - minor - Update rule type to integration
-    
-### Gatewatcher AionIQ V103 Active CTI
-  - 05/03/2026 - minor - Update rule type to integration
-    
-### Gatewatcher AionIQ V103 Retrohunt
-  - 05/03/2026 - minor - Update rule type to integration
-  - 30/06/2025 - minor - Changing similarity on threat name.
-    
-### Gatewatcher AionIQ V103 Shellcode Detect
   - 05/03/2026 - minor - Update rule type to integration
     
 ### Datadome Protection Intrusion Detection
@@ -307,16 +326,7 @@ Changelog _last update on 2026-10-16_
 ### Darktrace Threat Visualizer Threat Critical Alert
   - 05/03/2026 - minor - Update rule type to integration
     
-### Gatewatcher AionIQ V103 Malicious Powershell Detect
-  - 05/03/2026 - minor - Update rule type to integration
-    
 ### Darktrace Threat Visualizer Threat Suspicious Alert
-  - 05/03/2026 - minor - Update rule type to integration
-    
-### Gatewatcher AionIQ V103 Ransomware Detect
-  - 05/03/2026 - minor - Update rule type to integration
-    
-### Gatewatcher AionIQ Network Alert
   - 05/03/2026 - minor - Update rule type to integration
     
 ### WAF Block Rule
