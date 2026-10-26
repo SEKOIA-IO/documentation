@@ -158,24 +158,50 @@ A connector executed on premise synchronizes once a day, and once right after it
 
 Connector logs work the same way whether the connector runs in the cloud or on a local runner: the messages that the connector logs during a synchronization appear in the connector logs panel. When a synchronization fails, Sekoia also adds an error log with the message `The sync failed:` followed by the error. See [Check asset connector health](/xdr/features/collect/asset_connector_health.md).
 
-### If Reveal is disabled
-
-If the community loses its Reveal subscription, Sekoia stops all its asset connectors, whether they run in the cloud or on a local runner. The connectors and the local runner are not deleted, and the runner can still execute playbook actions.
-
-## Check the local runner status
-
-The **Local runners** page displays the current status of each runner. Review the following fields when you investigate a runner:
+The **Local runners** page displays a card for each runner, with the following information:
 
 | Field | Description |
 | --- | --- |
-| Status | Whether the runner is online or offline |
-| Last activity | The latest activity reported by the runner |
+| Last activity | The last time the runner contacted Sekoia |
 | Hostname | The hostname of the host where the runner is installed |
-| Version | The version of the local runner software |
+| Version | The version of the Sekoia Endpoint Agent |
 
-If a runner is offline or the details page reports that it cannot reach Sekoia, check the host connectivity, proxy configuration, Docker service, and Endpoint Agent logs.
+A runner becomes **Offline** when it has not contacted Sekoia for one hour. The card then displays an **Offline** badge, and the runner details page displays **Your local runner is unable to reach us**. When the runner is online, the details page displays **Up & running**.
 
-For Endpoint Agent logs and diagnostic steps, see [Troubleshoot the Sekoia Endpoint Agent](/integration/categories/endpoint/troubleshoot_sekoia_endpoint_agent.md).
+A runner usually becomes offline when the host is stopped, the Endpoint Agent service is stopped, or the host can no longer reach Sekoia, for example because of a proxy or firewall change.
+
+### Troubleshoot a local runner
+
+1. Check that the Endpoint Agent service is running:
+
+    ```bash
+    sudo systemctl status SEKOIAEndpointAgent.service
+    ```
+
+2. Check that Docker is running and that the host can reach Sekoia with the test command in [Test the host](#test-the-host).
+3. Review the Endpoint Agent logs in `/var/log/endpoint-agent/agent.log`.
+
+When you contact Support, provide the following information:
+
+- The Endpoint Agent logs, in `/var/log/endpoint-agent/`.
+- The configuration file `/etc/endpoint-agent/config.yaml`. Remove the `Token` value and any proxy password before you share it.
+- The output of `/opt/endpoint-agent/agent --version`, which displays the agent version and identifier.
+
+For more diagnostic steps, see [Troubleshoot the Sekoia Endpoint Agent](/integration/categories/endpoint/troubleshoot_sekoia_endpoint_agent.md).
+
+## Permissions
+
+Local runners belong to one community. From a parent community, an MSSP can create and list the local runners of its customer communities.
+
+| Action | Required permissions |
+| --- | --- |
+| View local runners | Read playbooks and read the list of playbook runners |
+| Create a local runner | Read playbooks and enroll new playbook runners |
+| Assign a local runner to an asset connector | Edit asset connectors |
+
+By default, only the **Admin** role can view and create local runners.
+
+Local runners cannot be renamed or deleted from Sekoia. To rename a runner, change `AgentName` in `/etc/endpoint-agent/config.yaml` on the runner host and restart the Endpoint Agent: the new name appears after its next contact with Sekoia. A runner that you uninstall from its host stays in the list and is displayed as **Offline**.
 
 ## Configure proxy support
 
