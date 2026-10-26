@@ -3,7 +3,7 @@
 The self-hosted-controller (SHC) can remove the Sekoia platform from a dedicated cluster while it verifies that no node still uses a storage volume. Use `PlatformScaleDown` to delete the platform workloads and keep the Kubernetes cluster, or `PlatformDestroy` to also uninstall K3s and wipe the Ceph storage disks before a reinstallation from scratch.
 
 !!! warning "Irreversible operations"
-    Both commands permanently delete the platform data stored in the cluster. They do not delete the data stored in your S3-compatible platform storage. Use them only on a dedicated cluster that you intend to reset or decommission.
+    Both commands permanently delete the platform data stored in the cluster. They do not delete the data stored in your S3-compatible platform storage, but a reinstalled platform cannot search it again. These commands provide no restore path, and they are not an upgrade mechanism: a reinstallation starts from an empty platform. Use them only on a dedicated cluster that you intend to reset or decommission.
 
 ## Prerequisites
 
@@ -12,6 +12,14 @@ The self-hosted-controller (SHC) can remove the Sekoia platform from a dedicated
 - Every node of `utils.ansible.inventory` is reachable over SSH and provides `python3`, `findmnt`, and `lsblk`.
 - For `PlatformDestroy`, the release files are extracted on the orchestration node. The Cilium cleanup tool is extracted from the Cilium image of the release.
 - For `PlatformDestroy`, every node also provides `pvs`, `vgchange`, `dmsetup`, `strings`, `wipefs`, `sgdisk`, and `dd`.
+
+Before you run either command, confirm each of the following points:
+
+- The cluster is dedicated to the Sekoia platform. `PlatformScaleDown` deletes every namespace except the preserved ones listed below, including the namespaces that you created.
+- You keep a copy, outside the cluster, of your `config.yml`, of the execution script, and of the values of the environment variables it reads, including the certificate, its private key, and the backup encryption keys.
+- You keep the license file provided by Sekoia and the `SEKOIA_INSTANCE_PUBLIC_KEY` value. After a reinstallation, you import the license again.
+- You keep the release archive of your version and, in air-gapped mode, the CTI archive.
+- If you configured backups, the last backup of each component completed. See [Check the backup status](/self_hosted/1.0.1/operations/backups.md#check-the-backup-status). The SHC cannot restore a backup in 1.0.1.
 
 ## What the commands remove
 
@@ -30,7 +38,22 @@ The ArgoCD namespace is deleted with the platform. Before deleting anything, the
 1. `CleanupCilium` preparation: stages the Cilium cleanup tool on every node.
 2. `PlatformScaleDown`: deletes the platform namespaces and verifies the volume release.
 3. `K3SUninstall`: uninstalls K3s from the worker nodes, then from the manager nodes, and removes the Cilium networking from every node.
-4. `WipeStorageDisks`: wipes the disks used by Ceph and removes the Rook host state.
+4. `WipeStorageDisks`: wipes the disks used by Ceph and removes the Rook host state. In the manual storage mode, this phase wipes nothing.
+
+The following table shows what each command keeps and what it removes. The SHC never deletes objects or buckets from your S3-compatible storage, content from your Git repository, or images and charts from your OCI registry. If you do not reinstall the platform, delete them yourself.
+
+| Data | Location | After `PlatformScaleDown` | After `PlatformDestroy` |
+| :--- | :--- | :--- | :--- |
+| Events stored by ExaLog | S3-compatible platform storage | Kept, not searchable again | Kept, not searchable again |
+| Backups | Backup bucket | Kept | Kept |
+| ArgoCD stacks | Git repository | Kept | Kept |
+| Images and charts | OCI registry | Kept | Kept |
+| `config.yml`, release files, and CTI exports | Orchestration node | Kept | Kept |
+| Platform databases: PostgreSQL, including the ExaLog metastore, ArangoDB, ClickHouse, Kafka, Vault, and the in-cluster MinIO | Ceph volumes | Lost: the volumes stay in the `Released` state, and a reinstallation creates new ones | Lost: the disks are erased |
+| Kubernetes objects of the platform namespaces, including their secrets | etcd | Lost | Lost, with the whole etcd database |
+| Kubernetes cluster, Ceph storage operator, and CloudNativePG operator | Nodes | Kept | Lost |
+
+The events kept on S3 cannot be searched again: the index metadata that ExaLog needs to read them is stored in the PostgreSQL metastore, which is lost. No command restores the platform data in 1.0.1. In the manual storage mode, `PlatformDestroy` does not erase the Ceph devices: their content stays on the devices, unusable, until you clean them up.
 
 ## Delete the platform workloads
 
@@ -63,7 +86,7 @@ The log reports `Platform namespaces removed; client volumes released on every i
 
 ## Destroy the platform and wipe the storage disks
 
-`PlatformDestroy` requires two safety flags: `modules.platform_scale_down.enabled` for the namespace deletion and `modules.wipe_storage.enabled` for the disk wiping. Without both flags set to `true`, the command stops before changing anything.
+`PlatformDestroy` requires two safety flags: `modules.platform_scale_down.enabled` for the namespace deletion and `modules.wipe_storage.enabled` for the disk wiping. Without both flags set to `true`, the command stops before changing anything. In the manual storage mode, with `modules.platform_configuration.config.rook.storage.mode: manual`, only `modules.platform_scale_down.enabled` is required, because the command wipes no disk.
 
 To destroy the platform, run:
 
@@ -71,11 +94,11 @@ To destroy the platform, run:
 exec PlatformDestroy --set modules.platform_scale_down.enabled=true --set modules.wipe_storage.enabled=true
 ```
 
-The command runs its four phases. In the last one, `WipeStorageDisks` selects the whole disks that carry a Ceph LVM volume group, a partition labeled `ceph`, or a Ceph signature in their first 10 MB. It deactivates their Ceph volume groups, then erases the disks with `wipefs`, `sgdisk --zap-all`, and `dd`. It refuses a disk that is mounted, still in use, or shared with a volume group that is not a Ceph volume group. Finally, it removes `/var/lib/rook` on every node, after checking that no K3s or Ceph process is running and that nothing is mounted under that directory.
+The command runs its four phases. In the last one, `WipeStorageDisks` selects the whole disks that carry a Ceph LVM volume group, a partition labeled `ceph`, or a Ceph signature in their first 10 MB. It deactivates their Ceph volume groups, then erases the disks with `wipefs`, `sgdisk --zap-all`, and `dd`. It refuses a disk that is mounted, still in use, or shared with a volume group that is not a Ceph volume group. Finally, it removes `/var/lib/rook` on every node, after checking that no K3s or Ceph process is running and that nothing is mounted under that directory. In the manual storage mode, `WipeStorageDisks` logs a warning instead, and cleaning up the Ceph devices and `/var/lib/rook` is your responsibility.
 
 ### Result
 
-The nodes no longer run K3s, their Cilium networking is removed, their storage disks are blank, and their Rook host state is removed. To reinstall the platform, run `Install` again. See [Deploy the platform](../deployment/deployment_guide.md).
+The nodes no longer run K3s, their Cilium networking is removed, their storage disks are blank, and their Rook host state is removed. To reinstall the platform, run `Install` again. The new platform starts empty: create your communities and import your license again. See [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md). If the new platform uses the same backup bucket, see [Ignore the backups of a previous installation](/self_hosted/1.0.1/operations/backups.md#ignore-the-backups-of-a-previous-installation).
 
 ## Recover from a failure
 
@@ -103,7 +126,7 @@ The command first checks every node, and changes nothing until all nodes pass. I
 
 ## Related links
 
-- [Debug your deployment](../troubleshooting/debug_tool.md): Reference of the SHC commands, including `WipeStorageDisks` and `K3SUninstall`.
-- [The deployment process](../deployment/deployment_process.md): Lifecycle operations of the SHC.
-- [Deploy the platform](../deployment/deployment_guide.md): Reinstall the platform after a reset.
-- [Network requirements](../deployment/network_requirements.md): Ports checked by `CheckNodePortReachability` before a reinstallation.
+- [Debug your deployment](/self_hosted/1.0.1/troubleshooting/debug_tool.md): Reference of the SHC commands, including `WipeStorageDisks` and `K3SUninstall`.
+- [The deployment process](/self_hosted/1.0.1/deployment/deployment_process.md): Lifecycle operations of the SHC.
+- [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md): Reinstall the platform after a reset.
+- [Network requirements](/self_hosted/1.0.1/deployment/network_requirements.md): Ports checked by `CheckNodePortReachability` before a reinstallation.

@@ -57,7 +57,7 @@ The Ceph storage keeps two copies of the data on two different nodes. While one 
     kubectl exec -n rook-ceph deploy/rook-ceph-tools -- ceph osd unset noout
     ```
 
-4. To check the platform health, run `exec Diagnostic`. See [Run platform diagnostics](../monitoring/run_diagnostics.md).
+4. To check the platform health, run `exec Diagnostic`. See [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md).
 
 ### Result
 
@@ -89,7 +89,7 @@ A cold restart reboots every node, then restarts every pod in dependency order. 
     exec KubeCrashRecovery
     ```
 
-    The command deletes every pod of the cluster, namespace group by namespace group, and waits for each group to be ready before it moves to the next. See [KubeCrashRecovery](../troubleshooting/debug_tool.md#kubecrashrecovery).
+    The command deletes every pod of the cluster, namespace group by namespace group, and waits for each group to be ready before it moves to the next. See [KubeCrashRecovery](/self_hosted/1.0.1/troubleshooting/debug_tool.md#kubecrashrecovery).
 
 4. Check that Vault is unsealed. Vault unseals itself when its pod starts, so the output must show `Sealed false`:
 
@@ -105,7 +105,7 @@ A cold restart reboots every node, then restarts every pod in dependency order. 
     kubectl get pods -n support | grep arango
     ```
 
-6. To check the platform health, run `exec Diagnostic`. See [Run platform diagnostics](../monitoring/run_diagnostics.md).
+6. To check the platform health, run `exec Diagnostic`. See [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md).
 
 ### Result
 
@@ -113,6 +113,6 @@ Every node is `Ready`, every pod is running, Vault is unsealed, and the platform
 
 ## Related links
 
-- [Debug your deployment](../troubleshooting/debug_tool.md): Reference of the `RebootNodes` and `KubeCrashRecovery` commands.
-- [Use the SHC interface](controller_interface.md): The Storage tab shows the Ceph status.
-- [Run platform diagnostics](../monitoring/run_diagnostics.md): Health checks per platform area.
+- [Debug your deployment](/self_hosted/1.0.1/troubleshooting/debug_tool.md): Reference of the `RebootNodes` and `KubeCrashRecovery` commands.
+- [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md): The Storage tab shows the Ceph status.
+- [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md): Health checks per platform area.

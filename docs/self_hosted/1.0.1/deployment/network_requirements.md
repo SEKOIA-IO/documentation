@@ -4,6 +4,8 @@ This article lists the network flows required for a Sekoia Self-Hosted deploymen
 
 Ports marked as configured use the port declared in your Self-Hosted configuration or endpoint URL. The tables show the default port where one exists.
 
+The flows in [Conditional flows](#conditional-flows) are needed only for the feature that each row names. The other tables list the flows that every deployment needs, including an air-gapped one, except where a row states a condition: for example, only the online mode uses the release storage flow.
+
 ## External flows to the application load balancer
 
 Allow these flows from users, API clients, and event sources to the load balancer that serves `global.host` and `global.delivery_host`.
@@ -35,13 +37,57 @@ Traefik runs on every Kubernetes node, and K3s binds its ports 80, 443, 10514, a
 
 The Kubernetes API load balancer flow is required when `global.kube_manager_host` points to a load balancer for a highly available control plane. Restrict access to trusted cluster and administration networks.
 
+### Check the load balancer listeners
+
+After the installation, check from a client network that each listener passes the TLS connection through to Traefik. Each check must show your platform certificate. Another certificate means that the load balancer terminates TLS itself. A certificate with the subject `CN = TRAEFIK DEFAULT CERT` means that Traefik has no valid platform certificate: see [TLS certificate](/self_hosted/1.0.1/deployment/deployment_configuration.md#tls-certificate).
+
+To check the HTTPS listener, run:
+
+```bash
+openssl s_client -connect <LB_ADDRESS>:443 -servername <global.host> </dev/null 2>/dev/null | openssl x509 -noout -subject -issuer -enddate
+```
+
+Expected output: the subject, the issuer, and the expiry date of your platform certificate.
+
+To check the syslog and RELP listeners, run the same command with port `10514`, then with port `11514`. When the TLS handshake fails on every port, check that the load balancer does not send PROXY Protocol headers.
+
+To check the HTTP listener, run:
+
+```bash
+curl -sI http://<global.host>/
+```
+
+Expected output: a redirect status with a `Location` header that starts with `https://`.
+
+## NodePort services
+
+!!! warning "Block the NodePort range from untrusted networks"
+    The platform creates NodePort services that answer on the IP address of every node, whatever the node that runs the service. Loki on TCP 30011 does not require any authentication: anyone who reaches this port can read the platform logs and push log entries. The standard deployment needs none of these ports from outside the cluster. Block TCP and UDP 30000-32767 at the perimeter, and open only the individual NodePort that an authorized external consumer requires, restricted to the addresses of this consumer.
+
+| Port | Service | Authentication |
+| :--- | :--- | :--- |
+| TCP 30011 | Loki HTTP API | None |
+| TCP 30176 | ClickHouse HTTP interface | ClickHouse password |
+| TCP 30177 | ClickHouse native protocol | ClickHouse password |
+| Other ports in 30000-32767 | Ports that Kubernetes assigns automatically to other services | Depends on the service |
+
+To list the NodePorts in use, run `kubectl get svc -A | grep -E 'NodePort|LoadBalancer'`. Each `<PORT>:<NODEPORT>/<PROTOCOL>` entry of the `PORT(S)` column shows a NodePort.
+
+To check that a NodePort is closed to an untrusted network, run the following command from a host of that network, for each NodePort:
+
+```bash
+nc -vz -w 5 <NODE_IP> 30011
+```
+
+Expected output: the connection times out or is refused. A `succeeded` or `open` message means that the port is reachable: block it at the perimeter.
+
 ## Flows from the orchestration node
 
 The orchestration node does not join the Kubernetes cluster. It runs the self-hosted-controller (SHC) and requires these management flows.
 
 | Flow | Usage | Source | Destination | Protocol | Port |
 | :--- | :--- | :--- | :--- | :---: | :---: |
-| SSH | Installation, upgrade, and diagnostic operations | Orchestration node | All manager and worker nodes | TCP | 22 |
+| SSH | Installation, configuration, and diagnostic operations | Orchestration node | All manager and worker nodes | TCP | 22 |
 | Kubernetes API | Cluster installation and management | Orchestration node | `global.kube_manager_host` | TCP | 6443 |
 
 The orchestration node also needs access to Git, OCI, release storage, DNS, and NTP as described in [Outbound flows to infrastructure services](#outbound-flows-to-infrastructure-services).
@@ -63,10 +109,10 @@ Allow these flows on the private network between Kubernetes nodes, in both direc
 | ICMP | Path MTU discovery and network diagnostics | All manager and worker nodes | All manager and worker nodes | ICMP | N/A |
 
 !!! warning "Open the cluster ports between all nodes"
-    Etcd runs only on the manager nodes, but the `CheckNodePortReachability` preflight check probes TCP 6443, 2379, 2380, 4240, 4250, 10514, and 11514 from every node to every other node, whatever its role. Allow these ports between all manager and worker nodes, or the check blocks the installation. See [CheckNodePortReachability](../troubleshooting/debug_tool.md#checknodeportreachability).
+    Etcd runs only on the manager nodes, but the `CheckNodePortReachability` preflight check probes TCP 6443, 2379, 2380, 4240, 4250, 10514, and 11514 from every node to every other node, whatever its role. Allow these ports between all manager and worker nodes, or the check blocks the installation. See [CheckNodePortReachability](/self_hosted/1.0.1/troubleshooting/debug_tool.md#checknodeportreachability).
 
 !!! note "Free ports on every node"
-    The cluster binds TCP 80, 443, 2379, 2380, 4240, 4250, 6443, 10514, and 11514 on every node. `CheckServerSpec` fails when another process already listens on one of them. See [Free ports](./deployment_prerequisites.md#free-ports).
+    The cluster binds TCP 80, 443, 2379, 2380, 4240, 4250, 6443, 10514, and 11514 on every node. `CheckServerSpec` fails when another process already listens on one of them. See [Free ports](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#free-ports).
 
 The standard deployment disables Flannel and kube-proxy and installs Cilium with VXLAN tunneling. Cilium also handles the Kubernetes services, so a NodePort service answers on the IP address of every node. Ensure host firewalls permit forwarding for the pod network and do not apply network address translation between cluster nodes.
 
@@ -75,7 +121,7 @@ The cluster uses the following fixed internal ranges. Make sure that they do not
 | Range | Usage |
 | :--- | :--- |
 | `10.42.0.0/16` | Pod network. |
-| `10.43.0.0/16` | Service network. CoreDNS uses `10.43.0.10` and Traefik uses `10.43.111.111`, set by `modules.platform_configuration.config.traefik.service_ip`. See [Traefik service IP](./deployment_configuration.md#traefik-service-ip). |
+| `10.43.0.0/16` | Service network. CoreDNS uses `10.43.0.10` and Traefik uses `10.43.111.111`, set by `modules.platform_configuration.config.traefik.service_ip`. See [Traefik service IP](/self_hosted/1.0.1/deployment/deployment_configuration.md#traefik-service-ip). |
 
 ## Outbound flows to infrastructure services
 
@@ -102,18 +148,18 @@ Allow the following flows only when you enable or use the corresponding feature.
 | :--- | :--- | :--- | :--- | :---: | :---: |
 | Git uses plain HTTP | Access to a non-TLS Git endpoint set in `utils.git.repo_url` | Orchestration node and all Kubernetes nodes | Git server | TCP | 80 or configured port |
 | An HTTP or HTTPS proxy is configured | Proxied Git, image pull, or platform egress | Orchestration node and all Kubernetes nodes, as configured | Proxy server | TCP | Configured proxy port |
-| Loki is consumed outside the cluster | Direct access to the Loki NodePort | Authorized monitoring clients | Kubernetes nodes | TCP | 30011 |
-| Additional NodePort services are exposed | Direct access to explicitly selected NodePort services | Authorized clients | Kubernetes nodes | TCP / UDP | Selected ports in 30000-32767 |
+| Loki is consumed outside the cluster | Direct access to the Loki NodePort, without authentication | Authorized monitoring clients only | Kubernetes nodes | TCP | 30011 |
+| Additional NodePort services are exposed | Direct access to explicitly selected NodePort services | Authorized clients only | Kubernetes nodes | TCP / UDP | Selected ports in 30000-32767 |
+| Backups are enabled | Backup upload, and backup status check with `exec Backups` | All Kubernetes nodes and orchestration node | `backups.s3.endpoint`, by default `global.platform_storage.endpoint` | TCP | 443 or configured port |
 | A community uses OpenID Connect | Authentication discovery, authorization, and token exchange | Users and all Kubernetes nodes | Identity provider | TCP | 443 or configured port |
 | Connectors, actions, or webhooks call external services | Customer-enabled integrations and automation | All Kubernetes nodes | Customer-approved external services | TCP / UDP | Service-specific |
 
-!!! warning "Block the NodePort range from untrusted networks"
-    The platform creates NodePort services that answer on the IP address of every node: Loki on TCP 30011, ClickHouse on TCP 30176 (HTTP) and 30177 (native protocol), and other ports assigned automatically in the 30000-32767 range. The standard deployment does not need any of them from outside the cluster. Block TCP and UDP 30000-32767 at the perimeter, and open only the individual NodePort required by an authorized external consumer, such as Loki port 30011. Loki does not require authentication: restrict port 30011 to your monitoring clients.
+Before you open a NodePort, read the security constraints in [NodePort services](#nodeport-services).
 
 !!! note "Git and OCI protocols"
     ArgoCD connects to the Git repository with a username and a password over HTTP or HTTPS, and pulls the Helm charts from the OCI registry over HTTPS. Git over SSH and an OCI registry served over plain HTTP are not supported.
 
-When a proxy is configured, allow clients to reach the proxy and configure the proxy to reach the destinations that use it. On the platform side, the proxy applies to ArgoCD, ExaLog indexing, the threat intelligence backend, and playbook actions. Email (SMTP) and OpenID Connect connections do not use the proxy. See [Proxy](./deployment_configuration.md#proxy).
+When a proxy is configured, allow clients to reach the proxy and configure the proxy to reach the destinations that use it. On the platform side, the proxy applies to ArgoCD, ExaLog indexing, the threat intelligence backend, and playbook actions. Email (SMTP) and OpenID Connect connections do not use the proxy. See [Proxy](/self_hosted/1.0.1/deployment/deployment_configuration.md#proxy).
 
 ## Air-gapped environments
 
@@ -123,6 +169,6 @@ The orchestration node pushes release artifacts to the local Git and OCI service
 
 ## Related links
 
-- [Technical requirements](./deployment_prerequisites.md): Hardware, OS, and operational prerequisites.
-- [Deploy the platform](./deployment_guide.md): Step-by-step installation instructions.
-- [Configure the deployment](./deployment_configuration.md): Required platform storage, registry, DNS, and endpoint settings.
+- [Technical requirements](/self_hosted/1.0.1/deployment/deployment_prerequisites.md): Hardware, OS, and operational prerequisites.
+- [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md): Step-by-step installation instructions.
+- [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md): Required platform storage, registry, DNS, and endpoint settings.

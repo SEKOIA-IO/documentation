@@ -2,12 +2,12 @@
 
 The self-hosted-controller (SHC) imports the Sekoia CTI database into the ArangoDB database of your platform with the `ImportArangoCollection` command. It reads the latest CTI export from the Sekoia release bucket in online mode, or from the orchestration node in air-gapped mode, and loads the STIX objects and relationships it contains.
 
-The imported database feeds observable tags enrichment, contextualized alerts, and the `SEKOIA Intelligence Feed` detection rule. The Intelligence module is not available in Sekoia Self-Hosted 1.0.0.
+The imported database feeds observable tags enrichment, contextualized alerts, and the `SEKOIA Intelligence Feed` detection rule. The Intelligence module is not available in Sekoia Self-Hosted 1.0.1.
 
 ## Prerequisites
 
 - The platform is installed and the SHC can retrieve its kubeconfig.
-- In online mode, the `S3_ACCESS_KEY` and `S3_SECRET_KEY` environment variables hold the Sekoia release bucket credentials provided by Sekoia, and `global.version.fetch` points to the Sekoia release bucket, as described in [Configure the deployment](../deployment/deployment_configuration.md#release-download-and-security-content).
+- In online mode, the `S3_ACCESS_KEY` and `S3_SECRET_KEY` environment variables hold the Sekoia release bucket credentials provided by Sekoia, and `global.version.fetch` points to the Sekoia release bucket, as described in [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md#release-download-and-security-content).
 - In air-gapped mode, `global.version.fetch.offline` is `true` and the CTI archive is extracted on the orchestration node, as described in [Prepare the CTI export in air-gapped mode](#prepare-the-cti-export-in-air-gapped-mode).
 
 ## Prepare the CTI export in air-gapped mode
@@ -63,7 +63,7 @@ $SEKOIA_LOCAL_DIR/data/cti/
         └── part-<N>.jsonl.zst
 ```
 
-The SHC reads each collection from `<global.version.data.cti.path>/cti/<collection>/`. The [execution script](../deployment/deployment_guide.md#step-4-create-the-execution-script) mounts `$SEKOIA_LOCAL_DIR` on `/opt/sekoia`, which matches the default value of `global.version.data.cti.path` (`/opt/sekoia/data/`).
+The SHC reads each collection from `<global.version.data.cti.path>/cti/<collection>/`. The [execution script](/self_hosted/1.0.1/deployment/deployment_guide.md#step-4-create-the-execution-script) mounts `$SEKOIA_LOCAL_DIR` on `/opt/sekoia`, which matches the default value of `global.version.data.cti.path` (`/opt/sekoia/data/`).
 
 ## Import the CTI database
 
@@ -111,10 +111,12 @@ The import is a snapshot: the CTI database of your platform does not update on i
 
 The command logs an `Import progress` line for each part it loads, then a summary of the documents created and updated per collection. Once every collection is imported, it deletes the relationships whose source or target object is missing from the database, and logs their count.
 
+To confirm which export was imported, look for the `Resolved export run` log line of each collection. Its `location` field ends with the folder of the imported export, named after the export ID, an hourly timestamp such as `2026-09-03T09`. With `latest`, the line also gives the `run_id` and the `completed_at` time read from `latest.json`. With a pinned day, check that the folder name starts with that day.
+
 If a collection fails, the command still imports the other ones, skips the deletion of the relationships, and lists every failure at the end.
 
 ## Related links
 
-- [Use the SHC interface](./controller_interface.md): Run SHC commands and runtime overrides.
-- [Configure the deployment](../deployment/deployment_configuration.md): Set the release bucket credentials and endpoint.
-- [Deploy the platform](../deployment/deployment_guide.md): Download the release and prepare the SHC execution script.
+- [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md): Run SHC commands and runtime overrides.
+- [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md): Set the release bucket credentials and endpoint.
+- [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md): Download the release and prepare the SHC execution script.
