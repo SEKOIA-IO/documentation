@@ -12,6 +12,12 @@ Confirm that the following conditions are met:
 - Some integrations require specific permissions or scopes on the external system. Refer to the integration's documentation to check what the account you use needs.
 - You have the credentials required by the integration you want to connect (API key, client ID, service account, or equivalent).
 
+!!! note "Run an asset connector with a local runner"
+
+    Eligible asset connectors can run through a local runner from inside your environment. This option is available only when the connector supports local execution and the community selected for the local runner has a Reveal subscription.
+
+    For local runner setup, community requirements, and connectivity configuration, see [Local runners](/xdr/features/automate/playbooks-on-premises.md).
+
 ## Create an asset connector
 
 ### Step 1: Open the asset connectors panel
@@ -78,3 +84,4 @@ From the asset connector list, you can perform the following actions on any conn
 - [Getting started with Reveal](/xdr/features/modules/reveal_getting_started.md) — Recommended setup order for all Reveal data sources.
 - [Integration — Asset categories](/integration/assets_categories/overview.md) — Reference for available connector categories and integration setup.
 - [Security controls](/xdr/features/modules/reveal_security_controls.md) — How to verify connector coverage from the asset context panel.
+- [Local runners](/xdr/features/automate/playbooks-on-premises.md): How to run eligible asset connector jobs from inside your environment.
