@@ -188,6 +188,7 @@ The SHC handles the full platform lifecycle beyond initial installation.
 | Post-deployment health check | `CheckKubernetesCluster`, `DebugArgoCD` |
 | Database diagnostics | `DebugDatabases` |
 | Resource usage analysis | `DebugResourceAllocation` |
+| Apply a change of `config.yml` to an installed platform | `Install`. See [Apply a configuration change](/self_hosted/1.0.1/operations/apply_configuration_change.md). |
 | Platform configuration re-apply | `PlatformConfigurationFile`, `PlatformInstallation` |
 | Full ArgoCD re-synchronization | `DebugArgoCDSyncAll` |
 | Cold restart of the whole cluster, with a full outage | `RebootNodes`, then `KubeCrashRecovery`. See [Run a cold restart of the whole cluster](/self_hosted/1.0.1/operations/node_maintenance.md#run-a-cold-restart-of-the-whole-cluster). |
