@@ -251,7 +251,11 @@ If a proxy or internal service uses a TLS certificate signed by a custom Certifi
 CABundlePath: "path/to/bundle/cacert.pem"
 ```
 
-The bundle must contain the trusted CA certificates required to communicate with Sekoia.
+The bundle is used by the Endpoint Agent and by every playbook action and asset connector job that the local runner executes. Inside these actions, the bundle replaces the default trusted certificates, so it must contain all the CA certificates they need:
+
+- The public CA certificates used by Sekoia and by the vendor APIs that the actions call. You can start from the CA bundle of your Linux distribution, for example `/etc/ssl/certs/ca-certificates.crt` on Debian and Ubuntu.
+- The CA certificate of your proxy, if it inspects TLS traffic.
+- The CA certificates of the internal systems that asset connectors connect to, for example a directory server that uses LDAPS with an internal certificate.
 
 ## Related articles
 
