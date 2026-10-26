@@ -1,10 +1,10 @@
 # Monitor your platform
 
-Sekoia Self-Hosted ships with a complete observability stack and a set of on-demand diagnostic commands so you can monitor cluster health, application status, and resource usage in real time. This guide explains how to use both layers for daily monitoring and incident response.
+Sekoia Self-Hosted ships with a complete observability stack and a set of on-demand diagnostic commands so you can monitor cluster health, application status, and resource usage. Prometheus collects the metrics and evaluates the alert rules every 15 seconds, and the Grafana dashboard refreshes every minute. This guide explains how to use both layers for daily monitoring and incident response.
 
 ## Before you begin
 
-- You completed the deployment and validated post-deployment checks in [Deploy the platform](../deployment/deployment_guide.md).
+- You completed the deployment and validated post-deployment checks in [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md).
 - You have access to the Grafana interface at `https://<global.delivery_host>/grafana`.
 - For self-hosted-controller (SHC) diagnostic commands, you must run them from the orchestration node provisioned during installation.
 
@@ -14,7 +14,7 @@ Sekoia Self-Hosted provides two complementary monitoring layers.
 
 | Layer | Tools | Purpose |
 | :--- | :--- | :--- |
-| Continuous monitoring | Grafana, Loki, Prometheus | Real-time dashboards, log search and metric collection. |
+| Continuous monitoring | Grafana, Loki, Prometheus | Dashboards refreshed every minute, log search, metric collection, and alert rule evaluation every 15 seconds. |
 | On-demand diagnostics | self-hosted-controller (SHC) CLI | Targeted health checks on the cluster, applications, databases, and resources. |
 
 Use Grafana for daily operations and trend analysis. Use SHC commands for incident triage, post-deployment validation, and structured platform snapshots.
@@ -29,15 +29,12 @@ To access Grafana:
 2. Select **Dashboards** from the left navigation panel.
 3. Open the **Default** dashboard.
 
-!!! info "Available dashboards"
-    The platform ships with two dashboards: **Default** and **Astreinte**. The Astreinte dashboard is an internal on-call tool used by the Sekoia operations team. It is not intended for platform operators and should not be consulted during normal operations. Only the **Default** dashboard is relevant for day-to-day monitoring.
-
 ### Default dashboard
 
-The Default dashboard is the primary monitoring view for a Self-Hosted deployment. It is organized into rows, each covering a different layer of the platform. The **Global info** and **Global workflow** rows are expanded by default. Expand any other row to display its panels.
+The Default dashboard is the only dashboard shipped with Self-Hosted and the primary monitoring view of the deployment. It shows the last hour by default and refreshes every minute. It is organized into rows, each covering a different layer of the platform. The **Global info** and **Global workflow** rows are expanded by default. Expand any other row to display its panels.
 
 !!! note "Panels based on Ceph metrics"
-    The Ceph metrics are not collected in Self-Hosted. Panels that read them stay empty: **Ceph cluster health** and **Storage used (Ceph)** in the **Global info** row, and the Ceph cluster panels of the **Ceph** row. To check the Ceph status, use the Storage tab of the [SHC interface](../operations/controller_interface.md).
+    The Ceph metrics are not collected in Self-Hosted. This is expected and does not indicate an incomplete deployment. Panels that read them stay empty: **Ceph cluster health** and **Storage used (Ceph)** in the **Global info** row, and the Ceph cluster panels of the **Ceph** row. To check the Ceph status, use the Storage tab of the [SHC interface](/self_hosted/1.0.1/operations/controller_interface.md).
 
 The rows appear in the following order.
 
@@ -55,25 +52,25 @@ A row of summary panels that gives an at-a-glance overview of the whole platform
 
 | Panel | What it shows |
 | :--- | :--- |
-| Ceph cluster health | Health of the Ceph cluster. Empty in Self-Hosted. |
+| Ceph cluster health | Health of the Ceph cluster. Empty in Self-Hosted, as expected: the Ceph metrics are not collected. |
 | Bytes In | Ingested bytes per second across the syslog chain (`oc-pre-parser`) and the HTTP chain (`sic-intake-http-rs`). |
 | Load all nodes (5 minutes) | Number of nodes in each 10% bucket of 5-minute CPU load per core, over time. |
 | RAM used % | Number of nodes in each 10% bucket of RAM usage, over time. |
 | Time drift > 1s | Nodes whose clock drifts by more than one second. |
-| Storage used (Ceph) | Space used in the Ceph cluster. Empty in Self-Hosted. |
+| Storage used (Ceph) | Space used in the Ceph cluster. Empty in Self-Hosted, as expected: the Ceph metrics are not collected. |
 | API Response Time | Highest mean response time across the platform APIs, read from their logs. |
 | Celery Tasks | Highest Celery queue length, when it exceeds 1,000 tasks. |
-| Node Load | Highest 5-minute CPU load per core across the nodes. |
+| Node Load | Highest 5-minute CPU load per core across the nodes, when it exceeds 0.75. |
 | Kube | Deployments, StatefulSets, or DaemonSets that do not have all their replicas ready. |
 | PVC Usage | Highest usage of a persistent volume claim, in percentage. |
 | Clickhouse Status | ClickHouse read-only replicas, and the growth of the distributed insert backlog. |
-| Alertmanager status | Rate of notifications that the local Alertmanager drops because its queue is full. A value above zero means that alerts are lost. |
+| Alertmanager status | Rate of `dropping messages because too many are queued` warnings in the logs of the local Alertmanager. The panel turns red when messages are dropped over the interval. |
 | Storage used (!= Ceph) | Space used on the node disks, excluding the Ceph volumes. |
 | API Error Rate | Highest rate of 5xx responses of a platform API, when it exceeds 5, read from the API logs. |
-| Event to alert delay | Average delay between the ingestion of an event and the creation of its alert. |
+| Event to alert delay | Average delay between the ingestion of an event and the creation of its alert, over the last 5 minutes. The panel turns red above 10 minutes. |
 | Ingestion | Highest consumer lag on the ingestion and detection topics, when it exceeds 500 messages and keeps growing. |
 | FS Usage | Highest usage of a persistent volume claim or a node filesystem, when it exceeds 75%. |
-| Pods Failed \| Pending \| Unknown | Number of pods in the Failed, Pending, or Unknown phase, when it exceeds 15. |
+| Pods Failed \| Pending \| Unknown | Shows a value when a pod has been in the Failed, Pending, or Unknown phase in more than 15 metric samples over the last 5 minutes, that is for most of that window. |
 
 #### Global workflow
 
@@ -82,7 +79,7 @@ End-to-end view of the event processing pipeline. Each panel represents one stag
 | Panel | What it shows |
 | :--- | :--- |
 | sic-intake-http-rs | HTTP intake: accepted requests, rejected requests, and accepted events. |
-| ingestworker1 | Event parsing: events waiting on `sic.intake.events_parser`, consumer lag, and events processed. |
+| ingestworker1 | Event parsing: event rate on `sic.intake.events_parser`, consumer lag, received, parsed, ignored, and published events, publication failures, and the estimated maximum events per second. |
 | sigma-workflow-worker1 | Detection: incoming events, processed events, and consumer lag. |
 | sigma-workflow-correlation | Correlation: processed events, matches, and consumer lag. |
 | quickwit-forwarder | Forwarding of the enriched events to ExaLog: consumer lag, consumption rate, and forwarded messages. |
@@ -131,7 +128,7 @@ Background task metrics: queued tasks, 95th percentile task duration, tasks per 
 
 #### Kafka
 
-Event streaming metrics: consumer lag per topic and consumer group, lag per detection worker, log size by topic and by broker, offline partitions, messages and bytes in and out per topic, CPU and memory usage of the brokers, bytes in per broker, partitions per topic, under-replicated partitions per topic, in-sync replica expansions, and consumer group rebalances.
+Event streaming metrics: consumer lag per topic and consumer group, lag per detection worker, log size by topic and by broker, offline partitions, messages in, bytes in, and bytes out per topic, CPU and memory usage of the brokers, bytes in per broker, partitions per topic, under-replicated partitions per topic, in-sync replica expansions, and consumer group rebalances.
 
 #### Kube
 
@@ -143,7 +140,7 @@ ClickHouse metrics: read-only replicas and files waiting for distributed inserti
 
 #### Ceph
 
-Storage metrics. The disk I/O time per device, the slow disk detection, and the CPU and RAM usage of the Ceph OSD pods work in Self-Hosted. The other panels stay empty: disk usage, estimated days before 90% usage, disk space delta, `node_disk_io_time_weighted`, usage per pool and per OSD, bytes and operations read and written, apply latency, and monitor elections.
+Storage metrics. The disk I/O time per device, the slow disk detection, and the CPU and RAM usage of the Ceph OSD pods work in Self-Hosted. The other panels stay empty, which is expected: disk usage, estimated days before 90% usage, disk space delta, usage per pool and per OSD, bytes and operations read and written, apply latency, and monitor elections read Ceph metrics, which are not collected, and `node_disk_io_time_weighted` filters on a label that Self-Hosted metrics do not carry.
 
 #### ExaLog
 
@@ -163,17 +160,34 @@ Promtail agents run on every node and ship all container logs to a Loki cluster.
 
 ??? example "Example LogQL queries"
     Filter all logs from the `support` namespace:
-    ```
+    ```text
     {namespace="support"}
     ```
     Filter logs from a specific pod containing an error:
-    ```
+    ```text
     {namespace="support", pod="redis-0"} |= "error"
     ```
 
+!!! warning "Loki has no authentication"
+    Loki also answers on TCP port 30011 of every node, without authentication. Anyone who reaches this port can query the logs of every service. Restrict the port to your monitoring clients, as described in [Network requirements](/self_hosted/1.0.1/deployment/network_requirements.md).
+
 ## Use SHC commands for on-demand diagnostics
 
-For targeted checks on specifics services or layers of the platform using Prometheus metrics, follow [Run platform diagnostics](run_diagnostics.md).
+For targeted checks on specific services or layers of the platform using Prometheus metrics, follow [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md).
+
+The commands on this page differ in their effect on the platform:
+
+| Command | Effect |
+| :--- | :--- |
+| `CheckKubernetesCluster` | Read-only. Lists the nodes and checks their `Ready` condition. |
+| `DebugArgoCD` | Read-only. Reads the ArgoCD repositories and applications. |
+| `DebugDatabases` | Read-only. Reads the StatefulSets, the PostgreSQL clusters, and their pods. |
+| `DebugResourceAllocation` | Read-only. Reads the pod memory requests and the Kubernetes Metrics API. |
+| `Diagnostic` | Read-only. Queries Prometheus. |
+| `DebugArgoCDSyncAll` | Changes the platform state. Syncs every ArgoCD application and restarts the `sekoiaio-secret-operator` deployment. |
+| `HelmInstall` | Changes the platform state. Installs or upgrades the Cilium, CoreDNS, cert-manager, and Metrics Server Helm releases, and rolls back or removes stuck releases. |
+
+The commands that need the cluster first run `GetKubeconfig`, which copies the kubeconfig from the first manager node and changes nothing on the cluster.
 
 ### Check cluster node health
 
@@ -184,11 +198,11 @@ exec CheckKubernetesCluster
 ```
 
 ??? example "Expected output"
-    ```
+    ```text
     Kubernetes cluster is healthy nodes=6 expected=6
     ```
 
-Run this command first when investigating any platform issue. A mismatch between actual and expected node counts indicates that a node did not join or was evicted.
+Run this command first when investigating any platform issue. The expected count is the number of hosts in the Ansible inventory. A mismatch between the actual and expected node counts indicates that a node did not join the cluster or was removed from it.
 
 ### Check application status
 
@@ -234,9 +248,9 @@ The output surfaces pods with over-provisioned memory requests (highlighted in r
 
 1. Open the **Default** dashboard in Grafana. Review the **Global info** row: check that no pods are failed or pending, that the API error rate and event-to-alert delay are within normal bounds, and that PVC and filesystem usage are not approaching saturation.
 2. Expand the **Global workflow** row. Verify that ingestion, pre-parsing, sigma-workflow, and ExaLog indexation are all processing events at the expected rate and that no stage shows a backlog.
-3. Expand the **Kafka** row. Confirm consumer lag is stable and no topics have offline or underreplicated partitions.
+3. Expand the **Kafka** row. Confirm consumer lag is stable and no topics have offline or under-replicated partitions.
 4. Expand the **PVC usage** and **Ceph** rows. Check that no volume approaches saturation and that no slow disk is reported.
-5. Review the firing alerts. See [Platform alerts reference](platform_alerts.md).
+5. Review the firing alerts. See [Platform alerts reference](/self_hosted/1.0.1/monitoring/platform_alerts.md).
 
 ## Recommended incident response workflow
 
@@ -261,12 +275,12 @@ exec Diagnostic
 
 This sequence moves from infrastructure layer to application layer to database layer to resource layer to service layer. Each step scopes the investigation before you move on.
 
-If applications show `OutOfSync` or `Degraded` after running `DebugArgoCD`, continue with [Debug your deployment](../troubleshooting/debug_tool.md).
+If applications show `OutOfSync` or `Degraded` after running `DebugArgoCD`, continue with [Debug your deployment](/self_hosted/1.0.1/troubleshooting/debug_tool.md).
 
 ## Related links
 
-- [Run platform diagnostics](run_diagnostics.md): Targeted Prometheus health checks for platform services.
-- [Use the SHC interface](../operations/controller_interface.md): Live node, cluster, storage, and diagnostics views in the interactive SHC interface.
-- [Debug your deployment](../troubleshooting/debug_tool.md): Full SHC debug command reference with remediation steps.
-- [Deploy the platform](../deployment/deployment_guide.md): Post-deployment validation commands.
-- [Technical requirements](../deployment/deployment_prerequisites.md): Compute node and S3 storage requirements.
+- [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md): Targeted Prometheus health checks for platform services.
+- [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md): Live node, cluster, storage, and diagnostics views in the interactive SHC interface.
+- [Debug your deployment](/self_hosted/1.0.1/troubleshooting/debug_tool.md): Full SHC debug command reference with remediation steps.
+- [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md): Post-deployment validation commands.
+- [Technical requirements](/self_hosted/1.0.1/deployment/deployment_prerequisites.md): Compute node and S3 storage requirements.

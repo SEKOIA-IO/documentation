@@ -4,15 +4,18 @@ Sekoia Self-Hosted evaluates a set of Prometheus alert rules against the platfor
 
 ## How platform alerts work
 
-Prometheus continuously evaluates the alert rules bundled with the platform and forwards any firing alert to the Alertmanager instance installed on the platform.
+Prometheus evaluates the alert rules bundled with the platform every 15 seconds and forwards any firing alert to the Alertmanager instance installed on the platform.
+
+!!! warning "No alert notification by default"
+    The Alertmanager of the platform has no notification receiver: it sends no email, message, or page. Connecting the platform alerts to your notification channels is your responsibility.
 
 !!! note "Where to check firing alerts"
-    Review active alerts from the Prometheus **Alerts** page, or from the relevant row of the **Default** Grafana dashboard, which surfaces the underlying metrics for each alert group. See [Monitor your platform](monitoring_guide.md) for the full dashboard reference.
+    To check what an alert reports, run the diagnostic of its group, as listed in each group below, or open the relevant row of the **Default** Grafana dashboard, which surfaces the underlying metrics for each alert group. See [Monitor your platform](/self_hosted/1.0.1/monitoring/monitoring_guide.md) for the full dashboard reference.
 
 !!! warning "Investigate before taking action"
-    A firing alert can cascade into ingestion, correlation, and alerting delays across the whole platform. Follow the [recommended incident response workflow](monitoring_guide.md#recommended-incident-response-workflow) to confirm cluster and database health before restarting or scaling affected resources.
+    A firing alert can cascade into ingestion, correlation, and alerting delays across the whole platform. Follow the [recommended incident response workflow](/self_hosted/1.0.1/monitoring/monitoring_guide.md#recommended-incident-response-workflow) to confirm cluster and database health before restarting or scaling affected resources.
 
-Alerts are grouped by type, one type per infrastructure component or service. For each type, a global diagnostic analyzes the whole group: it identifies the affected component, explains the likely causes, and proposes remediations. Each alert is named after the diagnostic rule it mirrors and uses the same query and thresholds. When an alert fires, run the diagnostic of its type from the orchestration node. See [Run platform diagnostics](run_diagnostics.md) for the output formats and how to read a result.
+Alerts are grouped by type, one type per infrastructure component or service. For each type, a global diagnostic analyzes the whole group: it identifies the affected component, explains the likely causes, and proposes remediations. Each alert is named after the diagnostic rule it mirrors and uses the same query and thresholds. When an alert fires, run the diagnostic of its type from the orchestration node. See [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md) for the output formats and how to read a result.
 
 ### Severity levels
 
@@ -23,6 +26,8 @@ Alerts are grouped by type, one type per infrastructure component or service. Fo
 | Warning | An early signal: a saturation or a degradation is building up. |
 
 Some alerts have two thresholds: they fire as a warning first, then as an error when the condition worsens.
+
+Alerts and diagnostics share the same queries and thresholds, but name their levels differently. A diagnostic check reports `OK`, `WARN`, or `CRIT`. As a rule, a `WARN` threshold raises a `warning` alert, and a `CRIT` threshold raises an `error` or a `critical` alert depending on its impact: `critical` when a component is down or a pipeline has stopped, `error` otherwise. A few alerts depart from this rule in either direction, so rely on the severity listed in the tables below. The timing also differs: an alert fires only once its condition has held for the duration given in the **Fires when** column, while a diagnostic evaluates the current value when you run it. A diagnostic can therefore report `WARN` or `CRIT` before the matching alert fires.
 
 ### Alert groups
 
@@ -134,7 +139,7 @@ exec Diagnostic --set modules.diagnostic.targets=console
 | ConsoleAuthSecretMissing | Critical | The secret of the authentication service is missing, for 5 minutes. | The authentication service cannot start. |
 | ConsoleAuthApiServerErrorRatio | Warning, Error | More than 5% (warning) or 20% (error) of the authentication requests end in a server error, for 5 minutes. | Logins fail for part of the users. |
 | ConsoleGraphqlGatewayDown | Error | The GraphQL gateway has no available replica, for 1 minute. | Dashboard widgets and threat panels in alerts and cases fail to load. |
-| ConsoleTlsExporterStale | Warning | The TLS certificate exporter has not completed a check for more than 15 minutes. | A certificate expiry can go unnoticed. |
+| ConsoleTlsExporterStale | Warning | The TLS certificate exporter has not completed a check for more than 15 minutes, for 5 minutes. | A certificate expiry can go unnoticed. |
 
 ## Indexation
 
@@ -146,7 +151,7 @@ exec Diagnostic --set modules.diagnostic.targets=indexation
 
 | Alert | Severity | Fires when | Impact |
 | :--- | :--- | :--- | :--- |
-| IndexationForwarderKafkaLagGrowing | Error | The indexation consumer lag is high and keeps growing, for 5 minutes. | Recent events become searchable later and later. |
+| IndexationForwarderKafkaLagGrowing | Error | The indexation consumer lag exceeds 500 messages and 2 minutes of consumption, and has kept growing over the last 10 minutes, for 5 minutes. | Recent events become searchable later and later. |
 | IndexationForwarderNotConsuming | Critical | Enriched events are produced but the indexation pipeline does not consume them, for 5 minutes. | No new event is indexed, and recent events are not searchable. |
 | IndexationIndexerProducingNoDocuments | Critical | Events are forwarded but the indexers produce no document, for 5 minutes. | Recent events are not turned into searchable data. |
 | IndexationObjectStorageErrorRatio | Warning, Error | More than 2% (warning) or 10% (error) of the object storage requests of the indexers fail, for 5 minutes. | Indexation slows down or stalls. |
@@ -172,11 +177,13 @@ exec Diagnostic --set modules.diagnostic.targets=ingest
 | IngestTlsServedCertExpiring | Warning, Error | The certificate served by Traefik expires within 21 days (warning) or 7 days (error), for 1 hour. | Once it expires, sources refuse the handshake and nothing is ingested over HTTPS or TLS syslog. |
 | IngestTlsSecretMissing | Critical | The Traefik TLS secret is missing or invalid, for 5 minutes. | Traefik serves its default certificate, and sources refuse to send events. |
 | IngestTlsEndpointNotServing | Critical | A TLS handshake against Traefik fails, for 5 minutes. | Every ingestion endpoint is unreachable. |
-| IngestTlsExporterStale | Warning, Error | The TLS certificate exporter has not completed a check for more than 15 minutes (warning) or 1 hour (error). | A certificate expiry can go unnoticed. |
+| IngestTlsExporterStale | Warning, Error | The TLS certificate exporter has not completed a check for more than 15 minutes (warning) or 1 hour (error), for 5 minutes. | A certificate expiry can go unnoticed. |
 | IngestHttpIntakeEndpointDown | Critical | The HTTP intake service has no available replica, for 1 minute. | Every source that pushes events over HTTPS is refused. |
 | IngestRsyslogIntakeEndpointDown | Critical | The syslog intake service has no available replica, for 1 minute. | Every source that ships events over syslog or RELP is refused. |
 | IngestPreparserStageDown | Critical | The pre-parser stage has no available replica, for 1 minute. | Ingestion stalls for all intakes. |
 | IngestParserStageDown | Critical | No parser worker has an available replica, for 1 minute. | Events are received but never parsed, and never reach detection. |
+
+The baseline of an intake or a community is its average rate over the 6 hours that end 30 minutes before the evaluation. The spike alerts ignore intakes whose baseline is 0.1 event per second or less, and the collapse alert ignores communities whose baseline is 1 event per second or less.
 
 ## Kafka
 
@@ -196,7 +203,9 @@ exec Diagnostic --set modules.diagnostic.targets=kafka
 | KafkaOfflinePartitions | Critical | One or more partitions have no active leader for 1 minute. | Producers and consumers cannot read or write to the affected partitions. |
 | KafkaUnderReplicatedPartitions | Warning | One or more partitions have fewer in-sync replicas than configured, for 1 minute. | Kafka keeps two copies of each partition, so the affected partitions have a single copy left. A further broker failure can cause data loss or unavailability. |
 | KafkaZookeeperUnavailable | Critical | No Zookeeper pod is ready for 1 minute. | Kafka cluster coordination and broker registration are unavailable, which can prevent the cluster from recovering from other failures. |
-| KafkaTopicBacklogGrowing | Error | The consumer backlog of a topic is high and keeps growing, for 5 minutes. | Everything downstream of the topic falls behind. |
+| KafkaTopicBacklogGrowing | Error | The consumer backlog of a topic exceeds 500 messages and 2 minutes of consumption, and has kept growing over the last 10 minutes, for 5 minutes. | Everything downstream of the topic falls behind. |
+
+The `kafka` diagnostic also reports replicas that keep leaving and re-entering the in-sync set. This check has no matching alert: run the diagnostic to see it.
 
 ## Nodes
 
@@ -218,10 +227,12 @@ exec Diagnostic --set modules.diagnostic.targets=node
 | NodeClockDrift | Warning | The clock of a node drifts by more than 1 second, for 5 minutes. | TLS validation, cluster coordination, and event timestamps break. |
 | NodeFilesystemUsageHigh | Warning, Error | A node filesystem is at least 80% (warning) or 90% (error) full, for 5 minutes. | Once full, pods are evicted and services writing to the node fail. |
 | NodeFilesystemInodesUsageHigh | Warning, Error | A node filesystem uses at least 80% (warning) or 95% (error) of its inodes, for 5 minutes. | Once exhausted, no new file can be created on the filesystem. |
-| NodeFilesystemPredictedFull | Warning | A node filesystem is predicted to fill up within 24 hours, for 1 hour. | The filesystem will be full without action. |
+| NodeFilesystemPredictedFull | Warning | A node filesystem more than 60% full is predicted to fill up within 24 hours, for 1 hour. | The filesystem will be full without action. |
 | NodePvcUsageHigh | Warning, Error | A persistent volume is at least 80% (warning) or 90% (error) full, for 5 minutes. | Once full, the owning service crashes or switches to read-only. |
 | NodePvcInodesUsageHigh | Warning, Error | A persistent volume uses at least 80% (warning) or 95% (error) of its inodes, for 5 minutes. | Once exhausted, the owning service cannot create any new file. |
-| NodePvcPredictedFull | Warning | A persistent volume is predicted to fill up within 24 hours, for 1 hour. | The volume will be full without action. |
+| NodePvcPredictedFull | Warning | A persistent volume more than 60% full is predicted to fill up within 24 hours, for 1 hour. | The volume will be full without action. |
+
+The node filesystem alerts exclude the Ceph-backed volumes (`rbd` devices), which the persistent volume alerts cover. The persistent volume alerts exclude the Kafka and ClickHouse data volumes, which have their own alerts in the [Kafka](#kafka) and [ClickHouse](#clickhouse) groups. No alert covers the Ceph storage pool: the Ceph metrics are not collected in Self-Hosted, which is expected. To check the Ceph status, use the Storage tab of the [SHC interface](/self_hosted/1.0.1/operations/controller_interface.md).
 
 ## Detection
 
@@ -235,8 +246,8 @@ exec Diagnostic --set modules.diagnostic.targets=sigma_workflow
 | :--- | :--- | :--- | :--- |
 | SigmaWorkflowWorkerPartitionAssignmentImbalance | Warning, Error | The busiest detection worker has more than 2 (warning) or 4 (error) partitions more than the least busy one, for 15 minutes. | Some workers carry a disproportionate share of the event stream. |
 | SigmaWorkflowKeydbKeyCountDisparity | Warning, Error | The key count differs by more than 200 (warning) or 500 (error) between the KeyDB replicas, for 15 minutes. | Detection can run on stale rules, assets, or correlation state. |
-| SigmaWorkflowCorrelationKafkaLagGrowing | Error | The correlation consumer lag is high and keeps growing, for 5 minutes. | Correlation falls behind the live event stream. |
-| SigmaWorkflowMatcherKafkaLagGrowing | Error | The detection consumer lag is high and keeps growing, for 5 minutes. | Detection falls behind the live event stream, and alerts are late. |
+| SigmaWorkflowCorrelationKafkaLagGrowing | Error | The correlation consumer lag exceeds 500 messages and 2 minutes of consumption, and has kept growing over the last 10 minutes, for 5 minutes. | Correlation falls behind the live event stream. |
+| SigmaWorkflowMatcherKafkaLagGrowing | Error | The detection consumer lag exceeds 500 messages and 2 minutes of consumption, and has kept growing over the last 10 minutes, for 5 minutes. | Detection falls behind the live event stream, and alerts are late. |
 | SigmaWorkflowCorrelationHighFailureRatio | Warning, Error | More than 10% (warning) or 25% (error) of the correlation queries fail, for 5 minutes. | Correlation rules stop producing alerts. |
 | SigmaWorkflowRuleCompilationHighFailureRatio | Warning, Error | More than 10% (warning) or 25% (error) of the detection rules fail to compile, for 15 minutes. | Detection silently runs on stale rules. |
 | SigmaWorkflowDeploymentNoAvailableReplicas | Critical | A detection deployment has no available replica, for 1 minute. | Event matching, correlation, or rule compilation is down. |
@@ -305,6 +316,6 @@ exec Diagnostic --set modules.diagnostic.targets=<target>
 
 ## Related links
 
-- [Monitor your platform](monitoring_guide.md): Daily monitoring and incident-response workflows, including the Grafana dashboard reference.
-- [Run platform diagnostics](run_diagnostics.md): Targeted Prometheus health checks to narrow an incident to the affected service.
-- [Debug your deployment](../troubleshooting/debug_tool.md): Full SHC debug command reference with remediation steps.
+- [Monitor your platform](/self_hosted/1.0.1/monitoring/monitoring_guide.md): Daily monitoring and incident-response workflows, including the Grafana dashboard reference.
+- [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md): Targeted Prometheus health checks to narrow an incident to the affected service.
+- [Debug your deployment](/self_hosted/1.0.1/troubleshooting/debug_tool.md): Full SHC debug command reference with remediation steps.

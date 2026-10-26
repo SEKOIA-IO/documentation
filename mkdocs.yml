@@ -758,27 +758,30 @@ nav:
 - Self-hosted deployment:
   - Introduction: self_hosted/index.md
   - Documentation versions: self_hosted/versions.md
-  - v1.0.0:
-    - Overview: self_hosted/1.0.0/index.md
+  - v1.0.1:
+    - Overview: self_hosted/1.0.1/index.md
     - Architecture:
-      - Reference Architecture: self_hosted/1.0.0/architecture/architecture.md
+      - Reference architecture: self_hosted/1.0.1/architecture/architecture.md
     - Deployment:
-      - Technical requirements: self_hosted/1.0.0/deployment/deployment_prerequisites.md
-      - Network requirements: self_hosted/1.0.0/deployment/network_requirements.md
-      - The deployment process: self_hosted/1.0.0/deployment/deployment_process.md
-      - Configure the deployment: self_hosted/1.0.0/deployment/deployment_configuration.md
-      - Deploy the platform: self_hosted/1.0.0/deployment/deployment_guide.md
+      - Technical requirements: self_hosted/1.0.1/deployment/deployment_prerequisites.md
+      - Network requirements: self_hosted/1.0.1/deployment/network_requirements.md
+      - The deployment process: self_hosted/1.0.1/deployment/deployment_process.md
+      - Configure the deployment: self_hosted/1.0.1/deployment/deployment_configuration.md
+      - Deploy the platform: self_hosted/1.0.1/deployment/deployment_guide.md
     - Operations:
-      - Set up the first administrator account: self_hosted/1.0.0/operations/first_login.md
-      - Use the SHC interface: self_hosted/1.0.0/operations/controller_interface.md
-      - Import the CTI database: self_hosted/1.0.0/operations/import_cti_database.md
-      - Reset or destroy the platform: self_hosted/1.0.0/operations/reset_platform.md
+      - Set up the first administrator account: self_hosted/1.0.1/operations/first_login.md
+      - Use the SHC interface: self_hosted/1.0.1/operations/controller_interface.md
+      - Import the CTI database: self_hosted/1.0.1/operations/import_cti_database.md
+      - Back up the platform: self_hosted/1.0.1/operations/backups.md
+      - Update the security content: self_hosted/1.0.1/operations/update_security_content.md
+      - Rotate the certificate and credentials: self_hosted/1.0.1/operations/rotate_certificate_and_credentials.md
+      - Reset or destroy the platform: self_hosted/1.0.1/operations/reset_platform.md
     - Monitoring and troubleshooting:
-      - Monitor your platform: self_hosted/1.0.0/monitoring/monitoring_guide.md
-      - Run platform diagnostics: self_hosted/1.0.0/monitoring/run_diagnostics.md
-      - Platform alerts reference: self_hosted/1.0.0/monitoring/platform_alerts.md
-      - Debug your deployment: self_hosted/1.0.0/troubleshooting/debug_tool.md
-    - Release notes: self_hosted/1.0.0/release_notes.md
+      - Monitor your platform: self_hosted/1.0.1/monitoring/monitoring_guide.md
+      - Run platform diagnostics: self_hosted/1.0.1/monitoring/run_diagnostics.md
+      - Platform alerts reference: self_hosted/1.0.1/monitoring/platform_alerts.md
+      - Debug your deployment: self_hosted/1.0.1/troubleshooting/debug_tool.md
+    - Release notes: self_hosted/1.0.1/release_notes.md
 - API Documentation:
   - API Reference: developer/api.md
   - Quickstart: developer/quickstart.md
