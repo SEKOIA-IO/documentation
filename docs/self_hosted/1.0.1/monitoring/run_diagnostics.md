@@ -6,6 +6,7 @@ The Diagnostic module runs targeted health checks against the platform's Prometh
 
 - You have access to the orchestration node.
 - The platform and its Prometheus service are running.
+- The SHC can connect over SSH to the first manager node. The `Diagnostic` module first runs `GetKubeconfig`, which copies the kubeconfig from that node and changes nothing on the cluster. See [Prometheus connection](#prometheus-connection).
 - You completed the post-deployment validation in [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md).
 
 !!! warning "Run diagnostics before changing the platform"
@@ -24,7 +25,7 @@ The module runs these targets in alphabetical order:
 | Target | What it checks |
 | :--- | :--- |
 | `alerts` | The alerts pipeline: sightings worker progress, sighting processing error budget, `sicalertapi` Celery worker availability and task failures, `handle_sighting_from_redis` failures, and OC Events API worker task reception. |
-| `asset_discovery` | The `assetdiscoveryworker` deployment: available replicas, consumption of the `ueba.facts` topic, reconciliation cycle duration, reconciliation conflict rate, fingerprint collisions, fact production from XDR agent events, and failing discovery rules. |
+| `asset_discovery` | The `assetdiscoveryworker` deployment: available replicas, consumption of the `ueba.facts` topic, reconciliation cycle duration, reconciliation conflict rate, fingerprint collisions, and failing discovery rules. |
 | `asset_management` | The `assetmanagementapiv2` services: available replicas, compliance and event-notification worker consumption and error rates, risk-score recomputes skipped for missing assets, compiled asset inventory build failures, and an asset matcher that processes events without enriching them. |
 | `clickhouse` | The ClickHouse cluster and its keeper ensemble: shards with no ready replica, replicas not ready, keeper availability, read-only tables, data volume usage, and the distributed insert backlog. |
 | `console` | Access to the console, most likely cause first: the credentials store (Vault) sealed or down, the ingress and its TLS certificate (configured or served certificate expiring within 21 days, missing or invalid secret, failed TLS handshake, Traefik down, server error ratio on HTTPS requests, stale certificate exporter), the `front` deployment, the authentication service (`communityapi` availability, secret, and server error ratio), and the GraphQL gateway. |
@@ -63,7 +64,7 @@ To run more than one target, separate their names with commas:
 exec Diagnostic --set modules.diagnostic.targets=alerts,telemetry
 ```
 
-The module continues with the remaining targets when one target cannot be loaded or queried. Review the terminal error for each target that does not produce results.
+The module continues with the remaining targets when one target cannot be loaded or queried. For each target, the SHC logs a `diagnostic failed` error with the target name and the cause and the report holds no result for it. A misspelled target name produces the same error: check the name against the table in [Run all diagnostic targets](#run-all-diagnostic-targets). When no target produces results, the module prints no report.
 
 ## Change diagnostic output
 
@@ -79,13 +80,29 @@ By default, `modules.diagnostic.format` is `rich`: the report is rendered with c
 exec Diagnostic --set modules.diagnostic.format=json --set modules.diagnostic.hide_ok=false
 ```
 
-To check which rules a target contains without querying Prometheus, set `modules.diagnostic.dry_run` to `true`. The module validates each rule file and lists its rules and data sources:
+To check which rules a target contains without querying Prometheus, set `modules.diagnostic.dry_run` to `true`. The module validates each rule file and lists its rules and data sources. It still runs `GetKubeconfig` first:
 
 ```bash
 exec Diagnostic --set modules.diagnostic.targets=node --set modules.diagnostic.dry_run=true
 ```
 
 The `format` and `hide_ok` settings apply to the terminal report of the CLI. The Diagnostics tab of the SHC interface renders one panel per rule, successful ones included, whatever these settings are.
+
+## Prometheus connection
+
+By default, the `Diagnostic` module reaches Prometheus through the Kubernetes API, it retrieves the kubeconfig with `GetKubeconfig`, then opens a port-forward to the Prometheus service of the platform for the duration of the run. When `GetKubeconfig` fails, the module stops with an error before it runs any check. As a prerequisite, `GetKubeconfig` is skipped for 300 seconds after a successful run in the same SHC session.
+
+The following keys control the connection. They are optional, set them in your `config.yml` only to reach Prometheus at another address or to allow slower queries.
+
+| Field | Description | Default |
+| :--- | :--- | :--- |
+| `utils.prometheus.url` | Prometheus base URL, for example `http://prometheus.example.com:9090`. When set, the module queries this URL directly and opens no port-forward. When empty, it opens a port-forward to the service defined by the `utils.prometheus.port_forward` keys. | Empty |
+| `utils.prometheus.query_timeout` | Maximum duration of each Prometheus query, in seconds. A query that exceeds it makes its check report `CRIT` with a `Query failed` explanation. | `10` |
+| `utils.prometheus.port_forward.namespace` | Namespace of the Prometheus service. | `support` |
+| `utils.prometheus.port_forward.resource` | Prometheus service targeted by the port-forward. | `svc/prometheus-server` |
+| `utils.prometheus.port_forward.remote_port` | Port of the Prometheus service. | `80` |
+
+Change the `utils.prometheus.port_forward` keys only with guidance from Sekoia: the defaults match the platform deployment.
 
 ## Run a diagnostic from the SHC interface
 
