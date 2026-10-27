@@ -33,6 +33,8 @@ To request a consistent language, state it explicitly in the instructions. For e
 !!! example "Request investigations in French"
     Write all investigation explanations, verdicts, findings, and reasoning answers in French. Keep product names, detection names, query syntax, and field names unchanged.
 
+![Community-level Elevate instructions requesting French verdict explanations and findings](/assets/elevate/custom-instructions-language.png){: style="max-width:100%"}
+
 ![Elevate investigation showing a verdict and findings written in French](/assets/elevate/french-investigation-example.png){: style="max-width:100%"}
 
 Use a workspace-level instruction when all communities should use the same language. To use a different language for each tenant or customer, add the instruction at community level instead.
