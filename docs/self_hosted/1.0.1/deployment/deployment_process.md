@@ -39,7 +39,7 @@ The SHC accepts the following commands, in the TUI and in one-shot CLI mode:
 !!! note "Runtime overrides"
     A module accepts `--set` only for the keys it declares. To see them, run `help <MODULE>`. An override applies to the module and to the prerequisite modules it runs, and is never written to `config.yml`. The values `on`, `off`, `yes`, and `no` stay text values: a boolean key accepts only `true` or `false`.
 
-To display the list of SHC modules, run:
+To display the list of SHC modules grouped by function, run:
 
 ```bash
 list
@@ -47,54 +47,67 @@ list
 
 ??? example "Example output"
     ```text
-    Name                           Function
-    Backups                        Check (-m status) or trigger (-m run_now) Vault, PostgreSQL, ArangoDB and ClickHouse backups
-    CheckKubernetesCluster         Check the Kubernetes cluster is reachable and all nodes are Ready
-    CheckLocalConfig               Validate the local controller configuration file
-    CheckLocalGit                  Verify connectivity and access to the git repository
-    CheckLocalOCIRegistry          Verify push/pull/delete access to the OCI registry
-    CheckLocalReleaseFiles         Verify that all release files are present on disk
-    CheckLocalTools                Check presence of local binary tools
-    CheckNodePortReachability      Check every node can reach the other nodes on the cluster ports (6443, etcd, cilium, intake)
-    CheckS3Performance             Benchmark the S3 endpoint per worker node with warp and check thresholds
-    CheckServerSpec                Check that servers meet hardware and OS requirements
-    CheckServersAreReachable       Check SSH connectivity to all configured servers
-    CleanupCilium                  Destructively remove Cilium networking on dedicated nodes after K3s is stopped
-    CleanupHelmReleases            Remove pending, failed, or uninstalling Helm revision secrets
-    DebugArgoCD                    Display ArgoCD status dashboard (repositories, root app, applications)
-    DebugArgoCDSyncAll             Sync all ArgoCD applications (partial → restart operator → full sync)
-    DebugDatabases                 Report health of StatefulSets and CNPG Clusters in support namespace
-    DebugMissingSecrets            Check SecretGenerator objects for missing or incomplete secrets
-    DebugResourceAllocation        Show per-pod RAM request vs actual usage, sorted by waste
-    Diagnostic                     Run diagnostic checks on the self-hosted platform
-    DownloadDataFiles              Download self-hosted data bundles from S3 to local storage
-    DownloadReleaseFiles           Download release files from S3 to local storage
-    GetKubeconfig                  Retrieve kubeconfig from the first K3s manager node
-    GetServerStatus                Fetch live status (CPU/RAM/disk/load) for all servers, read-only
-    HelmInstall                    Install Helm and deploy offline charts via Ansible
-    ImportArangoCollection         Import one or more ArangoDB collections from S3 or a local directory (mirrors arango-export)
-    Install                        Run the full installation workflow
-    InstanceBootstrap              Bootstrap default storage and per-community Quickwit indexes
-    K3SInstall                     Install a K3s cluster on managers and workers via Ansible
-    K3SUninstall                   Uninstall K3s and remove Cilium networking on dedicated nodes via Ansible
-    KubeCrashRecovery              Restart all pods in ordered namespace phases
-    PlatformAccess                 Display platform access credentials (URLs, users, passwords)
-    PlatformConfigurationFile      Generate the platform-installer Helm values file
-    PlatformDestroy                Irreversibly destroy the platform (requires modules.platform_scale_down.enabled; auto-mode Ceph disk wiping also requires modules.wipe_storage.enabled)
-    PlatformInstallation           Run the platform installation via a single installer job
-    PlatformScaleDown              Irreversibly delete non-protected namespaces and verify client volume release
-    PushArgoStacks                 Sync ArgoCD application stacks to the git repository
-    PushCharts                     Push Helm chart archives to the OCI registry
-    PushDataBundles                Push self-hosted data bundles to the OCI registry
-    PushImages                     Push Docker image archives to the OCI registry
-    RebootNodes                    Reboot all nodes in the inventory
-    RestartAllMicroservices        Restart all marked microservices and wait for their rollouts, leaving databases running
-    ScaleServices                  Scale Deployments (e.g. ingest/sigma-workflow workers) to their configured replica count
-    SyncArgoRootApp                Sync the ArgoCD root application and wait for completion
-    SyncIntakeFormats              Sync the intake formats data bundle through ArgoCD
-    SyncRulesCatalog               Sync the rules catalog data bundle through ArgoCD
-    UpdatePlatformData             Update intake formats and rules catalog data releases
-    WipeStorageDisks               Wipe auto-mode Ceph disks and Rook host state (requires modules.wipe_storage.enabled; K3s/Ceph stopped)
+    Release management
+    DownloadDataFiles          Download self-hosted data bundles from S3 to local storage
+    DownloadReleaseFiles       Download release files from S3 to local storage
+    PushArgoStacks             Sync ArgoCD application stacks to the git repository
+    PushCharts                 Push Helm chart archives to the OCI registry
+    PushDataBundles            Push self-hosted data bundles to the OCI registry
+    PushImages                 Push Docker image archives to the OCI registry
+    UpdatePlatformData         Update intake formats and rules catalog data releases
+
+    Preflight checks
+    CheckKubernetesCluster     Check the Kubernetes cluster is reachable and all nodes are Ready
+    CheckLocalConfig           Validate the local controller configuration file
+    CheckLocalGit              Verify connectivity and access to the git repository
+    CheckLocalOCIRegistry      Verify push/pull/delete access to the OCI registry
+    CheckLocalReleaseFiles     Verify that all release files are present on disk
+    CheckLocalTools            Check presence of local binary tools
+    CheckNodePortReachability  Check every node can reach the other nodes on the cluster ports (6443, etcd, cilium, intake)
+    CheckS3Performance         Benchmark the S3 endpoint per worker node with warp and check thresholds
+    CheckServerSpec            Check that servers meet hardware and OS requirements
+    CheckServersAreReachable   Check SSH connectivity to all configured servers
+
+    Installation
+    Install                    Run the full installation workflow
+    K3SInstall                 Install a K3s cluster on managers and workers via Ansible
+    PlatformInstallation       Run the platform installation via a single installer job
+
+    Operations
+    Backups                    Check (-m status) or trigger (-m run_now) Vault, PostgreSQL, ArangoDB and ClickHouse backups
+    GetKubeconfig              Retrieve kubeconfig from the first K3s manager node
+    GetServerStatus            Fetch live status (CPU/RAM/disk/load) for all servers, read-only
+    ImportArangoCollection     Import one or more ArangoDB collections from S3 or a local directory (mirrors arango-export)
+    KubeCrashRecovery          Restart all pods in ordered namespace phases
+    PlatformAccess             Display platform access credentials (URLs, users, passwords)
+    RebootNodes                Reboot all nodes in the inventory
+    RestartAllMicroservices    Restart all marked microservices and wait for their rollouts, leaving databases running
+    ScaleServices              Scale Deployments (e.g. ingest/sigma-workflow workers) to their configured replica count
+
+    Diagnostics
+    CleanupHelmReleases        Remove pending, failed, or uninstalling Helm revision secrets
+    DebugArgoCD                Display ArgoCD status dashboard (repositories, root app, applications)
+    DebugArgoCDSyncAll         Sync all ArgoCD applications (partial → restart operator → full sync)
+    DebugDatabases             Report health of StatefulSets and CNPG Clusters in support namespace
+    DebugMissingSecrets        Check SecretGenerator objects for missing or incomplete secrets
+    DebugResourceAllocation    Show per-pod RAM request vs actual usage, sorted by waste
+    Diagnostic                 Run diagnostic checks on the self-hosted platform
+
+    Uninstall
+    CleanupCilium              Destructively remove Cilium networking on dedicated nodes after K3s is stopped
+    K3SUninstall               Uninstall K3s and remove Cilium networking on dedicated nodes via Ansible
+    PlatformDestroy            Irreversibly destroy the platform (requires modules.platform_scale_down.enabled; auto-mode Ceph disk wiping also requires
+                               modules.wipe_storage.enabled)
+    PlatformScaleDown          Irreversibly delete non-protected namespaces and verify client volume release
+    WipeStorageDisks           Wipe auto-mode Ceph disks and Rook host state (requires modules.wipe_storage.enabled; K3s/Ceph stopped)
+
+    Internal
+    HelmInstall                Install Helm and deploy offline charts via Ansible
+    InstanceBootstrap          Bootstrap default storage and per-community Quickwit indexes
+    PlatformConfigurationFile  Generate the platform-installer Helm values file
+    SyncArgoRootApp            Sync the ArgoCD root application and wait for completion
+    SyncIntakeFormats          Sync the intake formats data bundle through ArgoCD
+    SyncRulesCatalog           Sync the rules catalog data bundle through ArgoCD
     ```
 
 ExaLog, the event storage and search capability, runs on Quickwit. Some module names, logs, and configuration keys keep the `quickwit` name, such as the `InstanceBootstrap` description above.
