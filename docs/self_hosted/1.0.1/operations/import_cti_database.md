@@ -67,8 +67,8 @@ The SHC reads each collection from `<global.version.data.cti.path>/cti/<collecti
 
 ## Import the CTI database
 
-!!! tip "Safe to run again"
-    The import updates the documents that already exist. If an import fails, run the command again.
+!!! tip "Retry with the default import policy"
+    With `modules.import_arango_collection.truncate=false` and `modules.import_arango_collection.on_duplicate=update` (the defaults), the import updates documents with the same `_key` without clearing the collections first. If an import fails, fix the reported cause, then run it again. Check the [import safety settings](#import-safety-and-tuning) before retrying with a custom configuration.
 
 To import the CTI database, run:
 
@@ -84,6 +84,29 @@ The SHC reads the ArangoDB root password of the platform from the `arangodb-oper
 | `utils.arango.password_secret.namespace` | Namespace of the secret holding the ArangoDB password. | `support` |
 | `utils.arango.password_secret.name` | Name of the secret. | `arangodb-operator-dashboard` |
 | `utils.arango.password_secret.key` | Key of the password in the secret. | `password` |
+
+## Import safety and tuning
+
+These settings apply to every collection in the import. Set them in `config.yml` and restart the SHC after editing, or override them for one run with `exec ImportArangoCollection --set KEY=VALUE`. Runtime overrides do not change `config.yml` or later runs.
+
+| Field | Description | Default |
+| :--- | :--- | :--- |
+| `modules.import_arango_collection.truncate` | `true` clears each target collection before importing its parts. Keep `false` for routine updates and failure retries. | `false` |
+| `modules.import_arango_collection.on_duplicate` | Policy for documents whose `_key` already exists: `update` merges the imported fields, `replace` replaces the document, `ignore` keeps the existing document, and `error` reports a duplicate as an import error. | `update` |
+| `modules.import_arango_collection.threads` | Positive number of part files imported concurrently. Lower it to reduce memory use in the SHC and concurrent load on ArangoDB. | `8` |
+| `modules.import_arango_collection.retries` | Maximum attempts per part file, including the first attempt, not additional retries. Must be at least `1`. | `5` |
+| `modules.import_arango_collection.retry_backoff_seconds` | Non-negative base delay in seconds between failed attempts, doubled for each subsequent retry. | `2` |
+
+For example, to reduce concurrent imports for one run:
+
+```bash
+exec ImportArangoCollection --set modules.import_arango_collection.threads=4
+```
+
+!!! warning "Truncation deletes existing data before the import succeeds"
+    With `truncate=true`, the SHC clears each target collection that has parts to import before loading its first part. A failure can leave that collection empty or only partly imported. There is no rollback. Each new invocation clears the collections again; automatic retries of a part do not. Use truncation only for a planned full replacement, with Sekoia support and a verified ArangoDB backup. See [Back up the platform](/self_hosted/1.0.1/operations/backups.md). Do not leave `truncate=true` in the configuration for routine imports.
+
+Imports are not atomic, even with truncation disabled. Successful writes remain when another part or collection fails. A retry re-reads the whole part and can encounter documents written by a previous attempt: `update` applies the imported fields again, while `error` can fail on those duplicates. A duplicate policy is not a rollback mechanism. Inspect the final per-part and per-collection errors before retrying; increasing the retry count does not repair invalid input documents.
 
 ## Select a CTI version
 
