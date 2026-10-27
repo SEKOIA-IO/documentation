@@ -38,7 +38,7 @@ The module runs these targets in alphabetical order:
 | `telemetry` | The telemetry services: available replicas, consumption by the events, sightings, and notifications workers, and ClickHouse push failures. |
 
 !!! note "Ceph storage pool"
-    No target checks the Ceph storage pool, because the Ceph metrics are not collected in Self-Hosted. This is expected and does not indicate an incomplete deployment. The `node` target checks the persistent volumes that Ceph provides, but not the capacity of the Ceph pool or of its disks, which carry no node filesystem. To inspect Ceph, use the Storage tab of the [SHC interface](/self_hosted/1.0.1/operations/controller_interface.md), which shows the output of `ceph status`, `ceph osd df`, and `ceph osd tree`.
+    No target checks the Ceph storage pool. The `node` target checks the persistent volumes that Ceph provides, but not the capacity of the Ceph pool or of its disks, which carry no node filesystem. To inspect Ceph, use the **Ceph** row of the Default dashboard, described in [Monitor your platform](/self_hosted/1.0.1/monitoring/monitoring_guide.md#ceph), or the Storage tab of the [SHC interface](/self_hosted/1.0.1/operations/controller_interface.md), which shows the output of `ceph status`, `ceph osd df`, and `ceph osd tree`.
 
 By default, the terminal report hides successful checks. Failed or warning checks show the affected value and labels, an explanation, likely causes, and remediation actions. Each check reports one of these statuses:
 

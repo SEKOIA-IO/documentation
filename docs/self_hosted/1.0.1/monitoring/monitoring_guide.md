@@ -55,9 +55,6 @@ To access Grafana:
 
 The Default dashboard is the only dashboard shipped with Self-Hosted and the primary monitoring view of the deployment. It shows the last hour by default and refreshes every minute. It is organized into rows, each covering a different layer of the platform. The **Global info** and **Global workflow** rows are expanded by default. Expand any other row to display its panels.
 
-!!! note "Panels based on Ceph metrics"
-    The Ceph metrics are not collected in Self-Hosted. This is expected and does not indicate an incomplete deployment. Panels that read them stay empty: **Ceph cluster health** and **Storage used (Ceph)** in the **Global info** row, and the Ceph cluster panels of the **Ceph** row. To check the Ceph status, use the Storage tab of the [SHC interface](/self_hosted/1.0.1/operations/controller_interface.md).
-
 The rows appear in the following order.
 
 #### PVC usage
@@ -74,12 +71,12 @@ A row of summary panels that gives an at-a-glance overview of the whole platform
 
 | Panel | What it shows |
 | :--- | :--- |
-| Ceph cluster health | Health of the Ceph cluster. Empty in Self-Hosted, as expected: the Ceph metrics are not collected. |
+| Ceph cluster health | Health of the Ceph cluster. |
 | Bytes In | Ingested bytes per second across the syslog chain (`oc-pre-parser`) and the HTTP chain (`sic-intake-http-rs`). |
 | Load all nodes (5 minutes) | Number of nodes in each 10% bucket of 5-minute CPU load per core, over time. |
 | RAM used % | Number of nodes in each 10% bucket of RAM usage, over time. |
 | Time drift > 1s | Nodes whose clock drifts by more than one second. |
-| Storage used (Ceph) | Space used in the Ceph cluster. Empty in Self-Hosted, as expected: the Ceph metrics are not collected. |
+| Storage used (Ceph) | Space used in the Ceph cluster. |
 | API Response Time | Highest mean response time across the platform APIs, read from their logs. |
 | Celery Tasks | Highest Celery queue length, when it exceeds 1,000 tasks. |
 | Node Load | Highest 5-minute CPU load per core across the nodes, when it exceeds 0.75. |
@@ -162,7 +159,7 @@ ClickHouse metrics: read-only replicas and files waiting for distributed inserti
 
 #### Ceph
 
-Storage metrics. The disk I/O time per device, the slow disk detection, and the CPU and RAM usage of the Ceph OSD pods work in Self-Hosted. The other panels stay empty, which is expected: disk usage, estimated days before 90% usage, disk space delta, usage per pool and per OSD, bytes and operations read and written, apply latency, and monitor elections read Ceph metrics, which are not collected, and `node_disk_io_time_weighted` filters on a label that Self-Hosted metrics do not carry.
+Storage metrics: disk I/O time per device and slow disk detection, CPU and RAM usage of the Ceph OSD pods, Ceph disk usage and usage percentage, usage of the replica pool and of each OSD, bytes and operations read and written, apply latency, and monitor elections. Three panels stay empty, which is expected: **Days left before 90% on Ceph (estimated)** and **Disk space delta** compare the usage with 14, 28, or 91 days earlier, beyond the 7-day retention of Prometheus, and **node_disk_io_time_weighted** filters on a label that Self-Hosted metrics do not carry.
 
 #### ExaLog
 

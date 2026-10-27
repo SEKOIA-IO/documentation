@@ -2,7 +2,7 @@
 
 The self-hosted-controller (SHC) imports the Sekoia CTI database into the ArangoDB database of your platform with the `ImportArangoCollection` command. It reads the latest CTI export from the Sekoia release bucket in online mode, or from the orchestration node in air-gapped mode, and loads the STIX objects and relationships it contains.
 
-The imported database feeds observable tags enrichment, contextualized alerts, and the `SEKOIA Intelligence Feed` detection rule. The Intelligence module is not available in Sekoia Self-Hosted 1.0.1.
+The imported database feeds contextualized alerts and the `SEKOIA Intelligence Feed` detection rule. It does not contain the observables and their tags, so observable tags enrichment is not available. The Intelligence module is not available in Sekoia Self-Hosted 1.0.1.
 
 ## Prerequisites
 

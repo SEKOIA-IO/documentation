@@ -230,7 +230,7 @@ exec Diagnostic --set modules.diagnostic.targets=node
 | NodePvcInodesUsageHigh | Warning, Error | A persistent volume uses at least 80% (warning) or 95% (error) of its inodes, for 5 minutes. | Once exhausted, the owning service cannot create any new file. |
 | NodePvcPredictedFull | Warning | A persistent volume more than 60% full is predicted to fill up within 24 hours, for 1 hour. | The volume will be full without action. |
 
-The node filesystem alerts exclude the Ceph-backed volumes (`rbd` devices), which the persistent volume alerts cover. The persistent volume alerts exclude the Kafka and ClickHouse data volumes, which have their own alerts in the [Kafka](#kafka) and [ClickHouse](#clickhouse) groups. No alert covers the Ceph storage pool: the Ceph metrics are not collected in Self-Hosted, which is expected. To check the Ceph status, use the Storage tab of the [SHC interface](/self_hosted/1.0.1/operations/controller_interface.md).
+The node filesystem alerts exclude the Ceph-backed volumes (`rbd` devices), which the persistent volume alerts cover. The persistent volume alerts exclude the Kafka and ClickHouse data volumes, which have their own alerts in the [Kafka](#kafka) and [ClickHouse](#clickhouse) groups. No alert covers the Ceph storage pool. To check the Ceph status, use the **Ceph** row of the Default dashboard, described in [Monitor your platform](/self_hosted/1.0.1/monitoring/monitoring_guide.md#ceph), or the Storage tab of the [SHC interface](/self_hosted/1.0.1/operations/controller_interface.md).
 
 ## Detection
 
