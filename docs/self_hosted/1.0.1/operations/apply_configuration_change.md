@@ -1,6 +1,6 @@
 # Apply a configuration change
 
-To change an installed Sekoia Self-Hosted platform, edit the `config.yml` file of the self-hosted-controller (SHC), then apply it with the appropriate modules. For a change without a dedicated procedure, run `Install` again. `Install` is idempotent. Each run converges the platform to the state declared in `config.yml`. It keeps what already matches and applies only the differences.
+To change an installed Sekoia Self-Hosted platform, edit the `config.yml` file of the self-hosted-controller (SHC), then apply it with the appropriate modules. For a change without a dedicated procedure, run `Install` again. Each run converges the platform to the state declared in `config.yml`. It reuses existing resources where possible, but can still restart components even when `config.yml` has not changed.
 
 This page describes the general procedure, for example for a new SMTP server, a new proxy, or a sizing override, and a shorter procedure to [change worker replica counts](#change-worker-replica-counts).
 
@@ -106,7 +106,7 @@ The next run of `ScaleServices` or `Install` applies the counts in the computed 
 
 ### Result
 
-The platform runs with the values declared in `config.yml`. K3s restarted on the nodes whose K3s files changed. The components whose configuration changed were redeployed. The other components kept running. A further run of `Install` with the same `config.yml` changes nothing on the platform.
+The platform runs with the values declared in `config.yml`. K3s restarted on the nodes whose K3s files changed. The components whose configuration changed were redeployed, and `PlatformInstallation` restarted the secret operator. A further run of `Install` with the same `config.yml` converges to the same declared state, but still runs the installation steps and restarts the secret operator.
 
 ## Changes that Install does not apply
 
