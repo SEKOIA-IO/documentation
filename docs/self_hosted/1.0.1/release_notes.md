@@ -7,7 +7,7 @@ Sekoia Self-Hosted 1.0.1 is the first generally available release of Sekoia Self
 
 ## What's in 1.0.1
 
-**Self-hosted-controller (SHC).** One orchestration tool, run as a Docker container on the orchestration node, installs, configures, diagnoses, and resets the platform. You use it as a one-shot CLI or through its terminal interface, which shows a progress bar while it downloads the release files, pushes the images, and installs the platform, and a Diagnostics tab that runs a target rule by rule with live status. See [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md).
+**Self-hosted-controller (SHC).** One orchestration tool, run as a Docker container on the orchestration node, installs, configures, diagnoses, and resets the platform. You use it as a one-shot CLI or through its terminal interface, which shows a progress bar while it downloads the release files, pushes the images, and installs the platform, and a Diagnostics tab that runs one target, or all of them, rule by rule with live status. See [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md).
 
 **Air-gapped deployment.** You can deploy and operate the platform in restricted or fully disconnected environments, with no external connectivity. The SHC then uses the files extracted from the release archive and makes no request to the Sekoia release bucket. See [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md).
 

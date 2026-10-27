@@ -106,7 +106,7 @@ Change the `utils.prometheus.port_forward` keys only with guidance from Sekoia: 
 
 ## Run a diagnostic from the SHC interface
 
-The interactive interface of the self-hosted-controller (SHC) exposes the same targets on its Diagnostics tab, with one collapsible panel per rule, live status, sortable result tables, and clipboard copy. See [Run a diagnostic from the Diagnostics tab](/self_hosted/1.0.1/operations/controller_interface.md#run-a-diagnostic-from-the-diagnostics-tab).
+The interactive interface of the self-hosted-controller (SHC) exposes the same targets on its Diagnostics tab, with one collapsible panel per rule, live status, sortable result tables, and clipboard copy. You run one target at a time, or select **Run all diagnostics** to run every target in a single result view. See [Run a diagnostic from the Diagnostics tab](/self_hosted/1.0.1/operations/controller_interface.md#run-a-diagnostic-from-the-diagnostics-tab).
 
 ## Result
 
