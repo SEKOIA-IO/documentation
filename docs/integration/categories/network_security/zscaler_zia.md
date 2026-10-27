@@ -10,6 +10,8 @@ Zscaler Internet Access is a cloud-native security platform that delivers secure
 - **Detection based on**: Telemetry
 - **Supported application or feature**: File monitoring, Process monitoring, Process use of network
 
+[![Zscaler & Sekoia solution brief](/assets/integration/sekoia-cta-zscaler-hero.png)](https://www.sekoia.com/zscaler-solution-brief){: style="width: 100%; max-width: 100%"}
+
 ### Supported logs
 
 This integration can ingest the following logs:
