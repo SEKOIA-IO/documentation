@@ -195,4 +195,4 @@ For the full OpenID Connect configuration, see [Configure SSO with OpenID Connec
 
 - [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md): Deployment steps and post-deployment validation.
 - [Monitor your platform](/self_hosted/1.0.1/monitoring/monitoring_guide.md): How to set up alerts and dashboards for daily operations.
-- [Release notes v1.0.1](/self_hosted/1.0.1/release_notes.md): Feature scope and known limitations.
+- [Release notes v1.0.1](/self_hosted/1.0.1/release_notes.md): Feature scope and functional constraints.

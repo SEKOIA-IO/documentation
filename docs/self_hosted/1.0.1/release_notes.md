@@ -1,6 +1,6 @@
 # Release notes v1.0.1
 
-Sekoia Self-Hosted 1.0.1 is the first generally available release of Sekoia Self-Hosted. This article describes what the release contains, the available modules and their feature scope, the functional constraints, and the limitations.
+Sekoia Self-Hosted 1.0.1 is the first generally available release of Sekoia Self-Hosted. This article describes what the release contains, the available modules and their feature scope, and the functional constraints.
 
 !!! note "Import the threat intelligence after the installation"
     The installation does not deploy the Sekoia CTI database. Import it with the SHC once the platform is installed. See [Threat intelligence](#threat-intelligence).
@@ -19,7 +19,7 @@ Sekoia Self-Hosted 1.0.1 is the first generally available release of Sekoia Self
 
 **CTI database import.** `ImportArangoCollection` imports the Sekoia CTI database into the platform, from the Sekoia release bucket or, in air-gapped mode, from the daily CTI archive published by Sekoia. Once imported, it feeds contextualized alerts. The installation also creates the `SEKOIA Intelligence Feed` detection rule, which matches events against the indicators of the CTI database. The SHC reads the ArangoDB password from the cluster: you do not provide it. See [Import the CTI database](/self_hosted/1.0.1/operations/import_cti_database.md).
 
-**Platform backups.** With `modules.platform_configuration.config.backups.enabled` set to `true`, the platform backs up Vault (daily encrypted snapshot, 30 kept), every PostgreSQL cluster including the ExaLog metastore (daily base backup and continuous WAL archiving, kept 30 days), ArangoDB (daily encrypted archive), and ClickHouse (encrypted daily incremental backups in monthly chains, 3 months kept). All backups go to one S3 bucket, by default `exalog-self-hosted-backups` on the platform storage, which you create beforehand. The encryption keys come from the `BACKUP_VAULT_CRYPT_KEY`, `BACKUP_ARANGO_CRYPT_KEY`, and `BACKUP_CLICKHOUSE_CRYPT_KEY` environment variables: keep a copy of them outside the platform. The `Backups` module checks the backup status from the S3 bucket, without access to the cluster, and `exec Backups -m run_now` triggers a backup of every enabled component. Backups are disabled by default. Restoring from a backup is not available in this release. See [Back up the platform](/self_hosted/1.0.1/operations/backups.md).
+**Platform backups.** With `modules.platform_configuration.config.backups.enabled` set to `true`, the platform backs up Vault (daily encrypted snapshot, 30 kept), every PostgreSQL cluster including the ExaLog metastore (daily base backup and continuous WAL archiving, kept 30 days), ArangoDB (daily encrypted archive), and ClickHouse (encrypted daily incremental backups in monthly chains, 3 months kept). All backups go to one S3 bucket, by default `exalog-self-hosted-backups` on the platform storage, which you create beforehand. The encryption keys come from the `BACKUP_VAULT_CRYPT_KEY`, `BACKUP_ARANGO_CRYPT_KEY`, and `BACKUP_CLICKHOUSE_CRYPT_KEY` environment variables: keep a copy of them outside the platform. The `Backups` module checks the backup status from the S3 bucket, without access to the cluster, and `exec Backups -m run_now` triggers a backup of every enabled component. Backups are disabled by default. See [Back up the platform](/self_hosted/1.0.1/operations/backups.md).
 
 **Security content updates.** The `UpdatePlatformData` module updates the detection rules and intake formats of an installed platform in one run. It downloads the bundles, or in air-gapped mode uses the bundles copied to the orchestration node, publishes them to your OCI registry, updates the ArgoCD stacks, and synchronizes the rules catalog and the intake formats. When a bundle is unavailable or its tag cannot be verified in the registry, it stops before it changes the deployed versions. The playbook library cannot be updated after the installation. See [Update the security content](/self_hosted/1.0.1/operations/update_security_content.md).
 
@@ -167,19 +167,6 @@ The following capabilities are therefore unavailable:
 ### Sekoia Forwarder
 
 The Sekoia Forwarder supports disconnected deployments but is an optional add-on not included in the standard release. Its packaging, delivery, installation, and upgrade process are managed per customer. Contact Sekoia if your deployment requires a Forwarder.
-
-## Limitations
-
-The following operations and capabilities are not part of Sekoia Self-Hosted 1.0.1.
-
-| Limitation | Impact | Workaround |
-| :--- | :--- | :--- |
-| Upgrade and rollback not supported | You cannot upgrade a 1.0.1 deployment to a later release, or roll it back to an earlier release, with the SHC. | None in 1.0.1. The release notes of each later version describe its upgrade path. |
-| Restore from backup not available | The platform backs up Vault, PostgreSQL, ArangoDB, and ClickHouse, but the SHC provides no restore procedure. `Backups` checks the backup files in the S3 bucket and does not test a restore. | Contact Sekoia support if you need to restore data from a backup. |
-| Playbook library not updatable | `UpdatePlatformData` updates the detection rules and intake formats, but the playbook library stays at the version deployed during the installation. | Contact Sekoia if your deployment requires an updated playbook library before the next release. |
-| Node removal not supported | You cannot remove a node from a running cluster with the SHC. | None. |
-| No graphical or web UI for platform administration | Infrastructure management is available only from the orchestration node. | Use the self-hosted-controller (SHC) terminal interface or one-shot CLI together with `config.yml` for administrative operations. |
-| Node operating system not managed by the SHC | The SHC does not install or harden the operating system of the nodes. During the K3s installation, it only installs `lvm2` and `gettext-base`, adds a systemd unit that activates the Ceph LVM volume groups at boot, and raises the inotify and `vm.max_map_count` kernel limits. | Provision the operating system and packages listed in [Technical requirements](/self_hosted/1.0.1/deployment/deployment_prerequisites.md) before you start the installation, and review [Changes applied by the SHC to the nodes](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#changes-applied-by-the-shc-to-the-nodes). |
 
 ## Related links
 
