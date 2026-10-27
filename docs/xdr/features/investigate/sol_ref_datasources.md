@@ -26,6 +26,9 @@
 | [asset_risk_score_history](#asset_risk_score_history) | Events that affected an asset risk score | Risk trajectory and score-driver analysis |
 | [rule_definitions](#rule_definitions) | Detection rule definitions (Sigma, CTI, Anomaly...) | Rules coverage reporting, audit of detection catalog |
 | [rule_instances](#rule_instances) | Instances of detection rules per community | Monitor enabled/disabled rules, compliance reporting |
+| [playbooks](#playbooks) | Playbooks of your community, with their status and triggers | Automation inventory, playbook health monitoring |
+| [playbook_runs](#playbook_runs) | Executions of your playbooks | Success rate, failure analysis, detection of stuck runs |
+| [node_runs](#node_runs) | Executions of each playbook step (triggers, actions, operators) | Root cause of failed runs, failed actions |
 
 ## event_telemetry
 
@@ -594,6 +597,217 @@ It can be joined with `rule_definitions` to produce reports on which rules are e
       by source = coalesce(source, "Custom"), type
     | order by source, type
     | select source, type, rules_count, enabled_rules_count
+    ```
+
+## playbooks
+
+The **playbooks** data source lists the playbooks of your community, with their current status and their trigger configurations. Each record represents the current version of a playbook.
+
+Use this data source to monitor the health of your automation: count active playbooks, find playbooks in error, and spot activated playbooks that stopped running. For a functional overview of playbooks, see [Playbooks](/xdr/features/automate/index.md).
+
+!!! note "Required permission"
+    Querying this data source requires the **View playbooks** permission.
+
+| **Property**             | **Description**                                                                                                       |
+|--------------------------|-----------------------------------------------------------------------------------------------------------------------|
+| uuid                     | Unique identifier of the playbook                                                                                     |
+| version                  | Version number of the playbook                                                                                        |
+| community_uuid           | UUID of the community the playbook belongs to                                                                         |
+| meta_community_uuids     | For a meta playbook, UUIDs of the communities that run it                                                             |
+| status                   | Playbook status: `activated`, `deactivated`, `starting`, `stopping`, or `error`                                       |
+| status_message           | Reason of the current status, for example why the playbook is in `error`                                             |
+| is_valid                 | Whether the playbook configuration is valid                                                                           |
+| name                     | Playbook name                                                                                                         |
+| created_at               | Date the playbook was created                                                                                         |
+| created_by               | User or system that created the playbook                                                                              |
+| created_by_type          | Type of entity that created the playbook                                                                              |
+| updated_at               | Date the playbook was last updated                                                                                    |
+| updated_by               | User or system that last updated the playbook                                                                         |
+| updated_by_type          | Type of entity that last updated the playbook                                                                         |
+| activated_at             | Date the playbook was last activated                                                                                  |
+| activated_by             | User or system that last activated the playbook                                                                       |
+| activated_by_type        | Type of entity that last activated the playbook                                                                       |
+| deactivated_at           | Date the playbook was last deactivated                                                                                |
+| deactivated_by           | User or system that last deactivated the playbook                                                                     |
+| deactivated_by_type      | Type of entity that last deactivated the playbook                                                                     |
+| is_parent                | Whether the playbook is a parent meta playbook                                                                        |
+| trigger_configurations.* | Trigger configurations of the playbook: `uuid`, `name`, `value`, `trigger_id`, and `status` (`running`, `stopped`, `starting`, or `stopping`) |
+| playbook_runs.*          | Runs of the playbook: `uuid`, `status`, `error`, `store`, `started_at`, `started_by`, `started_by_type`, `pending_at`, `running_at`, and `finished_at`. See [playbook_runs](#playbook_runs) |
+
+!!! note "Properties available in SOL"
+    This data source exposes a subset of the properties returned by the [Playbooks API](https://docs.sekoia.com/xdr/develop/rest_api/playbooks/). Properties such as `description`, `custom_fields`, `doctor_status`, `doctor_codes`, or `status_tags` are not available in SOL.
+
+!!! tip "Working with the runs of a playbook"
+    Each playbook record includes the list of all its runs in the `playbook_runs.*` fields. Use `project` to return only the columns you need, for example `playbooks | project name, status`. In a `where` clause, a condition on `playbook_runs.*` matches a playbook when at least one of its runs matches.
+
+??? example "Count activated playbooks"
+
+    ```shell
+    playbooks
+    | where status == "activated"
+    | aggregate active_playbooks = count()
+    ```
+
+??? example "List activated playbooks without any run in the last 7 days"
+
+    These playbooks are active but no longer run. Their trigger or the data they listen to may be broken.
+
+    ```shell
+    playbooks
+    | where status == "activated"
+    | where not playbook_runs.started_at > ago(7d)
+    | project name, activated_at, updated_at
+    ```
+
+??? example "List playbooks in error with the reason"
+
+    ```shell
+    playbooks
+    | where status == "error"
+    | project name, status_message, updated_at
+    ```
+
+## playbook_runs
+
+The **playbook_runs** data source lists the executions of your playbooks. Each record represents one run, with its status, its timing, and the playbook it belongs to.
+
+Use this data source to measure the success rate of your automation, find the playbooks that fail the most, and detect runs that never finish.
+
+!!! note "Required permission"
+    Querying this data source requires the **View playbook runs** permission.
+
+| **Property**      | **Description**                                                                                  |
+|-------------------|--------------------------------------------------------------------------------------------------|
+| uuid              | Unique identifier of the run                                                                     |
+| community_uuid    | UUID of the community the run belongs to                                                         |
+| playbook.*        | Playbook that ran: `uuid`, `name`, `version`, and `status`                                       |
+| event             | Name of the event that started the run                                                           |
+| status            | Run status: `pending`, `running`, `finished` (success), or `error`                               |
+| error             | Error message for failures raised by the playbook engine, for example when a run exceeds its time limit |
+| store             | Data stored by the playbook during the run                                                       |
+| started_at        | Date the run started                                                                             |
+| started_by        | Identifier of what started the run                                                               |
+| started_by_type   | Type of what started the run                                                                     |
+| pending_at        | Date the run was queued                                                                          |
+| running_at        | Date the run started executing                                                                   |
+| finished_at       | Date the run ended                                                                               |
+
+!!! tip "Find why a run failed"
+    The `error` field of a run is only filled for failures raised by the playbook engine. When an action fails, the run status is `error` and the error message is stored on the failed step. To get it, query [node_runs](#node_runs) and filter on `playbook_run.status == "error"`.
+
+??? example "Success rate over the last 7 days"
+
+    The success rate only counts ended runs: runs still pending or running are excluded.
+
+    ```shell
+    playbook_runs
+    | where started_at > ago(7d)
+    | aggregate successful_runs = sum(iff(status == "finished", 1, 0)), failed_runs = sum(iff(status == "error", 1, 0))
+    | where successful_runs + failed_runs > 0
+    | extend success_rate = round(100.0 * successful_runs / (successful_runs + failed_runs), 1)
+    ```
+
+??? example "Daily runs by status over the last 30 days"
+
+    ```shell
+    playbook_runs
+    | where started_at > ago(30d)
+    | aggregate runs = count() by bin(started_at, 1d), status
+    | sort by started_at asc
+    | render columnchart with (x=started_at, y=runs, breakdown_by=status, mode=stacked)
+    ```
+
+??? example "Top 10 playbooks with the most failed runs over the last 7 days"
+
+    ```shell
+    playbook_runs
+    | where started_at > ago(7d)
+    | aggregate total_runs = count(), failed_runs = sum(iff(status == "error", 1, 0)) by playbook.name
+    | where failed_runs > 0
+    | extend error_rate = round(100.0 * failed_runs / total_runs, 1)
+    | top 10 by failed_runs
+    ```
+
+??? example "Runs pending or running for more than one hour"
+
+    ```shell
+    playbook_runs
+    | where status in ["running", "pending"]
+    | where started_at < ago(1h)
+    | aggregate stuck_runs = count(), oldest_run = min(started_at) by playbook.name
+    | sort by stuck_runs desc
+    ```
+
+## node_runs
+
+The **node_runs** data source lists the executions of each step of your playbook runs: triggers, actions, and operators. Each record represents one step execution, with its error message, its timing, and the module configuration it used.
+
+Use this data source to find the root cause of failed runs, and to list the actions that failed with their error message.
+
+!!! note "Required permission"
+    Querying this data source requires the **View playbook runs** permission.
+
+| **Property**               | **Description**                                                                                     |
+|----------------------------|-----------------------------------------------------------------------------------------------------|
+| uuid                       | Unique identifier of the step execution                                                             |
+| community_uuid             | UUID of the community the step execution belongs to                                                 |
+| node_type                  | Type of step: `trigger`, `action`, or `operator`                                                    |
+| node_id                    | Identifier of the step within the playbook                                                          |
+| parent_node_run_id         | For a step inside a loop, identifier of the parent step execution                                   |
+| iteration                  | For a step inside a loop, index of the iteration                                                    |
+| module_configuration_uuid  | UUID of the module configuration used by the step                                                   |
+| module_configuration_name  | Name of the module configuration used by the step                                                   |
+| action_uuid                | For an action step, UUID of the action it ran                                                       |
+| action_name                | For an action step, name of the action it ran                                                       |
+| triggered_by               | What triggered the step                                                                             |
+| arguments                  | Arguments passed to the step                                                                        |
+| outputs                    | Outputs returned by the step                                                                        |
+| results                    | Results of the step                                                                                 |
+| logs                       | Logs of the step                                                                                    |
+| status                     | Step status: `started`, `pending`, `running`, `finished`, or `error`                                |
+| error                      | Error message when the step failed                                                                  |
+| started_at                 | Date the step execution was created                                                                 |
+| pending_at                 | Date the step was queued                                                                            |
+| running_at                 | Date a worker started executing the step                                                            |
+| finished_at                | Date the step ended                                                                                 |
+| playbook.*                 | Playbook the step belongs to: `uuid`, `name`, `version`, and `status`                               |
+| playbook_run.*             | Run the step belongs to: `uuid`, `status`, `error`, `store`, `started_at`, `started_by`, `started_by_type`, `pending_at`, `running_at`, and `finished_at` |
+
+!!! note "Steps inside loops"
+    Each iteration of a loop creates its own step execution. A loop over 500 items that fails on every item counts 500 errors.
+
+??? example "Top 20 errors that made a run fail over the last 7 days"
+
+    ```shell
+    node_runs
+    | where started_at > ago(7d)
+    | where status == "error"
+    | where playbook_run.status == "error"
+    | aggregate occurrences = count(), last_seen = max(started_at) by playbook.name, error
+    | top 20 by occurrences
+    ```
+
+??? example "New errors over the last 30 days"
+
+    Errors are sorted by first occurrence. A recent first occurrence often points to a change in a third-party API or in a playbook.
+
+    ```shell
+    node_runs
+    | where started_at > ago(30d)
+    | where status == "error"
+    | aggregate first_seen = min(started_at), last_seen = max(started_at), occurrences = count() by error
+    | sort by first_seen desc
+    ```
+
+??? example "Failed actions over the last 24 hours"
+
+    ```shell
+    node_runs
+    | where started_at > ago(24h)
+    | where node_type == "action"
+    | where status == "error"
+    | project started_at, playbook.name, action_name, error
+    | sort by started_at desc
     ```
 
 ## Related articles
