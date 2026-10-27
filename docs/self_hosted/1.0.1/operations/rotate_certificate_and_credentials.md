@@ -10,18 +10,21 @@ You renew the platform certificate and rotate the credentials of your services b
 - The platform is installed and the SHC can retrieve its kubeconfig.
 - The environment variables of the SHC are in a protected file that you load before each run, as described in [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md).
 
+!!! note "Restart the SHC after changing a value"
+    The SHC reads `config.yml` and resolves its `${env.VARIABLE}` references once, when it starts. An open interactive interface keeps the previous values. After a change, quit the interface, load the updated environment variables in the shell that starts the SHC, then open the interface again before running the commands below. If you store the variables in a protected file, load that file again before restarting the SHC. In one-shot CLI mode, each `./run-shc.sh <command>` starts a new SHC with the current configuration and the environment of the launching shell.
+
 ## Renew the platform certificate
 
 Traefik serves one certificate on HTTPS (port 443) and on the syslog (port 10514) and RELP (port 11514) intake ports. The SHC reads this certificate and its private key from the `TRAEFIK_PUBKEY` and `TRAEFIK_PRIVKEY` environment variables. The new certificate must meet the conditions described in [TLS certificate](/self_hosted/1.0.1/deployment/deployment_configuration.md#tls-certificate).
 
-1. To load the new certificate and its private key, run:
+1. In the shell that starts the SHC, load the new certificate and its private key:
 
     ```bash
     export TRAEFIK_PUBKEY="$(cat /path/to/new-certificate.pem)"
     export TRAEFIK_PRIVKEY="$(cat /path/to/new-private-key.pem)"
     ```
 
-    If you keep these variables in a protected file, update the file and load it instead.
+    If you keep these variables in a protected file, update the file and load it instead. Quit any open SHC interface and open it again from this shell before the next step.
 
 2. To regenerate the platform configuration and apply it, run:
 
@@ -62,16 +65,16 @@ The `console` and `ingest` diagnostics also check the configured and the served 
 | Backup S3 credentials, when they differ from the platform storage keys | `modules.platform_configuration.config.backups.s3.access_key`, `modules.platform_configuration.config.backups.s3.secret_key` | `PlatformInstallation` | ClickHouse server pods. |
 | OCI registry credentials of the nodes | `REGISTRY_USERNAME`, `REGISTRY_PASSWORD` | `K3SInstall` | K3s service of each node. |
 | Git and OCI registry credentials of ArgoCD | `GIT_HTTP_USERNAME`, `GIT_HTTP_PASSWORD`, `REGISTRY_USERNAME`, `REGISTRY_PASSWORD` | `PlatformConfigurationFile`, then `PlatformInstallation` | None. ArgoCD registers the repositories again with the new credentials. |
-| SSH key and sudo password of the nodes | `SERVERS_SSH_KEY`, `SERVERS_SUDO_PASSWORD` | The next SHC command. Only the SHC uses them. | None. |
+| SSH key and sudo password of the nodes | `SERVERS_SSH_KEY`, `SERVERS_SUDO_PASSWORD` | The next SHC command after restarting the SHC. Only the SHC uses them. | None. |
 
-The SHC itself reads the registry and Git credentials from its configuration at each run: `PushImages`, `PushCharts`, `PushDataBundles`, and `PushArgoStacks` use the new values at their next run.
+After the SHC has restarted with the updated configuration, `PushImages`, `PushCharts`, `PushDataBundles`, and `PushArgoStacks` use the new registry and Git credentials at their next run.
 
 ### Rotate a credential stored in Vault
 
 This procedure applies to the platform storage keys, the SMTP server settings, and the backup S3 credentials. The platform installer stores these values in Vault. Each run of `PlatformInstallation` writes the values of your configuration to Vault, replacing the previous ones, then restarts the secret operator, which refreshes the Kubernetes secrets of the platform from Vault. The platform services read these secrets when they start.
 
 1. Create the new credential with your provider, and keep the previous one valid until the end of this procedure. For the platform storage, give the new key the same permissions on the event buckets and on the backup bucket.
-2. Update the environment variable or the `config.yml` field, then load your environment variables.
+2. Update the environment variable or the `config.yml` field. Quit any open SHC interface, load the updated environment variables in the shell that starts the SHC, then open the interface again before the next step.
 3. To regenerate the platform configuration and apply it, run:
 
     ```bash
@@ -105,7 +108,7 @@ The registry credentials are used in two places. The nodes pull the container im
     `exec Install` runs `K3SInstall`, `PlatformConfigurationFile`, and `PlatformInstallation` in one run, with the K3s restarts described in [Apply a configuration change](/self_hosted/1.0.1/operations/apply_configuration_change.md).
 
 1. Create the new credential, and keep the previous one valid. A registry credential needs push, pull, and delete permissions on the registry project.
-2. Update `REGISTRY_USERNAME` and `REGISTRY_PASSWORD`, or `GIT_HTTP_USERNAME` and `GIT_HTTP_PASSWORD`, then load your environment variables.
+2. Update `REGISTRY_USERNAME` and `REGISTRY_PASSWORD`, or `GIT_HTTP_USERNAME` and `GIT_HTTP_PASSWORD`. Quit any open SHC interface, load the updated environment variables in the shell that starts the SHC, then open the interface again before the next step.
 3. For a registry credential, to write it on the nodes, run:
 
     ```bash
