@@ -1,7 +1,14 @@
-Changelog _last update on 2026-10-26_
+Changelog _last update on 2026-10-27_
 
 ## Changelog
 
+### Winlogon wrong parent
+  - 27/10/2026 - major - Added filter to reduce false positives
+  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filter was also added to reduce false positives.
+  - 19/03/2024 - major - Added filter to reduce false positives
+  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
+  - 04/07/2023 - major - Added filter to reduce false positives
+    
 ### Zscaler Internet Access Data Exfiltration
   - 16/10/2026 - major - The initial query was fixed to have the correct one.
     
@@ -1193,12 +1200,6 @@ Changelog _last update on 2026-10-26_
   - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake.
   - 19/03/2024 - major - Added filter to reduce false positives
   - 20/11/2023 - minor - Rule's effort level has been changed to advanced as it was too dependent on the environment.
-  - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
-  - 04/07/2023 - major - Added filter to reduce false positives
-    
-### Winlogon wrong parent
-  - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filter was also added to reduce false positives.
-  - 19/03/2024 - major - Added filter to reduce false positives
   - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
   - 04/07/2023 - major - Added filter to reduce false positives
     

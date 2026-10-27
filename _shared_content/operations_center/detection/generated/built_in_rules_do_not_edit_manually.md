@@ -1,4 +1,4 @@
-Rules catalog includes **1110 built-in detection rules** ([_last update on 2026-10-26_](rules_changelog.md)).
+Rules catalog includes **1116 built-in detection rules** ([_last update on 2026-10-27_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -16,6 +16,36 @@ Rules catalog includes **1110 built-in detection rules** ([_last update on 2026-
 ??? abstract "Flare Events Critical Severity Threat Exposure"
     
     Detects a high critical Flare exposure event from clear, deep, or dark web monitoring. This indicates a critical-risk threat indicator that requires rapid triage.
+    
+    - **Effort:** master
+    
+??? abstract "Flare Events High Severity Threat Exposure"
+    
+    Detects a high severity Flare exposure event from clear, deep, or dark web monitoring.
+    
+    - **Effort:** master
+    
+??? abstract "Flare Events Informational Severity Threat Exposure"
+    
+    Detects a informational severity Flare exposure event from clear, deep, or dark web monitoring.
+    
+    - **Effort:** master
+    
+??? abstract "Flare Events Leaked Credential With Password Exposure"
+    
+    Detects leaked credential events where a password is explicitly present in the exposure record, indicating elevated risk of account takeover.
+    
+    - **Effort:** master
+    
+??? abstract "Flare Events Low Severity Threat Exposure"
+    
+    Detects a low severity Flare exposure event from clear, deep, or dark web monitoring.
+    
+    - **Effort:** master
+    
+??? abstract "Flare Events Medium Severity Threat Exposure"
+    
+    Detects a medium severity Flare exposure event from clear, deep, or dark web monitoring.
     
     - **Effort:** master
     
@@ -1055,6 +1085,36 @@ Rules catalog includes **1110 built-in detection rules** ([_last update on 2026-
 ??? abstract "Flare Events Critical Severity Threat Exposure"
     
     Detects a high critical Flare exposure event from clear, deep, or dark web monitoring. This indicates a critical-risk threat indicator that requires rapid triage.
+    
+    - **Effort:** master
+    
+??? abstract "Flare Events High Severity Threat Exposure"
+    
+    Detects a high severity Flare exposure event from clear, deep, or dark web monitoring.
+    
+    - **Effort:** master
+    
+??? abstract "Flare Events Informational Severity Threat Exposure"
+    
+    Detects a informational severity Flare exposure event from clear, deep, or dark web monitoring.
+    
+    - **Effort:** master
+    
+??? abstract "Flare Events Leaked Credential With Password Exposure"
+    
+    Detects leaked credential events where a password is explicitly present in the exposure record, indicating elevated risk of account takeover.
+    
+    - **Effort:** master
+    
+??? abstract "Flare Events Low Severity Threat Exposure"
+    
+    Detects a low severity Flare exposure event from clear, deep, or dark web monitoring.
+    
+    - **Effort:** master
+    
+??? abstract "Flare Events Medium Severity Threat Exposure"
+    
+    Detects a medium severity Flare exposure event from clear, deep, or dark web monitoring.
     
     - **Effort:** master
     
@@ -6280,6 +6340,7 @@ Rules catalog includes **1110 built-in detection rules** ([_last update on 2026-
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
         - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filter was also added to reduce false positives.
+        - 27/10/2026 - major - Added filter to reduce false positives
             
 ??? abstract "Winrshost Wrong Parent"
     
@@ -6735,6 +6796,36 @@ Rules catalog includes **1110 built-in detection rules** ([_last update on 2026-
 ??? abstract "Flare Events Critical Severity Threat Exposure"
     
     Detects a high critical Flare exposure event from clear, deep, or dark web monitoring. This indicates a critical-risk threat indicator that requires rapid triage.
+    
+    - **Effort:** master
+    
+??? abstract "Flare Events High Severity Threat Exposure"
+    
+    Detects a high severity Flare exposure event from clear, deep, or dark web monitoring.
+    
+    - **Effort:** master
+    
+??? abstract "Flare Events Informational Severity Threat Exposure"
+    
+    Detects a informational severity Flare exposure event from clear, deep, or dark web monitoring.
+    
+    - **Effort:** master
+    
+??? abstract "Flare Events Leaked Credential With Password Exposure"
+    
+    Detects leaked credential events where a password is explicitly present in the exposure record, indicating elevated risk of account takeover.
+    
+    - **Effort:** master
+    
+??? abstract "Flare Events Low Severity Threat Exposure"
+    
+    Detects a low severity Flare exposure event from clear, deep, or dark web monitoring.
+    
+    - **Effort:** master
+    
+??? abstract "Flare Events Medium Severity Threat Exposure"
+    
+    Detects a medium severity Flare exposure event from clear, deep, or dark web monitoring.
     
     - **Effort:** master
     
@@ -7929,6 +8020,7 @@ Rules catalog includes **1110 built-in detection rules** ([_last update on 2026-
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
         - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filter was also added to reduce false positives.
+        - 27/10/2026 - major - Added filter to reduce false positives
             
 ??? abstract "Winrshost Wrong Parent"
     
@@ -8729,6 +8821,36 @@ Rules catalog includes **1110 built-in detection rules** ([_last update on 2026-
 ??? abstract "Flare Events Critical Severity Threat Exposure"
     
     Detects a high critical Flare exposure event from clear, deep, or dark web monitoring. This indicates a critical-risk threat indicator that requires rapid triage.
+    
+    - **Effort:** master
+    
+??? abstract "Flare Events High Severity Threat Exposure"
+    
+    Detects a high severity Flare exposure event from clear, deep, or dark web monitoring.
+    
+    - **Effort:** master
+    
+??? abstract "Flare Events Informational Severity Threat Exposure"
+    
+    Detects a informational severity Flare exposure event from clear, deep, or dark web monitoring.
+    
+    - **Effort:** master
+    
+??? abstract "Flare Events Leaked Credential With Password Exposure"
+    
+    Detects leaked credential events where a password is explicitly present in the exposure record, indicating elevated risk of account takeover.
+    
+    - **Effort:** master
+    
+??? abstract "Flare Events Low Severity Threat Exposure"
+    
+    Detects a low severity Flare exposure event from clear, deep, or dark web monitoring.
+    
+    - **Effort:** master
+    
+??? abstract "Flare Events Medium Severity Threat Exposure"
+    
+    Detects a medium severity Flare exposure event from clear, deep, or dark web monitoring.
     
     - **Effort:** master
     
@@ -9617,6 +9739,7 @@ Rules catalog includes **1110 built-in detection rules** ([_last update on 2026-
         - 22/08/2023 - major - adding similarity strategy in order to avoid multiple alerts creation
         - 19/03/2024 - major - Added filter to reduce false positives
         - 17/10/2024 - major - Removed a filter on a specific intake, the rule now works fine for every intake. Filter was also added to reduce false positives.
+        - 27/10/2026 - major - Added filter to reduce false positives
             
 ??? abstract "Winrshost Wrong Parent"
     
@@ -13598,6 +13721,12 @@ Rules catalog includes **1110 built-in detection rules** ([_last update on 2026-
             
 **Data Encrypted for Impact**
 
+??? abstract "Flare Events Ransom Leaks Publication"
+    
+    Detects a Flare document event from a ransomware and/or extortion leak site, indicating a named victim organization has had data published as proof of compromise or extortion leverage.
+    
+    - **Effort:** master
+    
 ??? abstract "Gatewatcher AionIQ V103 Ransomware Detect High"
     
     Detects when a ransomware is detected by gatewatcherV103 with a high severity.
@@ -13817,3 +13946,11 @@ Rules catalog includes **1110 built-in detection rules** ([_last update on 2026-
     
         - 04/04/2024 - major - Rule's pattern field changed
             
+**Financial Theft**
+
+??? abstract "Flare Events Ransom Leaks Publication"
+    
+    Detects a Flare document event from a ransomware and/or extortion leak site, indicating a named victim organization has had data published as proof of compromise or extortion leverage.
+    
+    - **Effort:** master
+    

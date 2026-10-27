@@ -51,6 +51,42 @@ The following Sekoia.io built-in rules match the intake **Flare Events**. This d
     
     - **Effort:** master
 
+??? abstract "Flare Events High Severity Threat Exposure"
+    
+    Detects a high severity Flare exposure event from clear, deep, or dark web monitoring.
+    
+    - **Effort:** master
+
+??? abstract "Flare Events Informational Severity Threat Exposure"
+    
+    Detects a informational severity Flare exposure event from clear, deep, or dark web monitoring.
+    
+    - **Effort:** master
+
+??? abstract "Flare Events Leaked Credential With Password Exposure"
+    
+    Detects leaked credential events where a password is explicitly present in the exposure record, indicating elevated risk of account takeover.
+    
+    - **Effort:** master
+
+??? abstract "Flare Events Low Severity Threat Exposure"
+    
+    Detects a low severity Flare exposure event from clear, deep, or dark web monitoring.
+    
+    - **Effort:** master
+
+??? abstract "Flare Events Medium Severity Threat Exposure"
+    
+    Detects a medium severity Flare exposure event from clear, deep, or dark web monitoring.
+    
+    - **Effort:** master
+
+??? abstract "Flare Events Ransom Leaks Publication"
+    
+    Detects a Flare document event from a ransomware and/or extortion leak site, indicating a named victim organization has had data published as proof of compromise or extortion leverage.
+    
+    - **Effort:** master
+
 ??? abstract "Flare Events Stealer Log Malware Infection"
     
     Detects a Flare stealer log event with an identified malware family, indicating credentials or host data were likely collected by infostealer malware.
