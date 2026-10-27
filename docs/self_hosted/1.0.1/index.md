@@ -64,4 +64,4 @@ If you are new to Sekoia Self-Hosted, follow this sequence:
 
 | Document | What you will find |
 | :--- | :--- |
-| [Release notes v1.0.1](/self_hosted/1.0.1/release_notes.md) | Content of the release, feature scope, functional constraints, and known issues. |
+| [Release notes v1.0.1](/self_hosted/1.0.1/release_notes.md) | Content of the release, feature scope, functional constraints, and limitations. |

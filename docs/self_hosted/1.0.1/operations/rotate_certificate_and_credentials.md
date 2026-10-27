@@ -61,7 +61,7 @@ The `console` and `ingest` diagnostics also check the configured and the served 
 | SMTP server settings | `modules.platform_configuration.config.email.smtp.*` | `PlatformInstallation`, then `RestartAllMicroservices` | Microservices. |
 | Backup S3 credentials, when they differ from the platform storage keys | `modules.platform_configuration.config.backups.s3.access_key`, `modules.platform_configuration.config.backups.s3.secret_key` | `PlatformInstallation` | ClickHouse server pods. |
 | OCI registry credentials of the nodes | `REGISTRY_USERNAME`, `REGISTRY_PASSWORD` | `K3SInstall` | K3s service of each node. |
-| Git and OCI registry credentials of ArgoCD | `GIT_HTTP_USERNAME`, `GIT_HTTP_PASSWORD`, `REGISTRY_USERNAME`, `REGISTRY_PASSWORD` | Not applied by the SHC. See [Credentials that you cannot rotate with the SHC](#credentials-that-you-cannot-rotate-with-the-shc). | None. |
+| Git and OCI registry credentials of ArgoCD | `GIT_HTTP_USERNAME`, `GIT_HTTP_PASSWORD`, `REGISTRY_USERNAME`, `REGISTRY_PASSWORD` | `PlatformConfigurationFile`, then `PlatformInstallation` | None. ArgoCD registers the repositories again with the new credentials. |
 | SSH key and sudo password of the nodes | `SERVERS_SSH_KEY`, `SERVERS_SUDO_PASSWORD` | The next SHC command. Only the SHC uses them. | None. |
 
 The SHC itself reads the registry and Git credentials from its configuration at each run: `PushImages`, `PushCharts`, `PushDataBundles`, and `PushArgoStacks` use the new values at their next run.
@@ -97,16 +97,16 @@ This procedure applies to the platform storage keys, the SMTP server settings, a
 
 The command fails, and lists the affected workloads, when a workload has a paused, `OnDelete`, or partitioned rollout, which it does not restart, or when a rollout does not complete within 300 seconds.
 
-### Rotate the registry credentials of the nodes
+### Rotate the Git and registry credentials
 
-The nodes pull the container images from your registry with the credentials of the `/etc/rancher/k3s/registries.yaml` file. `K3SInstall` renders this file on every node.
+The registry credentials are used in two places. The nodes pull the container images with the credentials of the `/etc/rancher/k3s/registries.yaml` file, which `K3SInstall` renders on every node. ArgoCD reads the Helm charts from your registry, and the ArgoCD stacks from your Git repository, with the credentials registered for each repository. Each run of `PlatformInstallation` writes the credentials of your configuration to Vault, compares them with the credentials registered in ArgoCD, and registers the repositories again when they differ.
 
-!!! warning "Do not run K3SInstall in verbose mode"
-    With `-v`, `K3SInstall` logs the OCI registry password in clear text, in the terminal and in the run log file of the SHC.
+!!! tip "Apply everything in one run"
+    `exec Install` runs `K3SInstall`, `PlatformConfigurationFile`, and `PlatformInstallation` in one run, with the K3s restarts described in [Apply a configuration change](/self_hosted/1.0.1/operations/apply_configuration_change.md).
 
-1. Create the new registry credential, with push, pull, and delete permissions on the registry project, and keep the previous one valid.
-2. Update `REGISTRY_USERNAME` and `REGISTRY_PASSWORD`, then load your environment variables.
-3. To write the new credential on the nodes, run:
+1. Create the new credential, and keep the previous one valid. A registry credential needs push, pull, and delete permissions on the registry project.
+2. Update `REGISTRY_USERNAME` and `REGISTRY_PASSWORD`, or `GIT_HTTP_USERNAME` and `GIT_HTTP_PASSWORD`, then load your environment variables.
+3. For a registry credential, to write it on the nodes, run:
 
     ```bash
     exec K3SInstall
@@ -114,13 +114,22 @@ The nodes pull the container images from your registry with the credentials of t
 
     On each node where `registries.yaml` changes, the command restarts the `k3s` service of the manager nodes or the `k3s-agent` service of the worker nodes, one node at a time, and waits until the service is back.
 
-ArgoCD keeps using the previous credential to read the Helm charts. Do not revoke it before you read [Credentials that you cannot rotate with the SHC](#credentials-that-you-cannot-rotate-with-the-shc).
+4. To register the new credentials in ArgoCD, run:
+
+    ```bash
+    exec PlatformConfigurationFile
+    exec PlatformInstallation
+    ```
+
+    `PlatformInstallation` stops when ArgoCD rejects a repository registration, for example with `ArgoCD rejected the Git repository registration`, or when the registered credentials still differ from Vault after the registration, with `ArgoCD repository configuration did not converge`. Check the new credential, then run the two commands again.
+
+5. Revoke the previous credential with your provider.
+6. A few minutes later, to check that ArgoCD reads the stacks and the charts with the new credential, run `exec DebugArgoCD`. Every application reports `Sync: Synced` and `Health: Healthy`.
 
 ## Credentials that you cannot rotate with the SHC
 
 | Credential | Behavior | What to do |
 | :--- | :--- | :--- |
-| Git and OCI registry credentials of ArgoCD | ArgoCD registers your Git repository and your Helm chart repositories with the credentials used at installation. `PlatformInstallation` writes the new values to Vault, but does not register them in ArgoCD again while ArgoCD runs and its repositories have the expected settings. ArgoCD keeps the previous credentials, and can no longer read the stacks or the charts once you revoke them. | Contact Sekoia support before you revoke the previous credentials. |
 | Backup encryption keys in use | `PlatformInstallation` stops, and writes no secret, when `BACKUP_ARANGO_CRYPT_KEY` or `BACKUP_CLICKHOUSE_CRYPT_KEY` differs from the key in use. The error reads `cannot replace an established Arango backup encryption key` or `cannot replace an established ClickHouse backup encryption key`. It does not check `BACKUP_VAULT_CRYPT_KEY`. | Keep the three keys unchanged. See [Back up the platform](/self_hosted/1.0.1/operations/backups.md#prepare-the-encryption-keys). |
 | Sekoia release bucket credentials | Sekoia issues `S3_ACCESS_KEY` and `S3_SECRET_KEY`. Only the SHC uses them, to download the release, the content bundles, and the CTI database. | To change them, contact Sekoia. When Sekoia provides new ones, update the two variables. |
 

@@ -43,9 +43,6 @@ Each error names the configuration key and the expected format. It never display
 
 To enable the debug logs of the SHC, add the `-v` flag before the command. The flag is accepted in CLI mode only: the command input of the TUI rejects it.
 
-!!! warning "Verbose logs contain the registry password"
-    With `-v`, `K3SInstall` logs its Ansible variables at debug level, including the OCI registry password in clear. The SHC also writes this output to its run log file. Before you share verbose output or a log file, redact it as described in [Collecting logs for a support ticket](#collecting-logs-for-a-support-ticket).
-
 ```bash
 -v exec CheckLocalConfig
 ```
@@ -576,7 +573,7 @@ Reset both values once the investigation is complete. The detailed output can in
 !!! warning "Redact the output before you share it"
     Command output, logs, and configuration files can contain secrets and customer information. Before you collect or send anything, check it against the following list, and replace each match with `***`:
 
-    - Credentials: passwords, tokens, API keys, and private keys, such as the credentials displayed by `PlatformAccess`, the registry password in `-v` output, and the values of the environment variables of the execution script.
+    - Credentials: passwords, tokens, API keys, and private keys, such as the credentials displayed by `PlatformAccess`, the output of `config show`, and the values of the environment variables of the execution script.
     - Vault secret values. Share Vault paths or values only when Sekoia support asks for them, and only through a secure channel.
     - Private hostnames, IP addresses, and internal URLs.
     - Customer data, such as community names, user names, email addresses, and event contents.

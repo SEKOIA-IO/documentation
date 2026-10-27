@@ -3,7 +3,7 @@
 !!! info "Who this section is for"
     This section covers Sekoia deployed and operated on your own infrastructure. If you use Sekoia SaaS, none of it applies to you: go to [Getting started](/getting_started/index.md).
 
-Sekoia Self-Hosted is the Sekoia platform deployed and operated on your own infrastructure, for environments with strict regulatory, sovereignty, or connectivity constraints. It provides detection, investigation, and automation capabilities while data processing and infrastructure stay under your control. The capabilities available depend on the release: in Sekoia Self-Hosted 1.0.1, the AI features and the Intelligence module are not available. See the [release notes](/self_hosted/1.0.1/release_notes.md#functional-scope).
+Sekoia Self-Hosted is the Sekoia platform deployed and operated on your own infrastructure, for environments with strict regulatory, sovereignty, or connectivity constraints. It provides detection, investigation, and automation capabilities while data processing and infrastructure stay under your control. The capabilities available depend on the release: in Sekoia Self-Hosted 1.0.1, the AI features and the Intelligence module are not available. See the [release notes](/self_hosted/1.0.1/release_notes.md#defend-functional-scope).
 
 ## Why Sekoia Self-Hosted exists
 
