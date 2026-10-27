@@ -130,7 +130,7 @@ Start with **Ceph status**. A healthy cluster reports `HEALTH_OK`. If it reports
 
 ## Run a diagnostic from the Diagnostics tab
 
-The Diagnostics tab lists the diagnostic targets available on the SHC, one per rule file.
+The Diagnostics tab lists the diagnostic targets available on the SHC, one per rule file. The first entry of the list, **Run all diagnostics**, is separated from the targets and runs every target in one result view.
 
 To run a target:
 
@@ -149,10 +149,23 @@ A completed panel holds a results table with the measured values and their label
 
 To return to the target list, press `Escape`.
 
+### Run all diagnostic targets
+
+To check every platform area in one run:
+
+1. Select the tab with `Shift+Tab` until **Diagnostics** is active.
+2. Select **Run all diagnostics** at the start of the **Available diagnostics** list and press `Enter`.
+
+The interface opens a result view titled `Diagnostic: all`. It runs the targets one after the other in alphabetical order, like the `Diagnostic` module of the CLI, and evaluates their rules one at a time. Each panel title starts with the name of its target, and a divider separates the panels of two targets. The copied report keeps these prefixes, so you can tell which target each rule belongs to.
+
+![The result view of all diagnostics.](/assets/self_hosted/1.0.1/diagnostic/result_all.png){: style="max-width:100%"}
+
+When a rule file of a target fails to load, the interface shows a `Failed to load <target>` error notification, skips that target, and runs the remaining ones.
+
 !!! note "No diagnostics listed"
     When the tab reports that no diagnostics were found, the rule files are missing from the SHC image. Verify the image reference you set in `DOCKER_IMAGE`, then contact Sekoia support with the path shown in the warning.
 
-When you escalate a diagnostic result, copy the full report and attach the timestamped SHC log shown at the bottom of the TUI. Include the target name and the time at which you ran it. Before you share them, redact the credentials, tokens, private hostnames, and customer data that the report or the log contain.
+When you escalate a diagnostic result, copy the full report and attach the timestamped SHC log shown at the bottom of the TUI. Include the target name, or state that you ran all diagnostics, and the time at which you ran it. Before you share them, redact the credentials, tokens, private hostnames, and customer data that the report or the log contain.
 
 ## Result
 
