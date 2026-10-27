@@ -24,6 +24,22 @@ To add instructions for a specific community:
 
 ![Instructions tab in the AI agent settings panel with a text input field](/assets/elevate/custom-instructions.png){: style="max-width:100%"}
 
+## Choose the language of investigation text
+
+Elevate does not use the platform interface language as a deterministic selector for the language of an investigation. The language of the verdict explanation, findings, and reasoning answers can be influenced by the context provided to the agent, including custom instructions and runbook content.
+
+To request a consistent language, state it explicitly in the instructions. For example:
+
+!!! example "Request investigations in French"
+    Write all investigation explanations, verdicts, findings, and reasoning answers in French. Keep product names, detection names, query syntax, and field names unchanged.
+
+Use a workspace-level instruction when all communities should use the same language. To use a different language for each tenant or customer, add the instruction at community level instead.
+
+!!! note "Language applies when the investigation is generated"
+    Elevate saves the generated investigation text with the alert. It does not translate the text dynamically according to each viewer's interface language. An English interface can therefore display an investigation generated in French. Updated language instructions apply to investigations generated afterward.
+
+Using French or another language in the surrounding context may influence the agent, but it does not guarantee a specific output language. An explicit language instruction is the recommended way to make the expected language clear.
+
 To customize how the agent reasons for a specific detection rule rather than for your environment as a whole, edit the rule's runbook instead. See [Customize a detection rule's runbook](/xdr/features/modules/elevate_customize_runbook.md).
 
 ## Related articles
