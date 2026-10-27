@@ -12,6 +12,8 @@ This documentation shows how to setup the automated events forwarding from the E
 - **Detection based on**: Telemetry / Alert
 - **Supported application or feature**: System & network events
 
+[![Nucleon EDR and Sekoia](../assets/integration/sekoia-cta-nucleon-security-hero.png)](https://0h3wgygmjl.flowdrivecdn.com/g5ZbqTmY6IJAqgaT13L6C)
+
 
 ## Configure
 
