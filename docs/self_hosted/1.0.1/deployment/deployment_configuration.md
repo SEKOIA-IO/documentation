@@ -106,6 +106,27 @@ The `sizing/` path resolves against the configuration directory shipped in the S
 
 Use `config show` to review the result after inheritance, and `config help` to identify supported sizing overrides. Do not copy undocumented keys into your configuration: the SHC rejects unsupported fields.
 
+### Worker replica counts
+
+`modules.scale_services.deploy.<namespace>.<deployment>` sets the target replica count of an existing Kubernetes Deployment. `ScaleServices` applies these values directly through the Kubernetes API, after `InstanceBootstrap` at the end of `Install`. They are not rendered into `region-config.yaml`. This is how the SHC scales workers such as `ingestworker1` and `sigma-workflow-worker1`, whose replica counts are not exposed as Helm values.
+
+To override selected workers, merge the following section into your existing `config.yml`:
+
+```yaml
+modules:
+  scale_services:
+    deploy:
+      sic:
+        ingestworker1: "4"
+        sigma-workflow-worker1: "6"
+```
+
+The counts are examples, not a sizing recommendation. Choose them with Sekoia and ensure that the cluster has enough CPU and memory for the additional pods. Use non-negative whole numbers. A value of `0` stops every pod of that Deployment and its processing.
+
+The SHC merges this mapping with the built-in defaults and the selected sizing profile. Deployments that you do not override keep their inherited target counts: omitting one does not remove it from the scaling plan. Review the complete mapping with `config show modules.scale_services.deploy` before applying it. `ScaleServices` processes every entry in that mapping, not only your overrides.
+
+For replica-only changes on an installed platform, follow [Change worker replica counts](/self_hosted/1.0.1/operations/apply_configuration_change.md#change-worker-replica-counts). For a sizing change that also modifies resources, storage, or other platform settings, use the general [configuration-change procedure](/self_hosted/1.0.1/operations/apply_configuration_change.md#change-the-configuration-and-run-install).
+
 ## Required fields
 
 ### Platform endpoints

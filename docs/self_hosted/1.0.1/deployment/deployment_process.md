@@ -177,7 +177,7 @@ The last two modules of the `platform` stage bring a freshly-installed region in
 
 On a new region ExaLog has no index, so without this step the indexers stay idle and never write to your S3-compatible storage.
 
-`ScaleServices` then scales the ingestion and detection Deployments (for example `ingestworker1` and `sigma-workflow-worker1`) to their configured replica count. Deployments already at their target count are left untouched. The module runs last so the workers start consuming only once the storage layer is ready.
+`ScaleServices` then scales the ingestion and detection Deployments (for example `ingestworker1` and `sigma-workflow-worker1`) to their configured replica count. Deployments already at their target count are left untouched. The module runs last so the workers start consuming only once the storage layer is ready. See [Worker replica counts](/self_hosted/1.0.1/deployment/deployment_configuration.md#worker-replica-counts) for the configuration mapping and [Change worker replica counts](/self_hosted/1.0.1/operations/apply_configuration_change.md#change-worker-replica-counts) to apply it without a full installation run.
 
 ## Lifecycle operations
 

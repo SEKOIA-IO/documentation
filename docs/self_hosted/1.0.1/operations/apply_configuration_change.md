@@ -1,8 +1,8 @@
 # Apply a configuration change
 
-To change an installed Sekoia Self-Hosted platform, edit the `config.yml` file of the self-hosted-controller (SHC), then run `Install` again. `Install` is idempotent. Each run converges the platform to the state declared in `config.yml`. It keeps what already matches and applies only the differences.
+To change an installed Sekoia Self-Hosted platform, edit the `config.yml` file of the self-hosted-controller (SHC), then apply it with the appropriate modules. For a change without a dedicated procedure, run `Install` again. `Install` is idempotent. Each run converges the platform to the state declared in `config.yml`. It keeps what already matches and applies only the differences.
 
-This page describes the general procedure. Use it for every change that has no dedicated procedure, for example a new SMTP server, a new proxy, a new worker replica count, or a sizing override.
+This page describes the general procedure, for example for a new SMTP server, a new proxy, or a sizing override, and a shorter procedure to [change worker replica counts](#change-worker-replica-counts).
 
 !!! warning "Plan a maintenance window: Install restarts K3s"
     A run of `Install` on an installed platform runs `K3SInstall` again. This module restarts the K3s service on every node where the K3s files changed: the service unit, the registry configuration, or the proxy settings. It restarts one node at a time and waits for the service to be back before it moves to the next node. The first run of `Install` after the initial installation always restarts K3s on the first manager node. This run replaces the unit used to initialize the cluster with the standard unit. When `modules.k3s_install.reboot_after_install` is `true`, the nodes reboot instead. `PlatformInstallation` also restarts the secret operator of the platform each time it runs. It redeploys every component whose deployed state differs from the configuration.
@@ -14,9 +14,44 @@ This page describes the general procedure. Use it for every change that has no d
 
 - The platform is installed and healthy: `exec Diagnostic` reports `OK` for every check. Fix the current issues first, so that a failure of the run has one cause.
 - You run the SHC from the orchestration node, with the execution script and the environment variables described in [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md#step-4-create-the-execution-script).
-- The release files and the security content bundles are still extracted in `$SEKOIA_LOCAL_DIR`, or the online mode credentials are set. `Install` validates the release files again. It also publishes the images, the charts, and the bundles again.
+- For a run of `Install`, the release files and the security content bundles are still extracted in `$SEKOIA_LOCAL_DIR`, or the online mode credentials are set. `Install` validates the release files again. It also publishes the images, the charts, and the bundles again.
 - `global.version.platform.version` keeps its current value. The SHC does not yet upgrade or roll back the platform automatically, and 1.0.1 is currently the only release of Sekoia Self-Hosted.
 - No other SHC session is installing or updating the platform. See [Interrupted Helm operations](/self_hosted/1.0.1/deployment/deployment_process.md#interrupted-helm-operations).
+
+## Change worker replica counts
+
+Use this procedure only to change values under `modules.scale_services.deploy` on an installed platform. It does not run `K3SInstall`, `PlatformInstallation`, or `InstanceBootstrap`. If you also change service resources, storage, or other platform settings, follow [Change the configuration and run Install](#change-the-configuration-and-run-install) instead.
+
+1. Edit the target counts in `config.yml`, using the mapping described in [Worker replica counts](/self_hosted/1.0.1/deployment/deployment_configuration.md#worker-replica-counts). Confirm the capacity and the target counts with Sekoia before applying them.
+
+2. Quit the interactive SHC interface and open it again so that it reads the edited file. In one-shot CLI mode, each invocation of `./run-shc.sh <command>` reads the current file.
+
+3. Validate the configuration and review the complete inherited scaling plan:
+
+    ```bash
+    exec CheckLocalConfig
+    config show modules.scale_services.deploy
+    ```
+
+    `CheckLocalConfig` accepts nested deployment keys but does not check their replica counts or whether the Deployments exist. Check the namespace, Deployment name, and target count of every entry before continuing.
+
+4. Apply the replica counts:
+
+    ```bash
+    exec ScaleServices
+    ```
+
+    The SHC retrieves a current kubeconfig automatically. `ScaleServices` processes every configured Deployment and leaves those already at their target count untouched. It does not create missing Deployments. Invalid counts, missing Deployments, and Kubernetes API failures are reported together at the end. Counts already applied are not rolled back: fix the reported cause, restart the SHC if you edited `config.yml`, and run the command again.
+
+5. The command updates the desired replica counts but does not wait for the pods to become ready. From a shell with a kubeconfig for the cluster, check the changed Deployments, for example:
+
+    ```bash
+    kubectl get deployments -n sic ingestworker1 sigma-workflow-worker1
+    ```
+
+    Wait until the `READY` column matches the configured count for each Deployment. If pods remain pending, check the node capacity and the pod events. Then run `exec Diagnostic` in the SHC and confirm that every check reports `OK`.
+
+The next run of `ScaleServices` or `Install` applies the counts in the computed configuration again. Keep durable changes in `config.yml`; `ScaleServices` does not accept `--set` overrides.
 
 ## Change the configuration and run Install
 
