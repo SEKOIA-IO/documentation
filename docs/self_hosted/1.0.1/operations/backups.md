@@ -2,9 +2,6 @@
 
 The self-hosted-controller (SHC) configures scheduled backups of Vault, of every PostgreSQL database, of ArangoDB, and of ClickHouse to a bucket of your S3-compatible storage. The `Backups` command checks that recent backups exist in this bucket, and starts a backup on demand.
 
-!!! warning "No restore procedure in Sekoia Self-Hosted 1.0.1"
-    Sekoia Self-Hosted 1.0.1 provides no restore procedure, and the backups are not a tested restore path. The backup status checks the backup files in S3, not that you can restore them. To restore a component, contact Sekoia support.
-
 ## What the backups contain
 
 | Component | Content | Default schedule | Retention | S3 prefix |
@@ -229,6 +226,12 @@ The command retrieves the kubeconfig, then proceeds as follows:
 - It skips the disabled components with a warning.
 
 The command does not wait for the backups. Once they are complete, run `exec Backups`: the state of each component is `fresh`.
+
+## Restore from a backup
+
+To restore the platform or one of its components from a backup, contact Sekoia support. Sekoia guides you through the restore procedure and adapts it to your needs.
+
+The restore needs the encryption keys of the Vault, ArangoDB, and ClickHouse backups. Keep the copy that you stored outside the platform at hand. See [Prepare the encryption keys](#prepare-the-encryption-keys).
 
 ## Related links
 

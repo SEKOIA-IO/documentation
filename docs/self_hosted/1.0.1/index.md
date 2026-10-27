@@ -44,7 +44,7 @@ If you are new to Sekoia Self-Hosted, follow this sequence:
 | [Set up the first administrator account](/self_hosted/1.0.1/operations/first_login.md) | How to provision the first administrator account and configure initial access. |
 | [Use the self-hosted-controller (SHC) interface](/self_hosted/1.0.1/operations/controller_interface.md) | The interactive self-hosted-controller (SHC) interface: command input, node, cluster and storage views, and diagnostics. |
 | [Import the CTI database](/self_hosted/1.0.1/operations/import_cti_database.md) | How to import the Sekoia CTI database into the platform with the SHC. |
-| [Back up the platform](/self_hosted/1.0.1/operations/backups.md) | How to turn on the backups of Vault, PostgreSQL, ArangoDB, and ClickHouse, trigger a backup, and check the backup status. |
+| [Back up the platform](/self_hosted/1.0.1/operations/backups.md) | How to turn on the backups of Vault, PostgreSQL, ArangoDB, and ClickHouse, trigger a backup, check the backup status, and restore from a backup. |
 | [Update the security content](/self_hosted/1.0.1/operations/update_security_content.md) | How to update the detection rules and intake formats after the installation. |
 | [Apply a configuration change](/self_hosted/1.0.1/operations/apply_configuration_change.md) | How to change `config.yml` after the installation and apply it with an idempotent run of `Install`, and what the run restarts. |
 | [Rotate the certificate and credentials](/self_hosted/1.0.1/operations/rotate_certificate_and_credentials.md) | How to replace the platform TLS certificate and credentials, then restart the platform services to load them. |

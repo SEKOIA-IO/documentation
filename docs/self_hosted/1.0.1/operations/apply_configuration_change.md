@@ -15,7 +15,7 @@ This page describes the general procedure. Use it for every change that has no d
 - The platform is installed and healthy: `exec Diagnostic` reports `OK` for every check. Fix the current issues first, so that a failure of the run has one cause.
 - You run the SHC from the orchestration node, with the execution script and the environment variables described in [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md#step-4-create-the-execution-script).
 - The release files and the security content bundles are still extracted in `$SEKOIA_LOCAL_DIR`, or the online mode credentials are set. `Install` validates the release files again. It also publishes the images, the charts, and the bundles again.
-- `global.version.platform.version` keeps its current value. Sekoia Self-Hosted 1.0.1 does not yet support a rollback with the SHC. See [Release notes](/self_hosted/1.0.1/release_notes.md).
+- `global.version.platform.version` keeps its current value. The SHC does not yet upgrade or roll back the platform automatically, and 1.0.1 is currently the only release of Sekoia Self-Hosted.
 - No other SHC session is installing or updating the platform. See [Interrupted Helm operations](/self_hosted/1.0.1/deployment/deployment_process.md#interrupted-helm-operations).
 
 ## Change the configuration and run Install
@@ -82,7 +82,7 @@ The SHC rejects the following changes, or does not apply them with a run of `Ins
 | Backup encryption keys in use | `PlatformInstallation` stops when `BACKUP_ARANGO_CRYPT_KEY` or `BACKUP_CLICKHOUSE_CRYPT_KEY` differs from the key in use. | Keep the keys unchanged. See [Back up the platform](/self_hosted/1.0.1/operations/backups.md#prepare-the-encryption-keys). |
 | Smaller database storage size | CloudNativePG cannot shrink a volume. | Set a value equal to or larger than the current size. See [Database storage](/self_hosted/1.0.1/deployment/deployment_configuration.md#database-storage). |
 | Playbook library bundle | The bundle is downloaded in online mode. It is not published or applied after the installation. | None in 1.0.1. See [Update the security content](/self_hosted/1.0.1/operations/update_security_content.md). |
-| Platform release | `Install` does not upgrade or roll back the platform. | Keep `global.version.platform.version` unchanged. See [Release notes](/self_hosted/1.0.1/release_notes.md). |
+| Platform release | The SHC does not yet upgrade or roll back the platform automatically. | Keep `global.version.platform.version` unchanged: 1.0.1 is currently the only release. |
 
 ## Related links
 
