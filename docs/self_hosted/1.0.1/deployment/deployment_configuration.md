@@ -433,7 +433,6 @@ These fields set the disk size of each instance of the PostgreSQL clusters of th
 | `modules.platform_configuration.config.quickwit.database.storage.size` | Storage size of the ExaLog metastore database. | `50Gi` |
 | `modules.platform_configuration.config.hatchet.database.storage.size` | Storage size of the workflow engine database. | `30Gi` |
 | `modules.platform_configuration.config.symphony.database.storage.size` | Storage size of the playbooks database. | `30Gi` |
-| `modules.platform_configuration.config.quickwit.database.storage.size` | Storage size of the ExaLog metastore database. | `50Gi` |
 | `modules.platform_configuration.config.communityapi.database.storage.size` | Storage size of the community and user database. | `20Gi` |
 | `modules.platform_configuration.config.crmapi.database.storage.size` | Storage size of the `crmapi` database. | `20Gi` |
 | `modules.platform_configuration.config.dashboardapi.database.storage.size` | Storage size of the dashboards database. | `20Gi` |

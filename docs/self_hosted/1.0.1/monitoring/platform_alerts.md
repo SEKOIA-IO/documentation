@@ -201,8 +201,6 @@ exec Diagnostic --set modules.diagnostic.targets=kafka
 | KafkaZookeeperUnavailable | Critical | No Zookeeper pod is ready for 1 minute. | Kafka cluster coordination and broker registration are unavailable, which can prevent the cluster from recovering from other failures. |
 | KafkaTopicBacklogGrowing | Error | The consumer backlog of a topic exceeds 500 messages and 2 minutes of consumption, and has kept growing over the last 10 minutes, for 5 minutes. | Everything downstream of the topic falls behind. |
 
-The `kafka` diagnostic also reports replicas that keep leaving and re-entering the in-sync set. This check has no matching alert: run the diagnostic to see it.
-
 The `kafka_replica_isr_flapping` rule of the Kafka diagnostic has no matching alert. It reports replicas that keep leaving and re-entering the in-sync set, a sign of inter-node network latency or broker saturation, and is evaluated only when you run the Kafka diagnostic.
 
 ## Nodes
