@@ -47,7 +47,7 @@ Okta API tokens have no scopes of their own. A token inherits the permissions of
 
 The connector only performs read operations:
 
-| Okta API operation | Purpose | Equivalent OAuth scope |
+| Okta API operation | Purpose | Role needed |
 | --- | --- | --- |
 | List users | Collect user profiles | `okta.users.read` |
 | List user groups | Collect group memberships | `okta.users.read` |
