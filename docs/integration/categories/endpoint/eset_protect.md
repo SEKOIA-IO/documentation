@@ -16,6 +16,8 @@ type: intake
     - HIPS aggregated events
     - Threat events
     - ESET Inspect alerts
+ 
+  [![ESET & Sekoia solution brief](/assets/integration/sekoia-cta-eset-hero.png)](https://www.sekoia.com/eset-solution-brief){: style="width: 100%; max-width: 100%"}
 
 ## High-Level Architecture Diagram
 
