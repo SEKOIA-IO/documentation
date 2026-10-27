@@ -15,7 +15,7 @@ Use the following configuration as a starting point. Replace every example value
 
 ```yaml
 global:
-  inherit_config: sizing/1tb-day.yaml
+  inherit_config: sizing/500gb-day.yaml
   host: "app.example.com"
   delivery_host: "admin.example.com"
   kube_manager_host: "kubernetes.example.com"
@@ -91,20 +91,46 @@ The [deployment guide](/self_hosted/1.0.1/deployment/deployment_guide.md#step-4-
 
 ## Select and adjust a sizing profile
 
-`global.inherit_config` selects a sizing profile shipped with the SHC image. The profile supplies service replicas, resource allocations, storage sizes, and other capacity-related defaults, while your site configuration overrides the values specific to your environment.
+`global.inherit_config` selects a sizing profile shipped with the SHC image. A profile provides the base values of the platform capacity: service replicas, resource allocations, storage sizes, and Kafka partitions. Your `config.yml` overrides these base values case by case, as described in [Override the values of a profile](#override-the-values-of-a-profile).
 
-The SHC image ships two sizing profiles. Each one adjusts only the resources whose load grows with the ingestion volume: Kafka, ExaLog, the KeyDB workflow cache, the intake and ingestion workers, and Sigma Workflow. Every other value comes from the built-in defaults.
+The SHC image ships three sizing profiles. They adjust only the resources whose load grows with the ingestion volume: Kafka, ExaLog, the KeyDB workflow cache, the intake and ingestion workers, Sigma Workflow, and asset discovery. Every other value comes from the built-in defaults.
 
 | Profile | `global.inherit_config` value | Target |
 | :--- | :--- | :--- |
-| Minimal | `sizing/minimal.yaml` | Smallest footprint shipped with the SHC. |
+| 500 GB/day | `sizing/500gb-day.yaml` | Deployment ingesting around 500 GB of events per day. |
 | 1 TB/day | `sizing/1tb-day.yaml` | Mid-range deployment ingesting around 1 TB of events per day. |
+| 2 TB/day | `sizing/2tb-day.yaml` | Deployment ingesting around 2 TB of events per day. |
 
-The values of both profiles are initial estimates, pending performance validation. A profile sets the resources and the replicas of the services, not the number of nodes: size the servers and the object storage with [Cluster sizing](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#cluster-sizing). The rows of that table do not map one-to-one to the profiles.
+The `sizing/` path resolves against the configuration directory shipped in the SHC image, wherever you mount your own `config.yml`.
 
-The `sizing/` path resolves against the configuration directory shipped in the SHC image, wherever you mount your own `config.yml`. A profile is a starting point, not a universal production recommendation: choose the profile and adjust it with Sekoia to match your event sizes, events per second, daily ingestion volume, retention requirements, and volume of search queries.
+The values of the profiles are initial estimates, pending performance validation: the throughput that a profile sustains depends on the events of your site. Once the platform ingests your events, check the consumer lag of the ingestion and detection workers in the [monitoring dashboards](/self_hosted/1.0.1/monitoring/monitoring_guide.md). Asset discovery can fall behind even when event ingestion keeps up.
 
-Use `config show` to review the result after inheritance, and `config help` to identify supported sizing overrides. Do not copy undocumented keys into your configuration: the SHC rejects unsupported fields.
+A profile sets the resources and the replicas of the services, not the number of nodes: size the servers and the object storage with [Cluster sizing](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#cluster-sizing). The 500 GB/day and 2 TB/day profiles target the daily volumes of the Small and Medium sizes of that table. No profile targets the Large size: size it with Sekoia.
+
+The 500 GB/day profile keeps the Kafka partitions, the volume sizes, and the database redundancy of the 1 TB/day profile. An installed 1 TB/day platform can move to it without shrinking its storage.
+
+!!! note "Contact Sekoia before you select the 2 TB/day profile"
+    The 2 TB/day profile runs 12 ExaLog indexing pipelines per community, and the Kafka topic of each community needs at least 12 partitions. The SHC does not set these partitions, and it applies the number of pipelines only to the communities created after the change. Sekoia makes these changes with you.
+
+### Override the values of a profile
+
+A profile is a starting point, not a universal production recommendation. Sekoia adjusts it with you, case by case, to match your event sizes, events per second, daily ingestion volume, retention requirements, and volume of search queries.
+
+A value that you set in `config.yml` replaces the value of the profile. The values that you do not set keep the value of the profile. For example, to run three ExaLog indexers instead of the two of the 500 GB/day profile:
+
+```yaml
+global:
+  inherit_config: sizing/500gb-day.yaml
+
+modules:
+  platform_configuration:
+    config:
+      quickwit:
+        indexer:
+          replicaCount: "3"
+```
+
+The value is an example, not a sizing recommendation. Use `config help` to identify the supported overrides, and `config show` to review the result after inheritance. Do not copy undocumented keys into your configuration: the SHC rejects unsupported fields. To change the replica counts of the workers, see [Worker replica counts](#worker-replica-counts).
 
 ### Worker replica counts
 
@@ -476,6 +502,26 @@ In manual mode, the following conditions apply:
 - `lvm2` is already installed on every node that has a selected device: `CheckServerSpec` checks it before the SHC installs any package.
 - Ceph creates one unencrypted OSD per device.
 - `WipeStorageDisks` does not wipe the selected devices and does not remove `/var/lib/rook` from the nodes. After a `PlatformDestroy`, clean them yourself before you reuse them.
+
+### Feed compilation batch size
+
+The feed compiler of Sigma Workflow compiles the indicators of the threat intelligence feeds that the detection rules use, in batches. On nodes with limited CPU, a large batch can keep the compiler busy long enough for its health probes to time out: Kubernetes then restarts the `sigma-workflow-feed-compiler` pod of the `sic` namespace. To keep the probes responsive, lower the batch size:
+
+| Field | Description | Default |
+| :--- | :--- | :--- |
+| `modules.platform_configuration.config.sigma-workflow.sigma-workflow-feed-compiler.feed_refresh_limit` | Maximum number of indicators per compilation batch, as a positive whole number. | `2000` |
+
+??? example "Smaller batches in `config.yml`"
+    ```yaml
+    modules:
+      platform_configuration:
+        config:
+          sigma-workflow:
+            sigma-workflow-feed-compiler:
+              feed_refresh_limit: "500"
+    ```
+
+A smaller batch skips no indicator: the compiler fetches more batches to compile the whole feed. To apply the change on an installed platform, follow [Apply a configuration change](/self_hosted/1.0.1/operations/apply_configuration_change.md).
 
 ### Backups
 

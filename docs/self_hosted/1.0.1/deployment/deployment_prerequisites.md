@@ -178,7 +178,7 @@ The following table provides estimated hardware footprints per deployment size.
 
 **Node roles:** Each production cluster has exactly 3 manager nodes (Kubernetes control plane), the only supported manager-node topology. The SHC does not check this count: `utils.ansible.inventory.managers` accepts any number of addresses, and `CheckServerSpec` validates each node on its own. The topology is a Sekoia support requirement. The **Servers** column includes the manager nodes. They also run platform workloads, like the worker nodes, and must meet the same [compute node specification](#compute-node-specification). With 1 or 2 managers, etcd has no fault tolerance: the loss of one manager stops the Kubernetes API.
 
-**Sizing profiles:** The table sizes the servers and the object storage. The two sizing profiles of the SHC, `sizing/minimal.yaml` and `sizing/1tb-day.yaml`, set the resources and the replicas of the platform services, not the number of nodes. Both profiles are pending performance validation: choose the profile and adjust it with Sekoia. See [Select and adjust a sizing profile](/self_hosted/1.0.1/deployment/deployment_configuration.md#select-and-adjust-a-sizing-profile).
+**Sizing profiles:** The table sizes the servers and the object storage. The sizing profiles of the SHC set the resources and the replicas of the platform services, not the number of nodes. `sizing/500gb-day.yaml` and `sizing/2tb-day.yaml` target the daily volumes of the Small and Medium sizes, and no profile targets the Large size. The profiles are pending performance validation: choose the profile and adjust it with Sekoia. See [Select and adjust a sizing profile](/self_hosted/1.0.1/deployment/deployment_configuration.md#select-and-adjust-a-sizing-profile).
 
 ## Storage
 
