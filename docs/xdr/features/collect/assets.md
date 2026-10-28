@@ -77,6 +77,11 @@ Your SOC team can effectively correlate these events with specific assets throug
 !!! note
     Detection properties are case-insensitive; they will match events fields regardless of letter casing.
 
+!!! note "Limits on detection properties"
+    An asset holds at most 50 detection properties of one type, for instance 50 IPv4 addresses or 50 SIDs. Once an asset reaches this limit, the new detection properties of that type found by asset discovery or pushed by an asset connector are ignored, and the ones already on the asset are kept. A detection property you add yourself is always accepted: if the asset is at the limit, it takes the place of the oldest detection property of that type that was added automatically.
+
+    An asset with more than 1,000 detection properties in total receives no new automatic ones.
+
 ### Contextual Properties
 
 The contextual properties enhance asset management within our system by allowing users to associate additional context and metadata with each asset. These properties provide valuable information beyond the standard asset details, enabling better asset classification and enriched insights into the organization's IT infrastructure.
