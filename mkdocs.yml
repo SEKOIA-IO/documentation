@@ -440,6 +440,7 @@ nav:
       - Nozomi Central Management Console: integration/categories/endpoint/nozomi_cmc.md
       - Nucleon EDR: integration/categories/endpoint/nucleon_edr.md
       - Palo Alto Cortex XDR (EDR): integration/categories/endpoint/paloalto_cortex_edr.md
+      - Palo Alto Cortex XDR Issues (API v5): integration/categories/endpoint/paloalto_cortex_xdr_issues.md
       - Panda Security Aether: integration/categories/endpoint/panda_security_aether.md
       - Pradeo MTD: integration/categories/endpoint/pradeo_mtd.md
       - Proxmox VE: integration/categories/endpoint/proxmox_ve.md
@@ -961,6 +962,7 @@ plugins:
       xdr/features/collect/integrations/endpoint/microsoft_intune.md: integration/categories/endpoint/microsoft_intune.md
       xdr/features/collect/integrations/endpoint/nozomi_cmc.md: integration/categories/endpoint/nozomi_cmc.md
       xdr/features/collect/integrations/endpoint/paloalto_cortex_edr.md: integration/categories/endpoint/paloalto_cortex_edr.md
+      xdr/features/collect/integrations/endpoint/paloalto_cortex_xdr_issues.md: integration/categories/endpoint/paloalto_cortex_xdr_issues.md
       xdr/features/collect/integrations/endpoint/panda_security_aether.md: integration/categories/endpoint/panda_security_aether.md
       xdr/features/collect/integrations/endpoint/sekoiaio.md: integration/categories/endpoint/sekoiaio.md
       xdr/features/collect/integrations/endpoint/sekoiaio/sekoiaio.md: integration/categories/endpoint/sekoiaio.md
