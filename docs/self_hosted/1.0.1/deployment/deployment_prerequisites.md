@@ -9,7 +9,7 @@ You must provision and manage the following components outside the Kubernetes cl
 | Component | CPU | RAM | Storage / throughput | Notes |
 | :--- | :---: | :---: | :---: | :--- |
 | TCP Load Balancer (e.g., HAProxy, Nginx) | 4 | 8 GB | 100 Mbps (12.5 MB/s) | Required minimum throughput. Scale according to your actual ingest volume. Layer 4 only: Traefik terminates TLS. See [Network requirements](/self_hosted/1.0.1/deployment/network_requirements.md#flows-from-load-balancers-to-kubernetes-nodes). |
-| Orchestration node | 4 | 8 GB | 200 GB | Required. Runs the self-hosted-controller (SHC). See requirements below. |
+| Orchestration node | 4 | 8 GB | 500 GB | Required. Runs the self-hosted-controller (SHC) and stores the release files. See requirements below. |
 | Local image registry (e.g., Harbor, JFrog, Nexus) | 4 | 8 GB | 1 TB | Required. The SHC publishes the images and Helm charts to it, and the Kubernetes nodes pull them from it. Must serve HTTPS, with token (Bearer) authentication. See [OCI registry](/self_hosted/1.0.1/deployment/deployment_configuration.md#oci-registry). |
 | Local code registry (e.g., GitLab, Gitea, ForgeJo) | 1 | 4 GB | Less than 10 GB | Required. The SHC publishes the ArgoCD stack manifests to it, and ArgoCD reads them from it. Must be reached over HTTP or HTTPS, with a username and a password. See [Git repository](/self_hosted/1.0.1/deployment/deployment_configuration.md#git-repository). |
 | S3-compatible object storage | | | See [Storage](#storage) | Required. Stores the indexed events. |
@@ -17,6 +17,17 @@ You must provision and manage the following components outside the Kubernetes cl
 ### Orchestration node requirements
 
 The orchestration node only requires Docker to run the SHC container image. It does not require Python or Ansible to be installed directly on the host.
+
+The orchestration node stores the release files that the SHC deploys. Provide 500 GB of disk space for these files and the Docker data. This space covers the following content:
+
+| Content | Approximate size |
+| :--- | :--- |
+| Release archive, until you extract it | 110 GB |
+| Extracted release: Docker images, Helm charts, and ArgoCD stacks | 110 GB |
+| Security content bundles, up to three versions per type | 1 GB |
+| SHC image and temporary files of the image push, in the Docker data | 10 GB |
+| CTI archive and its extracted export, in air-gapped mode | Twice the size of the CTI archive during the extraction |
+| Next release, downloaded and extracted next to the current one | 220 GB |
 
 !!! note "Orchestration node role"
     The orchestration node does not join the Kubernetes cluster. The SHC performs preflight checks, installs the complete Kubernetes cluster, manages the platform deployment through Helm and ArgoCD, and downloads deployment resources when internet access is available. The node must have SSH access to all Kubernetes nodes on TCP port 22.
