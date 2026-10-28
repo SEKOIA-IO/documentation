@@ -75,7 +75,7 @@ scp sekoia-self-hosted-v1.0.1.tar.gz sekoia-self-hosted-v1.0.1.tar.gz.sha256 use
 Replace `<SEKOIA_LOCAL_DIR>` with the absolute path of the release directory on the orchestration node. To check that the transfer did not alter the archive, run `echo "$(cut -d' ' -f1 sekoia-self-hosted-v1.0.1.tar.gz.sha256)  sekoia-self-hosted-v1.0.1.tar.gz" | sha256sum -c -` again in this directory on the orchestration node.
 
 !!! note "Disk space"
-    Ensure at least 150 GB of available disk space at the destination before extracting.
+    The extracted files take about as much space as the archive, about 110 GB for 1.0.1. Before you extract it, make sure the orchestration node has this free space in addition to the archive: about 220 GB in total. You can delete the archive and its checksum file once it is extracted. See [Orchestration node requirements](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#orchestration-node-requirements).
 
 To extract the archive on the orchestration node, run:
 
