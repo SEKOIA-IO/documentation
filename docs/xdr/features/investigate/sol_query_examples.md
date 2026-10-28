@@ -352,6 +352,37 @@
     | b1ee47a2-dae2-4a6a-b4fa-ed8a56382f94 | 904df422-adf9-4be8-b2b6-d027c0d68184 | User network  | [{"tag":"Backup"}] |
 
 
+### Search the events of assets with a specific tag
+
+Asset tags are not stored in the events. This query reads them from the `assets` table when it runs, so it uses the current tags, including on the events received before a tag was added.
+
+=== "Query"
+
+    ``` shell
+    let tagged_assets = assets
+    | where tags.tag in ["Admin"]
+    | select uuid;
+
+    events
+    | where timestamp > ago(7d)
+    | where sekoiaio.any_asset.uuid in get_column_values("uuid", tagged_assets)
+    | select timestamp, sekoiaio.any_asset.name, event.action
+    | limit 100
+    ```
+
+=== "Results"
+
+    | timestamp                | sekoiaio.any_asset.name         | event.action |
+    | ------------------------ | ------------------------------- | ------------ |
+    | 2026-03-25T15:17:20.357Z | ["Maurice Moss","User network"] | opened-file  |
+    | 2026-03-25T15:16:52.104Z | ["Maurice Moss","User network"] | deleted      |
+    | 2026-03-25T15:15:43.981Z | ["Roy Trenneman"]               | opened-file  |
+
+`sekoiaio.any_asset.name` lists every asset of the event, not only the tagged ones.
+
+!!! note
+    The tag must be assigned to fewer than 10,000 assets. Beyond that, the query returns partial results with a warning.
+
 ### Find hosts that no asset connector reports
 
 Hosts seen by Sekoia Asset Discovery and by no configured asset connector, such as an EDR or a CMDB, are candidates for Shadow IT.
