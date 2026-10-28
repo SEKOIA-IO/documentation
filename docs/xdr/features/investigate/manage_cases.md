@@ -11,7 +11,8 @@ You can filter cases by the following criteria:
 | Filter | Description |
 |---|---|
 | Asset | Shows cases linked to a specific asset. |
-| Assignee | Shows cases assigned to a specific analyst. |
+| Assignee | Shows cases assigned to a specific analyst. Select **Me** to show cases assigned to you.|
+| Type | Shows only **AI** cases or only **manual** cases. |
 | Creator | Shows cases created by a specific user. |
 | Custom fields | Filters by any custom field defined in your community. |
 | Priority | Filters by priority level (for example, High, Medium, Low). |
