@@ -8,7 +8,7 @@ type: playbook
 
 Zscaler is a cloud security company providing secure internet access and zero trust network access to protect enterprise data and applications. Its platform offers scalable, cloud-native solutions for secure browsing, data protection, and threat prevention.
 
- [![Zscaler & Sekoia solution brief](/assets/integration/sekoia-cta-zscaler-hero.png)](https://www.sekoia.com/zscaler-solution-brief){: style="width: 100%; max-width: 100%"}
+ [![Zscaler & Sekoia solution brief](/assets/integration/sekoia-cta-zscaler-hero.png){: style="display: block; width: 100%; max-width: 100%; height: auto;"}](https://www.sekoia.com/zscaler-solution-brief){: style="width: 100%; max-width: 100%"}
 
 ## Configuration
 

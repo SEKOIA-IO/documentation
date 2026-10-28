@@ -12,7 +12,7 @@ This setup guide shows how to forward events produced by HarfangLab EDR to Sekoi
 - **Detection based on**: Telemetry / Alert
 - **Supported application or feature**: Authentication, Driver, Network, Process, Web
 
-[![HarfangLab & Sekoia solution brief](/assets/integration/sekoia-cta-harfanglab-hero.png)](https://0h3wgygmjl.flowdrivecdn.com/rp2fjTtMXwOnCaPE4Y7uQ){: style="width: 100%; max-width: 100%"}
+[![HarfangLab & Sekoia solution brief](/assets/integration/sekoia-cta-harfanglab-hero.png){: style="display: block; width: 100%; max-width: 100%; height: auto;"}](https://0h3wgygmjl.flowdrivecdn.com/rp2fjTtMXwOnCaPE4Y7uQ){: style="width: 100%; max-width: 100%"}
 
 ## Configure
 
