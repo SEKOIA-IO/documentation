@@ -163,7 +163,7 @@ The interface opens a result view titled `Diagnostic: all`. It runs the targets 
 When a rule file of a target fails to load, the interface shows a `Failed to load <target>` error notification, skips that target, and runs the remaining ones.
 
 !!! note "No diagnostics listed"
-    When the tab reports that no diagnostics were found, the rule files are missing from the SHC image. Verify the image reference you set in `DOCKER_IMAGE`, then contact Sekoia support with the path shown in the warning.
+    When the tab reports that no diagnostics were found, the rule files are missing from the SHC image. Verify the image that the execution script runs, `sekoialab/self-hosted-controller-cli:v1.0.1` unless you set `DOCKER_IMAGE`, then contact Sekoia support with the path shown in the warning.
 
 When you escalate a diagnostic result, copy the full report and attach the timestamped SHC log shown at the bottom of the TUI. Include the target name, or state that you ran all diagnostics, and the time at which you ran it. Before you share them, redact the credentials, tokens, private hostnames, and customer data that the report or the log contain.
 

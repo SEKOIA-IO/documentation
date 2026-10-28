@@ -32,8 +32,8 @@ Download the archive and its checksum file, then verify integrity.
     export AWS_DEFAULT_REGION="fr-par-2"
     export ENDPOINT="https://self-hosted.delivery.sekoia.io"
     export BUCKET="self-hosted"
-    export KEY="platform/v1.0.1/archives/v1.0.1.tar"
-    export OUT="sekoia-self-hosted-v1.0.1.tar"
+    export KEY="platform/v1.0.1/archives/v1.0.1.tar.gz"
+    export OUT="sekoia-self-hosted-v1.0.1.tar.gz"
     export AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED
     export AWS_RESPONSE_CHECKSUM_VALIDATION=WHEN_REQUIRED
 
@@ -55,24 +55,24 @@ Download the archive and its checksum file, then verify integrity.
     export RCLONE_CONFIG_SEKOIA_ENDPOINT="https://self-hosted.delivery.sekoia.io"
     export RCLONE_CONFIG_SEKOIA_REGION="fr-par-2"
 
-    rclone copyto sekoia:self-hosted/platform/v1.0.1/archives/v1.0.1.tar ./sekoia-self-hosted-v1.0.1.tar
-    rclone copyto sekoia:self-hosted/platform/v1.0.1/archives/v1.0.1.tar.sha256 ./sekoia-self-hosted-v1.0.1.tar.sha256
+    rclone copyto sekoia:self-hosted/platform/v1.0.1/archives/v1.0.1.tar.gz ./sekoia-self-hosted-v1.0.1.tar.gz
+    rclone copyto sekoia:self-hosted/platform/v1.0.1/archives/v1.0.1.tar.gz.sha256 ./sekoia-self-hosted-v1.0.1.tar.gz.sha256
     unset RCLONE_CONFIG_SEKOIA_ACCESS_KEY_ID RCLONE_CONFIG_SEKOIA_SECRET_ACCESS_KEY
 
-    echo "$(cut -d' ' -f1 sekoia-self-hosted-v1.0.1.tar.sha256)  sekoia-self-hosted-v1.0.1.tar" | sha256sum -c -
+    echo "$(cut -d' ' -f1 sekoia-self-hosted-v1.0.1.tar.gz.sha256)  sekoia-self-hosted-v1.0.1.tar.gz" | sha256sum -c -
     ```
 
-Expected output: `sekoia-self-hosted-v1.0.1.tar: OK`
+Expected output: `sekoia-self-hosted-v1.0.1.tar.gz: OK`
 
 ### Step 2: Transfer and extract the archive
 
 To transfer the archive and its checksum file to the orchestration node if you downloaded them on a separate machine, run:
 
 ```bash
-scp sekoia-self-hosted-v1.0.1.tar sekoia-self-hosted-v1.0.1.tar.sha256 user@<ORCHESTRATION_NODE>:<SEKOIA_LOCAL_DIR>/
+scp sekoia-self-hosted-v1.0.1.tar.gz sekoia-self-hosted-v1.0.1.tar.gz.sha256 user@<ORCHESTRATION_NODE>:<SEKOIA_LOCAL_DIR>/
 ```
 
-Replace `<SEKOIA_LOCAL_DIR>` with the absolute path of the release directory on the orchestration node. To check that the transfer did not alter the archive, run `echo "$(cut -d' ' -f1 sekoia-self-hosted-v1.0.1.tar.sha256)  sekoia-self-hosted-v1.0.1.tar" | sha256sum -c -` again in this directory on the orchestration node.
+Replace `<SEKOIA_LOCAL_DIR>` with the absolute path of the release directory on the orchestration node. To check that the transfer did not alter the archive, run `echo "$(cut -d' ' -f1 sekoia-self-hosted-v1.0.1.tar.gz.sha256)  sekoia-self-hosted-v1.0.1.tar.gz" | sha256sum -c -` again in this directory on the orchestration node.
 
 !!! note "Disk space"
     Ensure at least 150 GB of available disk space at the destination before extracting.
@@ -80,7 +80,7 @@ Replace `<SEKOIA_LOCAL_DIR>` with the absolute path of the release directory on 
 To extract the archive on the orchestration node, run:
 
 ```bash
-tar -xvf sekoia-self-hosted-v1.0.1.tar -C $SEKOIA_LOCAL_DIR
+tar -xvf sekoia-self-hosted-v1.0.1.tar.gz -C $SEKOIA_LOCAL_DIR
 ```
 
 The archive contains the platform release and the latest security content bundles:
@@ -99,27 +99,21 @@ The execution script mounts `$SEKOIA_LOCAL_DIR` on `/opt/sekoia` in the SHC cont
 
 ### Step 3: Load the self-hosted-controller (SHC) Docker image
 
-For the first installation, the SHC image is not yet available on the orchestration node. Load it manually from the extracted archive:
+The SHC image ships in the release archive, in online mode as in air-gapped mode. To load it on the orchestration node, run:
 
 ```bash
-docker load -i $SEKOIA_LOCAL_DIR/platform/v1.0.1/images/registry.sekoia.io_sekoialab_self-hosted-controller-cli-v1.0.1.tar.gz
+docker load -i $SEKOIA_LOCAL_DIR/platform/v1.0.1/images/registry.sekoia.io_sekoialab_self-hosted-controller-cli-2.20261027-40526598025-01c5f7786cea2516605ec317c83b1f24bcee8b12.tar.gz
 ```
 
-To confirm the image loaded successfully, run:
+The command prints the reference of the loaded image: `registry.sekoia.io/sekoialab/self-hosted-controller-cli:2.20261027-40526598025-01c5f7786cea2516605ec317c83b1f24bcee8b12`.
+
+To give the image the reference that the execution script runs, run:
 
 ```bash
-docker images | grep self-hosted-controller
+docker tag registry.sekoia.io/sekoialab/self-hosted-controller-cli:2.20261027-40526598025-01c5f7786cea2516605ec317c83b1f24bcee8b12 sekoialab/self-hosted-controller-cli:v1.0.1
 ```
 
-!!! note "Air-gapped deployments"
-    In air-gapped environments, the SHC image is always loaded from the local archive. After loading, tag the image and export its reference to override the default `DOCKER_IMAGE` value used by the execution script:
-
-    ```bash
-    docker tag <IMAGE_ID> sekoialab/self-hosted-controller-cli:v1.0.1
-    export DOCKER_IMAGE="sekoialab/self-hosted-controller-cli:v1.0.1"
-    ```
-
-    Replace `<IMAGE_ID>` with the image ID returned by `docker images`.
+To confirm, run `docker images sekoialab/self-hosted-controller-cli`. Expected output: one image with the `v1.0.1` tag.
 
 ### Step 4: Create the execution script
 
@@ -129,7 +123,7 @@ Create a file named `run-shc.sh` with the following content:
 
 ```bash
 #!/bin/bash
-DOCKER_IMAGE="${DOCKER_IMAGE:-sekoialab/self-hosted-controller-cli:latest}"
+DOCKER_IMAGE="${DOCKER_IMAGE:-sekoialab/self-hosted-controller-cli:v1.0.1}"
 
 # Allocate a TTY when the script runs in a terminal, so the interactive
 # interface can render. Skipped in non-interactive contexts such as CI.
@@ -180,7 +174,7 @@ Set the following environment variables on the orchestration node before running
 | `GIT_HTTP_USERNAME` | Yes | Username for your local code repository. |
 | `GIT_HTTP_PASSWORD` | Yes | Password or token for your local code repository. |
 | `SERVERS_SUDO_PASSWORD` | No | Sudo password for target nodes, if `sudo` asks for one. The SHC also uses it when the SSH server asks for a password. |
-| `DOCKER_IMAGE` | No | Override the self-hosted-controller (SHC) Docker image reference. Required in air-gapped environments. |
+| `DOCKER_IMAGE` | No | Override the self-hosted-controller (SHC) Docker image reference. Default: `sekoialab/self-hosted-controller-cli:v1.0.1`, the tag that you set in [Step 3](#step-3-load-the-self-hosted-controller-shc-docker-image). |
 | `SEKOIA_INSTANCE_PUBLIC_KEY` | Yes | Public key for the Sekoia instance. |
 | `TRAEFIK_PUBKEY` | Yes | Platform certificate chain in PEM format. See [TLS certificate](/self_hosted/1.0.1/deployment/deployment_configuration.md#tls-certificate). |
 | `TRAEFIK_PRIVKEY` | Yes | Private key of the platform certificate in PEM format. |
