@@ -248,7 +248,7 @@ Verifies that the tools used to push the signed release artifacts are available 
 exec CheckLocalTools
 ```
 
-**What to do after a failure:** The tools ship with the SHC image. A failure usually means that the container does not run the SHC image of the release. Load the image from the release archive and set `DOCKER_IMAGE` as described in [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md#step-3-load-the-self-hosted-controller-shc-docker-image).
+**What to do after a failure:** The tools ship with the SHC image. A failure usually means that the container does not run the SHC image of the release. Load the image from the release archive and tag it as described in [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md#step-3-load-the-self-hosted-controller-shc-docker-image).
 
 ### CheckLocalGit
 
