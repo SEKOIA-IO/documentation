@@ -1,0 +1,10 @@
+[project]
+name = "gitbook-scripts"
+version = "1.0"
+description = "Scripts to manage the GitBook documentation site"
+requires-python = ">=3.14,<4.0.0"
+
+dependencies = [
+    "click (>=8.1,<9.0)",
+    "requests (>=2.32,<3.0)",
+]
