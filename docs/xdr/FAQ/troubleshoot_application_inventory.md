@@ -14,13 +14,9 @@ Check the following:
 - The source has synchronized successfully.
 - The Applications capability is enabled for your community.
 
-If you use the Sekoia Endpoint Agent, confirm that software collection is enabled with these three roles:
+If you use the Sekoia Endpoint Agent, confirm that the `software-collector` role is enabled on the agent. It is the only role the Applications tab needs, and it requires an intake key.
 
-- `event-collector`
-- `compliance-collector`
-- `software-collector`
-
-The `software-collector` role is required in addition to the two roles used for host hygiene collection. If it is not enabled, the Applications tab can remain empty even when Hygiene data is available.
+The `event-collector` and `compliance-collector` roles collect events and host hygiene data. They are useful, but the Applications tab does not depend on them: without `software-collector`, the tab can remain empty even when Hygiene data is available.
 
 If the tab remains unavailable, contact a community administrator or Sekoia support.
 
