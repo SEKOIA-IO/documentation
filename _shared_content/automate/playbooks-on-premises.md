@@ -88,7 +88,7 @@ For more information, see [Regions](/getting_started/regions.md).
 1. Open the **Local runners** page with the **Local runners** button at the top of the **Playbooks** page or of the **Configure > Assets** page.
 2. Select **+ Local runner**.
 3. In **Name of the local runner**, enter a name.
-4. If the **Community** field is displayed, select the customer community where you will install the runner. This field is displayed only from a parent community used by an MSSP.
+4. If the **Account’s community** field is displayed, select the customer community where you will install the runner. This field is displayed only from a parent community used by an MSSP.
 5. Select **Continue**.
 6. Follow the installation instructions displayed by Sekoia.
 
