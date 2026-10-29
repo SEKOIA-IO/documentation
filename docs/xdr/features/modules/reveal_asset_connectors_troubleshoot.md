@@ -40,7 +40,7 @@ Review the log entries to identify the root cause. Common issues include:
     If the connector runs on a local runner, confirm that the runner and connector belong to the same community.
 
      1. Go to **Configure > Assets > Local runners**.
-     2. Confirm that the selected runner is **Online**. 
+     2. Confirm that the selected runner is **Up & running**.
      3. Check the runner's last activity, hostname, and version. 
      4. If the runner is offline or cannot reach Sekoia, check the host connectivity, proxy configuration, Docker service, and Endpoint Agent logs.
 
