@@ -15,7 +15,7 @@ From this panel, you can review connector error states and open detailed logs fo
 
     Some asset connectors run from a local runner inside your environment. The local runner and asset connector must belong to the same community, and that community must have a Reveal subscription.
 
-    If a local connector job fails or stops retrieving assets, go to **Configure > Assets > Local runners** and confirm that the selected runner is **Online**. Review its last activity, hostname, and version. If the runner is offline, see [Local runners](/xdr/features/automate/playbooks-on-premises.md) for proxy, Docker, and Endpoint Agent checks.
+    If a local connector job fails or stops retrieving assets, go to **Configure > Assets > Local runners** and confirm that the selected runner is **Up & running**. Review its last activity, hostname, and version. If the runner is offline, see [Local runners](/xdr/features/automate/playbooks-on-premises.md) for proxy, Docker, and Endpoint Agent checks.
 
 **Possible error states**
 
