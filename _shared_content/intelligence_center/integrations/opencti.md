@@ -6,4 +6,4 @@ The existing Sekoia connector for OpenCTI has been released in 2021 and is freel
 
 The OpenCTI Github repository: [https://github.com/OpenCTI-Platform/connectors/tree/master/external-import/sekoia](https://github.com/OpenCTI-Platform/connectors/tree/master/external-import/sekoia) 
 
-[![SentinelOne & Sekoia solution brief](/assets/integration/sekoia-cta-sentinelone-hero.png)Toutes les plantes belles et comestibles](https://www.sekoia.com/sentinelone-solution-brief){: style="width: 100%; max-width: 100%"}
+[![Filigran & Sekoia solution brief](/assets/integration/sekoia-cta-filigran-hero.png){: style="width: 100%; max-width: 100%"}](https://www.sekoia.com/filigran-solution-brief){: style="width: 100%; max-width: 100%"}
