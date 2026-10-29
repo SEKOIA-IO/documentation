@@ -12,6 +12,14 @@ Confirm that the following conditions are met:
 - Some integrations require specific permissions or scopes on the external system. Refer to the integration's documentation to check what the account you use needs.
 - You have the credentials required by the integration you want to connect (API key, client ID, service account, or equivalent).
 
+!!! note "Run an asset connector with a local runner"
+
+    Eligible asset connectors can run through a local runner from inside your environment. The local runner and asset connector must belong to the same community, and that community must have a Reveal subscription.
+
+    Asset connectors cannot be created in a workspace or parent MSSP community. To collect assets for a customer, create the connector and local runner in that customer's community.
+
+    For local runner setup and connectivity configuration, see [Local runners](/xdr/features/automate/playbooks-on-premises.md).
+
 ## Create an asset connector
 
 ### Step 1: Open the asset connectors panel
@@ -71,10 +79,11 @@ From the asset connector list, you can perform the following actions on any conn
 !!! note "After deleting a connector"
     The connector stops syncing within a few minutes. Assets it already discovered remain in your inventory.
 
-## Related links
+## Related articles
 
-- [Troubleshoot asset connectors](/xdr/features/modules/reveal_asset_connectors_troubleshoot.md) — How to diagnose and resolve connector errors using error indicators and logs.
-- [Reveal feature enablement matrix](/xdr/features/modules/reveal_feature_enablement.md) — Which data sources are required or optional for each Reveal capability.
-- [Getting started with Reveal](/xdr/features/modules/reveal_getting_started.md) — Recommended setup order for all Reveal data sources.
-- [Integration — Asset categories](/integration/assets_categories/overview.md) — Reference for available connector categories and integration setup.
-- [Security controls](/xdr/features/modules/reveal_security_controls.md) — How to verify connector coverage from the asset context panel.
+- [Troubleshoot asset connectors](/xdr/features/modules/reveal_asset_connectors_troubleshoot.md): How to diagnose and resolve connector errors using error indicators and logs.
+- [Reveal feature enablement matrix](/xdr/features/modules/reveal_feature_enablement.md): Which data sources are required or optional for each Reveal capability.
+- [Getting started with Reveal](/xdr/features/modules/reveal_getting_started.md): Recommended setup order for all Reveal data sources.
+- [Integration — Asset categories](/integration/assets_categories/overview.md): Reference for available connector categories and integration setup.
+- [Security controls](/xdr/features/modules/reveal_security_controls.md): How to verify connector coverage from the asset context panel.
+- [Local runners](/xdr/features/automate/playbooks-on-premises.md): How to run eligible asset connector jobs from inside your environment.

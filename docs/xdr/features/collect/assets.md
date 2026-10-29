@@ -386,3 +386,4 @@ This feature allows users to dive deeper into the specifics of each authenticati
 ### Going further
 
 * [Assets FAQ](/xdr/FAQ/Assets_qa.md): Answers to frequently asked questions about assets.
+* [Local runners](/xdr/features/automate/playbooks-on-premises.md): How to run eligible asset connector jobs from inside your environment
