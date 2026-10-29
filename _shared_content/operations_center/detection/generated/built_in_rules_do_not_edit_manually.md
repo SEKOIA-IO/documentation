@@ -1,4 +1,4 @@
-Rules catalog includes **1116 built-in detection rules** ([_last update on 2026-10-27_](rules_changelog.md)).
+Rules catalog includes **1116 built-in detection rules** ([_last update on 2026-10-29_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -487,6 +487,7 @@ Rules catalog includes **1116 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 09/09/2026 - minor - Update rule type to integration
+        - 29/10/2026 - minor - Rule riskEventType updated following Microsoft changes, the rule is now properly working again.
             
 ??? abstract "Microsoft Entra ID (Azure AD) Leaked Credentials"
     
@@ -697,6 +698,7 @@ Rules catalog includes **1116 built-in detection rules** ([_last update on 2026-
     - **Changelog:**
     
         - 09/09/2026 - minor - Update rule type to integration
+        - 29/10/2026 - minor - Rule riskEventType updated following Microsoft changes, the rule is now properly working again.
             
 ??? abstract "Microsoft Entra ID (Azure AD) Leaked Credentials"
     
@@ -1030,6 +1032,7 @@ Rules catalog includes **1116 built-in detection rules** ([_last update on 2026-
         - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
         - 04/02/2025 - major - Excluding Microsoft 365 format to avoid false positives
         - 14/08/2025 - major - Excluding Wiz Audit Logs format to avoid false positives
+        - 29/10/2026 - major - Excluding Entra ID following parser changes to avoid false positives. A dedicated rule for Entra ID exists and is called "Microsoft Entra ID (Azure AD) Impossible Travel".
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -6741,6 +6744,7 @@ Rules catalog includes **1116 built-in detection rules** ([_last update on 2026-
         - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
         - 04/02/2025 - major - Excluding Microsoft 365 format to avoid false positives
         - 14/08/2025 - major - Excluding Wiz Audit Logs format to avoid false positives
+        - 29/10/2026 - major - Excluding Entra ID following parser changes to avoid false positives. A dedicated rule for Entra ID exists and is called "Microsoft Entra ID (Azure AD) Impossible Travel".
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -8766,6 +8770,7 @@ Rules catalog includes **1116 built-in detection rules** ([_last update on 2026-
         - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
         - 04/02/2025 - major - Excluding Microsoft 365 format to avoid false positives
         - 14/08/2025 - major - Excluding Wiz Audit Logs format to avoid false positives
+        - 29/10/2026 - major - Excluding Entra ID following parser changes to avoid false positives. A dedicated rule for Entra ID exists and is called "Microsoft Entra ID (Azure AD) Impossible Travel".
             
 ??? abstract "Broadcom Edge Secure Web Gateway High Threat"
     
@@ -10609,6 +10614,7 @@ Rules catalog includes **1116 built-in detection rules** ([_last update on 2026-
         - 30/01/2025 - major - Pattern rework with ECS fields only and simple authentication success use case
         - 04/02/2025 - major - Excluding Microsoft 365 format to avoid false positives
         - 14/08/2025 - major - Excluding Wiz Audit Logs format to avoid false positives
+        - 29/10/2026 - major - Excluding Entra ID following parser changes to avoid false positives. A dedicated rule for Entra ID exists and is called "Microsoft Entra ID (Azure AD) Impossible Travel".
             
 ??? abstract "Brute Force WALLIX Bastion"
     
