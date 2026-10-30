@@ -6,7 +6,7 @@ _**[Reveal module](/xdr/features/modules/reveal_index.md)**  — This feature re
 
 ## Overview
 
-Nozomi Networks provides visibility and threat detection for operational technology (OT), IoT, and IT environments. Its Guardian sensors and Central Management Console (CMC) passively discover every asset communicating on the industrial network, such as PLCs, HMIs, controllers, switches, and workstations, and enrich them with vendor, firmware, protocol, and zone information. This setup guide shows how to forward the device assets discovered by Nozomi Networks to Sekoia.io.
+Nozomi Networks provides visibility and threat detection for operational technology, IoT, and IT environments. Its Guardian sensors and Central Management Console (CMC) passively discover every asset communicating on the industrial network, such as PLCs, HMIs, controllers, switches, and workstations, and enrich them with vendor, firmware, protocol, and zone information. This setup guide shows how to forward the device assets discovered by Nozomi Networks to Sekoia.io.
 
 - **Vendor**: Nozomi Networks
 - **Product**: Nozomi Networks Guardian / Central Management Console (CMC)
