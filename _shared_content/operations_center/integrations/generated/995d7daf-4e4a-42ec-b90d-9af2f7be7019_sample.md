@@ -172,6 +172,62 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_security_event_file_scanned_eicar_threat_name"
+
+    ```
+	1792580000.222222222 MX-DEVICE-012 security_event security_filtering_file_scanned url=http://www.example.com/download/eicar.com.txt src=192.0.2.102:53150 dst=198.51.100.31:80 mac=AA:BB:CC:00:00:0A name='EICAR:EICAR_Test_file_not_a_virus-tpd' sha256=275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f disposition=malicious action=block
+    ```
+
+
+
+=== "test_security_event_file_scanned_empty_name"
+
+    ```
+	1792559296.991289924 MX-DEVICE-007 security_event security_filtering_file_scanned url=http://example.com/appraiseradl/ANONYMIZED.cab src=192.0.2.100:62176 dst=198.51.100.207:80 mac=AA:BB:CC:00:00:08 name='' sha256=c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3 disposition=malicious action=block
+    ```
+
+
+
+=== "test_security_event_file_scanned_quoted_name"
+
+    ```
+	1792570000.111111111 MX-DEVICE-011 security_event security_filtering_file_scanned url=http://www.example.com/download/test-file.exe?id=1&lang=en src=192.0.2.101:51000 dst=198.51.100.30:80 mac=AA:BB:CC:00:00:09 name='EICAR Test File' sha256=d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4d4 disposition=malicious action=allow
+    ```
+
+
+
+=== "test_security_event_file_scanned_url_only"
+
+    ```
+	1792567764.579646373 MX-DEVICE-010 security_event security_filtering_file_scanned url=http://download.example.com/filestreamingservice/files/00000000-0000-0000-0000-000000000000?ANONYMIZED
+    ```
+
+
+
+=== "test_security_event_ids_alerted_allowed_ingress"
+
+    ```
+	1792620000.123456789 MX-DEVICE-003 security_event ids_alerted signature=1:28423:1 priority=3 timestamp=1792620000.120000 dhost=AA:BB:CC:00:00:02 direction=ingress protocol=tcp/ip src=198.51.100.20:80 dst=192.0.2.50:53023 decision=allowed message: EXPLOIT-KIT Multiple exploit kit single digit exe detection
+    ```
+
+
+
+=== "test_security_event_ids_alerted_blocked_egress"
+
+    ```
+	1792733565.976876926 MX-DEVICE-001 security_event ids_alerted signature=3:49619:1 priority=2 timestamp=1792733565.970706 shost=AA:BB:CC:00:00:01 direction=egress protocol=tcp/ip src=192.0.2.100:53557 dst=192.0.2.1:8090 decision=blocked action=reset message: SERVER-WEBAPP Cisco RV Series Routers information disclosure attempt
+    ```
+
+
+
+=== "test_security_event_ids_alerted_no_mac_no_direction"
+
+    ```
+	1792618894.462071497 MX-DEVICE-002 security_event ids_alerted signature=1:44161:2 priority=1 timestamp=1792618894.445166 protocol=udp/ip src=203.0.113.201:56355 dst=198.51.100.7:500 decision=blocked action=reset message: SERVER-OTHER tcpdump ISAKMP parser buffer overflow attempt
+    ```
+
+
+
 === "test_urls_1"
 
     ```

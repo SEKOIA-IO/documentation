@@ -939,10 +939,15 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
             ]
         },
         "observer": {
+            "hostname": "example.com",
             "product": "Veeam Backup & Replication",
-            "vendor": "Veeam"
+            "vendor": "Veeam",
+            "version": "1.2.3.4"
         },
         "related": {
+            "hosts": [
+                "example.com"
+            ],
             "user": [
                 "Administrator"
             ]
@@ -967,6 +972,50 @@ This section demonstrates how the raw logs will be transformed by our parsers. I
 	```
 
 
+=== "event_26.json"
+
+    ```json
+	
+    {
+        "message": "{\"timestamp\":\"2026-10-23T10:04:01.489837571Z\",\"message\":\"<14>1 2026-10-23T12:04:01.478959+02:00 veeam-gw01.example.org Veeam_MP - - [origin enterpriseId=\\\"30001\\\"] [categoryId=0 instanceId=10010 OibID=\\\"11111111-2222-4333-8444-555555555555\\\" OriginalOibID=\\\"11111111-2222-4333-8444-555555555555\\\" VmRef=\\\"vm-123456\\\" VmName=\\\"host1.example.org\\\" ServerName=\\\"veeam-srv01.example.org\\\" DateTime=\\\"10/23/2026 10:01:23\\\" IsCorrupted=\\\"False\\\" Platform=\\\"0\\\" StorageSize=\\\"32706068480\\\" RepositoryID=\\\"66666666-7777-4888-9999-aaaaaaaaaaaa\\\" IsFull=\\\"True\\\" VbrHostName=\\\"veeam-gw01.example.org\\\" VbrVersion=\\\"12.3.2.4854\\\" Version=\\\"1\\\" Description=\\\"VM 'host1.example.org' restore point has been created.\\\"]\"}",
+        "event": {
+            "category": [
+                "file"
+            ],
+            "reason": "VM 'host1.example.org' restore point has been created.",
+            "type": [
+                "creation"
+            ]
+        },
+        "@timestamp": "2026-10-23T10:01:23Z",
+        "host": {
+            "name": "host1.example.org"
+        },
+        "observer": {
+            "hostname": "veeam-gw01.example.org",
+            "name": "veeam-srv01.example.org",
+            "product": "Veeam Backup & Replication",
+            "vendor": "Veeam",
+            "version": "12.3.2.4854"
+        },
+        "related": {
+            "hosts": [
+                "veeam-gw01.example.org"
+            ]
+        },
+        "veeam": {
+            "instance": {
+                "id": 10010
+            },
+            "vm": {
+                "ref": "vm-123456"
+            }
+        }
+    }
+    	
+	```
+
+
 
 
 
@@ -983,9 +1032,11 @@ The following table lists the fields that are extracted, normalized under the EC
 |`event.type` | `keyword` | Event type. The third categorization field in the hierarchy. |
 |`host.ip` | `ip` | Host ip addresses. |
 |`host.name` | `keyword` | Name of the host. |
+|`observer.hostname` | `keyword` | Hostname of the observer. |
 |`observer.name` | `keyword` | Custom name of the observer. |
 |`observer.product` | `keyword` | The product name of the observer. |
 |`observer.vendor` | `keyword` | Vendor name of the observer. |
+|`observer.version` | `keyword` | Observer version. |
 |`user.domain` | `keyword` | Name of the directory the user is a member of. |
 |`user.name` | `keyword` | Short name or login of the user. |
 |`veeam.credentials.id` | `keyword` | Credentials ID |
