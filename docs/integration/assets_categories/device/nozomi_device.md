@@ -12,11 +12,6 @@ Nozomi Networks provides visibility and threat detection for operational technol
 - **Product**: Nozomi Networks Guardian / Central Management Console (CMC)
 - **Supported environment**: On Premise, Cloud
 
-The asset connector authenticates against the Guardian/CMC Open API (`POST /api/open/sign_in`), then queries the assets through `GET /api/open/query/do` with the N2QL query `assets`. It paginates through every asset ordered by creation date and transforms each record into an OCSF Device Inventory Info object.
-
-!!! note
-    The connector collects assets incrementally, based on their creation date (`created_at`). The first run collects every asset known by Nozomi; the following runs only collect assets created since the previous run.
-
 ## Configure
 
 ### Prerequisites
