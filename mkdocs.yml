@@ -730,6 +730,7 @@ nav:
       - Harfanglab EDR: integration/assets_categories/device/harfanglab_edr.md
       - Holm Security: integration/assets_categories/device/holm_security.md
       - Microsoft Defender XDR (Microsoft 365 Defender): integration/assets_categories/device/microsoft_defender_device.md
+      - Nozomi Networks: integration/assets_categories/device/nozomi_device.md
       - Okta: integration/assets_categories/device/okta_device.md
       - SentinelOne EDR: integration/assets_categories/device/sentinelone_edr.md
       - Sophos EDR: integration/assets_categories/device/sophos_edr.md
