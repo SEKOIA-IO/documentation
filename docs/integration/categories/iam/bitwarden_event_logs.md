@@ -24,6 +24,14 @@ Follow the official Bitwarden guide to configure Event Management forwarding wit
 
 1. Open your Sekoia.io workspace for your region, then go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Bitwarden Event Logs`.
 2. Copy the generated Sekoia intake URL and intake key.
+
+    !!! warning
+        The intake URL depends on your region. For the FRA1 region, the domain is `intake.sekoia.io`. For any other region, replace it with your region's HTTP-intake domain—for example:
+
+        https://app.usa1.sekoia.io/api/v1/intake-http
+
+        You can find your region's domain here: [https://docs.sekoia.com/getting_started/regions/](https://docs.sekoia.com/getting_started/regions/)
+
 3. In Bitwarden Admin Console, open Integrations > Event Management, select Generic HEC, then paste:
    - Endpoint URL: the Sekoia intake URL
    - Token: the Sekoia intake key
