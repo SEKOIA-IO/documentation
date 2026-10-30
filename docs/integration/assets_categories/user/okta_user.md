@@ -41,25 +41,27 @@ To connect Okta to Sekoia.io, you need to create an API token with the necessary
     - Store this token securely and never share it publicly.
     - Consider rotating API tokens regularly for security best practices.
 
-### Required API permissions
+### Required permissions
 
-The API token must have the following scopes to successfully fetch Okta users and groups:
+Okta API tokens have no scopes of their own. A token inherits the permissions of the administrator who created it, so create it with an account that has the minimum access listed below.
 
-```json
-{
-    "scopes": [
-        "okta.users.read",
-        "okta.groups.read",
-        "okta.users.manage"
-    ]
-}
-```
+The connector only performs read operations:
 
-**Required Scopes:**
+| Okta API operation | Purpose | Role needed |
+| --- | --- | --- |
+| List users | Collect user profiles | `okta.users.read` |
+| List user groups | Collect group memberships | `okta.users.read` |
+| List user factors | Enrich users with their MFA status | `okta.users.read` |
+| List roles assigned to a user | Collect user administrator roles | `okta.roles.read` |
+| List roles assigned to a group | Collect group privileges | `okta.roles.read` |
 
-- `okta.users.read`: Read user profiles and attributes
-- `okta.groups.read`: Read group information and memberships
-- `okta.users.manage`: Full user management capabilities
+We recommend creating the token with a dedicated service account that has the **Read-Only Administrator** role. This role grants read access to users, groups, factors and administrator role assignments, and no write access.
+
+!!! Note
+    The connector needs no write permission, such as `okta.users.manage`.
+
+!!! Warning
+    If the token cannot read factors or role assignments, the connector still collects users but leaves the MFA and privilege information empty. It logs a warning, and the connection test still succeeds.
 
 ### Create your asset
 
