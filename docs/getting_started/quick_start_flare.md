@@ -120,9 +120,8 @@ The default values are recommended for most environments. You can modify them wi
     The supported limits prevent invalid values from breaking the intake. Larger intervals or smaller page sizes can increase the time needed to collect events.
 
    
-    ![![Flare Events trigger configuration dialog with frequency set to 60 seconds, page size set to 10, throttle set to 0.25 seconds, and the lookback value set to 1 hour.](/assets/intelligence/ flare_intake_parameters.png){: style="display: block; width: 100%; max-width: 100%; height: auto;"}]
+    ![![Flare Events trigger configuration dialog with frequency set to 60 seconds, page size set to 10, throttle set to 0.25 seconds, and the lookback value set to 1 hour.](/assets/intelligence_center/flare_intake_parameters.png){: style="display: block; width: 100%; max-width: 100%; height: auto;"}]
 
-> 📸 [SCREENSHOT SUGGESTION: Flare Events trigger configuration dialog showing the recommended values for Frequency, Page Size, Throttle Seconds, and Initial Hours Lookback. | ALT TEXT: Flare Events trigger configuration dialog with frequency set to 60 seconds, page size set to 10, throttle set to 0.25 seconds, and the lookback value set to 1 hour.]
 
 ### Verify event reception
 
@@ -132,7 +131,7 @@ After the trigger starts, Flare events are available in Sekoia as events associa
 2. Filter the results by the Flare Events intake.
 3. Open an event and verify that it contains Flare data.
 
-> 📸 [SCREENSHOT SUGGESTION: Sekoia intake event details with the Flare event fields visible and `event.url` highlighted. | ALT TEXT: Sekoia intake event details showing a valid Flare event and its event URL.]
+> 📸 [SCREENSHOT SUGGESTION: Sekoia intake event details with the Flare event fields visible | ALT TEXT: Sekoia intake event details showing a valid Flare event and its event URL.]
 
 ## Objective 3: Generate Sekoia alerts
 
@@ -153,8 +152,6 @@ The Sekoia event contains the Flare event identifier and, when Flare provides on
 2. Review the event details.
 3. Locate the `event.url` field.
 4. Click or copy the URL to open the corresponding event in Flare.
-
-> 📸 [SCREENSHOT SUGGESTION: Sekoia event details with the `event.url` field highlighted. | ALT TEXT: Sekoia event details displaying the Flare event URL used to pivot to Flare.]
 
 For more information, see the [Flare documentation about events](https://docs.flare.io/events).
 
