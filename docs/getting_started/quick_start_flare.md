@@ -119,6 +119,9 @@ The default values are recommended for most environments. You can modify them wi
 
     The supported limits prevent invalid values from breaking the intake. Larger intervals or smaller page sizes can increase the time needed to collect events.
 
+   
+    ![![Flare Events trigger configuration dialog with frequency set to 60 seconds, page size set to 10, throttle set to 0.25 seconds, and the lookback value set to 1 hour.](/assets/intelligence/ flare_intake_parameters.png){: style="display: block; width: 100%; max-width: 100%; height: auto;"}]
+
 > 📸 [SCREENSHOT SUGGESTION: Flare Events trigger configuration dialog showing the recommended values for Frequency, Page Size, Throttle Seconds, and Initial Hours Lookback. | ALT TEXT: Flare Events trigger configuration dialog with frequency set to 60 seconds, page size set to 10, throttle set to 0.25 seconds, and the lookback value set to 1 hour.]
 
 ### Verify event reception
