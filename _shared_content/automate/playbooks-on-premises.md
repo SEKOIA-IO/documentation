@@ -4,14 +4,14 @@ Local runners are hosts in your environment where the Sekoia Endpoint Agent exec
 
 Local runners were previously called **Playbook runners**. The name changed in the interface, but existing runners keep their identifiers and configuration, appear on the **Local runners** page, and do not need to be reinstalled. The installation command still uses the `--playbook-runner` option.
 
-!!! warning "Asset connector requirements"
-
-    To execute an asset connector job, the local runner and the asset connector must belong to the same community, and that community must have a Reveal subscription.
-
-    Asset connectors cannot be created in a workspace, which is the parent community an MSSP uses to manage customer communities. Assets are inventoried per customer community. To collect assets for a customer, create the asset connector and install the local runner in that customer's community.
-
     
 ## Prerequisites
+
+### Asset connector requirements
+
+- To execute an asset connector job, the local runner and the asset connector must belong to the same community, and that community must have a Reveal subscription.
+
+- Asset connectors cannot be created in a workspace, which is the parent community an MSSP uses to manage customer communities. Assets are inventoried per customer community. To collect assets for a customer, create the asset connector and install the local runner in that customer's community.
 
 ### Host requirements
 
