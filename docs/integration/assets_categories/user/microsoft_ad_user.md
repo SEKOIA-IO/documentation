@@ -12,6 +12,13 @@ Microsoft Active Directory (AD) is a directory service developed by Microsoft fo
 
 ## Configure
 
+### Choose how the connector runs
+
+This connector can run in two ways:
+
+- **Cloud**: Sekoia.io connects to your Active Directory server over LDAPS. Your server must accept inbound connections from the Sekoia.io IP addresses of your region.
+- **On premise**: a [local runner](/xdr/features/automate/playbooks-on-premises.md) installed in your environment runs the connector and connects to your Active Directory server from inside your network. No inbound access from Sekoia.io is required. The local runner must belong to the same community as the asset connector, and that community must have a Reveal subscription.
+
 ### Prerequisites
 
 To connect your on-premise Active Directory to Sekoia.io, ensure the following requirements are met:
@@ -33,7 +40,10 @@ To connect your on-premise Active Directory to Sekoia.io, ensure the following r
         - Read All Properties on User objects
         - No write, delete, or modify permissions
 
-2. `Network Connectivity`: This connector establishes an outbound **LDAPS (port 636)** connection **from Sekoia.io to your Active Directory server**. Allow inbound TCP/636 to your AD server from the Sekoia.io source IP addresses for your region:
+2. `Network Connectivity`: The connector reaches your Active Directory server over **LDAPS (port 636)**.
+
+    - **On premise**: the host of the local runner must reach your Active Directory server on TCP/636. No inbound rule is needed for Sekoia.io.
+    - **Cloud**: the connection comes **from Sekoia.io to your Active Directory server**. Allow inbound TCP/636 to your AD server from the Sekoia.io source IP addresses for your region:
 
     | Region                      | Source IP address list                                                             |
     |-----------------------------|------------------------------------------------------------------------------------|
@@ -83,11 +93,16 @@ To start getting your Microsoft Active Directory users into Sekoia.io, you need 
       - **Admin Username**: The username of the account used for the bind.
       - **Admin Password**: The password associated with the account.
 
-5. Test the connection by clicking the **Test connector** button.
+5. In **How do you want to execute this action**, select **Cloud** or **On premise**. For **On premise**, select the local runner in **Using which local runner?**. This choice is displayed only when local runners are available for your community.
+
+6. In **Cloud** mode, test the connection by clicking the **Test connector** button. An on premise connector cannot be tested from Sekoia.io.
 
     ![Connector test result and Create asset connector button highlighted](/assets/operation_center/asset_connectors/user/microsoft/active_directory/test_connection.png)
 
-6. Click the **Create asset connector** button.
+7. Click the **Create asset connector** button.
+
+!!! note "On premise synchronization"
+    An on premise connector runs through the local runner once a day, on a schedule managed by Sekoia.io. Large directories may take several hours to sync; progress is visible on the connector page.
 
 {!_shared_content/operations_center/integrations/generated_assets_documentation/microsoft-ad_user.md!}
 
