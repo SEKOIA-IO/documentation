@@ -124,9 +124,7 @@ Playbooks and asset connectors share the same list of local runners. The **Local
 
 !!! note "Playbook execution"
 
-    Local runners execute playbook actions, not playbook triggers.
-
-A local runner executes actions, not triggers. The action must support on-premises execution. The **On-premise** option is not available for custom integrations.
+    Local runners execute playbook actions, not playbook triggers. The action must support on-premises execution. The **On-premise** option is not available for custom integrations.
 
 1. Open the playbook that contains the action.
 2. Add a new action or select an existing action.
@@ -173,6 +171,7 @@ The **Local runners** page displays a card for each runner, with the following i
 
 | Field | Description |
 | --- | --- |
+| Status | Whether the runner is online or offline |
 | Last activity | The last time the runner contacted Sekoia |
 | Hostname | The hostname of the host where the runner is installed |
 | Version | The version of the Sekoia Endpoint Agent |
