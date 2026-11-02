@@ -7,7 +7,7 @@ title: Sekoia documentation
 
 ## The Sekoia AI SOC Platform
 
-The Sekoia SOC platform brings threat detection, investigation, and response into one open, cloud-native platform. It connects high-fidelity **Cyber Threat Intelligence (CTI)**, security telemetry, and **Asset Intelligence** to give analysts a clearer view of what's happening across their environment.
+The Sekoia SOC platform brings threat detection, investigation, and response into one open, cloud-native platform. It connects high-fidelity Cyber Threat Intelligence (CTI), Digital Risk Protection (DRP), security telemetry, and Asset Intelligence to help analysts understand activity in their environment and exposure outside it.
 
 With its Agentic SOC approach, Sekoia uses AI to handle repetitive investigation tasks, enrich alerts, and support threat hunting. Analysts spend less time sorting through noise and more time responding to threats that need expert judgment.
 
@@ -32,6 +32,8 @@ Defend also includes native Security Orchestration, Automation and Response (SOA
 Sekoia Intelligence is a Cyber Threat Intelligence platform that provides context on attacker infrastructure, malware, campaigns, and emerging threat activity. Teams can use it as a standalone CTI source or connect it to Sekoia Defend.
 
 When integrated, Sekoia Intelligence helps correlate threat intelligence with security events and gives analysts additional context during detection and investigation.
+
+Digital Risk Protection complements Sekoia Intelligence by monitoring organization-specific identifiers across clear, deep, and dark web sources. In Sekoia, Flare events can be collected, normalized, evaluated with detection rules, and investigated alongside security events.
 
 ### Expansion modules
 

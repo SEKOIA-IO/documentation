@@ -24,7 +24,7 @@ You have received an invitation to join a workspace. Your goal is to understand 
 | 1 | [What is Sekoia](/getting_started/what_is_sekoia.md): Learn what Sekoia is and how its products work together. |
 | 2 | [Set up your account](/getting_started/log_in_for_the_first_time.md): Log in, secure your account, and customize your interface. |
 | 3 | [Understand your subscription and usage](/getting_started/understand_your_subscription.md): Identify your license type, retention settings, and consumption limits. Then review [Monitor your usage](/getting_started/monitor_your_usage.md) from the start. |
-| 4 | Start using Sekoia: Follow the quick start guide for your product: [Defend](/getting_started/quick_start_defend.md), [Intelligence](/getting_started/quick_start_intelligence.md), [Reveal](/getting_started/quick_start_reveal.md), [Elevate](/getting_started/quick_start_elevate.md). |
+| 4 | Start using Sekoia: Follow the quick start guide for your product: [Defend](/getting_started/quick_start_defend.md), [Intelligence](/getting_started/quick_start_intelligence.md), [Reveal](/getting_started/quick_start_reveal.md), or [Elevate](/getting_started/quick_start_elevate.md). The Intelligence quick start also includes Digital Risk Protection. |
 
 ### Your onboarding journey
 
@@ -60,7 +60,7 @@ You are responsible for setting up Sekoia for your team. Your goal is to configu
 | [Understand your subscription and usage](/getting_started/understand_your_subscription.md) | License type, retention settings, limits, and links to usage monitoring and optimization guidance |
 | [Set up your workspace](/getting_started/workspace_setup_overview.md) (Admin) | Subscription, users, roles, API keys, notifications |
 | [Quick start: Defend](/getting_started/quick_start_defend.md) | Connect data sources, activate detection rules, triage alerts, automate responses |
-| [Quick start: Intelligence](/getting_started/quick_start_intelligence.md) | Explore the threat database, read reports, set up feeds |
+| [Quick start: Intelligence](/getting_started/quick_start_intelligence.md) | Explore the threat database, read reports, set up feeds, and monitor digital risk exposures |
 | [Quick start: Reveal](/getting_started/quick_start_reveal.md) | Asset intelligence setup |
 | [Quick start: Elevate](/getting_started/quick_start_elevate.md) | AI-powered alert triage with autonomous investigation and verdicts |
 | [Get help](/getting_started/support_and_resources.md) | Support portal, Academy, community, troubleshooting |
