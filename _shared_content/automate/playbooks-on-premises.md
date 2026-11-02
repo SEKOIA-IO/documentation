@@ -87,8 +87,8 @@ For more information, see [Regions](/getting_started/regions.md).
 
 1. Open the **Local runners** page with the **Local runners** button at the top of the **Playbooks** page or of the **Configure > Assets** page.
 2. Select **+ Local runner**.
-3. In **Name of the local runner**, enter a name.
-4. If the **Account’s community** field is displayed, select the customer community where you will install the runner. This field is displayed only from a parent community used by an MSSP.
+3. In **Name**, enter a name.
+4. If the **Community** field is displayed, select the customer community where you will install the runner. This field is displayed only from a parent community used by an MSSP.
 5. Select **Continue**.
 6. Follow the installation instructions displayed by Sekoia.
 
@@ -118,7 +118,7 @@ Until Reveal is enabled for the customer community, the local runner can already
 
 Playbooks and asset connectors share the same list of local runners. The **Local runners** page is the same whether you open it from **Playbooks** or from **Configure > Assets**.
 
-> 📸 [SCREENSHOT SUGGESTION: Create a new local runner dialog showing the Community field and the warning about Reveal and workspace communities. | ALT TEXT: Local runner creation dialog with a community selector and an asset inventory warning.]
+![Local runner creation dialog with a community selector and an asset inventory warning](img/local_runner_create_workspace_warning.png)
 
 ## Execute a playbook action with a local runner
 
@@ -130,14 +130,14 @@ A local runner executes actions, not triggers. The action must support on-premis
 
 1. Open the playbook that contains the action.
 2. Add a new action or select an existing action.
-3. Set **How to execute this action** to **On-premise**.
+3. Set **How do you want to execute this action** to **On-premise**.
 4. In **Using which local runner?**, select the local runner that should execute the action.
 5. Complete the remaining action configuration.
 6. Save the playbook.
 
 The action runs on the host where the selected local runner is installed.
 
-> 📸 [SCREENSHOT SUGGESTION: Playbook action configuration showing On-premise execution and the local runner selector. | ALT TEXT: Playbook action configuration with On-premise execution selected and a local runner chosen.]
+![Playbook action configuration with On-premise execution selected and a local runner chosen](img/playbook_action_on_premise.png)
 
 ## Execute asset connector jobs with a local runner
 
@@ -157,9 +157,9 @@ Select the local runner in the asset connector configuration when you create or 
 3. In **Using which local runner?**, select the local runner. The list contains the local runners of the connector's community.
 4. Complete the remaining configuration and save the connector.
 
-> 📸 [SCREENSHOT SUGGESTION: Asset connector configuration with On premise selected and the local runner selector. | ALT TEXT: Asset connector configuration dialog with On premise execution and a local runner chosen.]
+![Asset connector configuration dialog with On premise execution and a local runner chosen](img/asset_connector_on_premise.png)
 
-The **Test connection** button is not available for connectors that run on-premises.
+The **Test connector** button is not available for connectors that run on-premises.
 
 You can change the selected local runner at any time. To switch a connector between **Cloud** and **On premise**, stop the connector first.
 
