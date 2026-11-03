@@ -665,6 +665,7 @@ nav:
       - Google Cloud: integration/action_library/google-cloud.md
     - Collaboration Tools:
       - Atlassian JIRA: integration/action_library/atlassian-jira.md
+      - EasyVista Service Manager: integration/action_library/easyvista-service-manager.md
       - Git: integration/action_library/git.md
       - ServiceNow: integration/action_library/servicenow.md
       - The Hive: integration/action_library/the-hive.md
