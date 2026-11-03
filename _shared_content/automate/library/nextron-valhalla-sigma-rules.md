@@ -13,7 +13,7 @@ Syncs the [Nextron Valhalla](https://valhalla.nextron-systems.com) Sigma feed in
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `valhalla_api_key` | `string` | API key from valhalla.nextron-systems.com. The default is the public demo key (community feed only); a paid key unlocks the full ruleset. |
-| `sekoia_api_key` | `string` | Sekoia bearer token from Settings → Workspace → API Keys. Needs the following permissions: Manage rules and alert filters, View Rules Catalog, Manage rule settings. |
+| `sekoia_api_key` | `string` | Sekoia bearer token from Settings → Workspace → API Keys. Needs the following permissions: Manage rules and alert filters, View Rules Catalog. Optional: View intelligence or View intelligence with limited access, to link rules to their ATT&CK techniques. |
 | `sekoia_base_url` | `string` | Region-specific Sekoia API base URL (must use `https://`). Default `https://api.sekoia.io` (FRA1). For FRA2/MCO1/UAE1 use `https://app.<region>.sekoia.io/api`. |
 | `community_uuid` | `string` | Optional. Only needed when the API key has access to several communities (e.g. MSSP keys): the sync then only reads and writes rules of this community. To find the UUID, open the community in Sekoia, go to **Settings → General** and copy the part of the URL between `/communities/` and `/community-details`. |
 
@@ -30,8 +30,8 @@ Periodically pulls the Valhalla Sigma feed and pushes each rule into the Sekoia 
 | `frequency` | `integer` | Pull frequency in seconds. Default `86400` (24h), minimum `3600`. |
 | `enabled` | `boolean` | If `false` (default), newly-imported rules are disabled on first import. Existing rules keep their current catalog state. |
 | `min_sigma_level` | `string` | Minimum Sigma `level`: `informational`, `low`, `medium`, `high`, `critical`. Default `medium`. Rules missing `level` are always skipped. |
-| `min_sigma_status` | `string` | Minimum Sigma `status`: `experimental`, `test`, `stable`. Default `stable`. Rules with status `deprecated`/`unsupported` are never imported. |
-| `disable_removed` | `boolean` | When `true`, disables rules that Nextron removed from the Valhalla feed, or that newly fell below your minimum level/status. The rule stays in the catalog (not deleted); if Nextron re-publishes it later, the sync resumes updating it. Default `false` runs a dry-run — candidates are counted under `to_disable` on the summary event. The pass is skipped when the feed is empty or shrank by more than 20% (see `disable_skipped_reason`). Enable it on only one trigger per community. |
+| `min_sigma_status` | `string` | Minimum Sigma `status`: `experimental`, `test`, `stable`. Default `stable`. Rules with status `deprecated`/`unsupported` are never imported; rules missing `status` are always skipped. |
+| `disable_removed` | `boolean` | When `true`, disables rules that Nextron removed from the Valhalla feed, or that newly fell below your minimum level/status. The rule stays in the catalog (not deleted); if it returns to the feed later, the sync updates and re-enables it. Rules you disabled yourself are left alone. Default `false` runs a dry-run — candidates are counted under `to_disable` on the summary event. The pass is skipped when the feed is empty or shrank by more than 20% (see `disable_skipped_reason`). Enable it on only one trigger per community. |
 | `preserve_rule_names` | `array` | Rules matching an entry of this list are not overwritten by future syncs (counted under `preserved` on the summary event). An entry matches the rule's name as shown in the Sekoia Rules Catalog, or one of its tags (e.g. `uuid-<valhalla_id>`, which is unique). Match is case-sensitive; surrounding whitespace is tolerated. Default `[]` disables the check. Any customisation of a synced rule that is not listed here is overwritten on the next sync. The `disable_removed` pass still runs on preserved rules — only the content is protected. To delete entries from the list, create a new trigger configuration. |
 
 
@@ -50,6 +50,8 @@ Periodically pulls the Valhalla Sigma feed and pushes each rule into the Sekoia 
 | `server_marker_count` | `integer` | Number of catalog rules recognised by the start-of-sync catalog scan via their `uuid-*` marker tag. |
 | `duplicate_markers` | `integer` | Number of catalog rules sharing the same `uuid-*` marker tag — delete the duplicates in the Sekoia UI. |
 | `local_overridden` | `integer` | Number of local id-map entries overridden by the catalog scan because the server pointed somewhere else. |
+| `re_enabled` | `integer` | Number of rules switched off by an earlier disable pass that came back and were enabled again. |
+| `reenable_failed` | `integer` | Number of such rules the sync failed to enable again. |
 | `to_disable` | `integer` | Number of still-enabled rules the disable pass identified. Set `disable_removed=true` to actually disable them. |
 | `newly_disabled` | `integer` | Number of rules just disabled by this run (when `disable_removed=true`). |
 | `already_disabled` | `integer` | Number of candidates that were already disabled server-side. |
@@ -58,8 +60,10 @@ Periodically pulls the Valhalla Sigma feed and pushes each rule into the Sekoia 
 | `disable_skipped_reason` | `string` | Empty, or why the disable pass did not run: `empty_feed`, `feed_shrank`, `interrupted`. |
 
 
-Each synced rule carries the tags `nextron-valhalla`, `uuid-<valhalla_id>` and `status-<sigma status>`. Its payload contains the Sigma `logsource` block and the detection converted to ECS fields.
+Each synced rule carries the tags `nextron-valhalla`, `uuid-<valhalla_id>` and `status-<sigma status>`. Removing the `nextron-valhalla` tag makes the next sync create the rule again. Its payload contains the Sigma `logsource` block and the detection converted to ECS fields. The `logsource` block is informational: the detection engine only evaluates the detection, so it doesn't restrict which events a rule runs on.
+
+Re-enabling only covers rules the integration disabled itself, and the record is kept per trigger configuration: rules disabled under one configuration stay disabled if you switch to a new one.
 
 ## Extra
 
-Module **`Nextron Valhalla Sigma Rules` v1.2.0**
+Module **`Nextron Valhalla Sigma Rules` v1.0.0**
