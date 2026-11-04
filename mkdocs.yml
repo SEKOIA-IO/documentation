@@ -452,6 +452,7 @@ nav:
         - Configure: integration/categories/endpoint/configure_sekoia_endpoint_agent.md
         - Update and uninstall: integration/categories/endpoint/update_uninstall_sekoia_endpoint_agent.md
         - Troubleshoot: integration/categories/endpoint/troubleshoot_sekoia_endpoint_agent.md
+        - Run alongside other software: integration/categories/endpoint/run_sekoia_endpoint_agent_alongside_other_software.md
         - Events and fields reference: integration/categories/endpoint/sekoia_endpoint_agent_events_reference.md
         - Built-in detection rules: integration/categories/endpoint/sekoia_endpoint_agent_rules_reference.md
         - Reduce event volume with the Endpoint Agent: integration/categories/endpoint/reduce_event_volume_endpoint_agent.md

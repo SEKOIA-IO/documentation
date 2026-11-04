@@ -132,3 +132,5 @@ This error indicates a problem with the intake key or the community subscription
 [Configure the Sekoia Endpoint Agent](/integration/categories/endpoint/configure_sekoia_endpoint_agent.md): How to set up log file collection, proxy, retention, and optional features.
 
 [Update and uninstall the Sekoia Endpoint Agent](/integration/categories/endpoint/update_uninstall_sekoia_endpoint_agent.md): How to update the agent manually and remove it from a host.
+
+[Run the Sekoia Endpoint Agent alongside other software](/integration/categories/endpoint/run_sekoia_endpoint_agent_alongside_other_software.md): How to allow the agent in your security tools, and the interactions with other software we know of.
