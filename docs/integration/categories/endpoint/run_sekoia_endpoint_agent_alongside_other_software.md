@@ -7,7 +7,7 @@ The Sekoia Endpoint Agent runs next to other software on your hosts: antivirus a
 | Situation | Example | What to do |
 | --- | --- | --- |
 | The agent prevents another program from working | A backup or an update fails because the agent keeps a file open | Apply the workaround in [A program cannot rename or delete a file](#a-program-cannot-rename-or-delete-a-file-windows). If the issue persists, contact the support: this is an issue with the agent. |
-| Another program, or a limit of the operating system, prevents the agent from collecting | An EDR blocks the agent, or Windows refuses one of its trace sessions | Allow the agent in that program, as described below. The agent logs the error. |
+| Another program, or a limit of the operating system, prevents the agent from collecting | An EDR blocks the agent, Windows refuses one of its trace sessions, or `auditd` holds the Linux audit framework | Allow the agent in that program, or follow the matching entry in [Known interactions](#known-interactions). |
 | The agent reads events from a third-party tool | Sysmon events forwarded by the agent | The third-party tool itself is not supported by Sekoia. |
 
 The agent is designed not to interfere with other programs. It cannot, however, be compatible with every configuration of every security product: when another product blocks or restricts it, that product must be configured to allow the agent.
@@ -69,6 +69,14 @@ The agent also connects to Sekoia over HTTPS: see the [network prerequisites](/i
 1. Look for this error in the [agent logs](/integration/categories/endpoint/troubleshoot_sekoia_endpoint_agent.md#check-the-agent-logs). Since the agent sends its logs to Sekoia, you can also be alerted when it appears.
 2. List the trace sessions running on the host with `logman query -ets`, in a command prompt run as administrator.
 3. Check with the vendors of the other products whether some of their sessions can be disabled. Once a session slot is free, the agent creates its session within 5 minutes and process events come back, without restarting the agent.
+
+### The agent does not start (Linux)
+
+**Symptoms:** the agent does not start, or the host sends no events.
+
+**Cause:** the agent collects events through the Linux audit framework. It cannot work while `auditd` is running, or while another service, such as `journald`, listens to the audit socket.
+
+**What to do:** stop and disable the conflicting services, then restart the agent, as described in [The agent does not start on Linux](/integration/categories/endpoint/troubleshoot_sekoia_endpoint_agent.md#the-agent-does-not-start-on-linux).
 
 ### Alerts raised on the actions of an EDR
 
