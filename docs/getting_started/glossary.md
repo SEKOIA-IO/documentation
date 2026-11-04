@@ -52,6 +52,8 @@ A standardized identifier for a publicly known software vulnerability. CVEs are 
 A logic pattern that Sekoia applies to your event stream in real time to identify suspicious activity. Detection rules can be Sigma-based (pattern matching), CTI-based (indicator matching), or anomaly-based (statistical deviation). Sekoia provides over 1,000 verified rules mapped to the MITRE ATT&CK framework.
 See: [Activate detection rules](/getting_started/defend_step3_activate_detection_rules.md)
 
+**Digital Risk Protection (DRP):** A set of capabilities that monitors public, deep, and dark web sources for external exposures related to an organization, its domains, accounts, and other identifiers. In Sekoia, DRP uses Flare identifiers and policies to collect matching events, apply detection rules, and investigate exposures through the source URL stored in `event.url`.
+
 ## E
 
 **EDR (Endpoint Detection and Response)**

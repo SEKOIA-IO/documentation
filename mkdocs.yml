@@ -81,6 +81,7 @@ nav:
       - "Quick start: Intelligence": getting_started/quick_start_intelligence.md
       - "Step 1: Explore the threat intelligence database": getting_started/intelligence_step1_explore_threat_database.md
       - "Step 2: Investigate and disseminate threat intelligence": getting_started/intelligence_step2_read_threat_reports.md
+      - "Step 3: Monitor external exposure": getting_started/quick_start_flare.md
     - Reveal:
       - "Quick start: Reveal": getting_started/quick_start_reveal.md
     - Elevate:
@@ -116,6 +117,7 @@ nav:
     - Monitor:
       - Dashboards: cti/features/monitor/dashboard.md
       - Threat Landscape: cti/features/monitor/threat_landscape.md
+    - Sekoia Digital Risk: cti/features/flare_events_overview.md
     - External Integrations:
       - Overview: cti/features/integrations/index.md
       - API: cti/features/integrations/api.md
