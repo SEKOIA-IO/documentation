@@ -31,6 +31,8 @@ Bitdefender GravityZone is an enterprise-level cybersecurity solution offering a
     - SMTP Connection
     - Internet Connection
     - Malware Outbreak
+ 
+  [![Bitdefender & Sekoia solution brief](/assets/integration/sekoia-cta-bitdefender-hero.png){: style="display: block; width: 100%; max-width: 100%; height: auto;"}](https://www.sekoia.com/bitdefender-solution-brief){: style="width: 100%; max-width: 100%"}
 
 ## Configure
 

@@ -8,6 +8,8 @@ type: playbook
 
 ESET is a global cybersecurity company known for its antivirus and security software solutions for both businesses and consumers, providing advanced threat detection and malware protection.
 
+[![ESET & Sekoia solution brief](/assets/integration/sekoia-cta-eset-hero.png){: style="display: block; width: 100%; max-width: 100%; height: auto;"}](https://www.sekoia.com/eset-solution-brief){: style="width: 100%; max-width: 100%"}
+
 ## Configuration
 
 | Name      |  Type   |  Description  |
