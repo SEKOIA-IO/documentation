@@ -4,6 +4,12 @@
 
 The [Events page](https://app.sekoia.io/operations/events) exposes a search capability to investigate and hunt on your events. The search queries must follow the [events query language](events_query_language.md). Type your search query in the box above the list of events to find expected events.
 
+!!! tip
+    You do not need to write a query to filter events by technology. Use the
+    **All dialects** dropdown on the [Events page](https://docs.sekoia.com/xdr/features/investigate/events.md)
+    to select one or more dialects and add them as filter badges. For details,
+    see [Filter by dialect](https://docs.sekoia.com/xdr/features/investigate/events.md#filter-by-dialect).
+
 ### Fields
 
 The Tables below detail the main fields that can be used to narrow down your search. Events are normalized to use the [Elastic Common Schema (ECS) Reference](https://www.elastic.co/docs/reference/ecs/ecs-field-reference). Custom fields can also be used and are listed in the [Integrations section](https://docs.sekoia.com/integration/integrations/).
@@ -108,3 +114,9 @@ The Tables below detail the main fields that can be used to narrow down your sea
 Get valid events, that are neither apache nor nginx logs:
 
 `sekoiaio.intake.parsing_status:"success" AND NOT(sekoiaio.intake.dialect:"apache" OR sekoiaio.intake.dialect:"nginx")`
+
+## Related articles
+
+- [Events](/xdr/features/investigate/events.md): Explore events, apply filters, and investigate search results.
+- [Events query language](/xdr/features/investigate/events_query_language.md): Learn the syntax and operators used to write event queries.
+- [Query examples](/xdr/features/investigate/sol_query_examples.md): Review examples of event queries and aggregations.
