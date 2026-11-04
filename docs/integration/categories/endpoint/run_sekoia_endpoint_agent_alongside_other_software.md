@@ -50,25 +50,25 @@ The agent also connects to Sekoia over HTTPS: see the [network prerequisites](/i
 
 **Symptoms:** a backup, an update or an installation fails because a file cannot be moved or deleted; temporary files pile up and fill the disk; a browser cannot install an extension.
 
-**Cause:** the agent computes the hashes of new files. On Windows, while it reads a file, other programs cannot rename or delete it.
+**Cause:** the agent computes the hashes of new files. It reads them in a way that lets other programs rename or delete them at the same time, so it should not block them. Older agent versions did block them while they computed the hash: [update the agent](/integration/categories/endpoint/update_uninstall_sekoia_endpoint_agent.md) first.
 
-**Workaround:** exclude the directory where the other program writes its temporary files from hash computation, with the `HashesExcludedPaths` option. See [Exclude directories from hash computation](/integration/categories/endpoint/configure_sekoia_endpoint_agent.md#exclude-directories-from-hash-computation). Keep the exclusion as narrow as possible, for example a dedicated directory or a file extension, since files under an excluded path get no hashes.
+**If the issue persists:** some programs move a whole directory at once, which Windows can still refuse while a file inside it is open. Exclude the directory where the program writes its temporary files from hash computation, with the `HashesExcludedPaths` option. See [Exclude directories from hash computation](/integration/categories/endpoint/configure_sekoia_endpoint_agent.md#exclude-directories-from-hash-computation). Keep the exclusion as narrow as possible, for example a dedicated directory or a file extension, since files under an excluded path get no hashes.
 
 ### Process creation and termination events are missing (Windows)
 
 **Symptoms:** a host no longer sends process creation and termination events, while its other events still arrive.
 
-**Cause:** the agent collects these events through a kernel trace session (ETW). Windows only allows a limited number of kernel trace sessions at the same time, and other security products use them too. When none is left, the agent logs the following error at startup:
+**Cause:** the agent collects these events through a kernel trace session (ETW). Windows only allows a limited number of kernel trace sessions at the same time, and other security products use them too. When none is left, the agent logs the following error and tries again every 5 minutes:
 
 ```
-Could not create ETW trace ... Insufficient system resources exist to complete the requested service.
+{"level":"error","error":"StartTraceW failed; Insufficient system resources exist to complete the requested service.","session_name":"Generic.Kernel.Tracing.Session","retry_in":300000,"time":"...","message":"Could not create ETW trace"}
 ```
 
 **What to do:**
 
-1. Look for this error in the [agent logs](/integration/categories/endpoint/troubleshoot_sekoia_endpoint_agent.md#check-the-agent-logs).
+1. Look for this error in the [agent logs](/integration/categories/endpoint/troubleshoot_sekoia_endpoint_agent.md#check-the-agent-logs). Since the agent sends its logs to Sekoia, you can also be alerted when it appears.
 2. List the trace sessions running on the host with `logman query -ets`, in a command prompt run as administrator.
-3. Check with the vendors of the other products whether some of their sessions can be disabled, then restart the agent service.
+3. Check with the vendors of the other products whether some of their sessions can be disabled. Once a session slot is free, the agent creates its session within 5 minutes and process events come back, without restarting the agent.
 
 ### Alerts raised on the actions of an EDR
 
