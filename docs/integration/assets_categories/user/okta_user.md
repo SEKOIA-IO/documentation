@@ -47,15 +47,24 @@ Okta API tokens have no scopes of their own. A token inherits the permissions of
 
 The connector only performs read operations:
 
-| Okta API operation | Purpose | Role needed |
+| Okta API operation | Purpose | Permission needed |
 | --- | --- | --- |
 | List users | Collect user profiles | `okta.users.read` |
-| List user groups | Collect group memberships | `okta.users.read` |
+| List user groups | Collect group memberships | `okta.users.read`, `okta.groups.read` |
 | List user factors | Enrich users with their MFA status | `okta.users.read` |
 | List roles assigned to a user | Collect user administrator roles | `okta.roles.read` |
 | List roles assigned to a group | Collect group privileges | `okta.roles.read` |
 
-We recommend creating the token with a dedicated service account that has the **Read-Only Administrator** role. This role grants read access to users, groups, factors and administrator role assignments, and no write access.
+Create the token with a dedicated service account that has one of the following configurations:
+
+- **Option 1: a custom administrator role.** In the Okta Admin Console, go to **Security > Administrators > Roles**, create a custom role and select only these permissions:
+    - **User**: **View users and their details** (`okta.users.read`)
+    - **Group**: **View groups and their details** (`okta.groups.read`)
+    - **Identity and Access Management**: **View roles, resources, and admin assignments** (`okta.roles.read`)
+
+    Then assign this role to the service account, with a resource set that contains all the users and groups to collect.
+
+- **Option 2: the Read-Only Administrator role, plus the Identity and Access Management read permission.** Assign the **Read-Only Administrator** role to the service account. Then assign it a custom role that contains the **Identity and Access Management** permission **View roles, resources, and admin assignments** (`okta.roles.read`).
 
 !!! Note
     The connector needs no write permission, such as `okta.users.manage`.
