@@ -60,11 +60,11 @@ Create the token with a dedicated service account that has one of the following 
 - **Option 1: a custom administrator role.** In the Okta Admin Console, go to **Security > Administrators > Roles**, create a custom role and select only these permissions:
     - **User**: **View users and their details** (`okta.users.read`)
     - **Group**: **View groups and their details** (`okta.groups.read`)
-    - **Identity and Access Management**: **View roles, resources, and admin assignments** (`okta.roles.read`)
+    - **Identity and Access Management**: **View roles, resources, and admin assignments** (`okta.iam.read`)
 
     Then assign this role to the service account, with a resource set that contains all the users and groups to collect.
 
-- **Option 2: the Read-Only Administrator role, plus the Identity and Access Management read permission.** Assign the **Read-Only Administrator** role to the service account. Then assign it a custom role that contains the **Identity and Access Management** permission **View roles, resources, and admin assignments** (`okta.roles.read`).
+- **Option 2: the Read-Only Administrator role, plus the Identity and Access Management read permission.** Assign the **Read-Only Administrator** role to the service account. Then assign it a custom role that contains the **Identity and Access Management** permission **View roles, resources, and admin assignments** (`okta.iam.read`).
 
 !!! Note
     The connector needs no write permission, such as `okta.users.manage`.
