@@ -6,7 +6,7 @@ The Sekoia Endpoint Agent runs next to other software on your hosts: antivirus a
 
 | Situation | Example | What to do |
 | --- | --- | --- |
-| The agent prevents another program from working | A backup or an update fails because the agent keeps a file open | Contact the support: this is an issue with the agent. A workaround may be available in [Known interactions](#known-interactions). |
+| The agent prevents another program from working | A backup or an update fails because the agent keeps a file open | Apply the workaround in [A program cannot rename or delete a file](#a-program-cannot-rename-or-delete-a-file-windows). If the issue persists, contact the support: this is an issue with the agent. |
 | Another program, or a limit of the operating system, prevents the agent from collecting | An EDR blocks the agent, or Windows refuses one of its trace sessions | Allow the agent in that program, as described below. The agent logs the error. |
 | The agent reads events from a third-party tool | Sysmon events forwarded by the agent | The third-party tool itself is not supported by Sekoia. |
 
