@@ -37,11 +37,15 @@ In the **Query** field, enter your SOL query. This is the query that will execut
     You can copy a SOL query directly from a Notebook or investigation. Before saving, make sure it bounds the time range with `?time.start` and `?time.end`.
 
 !!! note "Result cap"
-    The platform automatically appends a 10,000-row limit to your query. You do not need to add it manually. This is a temporary protective limit and may be raised in the future.
-
-### Step 4: Set the run schedule
-
-In the **Query Run Scheduling** section, enter a value in the **Run query every** field and select the time unit: minutes, hours, or days. The rule then runs at that frequency. By default, each run only checks the events received since the last run, as summarized in the information banner: "Runs every **5 hours**, only checking events since the last run."
+     The platform automatically appends a 10,000-row limit to your query. You do not need to add it manually. This is a temporary protective limit and may be raised in the future.
+ 
++#### Test the query before saving
++
++In the SOL tab, click **Test query** to run the current query and display the matching rows. Use this to validate the query and inspect its result structure before saving the detection rule.
++
+ ### Step 4: Set the run schedule
+ 
+ In the **Query Run Scheduling** section, enter a value in the **Run query every** field and select the time unit: minutes, hours, or days. The rule then runs at that frequency. By default, each run only checks the events received since the last run, as summarized in the information banner: "Runs every **5 hours**, only checking events since the last run."
 
 !!! warning "Minimum schedule interval"
     The minimum accepted schedule is every 5 minutes.
