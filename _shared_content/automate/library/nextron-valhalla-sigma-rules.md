@@ -27,7 +27,7 @@ Periodically pulls the Valhalla Sigma feed and pushes each rule into the Sekoia 
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `frequency` | `integer` | Pull frequency in seconds. Default `86400` (24h), minimum `3600`. |
+| `frequency` | `integer` | Pull frequency in seconds. Default `86400` (24h), minimum `3600`. After a failed sync, the trigger retries after 15 and then 30 minutes (at most 2 such retries per 24h). |
 | `enabled` | `boolean` | If `false` (default), newly-imported rules are disabled on first import. Existing rules keep their current catalog state. |
 | `min_sigma_level` | `string` | Minimum Sigma `level`: `informational`, `low`, `medium`, `high`, `critical`. Default `medium`. Rules missing `level` are always skipped. |
 | `min_sigma_status` | `string` | Minimum Sigma `status`: `experimental`, `test`, `stable`. Default `stable`. Rules with status `deprecated`/`unsupported` are never imported; rules missing `status` are always skipped. |
@@ -43,7 +43,7 @@ Periodically pulls the Valhalla Sigma feed and pushes each rule into the Sekoia 
 | `updated` | `integer` | Number of rules updated in this run. |
 | `preserved` | `integer` | Number of rules that matched `preserve_rule_names` and were therefore not overwritten. |
 | `failed` | `integer` | Number of rules the sync failed to create or update. |
-| `skipped_unmapped` | `integer` | Number of rules skipped because one or more Sigma fields could not be mapped to ECS. |
+| `skipped_unmapped` | `integer` | Number of rules skipped because they could not be parsed, or one or more Sigma fields could not be mapped to ECS. |
 | `skipped_filter` | `integer` | Number of rules skipped because they did not meet the configured `min_sigma_level` / `min_sigma_status`. |
 | `total_rules` | `integer` | Total number of rules received from the Valhalla feed. |
 | `top_unmapped` | `object` | Up to the five most common unmapped Sigma field names and their occurrence counts (diagnostic). |
@@ -60,7 +60,7 @@ Periodically pulls the Valhalla Sigma feed and pushes each rule into the Sekoia 
 | `disable_skipped_reason` | `string` | Empty, or why the disable pass did not run: `empty_feed`, `feed_shrank`, `interrupted`. |
 
 
-Each synced rule carries the tags `nextron-valhalla`, `uuid-<valhalla_id>` and `status-<sigma status>`. Removing the `nextron-valhalla` tag makes the next sync create the rule again. Its payload contains the Sigma `logsource` block and the detection converted to ECS fields. The `logsource` block is informational: the detection engine only evaluates the detection, so it doesn't restrict which events a rule runs on.
+Each synced rule carries the tags `nextron-valhalla`, `uuid-<valhalla_id>` and `status-<sigma status>`. If you remove the `nextron-valhalla` tag, the sync still finds the rule and puts the tag back on its next update. Its payload contains the Sigma `logsource` block and the detection converted to ECS fields. The `logsource` block is informational: the detection engine only evaluates the detection, so it doesn't restrict which events a rule runs on.
 
 Re-enabling only covers rules the integration disabled itself, and the record is kept per trigger configuration: rules disabled under one configuration stay disabled if you switch to a new one.
 
