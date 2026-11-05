@@ -70,6 +70,9 @@ As long as a similar alert exists with a status in the **Open** or **In Progress
 
 If all similar alerts carry a status in the **Closed** stage, a new alert is created. Those closed similar alerts are then listed in the **Similar alerts** tab of the new alert.
 
+!!! note
+    Sekoia adds at most 10 events to the same alert every 60 seconds. During a burst, the **Occurrence** count can be lower than the number of events that matched the rule. See [Why does an alert contain fewer events than the rule matched?](/xdr/FAQ/Alerts_qa.md#why-does-an-alert-contain-fewer-events-than-the-rule-matched).
+
 ## Alert types and categories
 
 The alert type is determined by the rule that triggered the alert but can be overridden by the value associated with specific indicators in CTI rules. Alert types follow a custom taxonomy derived from the Reference Incident Classification Taxonomy of ENISA.
