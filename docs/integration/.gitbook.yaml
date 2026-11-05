@@ -1,6 +1,8 @@
 root: ./
 redirects:
   integration/asset_connectors/uuid/e2a7c6b4-9f1d-4b8a-8c3e-2d5f7a1e4b9c: assets_categories/device/aws_ec2_device.md
+  action_library/google: action_library/cloud_providers/google-cloud.md
+  action_library/microsoftdefender: action_library/endpoint/microsoftdefenderxdr.md
   action_library/aws: action_library/cloud_providers/aws.md
   action_library/azure-monitor: action_library/cloud_providers/azure-monitor.md
   action_library/bitdefender-gravityzone: action_library/endpoint/bitdefender-gravityzone.md
