@@ -102,4 +102,3 @@ If your detection rules are regularly exceeding 10 alerts per 60 seconds:
 
 1. Review your rule logic to reduce false positives
 2. Adjust your rule's detection conditions to be more specific
-3. Contact support if you need assistance tuning your rules
