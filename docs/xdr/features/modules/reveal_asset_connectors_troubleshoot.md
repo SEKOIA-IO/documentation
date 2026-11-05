@@ -34,6 +34,7 @@ Review the log entries to identify the root cause. Common issues include:
 | Permission denied | Insufficient rights on the external system |
 | No assets retrieved | The account cannot see any asset on the external system (wrong tenant or missing permissions) |
 | Timeout | Network connectivity issue or external system unavailable |
+| HTTP 429 or 413 on push | The connector reached a rate limit or an asset connector limit: see [Asset connector limits](/xdr/features/modules/reveal_asset_connectors_limits.md) |
 
 ## Step 4: Edit the connector configuration
 
@@ -54,6 +55,7 @@ The connector resumes synchronization with the updated configuration.
 ## Related links
 
 - [Create an asset connector](/xdr/features/modules/reveal_asset_connectors_create.md) — How to configure a new asset connector from the integration catalog.
+- [Asset connector limits](/xdr/features/modules/reveal_asset_connectors_limits.md) — The limits on what asset connectors push, and how to get back under them.
 - [Reveal feature enablement matrix](/xdr/features/modules/reveal_feature_enablement.md) — Which data sources are required for each Reveal capability.
 - [Security controls](/xdr/features/modules/reveal_security_controls.md) — How to verify connector coverage and identify visibility gaps from the asset context panel.
 - [Troubleshoot Reveal](/xdr/features/modules/reveal_troubleshoot.md) — General Reveal troubleshooting for missing data across capabilities.

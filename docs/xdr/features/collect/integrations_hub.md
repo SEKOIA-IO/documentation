@@ -1,6 +1,6 @@
 # Integrations Catalog 
 
-This page provides a centralized overview of all available integrations that connect your essential tools and services to Sekoia.io. Explore a range of integrations, including intake formats, event connectors, asset connectors (coming soon), and playbook triggers and actions, designed to streamline your operations and extend platform capabilities.
+This page provides a centralized overview of all available integrations that connect your essential tools and services to Sekoia.io. Explore a range of integrations, including intake formats, event connectors, asset connectors, and playbook triggers and actions, designed to streamline your operations and extend platform capabilities.
 
 ## Explore Integrations
 
@@ -23,7 +23,7 @@ Refine your search and find the perfect integration using our filters:
 
 - **Featured:** Filter by Built-in and custom integrations
 - **Categories:** Narrow down integrations by their primary domain or purpose (Cloud Providers, Email, Network, Threat Intelligence, etc…)
-- **Content Types:** Identify integrations based on the type of content (Intake formats, event connectors, asset connectors (coming soon), triggers, actions)
+- **Content Types:** Identify integrations based on the type of content (Intake formats, event connectors, asset connectors, triggers, actions)
 
 ### Quick Access
 
@@ -34,7 +34,7 @@ Quickly access our **[Integrations roadmap](https://roadmap-integrations.sekoia.
 Each integration has its own detailed page, providing comprehensive information. On this page, you'll find:
 
 - A description of the integration
-- Information on where it is used, allowing you to directly pivot to the playbooks intakes or asset connectors (coming soon) where the integration is active
+- Information on where it is used, allowing you to directly pivot to the playbooks intakes or asset connectors where the integration is active
 - An overview of its content (Event collection, asset collection, playbook actions and triggers) 
 - A changelog to track latest updates
 
@@ -42,7 +42,7 @@ From this detailed listing, you can also create intakes or try playbook triggers
 
 ## Create Your Own Integration
 
-Can't find an integration that perfectly fits your unique needs? No problem! Unlock unlimited potential and effortlessly create custom integrations tailored specifically for you. With this capability, your integration possibilities are now boundless. Build your own playbook actions, triggers, event connectors, asset connector (coming soon),  intake formats, and more.
+Can't find an integration that perfectly fits your unique needs? No problem! Unlock unlimited potential and effortlessly create custom integrations tailored specifically for you. With this capability, your integration possibilities are now boundless. Build your own playbook actions, triggers, event connectors, asset connectors,  intake formats, and more.
 
 ### Pre-requisites
 
@@ -69,6 +69,9 @@ Connect and sync your GitHub or GitLab repository to import your integration onc
 - **Connect your repository:** Enter your repository URL in the designated field and click `Connect` to test the connection.
 
 Once you've connected your repository and initiated the import, the platform automatically performs a series of checks on your integration's code. If all pre-requisites and development steps are successfully accomplished, indicated by a "green check" status, your custom integration will be officially created within Sekoia.io. At this point, it will become accessible from the main Integrations Catalog listing and can be used just like any other pre-built integration.
+
+!!! note "Custom integrations with an asset connector"
+    A community can own a limited number of custom integrations that contain an asset connector, and custom asset connectors have limits on what they push. See [Asset connector limits](/xdr/features/modules/reveal_asset_connectors_limits.md).
 
 ### How to update your integration
 
