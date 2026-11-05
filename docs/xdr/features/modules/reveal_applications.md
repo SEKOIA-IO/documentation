@@ -41,6 +41,8 @@ The asset context panel displays the asset's Risk score header and its investiga
 
 Reveal collects application inventory from connected asset sources, such as endpoint and asset connectors. The source reports the application name, version, and available technical details.
 
+On Windows and macOS, the Sekoia Endpoint Agent also reports the last executable of each application that ran, when it ran, and its MD5, SHA-1 and SHA-256 hashes. It finds them by matching the processes it sees start against the install directory of each application, so it requires the `event-collector` role. Applications installed in a folder shared by many products, such as `C:\Program Files` itself, and Linux packages, which have no install directory of their own, have no last used file.
+
 When an application is associated with one or more known CVEs, the application is included in the vulnerable view and its **CVE Count** displays the number of matching findings.
 
 !!! note "Application coverage"
@@ -99,7 +101,9 @@ Expand an application row to view additional details:
 - Last seen.
 - Last username.
 - Source.
+- Last used file, the last executable of the application that ran, and when it ran.
 - SHA-256.
+- SHA-1.
 - MD5.
 - CPE.
 - PURL.
