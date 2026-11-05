@@ -88,7 +88,7 @@ With the same playbook logic, we only changed the `Request URL` block configurat
 * **URL**: `https://intake.sekoia.io`
 
 !!! info
-	Those configuration parameters were filled-in by following this [documentation](../../features/automate/library/http.md#request-url).
+	Those configuration parameters were filled-in by following this [documentation](/integration/action_library/generic/http.md#request-url).
 
 The result is an event received on Sekoia.io in a dedicated Intake, with the content of the POST request that was mapped in the relevant ECS fields (thanks to the Custom Format) mandatory to display a SMART Description.
 

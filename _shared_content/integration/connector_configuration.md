@@ -10,6 +10,6 @@ This section will assist you in pulling remote logs from Sekoia and sending them
 6. A new Playbook page will be displayed. Click on the module in the center of the page, then click on the Configure icon.
 7. On the right panel, click on the `Configuration` tab.
 8. Select an existing Trigger Configuration (from the [account menu](/xdr/features/automate/manage-accounts.md)) or create a new one by clicking on `+ Create new configuration`.
-9. Configure the Trigger based on the Actions Library (for instance, see [here](/integration/action_library/aws.md) for AWS modules), then click `Save`.
+9. Configure the Trigger based on the Actions Library (for instance, see [here](/integration/action_library/cloud_providers/aws.md) for AWS modules), then click `Save`.
 10. Click on `Save` at the top right of the playbook page.
 11. Activate the playbook by clicking on the "On / Off" toggle button at the top right corner of the page.

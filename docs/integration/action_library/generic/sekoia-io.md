@@ -1057,6 +1057,7 @@ Execute a custom agent
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `agent_uuid` | `string` | The UUID of the agent to execute |
+| `initial_state` | `['string', 'object']` | Initial state for the agent execution: a message for the agent, or the state as an object |
 
 
 **Outputs**
@@ -2363,4 +2364,4 @@ Update a rule
 
 ## Extra
 
-Module **`Sekoia.io` v2.82.0**
+Module **`Sekoia.io` v2.82.1**

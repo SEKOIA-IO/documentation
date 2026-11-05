@@ -3,7 +3,6 @@ redirects:
   integration/asset_connectors/uuid/e2a7c6b4-9f1d-4b8a-8c3e-2d5f7a1e4b9c: assets_categories/device/aws_ec2_device.md
   action_library/aws: action_library/cloud_providers/aws.md
   action_library/azure-monitor: action_library/cloud_providers/azure-monitor.md
-  action_library/binaryedge-s-api: action_library/threat_intelligence/binaryedge-s-api.md
   action_library/bitdefender-gravityzone: action_library/endpoint/bitdefender-gravityzone.md
   action_library/censys: action_library/threat_intelligence/censys.md
   action_library/certificate-transparency: action_library/threat_intelligence/certificate-transparency.md
@@ -36,7 +35,6 @@ redirects:
   action_library/mokn-baits: action_library/threat_intelligence/mokn-baits.md
   action_library/netskope: action_library/network/netskope.md
   action_library/new-relic: action_library/applicative/new-relic.md
-  action_library/nybble: action_library/collaboration_tools/nybble.md
   action_library/osint: action_library/threat_intelligence/osint.md
   action_library/onyphe: action_library/threat_intelligence/onyphe.md
   action_library/openai: action_library/generic/openai.md
@@ -46,7 +44,6 @@ redirects:
   action_library/panda-security: action_library/endpoint/panda-security.md
   action_library/public-suffix: action_library/threat_intelligence/public-suffix.md
   action_library/rss: action_library/generic/rss.md
-  action_library/riskiq: action_library/threat_intelligence/riskiq.md
   action_library/sekoia-io: action_library/generic/sekoia-io.md
   action_library/sentinelone: action_library/endpoint/sentinelone.md
   action_library/servicenow: action_library/collaboration_tools/servicenow.md

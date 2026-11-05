@@ -14,7 +14,7 @@ This article demonstrates how to leverage the content of your Active Directory (
 
 ## How Does It Work?
 
-The implementation of the playbook to synchronize assets with AD is based on the playbook action [`Synchronize-asset-with-ad`](../../../integration/action_library/sekoia-io.md#synchronize-assets-with-ad).
+The implementation of the playbook to synchronize assets with AD is based on the playbook action [`Synchronize-asset-with-ad`](/integration/action_library/generic/sekoia-io.md#synchronize-assets-with-ad).
 
 ## Prerequisites
 
@@ -30,9 +30,9 @@ Before setting up the synchronization, ensure the following prerequisites are me
 To understand and test this action, you can start with a basic playbook comprising four nodes:
 
 1. **Manual Trigger:** Start with a manual trigger using the default configuration [module documentation](../../features/automate/triggers.md#manual-trigger-webhook).
-2. **Search in AD Action:** Configure this node to read data from your Active Directory [module documentation](../../../integration/action_library/microsoft-active-directory.md#search-in-ad).
+2. **Search in AD Action:** Configure this node to read data from your Active Directory [module documentation](/integration/action_library/iam/microsoft-active-directory.md#search-in-ad).
 3. **ForEach Operator:** Loop over the result of the AD search action. For the configuration, use the output of the Search in AD node, referencing it as `{{ node.X.search_result }}` [module documentation](../../features/automate/operators.md#foreach).
-4. **Synchronize Assets with AD Action:** This node will handle the synchronization based on the looped AD entries [module documentation](../../../integration/action_library/sekoia-io.md#synchronize-assets-with-ad).
+4. **Synchronize Assets with AD Action:** This node will handle the synchronization based on the looped AD entries [module documentation](/integration/action_library/generic/sekoia-io.md#synchronize-assets-with-ad).
 
 Here's a screenshot of the playbook structure:
 

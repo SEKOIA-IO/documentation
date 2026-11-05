@@ -70,16 +70,16 @@ Playbooks complement operational optimization by automating various types of man
     - **Some [Operator](/xdr/features/automate/operators.md) modules** like "[Condition](https://docs.sekoia.io/xdr/features/automate/operators/#condition)" and "[Foreach](/xdr/features/automate/operators.md#foreach)" to halt the playbook execution if new information gathered during the process indicates that the playbook is unnecessary in the current context.
     - **A majority of [Action](/xdr/features/automate/actions.md) modules** making it easily understandable for new team members and maintainable over time. To give you more details on the top 10 most used playbook Actions, here is a list:
 
-        1. [Read JSON File](/xdr/features/automate/library/fileutils.md#read-json-file)
-        2. [Comment Alert](/xdr/features/automate/library/sekoia-io.md#comment-alert)
-        3. [Get Alert](/xdr/features/automate/library/sekoia-io.md#get-alert)
-        4. [Request URL](/xdr/features/automate/library/http.md#request-url)
-        5. [Update Alert Status](/xdr/features/automate/library/sekoia-io.md#update-alert-status)
-        6. [Get Events](/xdr/features/automate/library/sekoia-io.md#get-events)
-        7. [VirusTotal Scan URL](/xdr/features/automate/library/virustotal.md#scan-url)
-        8. [Get Event Field Common Values](/xdr/features/automate/library/sekoia-io.md#get-event-field-common-values)
-        9. [Edit Alert](/xdr/features/automate/library/sekoia-io.md#edit-alert)
-        10. [VirusTotal Scan Hash](/xdr/features/automate/library/virustotal.md#scan-hash)
+        1. [Read JSON File](/integration/action_library/fileutils.md#read-json-file)
+        2. [Comment Alert](/integration/action_library/generic/sekoia-io.md#comment-alert)
+        3. [Get Alert](/integration/action_library/generic/sekoia-io.md#get-alert)
+        4. [Request URL](/integration/action_library/generic/http.md#request-url)
+        5. [Update Alert Status](/integration/action_library/generic/sekoia-io.md#update-alert-status)
+        6. [Get Events](/integration/action_library/generic/sekoia-io.md#get-events)
+        7. [VirusTotal Scan URL](/integration/action_library/threat_intelligence/virustotal.md#scan-url)
+        8. [Get Event Field Common Values](/integration/action_library/generic/sekoia-io.md#get-event-field-common-values)
+        9. [Edit Alert](/integration/action_library/generic/sekoia-io.md#edit-alert)
+        10. [VirusTotal Scan Hash](/integration/action_library/threat_intelligence/virustotal.md#scan-hash)
 
 For instance, the following [playbook template](/xdr/features/automate/build-playbooks.md#templates) composed of 9 modules (1 Trigger, 1 Operator, 7 Actions) answers the need of adding a domain in a blocklist (IOC Collection).
 
