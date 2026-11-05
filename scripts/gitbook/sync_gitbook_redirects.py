@@ -102,7 +102,11 @@ def main(token: str, org: str, site: str, space: str, site_space: str, apply: bo
         if current is None:
             created += 1
             print(f"+ {source} -> {git_path}")
-        elif current.get("kind") == "site-page" and current.get("pageId") == page_id:
+        elif (
+            current.get("kind") == "site-page"
+            and current.get("siteSpaceId") == site_space
+            and current.get("pageId") == page_id
+        ):
             unchanged += 1
             continue
         else:
