@@ -1,0 +1,2366 @@
+---
+uuid: 92d8bb47-7c51-445d-81de-ae04edbb6f0a
+name: "Sekoia.io"
+type: playbook
+description: "Sekoia.io is a European Cybertech, expert in intelligence-based eXtended Detection and Response solutions. Our Sekoia SOC platform provides a unified view and full control of the perimeter to be defended. Our mission is to empower security operations teams with a flexible and easy-to-use platform. We protect large companies, technology scaleups, governments, and Tier One MSSP partners worldwide. "
+---
+
+# Sekoia.io
+
+<img src="../../.gitbook/assets/library/sekoia-io.png" alt="Sekoia.io" width="150" align="right">
+
+Sekoia.io is a European Cybertech, expert in intelligence-based eXtended Detection and Response solutions. Our Sekoia SOC platform provides a unified view and full control of the perimeter to be defended. Our mission is to empower security operations teams with a flexible and easy-to-use platform. We protect large companies, technology scaleups, governments, and Tier One MSSP partners worldwide. 
+
+## Configuration
+
+This module accepts no configuration.
+
+## Triggers
+
+### Alert Comment Created
+
+A comment was added to an existing Alert
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `rule_filter` | `string` | Create a run only for alerts matching a rule name |
+| `rule_names_filter` | `array` | Create a run only for alerts matching a list of rule name |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `comment` | `object` | Alert comment (object containing comment uuid, content, author, date). |
+| `file_path` | `string` | File path to the alert on disk. |
+| `event_type` | `string` | Action that triggered this Sekoia.io Alert notification (could be for example “alert-created”, “alert-status-changed”, etc.) |
+| `alert_uuid` | `string` | Unique identifier of the Alert (UUID string). |
+| `short_id` | `string` | Unique short identifier of the Alert. |
+| `status` | `object` | Status of the Alert (object containing status description and name). |
+| `created_at` | `integer` | Creation date of the Alert (timestamp). |
+| `urgency` | `integer` | Current urgency of the Alert. |
+| `entity` | `object` | Description of the entity involved with this Alert (object containing entity UUID and name). |
+| `alert_type` | `object` | Category of the Alert |
+| `rule` | `object` |  |
+| `first_seen_at` | `string` |  |
+| `last_seen_at` | `string` |  |
+
+
+### Alert Created
+
+A new Alert was created in the Operation Center
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `rule_filter` | `string` | Create a run only for alerts matching a rule name |
+| `rule_names_filter` | `array` | Create a run only for alerts matching a list of rule name |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `file_path` | `string` | File path to the alert on disk. |
+| `event_type` | `string` | Action that triggered this Sekoia.io Alert notification (could be for example “alert-created”, “alert-status-changed”, etc.) |
+| `alert_uuid` | `string` | Unique identifier of the Alert (UUID string). |
+| `short_id` | `string` | Unique short identifier of the Alert. |
+| `status` | `object` | Status of the Alert (object containing status description and name). |
+| `created_at` | `integer` | Creation date of the Alert (timestamp). |
+| `urgency` | `integer` | Current urgency of the Alert. |
+| `entity` | `object` | Description of the entity involved with this Alert (object containing entity UUID and name). |
+| `alert_type` | `object` | Category of the Alert |
+| `rule` | `object` |  |
+| `first_seen_at` | `string` |  |
+| `last_seen_at` | `string` |  |
+
+
+### Alert Events Threshold
+
+Trigger playbooks only when alert event accumulation meets configurable thresholds (volume-based or time-based)
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `rule_filter` | `string` | Filter by rule name or UUID (single rule only) |
+| `rule_names_filter` | `array` | Filter by multiple rule names |
+| `event_count_threshold` | `integer` | Minimum number of new events to trigger (volume-based) |
+| `time_window_hours` | `integer` | Time window in hours for time-based triggering (max 7 days) |
+| `enable_volume_threshold` | `boolean` | Enable volume-based threshold (>= N events) |
+| `enable_time_threshold` | `boolean` | Enable time-based threshold (triggers if there is activity in last N hours, checked periodically) |
+| `state_cleanup_days` | `integer` | Remove state entries for alerts older than N days |
+| `fetch_events` | `boolean` | Whether to fetch and include events in the trigger output |
+| `fetch_all_events` | `boolean` | If true, fetch all events from the alert. If false, fetch only new events since last trigger |
+| `max_events_per_fetch` | `integer` | Maximum number of events to fetch per trigger execution |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `file_path` | `string` | File path to the alert on disk. |
+| `event_type` | `string` | Action that triggered this Sekoia.io Alert notification. |
+| `alert_uuid` | `string` | Unique identifier of the Alert (UUID string). |
+| `short_id` | `string` | Unique short identifier of the Alert. |
+| `status` | `object` | Status of the Alert (object containing status description and name). |
+| `created_at` | `integer` | Creation date of the Alert (timestamp). |
+| `urgency` | `integer` | Current urgency of the Alert. |
+| `entity` | `object` | Description of the entity involved with this Alert (object containing entity UUID and name). |
+| `alert_type` | `object` | Category of the Alert |
+| `rule` | `object` |  |
+| `first_seen_at` | `string` |  |
+| `last_seen_at` | `string` |  |
+| `events_count` | `integer` | Total number of events in the alert |
+| `trigger_context` | `object` | Threshold-specific context about why this alert triggered |
+| `events_file_path` | `string` | File path to the events JSON file on disk (only present if fetch_events is enabled) |
+| `fetched_events_count` | `integer` | Number of events fetched and saved (only present if fetch_events is enabled) |
+
+
+### Alert Status Changed
+
+The status of an existing alert was changed
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `rule_filter` | `string` | Create a run only for alerts matching a rule name |
+| `rule_names_filter` | `array` | Create a run only for alerts matching a list of rule name |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `file_path` | `string` | File path to the alert on disk. |
+| `event_type` | `string` | Action that triggered this Sekoia.io Alert notification (could be for example “alert-created”, “alert-status-changed”, etc.) |
+| `alert_uuid` | `string` | Unique identifier of the Alert (UUID string). |
+| `short_id` | `string` | Unique short identifier of the Alert. |
+| `status` | `object` | Status of the Alert (object containing status description and name). |
+| `created_at` | `integer` | Creation date of the Alert (timestamp). |
+| `urgency` | `integer` | Current urgency of the Alert. |
+| `entity` | `object` | Description of the entity involved with this Alert (object containing entity UUID and name). |
+| `alert_type` | `object` | Category of the Alert |
+| `rule` | `object` |  |
+| `first_seen_at` | `string` |  |
+| `last_seen_at` | `string` |  |
+
+
+### Alert Updated
+
+An existing alert was updated
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `rule_filter` | `string` | Create a run only for alerts matching a rule name |
+| `rule_names_filter` | `array` | Create a run only for alerts matching a list of rule name |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `file_path` | `string` | File path to the alert on disk. |
+| `event_type` | `string` | Action that triggered this Sekoia.io Alert notification (could be for example “alert-created”, “alert-status-changed”, etc.) |
+| `alert_uuid` | `string` | Unique identifier of the Alert (UUID string). |
+| `short_id` | `string` | Unique short identifier of the Alert. |
+| `status` | `object` | Status of the Alert (object containing status description and name). |
+| `created_at` | `integer` | Creation date of the Alert (timestamp). |
+| `urgency` | `integer` | Current urgency of the Alert. |
+| `entity` | `object` | Description of the entity involved with this Alert (object containing entity UUID and name). |
+| `alert_type` | `object` | Category of the Alert |
+| `rule` | `object` |  |
+| `first_seen_at` | `string` |  |
+| `last_seen_at` | `string` |  |
+
+
+### Manual Trigger
+
+Webhook Trigger to receive specific Sekoia.io Alerts
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `alert_uuid` | `string` | Unique identifier of the Alert (UUID string). |
+
+
+### Case Alerts Updated
+
+Alerts have been added to or removed from a case
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `mode_filter` | `string` | Create a run only for cases matching a mode (automatic or manual) |
+| `priority_uuids_filter` | `array` | Create a run only for cases matching a list of priority uuids |
+| `assignees_filter` | `array` | Create a run only for cases matching a list of assignees |
+| `case_uuids_filter` | `array` | Create a run only for cases matching a list of case uuids/short ids |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | Unique identifier of the Case (UUID string). |
+| `short_id` | `string` | Unique short identifier of the Case. |
+| `added_alerts` | `array` | List of Unique identifier of new alerts (UUID string). |
+| `deleted_alerts` | `array` | List of Unique identifier of removed alerts (UUID string). |
+
+
+### Case Comment Created
+
+A comment was added to an existing Case
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `mode_filter` | `string` | Create a run only for cases matching a mode (automatic or manual) |
+| `priority_uuids_filter` | `array` | Create a run only for cases matching a list of priority uuids |
+| `assignees_filter` | `array` | Create a run only for cases matching a list of assignees |
+| `case_uuids_filter` | `array` | Create a run only for cases matching a list of case uuids/short ids |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `comment` | `object` | Case comment (object containing comment uuid, content, author, date). |
+| `uuid` | `string` | Unique identifier of the Case (UUID string). |
+| `short_id` | `string` | Unique short identifier of the Case. |
+| `status_uuid` | `string` | Unique identifier of the Status (UUID string). |
+| `priority_uuid` | `string` | Unique identifier of the Priority (UUID string). |
+| `verdict_uuid` | `['string', 'null']` | Unique identifier of the Verdict (UUID string). |
+| `created_at` | `string` | Creation date of the Case. |
+| `updated_at` | `string` | Updated date of the Case. |
+| `title` | `string` | Title of the Case. |
+| `description` | `string` | Description of the Case. |
+
+
+### Case Created
+
+A new Case was created in the Operation Center
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `mode_filter` | `string` | Create a run only for cases matching a mode (automatic or manual) |
+| `priority_uuids_filter` | `array` | Create a run only for cases matching a list of priority uuids |
+| `assignees_filter` | `array` | Create a run only for cases matching a list of assignees |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | Unique identifier of the Case (UUID string). |
+| `short_id` | `string` | Unique short identifier of the Case. |
+| `created_at` | `string` | Creation date of the Case. |
+| `created_by` | `string` | User who created the Case. |
+| `mode` | `string` | Mode of the Case (automatic or manual). |
+| `title` | `string` | Title of the Case. |
+| `description` | `string` | Description of the Case. |
+| `community_uuid` | `string` | Unique identifier of the Community (UUID string). |
+| `assignees` | `array` | List of assignees of the Case. |
+| `priority_uuid` | `string` | Unique identifier of the Priority (UUID string). |
+| `status_uuid` | `string` | Unique identifier of the Status (UUID string). |
+| `tags` | `array` | List of tags of the Case. |
+
+
+### Case Updated
+
+An existing case was updated
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `mode_filter` | `string` | Create a run only for cases matching a mode (automatic or manual) |
+| `priority_uuids_filter` | `array` | Create a run only for cases matching a list of priority uuids |
+| `assignees_filter` | `array` | Create a run only for cases matching a list of assignees |
+| `case_uuids_filter` | `array` | Create a run only for cases matching a list of case uuids/short ids |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | Unique identifier of the Case (UUID string). |
+| `short_id` | `string` | Unique short identifier of the Case. |
+| `created_at` | `string` | Creation date of the Case. |
+| `updated_at` | `string` | Updated date of the Case. |
+| `updated_by` | `string` | User who updated the Case. |
+| `title` | `string` | Title of the Case. |
+| `description` | `string` | Description of the Case. |
+| `assignees` | `array` | List of assignees of the Case. |
+| `tags` | `array` | List of tags of the Case. |
+| `status_uuid` | `string` | Unique identifier of the Status (UUID string). |
+| `priority_uuid` | `string` | Unique identifier of the Priority (UUID string). |
+| `verdict_uuid` | `string` | Unique identifier of the Verdict (UUID string). |
+
+
+### Manual Trigger for Case
+
+Webhook Trigger to receive specific Sekoia.io Cases
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `case_uuid` | `string` | Unique identifier of the Case (UUID string). |
+
+
+### Feed Consumption
+
+Get all non-revoked objects from Sekoia.io Intelligence feed
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `feed_id` | `string` | ID of the Sekoia.io feed to get data from |
+| `batch_size_limit` | `integer` | Size of the batch of elements to get from the Sekoia.io feed in one time |
+| `modified_after` | `string` | Date from which IOCs should be retrieved. It must be a valid RFC-3339 date-time string (i.e. 2024-04-12T23:20:50.52Z) |
+| `resolve_sources` | `boolean` | Adding x_inthreat_sources field in all objects with the resolved names and confidences of the sources |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `stix_objects_path` | `string` | Filepath of the STIX objects fetched from the collection |
+
+
+### Feed IOC Consumption
+
+Get all valid IOCs from Sekoia.io Intelligence feed
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `feed_id` | `string` | ID of the Sekoia.io feed to get data from |
+| `batch_size_limit` | `integer` | Size of the batch of elements to get from the Sekoia.io feed in one time |
+| `modified_after` | `string` | Date from which IOCs should be retrieved. It must be a valid RFC-3339 date-time string (i.e. 2024-04-12T23:20:50.52Z) |
+| `resolve_sources` | `boolean` | Adding x_inthreat_sources field in all objects with the resolved names and confidences of the sources |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `stix_objects_path` | `string` | Filepath of the STIX objects fetched from the collection |
+
+
+### Any Alert Update
+
+Create an event for each alert creation or modification
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `rule_filter` | `string` | Create a run only for alerts matching a rule name |
+| `rule_names_filter` | `array` | Create a run only for alerts matching a list of rule name |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `file_path` | `string` | File path to the alert on disk. |
+| `event_type` | `string` | Action that triggered this Sekoia.io Alert notification (could be for example “alert-created”, “alert-status-changed”, etc.) |
+| `alert_uuid` | `string` | Unique identifier of the Alert (UUID string). |
+| `short_id` | `string` | Unique short identifier of the Alert. |
+| `status` | `object` | Status of the Alert (object containing status description and name). |
+| `created_at` | `integer` | Creation date of the Alert (timestamp). |
+| `urgency` | `integer` | Current urgency of the Alert. |
+| `entity` | `object` | Description of the entity involved with this Alert (object containing entity UUID and name). |
+| `alert_type` | `object` | Category of the Alert |
+| `rule` | `object` |  |
+| `first_seen_at` | `string` |  |
+| `last_seen_at` | `string` |  |
+
+## Actions
+
+### Activate Countermeasure
+
+Mark as active a countermeasure
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `cm_uuid` | `string` |  |
+| `comment` | `object` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `action_steps` | `array` |  |
+| `activated_by_type` | `string` | Type of the profile that activated the countermeasure |
+| `comments` | `array` |  |
+| `activated_at` | `string` | Date the countermeasure was activated |
+| `relevance` | `integer` | Relevance of the countermeasure |
+| `denied_by_type` | `string` | Type of the profile that denied the countermeasure |
+| `status` | `string` | (deprecated) Status of the countermeasure |
+| `created_by` | `string` | UUID of profile that created the countermeasure |
+| `model_uuid` | `string` | UUID of the model from which this countermeasure has been created |
+| `activated_by` | `string` | UUID of profile that activated the countermeasure |
+| `description` | `string` | Description of the countermeasure |
+| `name` | `string` | Name of the countermeasure |
+| `uuid` | `string` | UUID of the countermeasure |
+| `duration` | `string` | Estimated duration to apply the countermeasures |
+| `alert_uuid` | `string` | UUID of the alert related to the countermeasure |
+| `denied_at` | `string` | Date the countermeasure was denied |
+| `created_by_type` | `string` | Type of the profile that created the countermeasure |
+| `course_of_action` | `object` | (deprecated) STIX2 object course of action |
+| `dynamic_relevance` | `integer` | Dynamic relevance of the countermeasure |
+| `denied_by` | `string` | UUID of profile that denied the countermeasure |
+| `assignee` | `string` | UUID of the profile assigned to the progress of the countermeasure |
+| `created_at` | `string` | Date the countermeasure was created |
+
+### Add events to a case
+
+Add events to a case
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | UUID or short_id of the case to update |
+| `event_ids` | `array` | List of event identifiers (__event_id) to add to the case. Do not use event.id which is a different identifier. |
+
+### Add IOC to IOC Collection
+
+Add indicators to an IOC collection.
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `indicator` | `string` | Single indicator to add to an IOC collection. For IP address type, provide a plain IPv4 or IPv6 value (CIDR is not supported). |
+| `indicators` | `array` | List of indicators to add to an IOC collection. For IP address type, provide plain IPv4 or IPv6 values (CIDR is not supported). |
+| `ioc_collection_id` | `string` | Identifier of the target IOC collection. |
+| `indicator_type` | `string` | Type of indicator to add. For IP address type, only plain IPv4 or IPv6 values are supported (CIDR is not supported). |
+| `valid_for` | `integer` | Validity period in days for the created indicators. |
+
+### Add attribute to Asset
+
+Add an attribute to an asset
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `name` | `string` |  |
+| `value` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `value` | `string` |  |
+| `uuid` | `string` |  |
+| `name` | `string` |  |
+
+### Add key to Asset
+
+Adds a key to an asset
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `name` | `string` |  |
+| `value` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `value` | `string` |  |
+| `uuid` | `string` |  |
+| `name` | `string` |  |
+
+### Merge Assets
+
+Merge a list of assets into a targeted asset
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `destination` | `string` |  |
+| `sources` | `array` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `status_code` | `integer` |  |
+| `headers` | `object` |  |
+| `text` | `string` |  |
+
+### Attach Alerts to Case
+
+Attach one or more alerts to a specific case
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `case_uuid` | `string` | UUID or short_id of the case to update |
+| `alerts` | `array` | The list of identifiers (UUID or short_id) of alerts to add |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `status` | `string` |  |
+
+### Create Tracker Notification
+
+Create a notification for a specific tracker
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `data` | `object` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `data` | `object` |  |
+
+### Create case
+
+Creates a new case
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `title` | `string` | title of the case |
+| `description` | `string` | description of the case |
+| `status_uuid` | `string` | identifier of case’s status |
+| `priority` | `string` | priority of the case |
+| `tags` | `array` | tags to associate to the case |
+| `subscribers` | `array` | avatars to associate to the case |
+| `community_uuid` | `string` | the identifier of the community to which the case is associated |
+| `verdict_uuid` | `string` | Verdict of the case |
+| `custom_status_uuid` | `string` | Custom status of the case |
+| `custom_priority_uuid` | `string` | Custom priority of the case |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `short_id` | `string` |  |
+| `created_at` | `string` |  |
+| `created_by` | `string` |  |
+| `created_by_type` | `string` |  |
+| `updated_at` | `string` |  |
+| `updated_by` | `string` |  |
+| `updated_by_type` | `string` |  |
+| `title` | `string` |  |
+| `description` | `string` |  |
+| `priority` | `` | low\|medium\|high |
+| `status` | `string` |  |
+| `status_uuid` | `string` |  |
+| `community_uuid` | `string` |  |
+| `subscribers` | `array` |  |
+| `tags` | `array` | List of tags associated to the case |
+| `number_of_comments` | `integer` |  |
+| `first_seen_at` | `string` | Date and time of the first case event |
+| `last_seen_at` | `string` | Date and time of the last case event |
+| `manual` | `boolean` | if True, indicates that the case was created manually |
+| `is_supplied` | `boolean` | if True, indicates that alerts can be automatically added to the case |
+| `verdict_uuid` | `string` | UUID of the verdict associated to the case |
+| `verdict` | `object` |  |
+| `custom_status_uuid` | `string` | UUID of the custom status associated to the case |
+| `custom_status` | `object` |  |
+| `custom_priority_uuid` | `string` | UUID of the priority associated to the case |
+| `custom_priority` | `object` |  |
+| `number_of_alerts` | `integer` |  |
+| `alerts` | `array` |  |
+
+### Create Dataset
+
+Create a new dataset
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `name` | `string` | Name of the dataset to create. |
+| `dataset` | `string` | The content of the dataset to create, in CSV format. |
+
+### Create rule
+
+Create a new rule
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `community_uuid` | `string` |  |
+| `name` | `string` |  |
+| `type` | `string` |  |
+| `description` | `string` |  |
+| `payload` | `string` |  |
+| `severity` | `integer` |  |
+| `effort` | `integer` |  |
+| `alert_type_uuid` | `string` |  |
+| `tags` | `array` |  |
+| `related_object_refs` | `array` |  |
+| `datasources` | `array` |  |
+| `event_fields` | `array` |  |
+| `enabled` | `boolean` |  |
+| `parameters` | `array` |  |
+| `all_entities` | `boolean` |  |
+| `entities` | `array` |  |
+| `all_assets` | `boolean` |  |
+| `assets` | `array` |  |
+| `goal` | `string` |  |
+| `false_positives` | `string` |  |
+| `similarity_strategy` | `array` |  |
+| `available_for_subcommunities` | `boolean` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the rule |
+| `enabled` | `boolean` | Is the rule enabled ? |
+| `community_uuid` | `string` | The community uuid if the rule is attached to one |
+| `parameters` | `array` | The parameters of the rule |
+| `all_entities` | `boolean` | Should the rule be applied on all entities ? |
+| `entities` | `array` | The list of entities the rule should be applied on |
+| `all_assets` | `boolean` | Should the rule be applied on all assets ? |
+| `assets` | `array` | The list of assets identifiers the rule should be applied on |
+| `last_compilation_success` | `boolean` | Did the last compilation succeed ? |
+| `last_compilation_message` | `string` | The message of the last compilation |
+| `last_compilation_at` | `string` | The last compilation date of the rule |
+| `name` | `string` | The name of the rule |
+| `type` | `` | The type of the rule |
+| `private` | `boolean` | Is the rule available only for the community ? |
+| `is_private` | `boolean` | Is the rule available only for the community ? |
+| `description` | `string` | The descrition of the rule |
+| `payload` | `string` | The payload of the rule |
+| `severity` | `integer` | The severity of the rule |
+| `effort` | `integer` | The effort of the rule |
+| `alert_type` | `object` | The alert type associated to the rule |
+| `alert_category` | `object` | The alert category associated to the rule |
+| `tags` | `array` | The list of tags associated to the rule |
+| `source` | `string` | The source of the rule |
+| `verified` | `boolean` | Is the rule verified ? |
+| `related_object_refs` | `array` | The list of reference of objects related to the rule |
+| `datasources` | `array` | The list of datasources of the rule |
+| `event_fields` | `array` | The list of fields to show when displaying a matched event |
+| `similarity_strategy` | `array` | Similarity Strategy used by this rule |
+| `created_at` | `string` | The creation date of the rule |
+| `created_by` | `string` | The profile who created the rule |
+| `created_by_type` | `string` | The profile type who created the rule can be 'avatar', 'application', 'apikey' |
+| `updated_at` | `string` | The modification date of the rule |
+| `updated_by` | `string` | The profile who updated the rule |
+| `updated_by_type` | `string` | The profile type who updated the rule can be 'rule', 'application', 'apikey' |
+| `goal` | `string` | A high-level description explaining the contribution of the rule |
+| `false_positives` | `string` | A possible legitimate usage which can raise a false alert |
+| `references` | `string` | Details on what led to write this rule |
+| `available_for_subcommunities` | `boolean` | Is the rule available for subcommunities (if applicable) ? |
+| `instance_uuid` | `string` | The identifier of the instance of the rule |
+
+### Create Asset
+
+Create a new asset
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `asset_type` | `object` |  |
+| `name` | `string` |  |
+| `criticity` | `integer` |  |
+| `description` | `string` |  |
+| `attributes` | `array` |  |
+| `keys` | `array` |  |
+| `owners` | `array` |  |
+| `community_uuid` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `keys` | `array` |  |
+| `attributes` | `array` |  |
+| `uuid` | `string` |  |
+| `name` | `string` |  |
+| `created_at` | `string` |  |
+| `criticity` | `object` |  |
+| `asset_type` | `object` |  |
+| `updated_at` | `string` |  |
+| `description` | `string` |  |
+| `owners` | `array` |  |
+| `community_uuid` | `string` |  |
+| `category` | `object` |  |
+
+### Create Asset (V2)
+
+Create a new asset
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `` |  |
+| `community_uuid` | `string` |  |
+| `entity_uuid` | `` |  |
+| `name` | `string` |  |
+| `description` | `string` |  |
+| `type` | `string` |  |
+| `category` | `['string', 'null']` |  |
+| `criticality` | `integer` |  |
+| `props` | `['object', 'null']` | Attach contextual properties |
+| `atoms` | `['object', 'null']` | Attach detection properties |
+| `tags` | `array` |  |
+| `reviewed` | `boolean` | Mark the asset as reviewed |
+| `source` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+| `entity_uuid` | `` |  |
+| `community_uuid` | `string` | The community of the asset |
+| `name` | `string` | The name of the asset |
+| `type` | `string` | The type of the asset |
+| `category` | `['object', 'string', 'null']` | The category of the asset |
+| `criticality` | `['integer', 'null']` |  |
+| `created_at` | `` | The creation date of the asset |
+| `created_by` | `` |  |
+| `created_by_type` | `['string', 'null']` |  |
+| `updated_at` | `` | The modification date of the asset |
+| `first_seen` | `` |  |
+| `last_seen` | `` |  |
+| `nb_events` | `['integer', 'null']` |  |
+| `nb_alerts` | `['integer', 'null']` |  |
+| `nb_atoms` | `integer` |  |
+| `atoms` | `['object', 'null']` |  |
+| `props` | `['object', 'null']` |  |
+| `tags` | `array` |  |
+| `revoked` | `boolean` |  |
+| `revoked_at` | `` |  |
+| `revoked_by` | `` |  |
+| `reviewed` | `boolean` |  |
+| `reviewed_at` | `` |  |
+| `reviewed_by` | `` |  |
+| `source` | `string` |  |
+| `rule_uuid` | `` |  |
+| `rule_version` | `['string', 'null']` |  |
+| `criticity` | `['object', 'null']` | The criticality of the asset |
+| `asset_type` | `['object', 'null']` | The type of the asset |
+
+### Delete Case
+
+Delete a case
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `case_uuid` | `string` |  |
+
+### Delete Dataset
+
+Delete an existing dataset
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `name` | `string` | Name of the dataset to delete. |
+| `uuid` | `string` | Identifier of the dataset to delete. |
+
+### Delete rule
+
+Delete a rule
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `community_uuid` | `string` |  |
+
+### [DEPRECATED] Delete an asset
+
+(deprecated — use Revoke an asset (V2)) Delete the requested asset
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+
+### [DEPRECATED] Delete an asset (V2)
+
+(deprecated — use Revoke an asset (V2)) Delete the requested asset
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+| `entity_uuid` | `` |  |
+| `community_uuid` | `string` | The community of the asset |
+| `name` | `string` | The name of the asset |
+| `type` | `string` | The type of the asset |
+| `category` | `['object', 'string', 'null']` | The category of the asset |
+| `criticality` | `['integer', 'null']` |  |
+| `created_at` | `` | The creation date of the asset |
+| `created_by` | `` |  |
+| `created_by_type` | `['string', 'null']` |  |
+| `updated_at` | `` | The modification date of the asset |
+| `first_seen` | `` |  |
+| `last_seen` | `` |  |
+| `nb_events` | `['integer', 'null']` |  |
+| `nb_alerts` | `['integer', 'null']` |  |
+| `nb_atoms` | `integer` |  |
+| `atoms` | `['object', 'null']` |  |
+| `props` | `['object', 'null']` |  |
+| `tags` | `array` |  |
+| `revoked` | `boolean` |  |
+| `revoked_at` | `` |  |
+| `revoked_by` | `` |  |
+| `reviewed` | `boolean` |  |
+| `reviewed_at` | `` |  |
+| `reviewed_by` | `` |  |
+| `source` | `string` |  |
+| `rule_uuid` | `` |  |
+| `rule_version` | `['string', 'null']` |  |
+| `criticity` | `['object', 'null']` | The criticality of the asset |
+| `asset_type` | `['object', 'null']` | The type of the asset |
+
+### Deny Countermeasure
+
+Mark as denied a countermeasure
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `cm_uuid` | `string` |  |
+| `comment` | `object` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `action_steps` | `array` |  |
+| `activated_by_type` | `string` | Type of the profile that activated the countermeasure |
+| `comments` | `array` |  |
+| `activated_at` | `string` | Date the countermeasure was activated |
+| `relevance` | `integer` | Relevance of the countermeasure |
+| `denied_by_type` | `string` | Type of the profile that denied the countermeasure |
+| `status` | `string` | (deprecated) Status of the countermeasure |
+| `created_by` | `string` | UUID of profile that created the countermeasure |
+| `model_uuid` | `string` | UUID of the model from which this countermeasure has been created |
+| `activated_by` | `string` | UUID of profile that activated the countermeasure |
+| `description` | `string` | Description of the countermeasure |
+| `name` | `string` | Name of the countermeasure |
+| `uuid` | `string` | UUID of the countermeasure |
+| `duration` | `string` | Estimated duration to apply the countermeasures |
+| `alert_uuid` | `string` | UUID of the alert related to the countermeasure |
+| `denied_at` | `string` | Date the countermeasure was denied |
+| `created_by_type` | `string` | Type of the profile that created the countermeasure |
+| `course_of_action` | `object` | (deprecated) STIX2 object course of action |
+| `dynamic_relevance` | `integer` | Dynamic relevance of the countermeasure |
+| `denied_by` | `string` | UUID of profile that denied the countermeasure |
+| `assignee` | `string` | UUID of the profile assigned to the progress of the countermeasure |
+| `created_at` | `string` | Date the countermeasure was created |
+
+### Disable rule
+
+Disable a rule
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `community_uuid` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the rule |
+| `enabled` | `boolean` | Is the rule enabled ? |
+| `community_uuid` | `string` | The community uuid if the rule is attached to one |
+| `parameters` | `array` | The parameters of the rule |
+| `all_entities` | `boolean` | Should the rule be applied on all entities ? |
+| `entities` | `array` | The list of entities the rule should be applied on |
+| `all_assets` | `boolean` | Should the rule be applied on all assets ? |
+| `assets` | `array` | The list of assets identifiers the rule should be applied on |
+| `last_compilation_success` | `boolean` | Did the last compilation succeed ? |
+| `last_compilation_message` | `string` | The message of the last compilation |
+| `last_compilation_at` | `string` | The last compilation date of the rule |
+| `name` | `string` | The name of the rule |
+| `type` | `` | The type of the rule |
+| `private` | `boolean` | Is the rule available only for the community ? |
+| `is_private` | `boolean` | Is the rule available only for the community ? |
+| `description` | `string` | The descrition of the rule |
+| `payload` | `string` | The payload of the rule |
+| `severity` | `integer` | The severity of the rule |
+| `effort` | `integer` | The effort of the rule |
+| `alert_type` | `object` | The alert type associated to the rule |
+| `alert_category` | `object` | The alert category associated to the rule |
+| `tags` | `array` | The list of tags associated to the rule |
+| `source` | `string` | The source of the rule |
+| `verified` | `boolean` | Is the rule verified ? |
+| `related_object_refs` | `array` | The list of reference of objects related to the rule |
+| `datasources` | `array` | The list of datasources of the rule |
+| `event_fields` | `array` | The list of fields to show when displaying a matched event |
+| `similarity_strategy` | `array` | Similarity Strategy used by this rule |
+| `created_at` | `string` | The creation date of the rule |
+| `created_by` | `string` | The profile who created the rule |
+| `created_by_type` | `string` | The profile type who created the rule can be 'avatar', 'application', 'apikey' |
+| `updated_at` | `string` | The modification date of the rule |
+| `updated_by` | `string` | The profile who updated the rule |
+| `updated_by_type` | `string` | The profile type who updated the rule can be 'rule', 'application', 'apikey' |
+| `goal` | `string` | A high-level description explaining the contribution of the rule |
+| `false_positives` | `string` | A possible legitimate usage which can raise a false alert |
+| `references` | `string` | Details on what led to write this rule |
+| `available_for_subcommunities` | `boolean` | Is the rule available for subcommunities (if applicable) ? |
+| `instance_uuid` | `string` | The identifier of the instance of the rule |
+
+### Enable rule
+
+Enable a rule
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `community_uuid` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the rule |
+| `enabled` | `boolean` | Is the rule enabled ? |
+| `community_uuid` | `string` | The community uuid if the rule is attached to one |
+| `parameters` | `array` | The parameters of the rule |
+| `all_entities` | `boolean` | Should the rule be applied on all entities ? |
+| `entities` | `array` | The list of entities the rule should be applied on |
+| `all_assets` | `boolean` | Should the rule be applied on all assets ? |
+| `assets` | `array` | The list of assets identifiers the rule should be applied on |
+| `last_compilation_success` | `boolean` | Did the last compilation succeed ? |
+| `last_compilation_message` | `string` | The message of the last compilation |
+| `last_compilation_at` | `string` | The last compilation date of the rule |
+| `name` | `string` | The name of the rule |
+| `type` | `` | The type of the rule |
+| `private` | `boolean` | Is the rule available only for the community ? |
+| `is_private` | `boolean` | Is the rule available only for the community ? |
+| `description` | `string` | The descrition of the rule |
+| `payload` | `string` | The payload of the rule |
+| `severity` | `integer` | The severity of the rule |
+| `effort` | `integer` | The effort of the rule |
+| `alert_type` | `object` | The alert type associated to the rule |
+| `alert_category` | `object` | The alert category associated to the rule |
+| `tags` | `array` | The list of tags associated to the rule |
+| `source` | `string` | The source of the rule |
+| `verified` | `boolean` | Is the rule verified ? |
+| `related_object_refs` | `array` | The list of reference of objects related to the rule |
+| `datasources` | `array` | The list of datasources of the rule |
+| `event_fields` | `array` | The list of fields to show when displaying a matched event |
+| `similarity_strategy` | `array` | Similarity Strategy used by this rule |
+| `created_at` | `string` | The creation date of the rule |
+| `created_by` | `string` | The profile who created the rule |
+| `created_by_type` | `string` | The profile type who created the rule can be 'avatar', 'application', 'apikey' |
+| `updated_at` | `string` | The modification date of the rule |
+| `updated_by` | `string` | The profile who updated the rule |
+| `updated_by_type` | `string` | The profile type who updated the rule can be 'rule', 'application', 'apikey' |
+| `goal` | `string` | A high-level description explaining the contribution of the rule |
+| `false_positives` | `string` | A possible legitimate usage which can raise a false alert |
+| `references` | `string` | Details on what led to write this rule |
+| `available_for_subcommunities` | `boolean` | Is the rule available for subcommunities (if applicable) ? |
+| `instance_uuid` | `string` | The identifier of the instance of the rule |
+
+### Execute a query
+
+Execute a saved query in Sekoia and retrieve the results.
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `query_name` | `string` | Name of the saved query to execute. Either 'query_name' or 'query_uuid' must be provided. |
+| `query_uuid` | `string` | UUID of the saved query to execute. Either 'query_uuid' or 'query_name' must be provided. |
+| `parameters` | `object` | Values for the SOL filters referenced in the saved query using the `?filter_name` syntax. Passed as query parameters when executing the query. |
+| `result_format` | `string` | Format of the query result to download. Supported formats are 'jsonl' and 'csv'. |
+| `to_file` | `boolean` | Whether the query result should be saved in a file or sent directly. |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `query_result` | `string` | The result of the query execution. |
+| `output_path` | `string` | Path to the file with the content |
+
+### Execute custom agent
+
+Execute a custom agent
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `agent_uuid` | `string` | The UUID of the agent to execute |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | UUID of the agent execution |
+| `community_uuid` | `string` | UUID of the community |
+| `agent_uuid` | `string` | UUID of the agent |
+| `run_name` | `['string', 'null']` | Name of the agent run |
+| `status` | `string` | Status of the agent execution |
+| `started_at` | `string` | Start time of the agent execution in ISO 8601 format |
+| `ended_at` | `string` | End time of the agent execution in ISO 8601 format |
+| `duration_seconds` | `number` | Duration of the agent execution in seconds |
+| `credits` | `string` | Cost of the agent execution |
+| `output` | `['object', 'array', 'string', 'number', 'boolean', 'null']` | The result of the agent execution. The content depend of the response_format of the agent |
+
+### Get aggregation query
+
+Make an aggregation query
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `aggregation_type` | `string` | The aggregation type. Can be `avg`, `cardinality`, `max`, `min`, `sum` or `count`. |
+| `aggregation_field` | `string` | The field on which apply the aggregation. Should be null only for `count` aggregation. |
+| `query_term` | `string` |  |
+| `earliest_time` | `string` |  |
+| `latest_time` | `string` |  |
+| `minutes_per_bucket` | `integer` |  |
+| `filters` | `array` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `aggregations` | `array` |  |
+| `anomaly_detection_candidate_score_y_acf1` | `number` |  |
+| `anomaly_detection_candidate_score_y_acf5` | `number` |  |
+| `anomaly_detection_candidate_score_seas_acf1` | `number` |  |
+| `anomaly_detection_candidate` | `boolean` |  |
+
+### Get Alert
+
+Retrieve the definition of an alert
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier (UUID or short id) of the alert to retrieve. |
+| `stix` | `boolean` | If true, include the full STIX 2 bundle in the response (default: false). |
+| `cases` | `boolean` | Fetch the cases associated with this alert in addition (default: false) |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `urgency` | `object` |  |
+| `history` | `array` | Ordered list of modifications made to the alert (status changes, field updates, assignments, etc.). |
+| `is_incident` | `boolean` |  |
+| `assets` | `array` | UUIDs of the assets involved in the alert. |
+| `countermeasures` | `array` | Response actions (countermeasures) recommended or applied in reaction to the alert. Each countermeasure has a name, a description, a list of concrete action steps to execute, and a lifecycle status (pending → activated or denied). They can originate from three sources, reflected in the `type` field: `text` (free-form analyst note, e.g. 'Isolate the affected host'), `intelligence_center` (a course of action sourced from SEKOIA.IO's threat intelligence, e.g. 'Block IOC X on your firewall'), or `openc2` (a machine-readable OpenC2 command sent to a security actuator). Included by default; opt out with `?countermeasures=false`. |
+| `updated_at` | `integer` | Unix timestamp (whole seconds) of the last update to the alert. |
+| `comments` | `array` | Comments left by analysts on the alert. Each entry carries an `unseen` flag for the current user. |
+| `ttps` | `array` | MITRE ATT&CK techniques, tactics and procedures (TTPs) associated with the alert, as minimal STIX objects. |
+| `number_of_unseen_comments` | `integer` | Number of comments on the alert not yet seen by the current user. |
+| `status` | `object` | Current workflow status of the alert (e.g. `Pending`, `Acknowledged`, `Ongoing`, `Closed`). |
+| `custom_status_uuid` | `string` | UUID of the custom status associated to the alert |
+| `custom_status` | `object` |  |
+| `verdict` | `object` |  |
+| `created_by` | `string` | UUID of the profile that created the alert. |
+| `updated_by` | `string` | UUID of the profile that last updated the alert. |
+| `source` | `string` | Source of the suspicious activity (e.g. an IP address or hostname). |
+| `community_uuid` | `string` | UUID of the community the alert belongs to. |
+| `number_of_total_comments` | `integer` | Total number of comments on the alert. |
+| `uuid` | `string` | Unique identifier of the alert. |
+| `rule` | `object` | Detection rule that triggered the alert. |
+| `adversaries` | `array` | Threat actors or adversary groups attributed to the alert, as minimal STIX Domain Objects (for example, `threat-actor`). |
+| `short_id` | `string` | Human-readable short identifier for the alert (e.g. `ALa1b2c3d4e5`). |
+| `first_seen_at` | `string` | Timestamp of the first event that contributed to this alert. |
+| `last_seen_at` | `string` | Timestamp of the most recent event that contributed to this alert. |
+| `event_uuids` | `array` |  |
+| `kill_chain_short_id` | `string` | Short identifier of the MITRE ATT&CK tactic associated with the alert (e.g. `TA0001` for Initial Access). |
+| `similar` | `integer` | Number of similar alerts detected by the platform's deduplication mechanism. |
+| `alert_type` | `object` | Category and value describing the type of threat (e.g. category `malware`, value `ransomware`). |
+| `details` | `string` | Free-text field providing additional analyst context or notes about the alert. |
+| `stix` | `object` | Full STIX 2 bundle describing the alert and its related objects. Only populated when `?stix=true` is passed. |
+| `created_by_type` | `string` | Type of the profile that created the alert (e.g. `application`, `avatar`). |
+| `entity` | `object` | Entity (asset group) targeted by the alert. |
+| `created_at` | `integer` | Unix timestamp in whole seconds when the alert was created. |
+| `updated_by_type` | `string` | Type of the profile that last updated the alert (e.g. `application`, `avatar`). |
+| `title` | `string` | Human-readable title of the alert. |
+| `target` | `string` | Target of the suspicious activity (e.g. an IP address or hostname). |
+| `cases` | `array` | Cases this alert has been grouped into. Only populated when `?cases=true` is passed. |
+
+### [DEPRECATED] Get Asset (V2)
+
+Return an asset according to its identifier
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+| `entity_uuid` | `` |  |
+| `community_uuid` | `string` | The community of the asset |
+| `name` | `string` | The name of the asset |
+| `type` | `string` | The type of the asset |
+| `category` | `['object', 'string', 'null']` | The category of the asset |
+| `criticality` | `['integer', 'null']` |  |
+| `created_at` | `` | The creation date of the asset |
+| `created_by` | `` |  |
+| `created_by_type` | `['string', 'null']` |  |
+| `updated_at` | `` | The modification date of the asset |
+| `first_seen` | `` |  |
+| `last_seen` | `` |  |
+| `nb_events` | `['integer', 'null']` |  |
+| `nb_alerts` | `['integer', 'null']` |  |
+| `nb_atoms` | `integer` |  |
+| `atoms` | `['object', 'null']` |  |
+| `props` | `['object', 'null']` |  |
+| `tags` | `array` |  |
+| `revoked` | `boolean` |  |
+| `revoked_at` | `` |  |
+| `revoked_by` | `` |  |
+| `reviewed` | `boolean` |  |
+| `reviewed_at` | `` |  |
+| `reviewed_by` | `` |  |
+| `source` | `string` |  |
+| `rule_uuid` | `` |  |
+| `rule_version` | `['string', 'null']` |  |
+| `criticity` | `['object', 'null']` | The criticality of the asset |
+| `asset_type` | `['object', 'null']` | The type of the asset |
+
+### Get case
+
+Retrieve the properties of a case
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | UUID of the case |
+| `community_uuid` | `string` | (Optional) Identifier of the community |
+| `render` | `boolean` | (Optional) Render boolean |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `short_id` | `string` |  |
+| `created_at` | `string` |  |
+| `created_by` | `string` |  |
+| `created_by_type` | `string` |  |
+| `updated_at` | `string` |  |
+| `updated_by` | `string` |  |
+| `updated_by_type` | `string` |  |
+| `title` | `string` |  |
+| `description` | `string` |  |
+| `priority` | `` | low\|medium\|high |
+| `status` | `string` |  |
+| `status_uuid` | `string` |  |
+| `community_uuid` | `string` |  |
+| `subscribers` | `array` |  |
+| `tags` | `array` | List of tags associated to the case |
+| `number_of_comments` | `integer` |  |
+| `first_seen_at` | `string` | Date and time of the first case event |
+| `last_seen_at` | `string` | Date and time of the last case event |
+| `manual` | `boolean` | if True, indicates that the case was created manually |
+| `is_supplied` | `boolean` | if True, indicates that alerts can be automatically added to the case |
+| `verdict_uuid` | `string` | UUID of the verdict associated to the case |
+| `verdict` | `object` |  |
+| `custom_status_uuid` | `string` | UUID of the custom status associated to the case |
+| `custom_status` | `object` |  |
+| `custom_priority_uuid` | `string` | UUID of the priority associated to the case |
+| `custom_priority` | `object` |  |
+| `number_of_alerts` | `integer` |  |
+| `alerts` | `array` |  |
+
+### Get Community
+
+Retrieve a community
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The UUID of the community |
+| `name` | `string` | The name of the community |
+| `description` | `string` | The description of the community |
+| `homepage_url` | `string` | URL of the community's homepage |
+| `created_at` | `string` | The date and time the community was created |
+| `created_by` | `string` | The user who created the community |
+| `created_by_type` | `string` | The type of user who created the community |
+| `updated_at` | `string` | The date and time the community was last updated |
+| `is_parent` | `boolean` | Whether the community is a multi-tenant community |
+| `parent_community_uuid` | `string` | The UUID of the parent community (if any) |
+| `subcommunities` | `array` | List of UUIDs of communities that are managed by this multi-tenant community |
+| `is_mfa_enforced` | `boolean` | Whether the community has enforced multi-factor authentication |
+| `session_timeout` | `number` | The session timeout in minutes for the community (if any) |
+| `disable_inactive_avatars` | `boolean` | Whether the community automatically disables inactive avatars (after 90 days) |
+| `disabled` | `boolean` | Whether the community is disabled |
+
+### Get context
+
+Get reports from a specific term
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `sort` | `string` |  |
+| `term` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `items` | `array` |  |
+| `has_more` | `boolean` |  |
+
+### Get custom priority
+
+Get a single custom priority based on its UUID
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `priority_uuid` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `community_uuid` | `string` |  |
+| `level` | `integer` |  |
+| `created_at` | `string` |  |
+| `created_by` | `string` |  |
+| `created_by_type` | `string` |  |
+| `updated_at` | `string` |  |
+| `updated_by` | `string` |  |
+| `updated_by_type` | `string` |  |
+| `color` | `string` |  |
+| `label` | `string` |  |
+| `description` | `string` |  |
+| `is_used` | `boolean` |  |
+
+### Get custom status
+
+Get a single custom status based on its UUID
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `status_uuid` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `community_uuid` | `string` |  |
+| `level` | `integer` |  |
+| `created_at` | `string` |  |
+| `created_by` | `string` |  |
+| `created_by_type` | `string` |  |
+| `updated_at` | `string` |  |
+| `updated_by` | `string` |  |
+| `updated_by_type` | `string` |  |
+| `stage` | `string` |  |
+| `label` | `string` |  |
+| `description` | `string` |  |
+| `is_used` | `boolean` |  |
+
+### Get custom verdict
+
+Get a single custom verdict based on its UUID
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `verdict_uuid` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `community_uuid` | `string` |  |
+| `level` | `integer` |  |
+| `created_at` | `string` |  |
+| `created_by` | `string` |  |
+| `created_by_type` | `string` |  |
+| `updated_at` | `string` |  |
+| `updated_by` | `string` |  |
+| `updated_by_type` | `string` |  |
+| `stage` | `string` |  |
+| `label` | `string` |  |
+| `description` | `string` |  |
+| `is_used` | `boolean` |  |
+
+### Get Entity
+
+Retrieve an entity
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The UUID of the entity |
+| `name` | `string` | The name of the entity |
+| `entity_id` | `string` | The chosen ID of the entity |
+| `community_uuid` | `string` | The UUID of the community the entity belongs to |
+| `description` | `string` | The description of the entity |
+| `alerts_generation` | `string` | Whether alerts generated for this entity require analyst approval |
+| `number_of_intakes` | `number` | The number of configured intakes for this entity |
+
+### Get Event Field Common Values
+
+Get the most common values of fields observed under a specific query
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `query` | `string` | Event search query |
+| `earliest_time` | `string` | The earliest time of the time range of the search |
+| `latest_time` | `string` | The latest time of the time range of the search |
+| `fields` | `string` | Fields to compute the most common values (use a coma between fields) |
+| `limit` | `number` | Maximum number of events to retrieve |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `fields` | `array` |  |
+
+### Get Events
+
+Query events
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `query` | `string` | Event search query |
+| `earliest_time` | `string` | The earliest time of the time range of the search |
+| `latest_time` | `string` | The latest time of the time range of the search |
+| `limit` | `number` | Maximum number of events to retrieve |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `events` | `array` |  |
+
+### Get Intake
+
+Retrieve an intake
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The UUID of the intake |
+| `name` | `string` | The name of the intake |
+| `community_uuid` | `string` | The UUID of the community the intake belongs to |
+| `format_uuid` | `string` | The UUID of the format of the intake |
+| `intake_key` | `string` | The key to use to send events to the intake |
+| `created_at` | `string` | The date and time the intake was created |
+| `created_by` | `string` | The user who created the intake |
+| `created_by_type` | `string` | The type of user who created the intake |
+| `updated_at` | `string` | The date and time the intake was last updated |
+| `updated_by` | `string` | The user who last updated the intake |
+| `updated_by_type` | `string` | The type of user who last updated the intake |
+| `is_custom_format` | `boolean` | Whether the format is custom (not maintained by Sekoia) |
+| `connector_configuration_uuid` | `string` | The UUID of the connector configuration, for pulling intakes |
+| `status` | `string` | A string representation of the status of the intake (mainly for pulling intakes) |
+| `entity` | `` |  |
+
+### Get rule
+
+Get a rule
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the rule |
+| `enabled` | `boolean` | Is the rule enabled ? |
+| `community_uuid` | `string` | The community uuid if the rule is attached to one |
+| `parameters` | `array` | The parameters of the rule |
+| `all_entities` | `boolean` | Should the rule be applied on all entities ? |
+| `entities` | `array` | The list of entities the rule should be applied on |
+| `all_assets` | `boolean` | Should the rule be applied on all assets ? |
+| `assets` | `array` | The list of assets identifiers the rule should be applied on |
+| `last_compilation_success` | `boolean` | Did the last compilation succeed ? |
+| `last_compilation_message` | `string` | The message of the last compilation |
+| `last_compilation_at` | `string` | The last compilation date of the rule |
+| `name` | `string` | The name of the rule |
+| `type` | `` | The type of the rule |
+| `private` | `boolean` | Is the rule available only for the community ? |
+| `is_private` | `boolean` | Is the rule available only for the community ? |
+| `description` | `string` | The descrition of the rule |
+| `payload` | `string` | The payload of the rule |
+| `severity` | `integer` | The severity of the rule |
+| `effort` | `integer` | The effort of the rule |
+| `alert_type` | `object` | The alert type associated to the rule |
+| `alert_category` | `object` | The alert category associated to the rule |
+| `tags` | `array` | The list of tags associated to the rule |
+| `source` | `string` | The source of the rule |
+| `verified` | `boolean` | Is the rule verified ? |
+| `related_object_refs` | `array` | The list of reference of objects related to the rule |
+| `datasources` | `array` | The list of datasources of the rule |
+| `event_fields` | `array` | The list of fields to show when displaying a matched event |
+| `similarity_strategy` | `array` | Similarity Strategy used by this rule |
+| `created_at` | `string` | The creation date of the rule |
+| `created_by` | `string` | The profile who created the rule |
+| `created_by_type` | `string` | The profile type who created the rule can be 'avatar', 'application', 'apikey' |
+| `updated_at` | `string` | The modification date of the rule |
+| `updated_by` | `string` | The profile who updated the rule |
+| `updated_by_type` | `string` | The profile type who updated the rule can be 'rule', 'application', 'apikey' |
+| `goal` | `string` | A high-level description explaining the contribution of the rule |
+| `false_positives` | `string` | A possible legitimate usage which can raise a false alert |
+| `references` | `string` | Details on what led to write this rule |
+| `available_for_subcommunities` | `boolean` | Is the rule available for subcommunities (if applicable) ? |
+| `instance_uuid` | `string` | The identifier of the instance of the rule |
+
+### Create Content Proposal
+
+Create Content Proposal
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `bundle` | `object` | STIX Bundle to upload |
+| `bundle_path` | `string` | Path of the STIX Bundle to upload |
+| `auto_merge` | `boolean` | Whether or not the uploaded bundle can automatically be merged to the consolidated database |
+| `enrich` | `boolean` | Whether or not the uploaded bundle should be enriched |
+| `name` | `string` | Name to use for the new content proposal |
+| `assigned_to` | `string` | Avatar assigned to the content proposal |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `file_name` | `string` |  |
+| `content_proposal_id` | `string` |  |
+
+### Upload Observables
+
+Upload observables to inthreat
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `observables` | `array` | List of observables or bundle to upload to inThreat |
+| `observables_path` | `string` | Path of the observables file to upload inThreat |
+
+### Search Alerts
+
+find alerts that match your filters
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `match[community_uuid]` | `string` |  |
+| `match[entity_name]` | `string` |  |
+| `match[entity_uuid]` | `string` |  |
+| `match[status_uuid]` | `string` |  |
+| `match[status_name]` | `string` |  |
+| `match[type_category]` | `string` |  |
+| `match[type_value]` | `string` |  |
+| `match[source]` | `string` |  |
+| `match[target]` | `string` |  |
+| `match[node]` | `string` |  |
+| `match[stix_object]` | `string` |  |
+| `match[rule_uuid]` | `string` |  |
+| `match[rule_name]` | `string` |  |
+| `match[detection_type]` | `string` |  |
+| `match[uuid]` | `string` |  |
+| `match[title]` | `string` | Match alerts by their custom title (separated by commas). Alerts without a custom title are not matched: use match[resolved_title] to match the title displayed on the alert. |
+| `match[resolved_title]` | `string` | Match alerts by the title displayed on the alert: the custom title if present, otherwise the rule name (separated by commas). |
+| `match[asset_uuid]` | `string` |  |
+| `match[urgency_display]` | `string` |  |
+| `match[case_short_id]` | `string` |  |
+| `match[assignee]` | `string` |  |
+| `match[custom_status_uuid]` | `string` |  |
+| `match[verdict_uuid]` | `string` |  |
+| `match[custom_field]` | `string` | Match alerts by a custom field value using the 'uuid:value' format (e.g. '123e4567-e89b-12d3-a456-426614174000:Phishing'), or by field existence using the custom field UUID alone. |
+| `match[short_id]` | `string` |  |
+| `date[created_at]` | `string` |  |
+| `date[updated_at]` | `string` |  |
+| `range[urgency]` | `string` |  |
+| `range[similar]` | `string` |  |
+| `nomatch[asset_uuid]` | `string` |  |
+| `nomatch[entity_uuid]` | `string` |  |
+| `nomatch[rule_uuid]` | `string` |  |
+| `nomatch[rule_name]` | `string` |  |
+| `nomatch[detection_type]` | `string` |  |
+| `nomatch[source]` | `string` |  |
+| `nomatch[target]` | `string` |  |
+| `nomatch[status_uuid]` | `string` |  |
+| `nomatch[stix_object]` | `string` |  |
+| `nomatch[type_value]` | `string` |  |
+| `nomatch[urgency_display]` | `string` |  |
+| `nomatch[assignee]` | `string` |  |
+| `nomatch[custom_status_uuid]` | `string` |  |
+| `nomatch[verdict_uuid]` | `string` |  |
+| `visible` | `boolean` |  |
+| `is_assigned_to_case` | `boolean` |  |
+| `similar_to` | `string` |  |
+| `limit` | `integer` |  |
+| `offset` | `integer` |  |
+| `stix` | `boolean` |  |
+| `cases` | `boolean` |  |
+| `sort` | `string` |  |
+| `direction` | `string` |  |
+| `with_count` | `boolean` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `total` | `integer` |  |
+| `has_more` | `boolean` |  |
+| `items` | `array` |  |
+
+### [DEPRECATED] List Assets
+
+Return a list of assets according to the filters
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `limit` | `integer` | The number of assets to return |
+| `offset` | `integer` | The position of the first asset to return |
+| `match[uuid]` | `string` | Filter assets according to their identifier |
+| `match[name]` | `string` | Filter assets according to their name |
+| `match[category_name]` | `string` | Filter assets according to their category |
+| `match[category_uuid]` | `string` | Filter assets according to their category |
+| `match[type_name]` | `string` | Filter assets according to their type |
+| `match[type_uuid]` | `string` | Filter assets according to their type |
+| `range[criticality]` | `string` | Filter assets according to their criticality |
+| `date[created_at]` | `string` | Filter assets according to their creation date |
+| `date[updated_at]` | `string` | Filter assets according to their modification date |
+| `sort` | `string` | The field to use to sort the list |
+| `direction` | `string` | The direction to sort the list |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `items` | `array` |  |
+| `total` | `integer` |  |
+
+### List Assets (V2)
+
+Return a list of assets according to the filters
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `search` | `['string', 'null']` | Search assets by name |
+| `uuids` | `['string', 'null']` | Filter by comma-separated list of asset UUIDs |
+| `community_uuids` | `['string', 'null']` | Filter by comma-separated list of community UUIDs |
+| `type` | `['string', 'null']` | Filter by comma-separated list of asset types |
+| `category` | `['string', 'null']` | Filter by comma-separated list of asset categories |
+| `source` | `['string', 'null']` | Filter by comma-separated list of asset sources |
+| `reviewed` | `['boolean', 'null']` | Filter reviewed assets only |
+| `criticality` | `['integer', 'null']` | Filter assets with higher criticality |
+| `include_revoked` | `['boolean', 'null']` | Include revoked assets in the search results |
+| `sort` | `` | Sort criterion |
+| `direction` | `` | Sort order |
+| `rule_uuid` | `['string', 'null']` | Rule Uuid |
+| `rule_version` | `['string', 'null']` | Rule Version |
+| `offset` | `integer` | The position of the first asset to return |
+| `limit` | `integer` | The number of assets to return |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `items` | `array` |  |
+| `total` | `integer` |  |
+
+### List comments of a case
+
+List all comments of a case
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `case_uuid` | `string` |  |
+| `limit` | `integer` | limit a number of items (allowed range is 1-100), default is 20. |
+| `offset` | `integer` | a number of items to skip, default is 0. |
+| `date[created_at]` | `string` | Filter cases by their creation date (see rfc3339). |
+| `match[created_by]` | `string` | Match cases by their creators |
+| `sort` | `string` | Sort returned comments (accepted values: 'created_at', 'created_by', 'updated_at'). |
+| `direction` | `string` | Direction of the sort (accepted values: 'asc', 'desc'). |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `items` | `array` |  |
+| `total` | `integer` |  |
+
+### List Queries
+
+List the existing saved SOL queries.
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `match_uuid` | `string` | Filter queries by UUID. |
+| `match_name` | `string` | Filter queries by name. |
+| `match_visualization` | `string` | Filter queries by visualization type. |
+| `match_isshared` | `boolean` | Filter queries by shared status. |
+| `match_created_by` | `string` | Filter queries by the UUID of the creator. |
+| `parameters` | `string` | Filter queries by the parameters they use |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `queries` | `array` |  |
+
+### Search Cases
+
+find cases that match your filters
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `match[community_uuid]` | `string` |  |
+| `match[status_uuid]` | `string` |  |
+| `match[status_name]` | `string` |  |
+| `date[created_at]` | `string` |  |
+| `match[created_by]` | `string` |  |
+| `match[tags]` | `string` |  |
+| `match[assignees]` | `string` |  |
+| `match[type]` | `string` | Creation mode of the cases to return: manual, automatic, or manual,automatic for both |
+| `limit` | `integer` |  |
+| `offset` | `integer` |  |
+| `sort` | `string` |  |
+| `direction` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `total` | `integer` |  |
+| `has_more` | `boolean` |  |
+| `items` | `array` |  |
+
+### Edit Alert
+
+Edit the details of an alert
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `alert_type_category` | `string` | Category of the alert type |
+| `alert_type_value` | `string` | Name of the alert type, required if `alert_type_category` is present |
+| `details` | `string` | Description of the alert |
+| `urgency` | `integer` | The urgency of the alert |
+| `kill_chain_short_id` | `string` | The ID of the kill chain step this alert denotes |
+| `title` | `string` | Title of the alert |
+| `verdict_uuid` | `string` | Verdict of the alert |
+| `custom_status_uuid` | `string` | Custom status of the alert |
+| `assignee` | `string` | UUID of the user assigned to the alert |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `urgency` | `object` |  |
+| `is_incident` | `boolean` |  |
+| `assets` | `array` |  |
+| `updated_at` | `integer` |  |
+| `ttps` | `array` |  |
+| `number_of_unseen_comments` | `integer` |  |
+| `status` | `object` |  |
+| `custom_status_uuid` | `string` | UUID of the custom status associated to the alert |
+| `custom_status` | `object` |  |
+| `verdict_uuid` | `string` | UUID of the verdict associated to the alert |
+| `verdict` | `object` |  |
+| `created_by` | `string` |  |
+| `updated_by` | `string` |  |
+| `source` | `string` |  |
+| `community_uuid` | `string` |  |
+| `number_of_total_comments` | `integer` |  |
+| `uuid` | `string` |  |
+| `rule` | `object` |  |
+| `adversaries` | `array` |  |
+| `short_id` | `string` |  |
+| `first_seen_at` | `string` |  |
+| `last_seen_at` | `string` |  |
+| `event_uuids` | `array` |  |
+| `kill_chain_short_id` | `string` |  |
+| `similar` | `integer` |  |
+| `alert_type` | `object` |  |
+| `details` | `string` |  |
+| `stix` | `object` |  |
+| `created_by_type` | `string` |  |
+| `entity` | `object` |  |
+| `created_at` | `integer` |  |
+| `updated_by_type` | `string` |  |
+| `title` | `string` |  |
+| `target` | `string` |  |
+| `assignee` | `string` |  |
+
+### Comment case
+
+Add a new comment to a case
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | UUID of the case |
+| `content` | `string` | Content of the comment |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `content` | `string` |  |
+| `created_at` | `string` |  |
+| `created_by` | `string` |  |
+| `created_by_type` | `string` |  |
+| `updated_at` | `string` |  |
+
+### Comment Alert
+
+Attach a new comment on an Alert
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `content` | `string` | Content of the comment |
+| `author` | `string` | Author of the comment |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `created_by` | `string` | The identifier of the creator of the comment |
+| `content` | `string` | Content of the comment |
+| `author` | `string` | Author of the comment |
+| `unseen` | `boolean` |  |
+| `date` | `integer` |  |
+| `created_by_type` | `string` | The type of the creator of the comment |
+| `uuid` | `string` | Identifier of the comment |
+
+### Create Content Proposal from PDF
+
+Creates a content proposal with the content extracted from the specified PDF
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `name` | `string` |  |
+| `file` | `string` |  |
+| `source_ref` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `data` | `object` |  |
+
+### Create Content Proposal from URL
+
+Creates a content proposal with the content extracted from the specified URL
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `url` | `string` |  |
+| `source_ref` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `data` | `object` |  |
+
+### Predict Alert State
+
+Predict the state of an alert
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `alert` | `object` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `worth_human_attention` | `boolean` |  |
+
+### Push Events to Intake
+
+
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `intake_key` | `string` | Intake Key |
+| `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
+| `event` | `object` | Event to push on Intake |
+| `event_path` | `string` | File path to the event to push on Intake |
+| `events` | `array` | Events to push on Intake |
+| `events_path` | `string` | File path to the events to push on Intake |
+| `keep_file_after_push` | `boolean` | If set and if the events are supplied through a file, this option keeps the file after the events were sent to the intake |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `event_ids` | `array` |  |
+
+### Remove event from case
+
+Remove an event from a case
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `case_uuid` | `string` |  |
+| `event_id` | `string` |  |
+
+### Get CTI Report
+
+Retrieve the details of a report
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `data` | `string` |  |
+
+### Get Asset
+
+Return an asset according its identifier
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `keys` | `array` | The keys of the asset |
+| `attributes` | `array` | The attributes of the asset |
+| `uuid` | `string` |  |
+| `name` | `string` |  |
+| `created_at` | `string` |  |
+| `criticity` | `object` | The criticality associated with the asset |
+| `asset_type` | `object` |  |
+| `updated_at` | `string` |  |
+| `description` | `string` |  |
+| `owners` | `array` |  |
+| `community_uuid` | `string` |  |
+| `category` | `object` |  |
+
+### Get Asset (V2)
+
+Return an asset according to its identifier
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+| `with_telemetry` | `boolean` | Flag to return telemetry information (first_seen, last_seen, occurrences) of the asset |
+| `with_compliance` | `boolean` | Flag to return the hygiene information (partitions, vulnerabilities) of the asset |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+| `entity_uuid` | `` |  |
+| `community_uuid` | `string` | The community of the asset |
+| `name` | `string` | The name of the asset |
+| `type` | `string` | The type of the asset |
+| `category` | `['string', 'object', 'null']` | The category of the asset |
+| `criticality` | `['integer', 'null']` |  |
+| `created_at` | `` | The creation date of the asset |
+| `created_by` | `` |  |
+| `created_by_type` | `['string', 'null']` |  |
+| `updated_at` | `` | The modification date of the asset |
+| `first_seen` | `` |  |
+| `last_seen` | `` |  |
+| `nb_events` | `['integer', 'null']` |  |
+| `nb_alerts` | `['integer', 'null']` |  |
+| `nb_atoms` | `integer` |  |
+| `atoms` | `['object', 'null']` |  |
+| `props` | `['object', 'null']` |  |
+| `tags` | `array` |  |
+| `revoked` | `boolean` |  |
+| `revoked_at` | `` |  |
+| `revoked_by` | `` |  |
+| `reviewed` | `boolean` |  |
+| `reviewed_at` | `` |  |
+| `reviewed_by` | `` |  |
+| `source` | `string` |  |
+| `rule_uuid` | `` |  |
+| `rule_version` | `['string', 'null']` |  |
+| `criticity` | `['object', 'null']` | The criticality of the asset |
+| `asset_type` | `['object', 'null']` | The type of the asset |
+
+### Revoke an asset (V2)
+
+Revoke the requested asset (soft-delete). Replaces the deprecated Delete an asset actions.
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+| `entity_uuid` | `` |  |
+| `community_uuid` | `string` | The community of the asset |
+| `name` | `string` | The name of the asset |
+| `type` | `string` | The type of the asset |
+| `category` | `['object', 'string', 'null']` | The category of the asset |
+| `criticality` | `['integer', 'null']` |  |
+| `created_at` | `` | The creation date of the asset |
+| `created_by` | `` |  |
+| `created_by_type` | `['string', 'null']` |  |
+| `updated_at` | `` | The modification date of the asset |
+| `first_seen` | `` |  |
+| `last_seen` | `` |  |
+| `nb_events` | `['integer', 'null']` |  |
+| `nb_alerts` | `['integer', 'null']` |  |
+| `nb_atoms` | `integer` |  |
+| `atoms` | `['object', 'null']` |  |
+| `props` | `['object', 'null']` |  |
+| `tags` | `array` |  |
+| `revoked` | `boolean` |  |
+| `revoked_at` | `` |  |
+| `revoked_by` | `` |  |
+| `reviewed` | `boolean` |  |
+| `reviewed_at` | `` |  |
+| `reviewed_by` | `` |  |
+| `source` | `string` |  |
+| `rule_uuid` | `` |  |
+| `rule_version` | `['string', 'null']` |  |
+| `criticity` | `['object', 'null']` | The criticality of the asset |
+| `asset_type` | `['object', 'null']` | The type of the asset |
+
+### Synchronize Assets with AD
+
+Create, merge and edit asset to synchronize asset with ad
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `community_uuid` | `string` |  |
+| `user_ad_data` | `object` |  |
+| `user_ad_data_path` | `object` | File name to the User AD file to read. |
+| `asset_synchronization_configuration` | `object` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `data` | `array` |  |
+
+### Update Alert Status
+
+Triggers an action on an alert to update its status
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `action_uuid` | `string` | UUID of the action to trigger |
+| `comment` | `string` | a comment to describe why the alert status has changed |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `actions` | `array` |  |
+
+### Update Alert Status by name
+
+Triggers an action on an alert to update its status by name
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The UUID of the alert to update |
+| `status` | `string` | Name or UUID of the status to update the alert to (native or custom) |
+| `comment` | `string` | A comment to describe why the alert status has changed |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `actions` | `array` |  |
+
+### Update asset
+
+Update an asset
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+| `entity_uuid` | `` |  |
+| `name` | `string` |  |
+| `description` | `string` |  |
+| `type` | `string` |  |
+| `category` | `['string', 'null']` |  |
+| `criticality` | `integer` |  |
+| `props` | `['object', 'null']` | Attach contextual properties |
+| `atoms` | `['object', 'null']` | Attach detection properties |
+| `tags` | `array` |  |
+| `reviewed` | `boolean` | Mark the asset as reviewed |
+| `revoked` | `boolean` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+| `entity_uuid` | `` |  |
+| `community_uuid` | `string` | The community of the asset |
+| `name` | `string` | The name of the asset |
+| `type` | `string` | The type of the asset |
+| `category` | `['object', 'string', 'null']` | The category of the asset |
+| `criticality` | `['integer', 'null']` |  |
+| `created_at` | `` | The creation date of the asset |
+| `created_by` | `` |  |
+| `created_by_type` | `['string', 'null']` |  |
+| `updated_at` | `` | The modification date of the asset |
+| `first_seen` | `` |  |
+| `last_seen` | `` |  |
+| `nb_events` | `['integer', 'null']` |  |
+| `nb_alerts` | `['integer', 'null']` |  |
+| `nb_atoms` | `integer` |  |
+| `atoms` | `['object', 'null']` |  |
+| `props` | `['object', 'null']` |  |
+| `tags` | `array` |  |
+| `revoked` | `boolean` |  |
+| `revoked_at` | `` |  |
+| `revoked_by` | `` |  |
+| `reviewed` | `boolean` |  |
+| `reviewed_at` | `` |  |
+| `reviewed_by` | `` |  |
+| `source` | `string` |  |
+| `rule_uuid` | `` |  |
+| `rule_version` | `['string', 'null']` |  |
+| `criticity` | `['object', 'null']` | The criticality of the asset |
+| `asset_type` | `['object', 'null']` | The type of the asset |
+
+### Edit case
+
+Edit the properties of a case
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | UUID of the case |
+| `title` | `string` | title of the case |
+| `description` | `string` | description of the case |
+| `status_uuid` | `string` | identifier of case’s status |
+| `priority` | `string` | priority of the case |
+| `tags` | `array` | tags to associate to the case |
+| `subscribers` | `array` | avatars to associate to the case |
+| `verdict_uuid` | `string` | Verdict of the case |
+| `custom_status_uuid` | `string` | Custom status of the case |
+| `custom_priority_uuid` | `string` | Custom priority of the case |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `short_id` | `string` |  |
+| `created_at` | `string` |  |
+| `created_by` | `string` |  |
+| `created_by_type` | `string` |  |
+| `updated_at` | `string` |  |
+| `updated_by` | `string` |  |
+| `updated_by_type` | `string` |  |
+| `title` | `string` |  |
+| `description` | `string` |  |
+| `priority` | `` | low\|medium\|high |
+| `status` | `string` |  |
+| `status_uuid` | `string` |  |
+| `community_uuid` | `string` |  |
+| `subscribers` | `array` |  |
+| `tags` | `array` | List of tags associated to the case |
+| `number_of_comments` | `integer` |  |
+| `first_seen_at` | `string` | Date and time of the first case event |
+| `last_seen_at` | `string` | Date and time of the last case event |
+| `manual` | `boolean` | if True, indicates that the case was created manually |
+| `is_supplied` | `boolean` | if True, indicates that alerts can be automatically added to the case |
+| `verdict_uuid` | `string` | UUID of the verdict associated to the case |
+| `verdict` | `object` |  |
+| `custom_status_uuid` | `string` | UUID of the custom status associated to the case |
+| `custom_status` | `object` |  |
+| `custom_priority_uuid` | `string` | UUID of the priority associated to the case |
+| `custom_priority` | `object` |  |
+| `number_of_alerts` | `integer` |  |
+| `alerts` | `array` |  |
+
+### Update rule
+
+Update a rule
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` |  |
+| `community_uuid` | `string` |  |
+| `name` | `string` |  |
+| `type` | `string` |  |
+| `description` | `string` |  |
+| `payload` | `string` |  |
+| `severity` | `integer` |  |
+| `effort` | `integer` |  |
+| `alert_type_uuid` | `string` |  |
+| `tags` | `array` |  |
+| `related_object_refs` | `array` |  |
+| `datasources` | `array` |  |
+| `event_fields` | `array` |  |
+| `enabled` | `boolean` |  |
+| `parameters` | `array` |  |
+| `all_entities` | `boolean` |  |
+| `entities` | `array` |  |
+| `all_assets` | `boolean` |  |
+| `assets` | `array` |  |
+| `goal` | `string` |  |
+| `false_positives` | `string` |  |
+| `similarity_strategy` | `array` |  |
+| `available_for_subcommunities` | `boolean` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the rule |
+| `enabled` | `boolean` | Is the rule enabled ? |
+| `community_uuid` | `string` | The community uuid if the rule is attached to one |
+| `parameters` | `array` | The parameters of the rule |
+| `all_entities` | `boolean` | Should the rule be applied on all entities ? |
+| `entities` | `array` | The list of entities the rule should be applied on |
+| `all_assets` | `boolean` | Should the rule be applied on all assets ? |
+| `assets` | `array` | The list of assets identifiers the rule should be applied on |
+| `last_compilation_success` | `boolean` | Did the last compilation succeed ? |
+| `last_compilation_message` | `string` | The message of the last compilation |
+| `last_compilation_at` | `string` | The last compilation date of the rule |
+| `name` | `string` | The name of the rule |
+| `type` | `` | The type of the rule |
+| `private` | `boolean` | Is the rule available only for the community ? |
+| `is_private` | `boolean` | Is the rule available only for the community ? |
+| `description` | `string` | The descrition of the rule |
+| `payload` | `string` | The payload of the rule |
+| `severity` | `integer` | The severity of the rule |
+| `effort` | `integer` | The effort of the rule |
+| `alert_type` | `object` | The alert type associated to the rule |
+| `alert_category` | `object` | The alert category associated to the rule |
+| `tags` | `array` | The list of tags associated to the rule |
+| `source` | `string` | The source of the rule |
+| `verified` | `boolean` | Is the rule verified ? |
+| `related_object_refs` | `array` | The list of reference of objects related to the rule |
+| `datasources` | `array` | The list of datasources of the rule |
+| `event_fields` | `array` | The list of fields to show when displaying a matched event |
+| `similarity_strategy` | `array` | Similarity Strategy used by this rule |
+| `created_at` | `string` | The creation date of the rule |
+| `created_by` | `string` | The profile who created the rule |
+| `created_by_type` | `string` | The profile type who created the rule can be 'avatar', 'application', 'apikey' |
+| `updated_at` | `string` | The modification date of the rule |
+| `updated_by` | `string` | The profile who updated the rule |
+| `updated_by_type` | `string` | The profile type who updated the rule can be 'rule', 'application', 'apikey' |
+| `goal` | `string` | A high-level description explaining the contribution of the rule |
+| `false_positives` | `string` | A possible legitimate usage which can raise a false alert |
+| `references` | `string` | Details on what led to write this rule |
+| `available_for_subcommunities` | `boolean` | Is the rule available for subcommunities (if applicable) ? |
+| `instance_uuid` | `string` | The identifier of the instance of the rule |
+
+
+## Extra
+
+Module **`Sekoia.io` v2.82.0**
