@@ -80,25 +80,35 @@ You can configure a notification when a rule enters a rate-limited state.
 - Configure the notification **"A detection rule entered rate-limited state"** where relevant
 - Adjust noisy rules as needed
 
-## Alert Generation Threshold
+## Why does an alert contain fewer events than the rule matched?
 
-When a detection rule is triggered, there is a **threshold limit of 10 alerts per 60 seconds** to prevent alert storms and excessive notifications.
+**Symptom:** An alert shows fewer events than expected. When you test the rule over the same period, it returns more matching events.
+
+**Cause:** Sekoia adds at most **10 events to the same alert every 60 seconds**. During a burst, the events beyond this limit are not added to the alert.
 
 ### How it works
 
-- If a single detection rule generates **more than 10 alerts within a 60-second window**, the additional alerts are **dropped** to prevent flooding.
-- This is a safety mechanism to ensure system stability and reduce alert fatigue.
-- The dropped alerts are still processed internally but are not displayed as separate alerts.
+- The limit applies to each group of [similar events](/xdr/features/investigate/alerts.md#alert-similarity), so each alert has its own counter.
+- The 60-second window starts with the first matching event. The first 10 events are added to the alert, and the following ones are not.
+- After 60 seconds, the counter resets and new matching events are added to the alert again.
+- Events that are not similar go to another alert, with its own counter.
 
-### Example
+The alert is still created, and its **Occurrence** count only includes the events that were added. The other events are not added later, but they remain available on the [Events page](/xdr/features/investigate/events.md). No indicator is displayed on these events, and no notification is sent.
 
-- **Second 0-30:** Rule generates 8 alerts → ✅ All alerts are created
-- **Second 35:** Rule generates 5 more alerts → ⚠️ Only 2 alerts created (limit of 10 reached)
-- **Second 65:** The 60-second window resets → ✅ New alerts can be generated again
+**Example:** A rule matches 28 similar events within the same second. The first 10 events create the alert, and the other 18 are not added to it. Testing the rule over the same period returns all 28 events.
 
-### What to do if you're hitting this limit
+!!! note
+    This limit is different from [Alert Storm Control](#alert-storm-control).
 
-If your detection rules are regularly exceeding 10 alerts per 60 seconds:
+    | | Alert Storm Control | Events per alert limit |
+    | --- | --- | --- |
+    | What is counted | Distinct alerts raised by a rule | Events added to the same alert |
+    | Threshold | 30 alerts in 30 seconds | 10 events in 60 seconds |
+    | Effect | No new alert for the rule | Additional events are not added to the alert |
+    | Duration | 30 minutes without a new breach | Until the end of the 60-second window |
+    | Visible in the UI | Rate-limited indicator and notification | No |
 
-1. Review your rule logic to reduce false positives
-2. Adjust your rule's detection conditions to be more specific
+**What to do:**
+
+1. To see every event that matched the rule, [test the rule](/xdr/features/detect/rules_catalog.md#rule-testing) over the period of the alert. Sigma correlation rules cannot be tested: search their events on the [Events page](/xdr/features/investigate/events.md) instead.
+2. If bursts of similar events are expected and each event must appear in an alert, create a custom rule with a more specific [similarity strategy](/xdr/features/detect/rules_catalog.md#custom-similarity-strategy). Events with different similarity values go to different alerts, and each alert has its own limit.
