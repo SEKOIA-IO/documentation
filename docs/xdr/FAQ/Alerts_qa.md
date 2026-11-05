@@ -79,3 +79,27 @@ You can configure a notification when a rule enters a rate-limited state.
 - Review rules with high alert volumes
 - Configure the notification **"A detection rule entered rate-limited state"** where relevant
 - Adjust noisy rules as needed
+
+## Alert Generation Threshold
+
+When a detection rule is triggered, there is a **threshold limit of 10 alerts per 60 seconds** to prevent alert storms and excessive notifications.
+
+### How it works
+
+- If a single detection rule generates **more than 10 alerts within a 60-second window**, the additional alerts are **dropped** to prevent flooding.
+- This is a safety mechanism to ensure system stability and reduce alert fatigue.
+- The dropped alerts are still processed internally but are not displayed as separate alerts.
+
+### Example
+
+- **Second 0-30:** Rule generates 8 alerts → ✅ All alerts are created
+- **Second 35:** Rule generates 5 more alerts → ⚠️ Only 2 alerts created (limit of 10 reached)
+- **Second 65:** The 60-second window resets → ✅ New alerts can be generated again
+
+### What to do if you're hitting this limit
+
+If your detection rules are regularly exceeding 10 alerts per 60 seconds:
+
+1. Review your rule logic to reduce false positives
+2. Adjust your rule's detection conditions to be more specific
+3. Contact support if you need assistance tuning your rules
