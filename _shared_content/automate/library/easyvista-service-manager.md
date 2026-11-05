@@ -47,7 +47,17 @@ It does **not** provide an intake connector, trigger, or log collection capabili
 
 ### Creating an access token
 
-In EasyVista, create a token from **Administration > Access Management > Access Tokens**, then configure it in `token`.
+In the EasyVista Service Manager interface:
+
+1. At the bottom of the left panel, click the **Global Menu** button (globe icon).
+2. Go to **Administration > Access Management > Access Tokens**.
+3. Click **+ New**.
+4. Fill at least:
+    - `Access token name (*)`
+    - `Employee (*)`
+    - `Expiry date`
+5. Click **Generate**, then copy the generated token.
+6. Configure this value in the integration account field `token`.
 
 ### Basic authentication alternative
 
@@ -57,35 +67,352 @@ If your tenant does not use token authentication, set `use_token=false` and prov
 
 The module enforces HTTPS for all API calls. Setting `verify_ssl=false` disables certificate verification but still does **not** allow HTTP.
 
-### Bearer validation status
+### Bearer status
 
 Bearer mode must be validated on the target integration tenant before production publication. This documentation does not claim that this live tenant validation has already been completed.
 
 ## Available actions
 
-The 17 action names below come from the module descriptors (`action_*.json`):
+The 17 actions below come from the module descriptors (`action_*.json`).
 
-1. `Close Request / Incident`
-2. `Create an action related to an incident`
-3. `Create Request / Incident`
-4. `Create Task`
-5. `Delete a request document`
-6. `Get Questionnaires from non terminated actions`
-7. `Get a specific Document of a Request / Incident`
-8. `Get the list of Documents of a Request / Incident`
-9. `Get questionnaire from specific actions`
-10. `Restart Request / Incident`
-11. `Suspend Request / Incident`
-12. `Update Request / Incident`
-13. `Upload and attach a Document to a Request / Incident`
-14. `View Request / Incident Comment`
-15. `View Request / Incident`
-16. `View Request / Incident Problem`
-17. `View Requests / Incidents list`
+### Close Request / Incident
 
-At the moment, action-library pages in this repository are maintained as static Markdown pages (no built-in include/generator for action argument/output schemas from automation descriptors).
+**Arguments**
 
-## Playbook example (fictional values)
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| `rfc_number` | `string` | Yes | Ticket RFC number |
+| `status_guid` | `string` | No | Final status GUID |
+| `comment` | `string` | No | Closing comment |
+| `end_date` | `string` | No | Closing date (`MM/DD/YYYY HH:MM:SS`) |
+| `catalog_guid` | `string` | No | Catalog GUID |
+| `delete_actions` | `boolean` | No | Delete related actions |
+
+**Outputs**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `href` | `string` | `HREF` of the closed ticket |
+
+### Create an action related to an incident
+
+**Arguments**
+
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| `rfc_number` | `string` | Yes | Ticket RFC number |
+| `action` | `object` | Yes | Action payload. Must provide at least one of `action_type_id`, `action_type_name`, `action_type_guid`, and at least one of `group_id`, `group_name`, `group_mail` |
+
+`action` fields:
+
+- `action_type_id` (`string`)
+- `action_type_name` (`string`)
+- `action_type_guid` (`string`)
+- `group_id` (`integer`)
+- `group_name` (`string`)
+- `group_mail` (`string`)
+- `description` (`string`)
+- `comment` (`string`)
+
+**Outputs**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `success` | `boolean` | `true` when the action succeeds |
+| `status_code` | `integer` | HTTP status code (`201`) |
+| `href` | `string` | URL returned by the API when present |
+
+### Create Request / Incident
+
+**Arguments**
+
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| `requests` | `array` | Yes | Exactly one item (`minItems=1`, `maxItems=1`) |
+
+`requests[0]` fields:
+
+- `catalog_code` (`string`)
+- `title` (`string`)
+- `description` (`string`)
+- `urgency_id` (`integer`)
+- `impact_id` (`string`)
+- `recipient_name` (`string`)
+- `recipient_mail` (`string`)
+- `department_code` (`string`)
+- `location_id` (`integer`)
+- `custom_fields` (`object`)
+
+**Outputs**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `href` | `string` | `HREF` of the created ticket |
+| `rfc_number` | `string` | RFC number derived from `HREF` |
+
+### Create Task
+
+**Arguments**
+
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| `rfc_number` | `string` | Yes | Ticket RFC number |
+| `action_type_id` | `string` | Cond. | Provide `action_type_id` or `action_type_name` |
+| `action_type_name` | `string` | Cond. | Provide `action_type_id` or `action_type_name` |
+| `group_id` | `integer` | Cond. | Provide one of `group_id`, `group_name`, `group_mail` |
+| `group_name` | `string` | Cond. | Provide one of `group_id`, `group_name`, `group_mail` |
+| `group_mail` | `string` | Cond. | Provide one of `group_id`, `group_name`, `group_mail` |
+| `description` | `string` | No | Task description |
+| `elapsed_time` | `string` | No | Elapsed time |
+| `time_cost` | `string` | No | Time cost |
+| `contractual_cost` | `string` | No | Contractual cost |
+| `creation_date_ut` | `string` | No | Creation date |
+| `start_date_ut` | `string` | No | Start date |
+| `end_date_ut` | `string` | No | End date |
+
+**Outputs**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `href` | `string` | URL returned by the API |
+
+### Delete a request document
+
+**Arguments**
+
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| `rfc_number` | `string` | Yes | Ticket RFC number |
+| `id` | `string` | Yes | `DOCUMENT_ID` from document list |
+
+**Outputs**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `success` | `boolean` | Deletion status |
+| `status_code` | `integer` | HTTP status code (`200`/`204`/`590`) |
+| `verified_by_listing` | `boolean` | `true` when deletion was confirmed after `590` by listing |
+| `api_error` | `string` | Error details when `verified_by_listing=true` |
+| `message` | `string` | Human-readable result |
+
+### Get Questionnaires from non terminated actions
+
+**Arguments**
+
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| `current_incident` | `string` | Yes | Ticket RFC number |
+| `action_type_id` | `integer` | Yes | Numeric action type ID (not GUID) |
+
+**Outputs**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `href` | `string` | Query `HREF` |
+| `record_count` | `integer` | Number of returned items |
+| `total_record_count` | `integer` | Total number of items |
+| `results` | `array` | Raw questionnaire rows |
+
+### Get a specific Document of a Request / Incident
+
+**Arguments**
+
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| `rfc_number` | `string` | Yes | Ticket RFC number |
+| `id` | `string` | Yes | `DOCUMENT_ID` from document list |
+
+**Outputs**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `content_type` | `string` | HTTP `Content-Type` |
+| `content_base64` | `string` | File content in base64 |
+
+### Get the list of Documents of a Request / Incident
+
+**Arguments**
+
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| `rfc_number` | `string` | Yes | Ticket RFC number |
+
+**Outputs**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `parent_href` | `string` | Parent ticket `HREF` |
+| `href` | `string` | Collection `HREF` |
+| `documents` | `array` | Raw document objects (`DOCUMENT_ID`, `DOCUMENT`, `DDL_HREF`, ...) |
+
+### Get questionnaire from specific actions
+
+**Arguments**
+
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| `current_incident` | `string` | Yes | Ticket RFC number |
+| `action_type_id` | `integer` | Yes | Numeric action type ID (not GUID) |
+| `action_id` | `string` | Yes | Workflow `ACTION_ID` |
+
+**Outputs**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `href` | `string` | Query `HREF` |
+| `record_count` | `integer` | Number of returned items |
+| `total_record_count` | `integer` | Total number of items |
+| `results` | `array` | Raw questionnaire rows |
+
+### Restart Request / Incident
+
+**Arguments**
+
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| `rfc_number` | `string` | Yes | Ticket RFC number |
+| `comment` | `string` | No | Optional restart comment |
+| `done_by_id` | `integer` | No | Operator ID |
+
+**Outputs**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `href` | `string` | `HREF` of restarted ticket |
+
+### Suspend Request / Incident
+
+**Arguments**
+
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| `rfc_number` | `string` | Yes | Ticket RFC number |
+| `comment` | `string` | No | Optional suspend comment |
+| `done_by_id` | `integer` | No | Operator ID |
+
+**Outputs**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `href` | `string` | `HREF` of suspended ticket |
+
+### Update Request / Incident
+
+**Arguments**
+
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| `rfc_number` | `string` | Yes | Ticket RFC number |
+| `append` | `boolean` | No | Append description (EV SM `2025.3+`) |
+| `description` | `string` | No | Description update |
+| `urgency_id` | `string` | No | Urgency |
+| `external_reference` | `string` | No | External reference |
+| `asset` | `string` | No | Asset |
+| `asset_serial` | `string` | No | Asset serial |
+| `ci` | `string` | No | CI |
+| `ci_id` | `integer` | No | CI ID |
+| `custom_fields` | `object` | No | EasyVista field/value map |
+
+**Outputs**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `href` | `string` | `HREF` of updated ticket |
+
+### Upload and attach a Document to a Request / Incident
+
+**Arguments**
+
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| `rfc_number` | `string` | Yes | Ticket RFC number |
+| `documents` | `array` | Yes | At least one `{ filename, filedata }` object |
+| `description` | `string` | No | Optional upload description |
+
+`documents[*]` requires:
+
+- `filename` (`string`)
+- `filedata` (`string`, base64)
+
+**Outputs**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `href` | `string` | Ticket URL returned by API |
+
+### View Request / Incident Comment
+
+**Arguments**
+
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| `rfc_number` | `string` | Yes | Ticket RFC number |
+
+**Outputs**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `href` | `string` | Comment resource `HREF` |
+| `parent_href` | `string` | Parent ticket `HREF` |
+| `comment` | `string` | Ticket comment text |
+
+### View Request / Incident
+
+**Arguments**
+
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| `rfc_number` | `string` | Yes | Ticket RFC number |
+
+**Outputs**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `href` | `string` | Ticket `HREF` |
+| `record` | `object` | Full raw ticket object returned by EasyVista |
+
+### View Request / Incident Problem
+
+**Arguments**
+
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| `rfc_number` | `string` | Yes | Ticket RFC number |
+
+**Outputs**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `href` | `string` | Query `HREF` |
+| `record_count` | `string` | Number of problems in page |
+| `total_record_count` | `string` | Total number of linked problems |
+| `records` | `array` | Raw problem objects |
+
+### View Requests / Incidents list
+
+**Arguments**
+
+| Name | Type | Required | Description |
+| --- | --- | --- | --- |
+| `max_rows` | `integer` | No | Single-page size |
+| `search` | `string` | No | EasyVista filter expression |
+| `sort` | `string` | No | Sort expression |
+| `fields` | `string` | No | Comma-separated field names |
+
+**Outputs**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `href` | `string` | Query `HREF` |
+| `record_count` | `string` | Number of records in page |
+| `total_record_count` | `string` | Total number of matching records |
+| `records` | `array` | Raw ticket objects |
+
+## Playbook example (non-executable pseudocode)
+
+The YAML below illustrates only the sequence with fictional values. It is **not** importable as-is in the Sekoia.io playbook editor/API.
+
+For an executable playbook, use the JSON graph format documented in [playbooks_format_json_schema.md](/xdr/features/automate/playbooks_format_json_schema.md) with action UUIDs and `node.<id>` references.
 
 Example sequence:
 
