@@ -2,7 +2,7 @@
 
 _**[Reveal module](/xdr/features/modules/reveal_index.md)** — This feature requires the Reveal add-on module._ 
 
-Sekoia limits what asset connectors can push, to keep asset collection fast for every community. This article lists these limits, explains what a connector receives when it reaches one, and how it gets back under it.
+Sekoia limits what asset connectors can push, to keep asset collection fast for every community. This article lists these limits, explains what a connector receives when it reaches one, and how it gets back under it. It also explains how a push merges with the assets your community already has, which explains duplicate or missing assets as often as the limits do.
 
 Some limits apply to every asset connector. Others apply to custom asset connectors only: the asset connectors of the custom integrations your community imports.
 
@@ -88,6 +88,15 @@ Every 429 pauses the connector, for an hour by default, whether it comes from a 
 - `ASSET_CONNECTOR_LIMIT_REACHED`: a custom asset connector reached a limit. The log names the reached limits.
 
 The logs show the error code and the reached limits from version TBD of `sekoia-automation-sdk`. A custom asset connector built with an older version logs the 429 without its code.
+
+## How a push merges with existing assets
+
+An asset connector does not own the assets it pushes: it updates the assets your community already has, whatever source created them.
+
+- **Device.** A device is matched to the host asset of the community that has the same `hostname` [detection property](/xdr/features/collect/assets.md#detection-properties), regardless of letter casing. Revoked assets are never matched. A new host asset is created only when none matches, so a device merges with the asset that the Sekoia Endpoint Agent or your events already created for the same host.
+- **User.** A user is matched on its email when its username is an email address, and on its username otherwise.
+- **Properties.** When an item matches an asset, each property the push carries overwrites the stored value. The core properties of a device, such as its OS, IP address or MAC address, are cleared when the push leaves them empty. The interfaces, groups, partitions and accounts the push carries replace the stored ones; when the push carries none, the stored ones are kept.
+- **Vulnerability finding.** A vulnerability finding is matched to a finding of the same asset whose CVEs include all the CVEs it carries. A finding without a CVE is matched on its `finding_info.uid`. Otherwise, a new finding is created.
 
 ## Related links
 
