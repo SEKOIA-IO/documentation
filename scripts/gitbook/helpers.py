@@ -13,7 +13,6 @@ class GitBookClient:
         self.session.headers["Authorization"] = f"Bearer {token}"
 
     def request(self, method: str, path: str, params: dict | None = None, body: dict | None = None) -> dict:
-        # API_URL ends with /v1: concatenate rather than urljoin, which would drop it
         response = self.session.request(method, f"{API_URL}{path}", params=params, json=body)
         if not response.ok:
             sys.exit(f"{method} {path} failed ({response.status_code}): {response.text}")
