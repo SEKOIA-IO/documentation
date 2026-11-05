@@ -13,6 +13,7 @@ Fortigate is a firewall appliance from Fortinet with anti-spam and anti-virus fe
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `firewalls` | `array` |  |
+| `verify_certificate` | `boolean` | Verify the firewall TLS certificate |
 
 ## Actions
 
@@ -73,4 +74,4 @@ Disable a local user account of a Fortigate Firewall
 
 ## Extra
 
-Module **`Fortigate Firewalls` v1.30.0**
+Module **`Fortigate Firewalls` v1.31.0**

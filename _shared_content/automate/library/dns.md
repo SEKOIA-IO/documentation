@@ -37,4 +37,4 @@ Resolve an IP address into its corresponding hostname using a PTR request
 
 ## Extra
 
-Module **`DNS` v0.1.0**
+Module **`DNS` v0.3.0**

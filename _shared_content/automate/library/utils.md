@@ -130,4 +130,4 @@ Wait
 
 ## Extra
 
-Module **`Utils` v1.4.7**
+Module **`Utils` v1.5.0**

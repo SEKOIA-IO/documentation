@@ -17,6 +17,54 @@ SentinelOne is a cybersecurity company that provides autonomous endpoint protect
 
 ## Actions
 
+### Block SHA-1 and/or SHA-256
+
+Create a blocklist item for a SHA1 and/or SHA256 hash
+
+**Configuration**
+
+{'title': 'Description', 'type': 'string'}
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `os_type` | `string` |  |
+| `source` | `string` |  |
+| `description` | `string` |  |
+| `sha_1` | `string` |  |
+| `sha_256` | `string` |  |
+| `filter_tenant_scope` | `boolean` |  |
+| `filter_account_ids` | `array` |  |
+| `filter_site_ids` | `array` |  |
+| `filter_group_ids` | `array` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `errors` | `array` | Errors |
+| `data` | `array` | Response data |
+
+### Remove item from Blocklist
+
+Remove item from Blocklist
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `ids` | `array` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `errors` | `array` | Errors |
+| `data` | `object` | Response data |
+
 ### Create IOCs
 
 Push IOCs in the Threat Intelligence API of SentinelOne
@@ -226,4 +274,4 @@ For the action `Update Threat Incident`, there are two arguments `status` and `f
 
 ## Extra
 
-Module **`SentinelOne` v1.21.8**
+Module **`SentinelOne` v1.23.4**

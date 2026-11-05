@@ -6,7 +6,7 @@ type: playbook
 
 ![ilert](/assets/playbooks/library/ilert.png){ align=right width=150 }
 
-The ilert platform is an incident management solution. This module triggers alerts and manages incidents.
+ilert is an incident management platform. This module triggers alerts and manages incidents.
 
 ## Configuration
 
@@ -19,7 +19,7 @@ The ilert platform is an incident management solution. This module triggers aler
 
 ### Trigger Alert
 
-Trigger an alert in ilert
+Trigger alert to ilert
 
 **Arguments**
 
@@ -93,4 +93,4 @@ Whenever the playbook runs the `Trigger Alert` action, a new alert is created on
 
 ## Extra
 
-Module **`ilert` v1.0.0**
+Module **`ilert` v1.1.1**

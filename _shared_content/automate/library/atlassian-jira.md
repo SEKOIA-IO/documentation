@@ -39,6 +39,7 @@ Add comment to an issue in JIRA
 | --------- | ------- | --------------------------- |
 | `issue_key` | `string` | Issue key (e.g. PROJ-1) |
 | `comment` | `string` | Text of a comment |
+| `public` | `boolean` | If true, the comment is posted as public (visible to customers) on Jira Service Management issues. If false, the comment is internal. Has no effect on non-JSM issues. |
 
 ### Create Issue
 
@@ -106,4 +107,4 @@ Find issues using provided filters
 
 ## Extra
 
-Module **`Atlassian JIRA` v1.4.1**
+Module **`Atlassian JIRA` v1.5.0**
