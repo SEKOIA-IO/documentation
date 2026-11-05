@@ -1,10 +1,13 @@
+---
 uuid: d6c96586-707c-451f-b9f6-d31b3291f87d
-name: The Hive V5
+name: "The Hive V5"
 type: playbook
+description: "TheHive is a scalable, open source and free Security Incident Response Platform"
+---
 
 # The Hive V5
 
-![The Hive V5](/assets/playbooks/library/the-hive-v5.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/the-hive-v5.png" alt="The Hive V5" width="150" align="right">
 
 TheHive is a scalable, open source and free Security Incident Response Platform
 
@@ -16,6 +19,7 @@ TheHive is a scalable, open source and free Security Incident Response Platform
 | `apikey` | `string` | An API key |
 | `organisation` | `string` | The user organisation |
 | `verify_certificate` | `boolean` | Is the server certificate verified |
+| `ca_certificate` | `string` | PEM-encoded CA certificate for TLS verification (optional, for internal PKI) |
 
 ## Actions
 
@@ -128,4 +132,4 @@ Action to add a list of observables in The Hive v5
 
 ## Extra
 
-Module **`The Hive V5` v1.0.9**
+Module **`The Hive V5` v1.1.3**

@@ -1,10 +1,13 @@
+---
 uuid: 33ea4995-5454-4091-a19f-497cb213346a
-name: Microsoft Windows Server
+name: "Microsoft Windows Server"
 type: playbook
+description: "Microsoft Windows Server is an operating system designed for server-based computing, offering robust server management, data storage, and networking capabilities for businesses and enterprises, facilitating diverse workloads and IT operations."
+---
 
 # Microsoft Windows Server
 
-![Microsoft Windows Server](/assets/playbooks/library/microsoft-windows-server.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/microsoft-windows-server.png" alt="Microsoft Windows Server" width="150" align="right">
 
 Microsoft Windows Server is an operating system designed for server-based computing, offering robust server management, data storage, and networking capabilities for businesses and enterprises, facilitating diverse workloads and IT operations.
 

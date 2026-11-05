@@ -1,10 +1,13 @@
+---
 uuid: 0b8e1ea4-f191-4486-9658-47578a67d046
-name: MWDB
+name: "MWDB"
 type: playbook
+description: "MWDB is a malware repository for automated malware collection and analysis systems hosted by CERT.pl"
+---
 
 # MWDB
 
-![MWDB](/assets/playbooks/library/mwdb.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/mwdb.png" alt="MWDB" width="150" align="right">
 
 MWDB is a malware repository for automated malware collection and analysis systems hosted by CERT.pl
 

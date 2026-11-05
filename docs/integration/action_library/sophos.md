@@ -1,10 +1,13 @@
+---
 uuid: 0de5216e-19b0-4ad3-9b91-a547cfaf52ca
-name: Sophos
+name: "Sophos"
 type: playbook
+description: "Sophos is a cybersecurity company that provides a range of security solutions, including endpoint protection, firewall, and encryption services. It focuses on delivering advanced threat protection to businesses through simplified and integrated security management."
+---
 
 # Sophos
 
-![Sophos](/assets/playbooks/library/sophos.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/sophos.png" alt="Sophos" width="150" align="right">
 
 Sophos is a cybersecurity company that provides a range of security solutions, including endpoint protection, firewall, and encryption services. It focuses on delivering advanced threat protection to businesses through simplified and integrated security management.
 
@@ -52,4 +55,4 @@ Turn on endpoint isolation
 
 ## Extra
 
-Module **`Sophos` v1.17.6**
+Module **`Sophos` v1.20.0**

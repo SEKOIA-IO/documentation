@@ -1,10 +1,13 @@
+---
 uuid: 2f8ad4f8-7740-4ce9-ab1d-9903d79c0739
-name: IPInfo
+name: "IPInfo"
 type: playbook
+description: "IPINFO.IO is a database that gives access to daily updates for IP to country and IP to ASN"
+---
 
 # IPInfo
 
-![IPInfo](/assets/playbooks/library/ipinfo.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/ipinfo.png" alt="IPInfo" width="150" align="right">
 
 IPINFO.IO is a database that gives access to daily updates for IP to country and IP to ASN
 
@@ -40,4 +43,4 @@ Upload the ipinfo.io database regularly in json format
 
 ## Extra
 
-Module **`IPInfo` v1.2.0**
+Module **`IPInfo` v1.3.1**

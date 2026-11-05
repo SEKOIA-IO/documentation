@@ -1,10 +1,13 @@
+---
 uuid: ff675e74-e5c1-47c8-a571-d207fc297464
-name: SentinelOne
+name: "SentinelOne"
 type: playbook
+description: "SentinelOne is a cybersecurity company that provides autonomous endpoint protection through AI-powered threat detection and response. Its platform offers real-time prevention, detection, and remediation of cyber threats across networks."
+---
 
 # SentinelOne
 
-![SentinelOne](/assets/playbooks/library/sentinelone.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/sentinelone.png" alt="SentinelOne" width="150" align="right">
 
 SentinelOne is a cybersecurity company that provides autonomous endpoint protection through AI-powered threat detection and response. Its platform offers real-time prevention, detection, and remediation of cyber threats across networks.
 
@@ -16,6 +19,50 @@ SentinelOne is a cybersecurity company that provides autonomous endpoint protect
 | `api_token` | `string` | The API token to authenticate to SentinelOne |
 
 ## Actions
+
+### Block SHA-1 and/or SHA-256
+
+Create a blocklist item for a SHA1 and/or SHA256 hash
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `os_type` | `string` |  |
+| `source` | `string` |  |
+| `description` | `string` |  |
+| `sha_1` | `string` |  |
+| `sha_256` | `string` |  |
+| `filter_tenant_scope` | `boolean` |  |
+| `filter_account_ids` | `array` |  |
+| `filter_site_ids` | `array` |  |
+| `filter_group_ids` | `array` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `errors` | `array` | Errors |
+| `data` | `array` | Response data |
+
+### Remove item from Blocklist
+
+Remove item from Blocklist
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `ids` | `array` |  |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `errors` | `array` | Errors |
+| `data` | `object` | Response data |
 
 ### Create IOCs
 
@@ -226,4 +273,4 @@ For the action `Update Threat Incident`, there are two arguments `status` and `f
 
 ## Extra
 
-Module **`SentinelOne` v1.21.8**
+Module **`SentinelOne` v1.23.4**

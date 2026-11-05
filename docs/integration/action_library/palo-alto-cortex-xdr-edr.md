@@ -1,10 +1,13 @@
+---
 uuid: 2bb1aaf9-a90c-411d-8e5f-c72b1b46b3d7
-name: Palo Alto Cortex XDR (EDR)
+name: "Palo Alto Cortex XDR (EDR)"
 type: playbook
+description: "Cortex XDR is the detection and response app that natively integrates network, endpoint and cloud data to stop sophisticated attacks."
+---
 
 # Palo Alto Cortex XDR (EDR)
 
-![Palo Alto Cortex XDR (EDR)](/assets/playbooks/library/palo-alto-cortex-xdr-edr.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/palo-alto-cortex-xdr-edr.png" alt="Palo Alto Cortex XDR (EDR)" width="150" align="right">
 
 Cortex XDR is the detection and response app that natively integrates network, endpoint and cloud data to stop sophisticated attacks.
 
@@ -147,4 +150,4 @@ Cortex XDR is the detection and response app that natively integrates network, e
 
 ## Extra
 
-Module **`Palo Alto Cortex XDR (EDR)` v1.3.11**
+Module **`Palo Alto Cortex XDR (EDR)` v1.3.12**

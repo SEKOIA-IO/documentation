@@ -1,10 +1,13 @@
+---
 uuid: ca9a9497-bcd2-4d0c-b0c1-72699231feb2
-name: Fortigate Firewalls
+name: "Fortigate Firewalls"
 type: playbook
+description: "Fortigate is a firewall appliance from Fortinet with anti-spam and anti-virus features. Initially distributed as a physical, rack-mounted product, Fortigate can now be installed as a virtual appliance that could run on virtualization platforms such as VMware vSphere"
+---
 
 # Fortigate Firewalls
 
-![Fortigate Firewalls](/assets/playbooks/library/fortigate-firewalls.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/fortigate-firewalls.png" alt="Fortigate Firewalls" width="150" align="right">
 
 Fortigate is a firewall appliance from Fortinet with anti-spam and anti-virus features. Initially distributed as a physical, rack-mounted product, Fortigate can now be installed as a virtual appliance that could run on virtualization platforms such as VMware vSphere
 
@@ -13,6 +16,7 @@ Fortigate is a firewall appliance from Fortinet with anti-spam and anti-virus fe
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `firewalls` | `array` |  |
+| `verify_certificate` | `boolean` | Verify the firewall TLS certificate |
 
 ## Actions
 
@@ -73,4 +77,4 @@ Disable a local user account of a Fortigate Firewall
 
 ## Extra
 
-Module **`Fortigate Firewalls` v1.30.0**
+Module **`Fortigate Firewalls` v1.31.0**

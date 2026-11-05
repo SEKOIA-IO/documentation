@@ -1,10 +1,13 @@
+---
 uuid: 8380240b-61a4-48b7-93e4-044a7ee2309b
-name: HarfangLab
+name: "HarfangLab"
 type: playbook
+description: "HarfangLab is an Endpoint detection and response (EDR) solution certified by ANSSI since 2020"
+---
 
 # HarfangLab
 
-![HarfangLab](/assets/playbooks/library/harfanglab.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/harfanglab.png" alt="HarfangLab" width="150" align="right">
 
 HarfangLab is an Endpoint detection and response (EDR) solution certified by ANSSI since 2020
 
@@ -270,8 +273,9 @@ Update Threat status
 | `threat_ids` | `array` | Threats IDs |
 | `new_status` | `string` | New status |
 | `update_by_query` | `boolean` | Update by query |
+| `tag_security_events` | `boolean` | Tag security events |
 
 
 ## Extra
 
-Module **`HarfangLab` v1.29.5**
+Module **`HarfangLab` v1.31.12**

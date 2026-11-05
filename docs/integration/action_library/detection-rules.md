@@ -1,10 +1,13 @@
+---
 uuid: fd4754b9-aff6-4865-92c7-bb0b1d5605c0
-name: Detection Rules
+name: "Detection Rules"
 type: playbook
+description: "This module exposes a trigger to detect new snort rules on a repository"
+---
 
 # Detection Rules
 
-![Detection Rules](/assets/playbooks/library/detection-rules.svg){ align=right width=150 }
+<img src="../.gitbook/assets/library/detection-rules.svg" alt="Detection Rules" width="150" align="right">
 
 This module exposes a trigger to detect new snort rules on a repository
 

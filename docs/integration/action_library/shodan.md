@@ -1,10 +1,13 @@
+---
 uuid: 25c9c44e-b3dc-4485-a2cb-4e9a116bc8fd
-name: Shodan
+name: "Shodan"
 type: playbook
+description: "Shodan is a Cybersecurity company keeping track of devices exposed to the Internet. It collect information on devices, running software and related CVEs."
+---
 
 # Shodan
 
-![Shodan](/assets/playbooks/library/shodan.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/shodan.png" alt="Shodan" width="150" align="right">
 
 Shodan is a Cybersecurity company keeping track of devices exposed to the Internet. It collect information on devices, running software and related CVEs.
 

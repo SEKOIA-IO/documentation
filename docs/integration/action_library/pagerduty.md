@@ -1,10 +1,13 @@
+---
 uuid: 97864342-32c5-4076-b590-ba0179db9233
-name: PagerDuty
+name: "PagerDuty"
 type: playbook
+description: "PagerDuty is an incident response platform for IT departments it allows triggering alerts and managing incidents."
+---
 
 # PagerDuty
 
-![PagerDuty](/assets/playbooks/library/pagerduty.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/pagerduty.png" alt="PagerDuty" width="150" align="right">
 
 PagerDuty is an incident response platform for IT departments it allows triggering alerts and managing incidents.
 

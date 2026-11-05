@@ -1,10 +1,13 @@
+---
 uuid: 3ba4b84b-c323-48ef-93d2-6f3544c783d6
-name: GLIMPS
+name: "GLIMPS"
 type: playbook
+description: "Glimps offers a DeepLearning solution to detect, analyze and classify malwares. It enables faster responses during incidents with a detailed understanding of the threat"
+---
 
 # GLIMPS
 
-![GLIMPS](/assets/playbooks/library/glimps.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/glimps.png" alt="GLIMPS" width="150" align="right">
 
 Glimps offers a DeepLearning solution to detect, analyze and classify malwares. It enables faster responses during incidents with a detailed understanding of the threat
 
@@ -20,10 +23,6 @@ Glimps offers a DeepLearning solution to detect, analyze and classify malwares. 
 ### Analyse a file
 
 Submit file to Glimps Detect to be analysed
-
-**Configuration**
-
-{'title': 'Description', 'description': 'Description added to the analysis', 'type': 'string'}
 
 **Arguments**
 
@@ -47,10 +46,6 @@ Submit file to Glimps Detect to be analysed
 ### Analyse a file and wait for result
 
 Submit file to Glimps Detect to be analysed and wait for its results
-
-**Configuration**
-
-{'title': 'Description', 'description': 'Description added to the analysis', 'type': 'string'}
 
 **Arguments**
 

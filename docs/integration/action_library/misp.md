@@ -1,10 +1,13 @@
+---
 uuid: df3a0c67-592b-45b2-8465-48473929c7f9
-name: MISP
+name: "MISP"
 type: playbook
+description: "MISP is a opensource platform to gather, store, share and correlate threat intelligence like cyber security indicators"
+---
 
 # MISP
 
-![MISP](/assets/playbooks/library/misp.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/misp.png" alt="MISP" width="150" align="right">
 
 MISP is a opensource platform to gather, store, share and correlate threat intelligence like cyber security indicators
 

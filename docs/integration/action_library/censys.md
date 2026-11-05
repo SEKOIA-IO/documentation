@@ -1,10 +1,13 @@
+---
 uuid: 48a7eb68-f319-4498-b3ed-461d690e6d05
-name: Censys
+name: "Censys"
 type: playbook
+description: "Censys is Cybersecurity company discovering and inventoring assets exposed on Internet. The Censys API provides programmatic access to the same data accessible through the web interface"
+---
 
 # Censys
 
-![Censys](/assets/playbooks/library/censys.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/censys.png" alt="Censys" width="150" align="right">
 
 Censys is Cybersecurity company discovering and inventoring assets exposed on Internet. The Censys API provides programmatic access to the same data accessible through the web interface
 
@@ -79,4 +82,4 @@ Return the item as a structured data
 
 ## Extra
 
-Module **`Censys` v1.25.0**
+Module **`Censys` v1.26.0**

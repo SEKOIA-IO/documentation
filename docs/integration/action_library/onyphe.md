@@ -1,10 +1,13 @@
+---
 uuid: 3d20c308-bc7f-492f-99b0-211614a58116
-name: Onyphe
+name: "Onyphe"
 type: playbook
+description: "Onyphe is a Cyber Defense Search Engine for open-source and cyber threat intelligence data collected by crawling various sources available on the Internet or by listening to Internet background noise"
+---
 
 # Onyphe
 
-![Onyphe](/assets/playbooks/library/onyphe.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/onyphe.png" alt="Onyphe" width="150" align="right">
 
 Onyphe is a Cyber Defense Search Engine for open-source and cyber threat intelligence data collected by crawling various sources available on the Internet or by listening to Internet background noise
 

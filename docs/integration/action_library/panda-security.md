@@ -1,10 +1,13 @@
+---
 uuid: e2215979-3462-4fb6-8635-57700aada01c
-name: Panda Security
+name: "Panda Security"
 type: playbook
+description: "PandaSecurity, a WatchGuard company, is a cybsersecurity vendor, delivering products designed to protect endpoints against outside threats.\n\nThis module provides actions and triggers to interact with the Watchguard Panda Aether platform to act on AD360 and EPP devices"
+---
 
 # Panda Security
 
-![Panda Security](/assets/playbooks/library/panda-security.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/panda-security.png" alt="Panda Security" width="150" align="right">
 
 PandaSecurity, a WatchGuard company, is a cybsersecurity vendor, delivering products designed to protect endpoints against outside threats.
 

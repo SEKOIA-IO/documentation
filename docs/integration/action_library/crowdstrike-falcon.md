@@ -1,10 +1,13 @@
+---
 uuid: 4fdbae70-e9cd-492e-9a39-24ce99325e3f
-name: CrowdStrike Falcon
+name: "CrowdStrike Falcon"
 type: playbook
+description: "CrowdStrike Falcon is a cloud-native cybersecurity platform known for its advanced threat detection, endpoint protection, and real-time response capabilities. It leverages AI and machine learning to protect against malware and sophisticated cyberattacks."
+---
 
 # CrowdStrike Falcon
 
-![CrowdStrike Falcon](/assets/playbooks/library/crowdstrike-falcon.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/crowdstrike-falcon.png" alt="CrowdStrike Falcon" width="150" align="right">
 
 CrowdStrike Falcon is a cloud-native cybersecurity platform known for its advanced threat detection, endpoint protection, and real-time response capabilities. It leverages AI and machine learning to protect against malware and sophisticated cyberattacks.
 
@@ -108,4 +111,4 @@ Enable detections on the provided IOCs: md5 / sha256 file hashes, IPv4/v6 addres
 
 ## Extra
 
-Module **`CrowdStrike Falcon` v1.25.11**
+Module **`CrowdStrike Falcon` v1.25.20**

@@ -1,10 +1,13 @@
+---
 uuid: 537e1880-5b6c-4b46-ae6c-f228cfc6c6e4
-name: Palo Alto Cortex XSIAM
+name: "Palo Alto Cortex XSIAM"
 type: playbook
+description: "Palo Alto Cortex XSIAM is Palo Alto Networks\u2019 security analytics platform that unifies SIEM, XDR, threat intelligence and SOAR for real-time detection and response."
+---
 
 # Palo Alto Cortex XSIAM
 
-![Palo Alto Cortex XSIAM](/assets/playbooks/library/palo-alto-cortex-xsiam.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/palo-alto-cortex-xsiam.png" alt="Palo Alto Cortex XSIAM" width="150" align="right">
 
 Palo Alto Cortex XSIAM is Palo Alto Networks’ security analytics platform that unifies SIEM, XDR, threat intelligence and SOAR for real-time detection and response.
 
@@ -39,4 +42,4 @@ Convert STIX objects to XSIAM objects
 
 ## Extra
 
-Module **`Palo Alto Cortex XSIAM` v1.0.0**
+Module **`Palo Alto Cortex XSIAM` v1.0.1**

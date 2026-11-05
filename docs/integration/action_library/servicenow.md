@@ -1,10 +1,13 @@
+---
 uuid: 2b2f877e-6eaa-4d6c-a18e-f3383e52a429
-name: ServiceNow
+name: "ServiceNow"
 type: playbook
+description: "ServiceNow is an IT company allowing creating workflow to empower employees productivity and to improve customers experience"
+---
 
 # ServiceNow
 
-![ServiceNow](/assets/playbooks/library/servicenow.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/servicenow.png" alt="ServiceNow" width="150" align="right">
 
 ServiceNow is an IT company allowing creating workflow to empower employees productivity and to improve customers experience
 

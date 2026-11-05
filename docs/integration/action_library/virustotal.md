@@ -1,10 +1,13 @@
+---
 uuid: d023af1d-25d8-465b-b85f-2ed48214d6a5
-name: VirusTotal
+name: "VirusTotal"
 type: playbook
+description: "VirusTotal is a cybersecurity company specialized in malware analysis."
+---
 
 # VirusTotal
 
-![VirusTotal](/assets/playbooks/library/virustotal.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/virustotal.png" alt="VirusTotal" width="150" align="right">
 
 VirusTotal is a cybersecurity company specialized in malware analysis.
 

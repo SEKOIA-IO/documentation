@@ -1,10 +1,13 @@
+---
 uuid: b1c26bbd-8ec6-464b-a979-bc1f804417b2
-name: IPtoASN
+name: "IPtoASN"
 type: playbook
+description: "IPtoASN is a free, downloadable and frequently updated ASN database. It allow associating IP addresses to ASN"
+---
 
 # IPtoASN
 
-![IPtoASN](/assets/playbooks/library/iptoasn.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/iptoasn.png" alt="IPtoASN" width="150" align="right">
 
 IPtoASN is a free, downloadable and frequently updated ASN database. It allow associating IP addresses to ASN
 
@@ -37,4 +40,4 @@ Download the IPtoASN database recurrently
 
 ## Extra
 
-Module **`IPtoASN` v1.31.0**
+Module **`IPtoASN` v1.32.1**

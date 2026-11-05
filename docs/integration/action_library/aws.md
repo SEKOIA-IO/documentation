@@ -1,10 +1,13 @@
+---
 uuid: b4462429-6f0f-42b5-87b8-430111697d28
-name: AWS
+name: "AWS"
 type: playbook
+description: "AWS is a one of the main cloud provider, supported by Amazon. It offers services for storage (S3, Glacier, EBS, ...), for networking (Snowball, CloudFront, ...), for computing (EC2, ECS, EKS, ...) and others.\nThis module provides triggers to collect events from AWS"
+---
 
 # AWS
 
-![AWS](/assets/playbooks/library/aws.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/aws.png" alt="AWS" width="150" align="right">
 
 AWS is a one of the main cloud provider, supported by Amazon. It offers services for storage (S3, Glacier, EBS, ...), for networking (Snowball, CloudFront, ...), for computing (EC2, ECS, EKS, ...) and others.
 This module provides triggers to collect events from AWS
@@ -13,6 +16,7 @@ This module provides triggers to collect events from AWS
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
+| `aws_role_arn` | `string` | The ARN of the AWS role to assume |
 | `aws_access_key` | `string` | The identifier of the access key |
 | `aws_secret_access_key` | `string` | The secret associated to the access key |
 | `aws_region_name` | `string` | The area hosting the AWS resources |
@@ -65,4 +69,4 @@ Get the last records from FlowLog (deprecated in flavor of Fetch new logs on S3)
 
 ## Extra
 
-Module **`AWS` v1.33.17**
+Module **`AWS` v1.38.7**

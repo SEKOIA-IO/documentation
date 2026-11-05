@@ -1,10 +1,13 @@
+---
 uuid: 735b9f36-50eb-4a36-8d08-0996966ee9aa
-name: Public Suffix
+name: "Public Suffix"
 type: playbook
+description: "The Public Suffix List is an initiative of Mozilla to list of all known public suffixes"
+---
 
 # Public Suffix
 
-![Public Suffix](/assets/playbooks/library/public-suffix.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/public-suffix.png" alt="Public Suffix" width="150" align="right">
 
 The Public Suffix List is an initiative of Mozilla to list of all known public suffixes
 
@@ -27,4 +30,4 @@ Get the list of private domains
 
 ## Extra
 
-Module **`Public Suffix` v1.21.0**
+Module **`Public Suffix` v1.22.1**

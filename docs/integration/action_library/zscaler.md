@@ -1,10 +1,13 @@
+---
 uuid: 0c97d665-e316-48ff-bcba-bbfbd4eaccc7
-name: Zscaler
+name: "Zscaler"
 type: playbook
+description: "Zscaler is a cloud security company providing secure internet access and zero trust network access to protect enterprise data and applications. Its platform offers scalable, cloud-native solutions for secure browsing, data protection, and threat prevention."
+---
 
 # Zscaler
 
-![Zscaler](/assets/playbooks/library/zscaler.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/zscaler.png" alt="Zscaler" width="150" align="right">
 
 Zscaler is a cloud security company providing secure internet access and zero trust network access to protect enterprise data and applications. Its platform offers scalable, cloud-native solutions for secure browsing, data protection, and threat prevention.
 

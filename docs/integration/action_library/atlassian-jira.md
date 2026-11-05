@@ -1,10 +1,13 @@
+---
 uuid: d1445e5e-8e3b-417f-ae19-bca67a10affd
-name: Atlassian JIRA
+name: "Atlassian JIRA"
 type: playbook
+description: "Atlassian JIRA is a popular project management and issue-tracking software designed to help teams plan, track, and manage agile software development projects efficiently. It offers customizable workflows and integrates seamlessly with other Atlassian products."
+---
 
 # Atlassian JIRA
 
-![Atlassian JIRA](/assets/playbooks/library/atlassian-jira.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/atlassian-jira.png" alt="Atlassian JIRA" width="150" align="right">
 
 Atlassian JIRA is a popular project management and issue-tracking software designed to help teams plan, track, and manage agile software development projects efficiently. It offers customizable workflows and integrates seamlessly with other Atlassian products.
 
@@ -39,14 +42,11 @@ Add comment to an issue in JIRA
 | --------- | ------- | --------------------------- |
 | `issue_key` | `string` | Issue key (e.g. PROJ-1) |
 | `comment` | `string` | Text of a comment |
+| `public` | `boolean` | If true, the comment is posted as public (visible to customers) on Jira Service Management issues. If false, the comment is internal. Has no effect on non-JSM issues. |
 
 ### Create Issue
 
 Create issue in JIRA
-
-**Configuration**
-
-{'title': 'Description', 'description': 'Description text in ADF (Atlassian Document Format)', 'type': 'object'}
 
 **Arguments**
 
@@ -106,4 +106,4 @@ Find issues using provided filters
 
 ## Extra
 
-Module **`Atlassian JIRA` v1.4.1**
+Module **`Atlassian JIRA` v1.5.0**

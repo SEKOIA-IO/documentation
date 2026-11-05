@@ -1,10 +1,13 @@
+---
 uuid: 0a0cdc27-5b29-41e0-9a0c-36ee065922e5
-name: Git
+name: "Git"
 type: playbook
+description: "Git is a free and open source distributed version control system designed to handle projects with speed and efficiency."
+---
 
 # Git
 
-![Git](/assets/playbooks/library/git.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/git.png" alt="Git" width="150" align="right">
 
 Git is a free and open source distributed version control system designed to handle projects with speed and efficiency.
 

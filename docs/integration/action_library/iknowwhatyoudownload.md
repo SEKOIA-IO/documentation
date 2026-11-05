@@ -1,10 +1,13 @@
+---
 uuid: 3c334ccd-91be-49d5-9267-915db6ab588e
-name: IKnowWhatYouDownload
+name: "IKnowWhatYouDownload"
 type: playbook
+description: "iknowwhatyoudownload collects torrent files and peers from torrent sites and DHT network. It allows associating IP addresses to downloaded and shared data"
+---
 
 # IKnowWhatYouDownload
 
-![IKnowWhatYouDownload](/assets/playbooks/library/iknowwhatyoudownload.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/iknowwhatyoudownload.png" alt="IKnowWhatYouDownload" width="150" align="right">
 
 iknowwhatyoudownload collects torrent files and peers from torrent sites and DHT network. It allows associating IP addresses to downloaded and shared data
 
@@ -79,4 +82,4 @@ Fetch the list IP that can be found in a CIDR notation
 
 ## Extra
 
-Module **`IKnowWhatYouDownload` v1.24.0**
+Module **`IKnowWhatYouDownload` v1.25.1**

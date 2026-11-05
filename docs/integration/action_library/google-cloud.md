@@ -1,10 +1,13 @@
+---
 uuid: 4f682a9e-9a25-43a5-8a48-cd9bd7fade7e
-name: Google Cloud
+name: "Google Cloud"
 type: playbook
+description: "Google Cloud is a suite of cloud computing services that offers infrastructure as a service, platform as a service, and serverless computing. It provides tools for storage, machine learning, data analytics, and app development, leveraging Google\u0027s infrastructure."
+---
 
 # Google Cloud
 
-![Google Cloud](/assets/playbooks/library/google-cloud.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/google-cloud.png" alt="Google Cloud" width="150" align="right">
 
 Google Cloud is a suite of cloud computing services that offers infrastructure as a service, platform as a service, and serverless computing. It provides tools for storage, machine learning, data analytics, and app development, leveraging Google's infrastructure.
 
@@ -37,4 +40,4 @@ Execute the given query and return the results
 
 ## Extra
 
-Module **`Google Cloud` v1.22.0**
+Module **`Google Cloud` v1.23.0**

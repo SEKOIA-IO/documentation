@@ -1,10 +1,13 @@
+---
 uuid: ab1540c3-1b60-4bad-9f5b-13d86a554826
-name: RiskIQ
+name: "RiskIQ"
 type: playbook
+description: "RiskIQ is a cyber security company providing software as a service to detect phishing, fraud, malware, and other online security threats."
+---
 
 # RiskIQ
 
-![RiskIQ](/assets/playbooks/library/riskiq.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/riskiq.png" alt="RiskIQ" width="150" align="right">
 
 RiskIQ is a cyber security company providing software as a service to detect phishing, fraud, malware, and other online security threats.
 

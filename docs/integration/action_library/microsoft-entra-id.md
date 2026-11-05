@@ -1,10 +1,13 @@
+---
 uuid: 3abf7928-65ef-4a5f-ba3e-5fbe56123d0c
-name: Microsoft Entra ID
+name: "Microsoft Entra ID"
 type: playbook
+description: "Microsoft Entra ID (formerly Azure Active Directory) is an enterprise identity service that provides single sign-on, multifactor authentication, and conditional access to guard against 99.9 percent of cybersecurity attacks."
+---
 
 # Microsoft Entra ID
 
-![Microsoft Entra ID](/assets/playbooks/library/microsoft-entra-id.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/microsoft-entra-id.png" alt="Microsoft Entra ID" width="150" align="right">
 
 Microsoft Entra ID (formerly Azure Active Directory) is an enterprise identity service that provides single sign-on, multifactor authentication, and conditional access to guard against 99.9 percent of cybersecurity attacks.
 
@@ -209,4 +212,4 @@ Invalidates all the refresh tokens issued to applications for a user. Requires t
 
 ## Extra
 
-Module **`Microsoft Entra ID` v2.10.17**
+Module **`Microsoft Entra ID` v2.10.29**

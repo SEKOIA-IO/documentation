@@ -1,10 +1,13 @@
+---
 uuid: 05fd97a1-43f7-4f47-ae02-63e1d1219040
-name: OpenAI
+name: "OpenAI"
 type: playbook
+description: "The OpenAI API can be applied to virtually any task that involves understanding or generating natural language, code, or images."
+---
 
 # OpenAI
 
-![OpenAI](/assets/playbooks/library/openai.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/openai.png" alt="OpenAI" width="150" align="right">
 
 The OpenAI API can be applied to virtually any task that involves understanding or generating natural language, code, or images.
 

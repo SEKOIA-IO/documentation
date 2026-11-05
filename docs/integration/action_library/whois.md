@@ -1,10 +1,13 @@
+---
 uuid: a55461dd-cd8b-9e05-f87a-607b574804fd
-name: Whois
+name: "Whois"
 type: playbook
+description: "Provides data enrichment for domains and IP addresses."
+---
 
 # Whois
 
-![Whois](/assets/playbooks/library/whois.svg){ align=right width=150 }
+<img src="../.gitbook/assets/library/whois.svg" alt="Whois" width="150" align="right">
 
 Provides data enrichment for domains and IP addresses.
 
@@ -36,4 +39,4 @@ Provides data enrichment for Domains, URLs, and IP addresses.
 
 ## Extra
 
-Module **`Whois` v1.25.0**
+Module **`Whois` v1.26.1**

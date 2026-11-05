@@ -1,10 +1,13 @@
+---
 uuid: 07cce76b-a319-40ee-a0cf-1ba433431e21
-name: Utils
+name: "Utils"
 type: playbook
+description: "This module exposes utility actions"
+---
 
 # Utils
 
-![Utils](/assets/playbooks/library/utils.svg){ align=right width=150 }
+<img src="../.gitbook/assets/library/utils.svg" alt="Utils" width="150" align="right">
 
 This module exposes utility actions
 
@@ -130,4 +133,4 @@ Wait
 
 ## Extra
 
-Module **`Utils` v1.4.7**
+Module **`Utils` v1.5.0**

@@ -1,10 +1,13 @@
+---
 uuid: 8aa9f86c-f360-4ae7-84f5-b61c6917cf01
-name: WithSecure
+name: "WithSecure"
 type: playbook
+description: "WithSecure, formerly known as F-Secure Business, provides cybersecurity solutions focusing on threat detection, incident response, and endpoint protection. It delivers comprehensive security services tailored to businesses to safeguard against evolving cyber threats."
+---
 
 # WithSecure
 
-![WithSecure](/assets/playbooks/library/withsecure.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/withsecure.png" alt="WithSecure" width="150" align="right">
 
 WithSecure, formerly known as F-Secure Business, provides cybersecurity solutions focusing on threat detection, incident response, and endpoint protection. It delivers comprehensive security services tailored to businesses to safeguard against evolving cyber threats.
 
@@ -206,4 +209,4 @@ Update status on Incident.
 
 ## Extra
 
-Module **`WithSecure` v2.16.4**
+Module **`WithSecure` v2.17.1**

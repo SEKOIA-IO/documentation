@@ -1,10 +1,13 @@
+---
 uuid: 26277889-b91b-46d0-8bac-7f6b2f6fb9a3
-name: Bitdefender GravityZone
+name: "Bitdefender GravityZone"
 type: playbook
+description: "Bitdefender is a global cybersecurity company renowned for its advanced antivirus software, providing comprehensive security solutions and threat intelligence for individuals and enterprises, safeguarding against evolving cyber threats."
+---
 
 # Bitdefender GravityZone
 
-![Bitdefender GravityZone](/assets/playbooks/library/bitdefender-gravityzone.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/bitdefender-gravityzone.png" alt="Bitdefender GravityZone" width="150" align="right">
 
 Bitdefender is a global cybersecurity company renowned for its advanced antivirus software, providing comprehensive security solutions and threat intelligence for individuals and enterprises, safeguarding against evolving cyber threats.
 
@@ -244,18 +247,18 @@ Update the status of an incident
 1. Log in to the Bitdefender GravityZone Control Center as an administrator.
 2. In the top right, navigate to `User menu` > `My account`.
 
-    ![Step 1](/assets/playbooks/library/setup/bitdefender-gravityzone/Step01.png)
+    ![Step 1](../.gitbook/assets/library/setup/bitdefender-gravityzone/Step01.png)
 
 
 3. Go down and click the `Add` button to create a new API key.
 
-    ![Step 1](/assets/playbooks/library/setup/bitdefender-gravityzone/Step02.png)
+    ![Step 1](../.gitbook/assets/library/setup/bitdefender-gravityzone/Step02.png)
 
 
 4. Enter a description for the API key to identify its purpose.
 5. Select the following permissions and scopes for the API key.
 
-    ![Step 1](/assets/playbooks/library/setup/bitdefender-gravityzone/Step03.png)
+    ![Step 1](../.gitbook/assets/library/setup/bitdefender-gravityzone/Step03.png)
 
 7. Click `Save` to generate the API key.
 8. Copy the generated API key and store it securely. You will not be able to view it again.
@@ -264,4 +267,4 @@ Update the status of an incident
 
 ## Extra
 
-Module **`Bitdefender GravityZone` v1.0.6**
+Module **`Bitdefender GravityZone` v1.0.7**

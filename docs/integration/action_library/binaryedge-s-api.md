@@ -1,10 +1,13 @@
+---
 uuid: d9ba02ab-cb1e-4c8d-bf60-feebfc3700d6
-name: BinaryEdge's API
+name: "BinaryEdge\u0027s API"
 type: playbook
+description: "BinaryEdge is Cybersecurity/Data Science company that focuses its effort on acquiring, analyzing and classifying internet wide data. Their platform allows their customers to gather several data points from exposed servers online.\n\n The API provides access to that scanning platform, for your own usage, along with access to our curated databases so that you can do querying and analytics on our worldwide (constantly updated) collected data."
+---
 
 # BinaryEdge's API
 
-![BinaryEdge's API](/assets/playbooks/library/binaryedge-s-api.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/binaryedge-s-api.png" alt="BinaryEdge's API" width="150" align="right">
 
 BinaryEdge is Cybersecurity/Data Science company that focuses its effort on acquiring, analyzing and classifying internet wide data. Their platform allows their customers to gather several data points from exposed servers online.
 
@@ -504,4 +507,4 @@ Return details about your current subscription package.
 
 ## Extra
 
-Module **`BinaryEdge's API` v1.23.0**
+Module **`BinaryEdge's API` v1.24.0**

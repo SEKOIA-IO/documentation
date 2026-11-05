@@ -1,10 +1,13 @@
+---
 uuid: 6d6cfd48-1f93-423c-bc8d-0fe5d3029395
-name: Certificate Transparency
+name: "Certificate Transparency"
 type: playbook
+description: "Certificate transparency is a security standard to monitor and audit certificates. This module rely on certstream (https://certstream.calidog.io/) to get updates from the Certificate Transparency Log network."
+---
 
 # Certificate Transparency
 
-![Certificate Transparency](/assets/playbooks/library/certificate-transparency.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/certificate-transparency.png" alt="Certificate Transparency" width="150" align="right">
 
 Certificate transparency is a security standard to monitor and audit certificates. This module rely on certstream (https://certstream.calidog.io/) to get updates from the Certificate Transparency Log network.
 
@@ -38,4 +41,4 @@ Trigger playbook run on certificate of interest update
 
 ## Extra
 
-Module **`Certificate Transparency` v1.27.0**
+Module **`Certificate Transparency` v1.28.0**

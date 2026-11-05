@@ -1,10 +1,13 @@
+---
 uuid: 89c860f0-3e73-4946-a5c9-431deb33b0e8
-name: Mattermost
+name: "Mattermost"
 type: playbook
+description: "Mattermost is a secure, open and flexible collaboration platform"
+---
 
 # Mattermost
 
-![Mattermost](/assets/playbooks/library/mattermost.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/mattermost.png" alt="Mattermost" width="150" align="right">
 
 Mattermost is a secure, open and flexible collaboration platform
 

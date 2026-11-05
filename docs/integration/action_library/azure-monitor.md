@@ -1,10 +1,13 @@
+---
 uuid: 28d53bf5-738a-42a4-8ce4-67e00195590e
-name: Azure Monitor
+name: "Azure Monitor"
 type: playbook
+description: "Azure Monitor is a comprehensive solution for collecting, analyzing, and acting on telemetry from cloud and on-premises environments to maximize the performance and availability of applications."
+---
 
 # Azure Monitor
 
-![Azure Monitor](/assets/playbooks/library/azure-monitor.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/azure-monitor.png" alt="Azure Monitor" width="150" align="right">
 
 Azure Monitor is a comprehensive solution for collecting, analyzing, and acting on telemetry from cloud and on-premises environments to maximize the performance and availability of applications.
 
@@ -77,4 +80,4 @@ Execute an Analytics query
 
 ## Extra
 
-Module **`Azure Monitor` v1.1.0**
+Module **`Azure Monitor` v1.1.1**

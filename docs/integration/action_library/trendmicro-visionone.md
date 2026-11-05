@@ -1,10 +1,13 @@
+---
 uuid: 6f3d8a54-d51c-47d0-b77c-dbcf31393d59
-name: TrendMicro VisionOne
+name: "TrendMicro VisionOne"
 type: playbook
+description: "Trend Micro Vision One is a comprehensive XDR platform that integrates data from various sources, such as: email, company intranet, workstations and servers, containerized environments, cloud environments, integrated solutions from the Trend Micro ecosystem, and third-party integrations (EntraID, Okta, Office365, etc.) to detect, analyze, and respond to threats."
+---
 
 # TrendMicro VisionOne
 
-![TrendMicro VisionOne](/assets/playbooks/library/trendmicro-visionone.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/trendmicro-visionone.png" alt="TrendMicro VisionOne" width="150" align="right">
 
 Trend Micro Vision One is a comprehensive XDR platform that integrates data from various sources, such as: email, company intranet, workstations and servers, containerized environments, cloud environments, integrated solutions from the Trend Micro ecosystem, and third-party integrations (EntraID, Okta, Office365, etc.) to detect, analyze, and respond to threats.
 
@@ -32,10 +35,6 @@ Add a note to a workbench alert
 
 Collect a file from a list of endpoints and send it to TrendMicro VisionOne
 
-**Configuration**
-
-{'description': 'The reason of the action', 'type': 'string'}
-
 **Arguments**
 
 | Name      |  Type   |  Description  |
@@ -48,10 +47,6 @@ Collect a file from a list of endpoints and send it to TrendMicro VisionOne
 
 Restores the network connectivity of the endpoints
 
-**Configuration**
-
-{'description': 'The reason of the action', 'type': 'string'}
-
 **Arguments**
 
 | Name      |  Type   |  Description  |
@@ -62,10 +57,6 @@ Restores the network connectivity of the endpoints
 ### Isolate endpoints
 
 Isolate a list of endpoints from the network
-
-**Configuration**
-
-{'description': 'The reason of the action', 'type': 'string'}
 
 **Arguments**
 
@@ -78,10 +69,6 @@ Isolate a list of endpoints from the network
 
 Initialize a scan on the endpoints
 
-**Configuration**
-
-{'description': 'The reason of the action', 'type': 'string'}
-
 **Arguments**
 
 | Name      |  Type   |  Description  |
@@ -92,10 +79,6 @@ Initialize a scan on the endpoints
 ### Terminate a process
 
 Terminate a process that is running on a list of endpoints
-
-**Configuration**
-
-{'description': 'The reason of the action', 'type': 'string'}
 
 **Arguments**
 

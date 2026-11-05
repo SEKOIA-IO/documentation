@@ -1,10 +1,13 @@
+---
 uuid: 919705ab-7a64-493e-a92b-4049fafea325
-name: Triage
+name: "Triage"
 type: playbook
+description: "Triage is a malware analysis sandbox as a service, brought by Hatching"
+---
 
 # Triage
 
-![Triage](/assets/playbooks/library/triage.svg){ align=right width=150 }
+<img src="../.gitbook/assets/library/triage.svg" alt="Triage" width="150" align="right">
 
 Triage is a malware analysis sandbox as a service, brought by Hatching
 

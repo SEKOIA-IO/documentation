@@ -1,10 +1,13 @@
+---
 uuid: e76687ed-db66-482a-8549-f3ef3b248e06
-name: Digital Shadows
+name: "Digital Shadows"
 type: playbook
+description: "Digital Shadows is a cybersecurity company that offers digital risk protection solutions to help organizations manage their digital footprints and detect threats. It provides monitoring and intelligence to safeguard against data leaks, phishing, and other cyber risks."
+---
 
 # Digital Shadows
 
-![Digital Shadows](/assets/playbooks/library/digital-shadows.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/digital-shadows.png" alt="Digital Shadows" width="150" align="right">
 
 Digital Shadows is a cybersecurity company that offers digital risk protection solutions to help organizations manage their digital footprints and detect threats. It provides monitoring and intelligence to safeguard against data leaks, phishing, and other cyber risks.
 

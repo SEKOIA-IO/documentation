@@ -1,10 +1,13 @@
+---
 uuid: 081074fc-240d-437f-a214-fba49691e69e
-name: Tranco
+name: "Tranco"
 type: playbook
+description: "Tranco is an top sites ranking list hardened against manipulation."
+---
 
 # Tranco
 
-![Tranco](/assets/playbooks/library/tranco.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/tranco.png" alt="Tranco" width="150" align="right">
 
 Tranco is an top sites ranking list hardened against manipulation.
 
@@ -37,4 +40,4 @@ Fetches Tranco list
 
 ## Extra
 
-Module **`Tranco` v1.25.0**
+Module **`Tranco` v1.26.1**

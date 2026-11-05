@@ -1,10 +1,13 @@
+---
 uuid: 19cf9b48-dc7a-485f-ba14-3b7b998774c1
-name: OSINT
+name: "OSINT"
 type: playbook
+description: "This module exposes actions to process OSINT data"
+---
 
 # OSINT
 
-![OSINT](/assets/playbooks/library/osint.svg){ align=right width=150 }
+<img src="../.gitbook/assets/library/osint.svg" alt="OSINT" width="150" align="right">
 
 This module exposes actions to process OSINT data
 

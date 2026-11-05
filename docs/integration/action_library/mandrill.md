@@ -1,10 +1,13 @@
+---
 uuid: bc2699a6-93e5-4d74-816d-4186d6eb3ce8
-name: Mandrill
+name: "Mandrill"
 type: playbook
+description: "Mandrill is a transactional email platform from Mailchimp."
+---
 
 # Mandrill
 
-![Mandrill](/assets/playbooks/library/mandrill.png){ align=right width=150 }
+<img src="../.gitbook/assets/library/mandrill.png" alt="Mandrill" width="150" align="right">
 
 Mandrill is a transactional email platform from Mailchimp.
 
@@ -39,4 +42,4 @@ Send a new transactional message through Mandrill
 
 ## Extra
 
-Module **`Mandrill` v2.10.0**
+Module **`Mandrill` v2.11.1**
