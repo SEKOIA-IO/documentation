@@ -8,6 +8,8 @@ extend-exclude = ["docs/assets", "docs/javascript"]
 # (e.g. `dbe` from `...-5dbe-...` in generated include paths).
 extend-ignore-re = [
 	"(?mi)^.*[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}.*$",
+	# Intake keys in sample logs are random strings (e.g. `Iz` in `jOK5bMVXz5Iz...`).
+	'intake_key=\\?"[A-Za-z0-9]+',
 ]
 # Also treat UUID-shaped identifiers as valid tokens when parsed as identifiers.
 extend-ignore-identifiers-re = [
