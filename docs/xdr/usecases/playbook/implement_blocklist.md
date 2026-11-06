@@ -1,4 +1,4 @@
-# Implement a blocklist in Sekoia.io
+# Implement a blocklist in Sekoia
 
 Use an IOC Collection as a blocklist to share IP addresses, domains, URLs, or other observable values with a firewall or proxy. You can populate the collection through the interface, import a file, or automate updates with a playbook.
 
@@ -8,11 +8,11 @@ Use an IOC Collection as a blocklist to share IP addresses, domains, URLs, or ot
 2. Configure your firewall or proxy to retrieve the collection regularly through the API.
 3. The equipment uses the retrieved values according to its blocking policy.
 
-Sekoia.io provides the list; the receiving equipment enforces the blocking policy. A playbook is optional.
+Sekoia provides the list; the receiving equipment enforces the blocking policy. A playbook is optional.
 
 ## Create your blocklist
 
-You need a Sekoia.io Defend subscription and permissions to **View IOC collections** and **Manage IOC collections** in the community where you create the blocklist.
+You need a Sekoia Defend subscription and permissions to **View IOC collections** and **Manage IOC collections** in the community where you create the blocklist.
 
 1. [Create an IOC Collection](/cti/features/consume/ioccollections.md#create-an-ioc-collection).
 2. Return to the **IOC Collections** page.
@@ -35,18 +35,29 @@ Follow [Import IOCs inside a collection](/cti/features/consume/ioccollections.md
 
 ### Prerequisites
 
-- The equipment must be able to reach the Sekoia.io API over HTTPS, authenticate, and periodically refresh an external list.
+- The equipment must be able to reach the Sekoia API over HTTPS, authenticate, and periodically refresh an external list.
 - [Create an API key](/getting_started/manage_api_keys.md) for the equipment with the **View IOC collections** permission in the collection's community. The **Guest** role or a custom role containing that permission can be used.
 - Check which observable types and text formats the equipment supports.
 
 Basic authentication is supported: use `username` as the username and the **API key as the password**. Configure these credentials in the equipment's authentication settings.
+
+### Choose your regional API URL
+
+Use the API base URL for the region where your community is hosted. See [Find your base URL](/developer/quickstart.md#step-1-find-your-base-url) for the full regional table and how to identify your region.
+
+In the examples below, replace `BASE_URL` with that regional API base URL, without a trailing slash. For example:
+
+- **FRA1**: replace `BASE_URL` with `https://api.sekoia.io`.
+- **FRA2**: replace `BASE_URL` with `https://app.fra2.sekoia.io/api`.
+
+Keep the `/v2/inthreat/...` path and query parameters after the base URL. For other regions, use the corresponding value from the same table.
 
 ### Export observable values only
 
 Replace `YOUR-IOC-COLLECTION-FEED-ID` with the copied Feed ID:
 
 ```text
-https://app.sekoia.io/api/v2/inthreat/collections/YOUR-IOC-COLLECTION-FEED-ID/objects?format=text&limit=10000&skip_expired=true&include_revoked=false
+BASE_URL/v2/inthreat/collections/YOUR-IOC-COLLECTION-FEED-ID/objects?format=text&limit=10000&skip_expired=true&include_revoked=false
 ```
 
 This format returns observable values on separate lines.
@@ -56,7 +67,7 @@ This format returns observable values on separate lines.
 If the equipment supports inline comments in the `observable # comment` format, use the custom template `$observables # $description`:
 
 ```text
-https://app.sekoia.io/api/v2/inthreat/collections/YOUR-IOC-COLLECTION-FEED-ID/objects?format=custom&template=%24observables%20%23%20%24description&limit=10000&skip_expired=true&include_revoked=false
+BASE_URL/v2/inthreat/collections/YOUR-IOC-COLLECTION-FEED-ID/objects?format=custom&template=%24observables%20%23%20%24description&limit=10000&skip_expired=true&include_revoked=false
 ```
 
 Example response:
@@ -112,7 +123,7 @@ These permissions are for the playbook's account. The equipment only needs the c
 
 ### Create your playbook
 
-1. Go to the [Playbooks page](https://app.sekoia.io/operations/playbooks) and click **+ New Playbook**.
+1. Go to the **Playbooks** page in your regional Sekoia application and click **+ New Playbook**.
 2. If multi-tenant is available, select the community where the playbook should run.
 3. Choose **Use a template** and search for `blocklist` or `IOC Collection`.
 4. Select a template and click **Create**.
@@ -121,7 +132,7 @@ These permissions are for the playbook's account. The equipment only needs the c
 
 ### Configure your playbook
 
-1. Open each **Sekoia.io** action and select the account used to call the APIs. Create an account with the playbook's API key if needed.
+1. Open each **Sekoia** action and select the account used to call the APIs. Create an account with the playbook's API key if needed.
 2. In **Add IOC to IOC Collection**, set the collection ID to the **Feed ID** copied earlier.
 3. Optionally, set `valid_for` to the validity period in days. Otherwise, the action uses its defaults: 30 days for IP addresses and 6 months for domains and URLs.
 4. Save the changes and enable the playbook.

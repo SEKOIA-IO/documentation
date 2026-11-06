@@ -25,10 +25,10 @@ A single feed can be consumed simultaneously through all three links.
 
 You can override the output format and template through the **Public API URL**, without changing the feed's saved settings. These parameters apply to the collections API endpoint, not the TAXII URL.
 
-For example, use `format=custom` and the URL-encoded template `$observables # $description`:
+For example, use `format=custom` and the URL-encoded template `$observables # $description`. Replace `BASE_URL` with the [API base URL for your region](/developer/quickstart.md#step-1-find-your-base-url), without a trailing slash: `https://api.sekoia.io` for FRA1, or `https://app.fra2.sekoia.io/api` for FRA2. Use the corresponding table entry for other regions.
 
 ```text
-https://app.sekoia.io/api/v2/inthreat/collections/YOUR-FEED-ID/objects?format=custom&template=%24observables%20%23%20%24description&limit=2000
+BASE_URL/v2/inthreat/collections/YOUR-FEED-ID/objects?format=custom&template=%24observables%20%23%20%24description&limit=2000
 ```
 
 If the feed is already configured with the **Custom** format, you can supply only `template` to override its saved template for that request. If you omit `template`, the saved template is used. A feed without a saved custom template requires a template when requesting `format=custom`.
@@ -57,7 +57,7 @@ Duplicating a feed creates a new version with the same filters and settings, wit
 2. Click the **Actions (⋯)** icon on the feed row.
 3. Select **Duplicate**.
 
-Sekoia.io creates an exact copy of the feed's filters and settings.
+Sekoia creates an exact copy of the feed's filters and settings.
 
 ## Delete a feed
 

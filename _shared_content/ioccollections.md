@@ -111,7 +111,9 @@ If you realize that an indicator is bad and produces false positive detections, 
 
 You can retrieve an IOC Collection through the collections API and customize each output line for an external tool, such as a firewall or proxy. This changes the response for that request only; it does not modify the collection.
 
-Use the collection's Feed ID in the `/api/v2/inthreat/collections/{feed_id}/objects` endpoint and add both query parameters:
+Choose the [API base URL for your region](/developer/quickstart.md#step-1-find-your-base-url). In the example below, replace `BASE_URL` with that value, without a trailing slash: `https://api.sekoia.io` for FRA1, or `https://app.fra2.sekoia.io/api` for FRA2. Use the corresponding table entry for other regions.
+
+Use the collection's Feed ID in the `/v2/inthreat/collections/{feed_id}/objects` path after this base URL and add both query parameters:
 
 | Parameter | Value |
 | --- | --- |
@@ -121,7 +123,7 @@ Use the collection's Feed ID in the `/api/v2/inthreat/collections/{feed_id}/obje
 For example, `$observables # $description` exports the observable values followed by the indicator's description. URL-encode the template, including `$`, spaces, and `#`:
 
 ```text
-https://app.sekoia.io/api/v2/inthreat/collections/YOUR-IOC-COLLECTION-FEED-ID/objects?format=custom&template=%24observables%20%23%20%24description&limit=10000&skip_expired=true&include_revoked=false
+BASE_URL/v2/inthreat/collections/YOUR-IOC-COLLECTION-FEED-ID/objects?format=custom&template=%24observables%20%23%20%24description&limit=10000&skip_expired=true&include_revoked=false
 ```
 
 Authenticate using an API key with the **View IOC collections** permission. See the [blocklist integration guide](/xdr/usecases/playbook/implement_blocklist.md#connect-your-firewall-or-proxy) for equipment authentication and configuration.

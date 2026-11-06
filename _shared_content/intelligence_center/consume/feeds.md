@@ -1,6 +1,6 @@
 # Feeds
 
-A feed is a filtered, scoped view of Cyber Threat Intelligence (CTI) objects from the Sekoia.io database. Feeds let you distribute threat intelligence to external security tools or use it as a dynamic filter within the platform.
+A feed is a filtered, scoped view of Cyber Threat Intelligence (CTI) objects from the Sekoia database. Feeds let you distribute threat intelligence to external security tools or use it as a dynamic filter within the platform.
 
 Feeds are shared across all users within the community that created them, ensuring consistent intelligence scoping across your organization.
 
@@ -57,8 +57,10 @@ When you select **Disseminate** from the **Actions (⋯)** menu of a feed, you a
 | Link | Use |
 | --- | --- |
 | **Public Feed ID** | Fetch or update the collection programmatically |
-| **Public API URL** | Direct API calls and integrations (`https://app.sekoia.io/api/v2/inthreat/collections/...`) |
-| **Public TAXII URL** | TAXII-compatible systems and platforms (`https://app.sekoia.io/api/v2/inthreat/taxii-server/...`) |
+| **Public API URL** | Direct API calls and integrations (`BASE_URL/v2/inthreat/collections/...`) |
+| **Public TAXII URL** | TAXII-compatible systems and platforms (`BASE_URL/v2/inthreat/taxii-server/...`) |
+
+In these examples, replace `BASE_URL` with the [API base URL for your region](/developer/quickstart.md#step-1-find-your-base-url), without a trailing slash. For example, FRA1 uses `https://api.sekoia.io`, while FRA2 uses `https://app.fra2.sekoia.io/api`.
 
 ## Relationship handling
 
