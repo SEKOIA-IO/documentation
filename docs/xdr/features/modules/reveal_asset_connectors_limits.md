@@ -21,8 +21,10 @@ Some limits apply to every asset connector. Others apply to custom asset connect
 | Vulnerability rows per asset | 20,000 | Asset | Nothing: the new rows over the limit are dropped |
 
 - **Hostname validation.** An item whose `device.hostname` is not a usable hostname is rejected, and so is a fully-qualified name: send the short hostname in `hostname` and the other labels in `domain`. The other items of the push are accepted.
-- **Vulnerabilities per application.** Vulnerabilities known to be exploited are always kept. The others are kept by highest CVSS score.
-- **Vulnerability rows per asset.** Once an asset reaches the limit, the rows it already has are still updated and closed.
+- **Vulnerabilities per application.** This limit applies to the CVEs Sekoia matches to an application from the NVD, not to the vulnerability findings a connector pushes. Vulnerabilities known to be exploited are always kept. The others are kept by highest CVSS score.
+- **Vulnerability rows per asset.** This limit applies to every vulnerability of an asset, pushed by a connector or matched from the NVD. Once an asset reaches the limit, the rows it already has are still updated and closed.
+
+Sekoia does not report the vulnerabilities these two limits leave out. They remain in the tool the connector reads, or in the NVD for the CVEs of an application.
 
 Assets also have limits on their detection properties: see [Limits on detection properties](/xdr/features/collect/assets.md#detection-properties).
 
