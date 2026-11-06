@@ -742,6 +742,7 @@ nav:
       - Sekoia Endpoint Agent: integration/assets_categories/software/sekoia_endpoint_agent.md
     - User:
       - AWS IAM: integration/assets_categories/user/aws_iam_user.md
+      - Google Workspace: integration/assets_categories/user/google_workspace_user.md
       - Microsoft Active Directory: integration/assets_categories/user/microsoft_ad_user.md
       - Microsoft Entra ID: integration/assets_categories/user/microsoft_entra_id.md
       - Okta: integration/assets_categories/user/okta_user.md
