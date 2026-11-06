@@ -79,5 +79,5 @@ Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sek
 {!_shared_content/integration/detection_section.md!}
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_1646972c-7cae-410c-95e3-c79c6844d190_do_not_edit_manually.md!}
-{!_shared_content/operations_center/integrations/generated/dbebefdd-dd2e-48a9-89e6-ee5a00ee0956.md!}
+{!_shared_content/operations_center/integrations/generated/1646972c-7cae-410c-95e3-c79c6844d190.md!}
 
