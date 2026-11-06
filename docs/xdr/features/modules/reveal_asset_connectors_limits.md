@@ -70,7 +70,7 @@ The `details.limits` field of the response names each reached limit by:
 
 The response gives neither the usage nor the remaining count.
 
-The connector does not save its progress on a refused push. It waits, for an hour by default, then fetches again from where it stopped: no data is lost while it is blocked.
+The connector does not move its checkpoint forward on a refused push. It waits, for an hour by default, then fetches again from its last checkpoint. Once the configuration is free again, the connector pushes what the source still holds: data the source deleted while the configuration was blocked is not recovered.
 
 ### Get back under a limit
 
