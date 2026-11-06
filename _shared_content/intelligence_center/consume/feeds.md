@@ -46,7 +46,9 @@ When you create or edit a feed, you select an output format. The table below sum
 | JSON / STIX | CTI platforms | 2,000 |
 | Text | Firewall EDLs (one object per line) | 10,000 |
 | CSV | Customizable spreadsheet exports | 2,000 |
-| Custom | User-defined templates using variables such as `$tlp`, `$id`, `$name`, and `$observables` | 2,000 |
+| Custom | User-defined templates using variables such as `$tlp`, `$id`, `$name`, `$observables`, and `$description` | 2,000 |
+
+You can also [override the custom export template for an API request](/cti/features/consume/manage_feeds.md#customize-the-api-export-for-a-request) without changing the saved feed configuration.
 
 ## Dissemination links
 

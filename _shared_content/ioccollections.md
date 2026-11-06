@@ -106,3 +106,41 @@ If you realize that an indicator is bad and produces false positive detections, 
 
 !!! warning
     Revoking an indicator cannot be undone.
+
+## Export an IOC Collection with a custom format
+
+You can retrieve an IOC Collection through the collections API and customize each output line for an external tool, such as a firewall or proxy. This changes the response for that request only; it does not modify the collection.
+
+Use the collection's Feed ID in the `/api/v2/inthreat/collections/{feed_id}/objects` endpoint and add both query parameters:
+
+| Parameter | Value |
+| --- | --- |
+| `format` | `custom` |
+| `template` | A single-line template using supported `$variable` names |
+
+For example, `$observables # $description` exports the observable values followed by the indicator's description. URL-encode the template, including `$`, spaces, and `#`:
+
+```text
+https://app.sekoia.io/api/v2/inthreat/collections/YOUR-IOC-COLLECTION-FEED-ID/objects?format=custom&template=%24observables%20%23%20%24description&limit=10000&skip_expired=true&include_revoked=false
+```
+
+Authenticate using an API key with the **View IOC collections** permission. See the [blocklist integration guide](/xdr/usecases/playbook/implement_blocklist.md#connect-your-firewall-or-proxy) for equipment authentication and configuration.
+
+Example response:
+
+```text
+192.0.2.10 # Indicator added after investigating a phishing alert
+192.0.2.11 #
+```
+
+### Template behavior and limits
+
+- `$observables` contains the observable values extracted from the indicator's pattern. Use this variable, rather than `$value`.
+- `$description` contains the **indicator's description**, not the collection's description. If it is missing or empty, the variable produces an empty string. Line breaks in descriptions are replaced with spaces.
+- Other supported variables include `$id`, `$name`, `$type`, `$observable_types`, `$pattern`, `$confidence`, `$tlp`, `$created`, `$modified`, `$valid_from`, and `$valid_until`.
+- `${observables}` is equivalent to `$observables`. Use `$$` to output a literal dollar sign.
+- A template must contain at least one supported variable and must fit on a single line. Invalid syntax or unsupported variables return HTTP 400.
+- Each indicator produces one output line. When an indicator contains multiple observable values, such as several file hashes, `$observables` groups them on the same line, separated by commas. The standard `format=text` export emits these values on separate lines.
+- Custom IOC Collection exports support up to **10,000 indicators per request**. This is a per-request limit, not a limit on the collection's size. Use API pagination when retrieving larger collections; a single request does not return the entire collection beyond that limit.
+
+Choose a template and observable types that your receiving tool accepts. See [Implement a blocklist](/xdr/usecases/playbook/implement_blocklist.md) for the complete setup.

@@ -21,6 +21,20 @@ To integrate a feed with an external tool such as a firewall, SIEM, or TIP, retr
 
 A single feed can be consumed simultaneously through all three links.
 
+### Customize the API export for a request
+
+You can override the output format and template through the **Public API URL**, without changing the feed's saved settings. These parameters apply to the collections API endpoint, not the TAXII URL.
+
+For example, use `format=custom` and the URL-encoded template `$observables # $description`:
+
+```text
+https://app.sekoia.io/api/v2/inthreat/collections/YOUR-FEED-ID/objects?format=custom&template=%24observables%20%23%20%24description&limit=2000
+```
+
+If the feed is already configured with the **Custom** format, you can supply only `template` to override its saved template for that request. If you omit `template`, the saved template is used. A feed without a saved custom template requires a template when requesting `format=custom`.
+
+Custom CTI feed exports support up to **2,000 objects per request**, while custom IOC Collection exports support up to **10,000 indicators per request**. See [Custom export templates](/cti/features/consume/ioccollections.md#template-behavior-and-limits) for variable syntax, descriptions, and the grouping of multiple observable values.
+
 ## Edit a feed
 
 Modify the filters or dissemination format of an existing feed to update the data flow to your connected tools.
