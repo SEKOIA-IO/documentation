@@ -370,6 +370,41 @@ You can combine null checks with other conditions in the same `where` clause:
 
 For the full reference, see [Where](sol_ref_operators.md#where).
 
+## How to filter empty relationship-backed lists
+
+Use a relationship-field presence check to filter lists exposed through a relationship. In the `alerts` datasource, use `threats.name` to find alerts with or without a related threat name.
+
+An empty relationship-backed collection is not the same as a field whose value is SQL `NULL`. The `!= null` operator checks whether a field value is present. It does not express whether a relationship contains at least one related row.
+
+### Select alerts without a related threat name
+
+Use `not threats.name` to keep alerts that have no related threat with a non-null name.
+
+```sol
+alerts
+| where not threats.name
+| select short_id, threats.name
+| limit 100
+```
+
+### Select alerts with at least one related threat name
+
+Use `not (not threats.name)` to keep alerts with at least one related threat with a non-null name.
+
+```sol
+alerts
+| where not (not threats.name)
+| select short_id, threats.name
+| limit 100
+```
+
+!!! note "Relationship-field presence check"
+
+    `not threats.name` and `not (not threats.name)` check for the presence of a non-null field on related rows. They are not generic list-length operators. Verify the datasource behavior before applying this pattern to another array or relationship.
+
+!!! warning "Do not replace this with `!= null`"
+
+    `alerts | where threats.name != null` does not express whether the `threats.name` relationship contains at least one related row. Use the nested `not` expression for this relationship-backed field.
 
 ## How to build a query library
 
