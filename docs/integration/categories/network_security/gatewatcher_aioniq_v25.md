@@ -1,10 +1,10 @@
 uuid: 2f1c1e9b-7b8e-4150-879e-62a2a146c3c5
-name: Gatewatcher 2.5.4.0
+name: Gatewatcher AionIQ V2.5
 type: intake
 
 ## Overview
 
-Gatewatcher 2.5.4.0 is a detection and response platform for your network that identifies malicious actions and suspicious behaviors.
+Gatewatcher AionIQ V2.5 is a detection and response platform for your network that identifies malicious actions and suspicious behaviors.
 
 - **Vendor**: Gatewatcher
 - **Supported environment**: On Premise, SaaS
@@ -45,7 +45,7 @@ Gatewatcher 2.5.4.0 is a detection and response platform for your network that i
 
 ### Instructions on the 3rd Party Solution
 
-This setup guide shows you how to forward your Gatewatcher 2.5.4.0 logs to Sekoia.io by means of a syslog transport channel.
+This setup guide shows you how to forward your Gatewatcher AionIQ V2.5 logs to Sekoia.io by means of a syslog transport channel.
 
 #### Setup syslog forwarding on GCenter
 
