@@ -99,7 +99,7 @@ Use your vendor's instructions to configure retrieval, authentication, and polic
 
 ## Verify the integration
 
-1. Add a test indicator and a description to the collection. Use an observable you control, or a documentation-only value such as `192.0.2.10`.
+1. Add a test indicator accepted by the platform and a description to the collection. Choose an observable that is safe to include in your equipment’s blocking policy.
 2. Retrieve the configured URL with the equipment's API key. Check that the expected value is present and, for custom exports, that its description appears.
 3. Trigger or wait for a refresh on the equipment. Verify that retrieval succeeds and the list is available to the intended policy.
 4. Revoke the test indicator and refresh again. Verify that it disappears from the API response and the equipment's list.
