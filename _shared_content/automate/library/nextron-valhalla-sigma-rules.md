@@ -21,7 +21,7 @@ Syncs the [Nextron Valhalla](https://valhalla.nextron-systems.com) Sigma feed in
 
 ### Sync Valhalla Sigma rules into Sekoia Rules Catalog
 
-Periodically pulls the Valhalla Sigma feed and pushes each rule into the Sekoia Rules Catalog so it runs in the detection engine. New rules are created, known rules are updated in place, and a rule the user has disabled in the catalog stays disabled across syncs. Updates replace the Valhalla content (name, description, detection, severity, tags) and keep the settings made in Sekoia: entities, assets, parameters, event fields, similarity strategy, validity, threats linked by the user and alert filters.
+Periodically pulls the Valhalla Sigma feed and pushes each rule into the Sekoia Rules Catalog so it runs in the detection engine. New rules are created, known rules are updated in place, and a rule the user has disabled in the catalog stays disabled across syncs. Updates replace the Valhalla content (name, description, detection, severity, tags, alert type, false positives) and keep the settings made in Sekoia: entities, assets, parameters, event fields, similarity strategy, effort, validity, deprecation message, threats linked by the user and alert filters. Rules that are already up to date are not sent again.
 
 **Arguments**
 
@@ -41,11 +41,13 @@ Periodically pulls the Valhalla Sigma feed and pushes each rule into the Sekoia 
 | --------- | ------- | --------------------------- |
 | `created` | `integer` | Number of rules created in this run. |
 | `updated` | `integer` | Number of rules updated in this run. |
+| `unchanged` | `integer` | Number of known rules that were already up to date, so no update was sent. |
 | `preserved` | `integer` | Number of rules that matched `preserve_rule_names` and were therefore not overwritten. |
 | `failed` | `integer` | Number of rules the sync failed to create or update. |
 | `skipped_unmapped` | `integer` | Number of rules skipped because they could not be parsed, or one or more Sigma fields could not be mapped to ECS. |
 | `stale` | `integer` | Number of imported rules kept at their catalog version because the new version could not be converted. The first five names are logged. |
 | `skipped_filter` | `integer` | Number of rules skipped because they did not meet the configured `min_sigma_level` / `min_sigma_status`. |
+| `skipped_no_id` | `integer` | Number of feed rules skipped because they have no Valhalla `id`. |
 | `total_rules` | `integer` | Total number of rules received from the Valhalla feed. |
 | `top_unmapped` | `object` | Up to the five most common unmapped Sigma field names and their occurrence counts (diagnostic). |
 | `server_marker_count` | `integer` | Number of catalog rules recognised by the start-of-sync catalog scan via their `uuid-*` marker tag. |
