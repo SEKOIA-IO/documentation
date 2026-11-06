@@ -234,6 +234,30 @@
     | Command and Scripting Interpreter: PowerShell    |  42    |
     | Create or Modify System Process: Windows Service |  42    |
 
+### Filter alerts by related threat presence
+
+Use a relationship-field presence check when you need to select alerts with or without related threat names. An empty relationship is not the same as a null scalar field.
+
+Alerts without a related threat name:
+
+```sol
+alerts
+| where not threats.name
+| select short_id, threats.name
+| limit 100
+```
+
+Alerts with at least one related threat name:
+
+```sol
+alerts
+| where not (not threats.name)
+| select short_id, threats.name
+| limit 100
+```
+
+Do not use `threats.name != null` as a substitute for the populated-list query. For relationship-backed fields, use the nested `not` expression shown above.
+
 ### Alerts per detection type
 
 === "Query"
