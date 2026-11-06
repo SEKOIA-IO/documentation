@@ -140,3 +140,9 @@ These permissions are for the playbook's account. The equipment only needs the c
 5. Verify that a playbook execution adds the expected indicator to the collection and that the equipment retrieves it on refresh.
 
 The custom export reads descriptions already stored on indicators. Do not assume that the selected action or template fills the description with alert context; check its available inputs and the resulting indicator. You can add or edit the description through the interface.
+
+## Related articles
+
+- [IOC Collections](/cti/features/consume/ioccollections.md): Create collections, import and manage indicators, and configure custom export templates.
+- [Manage API keys](/getting_started/manage_api_keys.md): Create and manage credentials for your equipment and playbook accounts.
+- [Playbooks](/xdr/features/automate/index.md): Learn how playbooks automate workflows in Sekoia.

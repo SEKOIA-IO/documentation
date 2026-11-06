@@ -145,4 +145,10 @@ Example response:
 - Each indicator produces one output line. When an indicator contains multiple observable values, such as several file hashes, `$observables` groups them on the same line, separated by commas. The standard `format=text` export emits these values on separate lines.
 - Custom IOC Collection exports support up to **10,000 indicators per request**. This is a per-request limit, not a limit on the collection's size. Use API pagination when retrieving larger collections; a single request does not return the entire collection beyond that limit.
 
-Choose a template and observable types that your receiving tool accepts. See [Implement a blocklist](/xdr/usecases/playbook/implement_blocklist.md) for the complete setup.
+Choose a template and observable types that your receiving tool accepts.
+
+## Related articles
+
+- [Implement a blocklist](/xdr/usecases/playbook/implement_blocklist.md): Connect an IOC Collection to a firewall or proxy and maintain its indicators.
+- [Manage feeds](/cti/features/consume/manage_feeds.md): Consume CTI feeds and override their custom export templates for an API request.
+- [Manage API keys](/getting_started/manage_api_keys.md): Create and manage the credentials used to access collections through the API.

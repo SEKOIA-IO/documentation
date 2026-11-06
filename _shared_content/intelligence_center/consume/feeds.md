@@ -62,6 +62,9 @@ When you select **Disseminate** from the **Actions (⋯)** menu of a feed, you a
 
 In these examples, replace `BASE_URL` with the [API base URL for your region](/developer/quickstart.md#step-1-find-your-base-url), without a trailing slash. For example, FRA1 uses `https://api.sekoia.io`, while FRA2 uses `https://app.fra2.sekoia.io/api`.
 
+!!! example "Public API URL for FRA1"
+    `https://api.sekoia.io/v2/inthreat/collections/YOUR-FEED-ID/objects`
+
 ## Relationship handling
 
 Feeds include only the object types you select in the **Object type** filters. Relationships between objects are not included. If you leave the object type filter empty, all object types are included.
