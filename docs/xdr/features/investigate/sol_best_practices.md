@@ -183,6 +183,24 @@ datasource
 
 When raising `internal_fetch_limit`, your query may fail if the data volume exceeds the engine's memory capacity. Each query has a hard limit of **3 GB** of memory. This value cannot be changed.
 
+### Event field indexing limits
+
+Some event fields, including dynamic fields such as `action.properties.*`, can contain values that are too long to be indexed. These values remain available in the event details and can be displayed using `select`, but filters executed against the storage index cannot match them.
+
+The limit depends on the storage backend used by your community:
+
+| Storage backend | Maximum indexed value length |
+| --- | --- |
+| Exalog | 254 characters; values of 255 characters or more are not indexed |
+| Legacy | 1,024 characters for dynamically mapped string fields; longer values are not indexed |
+
+When SOL displays the warning "You are using filters on fields that can have very large values", results may exclude events whose values exceed the indexing limit.
+
+Narrow your search using a time range and other indexed fields, then display the long field using `select`. Searching for a shorter fragment does not bypass the limit if the complete value was not indexed.
+
+Do not assume that a standard ECS field is exempt from indexing limits.
+Contact support if you need to confirm the applicable limit for your community or a specific field.
+
 ## Best practices
 
 ### Always filter by time first
