@@ -8,11 +8,11 @@ Use an IOC Collection as a blocklist to share IP addresses, domains, URLs, or ot
 2. Configure your firewall or proxy to retrieve the collection regularly through the API.
 3. The equipment uses the retrieved values according to its blocking policy.
 
-Sekoia provides the list; the receiving equipment enforces the blocking policy. A playbook is optional.
+Sekoia provides the list; the receiving equipment enforces the blocking policy.
 
 ## Create your blocklist
 
-You need a Sekoia Defend subscription and permissions to **View IOC collections** and **Manage IOC collections** in the community where you create the blocklist.
+You need a Sekoia Defend or Sekoia Intelligence subscription with access to IOC Collections, and permissions to **View IOC collections** and **Manage IOC collections** in the community where you create the blocklist.
 
 1. [Create an IOC Collection](/cti/features/consume/ioccollections.md#create-an-ioc-collection).
 2. Return to the **IOC Collections** page.
@@ -22,7 +22,7 @@ Use a dedicated collection per observable type, such as IP addresses, domains, o
 
 ## Add indicators to your blocklist
 
-You can populate the collection without a playbook:
+Add indicators through the interface using one of these methods:
 
 - **Text import**: enter a list of observable values through the interface.
 - **File import**: upload a CSV, XLS, or XLSX file and map its columns to indicator properties.
@@ -116,6 +116,7 @@ Once the blocklist works with manual updates, you can use a playbook to add arti
 
 ### Playbook prerequisites
 
+- A **Sekoia Defend** subscription is required for playbook automation.
 - The user configuring the playbook needs the **SYMPHONY** permissions.
 - The playbook needs an API key with the **Analyst** role or a custom role containing the permissions required by the selected template: **View alerts**, **View intakes**, **View IOC collections**, **Manage IOC collections**, **View observables**, and **View intelligence**.
 
