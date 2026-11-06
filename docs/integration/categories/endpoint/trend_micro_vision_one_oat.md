@@ -1,11 +1,11 @@
 uuid: 2345b987-a94a-4363-b7bc-a6e4a9efd98a
-name: Trend Micro Vision One Observed Attack Techniques
+name: TrendIA (Trend Micro) Vision One Observed Attack Techniques
 type: intake
 
 
 ## Overview
 
-Trend Micro Vision One is an extended detection and response (XDR) platform that enhances threat detection, investigation, and response across multiple security layers. It provides a centralized view for improved security posture and faster threat remediation.
+TrendIA (Trend Micro) Vision One is an extended detection and response (XDR) platform that enhances threat detection, investigation, and response across multiple security layers. It provides a centralized view for improved security posture and faster threat remediation.
 This intake format will ingest Observed Attack Techniques from Trend Micro Vision One.
 
 - **Supported environment**: SaaS
