@@ -212,6 +212,36 @@ Alerts have been added to or removed from a case
 | `deleted_alerts` | `array` | List of Unique identifier of removed alerts (UUID string). |
 
 
+### Case Comment Created
+
+A comment was added to an existing Case
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `mode_filter` | `string` | Create a run only for cases matching a mode (automatic or manual) |
+| `priority_uuids_filter` | `array` | Create a run only for cases matching a list of priority uuids |
+| `assignees_filter` | `array` | Create a run only for cases matching a list of assignees |
+| `case_uuids_filter` | `array` | Create a run only for cases matching a list of case uuids/short ids |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `comment` | `object` | Case comment (object containing comment uuid, content, author, date). |
+| `uuid` | `string` | Unique identifier of the Case (UUID string). |
+| `short_id` | `string` | Unique short identifier of the Case. |
+| `status_uuid` | `string` | Unique identifier of the Status (UUID string). |
+| `priority_uuid` | `string` | Unique identifier of the Priority (UUID string). |
+| `verdict_uuid` | `['string', 'null']` | Unique identifier of the Verdict (UUID string). |
+| `created_at` | `string` | Creation date of the Case. |
+| `updated_at` | `string` | Updated date of the Case. |
+| `title` | `string` | Title of the Case. |
+| `description` | `string` | Description of the Case. |
+
+
 ### Case Created
 
 A new Case was created in the Operation Center
@@ -273,6 +303,17 @@ An existing case was updated
 | `status_uuid` | `string` | Unique identifier of the Status (UUID string). |
 | `priority_uuid` | `string` | Unique identifier of the Priority (UUID string). |
 | `verdict_uuid` | `string` | Unique identifier of the Verdict (UUID string). |
+
+
+### Manual Trigger for Case
+
+Webhook Trigger to receive specific Sekoia.io Cases
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `case_uuid` | `string` | Unique identifier of the Case (UUID string). |
 
 
 ### Feed Consumption
@@ -400,18 +441,17 @@ Add events to a case
 
 ### Add IOC to IOC Collection
 
-Add indicators to an IOC Collection
+Add indicators to an IOC collection.
 
 **Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `indicator` | `string` | Single indicator to add to an IOC collection. |
-| `indicators` | `array` | List of indicators to add to an IOC collection |
-| `indicators_path` | `string` | Path of the indicators file to add to an IOC collection |
-| `ioc_collection_id` | `string` | Identifier of the IOC collection |
-| `indicator_type` | `string` | Type of IOC |
-| `valid_for` | `integer` | Validity period for the created indicators (in days) |
+| `indicator` | `string` | Single indicator to add to an IOC collection. For IP address type, provide a plain IPv4 or IPv6 value (CIDR is not supported). |
+| `indicators` | `array` | List of indicators to add to an IOC collection. For IP address type, provide plain IPv4 or IPv6 values (CIDR is not supported). |
+| `ioc_collection_id` | `string` | Identifier of the target IOC collection. |
+| `indicator_type` | `string` | Type of indicator to add. For IP address type, only plain IPv4 or IPv6 values are supported (CIDR is not supported). |
+| `valid_for` | `integer` | Validity period in days for the created indicators. |
 
 ### Add attribute to Asset
 
@@ -792,9 +832,9 @@ Delete a rule
 | `uuid` | `string` |  |
 | `community_uuid` | `string` |  |
 
-### Delete an asset
+### [DEPRECATED] Delete an asset
 
-Delete the requested asset
+(deprecated — use Revoke an asset (V2)) Delete the requested asset
 
 **Arguments**
 
@@ -802,9 +842,9 @@ Delete the requested asset
 | --------- | ------- | --------------------------- |
 | `uuid` | `string` | The identifier of the asset |
 
-### Delete an asset (V2)
+### [DEPRECATED] Delete an asset (V2)
 
-Delete the requested asset
+(deprecated — use Revoke an asset (V2)) Delete the requested asset
 
 **Arguments**
 
@@ -1003,67 +1043,50 @@ Enable a rule
 
 Execute a saved query in Sekoia and retrieve the results.
 
-For saved queries that use [SOL filters](/xdr/features/investigate/sol_how_to_guides.md#using-sol-filters-for-interactive-dashboards), provide the filter values in the `parameters` object. In the saved query, reference each filter with the `?filter_name` syntax. In the `parameters` object, use the filter name without the leading `?`.
-
 **Arguments**
 
-| Name | Type | Description |
-| --- | --- | --- |
-| `query_name` | `string` | Name of the saved query to execute. Either `query_name` or `query_uuid` must be provided. |
-| `query_uuid` | `string` | UUID of the saved query to execute. Either `query_uuid` or `query_name` must be provided. |
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `query_name` | `string` | Name of the saved query to execute. Either 'query_name' or 'query_uuid' must be provided. |
+| `query_uuid` | `string` | UUID of the saved query to execute. Either 'query_uuid' or 'query_name' must be provided. |
 | `parameters` | `object` | Values for the SOL filters referenced in the saved query using the `?filter_name` syntax. Passed as query parameters when executing the query. |
-| `result_format` | `string` | Format of the query result to download. Supported formats are `jsonl` and `csv`. |
+| `result_format` | `string` | Format of the query result to download. Supported formats are 'jsonl' and 'csv'. |
 | `to_file` | `boolean` | Whether the query result should be saved in a file or sent directly. |
 
-#### Example with a saved SOL query and SOL filters
 
-The following saved query uses the `?process_name` SOL filter:
-
-````sol
-events
-| where timestamp > ago(24h)
-| where process.name == ?process_name
-| select timestamp, host.name, process.name, process.command_line
-| order by timestamp desc
-| limit 100
-````
-
-Configure the action with the following arguments. The `parameters` object maps the filter name to its data type, selection type, and value:
-
-````json
-{
-  "query_name": "Suspicious processes",
-  "parameters": {
-    "process_name": {
-      "data_type": "string",
-      "type": "free_text",
-      "value": "powershell.exe"
-    }
-  },
-  "result_format": "jsonl",
-  "to_file": true
-}
-````
-
-The action executes the saved query with `process.name` set to `powershell.exe` and saves the result as a JSON Lines file.
-
-The value structure follows the query execution API. Each filter entry must include `data_type`, `type`, and `value`. For example, a multiple-selection filter uses an array for `value`:
-
-````json
-{
-  "hostnames": {
-    "data_type": "string",
-    "type": "multiple_selection",
-    "value": ["host-01", "host-02"]
-  }
-}
-````
 **Outputs**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `query_result` | `string` | The result of the query execution. |
 | `output_path` | `string` | Path to the file with the content |
+
+### Execute custom agent
+
+Execute a custom agent
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `agent_uuid` | `string` | The UUID of the agent to execute |
+| `initial_state` | `['string', 'object']` | Initial state for the agent execution: a message for the agent, or the state as an object |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | UUID of the agent execution |
+| `community_uuid` | `string` | UUID of the community |
+| `agent_uuid` | `string` | UUID of the agent |
+| `run_name` | `['string', 'null']` | Name of the agent run |
+| `status` | `string` | Status of the agent execution |
+| `started_at` | `string` | Start time of the agent execution in ISO 8601 format |
+| `ended_at` | `string` | End time of the agent execution in ISO 8601 format |
+| `duration_seconds` | `number` | Duration of the agent execution in seconds |
+| `credits` | `string` | Cost of the agent execution |
+| `output` | `['object', 'array', 'string', 'number', 'boolean', 'null']` | The result of the agent execution. The content depend of the response_format of the agent |
 
 ### Get aggregation query
 
@@ -1100,7 +1123,7 @@ Retrieve the definition of an alert
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `uuid` | `string` | UUID of the alert to retrieve. |
+| `uuid` | `string` | The identifier (UUID or short id) of the alert to retrieve. |
 | `stix` | `boolean` | If true, include the full STIX 2 bundle in the response (default: false). |
 | `cases` | `boolean` | Fetch the cases associated with this alert in addition (default: false) |
 
@@ -1133,6 +1156,7 @@ Retrieve the definition of an alert
 | `short_id` | `string` | Human-readable short identifier for the alert (e.g. `ALa1b2c3d4e5`). |
 | `first_seen_at` | `string` | Timestamp of the first event that contributed to this alert. |
 | `last_seen_at` | `string` | Timestamp of the most recent event that contributed to this alert. |
+| `event_uuids` | `array` |  |
 | `kill_chain_short_id` | `string` | Short identifier of the MITRE ATT&CK tactic associated with the alert (e.g. `TA0001` for Initial Access). |
 | `similar` | `integer` | Number of similar alerts detected by the platform's deduplication mechanism. |
 | `alert_type` | `object` | Category and value describing the type of threat (e.g. category `malware`, value `ransomware`). |
@@ -1583,13 +1607,15 @@ find alerts that match your filters
 | `match[rule_name]` | `string` |  |
 | `match[detection_type]` | `string` |  |
 | `match[uuid]` | `string` |  |
-| `match[title]` | `string` |  |
+| `match[title]` | `string` | Match alerts by their custom title (separated by commas). Alerts without a custom title are not matched: use match[resolved_title] to match the title displayed on the alert. |
+| `match[resolved_title]` | `string` | Match alerts by the title displayed on the alert: the custom title if present, otherwise the rule name (separated by commas). |
 | `match[asset_uuid]` | `string` |  |
 | `match[urgency_display]` | `string` |  |
 | `match[case_short_id]` | `string` |  |
 | `match[assignee]` | `string` |  |
 | `match[custom_status_uuid]` | `string` |  |
 | `match[verdict_uuid]` | `string` |  |
+| `match[custom_field]` | `string` | Match alerts by a custom field value using the 'uuid:value' format (e.g. '123e4567-e89b-12d3-a456-426614174000:Phishing'), or by field existence using the custom field UUID alone. |
 | `match[short_id]` | `string` |  |
 | `date[created_at]` | `string` |  |
 | `date[updated_at]` | `string` |  |
@@ -1675,6 +1701,7 @@ Return a list of assets according to the filters
 | `source` | `['string', 'null']` | Filter by comma-separated list of asset sources |
 | `reviewed` | `['boolean', 'null']` | Filter reviewed assets only |
 | `criticality` | `['integer', 'null']` | Filter assets with higher criticality |
+| `include_revoked` | `['boolean', 'null']` | Include revoked assets in the search results |
 | `sort` | `` | Sort criterion |
 | `direction` | `` | Sort order |
 | `rule_uuid` | `['string', 'null']` | Rule Uuid |
@@ -1751,6 +1778,7 @@ find cases that match your filters
 | `match[created_by]` | `string` |  |
 | `match[tags]` | `string` |  |
 | `match[assignees]` | `string` |  |
+| `match[type]` | `string` | Creation mode of the cases to return: manual, automatic, or manual,automatic for both |
 | `limit` | `integer` |  |
 | `offset` | `integer` |  |
 | `sort` | `string` |  |
@@ -1782,6 +1810,7 @@ Edit the details of an alert
 | `title` | `string` | Title of the alert |
 | `verdict_uuid` | `string` | Verdict of the alert |
 | `custom_status_uuid` | `string` | Custom status of the alert |
+| `assignee` | `string` | UUID of the user assigned to the alert |
 
 
 **Outputs**
@@ -1822,6 +1851,7 @@ Edit the details of an alert
 | `updated_by_type` | `string` |  |
 | `title` | `string` |  |
 | `target` | `string` |  |
+| `assignee` | `string` |  |
 
 ### Comment case
 
@@ -2052,6 +2082,52 @@ Return an asset according to its identifier
 | `criticity` | `['object', 'null']` | The criticality of the asset |
 | `asset_type` | `['object', 'null']` | The type of the asset |
 
+### Revoke an asset (V2)
+
+Revoke the requested asset (soft-delete). Replaces the deprecated Delete an asset actions.
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `uuid` | `string` | The identifier of the asset |
+| `entity_uuid` | `` |  |
+| `community_uuid` | `string` | The community of the asset |
+| `name` | `string` | The name of the asset |
+| `type` | `string` | The type of the asset |
+| `category` | `['object', 'string', 'null']` | The category of the asset |
+| `criticality` | `['integer', 'null']` |  |
+| `created_at` | `` | The creation date of the asset |
+| `created_by` | `` |  |
+| `created_by_type` | `['string', 'null']` |  |
+| `updated_at` | `` | The modification date of the asset |
+| `first_seen` | `` |  |
+| `last_seen` | `` |  |
+| `nb_events` | `['integer', 'null']` |  |
+| `nb_alerts` | `['integer', 'null']` |  |
+| `nb_atoms` | `integer` |  |
+| `atoms` | `['object', 'null']` |  |
+| `props` | `['object', 'null']` |  |
+| `tags` | `array` |  |
+| `revoked` | `boolean` |  |
+| `revoked_at` | `` |  |
+| `revoked_by` | `` |  |
+| `reviewed` | `boolean` |  |
+| `reviewed_at` | `` |  |
+| `reviewed_by` | `` |  |
+| `source` | `string` |  |
+| `rule_uuid` | `` |  |
+| `rule_version` | `['string', 'null']` |  |
+| `criticity` | `['object', 'null']` | The criticality of the asset |
+| `asset_type` | `['object', 'null']` | The type of the asset |
+
 ### Synchronize Assets with AD
 
 Create, merge and edit asset to synchronize asset with ad
@@ -2100,7 +2176,7 @@ Triggers an action on an alert to update its status by name
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
 | `uuid` | `string` | The UUID of the alert to update |
-| `status` | `string` | Name of the status to update the alert to |
+| `status` | `string` | Name or UUID of the status to update the alert to (native or custom) |
 | `comment` | `string` | A comment to describe why the alert status has changed |
 
 
@@ -2313,4 +2389,4 @@ Update a rule
 
 ## Extra
 
-Module **`Sekoia.io` v2.72.4**
+Module **`Sekoia.io` v2.82.1**

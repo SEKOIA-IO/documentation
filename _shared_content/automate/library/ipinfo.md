@@ -40,4 +40,4 @@ Upload the ipinfo.io database regularly in json format
 
 ## Extra
 
-Module **`IPInfo` v1.2.0**
+Module **`IPInfo` v1.3.1**
