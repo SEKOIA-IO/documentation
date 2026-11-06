@@ -26,6 +26,9 @@ Some limits apply to every asset connector. Others apply to custom asset connect
 
 Sekoia does not report the vulnerabilities these two limits leave out. They remain in the tool the connector reads, or in the NVD for the CVEs of an application.
 
+!!! tip "Filter before pushing"
+    Optimization rules do not apply to asset connectors. To keep the vulnerabilities that matter under the limit per asset, a custom asset connector can filter its findings in its own code before pushing them, for instance by severity.
+
 Assets also have limits on their detection properties: see [Limits on detection properties](/xdr/features/collect/assets.md#detection-properties).
 
 ## Limits on custom asset connectors
