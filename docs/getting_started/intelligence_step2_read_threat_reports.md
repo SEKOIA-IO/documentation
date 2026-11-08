@@ -117,6 +117,7 @@ See: [Create a notification](/getting_started/create_a_notification.md) for the 
 ## Related links
 
 - [Quick start: Intelligence](/getting_started/quick_start_intelligence.md): Return to the overview of the Intelligence quick start.
+- [Step 3: Monitor digital risk exposures](/getting_started/quick_start_flare.md): Configure Flare, collect exposure events, activate detections, and investigate alerts.
 - [Data model](/cti/features/data_model.md): Full reference on STIX objects, observables, confidence, and reliability.
 - [Create a notification](/getting_started/create_a_notification.md): Full procedure for setting up notification rules.
 - [Glossary](/getting_started/glossary.md): Definitions of FLINT, IOC, TLP, indicator, and feed.

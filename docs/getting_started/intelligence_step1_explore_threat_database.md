@@ -168,5 +168,6 @@ To refine your search, open the filter panel on the left side of the results tab
 ## Related links
 
 - [Step 2: Investigate and disseminate threat intelligence](/getting_started/intelligence_step2_read_threat_reports.md): Find and interpret FLINT reports and disseminate intelligence to your tools.
+- [Step 3: Monitor digital risk exposures](/getting_started/quick_start_flare.md): Configure Flare, collect exposure events, activate detections, and investigate alerts.
 - [Data model](/cti/features/data_model.md): Full reference on STIX objects, observables, confidence, and reliability.
 - [Glossary](/getting_started/glossary.md): Definitions of key CTI terms.
