@@ -667,7 +667,6 @@ nav:
     - Collaboration Tools:
       - Atlassian JIRA: integration/action_library/atlassian-jira.md
       - Git: integration/action_library/git.md
-      - Nybble: integration/action_library/nybble.md
       - ServiceNow: integration/action_library/servicenow.md
       - The Hive: integration/action_library/the-hive.md
       - The Hive V5: integration/action_library/the-hive-v5.md
@@ -705,7 +704,6 @@ nav:
       - Stormshield: integration/action_library/stormshield.md
       - Zscaler: integration/action_library/zscaler.md
     - Threat Intelligence:
-      - BinaryEdge's API: integration/action_library/binaryedge-s-api.md
       - Censys: integration/action_library/censys.md
       - Certificate Transparency: integration/action_library/certificate-transparency.md
       - Detection Rules: integration/action_library/detection-rules.md
@@ -720,7 +718,6 @@ nav:
       - OSINT: integration/action_library/osint.md
       - Onyphe: integration/action_library/onyphe.md
       - Public Suffix: integration/action_library/public-suffix.md
-      - RiskIQ: integration/action_library/riskiq.md
       - Shodan: integration/action_library/shodan.md
       - Tranco: integration/action_library/tranco.md
       - Triage: integration/action_library/triage.md
