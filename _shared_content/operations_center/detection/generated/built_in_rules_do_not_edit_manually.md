@@ -1,4 +1,4 @@
-Rules catalog includes **1116 built-in detection rules** ([_last update on 2026-10-29_](rules_changelog.md)).
+Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-11-09_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -3917,6 +3917,12 @@ Rules catalog includes **1116 built-in detection rules** ([_last update on 2026-
         - 21/11/2023 - minor - Added new filters to reduce false positives.
         - 08/11/2023 - minor - Added filter to reduce false positives
             
+??? abstract "Corelight Suricata High Severity IDS Alert"
+    
+    Detects a high severity Suricata IDS alert reported by a Corelight sensor (suricata_corelight log), indicating a likely network intrusion.
+    
+    - **Effort:** master
+    
 ??? abstract "Correlation PowerShell Suspicious DLL Loading"
     
     Detect some suspicious Windows DLL Loading where some PowerShell activity from the binary itself, followed by the same DLL process spawning other process. This is related to the usage of a PowerShell Named Pipe IPC from the DLL.
@@ -12098,6 +12104,12 @@ Rules catalog includes **1116 built-in detection rules** ([_last update on 2026-
     
         - 26/03/2024 - major - Rule's pattern field changed
             
+??? abstract "Corelight Lateral Movement Notice"
+    
+    Detects a Zeek notice raised by a Corelight sensor that is related to lateral movement activity (e.g. ATTACK::Lateral_Movement), often indicating an adversary moving across internal hosts.
+    
+    - **Effort:** master
+    
 ??? abstract "Correlation Impacket Smbexec"
     
     This rule detects the execution of smbexec via the relevant share pattern name 
@@ -12738,6 +12750,24 @@ Rules catalog includes **1116 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** advanced
     
+??? abstract "Corelight DNS NULL Record Query (Possible Tunneling)"
+    
+    Detects DNS queries of type NULL observed by a Corelight sensor. NULL record queries are rarely used by legitimate clients and are a strong indicator of DNS tunneling used for command-and-control or data exfiltration.
+    
+    - **Effort:** master
+    
+??? abstract "Corelight Suricata Trojan Activity Alert"
+    
+    Detects a Suricata IDS alert categorized as trojan activity (e.g. "A Network Trojan was detected") reported by a Corelight sensor. This category typically flags malware command-and-control or beaconing traffic.
+    
+    - **Effort:** master
+    
+??? abstract "Corelight Threat Intelligence Indicator Match"
+    
+    Detects a match against the Zeek Intelligence Framework on a Corelight sensor (intel log), meaning observed network traffic matched a known threat intelligence indicator (domain, IP, hash, etc.).
+    
+    - **Effort:** master
+    
 ??? abstract "Correlation Potential DNS Tunnel"
     
     Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
@@ -13064,6 +13094,12 @@ Rules catalog includes **1116 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** advanced
     
+??? abstract "Corelight Windows Executable Download"
+    
+    Detects the transfer of a Windows executable (PE / application/x-dosexec) observed by a Corelight sensor in the files log. Executable downloads are a common malware delivery vector and warrant investigation.
+    
+    - **Effort:** master
+    
 ??? abstract "Correlation Netcat Infection Chain"
     
     Detect netcat connection to download et execute payload via piped bash
@@ -13362,6 +13398,14 @@ Rules catalog includes **1116 built-in detection rules** ([_last update on 2026-
     Detects Venom Multi-hop Proxy agent.
     
     - **Effort:** intermediate
+    
+**Encrypted Channel**
+
+??? abstract "Corelight TLS Certificate Validation Failure"
+    
+    Detects a TLS session observed by a Corelight sensor whose certificate failed validation (e.g. self signed certificate, unable to get local issuer certificate). Invalid certificates are frequently associated with malware command-and-control channels and interception.
+    
+    - **Effort:** master
     
 ## Exfiltration
 **Exfiltration Over Other Network Medium**
@@ -13924,6 +13968,12 @@ Rules catalog includes **1116 built-in detection rules** ([_last update on 2026-
     A user has been locked on Jumpcloud portal.
     
     - **Effort:** intermediate
+    
+??? abstract "Mass User And Computer Account Deleted"
+    
+    Detects when mutiple user and computer accounts are deleted in a short time.
+    
+    - **Effort:** master
     
 ??? abstract "Okta User Account Locked"
     

@@ -15,6 +15,48 @@ The following Sekoia.io built-in rules match the intake **Corelight**. This docu
     
     - **Effort:** advanced
 
+??? abstract "Corelight DNS NULL Record Query (Possible Tunneling)"
+    
+    Detects DNS queries of type NULL observed by a Corelight sensor. NULL record queries are rarely used by legitimate clients and are a strong indicator of DNS tunneling used for command-and-control or data exfiltration.
+    
+    - **Effort:** master
+
+??? abstract "Corelight Lateral Movement Notice"
+    
+    Detects a Zeek notice raised by a Corelight sensor that is related to lateral movement activity (e.g. ATTACK::Lateral_Movement), often indicating an adversary moving across internal hosts.
+    
+    - **Effort:** master
+
+??? abstract "Corelight Suricata High Severity IDS Alert"
+    
+    Detects a high severity Suricata IDS alert reported by a Corelight sensor (suricata_corelight log), indicating a likely network intrusion.
+    
+    - **Effort:** master
+
+??? abstract "Corelight Suricata Trojan Activity Alert"
+    
+    Detects a Suricata IDS alert categorized as trojan activity (e.g. "A Network Trojan was detected") reported by a Corelight sensor. This category typically flags malware command-and-control or beaconing traffic.
+    
+    - **Effort:** master
+
+??? abstract "Corelight TLS Certificate Validation Failure"
+    
+    Detects a TLS session observed by a Corelight sensor whose certificate failed validation (e.g. self signed certificate, unable to get local issuer certificate). Invalid certificates are frequently associated with malware command-and-control channels and interception.
+    
+    - **Effort:** master
+
+??? abstract "Corelight Threat Intelligence Indicator Match"
+    
+    Detects a match against the Zeek Intelligence Framework on a Corelight sensor (intel log), meaning observed network traffic matched a known threat intelligence indicator (domain, IP, hash, etc.).
+    
+    - **Effort:** master
+
+??? abstract "Corelight Windows Executable Download"
+    
+    Detects the transfer of a Windows executable (PE / application/x-dosexec) observed by a Corelight sensor in the files log. Executable downloads are a common malware delivery vector and warrant investigation.
+    
+    - **Effort:** master
+
 ??? abstract "Correlation Potential DNS Tunnel"
     
     Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
