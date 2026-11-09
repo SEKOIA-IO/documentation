@@ -718,6 +718,7 @@ nav:
       - Nextron Valhalla: integration/action_library/nextron-valhalla.md
       - OSINT: integration/action_library/osint.md
       - Onyphe: integration/action_library/onyphe.md
+      - PolySwarm: integration/action_library/polyswarm.md
       - Public Suffix: integration/action_library/public-suffix.md
       - Shodan: integration/action_library/shodan.md
       - Tranco: integration/action_library/tranco.md
