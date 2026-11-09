@@ -375,6 +375,7 @@ nav:
   - List of Intakes:
     - Overview: integration/categories/overview.md
     - AI Agents:
+      - Blue41 Detections and Audit: integration/categories/ai_agents/blue41_detections.md
       - Hodor Activity: integration/categories/ai_agents/hodor_activity.md
     - Applicative:
       - 1Password EPM: integration/categories/applicative/1password_epm.md
