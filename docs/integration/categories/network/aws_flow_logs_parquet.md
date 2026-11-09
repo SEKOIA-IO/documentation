@@ -53,10 +53,12 @@ Please follow [this guide](https://docs.aws.amazon.com/vpc/latest/userguide/flow
 !!! Note
     To collect the logs stored in Parquet format, this intake relies on the `Fetch new FlowLogs Parquet records on S3` connector, which reads the Parquet objects notified by the SQS queue.
 
-!!! Warning
-    To reduce the volume of ingested events, the connector discards every flow log record in which **all** IP addresses are private (e.g. `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`, loopback or link-local addresses). Only records involving at least one public IP address (traffic entering or leaving your VPC through the Internet) are forwarded to Sekoia.io.
+!!! Warning "Internal traffic filtering"
+    By default, to reduce the volume of ingested events, the connector discards every flow log record in which **all** IP addresses are private (e.g. `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`, loopback or link-local addresses). Only records involving at least one public IP address (traffic entering or leaving your VPC through the Internet) are forwarded to Sekoia.io.
 
     As a consequence, if your flow logs only contain internal traffic (e.g. between instances of the same VPC, or between peered VPCs), no event will appear in the intake even though the connector is correctly reading the S3 bucket.
+
+    To collect internal traffic as well, disable the `filter_internal_traffic` option in the intake configuration (enabled by default). Keep in mind that this can significantly increase the volume of ingested events.
 
 {!_shared_content/operations_center/integrations/generated/b031d3d0-bafa-4f4c-8f05-4fb67639b2d8_sample.md!}
 
