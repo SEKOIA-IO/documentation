@@ -715,6 +715,7 @@ nav:
       - MISP: integration/action_library/misp.md
       - MWDB: integration/action_library/mwdb.md
       - MokN - Baits: integration/action_library/mokn-baits.md
+      - Nextron Valhalla: integration/action_library/nextron-valhalla.md
       - OSINT: integration/action_library/osint.md
       - Onyphe: integration/action_library/onyphe.md
       - Public Suffix: integration/action_library/public-suffix.md
