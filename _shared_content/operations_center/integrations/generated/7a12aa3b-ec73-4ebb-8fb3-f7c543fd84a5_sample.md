@@ -53,6 +53,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_event_aut24327"
+
+    ```
+	id=firewall time="2026-11-08 09:12:31" pri=6 fw=192.0.2.22 vpn=VPN01 ivs=Default Network user=jdoe realm="example.com" roles="" proto=auth src=198.51.100.77 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="" duration= msg="AUT24327: Primary authentication failed for jdoe/example.com from 198.51.100.77"
+    ```
+
+
+
 === "test_event_aut24414"
 
     ```
@@ -67,6 +75,22 @@ In this section, you will find examples of raw logs as generated natively by the
 	id=firewall time="2023-10-17 10:21:14" pri=4 fw=3.4.5.6 vpn=EX023-V6 user=System realm="" roles="" type=mgmt proto= src=1.2.3.4 dst= dstname= sent= rcvd= msg="AUT24604: SSL negotiation failed while client at source IP '1.2.3.4' was trying to connect to '5.6.7.8'. Reason: 'sslv3 alert bad certificate'"
 
 
+    ```
+
+
+
+=== "test_event_aut30836"
+
+    ```
+	id=firewall time="2026-11-08 09:12:31" pri=6 fw=192.0.2.22 vpn=VPN01 ivs=Default Network user=jdoe realm="example.com" roles="" proto=auth src=198.51.100.77 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="" duration= msg="AUT30836: Authentication failure for AD server 'AD_EXAMPLE': specified account does not exist"#015
+    ```
+
+
+
+=== "test_event_aut31985"
+
+    ```
+	id=firewall time="2026-11-08 09:12:31" pri=6 fw=192.0.2.22 vpn=VPN01 ivs=Default Network user=jdoe realm="example.com" roles="" proto=auth src=198.51.100.77 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="" duration= msg="AUT31985: Login failed for 'Primary' authentication using auth server 'AD_EXAMPLE' ('Active Directory').  Reason: 'Invalid Credentials'"
     ```
 
 
