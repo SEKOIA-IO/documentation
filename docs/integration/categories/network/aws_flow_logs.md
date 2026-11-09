@@ -43,6 +43,13 @@ Please follow [this guide](https://docs.aws.amazon.com/vpc/latest/userguide/flow
     - The **AWS Access Key** and **Secret Access Key** (for static credentials)
 3. Set up the intake configuration with the name of the SQS queue.
 
+!!! Warning "Internal traffic filtering"
+    By default, to reduce the volume of ingested events, the connector discards every flow log record in which **all** IP addresses are private (e.g. `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`, loopback or link-local addresses). Only records involving at least one public IP address (traffic entering or leaving your VPC through the Internet) are forwarded to Sekoia.io.
+
+    As a consequence, if your flow logs only contain internal traffic (e.g. between instances of the same VPC, or between peered VPCs), no event will appear in the intake even though the connector is correctly reading the S3 bucket.
+
+    To collect internal traffic as well, disable the `filter_internal_traffic` option in the intake configuration (enabled by default). Keep in mind that this can significantly increase the volume of ingested events.
+
 {!_shared_content/operations_center/integrations/generated/07c0cac8-f68f-11ea-adc1-0242ac120002_sample.md!}
 
 {!_shared_content/integration/detection_section.md!}
