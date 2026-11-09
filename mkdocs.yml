@@ -652,7 +652,6 @@ nav:
       - MokN - Baits: integration/categories/threat_intelligence/mokn_baits.md
       - Prodaft USTA: integration/categories/threat_intelligence/prodaft_usta.md
   - List of Playbooks Actions:
-    - Overview: integration/action_library/overview.md
     - Applicative:
       - ElasticSearch: integration/action_library/elasticsearch.md
       - Mandrill: integration/action_library/mandrill.md
@@ -703,6 +702,7 @@ nav:
       - Sophos: integration/action_library/sophos.md
       - Stormshield: integration/action_library/stormshield.md
       - Zscaler: integration/action_library/zscaler.md
+    - Overview: integration/action_library/overview.md
     - Threat Intelligence:
       - Censys: integration/action_library/censys.md
       - Certificate Transparency: integration/action_library/certificate-transparency.md
@@ -715,6 +715,7 @@ nav:
       - MISP: integration/action_library/misp.md
       - MWDB: integration/action_library/mwdb.md
       - MokN - Baits: integration/action_library/mokn-baits.md
+      - Nextron Valhalla: integration/action_library/nextron-valhalla.md
       - OSINT: integration/action_library/osint.md
       - Onyphe: integration/action_library/onyphe.md
       - Public Suffix: integration/action_library/public-suffix.md
