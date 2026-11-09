@@ -37,4 +37,4 @@ Execute the given query and return the results
 
 ## Extra
 
-Module **`Google Cloud` v1.22.0**
+Module **`Google Cloud` v1.23.0**

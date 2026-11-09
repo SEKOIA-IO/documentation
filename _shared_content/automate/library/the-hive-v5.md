@@ -16,6 +16,7 @@ TheHive is a scalable, open source and free Security Incident Response Platform
 | `apikey` | `string` | An API key |
 | `organisation` | `string` | The user organisation |
 | `verify_certificate` | `boolean` | Is the server certificate verified |
+| `ca_certificate` | `string` | PEM-encoded CA certificate for TLS verification (optional, for internal PKI) |
 
 ## Actions
 
@@ -128,4 +129,4 @@ Action to add a list of observables in The Hive v5
 
 ## Extra
 
-Module **`The Hive V5` v1.0.9**
+Module **`The Hive V5` v1.1.3**

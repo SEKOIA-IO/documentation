@@ -39,4 +39,4 @@ Convert STIX objects to XSIAM objects
 
 ## Extra
 
-Module **`Palo Alto Cortex XSIAM` v1.0.0**
+Module **`Palo Alto Cortex XSIAM` v1.0.1**

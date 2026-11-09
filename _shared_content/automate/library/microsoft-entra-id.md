@@ -33,9 +33,6 @@ Delete an app in azure AD. Requires the Application.ReadWrite.OwnedBy or Applica
 ### Disable User
 
 Disable an Azure Active Directory user. Requires the User.ReadWrite.All permission.
-!!! note "Extra permission might be required"
-Depending on subscription/account type, the permission User.EnableDisableAccount.All might be required.
-
 
 **Arguments**
 
@@ -109,9 +106,6 @@ Get information about an Azure Active Directory user. Requires the User.Read.All
 ### Get User Authentication Methods
 
 Get information about an user's authentication methods (such as their MFA status). Requires the UserAuthenticationMethod.Read.All permission.
-
-!!! warning
-    This action may not work if the tenant does not have the appropriate license (e.g., Microsoft Entra ID/Azure AD Premium P1 or P2).
 
 **Arguments**
 
@@ -215,4 +209,4 @@ Invalidates all the refresh tokens issued to applications for a user. Requires t
 
 ## Extra
 
-Module **`Microsoft Entra ID` v2.10.17**
+Module **`Microsoft Entra ID` v2.10.29**
