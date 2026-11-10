@@ -14,8 +14,9 @@ Collect Sekoia.io CTI feed in an existing Cortex instance self-managed, for any 
 
 ## 1. Connect to Cortex
 
-!!!note
-    Cortex instance must be activated on your server
+{% hint style="info" %}
+Cortex instance must be activated on your server
+{% endhint %}
 
 1. In a Web browser, type the following	_http://server_ip:cortex_port_
 
@@ -26,20 +27,22 @@ Collect Sekoia.io CTI feed in an existing Cortex instance self-managed, for any 
 
 ### 1. Setup the Analyzer configuration
 
-!!!note
-    The setup of Analyzers in Cortex will allow to be used in Cortex and in theHive
+{% hint style="info" %}
+The setup of Analyzers in Cortex will allow to be used in Cortex and in theHive
 
-   1. Select your _Organization_ on the top right corner
-![Orga_setup_1](/assets/intelligence_center/orga_setup_1.png){: style="width: 60%; max-width: 60%"}
+1. Select your _Organization_ on the top right corner
+{% endhint %}
+![Orga_setup_1](../../../assets/intelligence_center/orga_setup_1.png)
 
    2. Go to _Analyzers Config_ tab and Search `SekoiaIntelligenceCenter`
-![Orga_setup_2](/assets/intelligence_center/orga_setup_2.png){: style="width: 60%; max-width: 60%"}
+![Orga_setup_2](../../../assets/intelligence_center/orga_setup_2.png)
 
    3. Edit and Add your Sekoia API key and Base url
-![Orga_setup_3](/assets/intelligence_center/orga_setup_3.png){: style="width: 60%; max-width: 60%"}
+![Orga_setup_3](../../../assets/intelligence_center/orga_setup_3.png)
 
-!!!Note
-    If your Sekoia community is hosted on FRA1 region, leave the "Base url" field empty.
+{% hint style="info" %}
+If your Sekoia community is hosted on FRA1 region, leave the "Base url" field empty.
+{% endhint %}
 
 ### 2. Enable and Setup the Analyzer
 
@@ -52,10 +55,10 @@ The configuration setup in the previous section will provide 3 Analyzers to enab
 Here is below one example of setup to be done for the 3 analyzers:
 
    1. Go to _Analyzers_ tab and Search `SekoiaIntelligenceCenter`
-![Analyzer_ config_1](/assets/intelligence_center/analyzer_config_1.png){: style="width: 60%; max-width: 60%"}
+![Analyzer_ config_1](../../../assets/intelligence_center/analyzer_config_1.png)
 
    2. Edit and Add your `Sekoia API key` and `Base url`
-![Analyzer_ config_2](/assets/intelligence_center/analyzer_config_2.png){: style="width: 60%; max-width: 60%"}
+![Analyzer_ config_2](../../../assets/intelligence_center/analyzer_config_2.png)
 
 
 ## 3. Sekoia intelligence in Cortex
@@ -77,32 +80,33 @@ In the following section, you will find information on how Sekoia intelligence i
 1. Select `Data Types`, `Job Type` and `Analyzers`
 2. Type your indicator or observable in the Observable search bar (here is an example with `Google`)
 
-![TheHive_searchExisting_SekoiaCTI](/assets/intelligence_center/searchExisting_SekoiaCTI.png){: style="width: 80%; max-width: 80%"}
+![TheHive_searchExisting_SekoiaCTI](../../../assets/intelligence_center/searchExisting_SekoiaCTI.png)
 
 ### Verify a Sekoia feed artefact in Cortex
 
 Here is an example on how to verify if a Sekoia Indicator exist in Cortex and import its content for verification (same process for Context and Observable)
 
-!!!note
-    - IOC (associated threat) is found on Indicator
-    - Details of an Indicator (IOC) is found on Indicator
-    - Observables is found on Observable
+{% hint style="info" %}
+- IOC (associated threat) is found on Indicator
+- Details of an Indicator (IOC) is found on Indicator
+- Observables is found on Observable
+{% endhint %}
 
 1. Go to Sekoia.io connector    `Analyzers > SEKOIAIntelligenceCenter_Indicators` and click on button Run (button play symbol in the right side)
 
-![TheHive_Sekoia_connector1](/assets/intelligence_center/search_SekoiaCTI-1_indicators.png){: style="width: 80%; max-width: 80%"}
+![TheHive_Sekoia_connector1](../../../assets/intelligence_center/search_SekoiaCTI-1_indicators.png)
 
 2. Fill the information with the indicator
-![TheHive_Sekoia_connector2a](/assets/intelligence_center/search_SekoiaCTI-2_indicators.png){: style="width: 60%; max-width: 60%"}
+![TheHive_Sekoia_connector2a](../../../assets/intelligence_center/search_SekoiaCTI-2_indicators.png)
 
 3. Check the indicator in _Jobs History_
-![TheHive_Sekoia_job](/assets/intelligence_center/search_SekoiaCTI-3_indicators.png){: style="width: 60%; max-width: 60%"}
+![TheHive_Sekoia_job](../../../assets/intelligence_center/search_SekoiaCTI-3_indicators.png)
 
 4. Check the Sekoia indicator 
-![TheHive_Sekoia_feed1](/assets/intelligence_center/search_SekoiaCTI-4_indicators.png){: style="width: 100%; max-width: 100%"}
+![TheHive_Sekoia_feed1](../../../assets/intelligence_center/search_SekoiaCTI-4_indicators.png)
 
 5. Check the Indicator in Sekoia Intelligence page
-![TheHive_Sekoia_objects](/assets/intelligence_center/searchCTI_Sekoia_objects.png){: style="width: 40%; max-width: 40%"}
+![TheHive_Sekoia_objects](../../../assets/intelligence_center/searchCTI_Sekoia_objects.png)
 
 
 ## 5. Troubleshoot

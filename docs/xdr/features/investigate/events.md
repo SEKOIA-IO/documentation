@@ -10,8 +10,9 @@ In this documentation, we will dive into the different parts that constitute the
 - The mechanism behind [events enrichment](#events-enrichment) or how events are contextualized in Sekoia.io
 - The [aggregation](#aggregation) feature and how to create an [anomaly detection rule](#create-anomaly-detection-rule-from-the-aggregation-view) from your query
 
-!!! note
-    To send your logs to Sekoia.io, please refer to this [section](https://docs.sekoia.com/integration/ingestion_methods/).
+{% hint style="info" %}
+To send your logs to Sekoia.io, please refer to this [section](https://docs.sekoia.com/integration/ingestion_methods/).
+{% endhint %}
 
 ## Search bar
 
@@ -19,7 +20,7 @@ You can search among the list of events by using the dedicated query language. A
 
 Fields you can use to narrow down your events search are listed [here](https://docs.sekoia.com/xdr/features/investigate/querying_events/).
 
-![search-bar-events](/assets/operation_center/events/events-search.png){: style="max-width:100%"}
+![search-bar-events](../../../assets/operation_center/events/events-search.png)
 
 ### Filters
 
@@ -45,7 +46,7 @@ You can also add filters manually by clicking on the "Add Filter" icon below the
 | `<=` | The field must be less than or equal to the specified number. *Only for numerical fields* |
 
 
-![event-filter](/assets/operation_center/events/events-filters.png){ align=right }
+![event-filter](../../../assets/operation_center/events/events-filters.png)
 
 Each filter is added as a badge below the `Search Bar`. A filter can be removed by clicking on the `X` at the end of the badge. You can also click on a filter to access a menu that will allow you to:
 
@@ -59,7 +60,7 @@ To clear current filters, you can use the `Clear all` button at the end of the f
 
 It is possible to save a query by clicking the `Star icon` in the search bar. The selected period of time is not saved with it.
 
-![save_query](/assets/operation_center/events/event-save-query.png){ align=right }
+![save_query](../../../assets/operation_center/events/event-save-query.png)
 
 To access your saved queries:
 
@@ -67,8 +68,9 @@ To access your saved queries:
 2. Select a period of time
 3. Click on `Search` to see your saved query events
 
-    !!! Disclaimer
-        The saved queries are stored locally on the user's browser. Ensure that you do not have a task or setting that cleans your browser cookies, as this will result in the loss of your favorite queries.
+    {% hint style="info" %}
+    The saved queries are stored locally on the user's browser. Ensure that you do not have a task or setting that cleans your browser cookies, as this will result in the loss of your favorite queries.
+    {% endhint %}
 
 ### Date
 
@@ -87,12 +89,12 @@ Each events search performed is listed in the `Search History` for 30 days. You 
 
 It is accessible by clicking on the following button (a panel will be displayed with the previous searches)
 
-![event-history-button](/assets/operation_center/events/event-history-button.png)
+![event-history-button](../../../assets/operation_center/events/event-history-button.png)
 
 
 When you are creating a new search, results are available instantly for 30 minutes by default.
 
-![search-history](/assets/operation_center/events/events-search-history.png)
+![search-history](../../../assets/operation_center/events/events-search-history.png)
 
 It is possible to configure the retention to reach up to one day (24 hours). After this retention period, you can still replay any events search available in the `Search History` by simply clicking on it. It will trigger a new search using exactly the same parameters (query, filters and date range).
 
@@ -111,7 +113,7 @@ To obtain the search URL, you can:
 
 Events histogram appears under the search bar when a query has been made and matches events in the list.
 
-![histogram](/assets/operation_center/events/event-histogram.png){ align=right }
+![histogram](../../../assets/operation_center/events/event-histogram.png)
 
 It gives a consolidated view of all matching events in a specific period of time and it highlights the number of events as well as events that are present in alerts.
 
@@ -119,7 +121,7 @@ You can select a date range by clicking on the histogram and dragging the cursor
 
 ## Log listing
 
-![log-listing](/assets/operation_center/events/log-listing.png){: style="max-width:100%"}
+![log-listing](../../../assets/operation_center/events/log-listing.png)
 
 The columns by default are:
 
@@ -127,14 +129,15 @@ The columns by default are:
 - `Event.dialect`: Type of intake that sent the event
 - `Description`: Smart description with clickable links formatted by Sekoia.io to show the most important elements and make them easily accessible, such as IP address, type or entity
 
-!!! note
-    At most 1 000 events can be displayed in the table. If this number is reached, the search has to be narrowed.
+{% hint style="info" %}
+At most 1 000 events can be displayed in the table. If this number is reached, the search has to be narrowed.
+{% endhint %}
 
 ### Show and hide columns
 
 It's possible to show or hide columns in your events table by clicking on the `Show fields & top values` button.
 
-![show-hide-column](/assets/operation_center/events/show-hide-columns.png){: style="max-width:100%"}
+![show-hide-column](../../../assets/operation_center/events/show-hide-columns.png)
 
 Once open, you can add fields that are listed under `available fields` by simply clicking on the "+" button next to them. This will automatically add the column to your table.
 
@@ -146,14 +149,15 @@ If you need to remove a column, there are two ways to do so:
 
 You can always find these fields in the `Available fields` section.
 
-!!! tip
-    You can also change the order of your columns by dragging them using the icon next to the column's name.
+{% hint style="success" %}
+You can also change the order of your columns by dragging them using the icon next to the column's name.
+{% endhint %}
 
 ### Log lines
 
 Each line of log can be unrolled to show:
 
-![line-details](/assets/operation_center/events/log-details.png){ align=right }
+![line-details](../../../assets/operation_center/events/log-details.png)
 
 
 - `STIX`: Event as a STIX bundle that will be used by detection engines
@@ -184,19 +188,21 @@ You can add several events to a case at once:
     - Search for an existing case by name
     - Create a new case
 
-![add-events-to-case-modal](/assets/operation_center/events/add-events-to-case-modal.png){: style="max-width:100%"}
+![add-events-to-case-modal](../../../assets/operation_center/events/add-events-to-case-modal.png)
 
-!!! note
-    A maximum of 1 000 events can be added to a case in a single operation.
+{% hint style="info" %}
+A maximum of 1 000 events can be added to a case in a single operation.
+{% endhint %}
 
-!!! note
-    Events selected from different communities cannot be added together. In that case, the `Add to case` button is disabled and a tooltip explains the reason.
+{% hint style="info" %}
+Events selected from different communities cannot be added together. In that case, the `Add to case` button is disabled and a tooltip explains the reason.
+{% endhint %}
 
 
 ### Export the results of a search
 
 You can easily export the results of a search in `CSV` or `JSON` format and choose the fields you want to export.
-![export-logs](/assets/operation_center/events/export-logs.png){ align=right }
+![export-logs](../../../assets/operation_center/events/export-logs.png)
 
 To do so:
 
@@ -207,11 +213,13 @@ When you export all fields, even the fields that don't have a value will be expo
 
 The export will be made to the default folder defined for downloads. Name of the file is optional, if not provided, the file will be named with the UUID of the job search.
 
-!!! note
-    The `description` field will not be exported.
+{% hint style="info" %}
+The `description` field will not be exported.
+{% endhint %}
 
-!!! note
-    At most 1 000 events can be exported if a filter or query is specified. Otherwise only 500 events will be exported. If this number is reached, the search has to be narrowed.
+{% hint style="info" %}
+At most 1 000 events can be exported if a filter or query is specified. Otherwise only 500 events will be exported. If this number is reached, the search has to be narrowed.
+{% endhint %}
 
 ### Toggle value selection
 
@@ -221,7 +229,7 @@ Go through your events and click on values of interest. All similar values will 
 
 Once you’ve selected these values, you can either perform a search on these values OR create a [Sigma Rule](https://docs.sekoia.com/xdr/features/detect/sigma/) with a pattern based on selected values.
 
-![toggle-value-selection](/assets/operation_center/events/toggle-value.png){: style="max-width:100%"}
+![toggle-value-selection](../../../assets/operation_center/events/toggle-value.png)
 
 ## Events enrichment
 
@@ -240,8 +248,9 @@ Depending on your entities, assets and other data, you’ll be able to make sens
 
 To see the value of enriched values, click on the enriched field and you'll be provided with additional context.
 
-!!! note
-    If the value exists in the Intelligence Center, tags associated with the value in question will be added as additional context.
+{% hint style="info" %}
+If the value exists in the Intelligence Center, tags associated with the value in question will be added as additional context.
+{% endhint %}
 
 
 ## Aggregation
@@ -262,8 +271,9 @@ To compute aggregations on a list of events, you’ll have to:
 4. Select an aggregation field if needed
 5. Click on the `Search` button on the upper right of the page
 
-!!! note
-    Aggregation view feature does not support the field `alert_short_ids`.
+{% hint style="info" %}
+Aggregation view feature does not support the field `alert_short_ids`.
+{% endhint %}
 
 
 ### Aggregation methods
@@ -279,7 +289,7 @@ To compute aggregations on a list of events, you’ll have to:
 
 Depending on which methods and fields have been selected, a line graph is presented with the event values on the y-axis and the date as defined by the date range on the x-axis.
 
-![aggregation-graph](/assets/operation_center/events/aggregation-graph.png){: style="max-width:100%"}
+![aggregation-graph](../../../assets/operation_center/events/aggregation-graph.png)
 
 For each aggregate the chart displays the first value, last value, minimum, and maximum sorted by timestamp and connects them by one line per variable.
 
@@ -287,7 +297,7 @@ You can hover on the line graph to see the actual value of each point as well as
 
 ### Create Anomaly Detection rule from the aggregation view
 
-![create-rule](/assets/operation_center/events/create-rule.png){ align=right }
+![create-rule](../../../assets/operation_center/events/create-rule.png)
 
 You can create anomaly detection rules directly from this view.
 

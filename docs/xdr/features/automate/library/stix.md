@@ -4,7 +4,7 @@ type: playbook
 
 # STIX
 
-![STIX](/assets/playbooks/library/stix.png){ align=right width=150 }
+![STIX](../../../../assets/playbooks/library/stix.png)
 
 [STIX](https://oasis-open.github.io/cti-documentation/) is a cybersecurity serialization format used to represent cyber threat intelligence, directed by the [OASIS Cyber Threat Intelligence Technical Committee](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=cti). It peered with TAXII, a protocol used to exchange cyber threat intelligence (CTI) over HTTPS
 

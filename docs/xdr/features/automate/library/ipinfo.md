@@ -4,7 +4,7 @@ type: playbook
 
 # IPInfo
 
-![IPInfo](/assets/playbooks/library/ipinfo.png){ align=right width=150 }
+![IPInfo](../../../../assets/playbooks/library/ipinfo.png)
 
 IPINFO.IO is a database that gives access to daily updates for IP to country and IP to ASN
 

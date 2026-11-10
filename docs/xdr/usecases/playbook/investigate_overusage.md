@@ -14,8 +14,11 @@ To begin your investigation, you must confirm which community is exceeding its l
 1. Navigate to **Settings > Usage**.
 2. Compare the monthly community usage against the fair use threshold.
 
-!!! note "Reference documentation"
-    For more information on reading usage metrics, see the [Usage page documentation](https://docs.sekoia.com/getting_started/usage/).
+{% hint style="info" %}
+**Reference documentation**
+
+For more information on reading usage metrics, see the [Usage page documentation](https://docs.sekoia.com/getting_started/usage/).
+{% endhint %}
 
 ## Identify the top-consuming intakes
 
@@ -78,35 +81,39 @@ events
 4. Click **Run**.
 5. Aggregate the data based on your specific needs to find the most frequent values.
 
-??? example "Common aggregation queries"
-    **By priority level:**
-    ```kusto
-    events 
-    | where timestamp between (?time.start .. ?time.end) and sekoiaio.intake.dialect == "sonicwall firewall" 
-    | aggregate count() by sonicwall.fw.priority  
-    | order by count desc 
-    ```
+<details>
+<summary>Common aggregation queries</summary>
 
-    **By event code:**
-    ```kusto
-    events 
-    | where timestamp between (?time.start .. ?time.end) and sekoiaio.intake.dialect == "sekoia.io endpoint agent" 
-    | aggregate count() by event.code 
-    | order by count desc 
-    ```
+**By priority level:**
+```kusto
+events 
+| where timestamp between (?time.start .. ?time.end) and sekoiaio.intake.dialect == "sonicwall firewall" 
+| aggregate count() by sonicwall.fw.priority  
+| order by count desc 
+```
 
-    **By host name:**
-    ```kusto
-    events 
-    | where timestamp between (?time.start .. ?time.end) and sekoiaio.intake.dialect == "sekoia.io endpoint agent" 
-    | aggregate count() by host.name 
-    | order by count desc 
-    ```
+**By event code:**
+```kusto
+events 
+| where timestamp between (?time.start .. ?time.end) and sekoiaio.intake.dialect == "sekoia.io endpoint agent" 
+| aggregate count() by event.code 
+| order by count desc 
+```
+
+**By host name:**
+```kusto
+events 
+| where timestamp between (?time.start .. ?time.end) and sekoiaio.intake.dialect == "sekoia.io endpoint agent" 
+| aggregate count() by host.name 
+| order by count desc 
+```
+
+</details>
 
 ## Result
 
 You have identified the specific logs, event codes, or hosts responsible for the volume increase. You can now apply filtering strategies to reduce the ingestion volume.
 
 ## See also
-* [Optimization rules overview](/xdr/features/collect/optimization_rules_overview.md)to learn more about optimization rules.
-* [Create an optimization rule](/xdr/features/collect/create_optimization_rule.md) to start creating your rule thanks to our step by step guide. 
+* [Optimization rules overview](../../features/collect/optimization_rules_overview.md)to learn more about optimization rules.
+* [Create an optimization rule](../../features/collect/create_optimization_rule.md) to start creating your rule thanks to our step by step guide. 

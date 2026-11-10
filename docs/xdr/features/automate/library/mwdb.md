@@ -4,7 +4,7 @@ type: playbook
 
 # MWDB
 
-![MWDB](/assets/playbooks/library/mwdb.png){ align=right width=150 }
+![MWDB](../../../../assets/playbooks/library/mwdb.png)
 
 MWDB is a malware repository for automated malware collection and analysis systems hosted by CERT.pl
 

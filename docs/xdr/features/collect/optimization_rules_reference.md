@@ -40,12 +40,18 @@ When defining the "value" in a filter, you must match the data type of the field
 | **8** | **Ignore Useless Event** |  Discards the event if the parser extracted no fields from it. Unlike **Ignore Event** (action=1), this action is self-filtering: no filters are required, as it relies on the parser's own warning when nothing could be extracted. |
 | **16** | **Delete Non-Standard Fields** |  Deletes fields not included in official ECS or Sekoia Taxonomy. |
 
-!!! note "Visibility"
-    Currently, only the **Ignore Event** (action=1) action will have a visible impact on the platform's usage page.
+{% hint style="info" %}
+**Visibility**
 
-!!! tip "When to use Ignore Useless Event (action=8)"
-    Use this action on intakes that receive noisy or malformed messages that your parser cannot extract any data from. Since the check is done internally by the parser, you do not need to define any filters — the rule can be applied with an empty filter list.
+Currently, only the **Ignore Event** (action=1) action will have a visible impact on the platform's usage page.
+{% endhint %}
+
+{% hint style="success" %}
+**When to use Ignore Useless Event (action=8)**
+
+Use this action on intakes that receive noisy or malformed messages that your parser cannot extract any data from. Since the check is done internally by the parser, you do not need to define any filters — the rule can be applied with an empty filter list.
+{% endhint %}
 
 ## See also
-* [Optimization rules overview](/xdr/features/collect/optimization_rules_overview.md) to understand how optimization rules work.
-* [Create an optimization rule](/xdr/features/collect/create_optimization_rule.md) to start creating your rule thanks to our step by step guide. 
+* [Optimization rules overview](optimization_rules_overview.md) to understand how optimization rules work.
+* [Create an optimization rule](create_optimization_rule.md) to start creating your rule thanks to our step by step guide. 

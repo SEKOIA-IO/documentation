@@ -2,10 +2,13 @@
 
 The Reveal add-on module extends the asset context panel with vulnerability data, endpoint hygiene, security controls, points of interest, and attack path visualization. These capabilities give analysts a complete picture of an asset's exposure and protection directly in the investigation workflow.
 
-This article covers the Reveal-specific sections of the asset context panel. For core capabilities available to all clients, see [Asset context panel](/xdr/features/investigate/asset_context_panel.md).
+This article covers the Reveal-specific sections of the asset context panel. For core capabilities available to all clients, see [Asset context panel](../investigate/asset_context_panel.md).
 
-!!! note "Requirements"
-    The capabilities described on this page require the Reveal add-on module. To set up the required data sources, see [Getting started with Reveal](/xdr/features/modules/reveal_getting_started.md).
+{% hint style="info" %}
+**Requirements**
+
+The capabilities described on this page require the Reveal add-on module. To set up the required data sources, see [Getting started with Reveal](reveal_getting_started.md).
+{% endhint %}
 
 ## Health check card
 
@@ -33,8 +36,11 @@ With Reveal enabled, the asset timeline includes additional entry types beyond a
 
 Points of Interest fill the gaps between rule-based detections. They capture behavioral deviations that may precede or follow an alert, helping analysts build a coherent narrative from subtle signals.
 
-!!! example "Points of Interest in context"
-    A user account triggers a *credential dumping* alert. The timeline also shows a PoI for an anomalous login time two hours earlier and a second PoI for a rare login location the previous day. Together, these signals suggest the account was compromised before the alert fired.
+{% hint style="info" %}
+**Points of Interest in context**
+
+A user account triggers a *credential dumping* alert. The timeline also shows a PoI for an anomalous login time two hours earlier and a second PoI for a rare login location the previous day. Together, these signals suggest the account was compromised before the alert fired.
+{% endhint %}
 
 ## Hygiene tab
 
@@ -47,8 +53,11 @@ The **Hygiene** tab shows the security posture and configuration health of a hos
 
 Use this tab to validate that protections are in place during triage, identify weaknesses that may have enabled a compromise, and confirm that controls were restored after remediation.
 
-!!! note "Data source"
-    Hygiene data requires the Sekoia Endpoint Agent or a connector that provides endpoint posture data. See [Getting started with Reveal](/xdr/features/modules/reveal_getting_started.md).
+{% hint style="info" %}
+**Data source**
+
+Hygiene data requires the Sekoia Endpoint Agent or a connector that provides endpoint posture data. See [Getting started with Reveal](reveal_getting_started.md).
+{% endhint %}
 
 <img width="389" height="465" alt="Hygiene tab example" src="https://github.com/user-attachments/assets/8e476aa6-2bb5-4284-8f71-374042bd936f" />
 
@@ -56,7 +65,7 @@ Use this tab to validate that protections are in place during triage, identify w
 
 The **Overview** tab displays an Asset Risk Score that represents the current security priority of the host asset. The score combines persistent exposure, recent activity, and configured asset criticality.
 
-For the scoring model and calculation rules, see [Asset risk scoring](/xdr/features/modules/asset_risk_scoring.md). For interface guidance, see [Interpret asset risk scores](/xdr/features/modules/interpret_asset_risk_scores.md).
+For the scoring model and calculation rules, see [Asset risk scoring](asset_risk_scoring.md). For interface guidance, see [Interpret asset risk scores](interpret_asset_risk_scores.md).
 
 ## Vulnerabilities tab
 
@@ -81,26 +90,35 @@ Select a row to expand it and view the full description, the CVSS vector and exp
     
 
 ### Unified risk score
-!!! note "Asset score and vulnerability score"
+{% hint style="info" %}
+**Asset score and vulnerability score**
 
-    The **Unified risk score** applies to an individual vulnerability. The **Asset Risk Score** applies to the host asset and combines exposure, recent activity, and criticality.
 
-!!! note "Asset score and vulnerability score"
+The **Unified risk score** applies to an individual vulnerability. The **Asset Risk Score** applies to the host asset and combines exposure, recent activity, and criticality.
+{% endhint %}
 
-    The **Unified risk score** applies to an individual vulnerability. The **Asset Risk Score** applies to the host asset and combines exposure, recent activity, and criticality.
+{% hint style="info" %}
+**Asset score and vulnerability score**
+
+
+The **Unified risk score** applies to an individual vulnerability. The **Asset Risk Score** applies to the host asset and combines exposure, recent activity, and criticality.
+{% endhint %}
 
 Different vulnerability scanners use different scoring scales. The unified risk score translates each source into a single comparable value from 1 to 100, where 100 always represents the highest risk. Missing or invalid scores display as N/A. It reflects contextual risk and is not the same as CVSS.
 
-For the full field reference, score bands, and status workflow, see [Vulnerability enrichment](/xdr/features/modules/reveal_vulnerabilities.md).
+For the full field reference, score bands, and status workflow, see [Vulnerability enrichment](reveal_vulnerabilities.md).
 
-![!Vulnerabilities tab example](/assets/asset_vuln_exploited.png){: style="max-width:100%"}
+![!Vulnerabilities tab example](../../../assets/asset_vuln_exploited.png)
 
 
 ## Applications tab
 
-!!! note "Beta"
+{% hint style="info" %}
+**Beta**
 
-    The Applications tab is currently in **Beta**. Fields and behavior may change as the feature evolves.
+
+The Applications tab is currently in **Beta**. Fields and behavior may change as the feature evolves.
+{% endhint %}
 
 The **Applications** tab lists the software discovered on a host asset and maps each application to the known CVE exposures that affect it. Two counters summarize the footprint: **Vulnerable Applications** (installed applications with at least one matching CVE) and **Installed Applications** (total discovered).
 
@@ -121,7 +139,7 @@ Select an application row to expand it and view the install path, installation d
 
 The **CVE Count** badge is a shortcut into the Vulnerabilities tab: select it (the **Click to see vulnerabilities** tooltip appears on hover) to open the CVEs affecting that application.
 
-For the full reference, see [Application discovery](/xdr/features/modules/reveal_applications.md).
+For the full reference, see [Application discovery](reveal_applications.md).
 
 
 ## Security controls tab
@@ -136,8 +154,11 @@ Lists the connectors that discovered or enriched the asset, such as an EDR tool 
 
 Lists the intakes and technologies that have observed the asset recently, such as a proxy, the Sekoia Endpoint Agent, or an identity provider. Presence in this list confirms that data from that source is reaching Sekoia.
 
-!!! example "Detecting a visibility gap on a domain controller"
-    A high-value domain controller appears in network telemetry and vulnerability management scans but not in endpoint or identity logs. This explains why credential-access activity was not detected. The recommended action is to deploy endpoint monitoring on the asset.
+{% hint style="info" %}
+**Detecting a visibility gap on a domain controller**
+
+A high-value domain controller appears in network telemetry and vulnerability management scans but not in endpoint or identity logs. This explains why credential-access activity was not detected. The recommended action is to deploy endpoint monitoring on the asset.
+{% endhint %}
 
 <img width="463,4" height="390,6" alt="Security controls tab example" src="https://github.com/user-attachments/assets/279e1288-53c6-490e-8f30-0498c3484d3e"/>
 
@@ -153,14 +174,14 @@ The **Attack Path Visualization** tab displays a graph of hosts and users connec
 
 A single exposure is not always critical on its own. Its impact depends on what it connects to. This tab lets analysts assess blast radius and identify where remediation would have the greatest effect before escalating or containing.
 
-For full guidance on navigating the graph, interpreting node types, and prioritizing remediation, see [Attack Path Visualization](/xdr/features/investigate/attack_path_visualization.md).
+For full guidance on navigating the graph, interpreting node types, and prioritizing remediation, see [Attack Path Visualization](../investigate/attack_path_visualization.md).
 
 <img width="463,4" height="390,6" alt="Attack path visualization tab showing a node graph of connected assets within the asset context panel." src="/assets/attack_path_visualization"/>
 
 ## Related links
 
-- [Asset context panel](/xdr/features/investigate/asset_context_panel.md): Core capabilities available to all clients, including the overview, timeline, and related events tabs.
-- [Attack Path Visualization](/xdr/features/investigate/attack_path_visualization.md): Full reference for the attack path graph, node types, navigation, and remediation workflow.
-- [Points of Interest](/xdr/features/detect/points_of_interest.md): How Reveal surfaces behavioral anomalies on assets during triage and investigation.
-- [Getting started with Reveal](/xdr/features/modules/reveal_getting_started.md): How to enable Reveal and configure the required data sources.
-- [Asset connector health status and logs](/xdr/features/collect/asset_connector_health.md): How to monitor connector synchronization and troubleshoot errors.
+- [Asset context panel](../investigate/asset_context_panel.md): Core capabilities available to all clients, including the overview, timeline, and related events tabs.
+- [Attack Path Visualization](../investigate/attack_path_visualization.md): Full reference for the attack path graph, node types, navigation, and remediation workflow.
+- [Points of Interest](../detect/points_of_interest.md): How Reveal surfaces behavioral anomalies on assets during triage and investigation.
+- [Getting started with Reveal](reveal_getting_started.md): How to enable Reveal and configure the required data sources.
+- [Asset connector health status and logs](../collect/asset_connector_health.md): How to monitor connector synchronization and troubleshoot errors.

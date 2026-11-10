@@ -1,6 +1,6 @@
 # Ubika
 
-![Ubika](/assets/playbooks/library/ubika.png){ align=right width=150 }
+![Ubika](../../../../assets/playbooks/library/ubika.png)
 
 Ubika is a cybersecurity company offering products to protect web applications and APIs
 

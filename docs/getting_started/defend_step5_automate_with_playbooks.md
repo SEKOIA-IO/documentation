@@ -13,7 +13,7 @@ Playbooks are automated workflows that execute a sequence of actions when a trig
 
 ## Before you begin
 
-- You have completed [Step 4: Triage your first alert](/getting_started/defend_step4_triage_first_alert.md).
+- You have completed [Step 4: Triage your first alert](defend_step4_triage_first_alert.md).
 - You have the **Analyst** or **Admin** role.
 
 ## Understand playbook triggers
@@ -46,7 +46,7 @@ Sekoia provides a library of ready-made playbook templates for common use cases.
 11. Click **Save**.
 12. Toggle the playbook to **Active**.
 
-![Playbook template library with available automation templates listed as cards](/assets/getting_started/playbook_template_catalog.png){: style="width: 100%; max-width: 100%"}
+![Playbook template library with available automation templates listed as cards](../assets/getting_started/playbook_template_catalog.png)
 
 
 ## Verify a playbook run
@@ -60,8 +60,11 @@ After activating the playbook, wait for a new alert that matches the trigger con
 
 If the run shows an error, click the run to inspect the step where it failed and review the error message.
 
-!!! tip "Monitor playbook health"
-    Set up a notification to alert you when a playbook encounters an error. Navigate to **Settings > Notifications**, create a new rule, and select **A playbook has encountered an error** as the trigger.
+{% hint style="success" %}
+**Monitor playbook health**
+
+Set up a notification to alert you when a playbook encounters an error. Navigate to **Settings > Notifications**, create a new rule, and select **A playbook has encountered an error** as the trigger.
+{% endhint %}
 
 ## Keep your playbooks efficient
 
@@ -72,9 +75,9 @@ As your library of playbooks grows, keep these principles in mind:
 - Aim for playbooks that complete in under one minute.
 - Limit each playbook to fewer than 15 modules (trigger + operators + actions).
 
-For detailed guidance on designing and optimizing your playbook library, see the [best practices guide](/getting_started/best_practices.md).
+For detailed guidance on designing and optimizing your playbook library, see the [best practices guide](best_practices.md).
 
 ## Related links
 
-- [Quick start: Defend](/getting_started/quick_start_defend.md): Return to the overview of all five steps.
-- [Notification system overview](/getting_started/notification_system_overview.md): Configure alerts for playbook errors and other operational events.
+- [Quick start: Defend](quick_start_defend.md): Return to the overview of all five steps.
+- [Notification system overview](notification_system_overview.md): Configure alerts for playbook errors and other operational events.

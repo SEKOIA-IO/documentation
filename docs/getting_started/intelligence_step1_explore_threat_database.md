@@ -14,7 +14,7 @@ The Sekoia Intelligence database contains hundreds of thousands of threat object
 ## Before you begin
 
 - You have an active Sekoia Intelligence subscription.
-- Familiarize yourself with the key terms: see [Glossary](/getting_started/glossary.md) for definitions of indicator, observable, IOC, STIX, and TLP.
+- Familiarize yourself with the key terms: see [Glossary](glossary.md) for definitions of indicator, observable, IOC, STIX, and TLP.
 
 ## Understand the data model
 
@@ -31,8 +31,11 @@ Not every observable becomes an indicator. Because observables include all techn
 | **Exported in CTI feeds (API, TAXII, MISP)** | No | Yes |
 | **Raises alerts in Sekoia Defend** | Not directly. Tag-based detection rules can use them for warnings or to reduce false positives | Yes, in real time, and retroactively through retro-hunting within the indicator's validity period |
 
-!!! note "Search for indicators, not observables"
-    If you are looking for indicators of compromise to detect a threat, search and filter on **Objects**, not on **Observables**. The observable database is not intended as a source of indicators: it contains many non-malicious technical artifacts alongside confirmed threats.
+{% hint style="info" %}
+**Search for indicators, not observables**
+
+If you are looking for indicators of compromise to detect a threat, search and filter on **Objects**, not on **Observables**. The observable database is not intended as a source of indicators: it contains many non-malicious technical artifacts alongside confirmed threats.
+{% endhint %}
 
 ## Open the intelligence database
 
@@ -40,8 +43,11 @@ In the navigation menu, select **Observe > Intelligence**.
 
 The Intelligence page contains a main search bar and a results table. You can search from this page or from the search bar embedded in the navigation menu, which is accessible from any page in the platform.
 
-!!! note "Search currently requires an exact match"
-    At the time of writing, the search only returns exact matches. For example, searching for `russia` returns no result. Search for the full official name, `russian federation`, instead. This behavior is expected to improve in a future release.
+{% hint style="info" %}
+**Search currently requires an exact match**
+
+At the time of writing, the search only returns exact matches. For example, searching for `russia` returns no result. Search for the full official name, `russian federation`, instead. This behavior is expected to improve in a future release.
+{% endhint %}
 
 ## Search for a threat object
 
@@ -58,19 +64,26 @@ The results page shows three tabs:
 | **Observables** | Technical artifacts: IP addresses, domains, URLs, file hashes, email addresses |
 | **Unknown observables** | Values you searched for that are not in the database |
 
-!!! tip "Always check the Objects tab first"
-    Start with the **Objects** tab to find contextualized, threat-linked information. Only check the **Observables** tab if you specifically need to verify a raw technical artifact.
+{% hint style="success" %}
+**Always check the Objects tab first**
 
-??? example "Example: Search for a threat actor"
-    Search for `APT28`.
+Start with the **Objects** tab to find contextualized, threat-linked information. Only check the **Observables** tab if you specifically need to verify a raw technical artifact.
+{% endhint %}
 
-    Under the **Objects** tab, you will find the Intrusion Set object for APT28 (also known as Fancy Bear). Click the object name to open its detail page, which shows:
+<details>
+<summary>Example: Search for a threat actor</summary>
 
-    - A description of the group's known activities and targets
-    - Associated malware families and tools
-    - Related campaigns and attack patterns
-    - Known indicators linked to this group
-    - The MITRE ATT&CK techniques this group uses
+Search for `APT28`.
+
+Under the **Objects** tab, you will find the Intrusion Set object for APT28 (also known as Fancy Bear). Click the object name to open its detail page, which shows:
+
+- A description of the group's known activities and targets
+- Associated malware families and tools
+- Related campaigns and attack patterns
+- Known indicators linked to this group
+- The MITRE ATT&CK techniques this group uses
+
+</details>
 
 ## Read an object detail page
 
@@ -84,7 +97,7 @@ The detail page shows:
 - Relationships to other objects (for example, a malware linked to a threat actor, or an indicator linked to a campaign)
 - The source and last update date
 
-![Threat actor detail page with description, TLP level, confidence score, and related CTI object](/assets/getting_started/threat_actor_page.png){: style="width: 100%; max-width: 100%"}
+![Threat actor detail page with description, TLP level, confidence score, and related CTI object](../assets/getting_started/threat_actor_page.png)
 
 
 ### Use the threat context
@@ -93,7 +106,7 @@ Alongside the main description, every object detail page includes a **Threat con
 
 The threat context is particularly useful to understand what surrounds an object: for example, the countries targeted by an attacker group, or the malware families used in a specific campaign.
 
-![Threat context panel showing objects linked to the object being viewed](/assets/threat_context_panel.png){: style="max-width:100%"}
+![Threat context panel showing objects linked to the object being viewed](../assets/threat_context_panel.png)
 
 ### Other tabs on an object page
 
@@ -144,7 +157,7 @@ Sekoia rates its intelligence using the Admiralty scale, an industry-standard me
 | E | Unreliable | Lacking in authenticity, trustworthiness, and competency; history of invalid information |
 | F | Reliability cannot be judged | No basis exists for evaluating the reliability of the source |
 
-See the full [Data model](/cti/features/data_model.md) reference for more detail on how confidence and reliability apply to Sekoia objects.
+See the full [Data model](../cti/features/data_model.md) reference for more detail on how confidence and reliability apply to Sekoia objects.
 
 ## Search for observables
 
@@ -167,6 +180,6 @@ To refine your search, open the filter panel on the left side of the results tab
 
 ## Related links
 
-- [Step 2: Investigate and disseminate threat intelligence](/getting_started/intelligence_step2_read_threat_reports.md): Find and interpret FLINT reports and disseminate intelligence to your tools.
-- [Data model](/cti/features/data_model.md): Full reference on STIX objects, observables, confidence, and reliability.
-- [Glossary](/getting_started/glossary.md): Definitions of key CTI terms.
+- [Step 2: Investigate and disseminate threat intelligence](intelligence_step2_read_threat_reports.md): Find and interpret FLINT reports and disseminate intelligence to your tools.
+- [Data model](../cti/features/data_model.md): Full reference on STIX objects, observables, confidence, and reliability.
+- [Glossary](glossary.md): Definitions of key CTI terms.

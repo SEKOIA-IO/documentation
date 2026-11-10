@@ -4,18 +4,21 @@ Custom fields let you attach your own metadata to playbooks, such as an owner te
 
 ## Prerequisites
 
-- Custom field definitions exist in **Settings > Custom fields**. Playbooks use the same definitions as alerts and cases. See [Manage custom field definitions](/xdr/features/investigate/manage_custom_field_definitions.md).
+- Custom field definitions exist in **Settings > Custom fields**. Playbooks use the same definitions as alerts and cases. See [Manage custom field definitions](../investigate/manage_custom_field_definitions.md).
 - To see the custom fields of a playbook, you need the permission to read custom fields.
 - To add or edit custom fields on a playbook, you need the permission to edit playbooks.
 
-!!! tip "Prepare a field for grouping"
-    You can group playbooks by a **Single select** field with at least one option, or by a **Boolean** field. Other field types appear on playbooks but cannot be used to group them. For example, create a "Team" single select field with one option per team.
+{% hint style="success" %}
+**Prepare a field for grouping**
+
+You can group playbooks by a **Single select** field with at least one option, or by a **Boolean** field. Other field types appear on playbooks but cannot be used to group them. For example, create a "Team" single select field with one option per team.
+{% endhint %}
 
 ## Add a custom field to a playbook
 
 The **Custom fields** section is in the **Overview** tab of the playbook. Until you add a field, it shows **No custom fields**.
 
-![Empty Custom fields section in the Overview tab of a playbook](/assets/operation_center/playbooks/playbook_custom_fields.png){: style="max-width:100%"}
+![Empty Custom fields section in the Overview tab of a playbook](../../../assets/operation_center/playbooks/playbook_custom_fields.png)
 
 To add a custom field to a playbook:
 
@@ -26,9 +29,9 @@ To add a custom field to a playbook:
 5. Select the field.
 6. Enter or select the value.
 
-The value is saved immediately, without clicking **Save**, and recorded in the [version history](/xdr/features/automate/restore_a_playbook_version.md) of the playbook.
+The value is saved immediately, without clicking **Save**, and recorded in the [version history](restore_a_playbook_version.md) of the playbook.
 
-![Custom fields section with a boolean and a single select value](/assets/operation_center/playbooks/playbook_select_custom_fields.png){: style="max-width:100%"}
+![Custom fields section with a boolean and a single select value](../../../assets/operation_center/playbooks/playbook_select_custom_fields.png)
 
 ## Show custom fields in the playbooks table
 
@@ -48,7 +51,7 @@ To group the playbooks list:
 2. Click **Group by**.
 3. Select a grouping option.
 
-![Playbooks table grouped by a single select custom field, with the Group by menu open](/assets/operation_center/playbooks/playbook_group_by_custom_field.png){: style="max-width:100%"}
+![Playbooks table grouped by a single select custom field, with the Group by menu open](../../../assets/operation_center/playbooks/playbook_group_by_custom_field.png)
 
 | Option | Groups |
 |---|---|
@@ -57,8 +60,11 @@ To group the playbooks list:
 | **By community** | One group per community. Available in multi-tenant parent communities only. A meta-playbook appears in the group of each community it runs in. |
 | A custom field | One group per option of a single select field, or one group for true and one for false for a boolean field. Custom fields are listed under **Custom fields** in the menu. |
 
-!!! note "Playbooks without a value"
-    When you group by a custom field, playbooks that have no value for this field do not appear in any group. To see every playbook, select **Ungrouped**.
+{% hint style="info" %}
+**Playbooks without a value**
+
+When you group by a custom field, playbooks that have no value for this field do not appear in any group. To see every playbook, select **Ungrouped**.
+{% endhint %}
 
 Each group shows the number of playbooks it contains, and the first group is expanded. To expand or collapse a group, click its name. A group loads 100 playbooks at a time: to load the next ones, click **Show X of Y** at the end of the group.
 
@@ -66,6 +72,6 @@ Search, filters and sort apply inside each group. Sekoia.io remembers your group
 
 ## Related articles
 
-* [Navigate playbooks](/xdr/features/automate/navigate_playbooks.md): Reference for the playbooks list and every tab of a playbook.
-* [Custom fields](/xdr/features/investigate/custom_fields.md): Overview of custom field types, shared definitions, multi-tenancy behavior and workspace limits.
-* [Manage custom field definitions](/xdr/features/investigate/manage_custom_field_definitions.md): How to create, edit and delete custom field definitions in workspace settings.
+* [Navigate playbooks](navigate_playbooks.md): Reference for the playbooks list and every tab of a playbook.
+* [Custom fields](../investigate/custom_fields.md): Overview of custom field types, shared definitions, multi-tenancy behavior and workspace limits.
+* [Manage custom field definitions](../investigate/manage_custom_field_definitions.md): How to create, edit and delete custom field definitions in workspace settings.

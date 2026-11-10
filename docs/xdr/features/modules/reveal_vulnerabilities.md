@@ -1,6 +1,6 @@
 # Vulnerability enrichment
 
-_**[Reveal module](/xdr/features/modules/reveal_index.md)**. This feature requires the Reveal add-on module._
+_**[Reveal module](reveal_index.md)**. This feature requires the Reveal add-on module._
 
 Vulnerability enrichment aggregates known CVE findings from connected vulnerability scanners and cloud or IaaS APIs and displays them on the related asset. Use it to review an asset's vulnerability findings, their technical characteristics, available exploitation information, and their relationship with the Asset Risk Score.
 
@@ -14,9 +14,12 @@ Use this interface path:
 
 The asset context panel displays the asset's Risk score header and its investigation tabs. The Vulnerabilities tab can display the number of findings associated with the asset.
 
-!!! note "Different from Asset Risk Score"
+{% hint style="info" %}
+**Different from Asset Risk Score**
 
-    CVSS and Unified risk score describe individual vulnerability findings. The Asset Risk Score prioritizes the asset using exposure, recent activity, and criticality.
+
+CVSS and Unified risk score describe individual vulnerability findings. The Asset Risk Score prioritizes the asset using exposure, recent activity, and criticality.
+{% endhint %}
 
 ## Filter and search findings
 
@@ -64,7 +67,7 @@ When a finding is associated with the CISA Known Exploited Vulnerabilities catal
 - Known Exploited Vulnerability required action.
 
 
-![!Expanded known exploited vulnerability showing CISA catalog metadata, CVSS details, references, and detection source.](/assets/asset_vuln_exploited.png){: style="max-width:100%"}
+![!Expanded known exploited vulnerability showing CISA catalog metadata, CVSS details, references, and detection source.](../../../assets/asset_vuln_exploited.png)
 
 ## Unified risk score
 
@@ -81,7 +84,7 @@ A finding can show `-` when no normalized score is available.
 
 ## Expand a vulnerability
 
-![Asset vulnerabilities tab](/assets/asset_vuln_expanded.png){: style="max-width:100%"}
+![Asset vulnerabilities tab](../../../assets/asset_vuln_expanded.png)
 
 Expand a vulnerability row to inspect the available details:
 
@@ -128,7 +131,7 @@ Open, confirmed vulnerabilities can contribute to the asset's **Exposure Score**
 
 The Unified risk score does not replace CVSS in the Asset Risk Score calculation. The final Asset Risk Score also includes recent activity and configured asset criticality.
 
-For the calculation rules and investigation workflow, see [Asset risk scoring](/xdr/features/modules/asset_risk_scoring.md) and [Interpret asset risk scores](/xdr/features/modules/interpret_asset_risk_scores.md).
+For the calculation rules and investigation workflow, see [Asset risk scoring](asset_risk_scoring.md) and [Interpret asset risk scores](interpret_asset_risk_scores.md).
 
 ## Data sources and limitations
 
@@ -140,10 +143,10 @@ If the Vulnerabilities tab is empty or a finding is missing, check the source co
 
 ## Related articles
 
-[Application inventory](/xdr/features/modules/reveal_applications.md): Overview of the Applications tab and its relationship with vulnerability enrichment.
+[Application inventory](reveal_applications.md): Overview of the Applications tab and its relationship with vulnerability enrichment.
 
-[Asset risk scoring](/xdr/features/modules/asset_risk_scoring.md): How vulnerability exposure contributes to the asset-level Asset Risk Score.
+[Asset risk scoring](asset_risk_scoring.md): How vulnerability exposure contributes to the asset-level Asset Risk Score.
 
-[Interpret asset risk scores](/xdr/features/modules/interpret_asset_risk_scores.md): How to use the Asset Risk Score during an investigation.
+[Interpret asset risk scores](interpret_asset_risk_scores.md): How to use the Asset Risk Score during an investigation.
 
-[Asset context panel, Reveal capabilities](/xdr/features/modules/reveal_asset_context_panel.md): Overview of Reveal-specific asset context and investigation tabs.
+[Asset context panel, Reveal capabilities](reveal_asset_context_panel.md): Overview of Reveal-specific asset context and investigation tabs.

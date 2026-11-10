@@ -11,8 +11,11 @@ type: reference
 
 Sekoia offers several channels to help you get answers, learn new skills, and stay informed. This article lists each resource and explains when to use it.
 
-!!! note "Integration configuration issues"
-    If an integration does not work as expected during the initial setup, first check the configuration of the source, the intake settings, and the relevant logs. Many setup issues are caused by the source system or by missing permissions and are not platform incidents.
+{% hint style="info" %}
+**Integration configuration issues**
+
+If an integration does not work as expected during the initial setup, first check the configuration of the source, the intake settings, and the relevant logs. Many setup issues are caused by the source system or by missing permissions and are not platform incidents.
+{% endhint %}
 
 ## Choose the right resource
 
@@ -40,8 +43,9 @@ Use the support portal when:
 
 ### Status page
 
-!!! info
-    Our status page is always the most up-to-date source of information. Opening a support ticket will not provide faster updates regarding ongoing issues.
+{% hint style="info" %}
+Our status page is always the most up-to-date source of information. Opening a support ticket will not provide faster updates regarding ongoing issues.
+{% endhint %}
 
 To check whether Sekoia services are experiencing an incident or scheduled maintenance, visit the [Sekoia status page](https://status.sekoia.io).
 
@@ -96,5 +100,5 @@ The full documentation repository is available at [github.com/SEKOIA-IO/document
 
 ## Related links
 
-- [Troubleshooting common issues](/getting_started/troubleshooting_common_issues.md): First-level solutions for login, connectivity, and intake problems.
-- [Log in for the first time](/getting_started/log_in_for_the_first_time.md): Includes region URL reference if you cannot reach the login page.
+- [Troubleshooting common issues](troubleshooting_common_issues.md): First-level solutions for login, connectivity, and intake problems.
+- [Log in for the first time](log_in_for_the_first_time.md): Includes region URL reference if you cannot reach the login page.

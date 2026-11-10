@@ -1,6 +1,6 @@
 # Microsoft Office365
 
-![Microsoft Office365](/assets/playbooks/library/microsoft-office365.png){ align=right width=150 }
+![Microsoft Office365](../../../../assets/playbooks/library/microsoft-office365.png)
 
 Microsoft Office 365 is an online service, providing the Microsoft Office Products.
 

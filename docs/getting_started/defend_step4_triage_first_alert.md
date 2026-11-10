@@ -13,11 +13,14 @@ An alert is raised when an incoming event matches an active detection rule. Tria
 
 ## Before you begin
 
-- You have completed [Step 3: Activate detection rules](/getting_started/defend_step3_activate_detection_rules.md) and rules are active.
+- You have completed [Step 3: Activate detection rules](defend_step3_activate_detection_rules.md) and rules are active.
 - At least one alert has been raised in your community.
 
-!!! note "No alerts yet?"
-    If no alerts have appeared after your rules are active, your intakes may need more time to generate matching events. Check that your intake is receiving events (see [Step 2](/getting_started/defend_step2_verify_event_reception.md)) and that the corresponding rules are enabled. You can also lower the effort level filter to see if Elementary rules are active.
+{% hint style="info" %}
+**No alerts yet?**
+
+If no alerts have appeared after your rules are active, your intakes may need more time to generate matching events. Check that your intake is receiving events (see [Step 2](defend_step2_verify_event_reception.md)) and that the corresponding rules are enabled. You can also lower the effort level filter to see if Elementary rules are active.
+{% endhint %}
 
 ## Open the alerts page
 
@@ -70,7 +73,7 @@ You can interact with individual field values to:
 - Filter for or filter out that value within the alert's events
 - Search across all events in the platform for that value
 
-![Alert detail page with urgency score, asset information, and event timeline](/assets/getting_started/alert_detail.png){: style="width: 100%; max-width: 100%"}
+![Alert detail page with urgency score, asset information, and event timeline](../assets/getting_started/alert_detail.png)
 
 
 
@@ -81,8 +84,11 @@ After reviewing the alert, update its status to reflect your analysis.
 1. Click the **Alert Status** button at the top of the alert detail page.
 2. Select the appropriate status.
 
-!!! note "Default statuses"
-    Alert statuses can be customized. The following statuses are the default ones.
+{% hint style="info" %}
+**Default statuses**
+
+Alert statuses can be customized. The following statuses are the default ones.
+{% endhint %}
 
 | Status | When to use it |
 |---|---|
@@ -91,8 +97,11 @@ After reviewing the alert, update its status to reflect your analysis.
 | **Closed** | The alert has been fully investigated and all necessary actions have been taken |
 | **Rejected** | The alert is a false positive |
 
-!!! tip "Leave a comment"
-    Add a comment when you change status to document your reasoning. This is especially useful when multiple analysts work on the same community.
+{% hint style="success" %}
+**Leave a comment**
+
+Add a comment when you change status to document your reasoning. This is especially useful when multiple analysts work on the same community.
+{% endhint %}
 
 ## Create an alert filter for a false positive
 
@@ -109,5 +118,5 @@ By default, the current alert is also rejected when the filter is created. The f
 
 ## Related links
 
-- [Step 5: Automate with playbooks](/getting_started/defend_step5_automate_with_playbooks.md): Set up automated enrichment and response workflows for your alerts.
-- [Notification system overview](/getting_started/notification_system_overview.md): Receive an email or Slack message when a high-urgency alert is raised.
+- [Step 5: Automate with playbooks](defend_step5_automate_with_playbooks.md): Set up automated enrichment and response workflows for your alerts.
+- [Notification system overview](notification_system_overview.md): Receive an email or Slack message when a high-urgency alert is raised.

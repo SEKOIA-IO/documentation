@@ -4,7 +4,7 @@ type: playbook
 
 # Microsoft Outlook
 
-![Microsoft Outlook](/assets/playbooks/library/microsoft-outlook.png){ align=right width=150 }
+![Microsoft Outlook](../../../../assets/playbooks/library/microsoft-outlook.png)
 
 Microsoft Outlook is an email client and personal information manager that includes calendar, task management, contact management, note-taking, and web browsing features. It integrates with Microsoft Office suite for seamless productivity and communication.
 

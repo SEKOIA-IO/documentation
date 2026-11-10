@@ -32,7 +32,7 @@ The page displays active and inactive subscriptions for the selected community. 
 - Hot storage or other retention options.
 - Remaining time on the subscription.
 
-![Subscriptions page displaying active subscriptions and available actions](/assets/self_service/06_create_subscription_terms.png)
+![Subscriptions page displaying active subscriptions and available actions](../assets/self_service/06_create_subscription_terms.png)
 
 Use **Compare plans** to review the available plans. Use **Contact us** when you need a subscription or plan that is not available in the interface.
 
@@ -40,7 +40,7 @@ Use **Compare plans** to review the available plans. Use **Contact us** when you
 
 Click **Add subscription** to open the subscription management options.
 
-![Add subscription modal with the assignment and creation options](/assets/self_service/02_add_subscription_modal.png)
+![Add subscription modal with the assignment and creation options](../assets/self_service/02_add_subscription_modal.png)
 
 The modal provides two separate workflows.
 
@@ -71,5 +71,5 @@ For details about each action, see the task articles below.
 
 ## Related articles
 
-- [Create a subscription](/getting_started/create_a_subscription.md): How to configure and confirm a new subscription with the Self-Service wizard.
-- [Assign a subscription](/getting_started/assign_a_subscription.md): How to attach an existing trial or purchased subscription to a community.
+- [Create a subscription](create_a_subscription.md): How to configure and confirm a new subscription with the Self-Service wizard.
+- [Assign a subscription](assign_a_subscription.md): How to attach an existing trial or purchased subscription to a community.

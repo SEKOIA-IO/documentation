@@ -1,6 +1,6 @@
 # ExtraHop
 
-![ExtraHop](/assets/playbooks/library/extrahop.png){ align=right width=150 }
+![ExtraHop](../../../../assets/playbooks/library/extrahop.png)
 
 ExtraHop is a leading provider of network detection and response (NDR) solutions.
 

@@ -14,8 +14,11 @@ Total assets = Max(Users, Workstations) + Servers
 
 Going over the allowance does not interrupt your service. Sekoia monitors usage patterns and reaches out when a community consistently exceeds its threshold to help you find the right solution.
 
-!!! note "Why volume limits exist"
-    The platform is designed for unlimited ingestion at scale. Volume thresholds exist because sending large amounts of low-value data degrades detection performance for all communities and makes your own query results slower. The goal is to ingest security-relevant data, not everything.
+{% hint style="info" %}
+**Why volume limits exist**
+
+The platform is designed for unlimited ingestion at scale. Volume thresholds exist because sending large amounts of low-value data degrades detection performance for all communities and makes your own query results slower. The goal is to ingest security-relevant data, not everything.
+{% endhint %}
 
 ## Why act before you exceed the limit
 
@@ -31,8 +34,11 @@ Sekoia recommends filtering as early as possible in the data pipeline. The three
 | **Forwarder** | On your Rsyslog, Syslog-ng instance, or Sekoia Endpoint Agent | Eliminates volume before it reaches Sekoia |
 | **Platform** | On the Sekoia intake (optimization rules) | Events reach Sekoia but are discarded before storage and detection |
 
-!!! warning "Platform-level filtering is a last resort"
-    Platform-level optimization rules reduce storage and detection load, but events still travel to Sekoia. For volume reduction that also reduces network bandwidth and ingestion cost, apply filtering at the source or forwarder level first.
+{% hint style="warning" %}
+**Platform-level filtering is a last resort**
+
+Platform-level optimization rules reduce storage and detection load, but events still travel to Sekoia. For volume reduction that also reduces network bandwidth and ingestion cost, apply filtering at the source or forwarder level first.
+{% endhint %}
 
 ## Your action plan
 
@@ -50,7 +56,7 @@ Use this checklist when onboarding a new integration or reviewing an existing on
 **After going live**
 
 1. Monitor your community's volume from **Home > Settings > Usage**.
-2. Investigate spikes using the [investigate overusage playbook](/xdr/usecases/playbook/investigate_overusage.md).
+2. Investigate spikes using the [investigate overusage playbook](../xdr/usecases/playbook/investigate_overusage.md).
 3. Review your optimization rules quarterly as your environment changes.
 
 ## Involving your end users
@@ -66,8 +72,8 @@ A simple checklist to share with customers at onboarding:
 
 ## Related articles
 
-- [Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reduction_strategies.md): How to choose and apply the right filtering level for your situation.
-- [Investigate overusage](/xdr/usecases/playbook/investigate_overusage.md): How to identify which sources or event types are driving unexpected volume.
-- [Filter logs with Rsyslog or Syslog-ng](/xdr/features/collect/filter_logs_with_rsyslog_or_syslog_ng.md): How to drop unwanted events at the forwarder level before they reach Sekoia.
-- [Reduce event volume with the Sekoia Endpoint Agent](/integration/categories/endpoint/reduce_event_volume_endpoint_agent.md): How to configure agent-side optimization rules to filter events before transmission.
-- [Create an optimization rule](/xdr/features/collect/create_optimization_rule.md): How to create a platform-level optimization rule on an intake.
+- [Log volume reduction strategies](../xdr/usecases/playbook/log_volume_reduction_strategies.md): How to choose and apply the right filtering level for your situation.
+- [Investigate overusage](../xdr/usecases/playbook/investigate_overusage.md): How to identify which sources or event types are driving unexpected volume.
+- [Filter logs with Rsyslog or Syslog-ng](../xdr/features/collect/filter_logs_with_rsyslog_or_syslog_ng.md): How to drop unwanted events at the forwarder level before they reach Sekoia.
+- [Reduce event volume with the Sekoia Endpoint Agent](../integration/categories/endpoint/reduce_event_volume_endpoint_agent.md): How to configure agent-side optimization rules to filter events before transmission.
+- [Create an optimization rule](../xdr/features/collect/create_optimization_rule.md): How to create a platform-level optimization rule on an intake.

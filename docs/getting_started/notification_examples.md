@@ -11,7 +11,7 @@ type: reference
 
 This article provides ready-to-use templates for the most common notification scenarios in Sekoia. For each example, the trigger, recommended conditions, and suggested delivery action are listed. Use these as a starting point and adjust the conditions to match your environment.
 
-For setup instructions, see [Create a notification](/getting_started/create_a_notification.md).
+For setup instructions, see [Create a notification](create_a_notification.md).
 
 ## Intake monitoring
 
@@ -23,8 +23,11 @@ Receive an alert when one of your data sources stops sending events.
 | **Conditions** | Select the specific intake to monitor. Set the inactivity duration (15 minutes to 24 hours). |
 | **Action** | Email or Slack |
 
-!!! tip "Recommended threshold"
-    Set the inactivity duration to 1 hour for most intakes. For critical data sources such as an EDR (Endpoint Detection and Response) or Active Directory, use 15 or 30 minutes.
+{% hint style="success" %}
+**Recommended threshold**
+
+Set the inactivity duration to 1 hour for most intakes. For critical data sources such as an EDR (Endpoint Detection and Response) or Active Directory, use 15 or 30 minutes.
+{% endhint %}
 
 ## New detection rule in the catalog
 
@@ -46,16 +49,20 @@ Receive an alert when Sekoia publishes a new report relevant to your sector or t
 | **Conditions** | Filter by sector, TLP level, country, or report type (FLINT or standard). Combine multiple conditions for precision. |
 | **Action** | Email or Slack |
 
-??? example "FLINT reports for the finance sector"
-    **Trigger:** A report is available
+<details>
+<summary>FLINT reports for the finance sector</summary>
 
-    **Conditions:**
-    - Report type is FLINT
-    - Sector contains Finance
+**Trigger:** A report is available
 
-    **Action:** Send an email
+**Conditions:**
+- Report type is FLINT
+- Sector contains Finance
 
-    **Result:** You receive an email each time Sekoia publishes a FLINT report targeting the finance sector.
+**Action:** Send an email
+
+**Result:** You receive an email each time Sekoia publishes a FLINT report targeting the finance sector.
+
+</details>
 
 ## High-urgency alert raised
 
@@ -89,6 +96,6 @@ Receive an alert when a playbook encounters an error during execution.
 
 ## Related links
 
-- [Notification system overview](/getting_started/notification_system_overview.md): Full list of available triggers and delivery channels.
-- [Create a notification](/getting_started/create_a_notification.md): Step-by-step procedure to set up a notification rule.
-- [Manage notifications](/getting_started/manage_notifications.md): How to edit, disable, or delete existing rules.
+- [Notification system overview](notification_system_overview.md): Full list of available triggers and delivery channels.
+- [Create a notification](create_a_notification.md): Step-by-step procedure to set up a notification rule.
+- [Manage notifications](manage_notifications.md): How to edit, disable, or delete existing rules.

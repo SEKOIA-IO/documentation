@@ -4,7 +4,7 @@ Sekoia Self-Hosted ships with a complete observability stack and a set of on-dem
 
 ## Before you begin
 
-- You completed the deployment and validated post-deployment checks in [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md).
+- You completed the deployment and validated post-deployment checks in [Deploy the platform](../deployment/deployment_guide.md).
 - You have access to the Grafana interface at `https://<global.delivery_host>/grafana`.
 - For self-hosted-controller (SHC) diagnostic commands, you must run them from the orchestration node provisioned during installation.
 
@@ -26,7 +26,7 @@ Use Grafana for daily operations and trend analysis. Use SHC commands for incide
 | Prometheus | 2 replicas, each with a 20Gi volume | 7 days |
 | Loki | 1 replica with a 400Gi volume | 7 days (`168h`) |
 
-The installer sets these values, and no `config.yml` field changes them in this version. To keep logs longer, forward them from the Loki NodePort to your own log platform. See [NodePort services](/self_hosted/1.0.1/deployment/network_requirements.md#conditional-flows) in the network requirements.
+The installer sets these values, and no `config.yml` field changes them in this version. To keep logs longer, forward them from the Loki NodePort to your own log platform. See [NodePort services](../deployment/network_requirements.md#conditional-flows) in the network requirements.
 
 Prometheus scrapes the metrics endpoints of the platform services and databases, and the following exporters.
 
@@ -48,8 +48,11 @@ To access Grafana:
 2. Select **Dashboards** from the left navigation panel.
 3. Open the **Default** dashboard.
 
-!!! note "Available dashboards"
-    The platform ships one dashboard, **Default**, provisioned by the installer.
+{% hint style="info" %}
+**Available dashboards**
+
+The platform ships one dashboard, **Default**, provisioned by the installer.
+{% endhint %}
 
 ### Default dashboard
 
@@ -177,22 +180,29 @@ Promtail agents run on every node and ship all container logs to Loki, which run
 2. In the data source selector, choose **Loki**.
 3. Enter a LogQL query to filter by namespace, pod, application label, or time range.
 
-??? example "Example LogQL queries"
-    Filter all logs from the `support` namespace:
-    ```text
-    {namespace="support"}
-    ```
-    Filter logs from a specific pod containing an error:
-    ```text
-    {namespace="support", pod="redis-0"} |= "error"
-    ```
+<details>
+<summary>Example LogQL queries</summary>
 
-!!! warning "Loki has no authentication"
-    Loki also answers on TCP port 30011 of every node, without authentication. Anyone who reaches this port can query the logs of every service. Restrict the port to your monitoring clients, as described in [Network requirements](/self_hosted/1.0.1/deployment/network_requirements.md).
+Filter all logs from the `support` namespace:
+```text
+{namespace="support"}
+```
+Filter logs from a specific pod containing an error:
+```text
+{namespace="support", pod="redis-0"} |= "error"
+```
+
+</details>
+
+{% hint style="warning" %}
+**Loki has no authentication**
+
+Loki also answers on TCP port 30011 of every node, without authentication. Anyone who reaches this port can query the logs of every service. Restrict the port to your monitoring clients, as described in [Network requirements](../deployment/network_requirements.md).
+{% endhint %}
 
 ## Use SHC commands for on-demand diagnostics
 
-For targeted checks on specific services or layers of the platform using Prometheus metrics, follow [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md).
+For targeted checks on specific services or layers of the platform using Prometheus metrics, follow [Run platform diagnostics](run_diagnostics.md).
 
 The commands on this page differ in their effect on the platform:
 
@@ -216,10 +226,14 @@ To confirm all Kubernetes nodes are ready, run:
 exec CheckKubernetesCluster
 ```
 
-??? example "Expected output"
-    ```text
-    Kubernetes cluster is healthy nodes=6 expected=6
-    ```
+<details>
+<summary>Expected output</summary>
+
+```text
+Kubernetes cluster is healthy nodes=6 expected=6
+```
+
+</details>
 
 Run this command first when investigating any platform issue. The expected count is the number of hosts in the Ansible inventory. A mismatch between the actual and expected node counts indicates that a node did not join the cluster or was removed from it.
 
@@ -258,8 +272,11 @@ To review memory requests versus actual consumption across all pods, run:
 exec DebugResourceAllocation
 ```
 
-!!! note "Metrics Server required"
-    This command queries the Kubernetes Metrics API. If the Metrics Server is not deployed, the command exits with an actionable error. Run `HelmInstall` to deploy it.
+{% hint style="info" %}
+**Metrics Server required**
+
+This command queries the Kubernetes Metrics API. If the Metrics Server is not deployed, the command exits with an actionable error. Run `HelmInstall` to deploy it.
+{% endhint %}
 
 The output surfaces pods with over-provisioned memory requests (highlighted in red for 80% waste or more) and pods without any memory request declared (a scheduling risk).
 
@@ -269,7 +286,7 @@ The output surfaces pods with over-provisioned memory requests (highlighted in r
 2. Expand the **Global workflow** row. Verify that ingestion, pre-parsing, sigma-workflow, and ExaLog indexation are all processing events at the expected rate and that no stage shows a backlog.
 3. Expand the **Kafka** row. Confirm consumer lag is stable and no topics have offline or under-replicated partitions.
 4. Expand the **PVC usage** and **Ceph** rows. Check that no volume approaches saturation and that no slow disk is reported.
-5. Review the firing alerts in Grafana, under **Alerting > Alert rules**. See [Platform alerts reference](/self_hosted/1.0.1/monitoring/platform_alerts.md).
+5. Review the firing alerts in Grafana, under **Alerting > Alert rules**. See [Platform alerts reference](platform_alerts.md).
 
 ## Recommended incident response workflow
 
@@ -294,12 +311,12 @@ exec Diagnostic
 
 This sequence moves from infrastructure layer to application layer to database layer to resource layer to service layer. Each step scopes the investigation before you move on.
 
-If applications show `OutOfSync` or `Degraded` after running `DebugArgoCD`, continue with [Debug your deployment](/self_hosted/1.0.1/troubleshooting/debug_tool.md).
+If applications show `OutOfSync` or `Degraded` after running `DebugArgoCD`, continue with [Debug your deployment](../troubleshooting/debug_tool.md).
 
 ## Related links
 
-- [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md): Targeted Prometheus health checks for platform services.
-- [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md): Live node, cluster, storage, and diagnostics views in the interactive SHC interface.
-- [Debug your deployment](/self_hosted/1.0.1/troubleshooting/debug_tool.md): Full SHC debug command reference with remediation steps.
-- [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md): Post-deployment validation commands.
-- [Technical requirements](/self_hosted/1.0.1/deployment/deployment_prerequisites.md): Compute node and S3 storage requirements.
+- [Run platform diagnostics](run_diagnostics.md): Targeted Prometheus health checks for platform services.
+- [Use the SHC interface](../operations/controller_interface.md): Live node, cluster, storage, and diagnostics views in the interactive SHC interface.
+- [Debug your deployment](../troubleshooting/debug_tool.md): Full SHC debug command reference with remediation steps.
+- [Deploy the platform](../deployment/deployment_guide.md): Post-deployment validation commands.
+- [Technical requirements](../deployment/deployment_prerequisites.md): Compute node and S3 storage requirements.

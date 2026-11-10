@@ -1,6 +1,6 @@
 # TEHTRIS
 
-![TEHTRIS](/assets/playbooks/library/tehtris.png){ align=right width=150 }
+![TEHTRIS](../../../../assets/playbooks/library/tehtris.png)
 
 [TEHTRIS](https://tehtris.com) is a cybersecurity company offering products designed to protect endpoints against knwon and unknown threats
 

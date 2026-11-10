@@ -10,10 +10,13 @@ To access the asset connector list, navigate to **Configure > Assets > Asset con
 
 Review the connector list. A connector with an issue displays an error message in the upper right corner of its tile.
 
-!!! note "Zero assets warning"
-    If a connector tile shows 0 assets, this may indicate a synchronization issue even if no error message is visible. Inspect the logs to confirm.
+{% hint style="info" %}
+**Zero assets warning**
 
-![!Defective connector with message Error during data collection](/assets/connector_error_mesg.png){: style="width: 100%; max-width: 100%"}
+If a connector tile shows 0 assets, this may indicate a synchronization issue even if no error message is visible. Inspect the logs to confirm.
+{% endhint %}
+
+![!Defective connector with message Error during data collection](../../../assets/connector_error_mesg.png)
 
 ## Step 2: Open the connector logs
 
@@ -22,7 +25,7 @@ Review the connector list. A connector with an issue displays an error message i
 
 The full log list opens.
 
-![!Asset connector log list with error entries](/assets/connector_logs.png){: style="width: 100%; max-width: 100%"}
+![!Asset connector log list with error entries](../../../assets/connector_logs.png)
 
 ## Step 3: Diagnose the issue
 
@@ -48,12 +51,15 @@ If the issue is caused by a misconfiguration or expired credentials:
 
 The connector resumes synchronization with the updated configuration.
 
-!!! note "What the test checks"
-    The test validates credentials only. It does not retrieve assets. Verify asset retrieval from the **Assets** page after saving.
+{% hint style="info" %}
+**What the test checks**
+
+The test validates credentials only. It does not retrieve assets. Verify asset retrieval from the **Assets** page after saving.
+{% endhint %}
 
 ## Related links
 
-- [Create an asset connector](/xdr/features/modules/reveal_asset_connectors_create.md) — How to configure a new asset connector from the integration catalog.
-- [Reveal feature enablement matrix](/xdr/features/modules/reveal_feature_enablement.md) — Which data sources are required for each Reveal capability.
-- [Security controls](/xdr/features/modules/reveal_security_controls.md) — How to verify connector coverage and identify visibility gaps from the asset context panel.
-- [Troubleshoot Reveal](/xdr/features/modules/reveal_troubleshoot.md) — General Reveal troubleshooting for missing data across capabilities.
+- [Create an asset connector](reveal_asset_connectors_create.md) — How to configure a new asset connector from the integration catalog.
+- [Reveal feature enablement matrix](reveal_feature_enablement.md) — Which data sources are required for each Reveal capability.
+- [Security controls](reveal_security_controls.md) — How to verify connector coverage and identify visibility gaps from the asset context panel.
+- [Troubleshoot Reveal](reveal_troubleshoot.md) — General Reveal troubleshooting for missing data across capabilities.

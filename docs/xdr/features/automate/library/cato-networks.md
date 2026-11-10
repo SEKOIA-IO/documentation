@@ -1,6 +1,6 @@
 # Cato Networks
 
-![Cato Networks](/assets/playbooks/library/cato-networks.png){ align=right width=150 }
+![Cato Networks](../../../../assets/playbooks/library/cato-networks.png)
 
 Cato Networks is a software company providing solutions to protect cloud applications.
 

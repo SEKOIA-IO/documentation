@@ -4,7 +4,7 @@ The default feed is available as a MISP feed.
 
 It can be added to an existing MISP instance by following [MISP's documentation](https://www.circl.lu/doc/misp/managing-feeds/).
 
-To fetch Sekoia.io’s MISP feed, you’ll have to generate an API key with the `View intelligence` permission. Please read the “[Generate API keys](/getting_started/manage_api_keys.md)“ page to understand how to create a new API key with the proper permissions.
+To fetch Sekoia.io’s MISP feed, you’ll have to generate an API key with the `View intelligence` permission. Please read the “[Generate API keys](../../../getting_started/manage_api_keys.md)“ page to understand how to create a new API key with the proper permissions.
 
 The following field values are required for the feed to work properly:
 
@@ -14,13 +14,14 @@ The following field values are required for the feed to work properly:
 -   Headers: `Authorization: Bearer <APIKEY>` (please replace `<APIKEY>` with the secret API key)
 -   Enabled: `True`
 
-![!Configuring Sekoia.io’s MISP feed in MISP](/assets/intelligence_center/misp_feed_configuration.png){width=400px}
+![!Configuring Sekoia.io’s MISP feed in MISP](../../../assets/intelligence_center/misp_feed_configuration.png)
 
 You then need to make sure you have a scheduled task in place to regularly fetch the feed's content.
 
-!!! note
+{% hint style="info" %}
 
-    MISP adds automatically the suffix `/manifest.json` to the feed URL. If you want to try the connection to the feed outside MISP or make a custom script, you need to use the following URL: `https://api.sekoia.io/v1/misp-gateway/misp/manifest.json`
+MISP adds automatically the suffix `/manifest.json` to the feed URL. If you want to try the connection to the feed outside MISP or make a custom script, you need to use the following URL: `https://api.sekoia.io/v1/misp-gateway/misp/manifest.json`
+{% endhint %}
 
 The new MISP feed contains all non-expired Sekoia.io intelligence material and is constantly kept in sync with SEKOIA.IO’s intelligence feed. This way, when an indicator is updated in SEKOIA.IO, it will also be updated in the MISP feed. This ensures that the indicator is not duplicated each time an update occurs.
 

@@ -35,10 +35,13 @@ Applying a second template to a case that already has one does not replace the e
 - **Tasks:** tasks from the new template are appended to the existing task list.
 - **Notebook template:** the new notebook template is added alongside any existing one.
 
-!!! note "Task accumulation"
-    Because tasks accumulate when multiple templates are applied, review the task list after each application to avoid unintended duplicates.
+{% hint style="info" %}
+**Task accumulation**
+
+Because tasks accumulate when multiple templates are applied, review the task list after each application to avoid unintended duplicates.
+{% endhint %}
 
 ## Related articles
 
-- [Create a case template](/xdr/features/investigate/create_a_case_template.md): How to create and configure a template in Settings.
-- [Apply a case template to a case](/xdr/features/investigate/apply_a_case_template.md): How to apply a template at case creation or on an existing case.
+- [Create a case template](create_a_case_template.md): How to create and configure a template in Settings.
+- [Apply a case template to a case](apply_a_case_template.md): How to apply a template at case creation or on an existing case.

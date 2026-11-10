@@ -13,14 +13,15 @@ This use case describes how to use Whois module in order to enrich an IP address
 	* `View anomaly dataset`
 	* `View event stats in asset listing`
 
-!!!note
-    To create your API Key, follow this [documentation](../../../getting_started/manage_api_keys.md).
+{% hint style="info" %}
+To create your API Key, follow this [documentation](../../../getting_started/manage_api_keys.md).
+{% endhint %}
 
 ## Playbook configuration
 
 You can find the configuration below: 
 
-![Playbook WhoIS](/assets/playbooks/library/UseCases/WhoIS.png)
+![Playbook WhoIS](../../../assets/playbooks/library/UseCases/WhoIS.png)
 
 | Module | Configuration |
 | --- | --- |

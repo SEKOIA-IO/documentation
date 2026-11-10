@@ -1,6 +1,6 @@
 # Github
 
-![Github](/assets/playbooks/library/github.png){ align=right width=150 }
+![Github](../../../../assets/playbooks/library/github.png)
 
 Github connector for audit logs
 

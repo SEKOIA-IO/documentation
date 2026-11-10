@@ -2,7 +2,15 @@
 
 To make it easier for employees to access Sekoia.io, you can enable SSO in your Sekoia.io community.
 
-{!_shared_content/sso_multiple_business.md!}
+<!-- include:_shared_content/sso_multiple_business.md -->
+## Important Note on SSO Configuration for Multiple Business Entities
+
+When configuring Single Sign-On (SSO) for organizations that have multiple business entities with the same email domain, it's essential to ensure that users from one entity do not have access to the other’s Sekoia communities. Here are specific recommendations to achieve this:
+
+- **Disable Automatic User Creation**: While configuring SSO for both entities, ensure that the "automatically create user if missing" option is **NOT** enabled. This setting will prevent unintended account creation across different communities. Only manually created account in a community will have the possibility to login to it.
+- **Allow Same Domain**: SSO can be configured to support the same email domain across two distinct communities without issues. This means entities can use the same domain for authentication while keeping their communities isolated.
+- **Utilize Distinct Providers**: It’s advisable to set up unique providers for each business entity, which involves **creating separate policies**. This configuration will help restrict access to specific users and reduce the possibility of misconfiguration on Sekoia.io.
+<!-- endinclude:_shared_content/sso_multiple_business.md -->
 
 ## Prerequisites for OpenID Connect
 
@@ -40,7 +48,7 @@ You can choose to enable the automatic creation of users' accounts in your commu
 
 By using this feature, when a user logs-in for the first time, their account will be automatically created. You can set the default role for newly created users, and you can choose the default role among all the roles available in your community.
 
-If you don't enable "just-in-time" account creation, you will have to manually create user accounts. You can learn more about how to create user accounts in the article: [Invite users](/getting_started/invite_users.md).
+If you don't enable "just-in-time" account creation, you will have to manually create user accounts. You can learn more about how to create user accounts in the article: [Invite users](../invite_users.md).
 
 
 ## Login method

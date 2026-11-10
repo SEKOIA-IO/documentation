@@ -2,8 +2,11 @@
 
 Case custom views are named, saved configurations of the cases listing page that store your filters, displayed columns and sort order. You open a view in one click instead of rebuilding the same filters at every session, and you can keep it private or share it with everyone in your community.
 
-!!! note "Early Access"
-    This feature is currently in Early Access and is only available for Beta testers. Sekoia.io plans to roll out this functionality to all environments soon.
+{% hint style="info" %}
+**Early Access**
+
+This feature is currently in Early Access and is only available for Beta testers. Sekoia.io plans to roll out this functionality to all environments soon.
+{% endhint %}
 
 ## Why use custom views
 
@@ -28,7 +31,7 @@ Views appear as tabs in a bar above the cases list. The **All cases** tab shows 
 
 Selecting a view applies its filters, columns, sort order and search text immediately. When you change any of these settings on an open view, including the search text, **Reset** and a save button appear so you can discard or keep your changes. The save button reads **Save** on a private view and **Save for everyone** on a shared view.
 
-![Cases listing page with the views bar showing All cases, the private view My cases, the shared views Open and New Today, and the New view button](/assets/operation_center/cases/case-custom-views-bar.png){: style="max-width:100%"}
+![Cases listing page with the views bar showing All cases, the private view My cases, the shared views Open and New Today, and the New view button](../../../assets/operation_center/cases/case-custom-views-bar.png)
 
 ## Visibility
 
@@ -39,8 +42,11 @@ Each view has one of two visibility settings, chosen when you create it and edit
 | Private | Lock | Only you. |
 | Share to the community | People | Every user of the community with the permission to view case custom views. |
 
-!!! warning "Shared views update for everyone"
-    Saving changes to a shared view updates it immediately for every user of the community who has access to it.
+{% hint style="warning" %}
+**Shared views update for everyone**
+
+Saving changes to a shared view updates it immediately for every user of the community who has access to it.
+{% endhint %}
 
 ## Limits
 
@@ -71,9 +77,9 @@ Two permissions of the **Cases** group control access to custom views. Grant the
 
 ## Related articles
 
-* [Manage case custom views](/xdr/features/investigate/manage_case_custom_views.md): How to create, save, edit, duplicate, delete and reorder views.
-* [Manage cases](/xdr/features/investigate/manage_cases.md): How to filter, sort and perform bulk actions on cases from the listing page.
-* [Cases](/xdr/features/investigate/cases.md): Overview of what cases are and how they are structured.
-* [Custom fields](/xdr/features/investigate/custom_fields.md): How to extend alerts and cases with structured, typed metadata fields.
-* [Roles and permissions](/getting_started/roles_and_permissions.md): How built-in and custom roles grant access to platform features.
-* [Workspace and communities](/getting_started/workspace_and_communities.md): How workspaces and communities are organized in multi-tenant mode.
+* [Manage case custom views](manage_case_custom_views.md): How to create, save, edit, duplicate, delete and reorder views.
+* [Manage cases](manage_cases.md): How to filter, sort and perform bulk actions on cases from the listing page.
+* [Cases](cases.md): Overview of what cases are and how they are structured.
+* [Custom fields](custom_fields.md): How to extend alerts and cases with structured, typed metadata fields.
+* [Roles and permissions](../../../getting_started/roles_and_permissions.md): How built-in and custom roles grant access to platform features.
+* [Workspace and communities](../../../getting_started/workspace_and_communities.md): How workspaces and communities are organized in multi-tenant mode.

@@ -11,8 +11,11 @@ Running **Update** is enough to make the new code available. What you do next de
 
 ## Before you update
 
-!!! warning "Bump the version before pushing"
-    If you push a code change without changing the version, the platform has no way to tell that anything changed, and does not know to restart what is currently running. Update the `version` field in both `manifest.json` and `CHANGELOG.md` before pushing. See [Deploy your module](/integration/develop_integration/automation/create_a_module.md#deploy-your-module).
+{% hint style="warning" %}
+**Bump the version before pushing**
+
+If you push a code change without changing the version, the platform has no way to tell that anything changed, and does not know to restart what is currently running. Update the `version` field in both `manifest.json` and `CHANGELOG.md` before pushing. See [Deploy your module](../../../integration/develop_integration/automation/create_a_module.md#deploy-your-module).
+{% endhint %}
 
 Prepare the update:
 
@@ -48,8 +51,11 @@ Run **Check for updates**, then **Update**, on the integration.
 
 To verify the update applied, check that the connector configuration's status and last restart reflect a recent restart, and that data flows again as expected.
 
-!!! tip "A running connector did not restart"
-    Do not wait and do not run the update again. Click **Stop**, then **Start** on the connector configuration. A manual restart always applies the integration's current version, whatever prevented the automatic restart.
+{% hint style="success" %}
+**A running connector did not restart**
+
+Do not wait and do not run the update again. Click **Stop**, then **Start** on the connector configuration. A manual restart always applies the integration's current version, whatever prevented the automatic restart.
+{% endhint %}
 
 ## Update a trigger
 
@@ -62,13 +68,19 @@ A trigger configuration is tied to a playbook. It runs while its playbook is act
 
 To verify the update applied, send a test event or wait for a real one, then confirm the playbook runs with the expected new behavior.
 
-!!! tip "A running trigger did not pick up the update"
-    Deactivate the playbook, then activate it again. This is the equivalent of **Stop** and **Start** for a connector, and always applies the integration's current version.
+{% hint style="success" %}
+**A running trigger did not pick up the update**
+
+Deactivate the playbook, then activate it again. This is the equivalent of **Stop** and **Start** for a connector, and always applies the integration's current version.
+{% endhint %}
 
 ## Restart instead of deleting and recreating
 
-!!! warning "Deleting a configuration is never required to apply an update"
-    A new configuration gets a new identifier and a new authentication token. For a connector, anything that references the configuration externally, in particular the intake it feeds, does not follow the new one. For a trigger, you have to re-attach the playbook to the new configuration manually.
+{% hint style="warning" %}
+**Deleting a configuration is never required to apply an update**
+
+A new configuration gets a new identifier and a new authentication token. For a connector, anything that references the configuration externally, in particular the intake it feeds, does not follow the new one. For a trigger, you have to re-attach the playbook to the new configuration manually.
+{% endhint %}
 
 A restart keeps everything in place and only replaces the running instance with the new version.
 
@@ -95,8 +107,8 @@ Consider deleting and recreating a configuration only if, after all of the above
 
 ## Related articles
 
-* [Integrations catalog](/xdr/features/collect/integrations_hub.md): Overview of the catalog and how to create and import a custom integration.
-* [Create a module](/integration/develop_integration/automation/create_a_module.md): How to develop a module, version it, and push it to GitHub or GitLab.
-* [Module](/integration/develop_integration/automation/module.md): Reference for the module structure and its manifest, including the `version` field.
-* [Intakes](/xdr/features/collect/intakes.md): How pull intakes and their connectors are started, stopped and monitored.
-* [Navigate through playbooks](/xdr/features/automate/navigate_playbooks.md): How to activate and deactivate a playbook and read its status.
+* [Integrations catalog](integrations_hub.md): Overview of the catalog and how to create and import a custom integration.
+* [Create a module](../../../integration/develop_integration/automation/create_a_module.md): How to develop a module, version it, and push it to GitHub or GitLab.
+* [Module](../../../integration/develop_integration/automation/module.md): Reference for the module structure and its manifest, including the `version` field.
+* [Intakes](intakes.md): How pull intakes and their connectors are started, stopped and monitored.
+* [Navigate through playbooks](../automate/navigate_playbooks.md): How to activate and deactivate a playbook and read its status.

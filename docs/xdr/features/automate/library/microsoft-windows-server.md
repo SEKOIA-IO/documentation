@@ -4,7 +4,7 @@ type: playbook
 
 # Microsoft Windows Server
 
-![Microsoft Windows Server](/assets/playbooks/library/microsoft-windows-server.png){ align=right width=150 }
+![Microsoft Windows Server](../../../../assets/playbooks/library/microsoft-windows-server.png)
 
 Microsoft Windows Server is an operating system designed for server-based computing, offering robust server management, data storage, and networking capabilities for businesses and enterprises, facilitating diverse workloads and IT operations.
 

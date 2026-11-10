@@ -11,14 +11,15 @@ This use case describes how to enrich the comments of an alert with the User age
 	* `View alerts`
 	* `Comment alerts`
 
-!!!note
-    To create your API Key, follow this [documentation](/getting_started/manage_api_keys.md#create-an-api-key).
+{% hint style="info" %}
+To create your API Key, follow this [documentation](../../../getting_started/manage_api_keys.md#create-an-api-key).
+{% endhint %}
 
 ## Playbook configuration
 
 Find the playbook configuration below:
 
-![Playbook Add_UserAgent_in_comment](/assets/playbooks/library/UseCases/Add_UserAgent_in_comment.png)
+![Playbook Add_UserAgent_in_comment](../../../assets/playbooks/library/UseCases/Add_UserAgent_in_comment.png)
 
 | Module | Configuration |
 | --- | --- |
@@ -28,9 +29,10 @@ Find the playbook configuration below:
 | Comment Alert | See fields below |
 
 
-!!!note
-    The query could vary according to the event types / intakes.
-    If the events does not contain user Agent, it will not retrieve any events
+{% hint style="info" %}
+The query could vary according to the event types / intakes.
+If the events does not contain user Agent, it will not retrieve any events
+{% endhint %}
 
 `Get Event Field Common Values`
   - **earliest_time**   `{{ ((node.2.first_seen_at | iso8601_to_timestamp) - 3600000) | timestamp_to_iso8601 }}`

@@ -115,7 +115,7 @@ You can freely use this open specification to share and publish playbook templat
 
 Active Sekoia.io Defend subscribers can upload a playbook to their community from any source via [a POST API endpoint](https://docs.sekoia.com/xdr/develop/rest_api/playbooks/#tag/Playbooks/operation/post_playbooks_resource) or via copy-paste in the Code tab:
 
-![](img/playbook_code.png){: style="max-width:100%"}
+![](img/playbook_code.png)
 
 Example python code:
 ```python

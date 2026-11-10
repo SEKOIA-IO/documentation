@@ -2,9 +2,12 @@
 
 You can create optimization rules via the Sekoia.io API to automate the filtering and cleaning of your incoming security data.
 
-!!! tip "Prioritize filtering at the source"
-    Use optimization rules as a last resort for managing log volume. Sekoia.io recommends implementing filters as close to the data source as possible (e.g., at the device or forwarder level) before applying platform-level rules. 
-    For a detailed hierarchy of filtering methods, see the [Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reduction_strategies.md) guide.
+{% hint style="success" %}
+**Prioritize filtering at the source**
+
+Use optimization rules as a last resort for managing log volume. Sekoia.io recommends implementing filters as close to the data source as possible (e.g., at the device or forwarder level) before applying platform-level rules. 
+For a detailed hierarchy of filtering methods, see the [Log volume reduction strategies](../../usecases/playbook/log_volume_reduction_strategies.md) guide.
+{% endhint %}
     
 
 ## Prerequisites
@@ -25,60 +28,77 @@ To create a new optimization rule, send a POST request to the configuration endp
 4. Add your criteria in the **filters** array using a **field**, **operator**, and **value**.
 5. Send the request to `https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules.
 
-!!! warning "Respect field types"
+{% hint style="warning" %}
+**Respect field types**
 
-    You must match the value type to the field definition to avoid runtime errors.
-    * If the field is an Integer, do not use quotes (e.g., "value": 4624).
-    * If the field is a String, use quotes (e.g., "value": "netflow").
-    
-    Using quotes for an integer field will cause the filter to fail.
 
-!!! warning "Optimization rules limitations"
+You must match the value type to the field definition to avoid runtime errors.
+* If the field is an Integer, do not use quotes (e.g., "value": 4624).
+* If the field is a String, use quotes (e.g., "value": "netflow").
 
-    Optimization rules only support parsed fields. Enriched fields (like sekoiaio.tags.*) are not usable in this context.
+Using quotes for an integer field will cause the filter to fail.
+{% endhint %}
 
-!!! warning "Sekoia Endpoint Agent intakes"
+{% hint style="warning" %}
+**Optimization rules limitations**
 
-    For an intake collected by the Sekoia Endpoint Agent, optimization rules are applied on the agent itself. The agent only applies rules that match its format, so you must set the **format_uuid** to the Sekoia Endpoint Agent format (or set **agent_id**, which sets it automatically). A rule created on an agent intake without a **format_uuid** will not be applied on the agent.
 
-??? example "Example: Ignore LDAP traffic on NetFlow"
-    This command ignores NetFlow events based on parsed fields (for example, specific ports or datasets).
-    ```bash
-    curl --request POST \
-    --url https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules \
-    --header 'Authorization: Bearer YOUR_TOKEN' \
-    --header 'Content-Type: application/json' \
-    --data '{
-      "action": 1,
-      "description": "Remove private / private events",
-      "community_uuid": "YOUR_COMMUNITY_ID",
-      "filters": [
-        { "field": "event.dataset", "operator": "==", "value": "netflow" },
-        { "field": "destination.port", "operator": "==", "value": 389 }
-      ]
-    }'
-    ```
+Optimization rules only support parsed fields. Enriched fields (like sekoiaio.tags.*) are not usable in this context.
+{% endhint %}
 
-??? example "Example: Ignore unparsed events on a specific intake"
-    Use action `8` (Ignore Useless Event) to silently drop events that your parser could not extract any data from.
-    No filters are needed — the rule relies on the parser's internal detection of empty results.
-    ```bash
-    curl --request POST \
-    --url https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules \
-    --header 'Authorization: Bearer YOUR_TOKEN' \
-    --header 'Content-Type: application/json' \
-    --data '{
-      "action": 8,
-      "description": "Ignore events with no parsed data",
-      "intake_uuid": "YOUR_INTAKE_UUID"
-    }'
-    ```
+{% hint style="warning" %}
+**Sekoia Endpoint Agent intakes**
+
+
+For an intake collected by the Sekoia Endpoint Agent, optimization rules are applied on the agent itself. The agent only applies rules that match its format, so you must set the **format_uuid** to the Sekoia Endpoint Agent format (or set **agent_id**, which sets it automatically). A rule created on an agent intake without a **format_uuid** will not be applied on the agent.
+{% endhint %}
+
+<details>
+<summary>Example: Ignore LDAP traffic on NetFlow</summary>
+
+This command ignores NetFlow events based on parsed fields (for example, specific ports or datasets).
+```bash
+curl --request POST \
+--url https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules \
+--header 'Authorization: Bearer YOUR_TOKEN' \
+--header 'Content-Type: application/json' \
+--data '{
+  "action": 1,
+  "description": "Remove private / private events",
+  "community_uuid": "YOUR_COMMUNITY_ID",
+  "filters": [
+    { "field": "event.dataset", "operator": "==", "value": "netflow" },
+    { "field": "destination.port", "operator": "==", "value": 389 }
+  ]
+}'
+```
+
+</details>
+
+<details>
+<summary>Example: Ignore unparsed events on a specific intake</summary>
+
+Use action `8` (Ignore Useless Event) to silently drop events that your parser could not extract any data from.
+No filters are needed — the rule relies on the parser's internal detection of empty results.
+```bash
+curl --request POST \
+--url https://api.sekoia.io/v1/sic/conf/intakes/optimization_rules \
+--header 'Authorization: Bearer YOUR_TOKEN' \
+--header 'Content-Type: application/json' \
+--data '{
+  "action": 8,
+  "description": "Ignore events with no parsed data",
+  "intake_uuid": "YOUR_INTAKE_UUID"
+}'
+```
+
+</details>
 
 ## Result
 
 Once created, the rule is applied to matching incoming events immediately. You can verify the reduction of ingestion volume on the platform's usage page if you used the **Ignore Event** action. There is no limit to the number of rules you can create.
 
 ## See also
-* [Optimization rules overview](/xdr/features/collect/optimization_rules_overview.md)
-* [Optimization rules technical reference](/xdr/features/collect/optimization_rules_reference.md) to learn more about filter operators, action bitmask values and more. 
-* [Investigate fair use overusage](/xdr/usecases/playbook/investigate_overusage.md) to align your rules on your usage.
+* [Optimization rules overview](optimization_rules_overview.md)
+* [Optimization rules technical reference](optimization_rules_reference.md) to learn more about filter operators, action bitmask values and more. 
+* [Investigate fair use overusage](../../usecases/playbook/investigate_overusage.md) to align your rules on your usage.

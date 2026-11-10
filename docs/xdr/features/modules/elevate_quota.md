@@ -12,22 +12,25 @@ Track your run consumption from the Usage page. Navigate to **Settings > Usage >
 
 When the run pack is exhausted, the agent stops analyzing new alerts and displays the **AI monthly quota limit reached** state on any alert it cannot process.
 
-!!! note "Runs reset monthly"
-    Runs reset at the start of each month and do not roll over. Unused runs from one month are not added to the next.
+{% hint style="info" %}
+**Runs reset monthly**
+
+Runs reset at the start of each month and do not roll over. Unused runs from one month are not added to the next.
+{% endhint %}
 
 ## Optimize run consumption
 
 You can reduce consumption without disabling Elevate entirely by restricting which alerts the agent analyzes.
 
-**Scope auto-analysis** by detection rule, rule effort level, alert severity or alert urgency to focus the agent on alerts where AI investigation adds the most value and skip those already handled by playbooks. See [Scope auto-analysis with filters](/xdr/features/modules/elevate_rule_filter.md).
+**Scope auto-analysis** by detection rule, rule effort level, alert severity or alert urgency to focus the agent on alerts where AI investigation adds the most value and skip those already handled by playbooks. See [Scope auto-analysis with filters](elevate_rule_filter.md).
 
-**Disable auto-analysis for specific communities** when certain sub-tenants generate high alert volumes that do not require AI investigation. See [Override Elevate settings for a community](/xdr/features/modules/elevate_community_override.md).
+**Disable auto-analysis for specific communities** when certain sub-tenants generate high alert volumes that do not require AI investigation. See [Override Elevate settings for a community](elevate_community_override.md).
 
-**Use manual analysis selectively** to trigger investigations only on alerts that warrant deeper review. See [Trigger a manual Elevate analysis](/xdr/features/modules/elevate_manual_analysis.md).
+**Use manual analysis selectively** to trigger investigations only on alerts that warrant deeper review. See [Trigger a manual Elevate analysis](elevate_manual_analysis.md).
 
 ## Run management for MSSPs
 
-If you manage multiple communities, your sub-tenants draw from a shared workspace run pack. From the Usage page you can review each community's consumption against the pack. To keep a single noisy sub-tenant from consuming a disproportionate share, disable or limit auto-analysis for that community. See [Override Elevate settings for a community](/xdr/features/modules/elevate_community_override.md) and [Scope auto-analysis with filters](/xdr/features/modules/elevate_rule_filter.md).
+If you manage multiple communities, your sub-tenants draw from a shared workspace run pack. From the Usage page you can review each community's consumption against the pack. To keep a single noisy sub-tenant from consuming a disproportionate share, disable or limit auto-analysis for that community. See [Override Elevate settings for a community](elevate_community_override.md) and [Scope auto-analysis with filters](elevate_rule_filter.md).
 
 ## What happens when the run pack is exhausted
 
@@ -41,8 +44,8 @@ Runs reset automatically at the start of next month.
 
 ## Related articles
 
-- [Elevate](/xdr/features/modules/elevate_overview.md): Concept overview of how Elevate works and its key concepts.
-- [Elevate analysis states](/xdr/features/modules/elevate_analysis_states.md): Reference table of all possible AI analysis states including AI limit reached.
-- [Scope auto-analysis with filters](/xdr/features/modules/elevate_rule_filter.md): How to limit which alerts Elevate analyzes by rule, effort level, severity or urgency.
-- [Override Elevate settings for a community](/xdr/features/modules/elevate_community_override.md): How to disable Elevate for specific communities to reduce consumption.
-- [Elevate analytics](/xdr/features/modules/elevate_analytics.md): Reference for the Analytics page that measures Elevate speed, volume and verdict accuracy.
+- [Elevate](elevate_overview.md): Concept overview of how Elevate works and its key concepts.
+- [Elevate analysis states](elevate_analysis_states.md): Reference table of all possible AI analysis states including AI limit reached.
+- [Scope auto-analysis with filters](elevate_rule_filter.md): How to limit which alerts Elevate analyzes by rule, effort level, severity or urgency.
+- [Override Elevate settings for a community](elevate_community_override.md): How to disable Elevate for specific communities to reduce consumption.
+- [Elevate analytics](elevate_analytics.md): Reference for the Analytics page that measures Elevate speed, volume and verdict accuracy.

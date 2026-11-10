@@ -27,8 +27,9 @@ The **Details** tab contains the following:
 * A Markdown-enabled description field.
 * A timeline of analyst comments.
 
-!!! note
-    A case can contain a maximum of 500 comments. Once the limit is reached, no new comment can be added to the case. To make room for new comments, delete existing ones. A comment can only be deleted by its author.
+{% hint style="info" %}
+A case can contain a maximum of 500 comments. Once the limit is reached, no new comment can be added to the case. To make room for new comments, delete existing ones. A comment can only be deleted by its author.
+{% endhint %}
 
 ### Alerts tab
 
@@ -43,14 +44,14 @@ The **Tasks** tab lets you create and manage tasks and subtasks associated with 
 
 ### Events tab
 
-The **Events** tab lists all events associated with the case, using the same display as the [Events page](/xdr/features/investigate/events.md).
+The **Events** tab lists all events associated with the case, using the same display as the [Events page](events.md).
 
-![Events tab inside a case](/assets/operation_center/cases/case-events-tab.png){: style="max-width:100%"}
+![Events tab inside a case](../../../assets/operation_center/cases/case-events-tab.png)
 
 Events appear in this tab when they:
 
 * Raised an alert that was added to the case.
-* Were [directly added to the case](/xdr/features/investigate/events.md#adding-events-to-cases).
+* Were [directly added to the case](events.md#adding-events-to-cases).
 
 When you interact with individual values in the event list, the following options are available:
 
@@ -78,17 +79,17 @@ To search events by value:
 
 A side panel opens with the search results so you can investigate without leaving the case page.
 
-![Search events in side panel](/assets/operation_center/cases/case-side-panel.png){: style="max-width:100%"}
+![Search events in side panel](../../../assets/operation_center/cases/case-side-panel.png)
 
 ### Graph investigation tab
 
-The **Graph investigation** tab provides an interactive visualization of the case's alerts and events. For full documentation on how to use and configure the graph, see [Graph investigation](/xdr/features/investigate/graph_investigation.md).
+The **Graph investigation** tab provides an interactive visualization of the case's alerts and events. For full documentation on how to use and configure the graph, see [Graph investigation](graph_investigation.md).
 
 ## Related articles
 
-* [Cases](/xdr/features/investigate/cases.md): Overview of what cases are and how they are structured.
-* [Create a case](/xdr/features/investigate/create_a_case.md): Step-by-step instructions to open a new case and attach alerts to it.
-* [Manage cases](/xdr/features/investigate/manage_cases.md): How to filter, sort, bulk-edit, and edit cases.
-* [Graph investigation](/xdr/features/investigate/graph_investigation.md): How to use the interactive graph to correlate observables and threat intelligence.
-* [Custom fields](/xdr/features/investigate/custom_fields.md): How to add and manage structured metadata fields on a case.
-* [Events](/xdr/features/investigate/events.md): How to explore events and run contextual searches.
+* [Cases](cases.md): Overview of what cases are and how they are structured.
+* [Create a case](create_a_case.md): Step-by-step instructions to open a new case and attach alerts to it.
+* [Manage cases](manage_cases.md): How to filter, sort, bulk-edit, and edit cases.
+* [Graph investigation](graph_investigation.md): How to use the interactive graph to correlate observables and threat intelligence.
+* [Custom fields](custom_fields.md): How to add and manage structured metadata fields on a case.
+* [Events](events.md): How to explore events and run contextual searches.

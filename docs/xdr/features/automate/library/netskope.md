@@ -4,7 +4,7 @@ type: playbook
 
 # Netskope
 
-![Netskope](/assets/playbooks/library/netskope.png){ align=right width=150 }
+![Netskope](../../../../assets/playbooks/library/netskope.png)
 
 Netskope is a cybersecurity company, providing solutions to protect data in cloud apps and network security applying zero trust principles.
 

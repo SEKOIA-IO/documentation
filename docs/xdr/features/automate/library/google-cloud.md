@@ -4,7 +4,7 @@ type: playbook
 
 # Google Cloud
 
-![Google Cloud](/assets/playbooks/library/google-cloud.png){ align=right width=150 }
+![Google Cloud](../../../../assets/playbooks/library/google-cloud.png)
 
 Google Cloud is a suite of cloud computing services that offers infrastructure as a service, platform as a service, and serverless computing. It provides tools for storage, machine learning, data analytics, and app development, leveraging Google's infrastructure.
 

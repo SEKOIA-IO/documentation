@@ -55,8 +55,11 @@ Deactivated users appear in the user list with a **Deactivated** status. Filter 
 
 ## Reactivate a user account
 
-!!! warning "Time-sensitive reactivation"
-    After reactivation, the user must log in at least once before midnight on the same day. If they do not log in in time, their account is automatically deactivated again.
+{% hint style="warning" %}
+**Time-sensitive reactivation**
+
+After reactivation, the user must log in at least once before midnight on the same day. If they do not log in in time, their account is automatically deactivated again.
+{% endhint %}
 
 To reactivate a deactivated account:
 
@@ -71,8 +74,11 @@ Notify the user immediately after reactivation so they can log in within the req
 
 Deleting a user permanently removes them from the community. This action cannot be undone.
 
-!!! warning "Permanent action"
-    Deleting a user removes all their community memberships and assigned roles. Consider deactivating instead if you may need to restore access later.
+{% hint style="warning" %}
+**Permanent action**
+
+Deleting a user removes all their community memberships and assigned roles. Consider deactivating instead if you may need to restore access later.
+{% endhint %}
 
 To delete a user:
 
@@ -92,6 +98,6 @@ To enable this setting:
 
 ## Related links
 
-- [Invite users](/getting_started/invite_users.md): How to add new users to a workspace or community.
-- [Roles and permissions](/getting_started/roles_and_permissions.md): Overview of role types and permission levels.
-- [Secure your account](/getting_started/secure_your_account.md): How to reset a user's two-factor authentication.
+- [Invite users](invite_users.md): How to add new users to a workspace or community.
+- [Roles and permissions](roles_and_permissions.md): Overview of role types and permission levels.
+- [Secure your account](secure_your_account.md): How to reset a user's two-factor authentication.

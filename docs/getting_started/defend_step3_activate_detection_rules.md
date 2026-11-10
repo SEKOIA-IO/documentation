@@ -13,7 +13,7 @@ Detection rules are the logic that transforms raw events into security alerts. S
 
 ## Before you begin
 
-- You have completed [Step 2: Verify event reception](/getting_started/defend_step2_verify_event_reception.md) and your intake is receiving valid events.
+- You have completed [Step 2: Verify event reception](defend_step2_verify_event_reception.md) and your intake is receiving valid events.
 
 ## Open the rules catalog
 
@@ -21,7 +21,7 @@ In the navigation menu, select **Detect > Rules Catalog**.
 
 The catalog lists all rules available to your community. Each rule shows its name, effort level, type, associated threats, and compatible intake formats.
 
-![Rules catalog showing detection rules with effort levels and MITRE ATT&CK coverage matrix](/assets/getting_started/rules_catalog.png){: style="width: 100%; max-width: 100%"}
+![Rules catalog showing detection rules with effort levels and MITRE ATT&CK coverage matrix](../assets/getting_started/rules_catalog.png)
 
 
 ## Understand effort levels
@@ -56,8 +56,11 @@ To see only the rules that apply to your connected data sources:
 2. The catalog filters to show only rules compatible with that intake.
 3. Enable the rules relevant to your environment.
 
-!!! tip "Configured badge"
-    Rules that are compatible with an intake you have already configured show a **Configured** badge. Use this to quickly identify which rules can start generating alerts immediately.
+{% hint style="success" %}
+**Configured badge**
+
+Rules that are compatible with an intake you have already configured show a **Configured** badge. Use this to quickly identify which rules can start generating alerts immediately.
+{% endhint %}
 
 ## Set up automatic rule enablement
 
@@ -80,10 +83,10 @@ To open the full matrix:
 
 Darker cells indicate more rules covering that technique. White cells indicate gaps in your coverage. Use this view to identify which areas of the attack chain you are not yet monitoring.
 
-![MITRE ATT&CK matrix showing detection rule coverage with color-coded cells](/assets/getting_started/mitre.png){: style="width: 100%; max-width: 100%"}
+![MITRE ATT&CK matrix showing detection rule coverage with color-coded cells](../assets/getting_started/mitre.png)
 
 
 ## Related links
 
-- [Step 4: Triage your first alert](/getting_started/defend_step4_triage_first_alert.md): What to do when detection rules start generating alerts.
-- [Notification system overview](/getting_started/notification_system_overview.md): Set up a notification to be informed when new rules are added to the catalog.
+- [Step 4: Triage your first alert](defend_step4_triage_first_alert.md): What to do when detection rules start generating alerts.
+- [Notification system overview](notification_system_overview.md): Set up a notification to be informed when new rules are added to the catalog.

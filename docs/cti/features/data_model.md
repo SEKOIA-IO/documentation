@@ -52,7 +52,7 @@ Observables are the raw technical artifacts collected from investigations, sandb
 | ![User account](</assets/intelligence/icons/Size=24px, Name=user account.png>)<br>**User account** | An instance of a user account on any system. Monitored to detect credential stuffing, lateral movement, or unauthorized administrative access. |
 | ![Crypto wallet](</assets/intelligence/icons/Size=24px, Name=crypto wallet.png>)<br>**Crypto wallet** | Coming soon |
 
-<!-- TODO: Confirm the complete Observable tag list. See [Observables](/cti/features/consume/observables.md). -->
+<!-- TODO: Confirm the complete Observable tag list. See [Observables](consume/observables.md). -->
 
 ## Indicator versus Observable
 
@@ -120,10 +120,10 @@ Next to the source, represented by the `Identity` object type, the `confidence` 
 - [STIX 2.1 specification](https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html)
 - [STIX walkthrough](https://oasis-open.github.io/cti-documentation/stix/walkthrough)
 - [STIX examples](https://oasis-open.github.io/cti-documentation/stix/examples)
-- [Observables](/cti/features/consume/observables.md): Overview of observable data in Sekoia.
+- [Observables](consume/observables.md): Overview of observable data in Sekoia.
 - [OpenCTI documentation](https://docs.opencti.io/latest/usage/exploring-threats/): Additional information about exploring threat intelligence.
 
 ## Related articles
 
-- [Observables](/cti/features/consume/observables.md): Overview of observable data in Sekoia.
-- [Create feeds](/cti/features/consume/create_feed.md): How to create CTI feeds.
+- [Observables](consume/observables.md): Overview of observable data in Sekoia.
+- [Create feeds](consume/create_feed.md): How to create CTI feeds.

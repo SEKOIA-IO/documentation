@@ -1,6 +1,6 @@
 # Fastly
 
-![Fastly](/assets/playbooks/library/fastly.png){ align=right width=150 }
+![Fastly](../../../../assets/playbooks/library/fastly.png)
 
 Fastly is a content delivery network (CDN) and edge cloud platform.
 

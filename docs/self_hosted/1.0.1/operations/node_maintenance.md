@@ -12,8 +12,11 @@ Node maintenance restarts the cluster nodes to apply OS patches, kernel updates,
 
 The Ceph storage keeps two copies of the data on two different nodes. While one node is down, the data stays available from the other copy. The three manager nodes hold the Kubernetes database (etcd), which stays available as long as two managers are running.
 
-!!! warning "Restart one node at a time"
-    If two nodes holding the same data are down at the same time, the platform can no longer read or write that data. Never restart a node before the previous one is back and the storage has recovered.
+{% hint style="warning" %}
+**Restart one node at a time**
+
+If two nodes holding the same data are down at the same time, the platform can no longer read or write that data. Never restart a node before the previous one is back and the storage has recovered.
+{% endhint %}
 
 1. To prevent Ceph from moving data while a node is down, set the `noout` flag:
 
@@ -26,8 +29,11 @@ The Ceph storage keeps two copies of the data on two different nodes. While one 
     1. Find the node name in the output of `kubectl get nodes`.
     2. Move the pods of the node to the other nodes:
 
-        !!! warning "Do not force the eviction"
-            If the command stops on a pod disruption budget, do not force the eviction.
+        {% hint style="warning" %}
+        **Do not force the eviction**
+
+        If the command stops on a pod disruption budget, do not force the eviction.
+        {% endhint %}
 
         ```bash
         kubectl drain <node-name> --ignore-daemonsets --delete-emptydir-data --timeout=10m
@@ -44,8 +50,11 @@ The Ceph storage keeps two copies of the data on two different nodes. While one 
 
     7. Wait until the Ceph cluster reports every placement group `active+clean` before you move to the next node:
 
-        !!! note "Expected Ceph warnings"
-            While `noout` is set, the health status stays at `HEALTH_WARN` with the message `noout flag(s) set`. While the node is down and until the storage has recovered, placement groups also report `undersized` or `degraded`. Both states are expected and clear on their own.
+        {% hint style="info" %}
+        **Expected Ceph warnings**
+
+        While `noout` is set, the health status stays at `HEALTH_WARN` with the message `noout flag(s) set`. While the node is down and until the storage has recovered, placement groups also report `undersized` or `degraded`. Both states are expected and clear on their own.
+        {% endhint %}
 
         ```bash
         kubectl exec -n rook-ceph deploy/rook-ceph-tools -- ceph status
@@ -57,7 +66,7 @@ The Ceph storage keeps two copies of the data on two different nodes. While one 
     kubectl exec -n rook-ceph deploy/rook-ceph-tools -- ceph osd unset noout
     ```
 
-4. To check the platform health, run `exec Diagnostic`. See [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md).
+4. To check the platform health, run `exec Diagnostic`. See [Run platform diagnostics](../monitoring/run_diagnostics.md).
 
 ### Result
 
@@ -67,8 +76,11 @@ Every node runs the patched OS, the Ceph cluster reports `HEALTH_OK`, and the pl
 
 A cold restart reboots every node, then restarts every pod in dependency order. Use it when the whole cluster must be restarted or after an unexpected crash of several nodes that left pods stuck in a failed state.
 
-!!! warning "Full platform outage"
-    `RebootNodes` and `KubeCrashRecovery` make the whole platform unavailable: ingestion, detection, and the web interface stop until every pod is running again. Run them only during a maintenance window. To patch the nodes without an outage, use the [rolling procedure](#patch-the-nodes-one-at-a-time) instead.
+{% hint style="warning" %}
+**Full platform outage**
+
+`RebootNodes` and `KubeCrashRecovery` make the whole platform unavailable: ingestion, detection, and the web interface stop until every pod is running again. Run them only during a maintenance window. To patch the nodes without an outage, use the [rolling procedure](#patch-the-nodes-one-at-a-time) instead.
+{% endhint %}
 
 1. To reboot the nodes, run:
 
@@ -80,8 +92,11 @@ A cold restart reboots every node, then restarts every pod in dependency order. 
 
 2. Wait until `kubectl get nodes` lists every node as `Ready`.
 
-    !!! note "Kubernetes API required"
-        `KubeCrashRecovery` stops immediately if it cannot reach the Kubernetes API. Do not run it while `kubectl get nodes` fails or a node is `NotReady`.
+    {% hint style="info" %}
+    **Kubernetes API required**
+
+    `KubeCrashRecovery` stops immediately if it cannot reach the Kubernetes API. Do not run it while `kubectl get nodes` fails or a node is `NotReady`.
+    {% endhint %}
 
 3. To restart the pods in dependency order, run:
 
@@ -89,7 +104,7 @@ A cold restart reboots every node, then restarts every pod in dependency order. 
     exec KubeCrashRecovery
     ```
 
-    The command deletes every pod of the cluster, namespace group by namespace group, and waits for each group to be ready before it moves to the next. See [KubeCrashRecovery](/self_hosted/1.0.1/troubleshooting/debug_tool.md#kubecrashrecovery).
+    The command deletes every pod of the cluster, namespace group by namespace group, and waits for each group to be ready before it moves to the next. See [KubeCrashRecovery](../troubleshooting/debug_tool.md#kubecrashrecovery).
 
 4. Check that Vault is unsealed. Vault unseals itself when its pod starts, so the output must show `Sealed false`:
 
@@ -105,7 +120,7 @@ A cold restart reboots every node, then restarts every pod in dependency order. 
     kubectl get pods -n support | grep arango
     ```
 
-6. To check the platform health, run `exec Diagnostic`. See [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md).
+6. To check the platform health, run `exec Diagnostic`. See [Run platform diagnostics](../monitoring/run_diagnostics.md).
 
 ### Result
 
@@ -113,6 +128,6 @@ Every node is `Ready`, every pod is running, Vault is unsealed, and the platform
 
 ## Related links
 
-- [Debug your deployment](/self_hosted/1.0.1/troubleshooting/debug_tool.md): Reference of the `RebootNodes` and `KubeCrashRecovery` commands.
-- [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md): The Storage tab shows the Ceph status.
-- [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md): Health checks per platform area.
+- [Debug your deployment](../troubleshooting/debug_tool.md): Reference of the `RebootNodes` and `KubeCrashRecovery` commands.
+- [Use the SHC interface](controller_interface.md): The Storage tab shows the Ceph status.
+- [Run platform diagnostics](../monitoring/run_diagnostics.md): Health checks per platform area.

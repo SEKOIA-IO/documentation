@@ -4,7 +4,7 @@ type: playbook
 
 # GLIMPS
 
-![GLIMPS](/assets/playbooks/library/glimps.png){ align=right width=150 }
+![GLIMPS](../../../../assets/playbooks/library/glimps.png)
 
 Glimps offers a DeepLearning solution to detect, analyze and classify malwares. It enables faster responses during incidents with a detailed understanding of the threat
 

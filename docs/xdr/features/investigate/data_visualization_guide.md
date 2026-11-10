@@ -12,42 +12,54 @@ The query builder offers eight visualization options, grouped into two categorie
 ### Number
 The Number visualization prominently displays a single numeric value, making it perfect for showcasing key performance indicators (KPIs) or other important metrics. 
 
-!!! note "Requirement"
-    To use the Number visualization, your query must result in only one numerical value. It cannot be used if the query returns multiple values.
+{% hint style="info" %}
+**Requirement**
+
+To use the Number visualization, your query must result in only one numerical value. It cannot be used if the query returns multiple values.
+{% endhint %}
 
 ### Table
 The Table view provides a comprehensive display of raw numerical values for each category across the entire date range. This format allows for direct comparison of total values across different categories.
 
-!!! note "Row Limit"
+{% hint style="info" %}
+**Row Limit**
 
-    Currently, the maximum number of rows that can be processed in the Table view is 10,000.
+
+Currently, the maximum number of rows that can be processed in the Table view is 10,000.
+{% endhint %}
 
 ### Pie Chart
 The Pie Chart visualization illustrates how a total amount is divided among distinct groups. 
 
-!!! warning "Number of value allowed"
+{% hint style="warning" %}
+**Number of value allowed**
 
-    To ensure clarity, the maximum number of values allowed in a pie chart is limited to 40.
+
+To ensure clarity, the maximum number of values allowed in a pie chart is limited to 40.
+{% endhint %}
     
 **Configuration**:
 
 * In the **Label** field, select the column to use for labeling each section.
 * In the **Value** field, select the column representing the numerical value.
 
-  ![pie chart](/assets/operation_center/events/qb-pie-chart.png){: style="max-width:100%"}
+  ![pie chart](../../../assets/operation_center/events/qb-pie-chart.png)
 
 ### Bar Chart
 The Vertical Bar Chart allows you to compare values across different groups effectively. 
 
-!!! note "Number of value allowed"
+{% hint style="info" %}
+**Number of value allowed**
 
-    To ensure a clear display, the maximum number of values allowed is limited to 80.
+
+To ensure a clear display, the maximum number of values allowed is limited to 80.
+{% endhint %}
 
 **Configuration**: 
 * In the **X-axis**, select the column to use for grouping (any data type).
 * In the **Y-axis**, select the column representing numeric values (numeric data only).
 
- ![bar chart](/assets/operation_center/events/qb-bar-chart.png){: style="max-width:100%"}
+ ![bar chart](../../../assets/operation_center/events/qb-bar-chart.png)
 
 ### Sankey Chart
 The Sankey Chart visualizes flows between entities, making it ideal for mapping relationships such as network traffic, user activity paths, or any directional data between two sets of values.
@@ -58,17 +70,20 @@ The Sankey Chart visualizes flows between entities, making it ideal for mapping 
 * In the **Target** field, select the column representing the destination of the flow (e.g., destination IP, asset, URL).
 * In the **Value** field, optionally select a numeric column representing the flow magnitude (e.g., count, bytes). If omitted, each row is counted as 1.
 
-!!! tip "SOL syntax"
+{% hint style="success" %}
+**SOL syntax**
 
-    Use `render sankey with (source=<column>, target=<column>, value=<column>)` to generate a Sankey chart directly from a SOL query.
 
-    ```
-    events
-    | where timestamp > ago(1h)
-    | aggregate count() by source.ip, destination.ip
-    | limit 50
-    | render sankey with (source=source.ip, target=destination.ip, value=count)
-    ```
+Use `render sankey with (source=<column>, target=<column>, value=<column>)` to generate a Sankey chart directly from a SOL query.
+
+```
+events
+| where timestamp > ago(1h)
+| aggregate count() by source.ip, destination.ip
+| limit 50
+| render sankey with (source=source.ip, target=destination.ip, value=count)
+```
+{% endhint %}
 
 ### Geo Map
 The Geo Map visualizes the geographic distribution of events. Use it to identify the countries from which activity originates, investigate geographic hotspots, or present the reach of an incident.
@@ -84,34 +99,43 @@ The visualization supports two modes:
 * For a **bubble map**, select numeric **Latitude** and **Longitude** fields. Optionally select a **Label** field for the tooltip and a numeric **Value** field to control bubble size.
 * The **Country** field cannot be used with **Latitude** and **Longitude** fields in the same visualization.
 
-!!! tip "SOL syntax"
+{% hint style="success" %}
+**SOL syntax**
 
-    Use `render geomap` with either the `country` parameter or the `lat` and `lon` parameters.
 
-    === "Choropleth"
+Use `render geomap` with either the `country` parameter or the `lat` and `lon` parameters.
 
-        ```shell
-        events
-        | aggregate count() by source.geo.country_iso_code
-        | render geomap with (country=source.geo.country_iso_code, value=count)
-        ```
+{% tabs %}
+{% tab title="Choropleth" %}
 
-    === "Bubble map"
+```shell
+events
+| aggregate count() by source.geo.country_iso_code
+| render geomap with (country=source.geo.country_iso_code, value=count)
+```
+{% endtab %}
+{% tab title="Bubble map" %}
 
-        ```shell
-        events
-        | aggregate count() by source.geo.location.lat, source.geo.location.lon
-        | render geomap with (lat=source.geo.location.lat, lon=source.geo.location.lon, label=source.geo.city_name, value=count)
-        ```
+```shell
+events
+| aggregate count() by source.geo.location.lat, source.geo.location.lon
+| render geomap with (lat=source.geo.location.lat, lon=source.geo.location.lon, label=source.geo.city_name, value=count)
+```
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Time series visualizations
 
 ### Column Chart
 The Column Chart provides a clear way to compare values across different categories. This visualization is particularly useful for displaying total values side by side. 
 
-!!! note "Number of categories allowed"
+{% hint style="info" %}
+**Number of categories allowed**
 
-   The maximum number of categories allowed is limited to 80.
+
+The maximum number of categories allowed is limited to 80.
+{% endhint %}
 
 **Configuration**: 
 
@@ -121,9 +145,12 @@ The Column Chart provides a clear way to compare values across different categor
 ### Line Chart
 The Line Chart is designed to visualize data points over a continuous range, making it ideal for displaying trends over time. 
 
-!!! note "Number of data points allowed"
+{% hint style="info" %}
+**Number of data points allowed**
 
-   To ensure clarity, the maximum number of data points allowed is limited to 200.
+
+To ensure clarity, the maximum number of data points allowed is limited to 200.
+{% endhint %}
 
 **Configuration**:
 

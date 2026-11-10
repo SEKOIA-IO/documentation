@@ -4,7 +4,7 @@ type: playbook
 
 # Panda Security
 
-![Panda Security](/assets/playbooks/library/panda-security.png){ align=right width=150 }
+![Panda Security](../../../../assets/playbooks/library/panda-security.png)
 
 PandaSecurity, a WatchGuard company, is a cybsersecurity vendor, delivering products designed to protect endpoints against outside threats.
 

@@ -64,7 +64,7 @@ There are 2 steps:
 
 Your playbook should look like the following:
 
-![Playbook Shodan-SIO Use Case](/assets/playbooks/library/UseCases/Shodan_VT_1.png)
+![Playbook Shodan-SIO Use Case](../../../assets/playbooks/library/UseCases/Shodan_VT_1.png)
 
 ### Enrich Shodan with VirusTotal template
 
@@ -77,4 +77,4 @@ Your playbook should look like the following:
 
 Your playbook should look like the following:
 
-![Playbook Shodan-VT Use Case](/assets/playbooks/library/UseCases/Shodan_VT_2.png)
+![Playbook Shodan-VT Use Case](../../../assets/playbooks/library/UseCases/Shodan_VT_2.png)

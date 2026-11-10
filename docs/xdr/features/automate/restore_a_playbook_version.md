@@ -4,8 +4,11 @@ Sekoia.io keeps a history of the versions of each playbook, so you can see who c
 
 A new version is saved when the playbook is created, then each time you save a change to its name, description, workflow or custom fields. Activating or deactivating a playbook does not create a version.
 
-!!! note "Retention"
-    Sekoia.io keeps the last 30 versions of each playbook and deletes older versions automatically. Version history covers playbooks saved at least once since August 1, 2026.
+{% hint style="info" %}
+**Retention**
+
+Sekoia.io keeps the last 30 versions of each playbook and deletes older versions automatically. Version history covers playbooks saved at least once since August 1, 2026.
+{% endhint %}
 
 ## Prerequisites
 
@@ -32,7 +35,7 @@ To see the workflow of a saved version:
 
 The **Version preview** window shows the workflow of that version in read-only mode, with its save date. To see the configuration of a node, click the node.
 
-![Version history panel and Version preview window of a playbook](/assets/operation_center/playbooks/playbook_version_history.png){: style="max-width:100%"}
+![Version history panel and Version preview window of a playbook](../../../assets/operation_center/playbooks/playbook_version_history.png)
 
 ## Compare a version with the current one
 
@@ -48,8 +51,11 @@ To display the selected version alone, turn off the **diff** toggle.
 
 ## Restore a version
 
-!!! warning "Restoring applies immediately"
-    Sekoia.io does not ask for confirmation. If the playbook is activated, its next runs use the restored workflow.
+{% hint style="warning" %}
+**Restoring applies immediately**
+
+Sekoia.io does not ask for confirmation. If the playbook is activated, its next runs use the restored workflow.
+{% endhint %}
 
 To restore a version:
 
@@ -61,6 +67,6 @@ The restored workflow replaces the current one and is saved as a new version. Th
 
 ## Related articles
 
-* [Navigate playbooks](/xdr/features/automate/navigate_playbooks.md): Reference for the playbooks list and every tab of a playbook.
-* [Build playbooks](/xdr/features/automate/build_playbooks.md): How to create a playbook from a template or from scratch.
-* [Debug playbooks](/xdr/features/automate/debug-playbooks.md): How to investigate failed runs and trigger errors.
+* [Navigate playbooks](navigate_playbooks.md): Reference for the playbooks list and every tab of a playbook.
+* [Build playbooks](build_playbooks.md): How to create a playbook from a template or from scratch.
+* [Debug playbooks](debug-playbooks.md): How to investigate failed runs and trigger errors.

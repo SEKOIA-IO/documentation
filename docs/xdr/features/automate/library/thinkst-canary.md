@@ -1,6 +1,6 @@
 # Thinkst Canary
 
-![Thinkst Canary](/assets/playbooks/library/thinkst-canary.png){ align=right width=150 }
+![Thinkst Canary](../../../../assets/playbooks/library/thinkst-canary.png)
 
 Thinkst Canary specializes in innovative cybersecurity solutions, particularly using honeypot technology to detect and alert on threats within networks. They provide early warnings of breaches with minimal false positives.
 

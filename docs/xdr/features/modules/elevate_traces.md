@@ -13,7 +13,7 @@ Traces show the complete timeline of actions the Elevate agent performed during 
 
 The **Traces** side panel opens, showing the timeline of actions the agent performed during the investigation.
 
-![Verdict panel with the Traces button and the Traces side panel showing a timeline of agent actions](/assets/elevate/traces.png){: style="max-width:100%"}
+![Verdict panel with the Traces button and the Traces side panel showing a timeline of agent actions](../../../assets/elevate/traces.png)
 
 ## What the Traces panel shows
 
@@ -23,10 +23,13 @@ Under each phase, the panel nests the individual actions the agent took, such as
 
 Traces capture the full set of actions behind the verdict, including the queries executed, event searches and CTI searches, so you can see the volume of actions the agent took and the time spent on each.
 
-![Traces timeline showing nested Search events actions with durations](/assets/elevate/traces-search.png){: style="max-width:100%"}
+![Traces timeline showing nested Search events actions with durations](../../../assets/elevate/traces-search.png)
 
-!!! note "Trace retention"
-    Traces are retained for 30 days. After that period, they are no longer available for the investigation.
+{% hint style="info" %}
+**Trace retention**
+
+Traces are retained for 30 days. After that period, they are no longer available for the investigation.
+{% endhint %}
 
 ## Inspect an action
 
@@ -38,10 +41,13 @@ Traces capture the full set of actions behind the verdict, including the queries
 
 Use the **Search in logs** field at the top of the panel to find a specific action or query within the timeline.
 
-!!! note "A growing audit trail"
-    As the agent gains new integrations and tools, their actions also appear in Traces, giving you a complete audit trail across all of the agent's capabilities.
+{% hint style="info" %}
+**A growing audit trail**
+
+As the agent gains new integrations and tools, their actions also appear in Traces, giving you a complete audit trail across all of the agent's capabilities.
+{% endhint %}
 
 ## Related articles
 
-- [Investigate an alert with Elevate](/xdr/features/modules/elevate_investigate_alert.md): How to read the verdict, findings and reasoning questions of an investigation.
-- [The Elevate investigation method](/xdr/features/modules/elevate_investigation_method.md): How runbooks, reasoning questions, findings and verdicts work together.
+- [Investigate an alert with Elevate](elevate_investigate_alert.md): How to read the verdict, findings and reasoning questions of an investigation.
+- [The Elevate investigation method](elevate_investigation_method.md): How runbooks, reasoning questions, findings and verdicts work together.

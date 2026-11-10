@@ -4,7 +4,7 @@ This article explains how to trigger an Elevate investigation on an alert that w
 
 ## Prerequisites
 
-- Elevate is activated on your workspace or community. See [Activate Elevate on a workspace](/xdr/features/modules/elevate_activate.md).
+- Elevate is activated on your workspace or community. See [Activate Elevate on a workspace](elevate_activate.md).
 - The alert has not yet been analyzed. The **Verdict** column shows no AI state, or the alert was excluded by the rule filter.
 
 ## Assign the alert to Roy
@@ -16,17 +16,20 @@ Roy is the Elevate investigation agent. Assigning an alert to Roy triggers an im
 3. Select the **Assignee** field in the alert header.
 4. Select **Roy**.
 
-![Alert assignee dropdown with Roy as a selectable option to trigger a manual Elevate analysis](/assets/elevate/alert-assign-roy.png){: style="max-width:100%"}
+![Alert assignee dropdown with Roy as a selectable option to trigger a manual Elevate analysis](../../../assets/elevate/alert-assign-roy.png)
 
 ## Result
 
 The agent begins analyzing the alert. The **Verdict** column updates to **In progress** while the analysis runs. Once complete, the verdict and findings are available in the alert details.
 
-!!! note "Run consumption"
-    A manually triggered analysis consumes one run from your monthly run pack, the same as an automatic analysis.
+{% hint style="info" %}
+**Run consumption**
+
+A manually triggered analysis consumes one run from your monthly run pack, the same as an automatic analysis.
+{% endhint %}
 
 ## Related articles
 
-- [Investigate an alert with Elevate](/xdr/features/modules/elevate_investigate_alert.md): How to read the AI investigation report once the analysis is complete.
-- [Elevate analysis states](/xdr/features/modules/elevate_analysis_states.md): Reference table of all possible AI analysis states and their meaning.
-- [Manage your Elevate runs](/xdr/features/modules/elevate_quota.md): How to monitor and optimize your monthly run pack.
+- [Investigate an alert with Elevate](elevate_investigate_alert.md): How to read the AI investigation report once the analysis is complete.
+- [Elevate analysis states](elevate_analysis_states.md): Reference table of all possible AI analysis states and their meaning.
+- [Manage your Elevate runs](elevate_quota.md): How to monitor and optimize your monthly run pack.

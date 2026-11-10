@@ -4,7 +4,7 @@ type: playbook
 
 # ServiceNow
 
-![ServiceNow](/assets/playbooks/library/servicenow.png){ align=right width=150 }
+![ServiceNow](../../../../assets/playbooks/library/servicenow.png)
 
 ServiceNow is an IT company allowing creating workflow to empower employees productivity and to improve customers experience
 

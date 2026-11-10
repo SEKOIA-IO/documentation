@@ -13,7 +13,7 @@ The Sekoia CTI team verifies, consolidates, and enriches thousands of reports in
 
 ## Before you begin
 
-- You have completed [Step 1: Explore the threat intelligence database](/getting_started/intelligence_step1_explore_threat_database.md).
+- You have completed [Step 1: Explore the threat intelligence database](intelligence_step1_explore_threat_database.md).
 
 ## Find threat reports
 
@@ -24,8 +24,11 @@ The Sekoia CTI team verifies, consolidates, and enriches thousands of reports in
 3. In the results, open the **Objects** tab.
 4. Filter by **Type > Report** to display only reports.
 
-!!! tip "Find all FLINT reports"
-    Add the filter **Source = Sekoia** to your search to display only the reports written by Sekoia's own analysts, including all FLINT reports.
+{% hint style="success" %}
+**Find all FLINT reports**
+
+Add the filter **Source = Sekoia** to your search to display only the reports written by Sekoia's own analysts, including all FLINT reports.
+{% endhint %}
 
 ### Browse all reports
 
@@ -50,7 +53,7 @@ A FLINT report typically contains:
 | **Recommended actions** | Steps to detect, contain, or remediate the threat |
 
 
-![FLINT report page with executive summary, MITRE mapping, and IOC list](/assets/getting_started/flint.gif){: style="width: 100%; max-width: 100%"}
+![FLINT report page with executive summary, MITRE mapping, and IOC list](../assets/getting_started/flint.gif)
 
 
 ## Act on report indicators
@@ -74,10 +77,13 @@ Beyond Sekoia Defend, you can operationalize Sekoia Intelligence in your own det
 |---|---|
 | **Native connector** | For technologies with a dedicated Sekoia connector (SIEM, SOAR, firewall). Always prefer this option when available: native connectors support dynamic updates and revocation, and follow Sekoia's STIX taxonomy correctly. |
 | **TAXII 2.1 connector** | For technologies that natively support ingesting STIX 2.1 data through the TAXII 2.1 protocol. |
-| **API** | For custom consumption needs, with the ability to run precise, segmented queries against the database. See the [Intelligence API reference](https://docs.sekoia.com/developer/api/#/intelligence). To consume the full feed reliably over time, including revoked objects, build your integration following the [API consumption guide](/cti/features/integrations/api.md). |
+| **API** | For custom consumption needs, with the ability to run precise, segmented queries against the database. See the [Intelligence API reference](https://docs.sekoia.com/developer/api/#/intelligence). To consume the full feed reliably over time, including revoked objects, build your integration following the [API consumption guide](../cti/features/integrations/api.md). |
 
-!!! note "Model Context Protocol (MCP)"
-    Sekoia is also developing an MCP-based way to consume Intelligence. This capability is still in progress. Check the [changelog](https://changelog.sekoia.io) for updates.
+{% hint style="info" %}
+**Model Context Protocol (MCP)**
+
+Sekoia is also developing an MCP-based way to consume Intelligence. This capability is still in progress. Check the [changelog](https://changelog.sekoia.io) for updates.
+{% endhint %}
 
 ## Set up a feed for your firewall
 
@@ -96,8 +102,11 @@ To create the feed:
 
 Your feed appears in the Feeds section and updates automatically as new matching content is published. The feed has an API URL that your firewall can use to fetch its indicator list.
 
-!!! note "Feeds support API and TAXII consumption"
-    A feed lets you build a filtered subset of the Intelligence database for consumption through the API or TAXII 2.1, independently of the dissemination method you use for your main detection stack.
+{% hint style="info" %}
+**Feeds support API and TAXII consumption**
+
+A feed lets you build a filtered subset of the Intelligence database for consumption through the API or TAXII 2.1, independently of the dissemination method you use for your main detection stack.
+{% endhint %}
 
 ## Receive notifications for new reports
 
@@ -112,11 +121,11 @@ To be notified whenever a new report matching your criteria is published:
 
 You now receive an alert each time Sekoia publishes a relevant new report.
 
-See: [Create a notification](/getting_started/create_a_notification.md) for the full procedure.
+See: [Create a notification](create_a_notification.md) for the full procedure.
 
 ## Related links
 
-- [Quick start: Intelligence](/getting_started/quick_start_intelligence.md): Return to the overview of the Intelligence quick start.
-- [Data model](/cti/features/data_model.md): Full reference on STIX objects, observables, confidence, and reliability.
-- [Create a notification](/getting_started/create_a_notification.md): Full procedure for setting up notification rules.
-- [Glossary](/getting_started/glossary.md): Definitions of FLINT, IOC, TLP, indicator, and feed.
+- [Quick start: Intelligence](quick_start_intelligence.md): Return to the overview of the Intelligence quick start.
+- [Data model](../cti/features/data_model.md): Full reference on STIX objects, observables, confidence, and reliability.
+- [Create a notification](create_a_notification.md): Full procedure for setting up notification rules.
+- [Glossary](glossary.md): Definitions of FLINT, IOC, TLP, indicator, and feed.

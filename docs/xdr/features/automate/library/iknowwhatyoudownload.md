@@ -4,7 +4,7 @@ type: playbook
 
 # IKnowWhatYouDownload
 
-![IKnowWhatYouDownload](/assets/playbooks/library/iknowwhatyoudownload.png){ align=right width=150 }
+![IKnowWhatYouDownload](../../../../assets/playbooks/library/iknowwhatyoudownload.png)
 
 iknowwhatyoudownload collects torrent files and peers from torrent sites and DHT network. It allows associating IP addresses to downloaded and shared data
 

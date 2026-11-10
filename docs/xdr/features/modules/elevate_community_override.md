@@ -4,7 +4,7 @@ When Elevate is activated at the workspace level, all communities inherit that c
 
 ## Prerequisites
 
-- Elevate is activated on your workspace. See [Activate Elevate on a workspace](/xdr/features/modules/elevate_activate.md).
+- Elevate is activated on your workspace. See [Activate Elevate on a workspace](elevate_activate.md).
 - You have administrator-level access to the workspace.
 
 ## Override the configuration for a community
@@ -16,12 +16,15 @@ When Elevate is activated at the workspace level, all communities inherit that c
 5. Select **Override**.
 6. Toggle **Auto-analyze alerts** to the desired state for this community.
 
-![Community-level AI agent settings with the Override option](/assets/elevate/settings-override.png){: style="max-width:100%"}
+![Community-level AI agent settings with the Override option](../../../assets/elevate/settings-override.png)
 
 An indicator confirms that this community now uses its own settings and no longer inherits the workspace-level configuration.
 
-!!! note "Understanding the inherited state"
-    Before you select **Override**, the toggle reflects the workspace-level setting. It does not represent a choice made at the community level. Select **Override** to manage this community independently.
+{% hint style="info" %}
+**Understanding the inherited state**
+
+Before you select **Override**, the toggle reflects the workspace-level setting. It does not represent a choice made at the community level. Select **Override** to manage this community independently.
+{% endhint %}
 
 ## Result
 
@@ -31,6 +34,6 @@ To revert to the workspace configuration, return to the community's AI agent set
 
 ## Related articles
 
-- [Activate Elevate on a workspace](/xdr/features/modules/elevate_activate.md): How to enable the Elevate agent at the workspace level.
-- [Scope auto-analysis with filters](/xdr/features/modules/elevate_rule_filter.md): How to limit which alerts Elevate analyzes by rule, effort level, severity or urgency.
-- [Manage your Elevate runs](/xdr/features/modules/elevate_quota.md): How to monitor and optimize your monthly run pack.
+- [Activate Elevate on a workspace](elevate_activate.md): How to enable the Elevate agent at the workspace level.
+- [Scope auto-analysis with filters](elevate_rule_filter.md): How to limit which alerts Elevate analyzes by rule, effort level, severity or urgency.
+- [Manage your Elevate runs](elevate_quota.md): How to monitor and optimize your monthly run pack.

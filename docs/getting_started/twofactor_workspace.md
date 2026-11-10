@@ -17,8 +17,9 @@ To enforce 2FA for all users in a community, you need to have the necessary perm
 4. Click on Enable and follow instructions
 5. Confirm and save your changes to enforce the new security policy.
 
-!!! note
-    When deploying 2FA for all workspace users, they will be forced to configure their second authenticator factor on their next login. 
+{% hint style="info" %}
+When deploying 2FA for all workspace users, they will be forced to configure their second authenticator factor on their next login. 
+{% endhint %}
 
 
 ## Impact of enabling 2FA

@@ -22,15 +22,15 @@ Security teams investigate in two directions. Reactive investigations start from
  
 | Capability | Description |
 |---|---|
-| [Asset context panel](/xdr/features/modules/reveal_asset_context_panel.md)| Extends the core panel with hygiene, vulnerabilities, security controls, points of interest, and attack path visualization |
-| [Asset Connectors](/xdr/features/modules/reveal_asset_connectors_create.md) | Connects external systems such as EDR tools, vulnerability scanners, and identity providers to create and enrich asset records |
-| [Points of Interest](/xdr/features/detect/points_of_interest.md) | Surfaces behavioral anomalies on assets that may not trigger alerts, such as unusual authentication patterns or rare locations |
-| [Endpoint Hygiene](/xdr/features/modules/reveal_hygiene.md) | Shows firewall and disk encryption status for host assets |
-| [Vulnerability enrichment](/xdr/features/modules/reveal_vulnerabilities.md) | Lists known CVE exposures affecting an asset, aggregated from connected scanners |
-| [Security controls](/xdr/features/modules/reveal_security_controls.md) | Shows which detection and protection technologies cover an asset and where gaps exist |
-| [Application discovery](/xdr/features/modules/reveal_applications.md) | Lists software installed on an asset and maps each application to the CVEs that affect it |
-| [Attack Path Visualization](/xdr/features/investigate/attack_path_visualization.md) | Maps relationships between assets to help analysts assess lateral movement risk and blast radius |
-| [Asset risk scoring](/xdr/features/modules/asset_risk_scoring.md) | Calculates an asset-level security priority from persistent exposure, recent activity, and configured asset criticality. |
+| [Asset context panel](reveal_asset_context_panel.md)| Extends the core panel with hygiene, vulnerabilities, security controls, points of interest, and attack path visualization |
+| [Asset Connectors](reveal_asset_connectors_create.md) | Connects external systems such as EDR tools, vulnerability scanners, and identity providers to create and enrich asset records |
+| [Points of Interest](../detect/points_of_interest.md) | Surfaces behavioral anomalies on assets that may not trigger alerts, such as unusual authentication patterns or rare locations |
+| [Endpoint Hygiene](reveal_hygiene.md) | Shows firewall and disk encryption status for host assets |
+| [Vulnerability enrichment](reveal_vulnerabilities.md) | Lists known CVE exposures affecting an asset, aggregated from connected scanners |
+| [Security controls](reveal_security_controls.md) | Shows which detection and protection technologies cover an asset and where gaps exist |
+| [Application discovery](reveal_applications.md) | Lists software installed on an asset and maps each application to the CVEs that affect it |
+| [Attack Path Visualization](../investigate/attack_path_visualization.md) | Maps relationships between assets to help analysts assess lateral movement risk and blast radius |
+| [Asset risk scoring](asset_risk_scoring.md) | Calculates an asset-level security priority from persistent exposure, recent activity, and configured asset criticality. |
  
 ## How Reveal fits into your workflows
  
@@ -42,11 +42,11 @@ During a **proactive investigation**, an analyst looks for assets that may requi
 
 ## Get started
 
-To enable and configure Reveal, follow the [Getting started with Reveal](/xdr/features/modules/reveal_getting_started.md) guide. It describes the required data sources, the recommended setup order, and how to validate each capability.
+To enable and configure Reveal, follow the [Getting started with Reveal](reveal_getting_started.md) guide. It describes the required data sources, the recommended setup order, and how to validate each capability.
 
 
 ## Related links
 
-- [Collect — Assets](/xdr/features/collect/assets.md): Documentation on how assets are configured, discovered, and managed in Sekoia.
-- [Detection — IOC detection](/xdr/features/detect/iocdetection.md): Overview of detection capabilities in Sekoia, including rule-based and analytics-driven approaches.
-- [Integration — Asset categories](/integration/assets_categories/overview.md): Reference for asset connector categories and integration setup.
+- [Collect — Assets](../collect/assets.md): Documentation on how assets are configured, discovered, and managed in Sekoia.
+- [Detection — IOC detection](../detect/iocdetection.md): Overview of detection capabilities in Sekoia, including rule-based and analytics-driven approaches.
+- [Integration — Asset categories](../../../integration/assets_categories/overview.md): Reference for asset connector categories and integration setup.

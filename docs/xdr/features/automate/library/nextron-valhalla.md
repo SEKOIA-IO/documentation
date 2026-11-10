@@ -4,7 +4,7 @@ type: playbook
 
 # Nextron Valhalla
 
-![Nextron Valhalla](/assets/playbooks/library/nextron-valhalla.svg){ align=right width=150 }
+![Nextron Valhalla](../../../../assets/playbooks/library/nextron-valhalla.svg)
 
 Nextron Valhalla integration for Sekoia
 

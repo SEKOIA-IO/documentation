@@ -19,7 +19,7 @@ The rule is now active. It checks both incoming telemetry and historical events 
 
 ## Related articles
 
-- [Feeds](/cti/features/consume/feeds.md): Understand what feeds are, how they work, available formats, and the default feed.
-- [Create a feed](/cti/features/consume/create_feed.md): Configure and activate a new feed by selecting object types, sources, TLP levels, and output format.
-- [Manage feeds](/cti/features/consume/manage_feeds.md): Consume, edit, duplicate, or delete an existing feed.
+- [Feeds](feeds.md): Understand what feeds are, how they work, available formats, and the default feed.
+- [Create a feed](create_feed.md): Configure and activate a new feed by selecting object types, sources, TLP levels, and output format.
+- [Manage feeds](manage_feeds.md): Consume, edit, duplicate, or delete an existing feed.
  

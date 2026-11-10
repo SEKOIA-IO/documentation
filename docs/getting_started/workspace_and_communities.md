@@ -51,8 +51,11 @@ In single-tenant mode, the workspace and the community effectively represent the
 
 In multi-tenant mode, each community represents a separate client or business unit. Workspace administrators can view and manage all communities from a centralized panel, including subscriptions, user access, and alert volumes.
 
-!!! note "Community switcher"
-    In multi-tenant workspaces, a **Communities** button appears in the breadcrumb at the top of the page. Use it to filter the platform based on a specific community or select multiple communities to view aggregated data for all of them.
+{% hint style="info" %}
+**Community switcher**
+
+In multi-tenant workspaces, a **Communities** button appears in the breadcrumb at the top of the page. Use it to filter the platform based on a specific community or select multiple communities to view aggregated data for all of them.
+{% endhint %}
 
 ## What you configure at each level
 
@@ -72,7 +75,7 @@ To filter on a specific community in a multi-tenant workspace, click the **Commu
 
 ## Related links
 
-- [Navigate the platform](/getting_started/navigate_the_platform.md): How to use the Sekoia interface, including the workspace and community switcher.
-- [Workspace setup overview](/getting_started/workspace_setup_overview.md): Step-by-step guide for administrators to configure a new workspace.
-- [Roles and permissions](/getting_started/roles_and_permissions.md): How access is controlled at the workspace and community level.
-- [Invite users](/getting_started/invite_users.md): How to add users to a workspace or community.
+- [Navigate the platform](navigate_the_platform.md): How to use the Sekoia interface, including the workspace and community switcher.
+- [Workspace setup overview](workspace_setup_overview.md): Step-by-step guide for administrators to configure a new workspace.
+- [Roles and permissions](roles_and_permissions.md): How access is controlled at the workspace and community level.
+- [Invite users](invite_users.md): How to add users to a workspace or community.

@@ -1,6 +1,6 @@
 # Troubleshoot application inventory
 
-_**[Reveal module](/xdr/features/modules/reveal_index.md)**. The Asset application tab is a feature of the Reveal add-on module._
+_**[Reveal module](../features/modules/reveal_index.md)**. The Asset application tab is a feature of the Reveal add-on module._
 
 Use this guide when the Asset Applications tab is unavailable, the application list is empty, or an expected application is missing from an asset.
 
@@ -60,7 +60,7 @@ Open the asset's vulnerability list with this path:
 
 > **Asset context panel > Vulnerabilities**
 
-For vulnerability-specific information, see [Vulnerability enrichment](/xdr/features/modules/reveal_vulnerabilities.md).
+For vulnerability-specific information, see [Vulnerability enrichment](../features/modules/reveal_vulnerabilities.md).
 
 ## Application details are empty
 
@@ -89,7 +89,7 @@ Application data may not change until the source synchronizes again.
 
 The Asset Risk Score is not based on the application count alone. Only open, confirmed vulnerabilities can contribute to the Exposure Score, and the contribution is based on CVSS severity.
 
-The Asset Risk Score also includes recent activity and configured asset criticality. See [Asset risk scoring](/xdr/features/modules/asset_risk_scoring.md) for the calculation rules.
+The Asset Risk Score also includes recent activity and configured asset criticality. See [Asset risk scoring](../features/modules/asset_risk_scoring.md) for the calculation rules.
 
 ## Information to provide to support
 
@@ -107,10 +107,10 @@ Include the following information when reporting an issue:
 
 ## Related articles
 
-[Application inventory](/xdr/features/modules/reveal_applications.md): Overview of the Applications tab, its coverage, and its relationship with vulnerability enrichment.
+[Application inventory](../features/modules/reveal_applications.md): Overview of the Applications tab, its coverage, and its relationship with vulnerability enrichment.
 
-[Review applications](/xdr/features/modules/reveal_applications.md): How to use the Applications tab and inspect application records.
+[Review applications](../features/modules/reveal_applications.md): How to use the Applications tab and inspect application records.
 
-[Vulnerability enrichment](/xdr/features/modules/reveal_vulnerabilities.md): How Reveal collects and displays vulnerability findings.
+[Vulnerability enrichment](../features/modules/reveal_vulnerabilities.md): How Reveal collects and displays vulnerability findings.
 
-[Asset risk scoring](/xdr/features/modules/asset_risk_scoring.md): Reference for the Asset Risk Score model and vulnerability contribution.
+[Asset risk scoring](../features/modules/asset_risk_scoring.md): Reference for the Asset Risk Score model and vulnerability contribution.

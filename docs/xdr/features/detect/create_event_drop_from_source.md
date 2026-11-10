@@ -2,16 +2,22 @@
 
 You can create an Event Drop detection rule directly from an intake or an asset, without starting from a blank rule in the catalog. The rule creation panel opens with the Event Drop pattern selected and the SOL pattern pre-filled with a condition on the source, so you only set the schedule and create the rule.
 
-!!! note "Early Access"
-    This feature is currently in Early Access and is only available for Beta testers. Sekoia.io plans to roll out this functionality to all environments soon.
+{% hint style="info" %}
+**Early Access**
+
+This feature is currently in Early Access and is only available for Beta testers. Sekoia.io plans to roll out this functionality to all environments soon.
+{% endhint %}
     
 ## Prerequisites
 
 - You have permissions to create detection rules.
 - You are on the details page of the intake or asset you want to monitor for missing data.
 
-!!! warning "Hourly telemetry granularity"
-    `event_telemetry` and `asset_telemetry` are aggregated hourly, so an Event Drop rule on an intake or asset cannot go below a 1-hour granularity. Set both the time bin and the run schedule to 1 hour or more. Sub-hour values return empty or partial buckets and the rule does not monitor the source as expected.
+{% hint style="warning" %}
+**Hourly telemetry granularity**
+
+`event_telemetry` and `asset_telemetry` are aggregated hourly, so an Event Drop rule on an intake or asset cannot go below a 1-hour granularity. Set both the time bin and the run schedule to 1 hour or more. Sub-hour values return empty or partial buckets and the rule does not monitor the source as expected.
+{% endhint %}
 
 ## Start from an intake
 
@@ -27,7 +33,7 @@ The **Create new rule** panel opens with the **Event Drop** pattern selected. Th
 5. Set the schedule, 1 hour minimum, and complete any remaining fields.
 6. Click **Create**.
 
-![Intake actions menu with Create event drop alerting](/assets/operation_center/rules_catalog/sol-intake-drop.png){: style="max-width:100%"}
+![Intake actions menu with Create event drop alerting](../../../assets/operation_center/rules_catalog/sol-intake-drop.png)
 
 ## Start from an asset
 
@@ -42,7 +48,7 @@ The **Create new rule** panel opens with the **Event Drop** pattern selected. Th
 4. Set the schedule, 1 hour minimum, and complete any remaining fields.
 5. Click **Create**.
 
-![Asset details with the Configure an event drop alert button](/assets/operation_center/rules_catalog/sol-asset-drop.png){: style="max-width:100%"}
+![Asset details with the Configure an event drop alert button](../../../assets/operation_center/rules_catalog/sol-asset-drop.png)
 
 ## What gets pre-filled
 
@@ -55,15 +61,18 @@ The entry point determines the rule name, the datasource and the field used in t
 
 Both pre-filled patterns also bound the query with `?time.start` and `?time.end`, the time conditions required by every SOL rule.
 
-!!! note "Tune the defaults"
-    The pre-filled threshold and time bin are starting points. Set them to values that reflect the normal telemetry volume of the intake or asset, so the rule alerts only when the data drop is meaningful.
+{% hint style="info" %}
+**Tune the defaults**
+
+The pre-filled threshold and time bin are starting points. Set them to values that reflect the normal telemetry volume of the intake or asset, so the rule alerts only when the data drop is meaningful.
+{% endhint %}
 
 ## Complete and create the rule
 
-Once the panel is open, scheduling and the remaining fields work exactly as in the standard creation flow. For the full description of each field and the run schedule, see [Create a SOL detection rule](/xdr/features/detect/create_sol_detection_rule.md).
+Once the panel is open, scheduling and the remaining fields work exactly as in the standard creation flow. For the full description of each field and the run schedule, see [Create a SOL detection rule](create_sol_detection_rule.md).
 
 ## Related articles
 
-* [Create a SOL detection rule](/xdr/features/detect/create_sol_detection_rule.md): Step-by-step instructions to configure and activate a SOL or Event Drop detection rule from the catalog.
-* [SOL detection rules](/xdr/features/detect/sol_detection_rule.md): Conceptual overview of the SOL and Event Drop detection patterns, how they work, and when to use them.
-* [Lag management for SOL detection rules](/xdr/features/detect/sol_detection_lag_management.md): How rules handle late-arriving events through a fixed run overlap and deduplication.
+* [Create a SOL detection rule](create_sol_detection_rule.md): Step-by-step instructions to configure and activate a SOL or Event Drop detection rule from the catalog.
+* [SOL detection rules](sol_detection_rule.md): Conceptual overview of the SOL and Event Drop detection patterns, how they work, and when to use them.
+* [Lag management for SOL detection rules](sol_detection_lag_management.md): How rules handle late-arriving events through a fixed run overlap and deduplication.

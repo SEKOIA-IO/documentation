@@ -45,4 +45,4 @@ The **Risk level widget** shows the Risk Level of your infrastructure (normalize
 ---
 **Next steps**
 
-* Go back to [Understanding Dashboards](/xdr/features/report/dashboards.md) for a refresher on concepts.
+* Go back to [Understanding Dashboards](dashboards.md) for a refresher on concepts.

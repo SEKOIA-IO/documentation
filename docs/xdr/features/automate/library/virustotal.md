@@ -4,7 +4,7 @@ type: playbook
 
 # VirusTotal
 
-![VirusTotal](/assets/playbooks/library/virustotal.png){ align=right width=150 }
+![VirusTotal](../../../../assets/playbooks/library/virustotal.png)
 
 VirusTotal is a cybersecurity company specialized in malware analysis.
 

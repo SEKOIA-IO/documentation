@@ -1,6 +1,6 @@
 # Asset connector health status and logs
 
-_[Reveal module](/xdr/features/modules/reveal_index.md) — This feature requires the Reveal add-on module._
+_[Reveal module](../modules/reveal_index.md) — This feature requires the Reveal add-on module._
 
 The asset connectors panel provides visibility into whether a connector is experiencing errors and what happened during its recent activity. Use it to confirm successful synchronizations, identify issues preventing asset collection, and gather precise error details for troubleshooting or escalation.
 
@@ -22,7 +22,7 @@ The asset connectors panel displays error states when issues affect a connector.
 | Error during data collection | More than 5 error logs in the last 24 hours | The connector is still functional and running but has encountered repeated errors during data collection. |
 | Stopped by critical error | Critical errors have forced the connector to stop | The connector is no longer running and requires intervention. |
 
-![Asset connectors panel with a connector entry displaying an error state indicator](/assets/operation_center/connector_error.png)
+![Asset connectors panel with a connector entry displaying an error state indicator](../../../assets/operation_center/connector_error.png)
 
 ## View connector logs
 
@@ -35,10 +35,13 @@ Connector logs help you understand what happened during a connector run. Use the
 3. Open the **...** menu for the connector you want to inspect.
 4. Select **View logs**.
 
-!!! tip "Review recent runs first"
-    Start by reviewing the most recent runs to determine whether the issue is ongoing or limited to a single execution.
+{% hint style="success" %}
+**Review recent runs first**
 
-![Asset connectors panel showing the options menu for a connector with the View logs item visible](/assets/operation_center/execution_details.png)
+Start by reviewing the most recent runs to determine whether the issue is ongoing or limited to a single execution.
+{% endhint %}
+
+![Asset connectors panel showing the options menu for a connector with the View logs item visible](../../../assets/operation_center/execution_details.png)
 
 ### What the logs show
 
@@ -75,7 +78,7 @@ Useful information about what happened during the run, including:
 
 ## Related links
 
-- [Asset context panel](/xdr/features/investigate/asset_context_panel.md) — Full reference for the asset context panel, which displays data enriched by asset connectors including security controls, vulnerabilities, and hygiene information.
-- [Attack path visualization](/xdr/features/investigate/attack_path_visualization.md) — How attack path graph enrichment depends on asset connectors providing relationship and exposure data.
-- [Integration — Asset categories](/integration/assets_categories/overview.md) — Reference documentation for asset connector categories and integration setup.
-- [Collect — Assets](/xdr/features/collect/assets.md) — How assets are configured and discovered in Sekoia, including the role of asset connectors in the collection pipeline.
+- [Asset context panel](../investigate/asset_context_panel.md) — Full reference for the asset context panel, which displays data enriched by asset connectors including security controls, vulnerabilities, and hygiene information.
+- [Attack path visualization](../investigate/attack_path_visualization.md) — How attack path graph enrichment depends on asset connectors providing relationship and exposure data.
+- [Integration — Asset categories](../../../integration/assets_categories/overview.md) — Reference documentation for asset connector categories and integration setup.
+- [Collect — Assets](assets.md) — How assets are configured and discovered in Sekoia, including the role of asset connectors in the collection pipeline.

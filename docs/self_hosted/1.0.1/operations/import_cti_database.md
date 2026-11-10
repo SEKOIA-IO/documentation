@@ -7,7 +7,7 @@ The imported database feeds contextualized alerts and the `SEKOIA Intelligence F
 ## Prerequisites
 
 - The platform is installed and the SHC can retrieve its kubeconfig.
-- In online mode, the `S3_ACCESS_KEY` and `S3_SECRET_KEY` environment variables hold the Sekoia release bucket credentials provided by Sekoia, and `global.version.fetch` points to the Sekoia release bucket, as described in [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md#release-download-and-security-content).
+- In online mode, the `S3_ACCESS_KEY` and `S3_SECRET_KEY` environment variables hold the Sekoia release bucket credentials provided by Sekoia, and `global.version.fetch` points to the Sekoia release bucket, as described in [Configure the deployment](../deployment/deployment_configuration.md#release-download-and-security-content).
 - In air-gapped mode, `global.version.fetch.offline` is `true` and the CTI archive is extracted on the orchestration node, as described in [Prepare the CTI export in air-gapped mode](#prepare-the-cti-export-in-air-gapped-mode).
 
 ## Prepare the CTI export in air-gapped mode
@@ -38,8 +38,11 @@ The release archive does not include the CTI database. Sekoia publishes it as a 
     scp cti-latest.tar user@<ORCHESTRATION_NODE>:$SEKOIA_LOCAL_DIR
     ```
 
-    !!! note "Disk space"
-        The parts of the export are already compressed, so the extracted files take about as much space as the archive. Before you transfer it, make sure the orchestration node has free space for twice the size of the archive. You can delete the archive once it is extracted.
+    {% hint style="info" %}
+    **Disk space**
+
+    The parts of the export are already compressed, so the extracted files take about as much space as the archive. Before you transfer it, make sure the orchestration node has free space for twice the size of the archive. You can delete the archive once it is extracted.
+    {% endhint %}
 
 3. To extract the archive on the orchestration node, run:
 
@@ -63,12 +66,15 @@ $SEKOIA_LOCAL_DIR/data/cti/
         └── part-<N>.jsonl.zst
 ```
 
-The SHC reads each collection from `<global.version.data.cti.path>/cti/<collection>/`. The [execution script](/self_hosted/1.0.1/deployment/deployment_guide.md#step-4-create-the-execution-script) mounts `$SEKOIA_LOCAL_DIR` on `/opt/sekoia`, which matches the default value of `global.version.data.cti.path` (`/opt/sekoia/data/`).
+The SHC reads each collection from `<global.version.data.cti.path>/cti/<collection>/`. The [execution script](../deployment/deployment_guide.md#step-4-create-the-execution-script) mounts `$SEKOIA_LOCAL_DIR` on `/opt/sekoia`, which matches the default value of `global.version.data.cti.path` (`/opt/sekoia/data/`).
 
 ## Import the CTI database
 
-!!! tip "Retry with the default import policy"
-    With `modules.import_arango_collection.truncate=false` and `modules.import_arango_collection.on_duplicate=update` (the defaults), the import updates documents with the same `_key` without clearing the collections first. If an import fails, fix the reported cause, then run it again. Check the [import safety settings](#import-safety-and-tuning) before retrying with a custom configuration.
+{% hint style="success" %}
+**Retry with the default import policy**
+
+With `modules.import_arango_collection.truncate=false` and `modules.import_arango_collection.on_duplicate=update` (the defaults), the import updates documents with the same `_key` without clearing the collections first. If an import fails, fix the reported cause, then run it again. Check the [import safety settings](#import-safety-and-tuning) before retrying with a custom configuration.
+{% endhint %}
 
 To import the CTI database, run:
 
@@ -103,8 +109,11 @@ For example, to reduce concurrent imports for one run:
 exec ImportArangoCollection --set modules.import_arango_collection.threads=4
 ```
 
-!!! warning "Truncation deletes existing data before the import succeeds"
-    With `truncate=true`, the SHC clears each target collection that has parts to import before loading its first part. A failure can leave that collection empty or only partly imported. There is no rollback. Each new invocation clears the collections again; automatic retries of a part do not. Use truncation only for a planned full replacement, with Sekoia support and a verified ArangoDB backup. See [Back up the platform](/self_hosted/1.0.1/operations/backups.md). Do not leave `truncate=true` in the configuration for routine imports.
+{% hint style="warning" %}
+**Truncation deletes existing data before the import succeeds**
+
+With `truncate=true`, the SHC clears each target collection that has parts to import before loading its first part. A failure can leave that collection empty or only partly imported. There is no rollback. Each new invocation clears the collections again; automatic retries of a part do not. Use truncation only for a planned full replacement, with Sekoia support and a verified ArangoDB backup. See [Back up the platform](backups.md). Do not leave `truncate=true` in the configuration for routine imports.
+{% endhint %}
 
 Imports are not atomic, even with truncation disabled. Successful writes remain when another part or collection fails. A retry re-reads the whole part and can encounter documents written by a previous attempt: `update` applies the imported fields again, while `error` can fail on those duplicates. A duplicate policy is not a rollback mechanism. Inspect the final per-part and per-collection errors before retrying; increasing the retry count does not repair invalid input documents.
 
@@ -140,6 +149,6 @@ If a collection fails, the command still imports the other ones, skips the delet
 
 ## Related links
 
-- [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md): Run SHC commands and runtime overrides.
-- [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md): Set the release bucket credentials and endpoint.
-- [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md): Download the release and prepare the SHC execution script.
+- [Use the SHC interface](controller_interface.md): Run SHC commands and runtime overrides.
+- [Configure the deployment](../deployment/deployment_configuration.md): Set the release bucket credentials and endpoint.
+- [Deploy the platform](../deployment/deployment_guide.md): Download the release and prepare the SHC execution script.

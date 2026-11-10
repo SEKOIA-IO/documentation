@@ -4,9 +4,10 @@ This tutorial guides you through exporting up to 100 million security events fro
 
 By using the official CLI tool, you can automate the extraction of massive datasets and stream them directly to your infrastructure or local machine.
 
-!!! note 
-    Read our overview article to learn more about [Massive event export](/xdr/features/investigate/event_export.md). 
-    For complete documentation, see the [official CLI repository](https://github.com/SEKOIA-IO/sekoia-event-exporter).
+{% hint style="info" %}
+Read our overview article to learn more about [Massive event export](../features/investigate/event_export.md). 
+For complete documentation, see the [official CLI repository](https://github.com/SEKOIA-IO/sekoia-event-exporter).
+{% endhint %}
     
 
 
@@ -33,27 +34,28 @@ Prerequisites
     ```
 3. Replace `<search_job_uuid>` with the UUID you copied from your search.
 
-!!! success 
+{% hint style="success" %}
 
-    The tool:
+The tool:
 
-    - Start the export
-    - Show progress in real-time
-    - Download the file automatically
-    - Save it in your current folder
+- Start the export
+- Show progress in real-time
+- Download the file automatically
+- Save it in your current folder
 
-    What You'll See: 
+What You'll See: 
 
-    ```
-    ✓ Export triggered
+```
+✓ Export triggered
 
-    Exporting: ████████████░░░░░░░░ 40.0% | 4M / 10M events | ⏱ 2m 30s
+Exporting: ████████████░░░░░░░░ 40.0% | 4M / 10M events | ⏱ 2m 30s
 
-    ✓ Export ready!
-    Downloading: export_20260214_143842.json.gz
-    ✓ Download complete (15.0 MB)
+✓ Export ready!
+Downloading: export_20260214_143842.json.gz
+✓ Download complete (15.0 MB)
 
-    ```
+```
+{% endhint %}
 
 
 ## Common Use Cases
@@ -146,8 +148,9 @@ Prerequisites
       * Transfer to cold storage
       * Keep the encryption key - you'll need it if you want to re-download from S3 later
 
-!!! note
-    The downloaded file is gzip-compressed but not encrypted (encryption is only for S3 storage)
+{% hint style="info" %}
+The downloaded file is gzip-compressed but not encrypted (encryption is only for S3 storage)
+{% endhint %}
 
 ---
 
@@ -169,16 +172,17 @@ Prerequisites
      --no-download
    ```
 
-!!! success
+{% hint style="success" %}
 
-    The tool will display:
-    ```
-    ✓ Export ready!
-    Download URL: https://s3.storage.com/...
-    Encryption key: dGhpc2lzYW5leGFtcGxl...
- 
-    ⚠️  URL valid for 24 hours
-    ```
+The tool will display:
+```
+✓ Export ready!
+Download URL: https://s3.storage.com/...
+Encryption key: dGhpc2lzYW5leGFtcGxl...
+
+⚠️  URL valid for 24 hours
+```
+{% endhint %}
 
 3. **Securely share with your partner**
 
@@ -315,17 +319,21 @@ grep "malware" export_*.json
 cat export_*.json | jq 'select(.["source.ip"] == "192.168.1.100")'
 ```
 
-??? "Python Analysis Example"
+<details>
+<summary>Python Analysis Example</summary>
 
-    ```python
-    import json
 
-    with open('export_20260214.json', 'r') as f:
-        for line in f:
-            event = json.loads(line)
-            if event.get('source.ip') == '192.168.1.100':
-                print(f"{event['@timestamp']}: {event['message']}")
-    ```
+```python
+import json
+
+with open('export_20260214.json', 'r') as f:
+    for line in f:
+        event = json.loads(line)
+        if event.get('source.ip') == '192.168.1.100':
+            print(f"{event['@timestamp']}: {event['message']}")
+```
+
+</details>
 
 ## Next steps: 
-To understand the technical boundaries and monthly data quotas of the system, consult the [Export technical reference](/xdr/features/investigate/export_reference.md).
+To understand the technical boundaries and monthly data quotas of the system, consult the [Export technical reference](../features/investigate/export_reference.md).

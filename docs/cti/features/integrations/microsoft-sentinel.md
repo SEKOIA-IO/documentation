@@ -17,7 +17,7 @@ You should create a new API Key in Sekoia.io’s “User Center”:
 3. Then click on the “API keys” tab title
 4. Create a new API key and give a title and a description.
 5. Finally, give the “Intelligence Center Read-Only” role to the API Key and click on the “Save” button.<br/>
-![](/assets/intelligence_center/apikey_create.png)
+![](../../../assets/intelligence_center/apikey_create.png)
 6. Copy the API Key (which is only displayed once).
 
 Please keep the resulting API Key carefully as it will be required later.
@@ -29,10 +29,10 @@ In order to bring Sekoia.io threat intelligence in Microsoft Sentinel, the first
 1. On Sekoia.io’s Intelligence Center, connect to the “Feeds” section
 2. Create a new CTI feed by clicking on the “+ Feed” button:
 3. Fill the feed creation form with the following information. Set an arbitrary title for you feed, choose to only export CTI “indicators” and choose the “JSON” format.<br/>
-![](/assets/intelligence_center/create_feeds_form.png)
+![](../../../assets/intelligence_center/create_feeds_form.png)
 4. Click on “Save”:
 5. After saving, the feed list is displayed. You can click next to the feed title to copy its unique identifier.<br/>
-![](/assets/intelligence_center/create_feeds_copy-id.png)
+![](../../../assets/intelligence_center/create_feeds_copy-id.png)
 
 Please keep the feed title unique identifier carefully as it will be used later.
 
@@ -53,7 +53,7 @@ In the “Threat intelligence - TAXII” connector page, fill the form with the 
 - Import indicators: “All available”.
 - Polling Frequency: “Once an hour”.
 
-![](/assets/intelligence_center/sentinel-configure-cti-feed.png)
+![](../../../assets/intelligence_center/sentinel-configure-cti-feed.png)
 
 Finally, click on “Add”.
 

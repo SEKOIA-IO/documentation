@@ -15,8 +15,9 @@ The workflow involves three steps:
 2. **Poll the job status**: check until the job is done
 3. **Retrieve the events**: fetch results when status is `2` (done)
 
-!!! note
-    By default the API returns up to **100 events**. Pass `?limit=1000` on the results endpoint to retrieve more (maximum 1000). Dates accept the ISO8601 format (`2025-01-01T00:00:00Z`) or a relative format (`-30d`, `now`).
+{% hint style="info" %}
+By default the API returns up to **100 events**. Pass `?limit=1000` on the results endpoint to retrieve more (maximum 1000). Dates accept the ISO8601 format (`2025-01-01T00:00:00Z`) or a relative format (`-30d`, `now`).
+{% endhint %}
 
 Job statuses:
 
@@ -120,5 +121,6 @@ python search_events.py YOUR_API_KEY \
   --query='source.ip: "1.2.3.4"'
 ```
 
-!!! note
-    The script retries up to 10 times with a 1-second delay between attempts. For long-running searches, increase `retries`.
+{% hint style="info" %}
+The script retries up to 10 times with a 1-second delay between attempts. For long-running searches, increase `retries`.
+{% endhint %}

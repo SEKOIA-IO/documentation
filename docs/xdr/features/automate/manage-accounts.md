@@ -18,9 +18,10 @@ This allows you to re-use these accounts between your multiple playbook actions 
 
 Once your account has been created, you can use it (and reuse it) in every node configuration.
 
-!!!Info
-    If you are in multi-tenant mode, only accounts linked to the same tenant will appear in this list.
+{% hint style="info" %}
+If you are in multi-tenant mode, only accounts linked to the same tenant will appear in this list.
+{% endhint %}
 
 
-![use-account-in-playbooks](/assets/operation_center/playbooks/use-account-in-playbooks.png)
+![use-account-in-playbooks](../../../assets/operation_center/playbooks/use-account-in-playbooks.png)
 

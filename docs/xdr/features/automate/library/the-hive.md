@@ -4,7 +4,7 @@ type: playbook
 
 # The Hive
 
-![The Hive](/assets/playbooks/library/the-hive.png){ align=right width=150 }
+![The Hive](../../../../assets/playbooks/library/the-hive.png)
 
 TheHive is a scalable, open source and free Security Incident Response Platform
 

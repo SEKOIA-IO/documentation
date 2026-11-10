@@ -37,17 +37,19 @@ If you are unsure of your region, look at the URL you use to access the Sekoia.i
 
 All API requests are authenticated with an API key.
 
-!!! note
-    Only users with admin roles can create API keys.
+{% hint style="info" %}
+Only users with admin roles can create API keys.
+{% endhint %}
 
-!!! tip
-    Start with read-only permissions. You can always create a second key with write permissions when you need to perform write operations.
+{% hint style="success" %}
+Start with read-only permissions. You can always create a second key with write permissions when you need to perform write operations.
+{% endhint %}
 
 To create a key:
 
 1. In Sekoia, go to **Settings > Workspace > API Keys**.
 
-    ![API Keys entry in the Settings menu](/assets/develop/api_keys_menu.png){: style="max-width:260px"}
+    ![API Keys entry in the Settings menu](../assets/develop/api_keys_menu.png)
 
 2. Click **+ API key**.
 3. Give your key a name and a description.

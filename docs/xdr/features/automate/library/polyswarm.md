@@ -4,7 +4,7 @@ type: playbook
 
 # PolySwarm
 
-![PolySwarm](/assets/playbooks/library/polyswarm.png){ align=right width=150 }
+![PolySwarm](../../../../assets/playbooks/library/polyswarm.png)
 
 Look up, scan and detonate indicators against PolySwarm's marketplace of detection engines. Search reads what PolySwarm already holds and spends no scanning quota. Scan submits to the engines and returns a fresh multi-engine verdict. Sandbox detonates and returns where the report can be fetched. Accepts SHA256, SHA1 and MD5 hashes, files, URLs, domains and IP addresses, and searches by malware family, tag and other metadata. A trigger starts a playbook when a detonation finishes. Verdicts come from the engine detection counts, and an engine that abstained is never counted as benign.
 
@@ -515,7 +515,7 @@ You need two things: an API key, and the name of the community that key belongs 
 3. Keys issued to a team are listed under `Team Account API Keys`, with the community each one is scoped to in the `Community` column. Keys issued to you personally are under `Personal Account API Keys`.
 4. Use the copy icon beside the key you want. The key stays masked on screen, so copy it rather than trying to read it.
 
-    ![The API Keys tab in the PolySwarm portal](/assets/playbooks/library/setup/polyswarm/step01-apikeys.png)
+    ![The API Keys tab in the PolySwarm portal](../../../../assets/playbooks/library/setup/polyswarm/step01-apikeys.png)
 
 If you do not have a key, the round `+` button on either section creates one, or your PolySwarm contact can issue one for your team.
 
@@ -523,18 +523,18 @@ If you do not have a key, the round `+` button on either section creates one, or
 
 5. Go to `Configure`, then `Integrations`, and search for `PolySwarm`.
 
-    ![Searching the Sekoia integrations catalogue](/assets/playbooks/library/setup/polyswarm/step02-integrations.png)
+    ![Searching the Sekoia integrations catalogue](../../../../assets/playbooks/library/setup/polyswarm/step02-integrations.png)
 6. On the PolySwarm page, click `Show accounts`, then `+ Connect an account`.
 
-    ![The PolySwarm integration page](/assets/playbooks/library/setup/polyswarm/step03-integration-page.png)
+    ![The PolySwarm integration page](../../../../assets/playbooks/library/setup/polyswarm/step03-integration-page.png)
 7. Give the account a name you will recognise in a playbook, for example the team the key belongs to.
 8. Paste the key into `API Key`. The field is declared as a secret, so the platform masks it.
 9. Set `Community`. It is prefilled with `default`, which is the public community and is where most keys belong. If PolySwarm issued you a key for a private community, put that community's name here instead.
 
-    ![The Add new account form](/assets/playbooks/library/setup/polyswarm/step04-add-account.png)
+    ![The Add new account form](../../../../assets/playbooks/library/setup/polyswarm/step04-add-account.png)
 10. Click `Add account`. It then appears under `Connected accounts` and can be selected by any PolySwarm action or trigger in a playbook.
 
-    ![The connected accounts panel](/assets/playbooks/library/setup/polyswarm/step05-connected-accounts.png)
+    ![The connected accounts panel](../../../../assets/playbooks/library/setup/polyswarm/step05-connected-accounts.png)
 
 A word about the community field, because it is the one thing the two products do not line up on. The PolySwarm portal describes a key's community in words, as public or private, and never shows the exact name Sekoia wants typed here. If lookups come back empty for artifacts you are certain exist, this field is almost always the reason, and your PolySwarm contact can tell you the exact value.
 
@@ -543,9 +543,9 @@ A word about the community field, because it is the one thing the two products d
 11. Open a playbook under `Configure`, then `Playbooks`, and click the `+` on the canvas.
 12. Search for `PolySwarm`. The `Actions` tab lists every action, and the `Triggers` tab holds `Sandbox detonation completed`.
 
-    ![The PolySwarm actions in the playbook editor](/assets/playbooks/library/setup/polyswarm/step06-actions-library.png)
+    ![The PolySwarm actions in the playbook editor](../../../../assets/playbooks/library/setup/polyswarm/step06-actions-library.png)
 
-    ![The PolySwarm trigger in the playbook editor](/assets/playbooks/library/setup/polyswarm/step07-triggers-library.png)
+    ![The PolySwarm trigger in the playbook editor](../../../../assets/playbooks/library/setup/polyswarm/step07-triggers-library.png)
 
 The search actions branch on their outcome, so a hash search leads to `detected`, `not detected` and `unknown` outputs you can wire to different steps. The `unknown` branch matters: it is what fires when PolySwarm has never seen the artifact, or when a scan has not finished, and it is deliberately not the same as `not detected`.
 

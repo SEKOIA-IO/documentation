@@ -38,7 +38,7 @@ You can customize the appearance of the Sekoia interface from your profile setti
 
 Your appearance preferences are saved to your account and apply across your Sekoia sessions.
 
-![!Profile appearance settings showing theme, accent color, and contrast options](/assets/getting_started/settings_profile.png)
+![!Profile appearance settings showing theme, accent color, and contrast options](../assets/getting_started/settings_profile.png)
 
 ## Reorder menu sections
 
@@ -50,7 +50,7 @@ To reorder a section:
 2. Drag it to the desired position in the menu.
 3. Release to place it in the new position.
 
-![!Navigation menu showing a section being moved by drag and drop](/assets/getting_started/reorder_menu_gif.gif)
+![!Navigation menu showing a section being moved by drag and drop](../assets/getting_started/reorder_menu_gif.gif)
 
 ## Customize table columns
 
@@ -65,8 +65,11 @@ To customize columns on a table page:
 
 Your column configuration is saved per page.
 
-!!! tip "Alerts table"
-    On the Alerts page, customizing which columns are visible is especially useful for surfacing the data most relevant to your triage workflow, such as urgency, entity, rule name, or asset.
+{% hint style="success" %}
+**Alerts table**
+
+On the Alerts page, customizing which columns are visible is especially useful for surfacing the data most relevant to your triage workflow, such as urgency, entity, rule name, or asset.
+{% endhint %}
 
 ## Set a preferred authentication method
 
@@ -78,9 +81,9 @@ To set your preferred method:
 2. Select **Profile and security**.
 3. In the **Security** section, select your preferred authentication method.
 
-To set up or change your authentication configuration, see [Secure your account](/getting_started/secure_your_account.md).
+To set up or change your authentication configuration, see [Secure your account](secure_your_account.md).
 
 ## Related links
 
-- [Navigate the platform](/getting_started/navigate_the_platform.md): How the navigation menu is structured and how to use filters.
-- [Secure your account](/getting_started/secure_your_account.md): Enable two-factor authentication and manage your authentication settings.
+- [Navigate the platform](navigate_the_platform.md): How the navigation menu is structured and how to use filters.
+- [Secure your account](secure_your_account.md): Enable two-factor authentication and manage your authentication settings.

@@ -2,7 +2,7 @@
 
 The **Verdict** column in the alert list displays the current state of the Elevate AI investigation for each alert. This article describes every possible state and what it means.
 
-![Alert list showing different Elevate verdict states in the Verdict column](/assets/elevate/verdicts-states.png){: style="max-width:100%"}
+![Alert list showing different Elevate verdict states in the Verdict column](../../../assets/elevate/verdicts-states.png)
 
 ## States reference
 
@@ -22,7 +22,7 @@ Verdicts set by the Elevate agent display a sparkle icon in the alert list. When
 
 ## Related articles
 
-- [Elevate](/xdr/features/modules/elevate_overview.md): Concept overview of how Elevate works and its key concepts.
-- [Override an Elevate verdict](/xdr/features/modules/elevate_validate_verdict.md): How to override the AI verdict on an alert.
-- [Trigger a manual Elevate analysis](/xdr/features/modules/elevate_manual_analysis.md): How to analyze an alert that was not processed automatically.
-- [Manage your Elevate runs](/xdr/features/modules/elevate_quota.md): How to monitor and optimize your monthly run pack.
+- [Elevate](elevate_overview.md): Concept overview of how Elevate works and its key concepts.
+- [Override an Elevate verdict](elevate_validate_verdict.md): How to override the AI verdict on an alert.
+- [Trigger a manual Elevate analysis](elevate_manual_analysis.md): How to analyze an alert that was not processed automatically.
+- [Manage your Elevate runs](elevate_quota.md): How to monitor and optimize your monthly run pack.

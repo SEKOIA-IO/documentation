@@ -4,7 +4,7 @@ The Analytics page shows the impact and return on investment of Elevate across y
 
 ## Prerequisites
 
-- Elevate is activated on your workspace or community. See [Activate Elevate on a workspace](/xdr/features/modules/elevate_activate.md).
+- Elevate is activated on your workspace or community. See [Activate Elevate on a workspace](elevate_activate.md).
 - Your role includes the **Read AI investigations** permission, in the **AI** permission group.
 
 ## Open the Analytics page
@@ -19,7 +19,7 @@ The page has three parts:
 | **Performance trends** | Three charts on speed, volume and token usage. | The period you select in **Trends over time**. |
 | **Investigation quality** | Accuracy of Elevate verdicts against analyst verdicts. | The period you select in **Trends over time**. |
 
-![Analytics page showing the Last 30 days block and the Performance trends charts in yearly mode](/assets/elevate/analytics-overview.png){: style="max-width:100%"}
+![Analytics page showing the Last 30 days block and the Performance trends charts in yearly mode](../../../assets/elevate/analytics-overview.png)
 
 ## Last 30 days
 
@@ -33,8 +33,11 @@ The **Last 30 days** block summarizes Elevate activity over the last 30 days.
 
 Each metric displays a trend value that compares it with the previous 30-day period, for example **+136% vs. previous 30 days**. When there is no difference to report, the trend displays `-`.
 
-!!! note "Fixed period"
-    The **Last 30 days** block always covers the last 30 days. The period selector and the **Break down by community** toggle do not change it.
+{% hint style="info" %}
+**Fixed period**
+
+The **Last 30 days** block always covers the last 30 days. The period selector and the **Break down by community** toggle do not change it.
+{% endhint %}
 
 ## Trends over time
 
@@ -53,7 +56,7 @@ To display a specific month, select **Monthly**, then select the month in the li
 
 If you manage several communities, enable the **Break down by community** toggle to split each chart by community. Each bar becomes a stack with one segment per community. The charts name the top 3 communities and group all the other ones under **Others**.
 
-![Performance trends charts in yearly mode with the Break down by community toggle enabled](/assets/elevate/analytics-breakdown-by-community.png){: style="max-width:100%"}
+![Performance trends charts in yearly mode with the Break down by community toggle enabled](../../../assets/elevate/analytics-breakdown-by-community.png)
 
 ## Performance trends
 
@@ -96,8 +99,11 @@ Four widgets measure accuracy. Hover over the info button next to a metric name 
 | **Predicted true positives rate** | Among the alerts Elevate triaged as true positives, share that your analysts also closed as true positives. |
 | **Predicted false positives rate** | Among the alerts Elevate triaged as false positives, share that your analysts also closed as false positives. |
 
-!!! note "Verdict stage"
-    A verdict stage is the group a verdict belongs to: **True positive** or **False positive**. Two different custom verdicts, for example "Confirmed malware" and "Policy violation", can belong to the same verdict stage. See [Custom verdicts](/xdr/features/investigate/custom_verdicts.md).
+{% hint style="info" %}
+**Verdict stage**
+
+A verdict stage is the group a verdict belongs to: **True positive** or **False positive**. Two different custom verdicts, for example "Confirmed malware" and "Policy violation", can belong to the same verdict stage. See [Custom verdicts](../investigate/custom_verdicts.md).
+{% endhint %}
 
 ### Agreement breakdown
 
@@ -109,16 +115,20 @@ Next to the accuracy widgets, three bars split the population by level of agreem
 | **Different verdict, same stage** | The analyst changed the verdict, but it stayed in the same verdict stage. | Added to **Agreement**, it gives **Verdict stage accuracy**. |
 | **Disagreement** | Different verdict and different verdict stage. | The remaining share. |
 
-??? example "Reading the breakdown"
-    On a population of 3 closed alerts:
+<details>
+<summary>Reading the breakdown</summary>
 
-    - **Agreement**: 1, which is 33%
-    - **Different verdict, same stage**: 2, which is 67%
-    - **Disagreement**: 0, which is 0%
+On a population of 3 closed alerts:
 
-    **Verdict accuracy** is 33% and **Verdict stage accuracy** is 100%. Elevate always identified whether the alert was a true or a false positive, but your analysts picked a more specific verdict two times out of three.
+- **Agreement**: 1, which is 33%
+- **Different verdict, same stage**: 2, which is 67%
+- **Disagreement**: 0, which is 0%
 
-![Investigation quality section with the four accuracy widgets, the agreement breakdown and the Accuracy by community table](/assets/elevate/analytics-investigation-quality.png){: style="max-width:100%"}
+**Verdict accuracy** is 33% and **Verdict stage accuracy** is 100%. Elevate always identified whether the alert was a true or a false positive, but your analysts picked a more specific verdict two times out of three.
+
+</details>
+
+![Investigation quality section with the four accuracy widgets, the agreement breakdown and the Accuracy by community table](../../../assets/elevate/analytics-investigation-quality.png)
 
 ### Accuracy by community
 
@@ -132,9 +142,9 @@ A metric displays `-` when the community has no closed alert to measure it on.
 
 ## Related articles
 
-- [Elevate](/xdr/features/modules/elevate_overview.md): Concept overview of how Elevate works and its key concepts.
-- [The Elevate investigation method](/xdr/features/modules/elevate_investigation_method.md): How Elevate selects a verdict among the ones available in your workspace.
-- [Override an Elevate verdict](/xdr/features/modules/elevate_validate_verdict.md): How analysts change the verdict Elevate reached.
-- [Manage your Elevate runs](/xdr/features/modules/elevate_quota.md): How to monitor and optimize your monthly run pack.
-- [Custom verdicts](/xdr/features/investigate/custom_verdicts.md): How to define verdicts and the verdict stage they belong to.
-- [Custom statuses](/xdr/features/investigate/custom_statuses.md): How to define the statuses your team uses to close alerts.
+- [Elevate](elevate_overview.md): Concept overview of how Elevate works and its key concepts.
+- [The Elevate investigation method](elevate_investigation_method.md): How Elevate selects a verdict among the ones available in your workspace.
+- [Override an Elevate verdict](elevate_validate_verdict.md): How analysts change the verdict Elevate reached.
+- [Manage your Elevate runs](elevate_quota.md): How to monitor and optimize your monthly run pack.
+- [Custom verdicts](../investigate/custom_verdicts.md): How to define verdicts and the verdict stage they belong to.
+- [Custom statuses](../investigate/custom_statuses.md): How to define the statuses your team uses to close alerts.

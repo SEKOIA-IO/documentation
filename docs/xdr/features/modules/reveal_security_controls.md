@@ -1,6 +1,6 @@
 # Security controls
 
-_**[Reveal module](/xdr/features/modules/reveal_index.md)** — This feature requires the Reveal add-on module._ 
+_**[Reveal module](reveal_index.md)** — This feature requires the Reveal add-on module._ 
 
 The Security controls tab in the asset context panel shows which detection and protection technologies are actively covering an asset. Use it to confirm that the right tools are in place, identify visibility gaps, and understand which response actions are available before taking containment steps.
 
@@ -42,13 +42,17 @@ Presence in the **Seen by** list confirms that event data from that source is re
 
 **For proactive review:** identify assets that are missing expected connectors or have not been observed by key intakes recently.
 
-??? example "Detecting a visibility gap on a domain controller"
-    A high-value domain controller appears in network telemetry and vulnerability management scans but is absent from the **Seen by** list for endpoint and identity logs. This explains why credential-access activity on the host was not detected. The recommended action is to deploy the Sekoia Endpoint Agent or configure an identity provider intake for the asset.
+<details>
+<summary>Detecting a visibility gap on a domain controller</summary>
+
+A high-value domain controller appears in network telemetry and vulnerability management scans but is absent from the **Seen by** list for endpoint and identity logs. This explains why credential-access activity on the host was not detected. The recommended action is to deploy the Sekoia Endpoint Agent or configure an identity provider intake for the asset.
+
+</details>
 
 ## Related links
 
-- [Asset context panel: Reveal capabilities](/xdr/features/modules/reveal_asset_context_panel.md): Full reference for all Reveal-specific sections of the asset context panel, including the Security controls tab.
-- [Create an asset connector](/xdr/features/modules/reveal_asset_connectors_create.md): How to add a connector that contributes to asset coverage.
-- [Troubleshoot asset connectors](/xdr/features/modules/reveal_asset_connectors_troubleshoot.md): How to diagnose connector errors if an expected connector does not appear.
-- [Endpoint Hygiene](/xdr/features/modules/reveal_hygiene.md): How hygiene signals complement coverage data during posture assessment.
-- [Reveal feature enablement matrix](/xdr/features/modules/reveal_feature_enablement.md): Data source requirements for Security controls and other Reveal capabilities.
+- [Asset context panel: Reveal capabilities](reveal_asset_context_panel.md): Full reference for all Reveal-specific sections of the asset context panel, including the Security controls tab.
+- [Create an asset connector](reveal_asset_connectors_create.md): How to add a connector that contributes to asset coverage.
+- [Troubleshoot asset connectors](reveal_asset_connectors_troubleshoot.md): How to diagnose connector errors if an expected connector does not appear.
+- [Endpoint Hygiene](reveal_hygiene.md): How hygiene signals complement coverage data during posture assessment.
+- [Reveal feature enablement matrix](reveal_feature_enablement.md): Data source requirements for Security controls and other Reveal capabilities.

@@ -8,10 +8,10 @@ You must provision and manage the following components outside the Kubernetes cl
 
 | Component | CPU | RAM | Storage / throughput | Notes |
 | :--- | :---: | :---: | :---: | :--- |
-| TCP Load Balancer (e.g., HAProxy, Nginx) | 4 | 8 GB | 100 Mbps (12.5 MB/s) | Required minimum throughput. Scale according to your actual ingest volume. Layer 4 only: Traefik terminates TLS. See [Network requirements](/self_hosted/1.0.1/deployment/network_requirements.md#flows-from-load-balancers-to-kubernetes-nodes). |
+| TCP Load Balancer (e.g., HAProxy, Nginx) | 4 | 8 GB | 100 Mbps (12.5 MB/s) | Required minimum throughput. Scale according to your actual ingest volume. Layer 4 only: Traefik terminates TLS. See [Network requirements](network_requirements.md#flows-from-load-balancers-to-kubernetes-nodes). |
 | Orchestration node | 4 | 8 GB | 500 GB | Required. Runs the self-hosted-controller (SHC) and stores the release files. See requirements below. |
-| Local image registry (e.g., Harbor, JFrog, Nexus) | 4 | 8 GB | 1 TB | Required. The SHC publishes the images and Helm charts to it, and the Kubernetes nodes pull them from it. Must serve HTTPS, with token (Bearer) authentication. See [OCI registry](/self_hosted/1.0.1/deployment/deployment_configuration.md#oci-registry). |
-| Local code registry (e.g., GitLab, Gitea, ForgeJo) | 1 | 4 GB | Less than 10 GB | Required. The SHC publishes the ArgoCD stack manifests to it, and ArgoCD reads them from it. Must be reached over HTTP or HTTPS, with a username and a password. See [Git repository](/self_hosted/1.0.1/deployment/deployment_configuration.md#git-repository). |
+| Local image registry (e.g., Harbor, JFrog, Nexus) | 4 | 8 GB | 1 TB | Required. The SHC publishes the images and Helm charts to it, and the Kubernetes nodes pull them from it. Must serve HTTPS, with token (Bearer) authentication. See [OCI registry](deployment_configuration.md#oci-registry). |
+| Local code registry (e.g., GitLab, Gitea, ForgeJo) | 1 | 4 GB | Less than 10 GB | Required. The SHC publishes the ArgoCD stack manifests to it, and ArgoCD reads them from it. Must be reached over HTTP or HTTPS, with a username and a password. See [Git repository](deployment_configuration.md#git-repository). |
 | S3-compatible object storage | | | See [Storage](#storage) | Required. Stores the indexed events. |
 
 ### Orchestration node requirements
@@ -29,8 +29,11 @@ The orchestration node stores the release files that the SHC deploys. Provide 50
 | CTI archive and its extracted export, in air-gapped mode | Twice the size of the CTI archive during the extraction |
 | Next release, downloaded and extracted next to the current one | 220 GB |
 
-!!! note "Orchestration node role"
-    The orchestration node does not join the Kubernetes cluster. The SHC performs preflight checks, installs the complete Kubernetes cluster, manages the platform deployment through Helm and ArgoCD, and downloads deployment resources when internet access is available. The node must have SSH access to all Kubernetes nodes on TCP port 22.
+{% hint style="info" %}
+**Orchestration node role**
+
+The orchestration node does not join the Kubernetes cluster. The SHC performs preflight checks, installs the complete Kubernetes cluster, manages the platform deployment through Helm and ArgoCD, and downloads deployment resources when internet access is available. The node must have SSH access to all Kubernetes nodes on TCP port 22.
+{% endhint %}
 
 ## Compute node specification
 
@@ -50,14 +53,17 @@ Every Kubernetes node, manager or worker, must meet the following minimum hardwa
 | SSH account | Key-based SSH access and full sudo privileges. See [SSH account](#ssh-account). | Not checked. `CheckServersAreReachable` fails when the connection or the privilege escalation fails. |
 | Python 3 | `python3` installed, in online and air-gapped mode alike. See [Operating system packages](#operating-system-packages). | Not checked. Every Ansible playbook, `CheckServerSpec` included, fails on a node without it. |
 
-The `CheckServerSpec` command blocks the installation when a manager or worker node fails any of the checks in the last column. See [CheckServerSpec](/self_hosted/1.0.1/troubleshooting/debug_tool.md#checkserverspec) for the failure messages and their remediation.
+The `CheckServerSpec` command blocks the installation when a manager or worker node fails any of the checks in the last column. See [CheckServerSpec](../troubleshooting/debug_tool.md#checkserverspec) for the failure messages and their remediation.
 
 `CheckServerSpec` counts the logical CPUs that Linux reports. On a physical server, enable simultaneous multithreading (Hyper-Threading) in the firmware to expose every logical CPU.
 
 The system disk holds the operating system and the Kubernetes data under `/var`: container images, etcd, kubelet, and Ceph monitor data. Do not give `/var` a small separate partition. When `/var` fills up, Kubernetes reports `DiskPressure`, and the installation stops.
 
-!!! warning "SSD usage"
-    `CheckServerSpec` enforces a 200 GB dedicated-disk minimum to support ultra-tight deployments. Any deployment that handles customer data must provision 4 TB per worker node. How quickly that capacity is consumed depends on the customer's use of the platform. Do not use these disks for long-term event retention; event data requires dedicated S3-compatible storage (see [Storage](#storage) below).
+{% hint style="warning" %}
+**SSD usage**
+
+`CheckServerSpec` enforces a 200 GB dedicated-disk minimum to support ultra-tight deployments. Any deployment that handles customer data must provision 4 TB per worker node. How quickly that capacity is consumed depends on the customer's use of the platform. Do not use these disks for long-term event retention; event data requires dedicated S3-compatible storage (see [Storage](#storage) below).
+{% endhint %}
 
 ### Dedicated storage disk
 
@@ -69,23 +75,26 @@ Ceph provisions persistent volumes from a dedicated block device on every node. 
 
 Attach the disk and leave it unformatted before you start the installation. `CheckServerSpec` skips this check once K3s is installed, because Ceph has consumed the disk by then. On a server with a RAID controller, expose the disk in HBA, JBOD, or passthrough mode: Sekoia does not validate Ceph on a RAID volume.
 
-By default, Ceph uses every unused raw disk of every node. To use only the disks or the LVM logical volumes that you select, set the manual Ceph storage mode: `CheckServerSpec` then checks the selected devices instead. See [Ceph storage devices](/self_hosted/1.0.1/deployment/deployment_configuration.md#ceph-storage-devices).
+By default, Ceph uses every unused raw disk of every node. To use only the disks or the LVM logical volumes that you select, set the manual Ceph storage mode: `CheckServerSpec` then checks the selected devices instead. See [Ceph storage devices](deployment_configuration.md#ceph-storage-devices).
 
-!!! warning "Do not partition or format the storage disk"
-    A disk that already carries a filesystem or a partition table is not counted as eligible. If the node exposes no other eligible disk, the preflight fails and the installation does not start.
+{% hint style="warning" %}
+**Do not partition or format the storage disk**
+
+A disk that already carries a filesystem or a partition table is not counted as eligible. If the node exposes no other eligible disk, the preflight fails and the installation does not start.
+{% endhint %}
 
 ### SSH account
 
 The SHC configures every manager and worker node over SSH, as the user set in `utils.ansible.user`, with the private key set in `utils.ansible.ssh-key`. It runs every Ansible playbook with privilege escalation, so the account needs full `sudo` privileges on every node. Grant them in one of two ways:
 
 - Passwordless sudo, with a `NOPASSWD` rule for the account.
-- Sudo with a password, passed to the SHC in the `SERVERS_SUDO_PASSWORD` environment variable. See [Create the execution script](/self_hosted/1.0.1/deployment/deployment_guide.md#step-4-create-the-execution-script).
+- Sudo with a password, passed to the SHC in the `SERVERS_SUDO_PASSWORD` environment variable. See [Create the execution script](deployment_guide.md#step-4-create-the-execution-script).
 
 The SHC also offers the value of `SERVERS_SUDO_PASSWORD` as the SSH password of the account. Keep the two passwords identical if the account authenticates with a password instead of the key.
 
 ### Free ports
 
-K3s, Traefik, etcd, Cilium, and the intake services bind TCP ports 80, 443, 2379, 2380, 4240, 4250, 6443, 10514, and 11514 on every node. `CheckServerSpec` fails when another process already listens on one of them. The check is skipped once K3s is installed, because the cluster then holds the ports itself. To identify the process that uses a port, run `sudo ss -ltnp 'sport = :<PORT>'` on the node. See [Network requirements](/self_hosted/1.0.1/deployment/network_requirements.md#kubernetes-internal-flows) for the flows on these ports.
+K3s, Traefik, etcd, Cilium, and the intake services bind TCP ports 80, 443, 2379, 2380, 4240, 4250, 6443, 10514, and 11514 on every node. `CheckServerSpec` fails when another process already listens on one of them. The check is skipped once K3s is installed, because the cluster then holds the ports itself. To identify the process that uses a port, run `sudo ss -ltnp 'sport = :<PORT>'` on the node. See [Network requirements](network_requirements.md#kubernetes-internal-flows) for the flows on these ports.
 
 ### Node hostnames
 
@@ -147,8 +156,11 @@ The following packages are required on every compute node:
 
 Because the SHC may install packages, `apt` must work on every node: `sudo apt-get update` ends without errors.
 
-!!! note "Air-gapped deployments"
-    In air-gapped environments, nodes cannot download packages during the installation, so the SHC cannot install `lvm2` and `gettext-base` itself. Install the three packages on every compute node before you start, or provide an internal Debian mirror.
+{% hint style="info" %}
+**Air-gapped deployments**
+
+In air-gapped environments, nodes cannot download packages during the installation, so the SHC cannot install `lvm2` and `gettext-base` itself. Install the three packages on every compute node before you start, or provide an internal Debian mirror.
+{% endhint %}
 
 ### Changes applied by the SHC to the nodes
 
@@ -164,18 +176,21 @@ The SHC does not install or harden the operating system of the nodes. During the
 | Installs the `gettext-base` package with the system package manager, when it is missing | First manager | Provides `envsubst`, used to render the Helm values of the cluster services. |
 | Copies the Helm binary to `/usr/local/bin/helm` | First manager | Installs the cluster services (Cilium, CoreDNS, cert-manager, metrics-server) from the first manager node. |
 
-The sysctl values are persistent and applied immediately. The installation does not change the bootloader, the host firewall configuration, the SSH configuration, or the user accounts of the nodes. The package installations reach the Debian repositories or your package mirror; see [Network requirements](/self_hosted/1.0.1/deployment/network_requirements.md#outbound-flows-to-infrastructure-services) for the flow.
+The sysctl values are persistent and applied immediately. The installation does not change the bootloader, the host firewall configuration, the SSH configuration, or the user accounts of the nodes. The package installations reach the Debian repositories or your package mirror; see [Network requirements](network_requirements.md#outbound-flows-to-infrastructure-services) for the flow.
 
 ### GPU nodes
 
-The AI features of the platform, which run on GPU nodes, are not available in Sekoia Self-Hosted 1.0.1. Do not provision GPU nodes for this release. See the [release notes](/self_hosted/1.0.1/release_notes.md#ai-features).
+The AI features of the platform, which run on GPU nodes, are not available in Sekoia Self-Hosted 1.0.1. Do not provision GPU nodes for this release. See the [release notes](../release_notes.md#ai-features).
 
 ## Cluster sizing
 
 The following table provides estimated hardware footprints per deployment size.
 
-!!! note "Sizing guidance"
-    These figures are indicative. Contact Sekoia before deployment to validate requirements against your specific workload and asset profile.
+{% hint style="info" %}
+**Sizing guidance**
+
+These figures are indicative. Contact Sekoia before deployment to validate requirements against your specific workload and asset profile.
+{% endhint %}
 
 | Size | Incoming data | Assets (approx.) | Servers (3 managers included) | Object storage to provision (365 days) |
 | :--- | :---: | :---: | :---: | :---: |
@@ -189,7 +204,7 @@ The following table provides estimated hardware footprints per deployment size.
 
 **Node roles:** Each production cluster has exactly 3 manager nodes (Kubernetes control plane), the only supported manager-node topology. The SHC does not check this count: `utils.ansible.inventory.managers` accepts any number of addresses, and `CheckServerSpec` validates each node on its own. The topology is a Sekoia support requirement. The **Servers** column includes the manager nodes. They also run platform workloads, like the worker nodes, and must meet the same [compute node specification](#compute-node-specification). With 1 or 2 managers, etcd has no fault tolerance: the loss of one manager stops the Kubernetes API.
 
-**Sizing profiles:** The table sizes the servers and the object storage. The sizing profiles of the SHC set the resources and the replicas of the platform services, not the number of nodes. `sizing/500gb-day.yaml` and `sizing/2tb-day.yaml` target the daily volumes of the Small and Medium sizes, and no profile targets the Large size. The profiles are pending performance validation: choose the profile and adjust it with Sekoia. See [Select and adjust a sizing profile](/self_hosted/1.0.1/deployment/deployment_configuration.md#select-and-adjust-a-sizing-profile).
+**Sizing profiles:** The table sizes the servers and the object storage. The sizing profiles of the SHC set the resources and the replicas of the platform services, not the number of nodes. `sizing/500gb-day.yaml` and `sizing/2tb-day.yaml` target the daily volumes of the Small and Medium sizes, and no profile targets the Large size. The profiles are pending performance validation: choose the profile and adjust it with Sekoia. See [Select and adjust a sizing profile](deployment_configuration.md#select-and-adjust-a-sizing-profile).
 
 ## Storage
 
@@ -202,7 +217,7 @@ An S3-compatible object storage is required for the event data lake. ExaLog writ
 | Region | Required, even when your storage has no region concept: use the value it accepts by default, for example `us-east-1`. |
 | Addressing | Path-style requests by default (`global.platform_storage.force_path_style_access`), so bucket names do not need DNS records. |
 | Buckets | 16 buckets, named `exalog-self-hosted-events-0` to `exalog-self-hosted-events-f`, plus the `exalog-self-hosted-backups` bucket when you enable backups. You create them before the installation: the platform does not create them. See [Event storage buckets](#event-storage-buckets) and [Backup bucket](#backup-bucket). |
-| Credentials | One access key with read, write, list, and delete permissions on these buckets. It does not need to create buckets, except to run the [storage performance check](#storage-performance-check). See [Platform storage](/self_hosted/1.0.1/deployment/deployment_configuration.md#platform-storage). |
+| Credentials | One access key with read, write, list, and delete permissions on these buckets. It does not need to create buckets, except to run the [storage performance check](#storage-performance-check). See [Platform storage](deployment_configuration.md#platform-storage). |
 
 ### Size the object storage
 
@@ -230,7 +245,7 @@ Validate the result with Sekoia before you order the storage.
 
 ### Storage performance check
 
-On request from Sekoia support, the `CheckS3Performance` benchmark measures the storage from every worker node and compares the median across the nodes with the following minimums: 50 MiB/s for GET and PUT throughput, 100 operations/s for STAT and DELETE, 200 ms for the request latency, and 100 ms for the time to first byte, both at the 90th percentile. See [CheckS3Performance](/self_hosted/1.0.1/troubleshooting/debug_tool.md#checks3performance).
+On request from Sekoia support, the `CheckS3Performance` benchmark measures the storage from every worker node and compares the median across the nodes with the following minimums: 50 MiB/s for GET and PUT throughput, 100 operations/s for STAT and DELETE, 200 ms for the request latency, and 100 ms for the time to first byte, both at the 90th percentile. See [CheckS3Performance](../troubleshooting/debug_tool.md#checks3performance).
 
 ### Event storage buckets
 
@@ -253,7 +268,7 @@ The prefix `exalog-` comes from `modules.platform_configuration.config.storage-m
 
 When you enable backups, the platform writes the backups of Vault, the PostgreSQL databases, ArangoDB, and ClickHouse to one more bucket, named `<prefix>self-hosted-backups`: `exalog-self-hosted-backups` with the default prefix. By default, this bucket is on the platform storage, and the platform reaches it with the platform storage access key. The platform does not create this bucket on your storage: create it before you enable backups, and give the access key the same permissions on it as on the event buckets.
 
-To use another bucket, endpoint, or access key for the backups, see [Back up the platform](/self_hosted/1.0.1/operations/backups.md).
+To use another bucket, endpoint, or access key for the backups, see [Back up the platform](../operations/backups.md).
 
 ## Network requirements
 
@@ -269,7 +284,7 @@ For DNS, ensure that:
 - DNS records exist for `global.host` and `global.delivery_host` before deployment.
 - When `global.kube_manager_host` is configured as a hostname, its DNS record exists before deployment.
 
-See [Platform endpoints](/self_hosted/1.0.1/deployment/deployment_configuration.md#platform-endpoints) for the complete configuration reference for these values.
+See [Platform endpoints](deployment_configuration.md#platform-endpoints) for the complete configuration reference for these values.
 
 For NTP, ensure that:
 
@@ -285,7 +300,7 @@ timedatectl set-ntp true
 
 If NTP is enabled but the clock is not synchronized, verify that the node can reach your NTP servers, then restart the time-sync service with `systemctl restart systemd-timesyncd` or `systemctl restart chrony`.
 
-For a complete list of required ports and protocols, see [Network requirements](/self_hosted/1.0.1/deployment/network_requirements.md).
+For a complete list of required ports and protocols, see [Network requirements](network_requirements.md).
 
 ## Operational requirements
 
@@ -297,7 +312,7 @@ For a complete list of required ports and protocols, see [Network requirements](
 
 ## Related links
 
-- [Network requirements](/self_hosted/1.0.1/deployment/network_requirements.md): Full table of required network ports and protocols.
-- [Reference architecture](/self_hosted/1.0.1/architecture/architecture.md): Platform components and node roles.
-- [Debug your deployment](/self_hosted/1.0.1/troubleshooting/debug_tool.md): `CheckServerSpec` output and remediation for each failed requirement.
-- [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md): Step-by-step installation instructions.
+- [Network requirements](network_requirements.md): Full table of required network ports and protocols.
+- [Reference architecture](../architecture/architecture.md): Platform components and node roles.
+- [Debug your deployment](../troubleshooting/debug_tool.md): `CheckServerSpec` output and remediation for each failed requirement.
+- [Deploy the platform](deployment_guide.md): Step-by-step installation instructions.

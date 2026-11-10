@@ -4,7 +4,7 @@ type: playbook
 
 # Stormshield
 
-![Stormshield](/assets/playbooks/library/stormshield.png){ align=right width=150 }
+![Stormshield](../../../../assets/playbooks/library/stormshield.png)
 
 Stormshield Network Security is a range of network security appliances.
 
@@ -79,8 +79,9 @@ Block an IPv4 or IPv6 address on Stormshield SNS.
 
       - Copy the long alphanumeric character string generated in the bottom text field.
 
-    !!! warning
-        Make sure to store this API key and the associated secret in a secure location (like a password manager). The system explicitly states that it will be impossible to recover this secret once this window is closed.
+    {% hint style="warning" %}
+    Make sure to store this API key and the associated secret in a secure location (like a password manager). The system explicitly states that it will be impossible to recover this secret once this window is closed.
+    {% endhint %}
 
 6. **Finish the operation:**
 

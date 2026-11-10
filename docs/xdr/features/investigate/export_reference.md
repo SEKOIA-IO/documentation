@@ -21,19 +21,25 @@ Typical processing times vary based on query complexity and field count:
 * **50 million events**: 60–120 minutes
   
 
-!!! info "Processing time variations"
-    Processing time varies based on:
+{% hint style="info" %}
+**Processing time variations**
 
-    - Number of fields exported
-    - Query complexity
-    - Event data size
-    - System load
+Processing time varies based on:
 
-!!! tip "Performance best practices"
+- Number of fields exported
+- Query complexity
+- Event data size
+- System load
+{% endhint %}
 
-    * **Limit fields**: Only export the specific ECS fields required for your analysis. Reducing the field count significantly decreases processing time and final file size.
-    * **Split large exports**: If your dataset exceeds 50 million events, break the request into smaller time ranges (e.g., export day-by-day instead of a full week) to prevent task timeouts.
-    * **Prioritize off-peak hours**: Schedule very large exports (50M+ events) during low-traffic periods to benefit from higher available processing bandwidth.
+{% hint style="success" %}
+**Performance best practices**
+
+
+* **Limit fields**: Only export the specific ECS fields required for your analysis. Reducing the field count significantly decreases processing time and final file size.
+* **Split large exports**: If your dataset exceeds 50 million events, break the request into smaller time ranges (e.g., export day-by-day instead of a full week) to prevent task timeouts.
+* **Prioritize off-peak hours**: Schedule very large exports (50M+ events) during low-traffic periods to benefit from higher available processing bandwidth.
+{% endhint %}
 
 ## File format and fields
 
@@ -46,17 +52,24 @@ Typical processing times vary based on query complexity and field count:
 | **Identity & Access Audit** | `@timestamp`, `user.name`, `user.domain`, `source.ip`, `event.action`, `event.outcome`, `message`                                                              |
 | **Endpoint Forensics**      | `@timestamp`, `host.name`, `process.name`, `process.executable`, `process.args`, `file.path`, `file.hash.sha256`, `user.name`                                  |
 
-!!! tip "Customizing your export"
-    You can combine these fields or add others from the platform's schema.
+{% hint style="success" %}
+**Customizing your export**
+
+You can combine these fields or add others from the platform's schema.
+{% endhint %}
 
 * **No Wildcards**: You must list fields explicitly. Wildcards like `source.*` are **not** supported.
 
-??? example
+<details>
+<summary>Example</summary>
 
-    ```json
-    {"@timestamp":"2025-01-12T10:15:30Z","message":"Failed login","source.ip":"192.168.1.100"}
-    {"@timestamp":"2025-01-12T10:15:31Z","message":"Successful login","source.ip":"192.168.1.50"}
-    ```
+
+```json
+{"@timestamp":"2025-01-12T10:15:30Z","message":"Failed login","source.ip":"192.168.1.100"}
+{"@timestamp":"2025-01-12T10:15:31Z","message":"Successful login","source.ip":"192.168.1.50"}
+```
+
+</details>
 
 ## Storage and Security
 
@@ -77,8 +90,9 @@ Every export is automatically encrypted in S3 storage using **SSE-C**:
 3. You need the same key to download the file later
 4. **Once downloaded**, the file is just gzip-compressed (not encrypted)
 
-!!! warning
-    Save the encryption key displayed after export. Without it, you cannot download the file.
+{% hint style="warning" %}
+Save the encryption key displayed after export. Without it, you cannot download the file.
+{% endhint %}
 
 ### Custom S3 Buckets
 
@@ -120,5 +134,5 @@ with open(filename, 'r') as f:
 
 ## Next step
 
-- If you need a high-level overview of the export security logic, return to the [Massive event export concept](/xdr/features/investigate/event_export.md).
+- If you need a high-level overview of the export security logic, return to the [Massive event export concept](event_export.md).
 - Get inspired by practical examples and step-by-step workflows for common scenarios with our  [Export Large Volumes of Events - Use Case Guide](../../usecases/massive_export.md)

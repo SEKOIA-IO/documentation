@@ -33,8 +33,11 @@ Sekoia strongly recommends enabling 2FA for all accounts. Your administrator may
 
 2FA is now active on your account.
 
-!!! tip "Save your backup codes immediately"
-    After enabling 2FA, Sekoia generates ten single-use backup codes. Copy or download them before closing the window and store them in a secure location. You will need these codes if you ever lose access to your authenticator app.
+{% hint style="success" %}
+**Save your backup codes immediately**
+
+After enabling 2FA, Sekoia generates ten single-use backup codes. Copy or download them before closing the window and store them in a secure location. You will need these codes if you ever lose access to your authenticator app.
+{% endhint %}
 
 ## Generate backup codes
 
@@ -46,8 +49,11 @@ To generate a new set of backup codes:
 2. In the **Security** section, find **Backup codes**.
 3. Click **Generate new codes**.
 
-!!! warning "Previous codes are invalidated"
-    Generating a new set of backup codes immediately invalidates all previous codes. Update your secure storage with the new codes.
+{% hint style="warning" %}
+**Previous codes are invalidated**
+
+Generating a new set of backup codes immediately invalidates all previous codes. Update your secure storage with the new codes.
+{% endhint %}
 
 ## Log in with a backup code
 
@@ -68,8 +74,11 @@ If you have configured multiple authentication methods:
 
 ## Disable two-factor authentication
 
-!!! warning "Security risk"
-    Disabling 2FA reduces your account's protection. Only disable it if your administrator has confirmed this is permitted by your workspace security policy.
+{% hint style="warning" %}
+**Security risk**
+
+Disabling 2FA reduces your account's protection. Only disable it if your administrator has confirmed this is permitted by your workspace security policy.
+{% endhint %}
 
 To disable 2FA:
 
@@ -81,8 +90,9 @@ To disable 2FA:
 
 Administrators can reset the 2FA of any user in their community. This generates a single-use recovery code valid for 24 hours.
 
-!!! note
-    An Admin with SSO-only authentication cannot reset another user's 2FA.
+{% hint style="info" %}
+An Admin with SSO-only authentication cannot reset another user's 2FA.
+{% endhint %}
 
 1. Navigate to **Settings > Workspace > Users**.
 2. Locate the user whose 2FA you want to reset.
@@ -95,13 +105,16 @@ Administrators can reset the 2FA of any user in their community. This generates 
 
 The user receives an email notification informing them that their 2FA has been reset. They must set up a new 2FA method after logging in with the recovery code.
 
-!!! note "Resetting both password and 2FA simultaneously"
-    If a user needs both their password and their 2FA reset at the same time, contact Sekoia support directly.
+{% hint style="info" %}
+**Resetting both password and 2FA simultaneously**
+
+If a user needs both their password and their 2FA reset at the same time, contact Sekoia support directly.
+{% endhint %}
 
 
 
 ## Related links
 
-- [Log in for the first time](/getting_started/log_in_for_the_first_time.md): How to accept your invitation and access the platform.
-- [Troubleshooting common issues](/getting_started/troubleshooting_common_issues.md): What to do if you are locked out of your account.
-- [Workspace setup overview](/getting_started/workspace_setup_overview.md): How administrators configure workspace-level security policies.
+- [Log in for the first time](log_in_for_the_first_time.md): How to accept your invitation and access the platform.
+- [Troubleshooting common issues](troubleshooting_common_issues.md): What to do if you are locked out of your account.
+- [Workspace setup overview](workspace_setup_overview.md): How administrators configure workspace-level security policies.

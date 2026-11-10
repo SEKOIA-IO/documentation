@@ -2,29 +2,45 @@
 
 This guide provides structured solutions for common errors and performance issues encountered when using the Massive Event Export feature via the CLI or API.
 
-??? failure "Permission denied or 403 Forbidden"
+<details>
+<summary>Permission denied or 403 Forbidden</summary>
 
-    * **Condition**: The CLI or API returns an "Unauthorized" or "Forbidden" status code during the export trigger or status check.
-    * **Cause**: The API key used for the request lacks the required administrative permissions for high-volume data extraction.
-    * **Solution**: Contact your Sekoia.io administrator to ensure your API key is assigned the `SIC_MASSIVE_EXPORT_EVENTS` (Massive export of events) permission. Verify that the `API_KEY` environment variable is correctly set in your current terminal session.
 
-??? failure "Search job not found"
+* **Condition**: The CLI or API returns an "Unauthorized" or "Forbidden" status code during the export trigger or status check.
+* **Cause**: The API key used for the request lacks the required administrative permissions for high-volume data extraction.
+* **Solution**: Contact your Sekoia.io administrator to ensure your API key is assigned the `SIC_MASSIVE_EXPORT_EVENTS` (Massive export of events) permission. Verify that the `API_KEY` environment variable is correctly set in your current terminal session.
 
-    * **Condition**: The export system returns an error stating it cannot locate the search job UUID.
-    * **Cause**: The search job has not yet reached a final state, or the UUID provided is incorrect/expired.
-    * **Solution**: Ensure the search has fully finished in the Sekoia.io console; the status must display **Search completed** or **DONE**. Re-copy the UUID from the browser URL, ensuring no characters are missing.
+</details>
 
-??? failure "Encryption errors or download failure"
+<details>
+<summary>Search job not found</summary>
 
-    * **Condition**: The download fails with a decryption error, or the file cannot be accessed from the S3 link.
-    * **Cause**: The SSE-C encryption key provided during the download request is missing, incomplete, or does not match the key generated at the time of export.
-    * **Solution**: Locate the unique 256-bit encryption key displayed by the CLI when the export task finished. Ensure the key is copied exactly—without extra spaces or line breaks—into your download command or header. If more than 24 hours have passed since the export, the link has expired and you must trigger a new export.
 
-??? failure "Export task duration exceeded or timeout"
+* **Condition**: The export system returns an error stating it cannot locate the search job UUID.
+* **Cause**: The search job has not yet reached a final state, or the UUID provided is incorrect/expired.
+* **Solution**: Ensure the search has fully finished in the Sekoia.io console; the status must display **Search completed** or **DONE**. Re-copy the UUID from the browser URL, ensuring no characters are missing.
 
-    * **Condition**: The export task remains in the `RUNNING` state for an extended period or terminates with a timeout.
-    * **Cause**: The export request involves a high volume of events (e.g., >50M) combined with a high number of selected fields, or the search query is computationally expensive.
-    * **Solution**: Optimize the request by explicitly limiting the fields using the `--fields` flag. For very large datasets, split the export into smaller time ranges (e.g., daily increments). Check the [Optimization Guide](https://docs.sekoia.com/integration/categories/endpoint/sekoiaio/#local-optimization-rules) to ensure you are exporting during recommended off-peak windows.
+</details>
+
+<details>
+<summary>Encryption errors or download failure</summary>
+
+
+* **Condition**: The download fails with a decryption error, or the file cannot be accessed from the S3 link.
+* **Cause**: The SSE-C encryption key provided during the download request is missing, incomplete, or does not match the key generated at the time of export.
+* **Solution**: Locate the unique 256-bit encryption key displayed by the CLI when the export task finished. Ensure the key is copied exactly—without extra spaces or line breaks—into your download command or header. If more than 24 hours have passed since the export, the link has expired and you must trigger a new export.
+
+</details>
+
+<details>
+<summary>Export task duration exceeded or timeout</summary>
+
+
+* **Condition**: The export task remains in the `RUNNING` state for an extended period or terminates with a timeout.
+* **Cause**: The export request involves a high volume of events (e.g., >50M) combined with a high number of selected fields, or the search query is computationally expensive.
+* **Solution**: Optimize the request by explicitly limiting the fields using the `--fields` flag. For very large datasets, split the export into smaller time ranges (e.g., daily increments). Check the [Optimization Guide](https://docs.sekoia.com/integration/categories/endpoint/sekoiaio/#local-optimization-rules) to ensure you are exporting during recommended off-peak windows.
+
+</details>
 
 ### Summary of common fixes
 
@@ -38,7 +54,7 @@ This guide provides structured solutions for common errors and performance issue
 
 
 ## Next steps
-To understand the technical boundaries and monthly data quotas of the system, consult the [Export technical reference](/xdr/features/investigate/export_reference.md).
+To understand the technical boundaries and monthly data quotas of the system, consult the [Export technical reference](export_reference.md).
 
 ### Getting further assistance
 If the troubleshooting steps above do not resolve your issue:

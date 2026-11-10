@@ -6,42 +6,45 @@ Sekoia is providing an application for Splunk to detect threats in your logs bas
 
 - An operational Splunk instance with administrator privileges (**Enterprise** for OnPrem or **Cloud** for the SaaS version)
 - An active Sekoia.io license with access to the CTI
-- An access to Sekoia.io User Center with the role that contains the permission to [create an API key](/getting_started/manage_api_keys.md) (e.g. Built-in [Analyst Role](/getting_started/roles_and_permissions.md#built-in-roles)) or create a custom role with [custom role with the equivalent CTI permissions](/getting_started/roles_and_permissions.md#custom-roles) <a name="api_key"></a>
+- An access to Sekoia.io User Center with the role that contains the permission to [create an API key](../../../getting_started/manage_api_keys.md) (e.g. Built-in [Analyst Role](../../../getting_started/roles_and_permissions.md#built-in-roles)) or create a custom role with [custom role with the equivalent CTI permissions](../../../getting_started/roles_and_permissions.md#custom-roles) <a name="api_key"></a>
 
-!!! note
-    When creating an API key, only permissions are selectable, not [built-in roles](/getting_started/roles_and_permissions.md#built-in-roles)
+{% hint style="info" %}
+When creating an API key, only permissions are selectable, not [built-in roles](../../../getting_started/roles_and_permissions.md#built-in-roles)
 
-    Here are the selectable permissions corresponding to the `Analyst Role`:
-    - `CTI > View feeds`
-    - `CTI > View intelligence`
-    - `CTI > View labels`
-    - `CTI > View observables`
-    - `CTI > View graph explorations`
+Here are the selectable permissions corresponding to the `Analyst Role`:
+- `CTI > View feeds`
+- `CTI > View intelligence`
+- `CTI > View labels`
+- `CTI > View observables`
+- `CTI > View graph explorations`
+{% endhint %}
 
-!!! note
-    This following guide is for Splunk solutions (**Enterprise** (OnPrem) or Splunk **Cloud** (Cloud)).
+{% hint style="info" %}
+This following guide is for Splunk solutions (**Enterprise** (OnPrem) or Splunk **Cloud** (Cloud)).
+{% endhint %}
 
 ## 1. Connect to Splunk Enterprise
 
 1. In a Web browser, type the following and replace `server_ip` and `port` by their values:
    http://server_ip:port
 
-    !!! note
-        For Cloud version, only the next step is required
+    {% hint style="info" %}
+    For Cloud version, only the next step is required
+    {% endhint %}
 
 2. Enter your login and password for your Splunk Enterprise instance
-![Splunk-Login](/assets/intelligence_center/Splunk/Splunk-Login.png){: style="width: 60%; max-width: 60%"}
+![Splunk-Login](../../../assets/intelligence_center/Splunk/Splunk-Login.png)
 
 ## 2.  Install and configure your Sekoia application for Splunk
 
 1. Go to Application Setup Page by clicking on `Apps` > `Find more Apps`
-![Splunk_Applications_access](/assets/intelligence_center/Splunk/Splunk_Applications_access.png){: style="width: 40%; max-width: 40%"}
+![Splunk_Applications_access](../../../assets/intelligence_center/Splunk/Splunk_Applications_access.png)
 
 2. Search for `Sekoia.io` application and install it
-![Splunk-Sekoia_in_App](/assets/intelligence_center/Splunk/Splunk-Sekoia_in_App.png)
+![Splunk-Sekoia_in_App](../../../assets/intelligence_center/Splunk/Splunk-Sekoia_in_App.png)
 
 3. Configure your Sekoia application for Splunk by completing fields
-![Splunk-Sekoia_API_key_in_Sekoia_application](/assets/intelligence_center/Splunk/Splunk-Sekoia_API_key_in_Sekoia_application.png)
+![Splunk-Sekoia_API_key_in_Sekoia_application](../../../assets/intelligence_center/Splunk/Splunk-Sekoia_API_key_in_Sekoia_application.png)
 
 _Please find below the explanation of the fields to be configured_
 
@@ -49,12 +52,13 @@ _Please find below the explanation of the fields to be configured_
 
 - `SEKOIA.IO API Key`: Sekoia API Key to be created as stated in the [Prerequisites](#api_key)
 
-!!! warning
-    **[Deprecation Warning]** The API key field description on the Splunk Enterprise portal may mention that it must be configured at least with the `Intelligence Center - Read Only` role
+{% hint style="warning" %}
+**[Deprecation Warning]** The API key field description on the Splunk Enterprise portal may mention that it must be configured at least with the `Intelligence Center - Read Only` role
 
-    This role is now deprecated and has been renamed `Analyst Role`
-    
-    The corresponding permissions selectable for the API key are listed above, in the [Prerequisites](#api_key) section
+This role is now deprecated and has been renamed `Analyst Role`
+
+The corresponding permissions selectable for the API key are listed above, in the [Prerequisites](#api_key) section
+{% endhint %}
 
 **Optional**
 
@@ -64,8 +68,9 @@ _Please find below the explanation of the fields to be configured_
     1. If you need the Sekoia application for Splunk to connect directly through a proxy, this field needs to be filled on the installation page (To connect, in a Web browser, type and replace `username`, `password`,`host` and `port` by their values: http://[username:password@]host:port)
     2. If you don't want to distinguish the Sekoia application for Splunk network configuration from the configuration of your Splunk instance, the Sekoia application for Splunk takes into account the global Splunk proxy configuration provided by means of the `HTTP_PROXY` and `HTTPS_PROXY` environment variables.
 
-!!! note
-    After the launch of Sekoia application for Splunk, only valid IOCs of [these types](#sourcetype) will be downloaded and updated on Splunk from current date.
+{% hint style="info" %}
+After the launch of Sekoia application for Splunk, only valid IOCs of [these types](#sourcetype) will be downloaded and updated on Splunk from current date.
+{% endhint %}
 
 ## 3. Sekoia Intelligence in Splunk
 
@@ -80,12 +85,13 @@ In the following section, here are the Sekoia IOC types available in Splunk: <a 
 |sha1	| Hash function which takes an input and produces a 160-bit (20-byte) 	|
 |sha256| Secure Hash Algorithm 256-bit	|
 
-An IOC is an observable that represents a malicious activity. For more information, please consult [this page](/cti/features/consume/observables.md).
+An IOC is an observable that represents a malicious activity. For more information, please consult [this page](../consume/observables.md).
 
-!!! note
-    Only these Sekoia Indicator types will be updated.
+{% hint style="info" %}
+Only these Sekoia Indicator types will be updated.
 
-    Update is **scheduled every night** to ensure that valid IOCs are used to detect threats.
+Update is **scheduled every night** to ensure that valid IOCs are used to detect threats.
+{% endhint %}
 
 ## 4. Search Sekoia Intelligence and match with IOCs in Splunk
 
@@ -94,12 +100,13 @@ An IOC is an observable that represents a malicious activity. For more informati
 1. Go to Application Setup Page by clicking on `Apps` > `Sekoia.io`
 2. In the search tab, query on `| inputlookup sekoia_iocs_url | rename _key as indicator | convert ctime(valid_until)`
 
-![Splunk-Search_IOCs_validity](/assets/intelligence_center/Splunk/Splunk-Search_IOCs_validity.png)
+![Splunk-Search_IOCs_validity](../../../assets/intelligence_center/Splunk/Splunk-Search_IOCs_validity.png)
 
 ### Search and compare Sekoia IOCs with logs in Splunk
 
-!!! note
-    Logs have to be collected in Splunk. Please consult [Splunk documentation](https://www.splunk.com/en_us/blog/learn/centralized-logging.html).
+{% hint style="info" %}
+Logs have to be collected in Splunk. Please consult [Splunk documentation](https://www.splunk.com/en_us/blog/learn/centralized-logging.html).
+{% endhint %}
 
 1. Setup a lookup table
 
@@ -108,7 +115,7 @@ An IOC is an observable that represents a malicious activity. For more informati
     When installing Sekoia application for Splunk, a message will be displayed requesting to configure the lookup table.
 
 2. Sightings will be displayed on a section
-![Sekoia.io App for Splunk](/assets/intelligence_center/splunk.png)
+![Sekoia.io App for Splunk](../../../assets/intelligence_center/splunk.png)
 
 Please refer to [our documentation to search IOCs in Intelligence page](https://docs.sekoia.com/cti/features/consume/intelligence/#search-for-objects) for more information.
 

@@ -19,7 +19,7 @@ The Query Builder comes with the following clauses:
 
 Create an aggregation by using the `Aggregate` clause. Select a type of aggregation, a column and a label for your aggregation.
 
-![aggregation](/assets/operation_center/events/qb-aggregation.gif){: style="max-width:100%"}
+![aggregation](../../../assets/operation_center/events/qb-aggregation.gif)
 
 The following aggregation types are available.
 

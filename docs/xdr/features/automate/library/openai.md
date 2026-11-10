@@ -4,7 +4,7 @@ type: playbook
 
 # OpenAI
 
-![OpenAI](/assets/playbooks/library/openai.png){ align=right width=150 }
+![OpenAI](../../../../assets/playbooks/library/openai.png)
 
 The OpenAI API can be applied to virtually any task that involves understanding or generating natural language, code, or images.
 

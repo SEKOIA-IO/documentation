@@ -40,5 +40,5 @@ Dashboards support collaboration between Managed Security Service Providers (MSS
 ---
 **Next steps**
 
-* Now that you understand the concepts, learn how to [Create and manage Dashboards](/xdr/features/report/create_dashboards.md).
-* Ready to build? Go to [Configuring Widgets and layout](/xdr/features/report/add_widgets_dashboards.md).
+* Now that you understand the concepts, learn how to [Create and manage Dashboards](create_dashboards.md).
+* Ready to build? Go to [Configuring Widgets and layout](add_widgets_dashboards.md).

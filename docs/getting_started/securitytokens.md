@@ -16,8 +16,9 @@ To add a security token and enhance the overall security of your account, follow
 4. Follow instructions in your browser to enroll your security token
 5. Save your settings
 
-!!! note
-    Please note that Mozilla Firefox does not support fingerprint authentication.
+{% hint style="info" %}
+Please note that Mozilla Firefox does not support fingerprint authentication.
+{% endhint %}
 
 ### Remove a security token
 

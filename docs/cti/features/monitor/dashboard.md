@@ -30,8 +30,9 @@ To create a new dashboard, you have to:
 
 To access your dashboards, you have to click on the name of the dashboard in the upper left of the screen and choose a dashboard from the list.
 
-!!! note
-    Dashboards you create will be available to all members of your community.
+{% hint style="info" %}
+Dashboards you create will be available to all members of your community.
+{% endhint %}
 
 ### Duplicate an existing dashboard
 

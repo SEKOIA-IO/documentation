@@ -62,13 +62,16 @@ If the identifier format differs between sources, merging does not occur.
 | `jane.doe` | `jane.doe@company.com` | Assets may not merge. Username and email address are not recognized as identical. |
 | `company\jane.doe` | `jane.doe` | Assets may not merge. Domain-prefixed username and plain username are not recognized as identical. |
 
-!!! tip "Improve merge accuracy"
-    Review how each source formats hostnames and usernames. Normalizing identifier formats across sources reduces duplicate asset records.
+{% hint style="success" %}
+**Improve merge accuracy**
+
+Review how each source formats hostnames and usernames. Normalizing identifier formats across sources reduces duplicate asset records.
+{% endhint %}
 
 ## Related links
 
-- [Getting started with Reveal](/xdr/features/modules/reveal_getting_started.md)
-- [Reveal feature enablement matrix](/xdr/features/modules/reveal_feature_enablement.md)
-- [Asset context panel - Reveal capabilities](/xdr/features/modules/reveal_asset_context_panel.md)
-- [Attack Path Visualization](/xdr/features/investigate/attack_path_visualization.md)
-- [Points of Interest](/xdr/features/detect/points_of_interest.md)
+- [Getting started with Reveal](reveal_getting_started.md)
+- [Reveal feature enablement matrix](reveal_feature_enablement.md)
+- [Asset context panel - Reveal capabilities](reveal_asset_context_panel.md)
+- [Attack Path Visualization](../investigate/attack_path_visualization.md)
+- [Points of Interest](../detect/points_of_interest.md)

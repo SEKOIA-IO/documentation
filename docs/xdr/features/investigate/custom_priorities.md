@@ -2,7 +2,7 @@
 
 Custom priorities define how urgent a case is, using the levels and the vocabulary your team actually works with. You configure them in **Settings > Custom Statuses**, under the **Priority** section. Priorities apply to cases only, not to alerts.
 
-![Custom priorities configuration](/assets/operation_center/alerts/custom-priorities.png){: style="max-width:100%"}
+![Custom priorities configuration](../../../assets/operation_center/alerts/custom-priorities.png)
 
 ## Default priorities
 
@@ -30,8 +30,11 @@ To reorder priorities, drag a level by its handle and drop it where you want it.
 5. Select a color.
 6. Click **Save**.
 
-!!! warning "Priorities have no migration flow"
-    Unlike custom statuses, a priority that is in use cannot be deleted by reassigning its cases to another priority. You have to change the priority on every case first. Only statuses offer the reassignment described in [Migrate custom statuses](/xdr/features/investigate/migrate_custom_statuses.md).
+{% hint style="warning" %}
+**Priorities have no migration flow**
+
+Unlike custom statuses, a priority that is in use cannot be deleted by reassigning its cases to another priority. You have to change the priority on every case first. Only statuses offer the reassignment described in [Migrate custom statuses](migrate_custom_statuses.md).
+{% endhint %}
 
 ## Edit a custom priority
 
@@ -41,7 +44,7 @@ Editing happens inline on the priority row.
 2. Update the name, the description, the color, or all three.
 3. Click **Save**.
 
-![Editing a custom priority](/assets/operation_center/alerts/custom-priority-edit.png){: style="max-width:100%"}
+![Editing a custom priority](../../../assets/operation_center/alerts/custom-priority-edit.png)
 
 The color you pick is the one analysts see on the priority badge in the cases listing and on the case details page. Custom statuses do not offer this choice, they take their color from their stage.
 
@@ -63,8 +66,8 @@ A priority can be deleted only if no case currently carries it.
 
 ## Related articles
 
-* [Custom statuses](/xdr/features/investigate/custom_statuses.md): What custom statuses are, and how they differ from verdicts and priorities.
-* [Manage custom statuses](/xdr/features/investigate/manage_custom_statuses.md): How to create, edit, reorder and enable custom statuses.
-* [AI Cases](/xdr/features/investigate/ai_cases.md): How Sekoia.io correlates alerts into cases and assigns them a priority.
-* [Create a case](/xdr/features/investigate/create_a_case.md): How to open a case and set its initial priority.
-* [Manage cases](/xdr/features/investigate/manage_cases.md): How to filter and sort cases by priority, and change the priority of several cases at once.
+* [Custom statuses](custom_statuses.md): What custom statuses are, and how they differ from verdicts and priorities.
+* [Manage custom statuses](manage_custom_statuses.md): How to create, edit, reorder and enable custom statuses.
+* [AI Cases](ai_cases.md): How Sekoia.io correlates alerts into cases and assigns them a priority.
+* [Create a case](create_a_case.md): How to open a case and set its initial priority.
+* [Manage cases](manage_cases.md): How to filter and sort cases by priority, and change the priority of several cases at once.

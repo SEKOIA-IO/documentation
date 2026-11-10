@@ -4,7 +4,7 @@ type: playbook
 
 # Sekoia.io
 
-![Sekoia.io](/assets/playbooks/library/sekoia-io.png){ align=right width=150 }
+![Sekoia.io](../../../../assets/playbooks/library/sekoia-io.png)
 
 Sekoia.io is a European Cybertech, expert in intelligence-based eXtended Detection and Response solutions. Our Sekoia SOC platform provides a unified view and full control of the perimeter to be defended. Our mission is to empower security operations teams with a flexible and easy-to-use platform. We protect large companies, technology scaleups, governments, and Tier One MSSP partners worldwide. 
 

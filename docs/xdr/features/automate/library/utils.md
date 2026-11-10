@@ -4,7 +4,7 @@ type: playbook
 
 # Utils
 
-![Utils](/assets/playbooks/library/utils.svg){ align=right width=150 }
+![Utils](../../../../assets/playbooks/library/utils.svg)
 
 This module exposes utility actions
 

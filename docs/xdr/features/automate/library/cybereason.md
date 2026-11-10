@@ -1,6 +1,6 @@
 # Cybereason
 
-![Cybereason](/assets/playbooks/library/cybereason.png){ align=right width=150 }
+![Cybereason](../../../../assets/playbooks/library/cybereason.png)
 
 [CyberReason](https://www.cybereason.com/) is a Cybersecurity company providing products to detect and prevents attacks targeting endpoints
 

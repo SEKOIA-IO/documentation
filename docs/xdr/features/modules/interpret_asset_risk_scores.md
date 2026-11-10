@@ -1,12 +1,15 @@
 # Interpret asset risk scores
 
-_**[Reveal module](/xdr/features/modules/reveal_index.md)** — This feature requires the Reveal add-on module._ 
+_**[Reveal module](reveal_index.md)** — This feature requires the Reveal add-on module._ 
 
 Use the Asset Risk Score to prioritize host assets during triage and investigation. Review the score breakdown, contributing views, and score trajectory together before deciding what to investigate or remediate.
 
-!!! note "Read the scoring model first"
+{% hint style="info" %}
+**Read the scoring model first**
 
-    For the score formula, score bands, exposure rules, recent activity decay, and criticality factors, see [Asset risk scoring](/xdr/features/modules/asset_risk_scoring.md). This article focuses on using the score in the Sekoia interface.
+
+For the score formula, score bands, exposure rules, recent activity decay, and criticality factors, see [Asset risk scoring](asset_risk_scoring.md). This article focuses on using the score in the Sekoia interface.
+{% endhint %}
 
 ## Before you start
 
@@ -37,7 +40,7 @@ You can open the asset context panel from an investigation or from the asset inv
 
 The header displays the current Asset Risk Score and its severity band. Note the **Criticality**, **First seen**, **Last seen**, and **Last updated** values before you interpret the score.
 
-The score band provides the first prioritization signal. For the exact score ranges and labels, see [Understand the score bands](/xdr/features/modules/asset_risk_scoring.md#understand-the-score-bands).
+The score band provides the first prioritization signal. For the exact score ranges and labels, see [Understand the score bands](asset_risk_scoring.md#understand-the-score-bands).
 
 ## Review the score breakdown
 
@@ -54,9 +57,9 @@ Use the largest displayed contribution as the starting point for your investigat
 
 For the calculation details, see:
 
-- [Understand the Exposure Score](/xdr/features/modules/asset_risk_scoring.md#understand-the-exposure-score)
-- [Understand the Recent Activity Score](/xdr/features/modules/asset_risk_scoring.md#understand-the-recent-activity-score)
-- [Understand the Criticality Factor](/xdr/features/modules/asset_risk_scoring.md#understand-the-criticality-factor)
+- [Understand the Exposure Score](asset_risk_scoring.md#understand-the-exposure-score)
+- [Understand the Recent Activity Score](asset_risk_scoring.md#understand-the-recent-activity-score)
+- [Understand the Criticality Factor](asset_risk_scoring.md#understand-the-criticality-factor)
 
 
 ## Inspect persistent exposure
@@ -71,11 +74,11 @@ Persistent exposure comes from vulnerabilities and hygiene findings.
 
 The **Unified risk score** belongs to the individual vulnerability. It is distinct from the host's **Asset Risk Score** and does not replace the asset-level breakdown.
 
-For the rules that determine how vulnerabilities and hygiene findings affect Exposure, see [Understand the Exposure Score](/xdr/features/modules/asset_risk_scoring.md#understand-the-exposure-score).
+For the rules that determine how vulnerabilities and hygiene findings affect Exposure, see [Understand the Exposure Score](asset_risk_scoring.md#understand-the-exposure-score).
 
-![Asset vulnerabilities table with open CVE findings and severity details](/assets/reveal/asset_risk_vuln_tab.png){: style="width: 100%; max-width: 100%"}
+![Asset vulnerabilities table with open CVE findings and severity details](../../../assets/reveal/asset_risk_vuln_tab.png)
 
-![Host hygiene view showing firewall and storage encryption controls.](/assets/reveal/asset_risk_hygiene_tab.png){: style="width: 100%; max-width: 100%"}
+![Host hygiene view showing firewall and storage encryption controls.](../../../assets/reveal/asset_risk_hygiene_tab.png)
 
 
 ## Inspect recent activity
@@ -89,7 +92,7 @@ Recent activity includes cases, alerts, and Points of Interest (POIs). Their con
 
 When a case is linked to an alert, the case takes precedence and the linked alert does not contribute separately. A repeated correlated signal refreshes its timer but does not add another full-strength contribution.
 
-For the decay and correlation rules, see [Understand the Recent Activity Score](/xdr/features/modules/asset_risk_scoring.md#understand-the-recent-activity-score).
+For the decay and correlation rules, see [Understand the Recent Activity Score](asset_risk_scoring.md#understand-the-recent-activity-score).
 
 ### Review related events
 
@@ -100,7 +103,7 @@ For the decay and correlation rules, see [Understand the Recent Activity Score](
 
 The **Related events** count represents events associated with the asset. It is not a count of installed applications.
 
-![Related events view for a host asset showing event counts and associated event records](/assets/reveal/asset_risk_relatedevent_tab.png){: style="width: 100%; max-width: 100%"}
+![Related events view for a host asset showing event counts and associated event records](../../../assets/reveal/asset_risk_relatedevent_tab.png)
 
 ## Check the criticality adjustment
 
@@ -110,11 +113,14 @@ Criticality represents the business importance of the asset. It is applied after
 2. Identify the criticality label.
 3. Review whether the multiplier reduced, preserved, or increased the final score.
 
-For the criticality ranges and factor behavior, see [Understand the Criticality Factor](/xdr/features/modules/asset_risk_scoring.md#understand-the-criticality-factor).
+For the criticality ranges and factor behavior, see [Understand the Criticality Factor](asset_risk_scoring.md#understand-the-criticality-factor).
 
-!!! note "Default criticality"
+{% hint style="info" %}
+**Default criticality**
 
-    A criticality value of `0` is displayed as **Default** and applies It applies a factor of `1.00`, so it does not change the Base Score. It does not mean that the asset has no technical exposure.
+
+A criticality value of `0` is displayed as **Default** and applies It applies a factor of `1.00`, so it does not change the Base Score. It does not mean that the asset has no technical exposure.
+{% endhint %}
 
 
 ## Change asset criticality
@@ -129,7 +135,7 @@ Change criticality when the asset's business importance has changed or the curre
 
 The updated criticality changes the final prioritization. It does not create or remove vulnerabilities, hygiene findings, alerts, cases, or POIs.
 
-![Host asset edit panel with the criticality control](/assets/reveal/asset_risk_edit_host.png){: style="width: 100%; max-width: 100%"}
+![Host asset edit panel with the criticality control](../../../assets/reveal/asset_risk_edit_host.png)
 
 
 ## Review the score trajectory
@@ -162,7 +168,7 @@ The score supports prioritization. It does not determine whether an incident has
 
 ## Related articles
 
-- [Asset risk scoring](/xdr/features/modules/asset_risk_scoring.md): Overview of the score model, inputs, decay rules, and criticality factor.
-- [Asset context panel](/xdr/features/investigate/asset_context_panel.md): How to open and use the core asset investigation surface.
-- [Asset context panel, Reveal capabilities](/xdr/features/modules/reveal_asset_context_panel.md): Overview of Reveal-specific asset context, including hygiene, vulnerabilities, Points of Interest, and security controls.
-- [Assets](/xdr/features/collect/assets.md): Reference for asset categories, criticality, and asset management.
+- [Asset risk scoring](asset_risk_scoring.md): Overview of the score model, inputs, decay rules, and criticality factor.
+- [Asset context panel](../investigate/asset_context_panel.md): How to open and use the core asset investigation surface.
+- [Asset context panel, Reveal capabilities](reveal_asset_context_panel.md): Overview of Reveal-specific asset context, including hygiene, vulnerabilities, Points of Interest, and security controls.
+- [Assets](../collect/assets.md): Reference for asset categories, criticality, and asset management.

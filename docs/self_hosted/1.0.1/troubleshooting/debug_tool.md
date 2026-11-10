@@ -24,18 +24,26 @@ The check reports:
 - Values that do not match the expected format or regex.
 - Keys that the configuration reference does not declare, for example a typo such as `global.hots`. The check reads every key of the computed configuration, including the keys inherited from the sizing profile.
 
-??? example "Expected output (no errors)"
-    ```text
-    Validating configuration...
-    Configuration is valid entries_checked=42
-    ```
+<details>
+<summary>Expected output (no errors)</summary>
 
-??? example "Example failure output"
-    ```text
-    Missing required config description=Platform release version to deploy key=global.version.platform.version
-    Format mismatch expected_format=^[a-zA-Z0-9][a-zA-Z0-9\-\.]*(:\d+)?$ key=utils.oci_registry.host
-    Configuration validation failed: 2 error(s) found. Missing required configuration: global.version.platform.version (Platform release version to deploy).
-    ```
+```text
+Validating configuration...
+Configuration is valid entries_checked=42
+```
+
+</details>
+
+<details>
+<summary>Example failure output</summary>
+
+```text
+Missing required config description=Platform release version to deploy key=global.version.platform.version
+Format mismatch expected_format=^[a-zA-Z0-9][a-zA-Z0-9\-\.]*(:\d+)?$ key=utils.oci_registry.host
+Configuration validation failed: 2 error(s) found. Missing required configuration: global.version.platform.version (Platform release version to deploy).
+```
+
+</details>
 
 Each error names the configuration key and the expected format. It never displays the rejected value.
 
@@ -47,7 +55,7 @@ To enable the debug logs of the SHC, add the `-v` flag before the command. The f
 -v exec CheckLocalConfig
 ```
 
-The verbose output does not include the resolved configuration. To confirm that the secrets injected through `${env.VAR_NAME}` references are loaded, run `config show` instead. Its output contains the resolved credentials in clear, and the per-run log file keeps a copy of everything written to the terminal: redact both before you share them. See [Inspect the configuration with the SHC](/self_hosted/1.0.1/deployment/deployment_configuration.md#inspect-the-configuration-with-the-shc).
+The verbose output does not include the resolved configuration. To confirm that the secrets injected through `${env.VAR_NAME}` references are loaded, run `config show` instead. Its output contains the resolved credentials in clear, and the per-run log file keeps a copy of everything written to the terminal: redact both before you share them. See [Inspect the configuration with the SHC](../deployment/deployment_configuration.md#inspect-the-configuration-with-the-shc).
 
 ## Infrastructure connectivity
 
@@ -59,11 +67,15 @@ Tests SSH connectivity to all nodes listed in `utils.ansible.inventory`.
 exec CheckServersAreReachable
 ```
 
-??? example "Expected output"
-    ```text
-    Pinging all configured servers via Ansible...
-    All configured servers are reachable
-    ```
+<details>
+<summary>Expected output</summary>
+
+```text
+Pinging all configured servers via Ansible...
+All configured servers are reachable
+```
+
+</details>
 
 **What to do after a failure:**
 
@@ -104,8 +116,8 @@ The port and storage checks are skipped once K3s is installed on the node. After
 | Failure | Remediation |
 | :--- | :--- |
 | Duplicate hostnames | The error lists the inventory host to hostname mapping. Rename the affected nodes with `hostnamectl set-hostname <NEW_HOSTNAME>`, then re-run the command. |
-| Debian version too old | Reinstall the node on Debian 12 or later. See [Technical requirements](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#compute-node-specification). |
-| Active swap | Run `sudo swapoff -a`, remove or comment out the swap entries in `/etc/fstab`, and disable any systemd swap unit or zram service that enables swap. Reboot the node, then check that `/sbin/swapon --show=NAME --noheadings --raw` returns no entry. See [Swap](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#swap). |
+| Debian version too old | Reinstall the node on Debian 12 or later. See [Technical requirements](../deployment/deployment_prerequisites.md#compute-node-specification). |
+| Active swap | Run `sudo swapoff -a`, remove or comment out the swap entries in `/etc/fstab`, and disable any systemd swap unit or zram service that enables swap. Reboot the node, then check that `/sbin/swapon --show=NAME --noheadings --raw` returns no entry. See [Swap](../deployment/deployment_prerequisites.md#swap). |
 | CPU or RAM below the minimum | Resize the node. The error reports the detected value. |
 | NTP not enabled | Install and enable `systemd-timesyncd` or `chrony`, then run `timedatectl set-ntp true`. |
 | Clock not synchronized | Verify that the node reaches your NTP servers, then run `systemctl restart systemd-timesyncd` or `systemctl restart chrony`. |
@@ -136,16 +148,20 @@ Each node briefly opens a listener on the ports below while the other nodes conn
 
 The check is skipped when K3s is installed on every node. When K3s is installed on some nodes only, those nodes open no listener, and the check reports only the connections that time out towards them.
 
-??? example "Example failure output"
-    ```text
-    Some nodes cannot reach each other on the ports the cluster needs, so the installation would fail. Fix the points below, then re-run CheckNodePortReachability.
+<details>
+<summary>Example failure output</summary>
 
-    Blocked connections between nodes:
-      - 10.0.0.11 does not accept TCP 2379 (etcd client) from any other node: packets are silently dropped (firewall, cloud security group, network firewall or stale Cilium BPF state).
+```text
+Some nodes cannot reach each other on the ports the cluster needs, so the installation would fail. Fix the points below, then re-run CheckNodePortReachability.
 
-    Ports already used by another service (stop it before installing):
-      - 10.0.0.12: TCP 10514 (syslog intake) cannot be opened (Address already in use). Find the process with: sudo ss -ltnp 'sport = :10514'
-    ```
+Blocked connections between nodes:
+  - 10.0.0.11 does not accept TCP 2379 (etcd client) from any other node: packets are silently dropped (firewall, cloud security group, network firewall or stale Cilium BPF state).
+
+Ports already used by another service (stop it before installing):
+  - 10.0.0.12: TCP 10514 (syslog intake) cannot be opened (Address already in use). Find the process with: sudo ss -ltnp 'sport = :10514'
+```
+
+</details>
 
 **What to do after a failure:**
 
@@ -156,15 +172,21 @@ The check is skipped when K3s is installed on every node. When K3s is installed 
 | Port already used | Run `sudo ss -ltnp 'sport = :<PORT>'` on the node to identify the process, then stop it. |
 | Node could not be checked | Verify the SSH access to the node with `CheckServersAreReachable`, and confirm that `python3` is installed on the node. |
 
-!!! warning "Nodes reused after a previous K3s installation"
-    After a K3s uninstall, leftover Cilium network programs can still drop traffic even when the firewall accepts it. On dedicated nodes where K3s is stopped, run `CleanupCilium`, then run `CheckNodePortReachability` again. Do not bypass the check.
+{% hint style="warning" %}
+**Nodes reused after a previous K3s installation**
+
+After a K3s uninstall, leftover Cilium network programs can still drop traffic even when the firewall accepts it. On dedicated nodes where K3s is stopped, run `CleanupCilium`, then run `CheckNodePortReachability` again. Do not bypass the check.
+{% endhint %}
 
 ### CheckS3Performance
 
 Benchmarks the S3-compatible platform storage from every worker node and compares the results with minimum thresholds. The command is not part of `Install`.
 
-!!! warning "Run it only when Sekoia asks you to"
-    The benchmark generates a sustained load on your S3-compatible storage and creates buckets on it. Run it only at the request of Sekoia support, for example to investigate slow indexation, once the Kubernetes cluster is installed.
+{% hint style="warning" %}
+**Run it only when Sekoia asks you to**
+
+The benchmark generates a sustained load on your S3-compatible storage and creates buckets on it. Run it only at the request of Sekoia support, for example to investigate slow indexation, once the Kubernetes cluster is installed.
+{% endhint %}
 
 Before you run the benchmark, check the following points with your storage administrator:
 
@@ -204,7 +226,7 @@ The benchmark reads the platform storage endpoint and credentials from the compu
 
 Once the benchmark is complete, whatever its result, delete the `warp-preflight-*` buckets and their objects from your storage, then list the buckets of the storage to confirm that none remains.
 
-**What to do after a failure:** Compare each failed metric with the [storage requirements](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#storage), and review the storage capacity and the network path between the worker nodes and the S3 endpoint with your storage provider.
+**What to do after a failure:** Compare each failed metric with the [storage requirements](../deployment/deployment_prerequisites.md#storage), and review the storage capacity and the network path between the worker nodes and the S3 endpoint with your storage provider.
 
 ### CheckKubernetesCluster
 
@@ -214,10 +236,14 @@ Connects to the Kubernetes API and verifies that every node has a `Ready=True` c
 exec CheckKubernetesCluster
 ```
 
-??? example "Expected output"
-    ```text
-    Kubernetes cluster is healthy nodes=6 expected=6
-    ```
+<details>
+<summary>Expected output</summary>
+
+```text
+Kubernetes cluster is healthy nodes=6 expected=6
+```
+
+</details>
 
 **What to do after a failure:**
 
@@ -237,8 +263,11 @@ exec CheckLocalReleaseFiles
 
 **What to do after a failure:** In online mode, run `DownloadReleaseFiles` first: the release directory does not exist until the download completes, and `Install` runs the download before this check. In air-gapped mode, confirm that the release archive was fully extracted and that `global.version.platform.path` points to the correct directory.
 
-!!! note "Missing security content bundles"
-    A missing or unreadable bundle in `data/<TYPE>/` does not fail the checks. `PushDataBundles` reports it as a warning and skips it, and the platform keeps the content version shipped with the release. Look for these warnings in the `push` stage output.
+{% hint style="info" %}
+**Missing security content bundles**
+
+A missing or unreadable bundle in `data/<TYPE>/` does not fail the checks. `PushDataBundles` reports it as a warning and skips it, and the platform keeps the content version shipped with the release. Look for these warnings in the `push` stage output.
+{% endhint %}
 
 ### CheckLocalTools
 
@@ -248,7 +277,7 @@ Verifies that the tools used to push the signed release artifacts are available 
 exec CheckLocalTools
 ```
 
-**What to do after a failure:** The tools ship with the SHC image. A failure usually means that the container does not run the SHC image of the release. Load the image from the release archive and tag it as described in [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md#step-3-load-the-self-hosted-controller-shc-docker-image).
+**What to do after a failure:** The tools ship with the SHC image. A failure usually means that the container does not run the SHC image of the release. Load the image from the release archive and tag it as described in [Deploy the platform](../deployment/deployment_guide.md#step-3-load-the-self-hosted-controller-shc-docker-image).
 
 ### CheckLocalGit
 
@@ -307,8 +336,11 @@ exec DebugArgoCD
 
 Forces a three-phase full re-synchronization of all ArgoCD applications in parallel.
 
-!!! warning "A forced sync overwrites manual changes"
-    The sync applies the manifests of the ArgoCD Git repository to the cluster. Any change made directly in the cluster to a resource that ArgoCD manages is overwritten. Before you run the command, check the recent commits of the repository set in `utils.git.repo_url`.
+{% hint style="warning" %}
+**A forced sync overwrites manual changes**
+
+The sync applies the manifests of the ArgoCD Git repository to the cluster. Any change made directly in the cluster to a resource that ArgoCD manages is overwritten. Before you run the command, check the recent commits of the repository set in `utils.git.repo_url`.
+{% endhint %}
 
 ```bash
 exec DebugArgoCDSyncAll
@@ -320,8 +352,11 @@ The three phases are:
 2. Restart of the `sekoiaio-secret-operator` deployment to pick up refreshed SecretGenerators.
 3. Full sync of every application.
 
-!!! note "Sync behavior"
-    The sync timeout per application is 300 seconds. Up to 32 applications are synced concurrently.
+{% hint style="info" %}
+**Sync behavior**
+
+The sync timeout per application is 300 seconds. Up to 32 applications are synced concurrently.
+{% endhint %}
 
 Use this command when applications are stuck in `OutOfSync`, or after a manual change to the ArgoCD repository.
 
@@ -337,8 +372,11 @@ Checks that the secrets the platform expects exist. The command compares the dec
 
 The output lists Vault paths and key names, not secret values.
 
-!!! warning "The command refreshes the secrets"
-    Before the comparison, the command runs the `VaultContent` step of the platform installer, which creates the missing Vault secrets and updates the values that come from your configuration. It then deletes every Kubernetes secret managed by a `SecretGenerator` object, restarts `sekoiaio-secret-operator`, and waits up to 120 seconds for the secrets to be recreated. Run it when you investigate missing secrets, not as a routine check.
+{% hint style="warning" %}
+**The command refreshes the secrets**
+
+Before the comparison, the command runs the `VaultContent` step of the platform installer, which creates the missing Vault secrets and updates the values that come from your configuration. It then deletes every Kubernetes secret managed by a `SecretGenerator` object, restarts `sekoiaio-secret-operator`, and waits up to 120 seconds for the secrets to be recreated. Run it when you investigate missing secrets, not as a routine check.
+{% endhint %}
 
 ```bash
 exec DebugMissingSecrets
@@ -379,7 +417,7 @@ exec SyncRulesCatalog --set modules.sync_rules_catalog.sync_timeout=1800
 - If the job did not succeed, locate it with `kubectl get jobs -A | grep -E 'rules-catalog-updater|intake-formats-updater'`, then read its logs with `kubectl logs -n <NAMESPACE> job/<JOB_NAME>`.
 - Run `DebugArgoCD` to check the state of the two applications.
 
-To update the detection rules and the intake formats after the installation, see [Update the security content](/self_hosted/1.0.1/operations/update_security_content.md).
+To update the detection rules and the intake formats after the installation, see [Update the security content](../operations/update_security_content.md).
 
 ## Database diagnostics
 
@@ -415,8 +453,11 @@ Queries the Kubernetes Metrics API and compares live memory consumption against 
 exec DebugResourceAllocation
 ```
 
-!!! note "Metrics Server required"
-    This command requires the Kubernetes Metrics Server. If the Metrics API is unavailable, the command exits with an error. Run the `HelmInstall` module to deploy it.
+{% hint style="info" %}
+**Metrics Server required**
+
+This command requires the Kubernetes Metrics Server. If the Metrics API is unavailable, the command exits with an error. Run the `HelmInstall` module to deploy it.
+{% endhint %}
 
 The output shows:
 
@@ -435,8 +476,11 @@ exec CleanupHelmReleases
 
 The SHC runs this command automatically before `HelmInstall`, `PlatformInstallation`, `PlatformAccess`, `DebugMissingSecrets`, and `CheckS3Performance`.
 
-!!! warning "Run it only when no Helm operation is in progress"
-    The command also deletes the record of a Helm operation that is still running. Do not run it, or a module that depends on it, while another SHC session is installing or upgrading the platform.
+{% hint style="warning" %}
+**Run it only when no Helm operation is in progress**
+
+The command also deletes the record of a Helm operation that is still running. Do not run it, or a module that depends on it, while another SHC session is installing or upgrading the platform.
+{% endhint %}
 
 ## Operations
 
@@ -446,8 +490,11 @@ Reboots all nodes listed in `utils.ansible.inventory` and waits for them to come
 
 The nodes are not rebooted one at a time: up to five nodes reboot in parallel, without being drained and without any Ceph maintenance flag. The three managers and at least two workers are therefore down at the same time, which stops the Kubernetes API and the Ceph storage. The command waits up to 300 seconds for each node to accept SSH connections again. It does not check that K3s or the pods are running again.
 
-!!! warning "Full platform outage"
-    This command makes the whole platform unavailable. Run it only during a maintenance window, as part of the [cold restart procedure](/self_hosted/1.0.1/operations/node_maintenance.md#run-a-cold-restart-of-the-whole-cluster). To apply OS patches or kernel updates, restart the nodes one at a time instead. See [Patch the nodes one at a time](/self_hosted/1.0.1/operations/node_maintenance.md#patch-the-nodes-one-at-a-time).
+{% hint style="warning" %}
+**Full platform outage**
+
+This command makes the whole platform unavailable. Run it only during a maintenance window, as part of the [cold restart procedure](../operations/node_maintenance.md#run-a-cold-restart-of-the-whole-cluster). To apply OS patches or kernel updates, restart the nodes one at a time instead. See [Patch the nodes one at a time](../operations/node_maintenance.md#patch-the-nodes-one-at-a-time).
+{% endhint %}
 
 To reboot every node, run:
 
@@ -476,11 +523,17 @@ The command adjusts its timing with the following keys:
 | `modules.kube_crash_recovery.pod_ready_timeout` | Seconds without progress before a phase fails. The countdown restarts each time the number of pods not ready decreases, so a phase can last longer than this value. | `300` |
 | `modules.kube_crash_recovery.poll_interval` | Seconds between two readiness checks. | `10` |
 
-!!! warning "Full platform outage"
-    This command restarts every service of the platform. Run it only during a maintenance window, as part of the [cold restart procedure](/self_hosted/1.0.1/operations/node_maintenance.md#run-a-cold-restart-of-the-whole-cluster).
+{% hint style="warning" %}
+**Full platform outage**
 
-!!! note "Kubernetes API required"
-    The command stops immediately, without retrying, if the Kubernetes API is not reachable. Before you run it, check that `kubectl get nodes` lists every node as `Ready`.
+This command restarts every service of the platform. Run it only during a maintenance window, as part of the [cold restart procedure](../operations/node_maintenance.md#run-a-cold-restart-of-the-whole-cluster).
+{% endhint %}
+
+{% hint style="info" %}
+**Kubernetes API required**
+
+The command stops immediately, without retrying, if the Kubernetes API is not reachable. Before you run it, check that `kubectl get nodes` lists every node as `Ready`.
+{% endhint %}
 
 To restart every pod, run:
 
@@ -488,16 +541,19 @@ To restart every pod, run:
 exec KubeCrashRecovery
 ```
 
-After it completes, check the ArangoDB pods and the Vault seal status. See [Run a cold restart of the whole cluster](/self_hosted/1.0.1/operations/node_maintenance.md#run-a-cold-restart-of-the-whole-cluster).
+After it completes, check the ArangoDB pods and the Vault seal status. See [Run a cold restart of the whole cluster](../operations/node_maintenance.md#run-a-cold-restart-of-the-whole-cluster).
 
 **What to do after a timeout:** The error names the phase that failed. List the pods that are not ready with `kubectl get pods -A`, and look for a `READY` column not complete or a status other than `Running` or `Completed`, such as `CrashLoopBackOff`. Check their events and logs, then delete only the stuck pods with `kubectl delete pod -n <namespace> <pod-name>`.
 
-!!! warning "Re-running the command restarts every pod"
-    Re-running `KubeCrashRecovery` restarts from the first phase and deletes every pod of the cluster again, including the healthy ones. Prefer deleting only the stuck pods.
+{% hint style="warning" %}
+**Re-running the command restarts every pod**
+
+Re-running `KubeCrashRecovery` restarts from the first phase and deletes every pod of the cluster again, including the healthy ones. Prefer deleting only the stuck pods.
+{% endhint %}
 
 ### RestartAllMicroservices
 
-Restarts every deployment, StatefulSet, and DaemonSet marked as a Sekoia microservice, with a rolling restart, and waits up to 300 seconds in total for the rollouts to complete. The databases are not restarted. Use it after the Kubernetes secrets are refreshed, so that the services load the new values. See [Rotate the certificate and credentials](/self_hosted/1.0.1/operations/rotate_certificate_and_credentials.md#restart-the-microservices).
+Restarts every deployment, StatefulSet, and DaemonSet marked as a Sekoia microservice, with a rolling restart, and waits up to 300 seconds in total for the rollouts to complete. The databases are not restarted. Use it after the Kubernetes secrets are refreshed, so that the services load the new values. See [Rotate the certificate and credentials](../operations/rotate_certificate_and_credentials.md#restart-the-microservices).
 
 ```bash
 exec RestartAllMicroservices
@@ -507,14 +563,17 @@ A workload whose rollout is paused, partitioned, or set to `OnDelete` cannot be 
 
 ### PlatformScaleDown and PlatformDestroy
 
-`PlatformScaleDown` deletes the platform namespaces and verifies that every node has released its storage volumes. `PlatformDestroy` also uninstalls K3s and, in the automatic storage mode, wipes the Ceph storage disks. Both commands are disabled by default and require safety flags. They provide no restore path. See [Reset or destroy the platform](/self_hosted/1.0.1/operations/reset_platform.md).
+`PlatformScaleDown` deletes the platform namespaces and verifies that every node has released its storage volumes. `PlatformDestroy` also uninstalls K3s and, in the automatic storage mode, wipes the Ceph storage disks. Both commands are disabled by default and require safety flags. They provide no restore path. See [Reset or destroy the platform](../operations/reset_platform.md).
 
 ### K3SUninstall
 
 Uninstalls K3s from the worker nodes, then from the manager nodes, then removes the Cilium networking from every node.
 
-!!! warning "Destructive and irreversible"
-    This command removes the Kubernetes cluster and every workload it runs. Run it only to reset a dedicated cluster. `PlatformDestroy` runs it after a verified cleanup of the platform workloads. See [Reset or destroy the platform](/self_hosted/1.0.1/operations/reset_platform.md).
+{% hint style="warning" %}
+**Destructive and irreversible**
+
+This command removes the Kubernetes cluster and every workload it runs. Run it only to reset a dedicated cluster. `PlatformDestroy` runs it after a verified cleanup of the platform workloads. See [Reset or destroy the platform](../operations/reset_platform.md).
+{% endhint %}
 
 ```bash
 exec K3SUninstall
@@ -524,7 +583,7 @@ If the error reports that K3s was removed but the Cilium networking cleanup is i
 
 ### CleanupCilium
 
-Removes the Cilium networking left on dedicated nodes after a K3s uninstall: network interfaces, BPF programs, and `CILIUM_` firewall rules. The command refuses to run while K3s or a Cilium agent is still running on a node. See [Clean up the Cilium networking](/self_hosted/1.0.1/operations/reset_platform.md#clean-up-the-cilium-networking).
+Removes the Cilium networking left on dedicated nodes after a K3s uninstall: network interfaces, BPF programs, and `CILIUM_` firewall rules. The command refuses to run while K3s or a Cilium agent is still running on a node. See [Clean up the Cilium networking](../operations/reset_platform.md#clean-up-the-cilium-networking).
 
 ```bash
 exec CleanupCilium
@@ -534,8 +593,11 @@ exec CleanupCilium
 
 Detects the disks used by Ceph on every node, deactivates their Ceph volume groups, and erases them. It then removes the Rook host state, `/var/lib/rook`, on every node, including the nodes without a Ceph disk. The command refuses to run while K3s or Ceph processes are still running on a node, and refuses a disk that is mounted, still in use, or shared with a volume group that is not a Ceph volume group.
 
-!!! warning "Destructive and irreversible"
-    This command permanently destroys all data on detected Ceph disks. Run it only once K3s is uninstalled, as the last phase of a full cluster reset. See [Reset or destroy the platform](/self_hosted/1.0.1/operations/reset_platform.md).
+{% hint style="warning" %}
+**Destructive and irreversible**
+
+This command permanently destroys all data on detected Ceph disks. Run it only once K3s is uninstalled, as the last phase of a full cluster reset. See [Reset or destroy the platform](../operations/reset_platform.md).
+{% endhint %}
 
 The command does not accept `--set` overrides. To run it, set `modules.wipe_storage.enabled: true` in your `config.yml`. With the flag unset, the command logs a warning and completes without wiping any disk.
 
@@ -555,7 +617,7 @@ Evaluates rule-based health checks against the platform's Prometheus metrics and
 exec Diagnostic
 ```
 
-Use this command once the infrastructure and application layers are healthy but a platform feature misbehaves, for example alerts that stop being created or assets that stop being discovered. For the available targets, the output formats, and how to read a result, see [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md).
+Use this command once the infrastructure and application layers are healthy but a platform feature misbehaves, for example alerts that stop being created or assets that stop being discovered. For the available targets, the output formats, and how to read a result, see [Run platform diagnostics](../monitoring/run_diagnostics.md).
 
 ## Increase the Ansible output
 
@@ -570,19 +632,22 @@ Reset both values once the investigation is complete. The detailed output can in
 
 ## Collecting logs for a support ticket
 
-!!! warning "Redact the output before you share it"
-    Command output, logs, and configuration files can contain secrets and customer information. Before you collect or send anything, check it against the following list, and replace each match with `***`:
+{% hint style="warning" %}
+**Redact the output before you share it**
 
-    - Credentials: passwords, tokens, API keys, and private keys, such as the credentials displayed by `PlatformAccess`, the output of `config show`, and the values of the environment variables of the execution script.
-    - Vault secret values. Share Vault paths or values only when Sekoia support asks for them, and only through a secure channel.
-    - Private hostnames, IP addresses, and internal URLs.
-    - Customer data, such as community names, user names, email addresses, and event contents.
+Command output, logs, and configuration files can contain secrets and customer information. Before you collect or send anything, check it against the following list, and replace each match with `***`:
+
+- Credentials: passwords, tokens, API keys, and private keys, such as the credentials displayed by `PlatformAccess`, the output of `config show`, and the values of the environment variables of the execution script.
+- Vault secret values. Share Vault paths or values only when Sekoia support asks for them, and only through a secure channel.
+- Private hostnames, IP addresses, and internal URLs.
+- Customer data, such as community names, user names, email addresses, and event contents.
+{% endhint %}
 
 When you escalate an issue to Sekoia L3 support, include the following in your request:
 
-1. Copy the full terminal output of the failing command. The SHC also writes its log lines to a run log file, `/tmp/<TIMESTAMP>_self-hosted-controller.log` in the container. See [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md#navigate-the-interface) to keep this file.
+1. Copy the full terminal output of the failing command. The SHC also writes its log lines to a run log file, `/tmp/<TIMESTAMP>_self-hosted-controller.log` in the container. See [Use the SHC interface](../operations/controller_interface.md#navigate-the-interface) to keep this file.
 
-2. Attach the per-run log file of the SHC. With `global.logging.file` set to `/opt/sekoia/logs/self-hosted-controller.log`, the file of each run is in `$SEKOIA_LOCAL_DIR/logs/` on the orchestration node, named after the start time of the run. In the TUI, the path is displayed at the bottom of the interface. With the default value, the file is deleted with the container: set the field, then run the failing command again. See [SHC log file](/self_hosted/1.0.1/deployment/deployment_configuration.md#shc-log-file).
+2. Attach the per-run log file of the SHC. With `global.logging.file` set to `/opt/sekoia/logs/self-hosted-controller.log`, the file of each run is in `$SEKOIA_LOCAL_DIR/logs/` on the orchestration node, named after the start time of the run. In the TUI, the path is displayed at the bottom of the interface. With the default value, the file is deleted with the container: set the field, then run the failing command again. See [SHC log file](../deployment/deployment_configuration.md#shc-log-file).
 
 3. Share your `config.yml` with all secrets redacted (replace all passwords and keys with `***`).
 
@@ -602,8 +667,8 @@ When you escalate an issue to Sekoia L3 support, include the following in your r
 
 ## Related links
 
-- [Monitor your platform](/self_hosted/1.0.1/monitoring/monitoring_guide.md): Continuous monitoring with Grafana and on-demand diagnostic workflows.
-- [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md): Post-deployment validation commands.
-- [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md): How to fix configuration errors flagged by `CheckLocalConfig`.
-- [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md): Targeted Prometheus health checks per platform area.
-- [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md): Run commands and diagnostics from the interactive interface.
+- [Monitor your platform](../monitoring/monitoring_guide.md): Continuous monitoring with Grafana and on-demand diagnostic workflows.
+- [Deploy the platform](../deployment/deployment_guide.md): Post-deployment validation commands.
+- [Configure the deployment](../deployment/deployment_configuration.md): How to fix configuration errors flagged by `CheckLocalConfig`.
+- [Run platform diagnostics](../monitoring/run_diagnostics.md): Targeted Prometheus health checks per platform area.
+- [Use the SHC interface](../operations/controller_interface.md): Run commands and diagnostics from the interactive interface.

@@ -14,7 +14,7 @@ The platform is delivered as a single archive with a SHA-256 checksum. The conta
 | K3s | A lightweight Kubernetes distribution, version v1.31.12+k3s1, that the SHC installs offline, from files shipped in its container image, on every manager and worker node. Runs all platform containers. |
 | ArgoCD | GitOps engine that reconciles the desired platform state, defined by the stacks the SHC publishes to your Git repository, against the live cluster state. |
 | Helm | Package manager. The SHC deploys the cluster add-ons (Cilium, CoreDNS, cert-manager, and metrics-server) with Helm, and ArgoCD deploys the platform services from the Helm charts that the SHC pushes to your OCI registry. |
-| Ansible | Used by the self-hosted-controller (SHC) to provision the compute nodes: preflight checks, K3s installation, cluster services installation, and kubeconfig retrieval. It does not configure the operating system beyond the changes listed in [Changes applied by the SHC to the nodes](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#changes-applied-by-the-shc-to-the-nodes). |
+| Ansible | Used by the self-hosted-controller (SHC) to provision the compute nodes: preflight checks, K3s installation, cluster services installation, and kubeconfig retrieval. It does not configure the operating system beyond the changes listed in [Changes applied by the SHC to the nodes](../deployment/deployment_prerequisites.md#changes-applied-by-the-shc-to-the-nodes). |
 | CoreDNS | Provides service discovery and DNS resolution inside the Kubernetes cluster, and forwards the other queries to the DNS servers set in `global.forward_dns`. |
 | Cilium | Provides container networking and network policy enforcement across the cluster, and replaces kube-proxy. |
 | Traefik | Runs on every node and routes the external HTTPS, Syslog, and RELP traffic to the services running in the cluster. Terminates TLS with the platform certificate you provide. |
@@ -55,7 +55,7 @@ The Sekoia platform logic runs as a set of decoupled microservices deployed in t
 | Alertmanager | Receives the alerts fired by the platform alert rules. It has no notification receiver: connecting it to your notification channels is your responsibility. |
 | TLS certificate exporter | Checks the TLS certificate configured and served for the platform, for the console and ingestion diagnostics and alerts. |
 | Metric exporters | `node-exporter` exposes the Linux metrics of every node. `kafka-exporter` exposes the Kafka topics, partitions and consumer lag. `celery-exporter` exposes the Celery queues and tasks of the platform APIs. `symphony-exporter` exposes the playbook executions. |
-| Loki | Centralized log aggregation. Reachable without authentication on NodePort 30011 of every node: restrict that port to your monitoring clients. See [Network requirements](/self_hosted/1.0.1/deployment/network_requirements.md#nodeport-services). |
+| Loki | Centralized log aggregation. Reachable without authentication on NodePort 30011 of every node: restrict that port to your monitoring clients. See [Network requirements](../deployment/network_requirements.md#nodeport-services). |
 | Promtail | Agent running on every node, scraping container logs and forwarding them to Loki. |
 | Grafana | Visualization layer. Provides the **Default** dashboard, organized in rows per platform layer. Also serves as the Explore interface for Loki log queries. |
 
@@ -63,7 +63,7 @@ The Sekoia platform logic runs as a set of decoupled microservices deployed in t
 
 | Component | Purpose |
 | :--- | :--- |
-| Detection rules catalog | Sekoia Sigma and pattern-based detection rules, shipped with every release, deployed at installation, and updatable afterwards. See [Update the security content](/self_hosted/1.0.1/operations/update_security_content.md). |
+| Detection rules catalog | Sekoia Sigma and pattern-based detection rules, shipped with every release, deployed at installation, and updatable afterwards. See [Update the security content](../operations/update_security_content.md). |
 | Intake formats | Log parsing connectors for all supported source types, deployed at installation and updatable afterwards. |
 | Automation library | SOAR playbooks and modules. Stays at the version deployed during the installation. |
 
@@ -79,9 +79,9 @@ The platform spans the following infrastructure components, all provisioned and 
 | Manager node | 3 | Runs the Kubernetes control plane (API server, etcd, and scheduler) and, like the workers, platform workloads. Three managers keep the control plane available when one of them fails. Exactly three managers is the supported production topology. |
 | Worker node | 3 (more with volume, see sizing) | Runs platform microservices, databases, and observability components, alongside the managers. |
 
-Sekoia Self-Hosted 1.0.1 has no GPU node role: the AI features that run on GPU nodes are not available in this release. See [AI features](/self_hosted/1.0.1/release_notes.md#ai-features) in the release notes.
+Sekoia Self-Hosted 1.0.1 has no GPU node role: the AI features that run on GPU nodes are not available in this release. See [AI features](../release_notes.md#ai-features) in the release notes.
 
-For hardware requirements and sizing per node role, see [Technical requirements](/self_hosted/1.0.1/deployment/deployment_prerequisites.md).
+For hardware requirements and sizing per node role, see [Technical requirements](../deployment/deployment_prerequisites.md).
 
 ## High availability
 
@@ -115,7 +115,7 @@ The following terms are used consistently throughout this documentation.
 
 ## Related links
 
-- [Technical requirements](/self_hosted/1.0.1/deployment/deployment_prerequisites.md): Hardware, OS, and network prerequisites for each node role.
-- [Network requirements](/self_hosted/1.0.1/deployment/network_requirements.md): Full table of required network flows and ports.
-- [The deployment process](/self_hosted/1.0.1/deployment/deployment_process.md): How the SHC orchestrates the installation.
-- [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md): The interactive interface of the SHC.
+- [Technical requirements](../deployment/deployment_prerequisites.md): Hardware, OS, and network prerequisites for each node role.
+- [Network requirements](../deployment/network_requirements.md): Full table of required network flows and ports.
+- [The deployment process](../deployment/deployment_process.md): How the SHC orchestrates the installation.
+- [Use the SHC interface](../operations/controller_interface.md): The interactive interface of the SHC.

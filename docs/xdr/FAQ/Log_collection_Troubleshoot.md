@@ -25,15 +25,16 @@ Please consult our documentation for each technology used
 1. Check the logs and send it to a local file for testing
 2. Redo the installation following our documentation
 
-!!! note
-   When possible, we recommend using Sekoia.io Forwarder as it is simple and quick to use
+{% hint style="info" %}
+When possible, we recommend using Sekoia.io Forwarder as it is simple and quick to use
+{% endhint %}
 
 ### Parsing verification when in error
 
 1. Check the field `sekoia.intake.parsing_error` in the events page
 2. Compare events sent with the `Event Samples` of the intake documentation (expected log format)
 3. For most intakes, it is possible to test through `intakes page > + new intake > <intake name>` and click on `See format`
-![Intake parser access](/assets/operation_center/intakes/Intake_parser_access.png){: style="max-width:100%"}
+![Intake parser access](../../assets/operation_center/intakes/Intake_parser_access.png)
 
 4. Paste log and check the field `sekoia.intake.parsing_error`, please refer to [this section to test your log](https://docs.sekoia.com/xdr/features/collect/intakes/#panel-overview)
 
@@ -45,15 +46,19 @@ Please consult our documentation for each technology used
 |`sekoiaio.intake.parsing_error`|when the parsing is in failure, this field is available with information on the error that causes the failure|
 |`sekoiaio.intake.parsing_warning`|some fields are not parsed correctly (detail will be displayed)|
 
-!!! note
-   Please contact Support if you have any questions or feedbacks. We will be glad to assist you.
+{% hint style="info" %}
+Please contact Support if you have any questions or feedbacks. We will be glad to assist you.
+{% endhint %}
 
 ## Event size limit and rejection behavior
 
 Events exceeding 250 KiB are rejected by Sekoia's ingestion pipeline.
 
-!!! warning "Events larger than 250 KiB are rejected"
-    Sekoia drops any event that exceeds 250 KiB. These events are never ingested, parsed, or visible in the platform. Truncating oversized events is not possible, as it would produce malformed payloads (for example, broken JSON) that the parser cannot process.
+{% hint style="warning" %}
+**Events larger than 250 KiB are rejected**
+
+Sekoia drops any event that exceeds 250 KiB. These events are never ingested, parsed, or visible in the platform. Truncating oversized events is not possible, as it would produce malformed payloads (for example, broken JSON) that the parser cannot process.
+{% endhint %}
 
 ### How rejections are notified
 
@@ -78,5 +83,8 @@ The feedback you receive depends on the ingestion method:
 - If your EDR or security tool generates very large events (for example, events containing full process memory dumps or large JSON payloads), configure it to reduce verbosity or split the data across multiple smaller events.
 - For structured formats such as JSON, ensure the payload is valid and does not include redundant or base64-encoded binary blobs.
 
-!!! tip "Test before deploying"
-    Before connecting a new log source, send a sample of raw events to a test intake and verify that none exceed 250 KiB. This prevents silent data loss in production.
+{% hint style="success" %}
+**Test before deploying**
+
+Before connecting a new log source, send a sample of raw events to a test intake and verify that none exceed 250 KiB. This prevents silent data loss in production.
+{% endhint %}

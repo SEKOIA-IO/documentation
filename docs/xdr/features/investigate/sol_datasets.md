@@ -18,7 +18,7 @@ SOL Datasets can be accessed from the Queries page in the SOL query builder inte
 2. Click the **SOL Datasets** button in the interface toolbar.
 3. The SOL Datasets panel opens laterally, displaying available datasets.
 
-![sol-list](/assets/operation_center/events/sol-list.gif){: style="max-width:100%"}
+![sol-list](../../../assets/operation_center/events/sol-list.gif)
 
 The datasets panel provides:
 
@@ -47,13 +47,16 @@ The interface supports:
 
 ### File requirements
 
-!!! warning "CSV Import Requirements"
-    Before importing your CSV file, ensure it meets these requirements:
+{% hint style="warning" %}
+**CSV Import Requirements**
 
-    - **Column names follow snake_case format** and are unique
-    - **Column names are no longer than 128 characters**
-    - **The file is encoded in UTF-8 or ASCII**
-    - **The file size does not exceed 100 MB**
+Before importing your CSV file, ensure it meets these requirements:
+
+- **Column names follow snake_case format** and are unique
+- **Column names are no longer than 128 characters**
+- **The file is encoded in UTF-8 or ASCII**
+- **The file size does not exceed 100 MB**
+{% endhint %}
 
 ### Import workflow
 
@@ -68,7 +71,7 @@ The interface supports:
 2. Browse and select your CSV file from the file system.
 3. The system validates file format and requirements.
 
-![sol-import](/assets/operation_center/events/sol-import.png){: style="max-width:100%"}
+![sol-import](../../../assets/operation_center/events/sol-import.png)
 
 **Step 3: File preview and validation**
 
@@ -76,7 +79,7 @@ The interface supports:
 2. Preview shows first 100 rows of data for verification.
 3. Column names are automatically detected.
 
-![sol-preview](/assets/operation_center/events/sol-preview.png){: style="max-width:100%"}
+![sol-preview](../../../assets/operation_center/events/sol-preview.png)
 
 **Step 4: Dataset configuration**
 
@@ -99,7 +102,7 @@ You can replace the content of an existing SOL Dataset without changing its tabl
 1. In the SOL Datasets panel, click on the dataset you want to update.
 2. A modal opens, displaying the dataset's table name and a preview of its current data.
 
-![sol-update](/assets/operation_center/events/sol-update.png){: style="max-width:100%"}
+![sol-update](../../../assets/operation_center/events/sol-update.png)
 
 **Step 2: Replace the file**
 
@@ -107,8 +110,11 @@ You can replace the content of an existing SOL Dataset without changing its tabl
 2. The familiar import interface opens: drag and drop your CSV file or click **Upload a file**.
 3. Select your CSV file and click **Import**.
 
-!!! warning "CSV Import Requirements"
-    The new file must meet the same [requirements](#file-requirements) as the original import (snake_case unique column names, UTF-8 or ASCII encoding, max 100 MB).
+{% hint style="warning" %}
+**CSV Import Requirements**
+
+The new file must meet the same [requirements](#file-requirements) as the original import (snake_case unique column names, UTF-8 or ASCII encoding, max 100 MB).
+{% endhint %}
 
 **Step 3: Review and save**
 
@@ -153,61 +159,70 @@ Imported datasets can be used like any other SOL data source:
 
 **Basic dataset query**
 
-=== "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-    ```shell
-    authorized_domains
-    | limit 100
-    ```
+```shell
+authorized_domains
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-=== "Results"
-
-    | url_domain                                    |
-    | --------------------------------------------- |
-    | clients2.google.com                           |
-    | fef.amsub0202.manage.microsoft.com            |
-    | incoming.telemetry.mozilla.org                |
+| url_domain                                    |
+| --------------------------------------------- |
+| clients2.google.com                           |
+| fef.amsub0202.manage.microsoft.com            |
+| incoming.telemetry.mozilla.org                |
+{% endtab %}
+{% endtabs %}
 
 **Detect unauthorized domains instantly:**
 
-=== "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-    ```shell
-    events
-    | where timestamp > ago(24h) and url.domain != null
-    | where not url.domain in (authorized_domains | select url_domain)
-    | select timestamp, source.ip, url.domain
-    | limit 100
-    ```
+```shell
+events
+| where timestamp > ago(24h) and url.domain != null
+| where not url.domain in (authorized_domains | select url_domain)
+| select timestamp, source.ip, url.domain
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-=== "Results"
-
-    | timestamp                | source.ip    | url.domain                              |
-    | ------------------------ | ------------ | --------------------------------------- |
-    | 2026-03-26T15:35:14.738Z | 192.168.2.10 | 8po4ycsb.bazar                          |
-    | 2026-03-26T15:35:03.740Z | 192.168.2.22 | bvnremfv.pro                            |
-    | 2026-03-26T15:35:04.539Z | 192.168.2.10 | botequimdamarques.bytedelivery.com.br   |
+| timestamp                | source.ip    | url.domain                              |
+| ------------------------ | ------------ | --------------------------------------- |
+| 2026-03-26T15:35:14.738Z | 192.168.2.10 | 8po4ycsb.bazar                          |
+| 2026-03-26T15:35:03.740Z | 192.168.2.22 | bvnremfv.pro                            |
+| 2026-03-26T15:35:04.539Z | 192.168.2.10 | botequimdamarques.bytedelivery.com.br   |
+{% endtab %}
+{% endtabs %}
 
 **Correlate user activities with business roles:**
 
-=== "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-    ```shell
-    events
-    | where timestamp > ago(24h)
-    | lookup user_roles on user.full_name == full_name into roles_list
-    | distinct user.full_name, roles_list.role
-    | limit 100
-    ```
+```shell
+events
+| where timestamp > ago(24h)
+| lookup user_roles on user.full_name == full_name into roles_list
+| distinct user.full_name, roles_list.role
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-=== "Results"
-
-    | user.full_name  | roles_list.role           |
-    | --------------- | ------------------------- |
-    | alice.moreau    | Product Manager           |
-    | bob.dupont      | Product Designer          |
-    | claire.martin   | Front-End Engineer        |
-    | david.chen      | Back-End Engineer         |
+| user.full_name  | roles_list.role           |
+| --------------- | ------------------------- |
+| alice.moreau    | Product Manager           |
+| bob.dupont      | Product Designer          |
+| claire.martin   | Front-End Engineer        |
+| david.chen      | Back-End Engineer         |
+{% endtab %}
+{% endtabs %}
 
 ### Best practices for dataset queries
 
@@ -225,28 +240,31 @@ Imported datasets can be used like any other SOL data source:
 
 **Query structure**
 
-=== "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-    ```shell
-    // Filter main data source first
-    events
-    | where timestamp > ago(1h) and user.name != null
+```shell
+// Filter main data source first
+events
+| where timestamp > ago(1h) and user.name != null
 
-    // Then join with SOL dataset. The modal object name is defined as 'dataset' here
-    | lookup user_roles_dataset on user.name == username into dataset
+// Then join with SOL dataset. The modal object name is defined as 'dataset' here
+| lookup user_roles_dataset on user.name == username into dataset
 
-    // Select relevant columns
-    | select timestamp, user.name, dataset.role, event.action
-    | limit 1000
-    ```
+// Select relevant columns
+| select timestamp, user.name, dataset.role, event.action
+| limit 1000
+```
+{% endtab %}
+{% tab title="Results" %}
 
-=== "Results"
-
-    | timestamp                | user.name     | dataset.role       | event.action |
-    | ------------------------ | ------------- | ------------------ | ------------ |
-    | 2026-03-26T14:22:03.120Z | alice.moreau  | Product Manager    | login        |
-    | 2026-03-26T14:20:15.441Z | david.chen    | Back-End Engineer  | file_access  |
-    | 2026-03-26T14:19:47.883Z | claire.martin | Front-End Engineer | login        |
+| timestamp                | user.name     | dataset.role       | event.action |
+| ------------------------ | ------------- | ------------------ | ------------ |
+| 2026-03-26T14:22:03.120Z | alice.moreau  | Product Manager    | login        |
+| 2026-03-26T14:20:15.441Z | david.chen    | Back-End Engineer  | file_access  |
+| 2026-03-26T14:19:47.883Z | claire.martin | Front-End Engineer | login        |
+{% endtab %}
+{% endtabs %}
 
 ## Common use cases
 
@@ -254,22 +272,25 @@ Imported datasets can be used like any other SOL data source:
 
 Instantly correlate your alerts with external threat intelligence feeds to distinguish between noise and genuine threats. This query enriches recent alerts with threat context, helping analysts focus on the most critical security events first.
 
-=== "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-    ```shell
-    alerts
-    | where created_at > ago(24h)
-    | lookup threat_intel_dataset on source.ip == indicator_value into dataset
-    | where dataset.threat_type != null
-    | select rule_name, source.ip, dataset.threat_type, dataset.confidence
-    ```
+```shell
+alerts
+| where created_at > ago(24h)
+| lookup threat_intel_dataset on source.ip == indicator_value into dataset
+| where dataset.threat_type != null
+| select rule_name, source.ip, dataset.threat_type, dataset.confidence
+```
+{% endtab %}
+{% tab title="Results" %}
 
-=== "Results"
-
-    | rule_name                | source.ip      | dataset.threat_type | dataset.confidence |
-    | ------------------------ | -------------- | ------------------- | ------------------ |
-    | SEKOIA Intelligence Feed | 143.198.133.245 | malware_c2         | high               |
-    | Suspicious DNS Query     | 185.220.101.47 | tor_exit_node       | medium             |
+| rule_name                | source.ip      | dataset.threat_type | dataset.confidence |
+| ------------------------ | -------------- | ------------------- | ------------------ |
+| SEKOIA Intelligence Feed | 143.198.133.245 | malware_c2         | high               |
+| Suspicious DNS Query     | 185.220.101.47 | tor_exit_node       | medium             |
+{% endtab %}
+{% endtabs %}
 
 ### Enrich events using a CIDR dataset
 
@@ -277,71 +298,80 @@ Tag events whose source IP belongs to one of your known IPv4 ranges, such as VPN
 
 The `lookup` predicate uses `cidr_match()` and is not pushed down to the datasource. The `where cidr_match(source.ip, cidrs)` filter is optional but pushed down: it keeps only events that match a range before the in-memory lookup runs, which reduces the rows the lookup must process. Keep the dataset small enough to fit in memory.
 
-=== "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-    ```shell
-    let cidrs = known_scanner_ranges | select cidr;
+```shell
+let cidrs = known_scanner_ranges | select cidr;
 
-    events
-    | where timestamp between (?time.start .. ?time.end)
-    | where cidr_match(source.ip, cidrs)
-    | lookup known_scanner_ranges
-        on cidr_match($left.source.ip, $right.cidr)
-        into matched_range
-    | select timestamp, source.ip, matched_range.cidr, matched_range.label
-    | limit 100
-    ```
+events
+| where timestamp between (?time.start .. ?time.end)
+| where cidr_match(source.ip, cidrs)
+| lookup known_scanner_ranges
+    on cidr_match($left.source.ip, $right.cidr)
+    into matched_range
+| select timestamp, source.ip, matched_range.cidr, matched_range.label
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-=== "Results"
-
-    | timestamp                | source.ip     | matched_range.cidr | matched_range.label |
-    | ------------------------ | ------------- | ------------------ | ------------------- |
-    | 2026-03-26T15:35:14.738Z | 80.94.95.12   | 80.94.95.0/24      | Internet scanner    |
-    | 2026-03-26T15:35:03.740Z | 198.51.100.47 | 198.51.100.0/24    | Partner network     |
-    | 2026-03-26T15:35:04.539Z | 80.94.95.201  | 80.94.95.0/24      | Internet scanner    |
+| timestamp                | source.ip     | matched_range.cidr | matched_range.label |
+| ------------------------ | ------------- | ------------------ | ------------------- |
+| 2026-03-26T15:35:14.738Z | 80.94.95.12   | 80.94.95.0/24      | Internet scanner    |
+| 2026-03-26T15:35:03.740Z | 198.51.100.47 | 198.51.100.0/24    | Partner network     |
+| 2026-03-26T15:35:04.539Z | 80.94.95.201  | 80.94.95.0/24      | Internet scanner    |
+{% endtab %}
+{% endtabs %}
 
 ### Understand event patterns across business units and system criticality
 
 Transform raw security events into business-aware insights by correlating them with your asset inventory. Quickly identify which departments or critical systems are generating the most security events, enabling targeted investigation and resource allocation.
 
-=== "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-    ```shell
-    events
-    | where timestamp > ago(1h)
-    | lookup asset_inventory on host.name == hostname into dataset
-    | aggregate event_count = count() by dataset.department, dataset.criticality
-    | order by event_count desc
-    ```
+```shell
+events
+| where timestamp > ago(1h)
+| lookup asset_inventory on host.name == hostname into dataset
+| aggregate event_count = count() by dataset.department, dataset.criticality
+| order by event_count desc
+```
+{% endtab %}
+{% tab title="Results" %}
 
-=== "Results"
-
-    | dataset.department | dataset.criticality | event_count |
-    | ------------------ | ------------------- | ----------- |
-    | Engineering        | high                | 1204        |
-    | Finance            | critical            | 876         |
-    | HR                 | medium              | 342         |
+| dataset.department | dataset.criticality | event_count |
+| ------------------ | ------------------- | ----------- |
+| Engineering        | high                | 1204        |
+| Finance            | critical            | 876         |
+| HR                 | medium              | 342         |
+{% endtab %}
+{% endtabs %}
 
 ### Detect privileged account activity and potential privilege escalation
 
 Monitor administrative activities by correlating authentication events with your user directory. This helps identify unusual admin access patterns, shared accounts, or potential insider threats by tracking who is accessing what systems with elevated privileges.
 
-=== "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-    ```shell
-    events
-    | where event.category == 'authentication' and action.outcome == 'success'
-    | lookup user_directory on user.name == username into dataset
-    | where dataset.role == 'admin'
-    | aggregate count() by user.name, host.name
-    ```
+```shell
+events
+| where event.category == 'authentication' and action.outcome == 'success'
+| lookup user_directory on user.name == username into dataset
+| where dataset.role == 'admin'
+| aggregate count() by user.name, host.name
+```
+{% endtab %}
+{% tab title="Results" %}
 
-=== "Results"
-
-    | user.name    | host.name       | count |
-    | ------------ | --------------- | ----- |
-    | alice.moreau | laptop-chris    | 42    |
-    | david.chen   | laptop-b3205bc2 | 18    |
+| user.name    | host.name       | count |
+| ------------ | --------------- | ----- |
+| alice.moreau | laptop-chris    | 42    |
+| david.chen   | laptop-b3205bc2 | 18    |
+{% endtab %}
+{% endtabs %}
 
 ## Troubleshooting common issues
 
@@ -389,16 +419,16 @@ Join mismatches
 ## Related articles
 
 ### Getting Started & Overview
-* [SOL Overview](/xdr/features/investigate/sol_overview.md): Sekoia Operating Language overview.
-* [SOL Getting Started](/xdr/features/investigate/sol_getting_started.md): This tutorial walks you through writing your first SOL queries. By the end, you'll be able to search events, filter results, and save queries for reuse.
-* [SOL Best Practices](/xdr/features/investigate/sol_best_practices.md): Best practices to use SOL effectively.
+* [SOL Overview](sol_overview.md): Sekoia Operating Language overview.
+* [SOL Getting Started](sol_getting_started.md): This tutorial walks you through writing your first SOL queries. By the end, you'll be able to search events, filter results, and save queries for reuse.
+* [SOL Best Practices](sol_best_practices.md): Best practices to use SOL effectively.
 
 ### User Guides
-* [Create and Manage Queries](/xdr/features/investigate/create_manage_queries.md): Create and manage queries using SOL.
-* [SOL How-to Guides](/xdr/features/investigate/sol_how_to_guides.md): Learn how to use the main functions of SOL to reach your goals (aggregate data, join tables, use external data, build a query library...).
-* [SOL Query Examples](/xdr/features/investigate/sol_query_examples.md): Get inspiration from our examples.
+* [Create and Manage Queries](create_manage_queries.md): Create and manage queries using SOL.
+* [SOL How-to Guides](sol_how_to_guides.md): Learn how to use the main functions of SOL to reach your goals (aggregate data, join tables, use external data, build a query library...).
+* [SOL Query Examples](sol_query_examples.md): Get inspiration from our examples.
 
 ### Technical Reference
-* [SOL Data Sources Reference](/xdr/features/investigate/sol_ref_datasources.md): Technical references to access security data within the Sekoia platform thanks to SOL.
-* [SOL Functions Reference](/xdr/features/investigate/sol_ref_functions.md): Reference article regarding functions used in SOL.
-* [SOL Operators Reference](/xdr/features/investigate/sol_ref_operators.md): Reference article regarding operators used in the SOL language.
+* [SOL Data Sources Reference](sol_ref_datasources.md): Technical references to access security data within the Sekoia platform thanks to SOL.
+* [SOL Functions Reference](sol_ref_functions.md): Reference article regarding functions used in SOL.
+* [SOL Operators Reference](sol_ref_operators.md): Reference article regarding operators used in the SOL language.

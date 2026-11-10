@@ -55,8 +55,11 @@ When a new community is created, a trial subscription is automatically made avai
 | Hot storage | 7 days |
 | Archiving duration | 0 days |
 
-!!! note "Allocating a trial to a community"
-    In a multi-tenant workspace, administrators can allocate trial subscriptions to managed communities. See the related link at the end of this article for the procedure.
+{% hint style="info" %}
+**Allocating a trial to a community**
+
+In a multi-tenant workspace, administrators can allocate trial subscriptions to managed communities. See the related link at the end of this article for the procedure.
+{% endhint %}
 
 ## Check your license type and level
 
@@ -71,8 +74,11 @@ Navigate to **Settings > Workspace > Subscriptions**. Check the following inform
 - **Hot storage**: Number of days event data remains available for fast search and investigation.
 - **Archiving duration**: Total retention period for archived event data.
 
-!!! note "Access to subscription details"
-    If **Subscriptions** is not available in your **Settings** menu, ask your workspace administrator to confirm your license type and limits.
+{% hint style="info" %}
+**Access to subscription details**
+
+If **Subscriptions** is not available in your **Settings** menu, ask your workspace administrator to confirm your license type and limits.
+{% endhint %}
 
 The license limits are operational constraints. Review them before connecting data sources so you can adapt ingestion and retention settings to your contract.
 
@@ -89,8 +95,11 @@ For each subscription, you can see:
 - The region, number of defended assets, and storage retention values
 - The remaining days on the subscription
 
-!!! warning "Expired subscriptions"
-    Communities with no active subscription are flagged with a red indicator in the multi-tenant community list. An expired subscription does not delete your data, but it may limit your access to platform features.
+{% hint style="warning" %}
+**Expired subscriptions**
+
+Communities with no active subscription are flagged with a red indicator in the multi-tenant community list. An expired subscription does not delete your data, but it may limit your access to platform features.
+{% endhint %}
 
 In a multi-tenant workspace, the Subscriptions page shows all managed communities. You can filter the list by trial status, near-expiration, or inactive communities.
 
@@ -98,9 +107,9 @@ In a multi-tenant workspace, the Subscriptions page shows all managed communitie
 
 Review your usage from the beginning of your subscription, not only when you approach a limit. The **Usage** page shows the consumption associated with your communities, including analyzed bytes and executed playbook actions.
 
-Navigate to **Settings > Usage** and select the relevant month. Compare your current consumption with the projected volume and the limits shown on your subscription. See [Monitor your usage](/getting_started/monitor_your_usage.md) for the details of each metric and the recommended monitoring routine.
+Navigate to **Settings > Usage** and select the relevant month. Compare your current consumption with the projected volume and the limits shown on your subscription. See [Monitor your usage](monitor_your_usage.md) for the details of each metric and the recommended monitoring routine.
 
-If your consumption approaches the limit, review [Investigate overusage](/xdr/usecases/playbook/investigate_overusage.md), the [Optimization rules overview](/xdr/features/collect/optimization_rules_overview.md), and [Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reduction_strategies.md) before changing your data collection configuration.
+If your consumption approaches the limit, review [Investigate overusage](../xdr/usecases/playbook/investigate_overusage.md), the [Optimization rules overview](../xdr/features/collect/optimization_rules_overview.md), and [Log volume reduction strategies](../xdr/usecases/playbook/log_volume_reduction_strategies.md) before changing your data collection configuration.
 
 ## Compare plans
 
@@ -108,9 +117,9 @@ To view a comparison of available plans directly in the platform, click **Compar
 
 ## Related links
 
-- [Workspace setup overview](/getting_started/workspace_setup_overview.md): Full checklist for configuring your workspace before your team starts.
-- [Monitor your usage](/getting_started/monitor_your_usage.md): How to review consumption and detect changes before they affect operations.
-- [Investigate overusage](/xdr/usecases/playbook/investigate_overusage.md): Identify the causes of usage above your expected volume.
-- [Optimization rules overview](/xdr/features/collect/optimization_rules_overview.md): How optimization rules reduce unnecessary event processing.
-- [Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reduction_strategies.md): Practical strategies for controlling data volume.
-- [Invite users](/getting_started/invite_users.md): How to add team members once your subscription is confirmed.
+- [Workspace setup overview](workspace_setup_overview.md): Full checklist for configuring your workspace before your team starts.
+- [Monitor your usage](monitor_your_usage.md): How to review consumption and detect changes before they affect operations.
+- [Investigate overusage](../xdr/usecases/playbook/investigate_overusage.md): Identify the causes of usage above your expected volume.
+- [Optimization rules overview](../xdr/features/collect/optimization_rules_overview.md): How optimization rules reduce unnecessary event processing.
+- [Log volume reduction strategies](../xdr/usecases/playbook/log_volume_reduction_strategies.md): Practical strategies for controlling data volume.
+- [Invite users](invite_users.md): How to add team members once your subscription is confirmed.

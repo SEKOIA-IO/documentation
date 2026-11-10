@@ -1,6 +1,6 @@
 # Duo
 
-![Duo](/assets/playbooks/library/duo.png){ align=right width=150 }
+![Duo](../../../../assets/playbooks/library/duo.png)
 
 Duo is a Cisco company offering solutions for strong authentication with multi-factor authentication (MFA), single sign-on (SSO), remote access or device trusting.
 

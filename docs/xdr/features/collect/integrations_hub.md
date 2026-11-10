@@ -74,4 +74,4 @@ Once you've connected your repository and initiated the import, the platform aut
 
 When you push a change to your integration's repository, use **Check for updates** and **Update** on the integration page to bring that change into the platform. Connector configurations and triggers that are currently running are restarted automatically with the new version.
 
-See [Update a custom integration](/xdr/features/collect/update_a_custom_integration.md) for the full procedure, the restart behavior of connectors and triggers, and troubleshooting.
+See [Update a custom integration](update_a_custom_integration.md) for the full procedure, the restart behavior of connectors and triggers, and troubleshooting.

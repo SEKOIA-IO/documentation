@@ -1,6 +1,6 @@
 # Darktrace
 
-![Darktrace](/assets/playbooks/library/darktrace.png){ align=right width=150 }
+![Darktrace](../../../../assets/playbooks/library/darktrace.png)
 
 Darktrace monitors and protects all people and digital assets across your entire ecosystem.
 

@@ -68,7 +68,7 @@ The left-hand menu is organized into three collapsible sections, plus fixed item
 | **Early features** | Preview features not yet in general availability. |
 | **Help & support** | Documentation, Academy, and support portal. |
 
-![Sekoia left-hand navigation menu with collapsible sections Investigate, Observe, and Configure, plus fixed items at the top and bottom](/assets/getting_started/menu.gif){: style="width: 30%; max-width: 30%"}
+![Sekoia left-hand navigation menu with collapsible sections Investigate, Observe, and Configure, plus fixed items at the top and bottom](../assets/getting_started/menu.gif)
 
 ## Switch between workspaces and communities
 
@@ -86,8 +86,11 @@ To filter on a specific community in a multi-tenant workspace:
 1. Click the **Communities** button in the breadcrumb at the top of the page.
 2. Select one or more communities from the list to display their data.
 
-!!! note "Single-tenant workspaces"
-    The **Communities** button only appears in multi-tenant workspaces. In single-tenant mode, your workspace contains one community and no switcher is displayed.
+{% hint style="info" %}
+**Single-tenant workspaces**
+
+The **Communities** button only appears in multi-tenant workspaces. In single-tenant mode, your workspace contains one community and no switcher is displayed.
+{% endhint %}
 
 ## Use filters
 
@@ -106,16 +109,19 @@ Once the filter panel is open:
 - Remove a single filter by clicking the cross next to its tag.
 - Remove all filters by clicking **Clear filters**.
 
-!!! tip "Keyboard navigation in filters"
-    Use the **Up** and **Down** arrow keys to navigate filter options, **Enter** to select a value, and **Esc** to close the panel.
+{% hint style="success" %}
+**Keyboard navigation in filters**
+
+Use the **Up** and **Down** arrow keys to navigate filter options, **Enter** to select a value, and **Esc** to close the panel.
+{% endhint %}
 
 ## Personalize your menu
 
 You can pin pages to favorites and reorder navigation sections to match your daily workflow.
 
-See [Customize your interface](/getting_started/customize_your_interface.md) for the step-by-step procedures.
+See [Customize your interface](customize_your_interface.md) for the step-by-step procedures.
 
 ## Related links
 
-- [Workspace and communities](/getting_started/workspace_and_communities.md): Explanation of the workspace and community structure and what each level controls.
-- [Customize your interface](/getting_started/customize_your_interface.md): Add pages to favorites, reorder menu sections, and configure table columns.
+- [Workspace and communities](workspace_and_communities.md): Explanation of the workspace and community structure and what each level controls.
+- [Customize your interface](customize_your_interface.md): Add pages to favorites, reorder menu sections, and configure table columns.

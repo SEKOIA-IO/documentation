@@ -1,10 +1,13 @@
 # Application inventory
 
-_**[Reveal module](/xdr/features/modules/reveal_index.md)**. This feature requires the Reveal add-on module._
+_**[Reveal module](reveal_index.md)**. This feature requires the Reveal add-on module._
 
-!!! note "Beta"
+{% hint style="info" %}
+**Beta**
 
-    The **Applications** tab is currently in Beta. Its fields and behavior may change as the feature evolves.
+
+The **Applications** tab is currently in Beta. Its fields and behavior may change as the feature evolves.
+{% endhint %}
 
 The Applications tab lists software associated with a host asset and shows which applications have associated CVE findings. You can review the application inventory, filter vulnerable applications, and click an application's CVE count to review its related vulnerabilities from the asset context panel.
 
@@ -43,9 +46,12 @@ Reveal collects application inventory from connected asset sources, such as endp
 
 When an application is associated with one or more known CVEs, the application is included in the vulnerable view and its **CVE Count** displays the number of matching findings.
 
-!!! note "Application coverage"
+{% hint style="info" %}
+**Application coverage**
 
-    The Applications tab does not necessarily contain every application running on the asset. Coverage depends on the source, operating system, application type, and latest synchronization.
+
+The Applications tab does not necessarily contain every application running on the asset. Coverage depends on the source, operating system, application type, and latest synchronization.
+{% endhint %}
 
 ## Summary counters
 
@@ -106,7 +112,7 @@ Expand an application row to view additional details:
 
 A field can display `-` when the source does not provide the value.
 
-![!Applications tab showing vulnerable and installed application counters, quick views, filters, and the application list](/assets/asset_app_expanded.png){: style="max-width:100%"}
+![!Applications tab showing vulnerable and installed application counters, quick views, filters, and the application list](../../../assets/asset_app_expanded.png)
 
 ## Open related vulnerabilities
 
@@ -124,7 +130,7 @@ Use this path to open the complete vulnerability list:
 
 > **Asset context panel > Vulnerabilities**
 
-For the vulnerability table and expanded finding details, see [Vulnerability enrichment](/xdr/features/modules/reveal_vulnerabilities.md).
+For the vulnerability table and expanded finding details, see [Vulnerability enrichment](reveal_vulnerabilities.md).
 
 ## Use application inventory during an investigation
 
@@ -144,12 +150,12 @@ The Asset Risk Score prioritizes the asset using exposure, recent activity, and 
 
 The CVSS and Unified risk score values describe individual vulnerability findings. They are not the same as the asset-level Asset Risk Score.
 
-For the scoring model, see [Asset risk scoring](/xdr/features/modules/asset_risk_scoring.md).
+For the scoring model, see [Asset risk scoring](asset_risk_scoring.md).
 
 ## Related articles
 
-[Vulnerability enrichment](/xdr/features/modules/reveal_vulnerabilities.md): How CVE findings are collected and displayed for an asset.
+[Vulnerability enrichment](reveal_vulnerabilities.md): How CVE findings are collected and displayed for an asset.
 
-[Asset risk scoring](/xdr/features/modules/asset_risk_scoring.md): How vulnerability exposure contributes to the asset-level Asset Risk Score.
+[Asset risk scoring](asset_risk_scoring.md): How vulnerability exposure contributes to the asset-level Asset Risk Score.
 
-[Asset context panel, Reveal capabilities](/xdr/features/modules/reveal_asset_context_panel.md): Overview of Reveal-specific asset context and investigation tabs.
+[Asset context panel, Reveal capabilities](reveal_asset_context_panel.md): Overview of Reveal-specific asset context and investigation tabs.

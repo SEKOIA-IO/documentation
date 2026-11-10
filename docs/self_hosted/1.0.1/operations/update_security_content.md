@@ -2,14 +2,17 @@
 
 The self-hosted-controller (SHC) updates the detection rules and the intake formats of an installed platform with the `UpdatePlatformData` command. It publishes the selected content bundles to your OCI registry, points the content updaters of the platform to them, and waits until the updaters have loaded them.
 
-!!! note "Playbook library and CTI database"
-    In Sekoia Self-Hosted 1.0.1, you cannot update the playbook library after the installation: `UpdatePlatformData` downloads its bundle in online mode, but does not publish or apply it. The CTI database has its own procedure, described in [Import the CTI database](/self_hosted/1.0.1/operations/import_cti_database.md).
+{% hint style="info" %}
+**Playbook library and CTI database**
+
+In Sekoia Self-Hosted 1.0.1, you cannot update the playbook library after the installation: `UpdatePlatformData` downloads its bundle in online mode, but does not publish or apply it. The CTI database has its own procedure, described in [Import the CTI database](import_cti_database.md).
+{% endhint %}
 
 ## Prerequisites
 
 - The platform is installed and the SHC can retrieve its kubeconfig.
 - The release files are extracted on the orchestration node: the command publishes the ArgoCD stacks of the release again.
-- In online mode, the `S3_ACCESS_KEY` and `S3_SECRET_KEY` environment variables hold the Sekoia release bucket credentials provided by Sekoia, and `global.version.fetch.endpoint` points to the Sekoia release bucket, as described in [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md#release-download-and-security-content).
+- In online mode, the `S3_ACCESS_KEY` and `S3_SECRET_KEY` environment variables hold the Sekoia release bucket credentials provided by Sekoia, and `global.version.fetch.endpoint` points to the Sekoia release bucket, as described in [Configure the deployment](../deployment/deployment_configuration.md#release-download-and-security-content).
 - In air-gapped mode, `global.version.fetch.offline` is `true` and the bundles are on the orchestration node, as described in [Prepare the bundles in air-gapped mode](#prepare-the-bundles-in-air-gapped-mode).
 
 ## What the command does
@@ -86,12 +89,15 @@ $SEKOIA_LOCAL_DIR/data/
 
 Each `latest` file contains only the file name of the bundle to use, for example `detection-rules-2.20260813-31688094717-35a441d88ed9c2b23b078e476fb35a6c2a40df84.tar.gz`, and the bundle is in the same directory. The release ID uses letters, digits, `_`, `.`, and `-`, with at most 128 characters. When the `latest` file is missing, or names a file that does not follow this format or does not exist, the SHC skips the bundle with a warning. Older bundles can stay in the directory: the SHC only uses the one named in `latest`.
 
-The SHC reads each type from `<global.version.data.<TYPE>.path>/<TYPE>/`. The [execution script](/self_hosted/1.0.1/deployment/deployment_guide.md#step-4-create-the-execution-script) mounts `$SEKOIA_LOCAL_DIR` on `/opt/sekoia`, which matches the default value of `global.version.data.<TYPE>.path` (`/opt/sekoia/data/`).
+The SHC reads each type from `<global.version.data.<TYPE>.path>/<TYPE>/`. The [execution script](../deployment/deployment_guide.md#step-4-create-the-execution-script) mounts `$SEKOIA_LOCAL_DIR` on `/opt/sekoia`, which matches the default value of `global.version.data.<TYPE>.path` (`/opt/sekoia/data/`).
 
 ## Update the security content
 
-!!! note "Other configuration changes are published too"
-    `PushArgoStacks` generates every stack from your current `config.yml`. If you changed other settings since the last publication, the command publishes them too.
+{% hint style="info" %}
+**Other configuration changes are published too**
+
+`PushArgoStacks` generates every stack from your current `config.yml`. If you changed other settings since the last publication, the command publishes them too.
+{% endhint %}
 
 To update the detection rules and the intake formats, run:
 
@@ -115,7 +121,7 @@ When a synchronization fails or times out, the stacks already reference the new 
 
 ## Related links
 
-- [Import the CTI database](/self_hosted/1.0.1/operations/import_cti_database.md): Import and refresh the Sekoia CTI database.
-- [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md#release-download-and-security-content): Set the release bucket and the bundle versions.
-- [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md): Install the security content shipped with the release.
-- [Debug your deployment](/self_hosted/1.0.1/troubleshooting/debug_tool.md): Inspect the ArgoCD applications of the updaters.
+- [Import the CTI database](import_cti_database.md): Import and refresh the Sekoia CTI database.
+- [Configure the deployment](../deployment/deployment_configuration.md#release-download-and-security-content): Set the release bucket and the bundle versions.
+- [Deploy the platform](../deployment/deployment_guide.md): Install the security content shipped with the release.
+- [Debug your deployment](../troubleshooting/debug_tool.md): Inspect the ArgoCD applications of the updaters.

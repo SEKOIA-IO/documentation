@@ -1,6 +1,6 @@
 # Microsoft Azure
 
-![Microsoft Azure](/assets/playbooks/library/microsoft-azure.png){ align=right width=150 }
+![Microsoft Azure](../../../../assets/playbooks/library/microsoft-azure.png)
 
 Microsoft Azure is a cloud computing service operated by Microsoft
 

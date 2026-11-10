@@ -18,8 +18,11 @@ Check that you have:
 - Received a Sekoia invitation email from `no-reply@sekoia.io`
 - Access to the email address the invitation was sent to
 
-!!! note "Did not receive the invitation?"
-    Check your spam or junk folder. If the email is not there, ask your workspace administrator to resend the invitation from **Settings > Users**.
+{% hint style="info" %}
+**Did not receive the invitation?**
+
+Check your spam or junk folder. If the email is not there, ask your workspace administrator to resend the invitation from **Settings > Users**.
+{% endhint %}
 
 ## Step 1: Accept the invitation
 
@@ -38,8 +41,11 @@ The link is valid for 24 hours. If it has expired, ask your administrator to res
 
 Sekoia is available across multiple regions. The URL you use to access the platform depends on the region where your workspace is hosted.
 
-!!! warning "Use the correct URL"
-    If you use a region URL that does not match your workspace, you will not be able to log in. Ask your administrator which region your workspace uses.
+{% hint style="warning" %}
+**Use the correct URL**
+
+If you use a region URL that does not match your workspace, you will not be able to log in. Ask your administrator which region your workspace uses.
+{% endhint %}
 
 | Region | URL |
 |---|---|
@@ -77,6 +83,6 @@ On your first login, review your profile settings:
 
 ## Related links
 
-- [Secure your account](/getting_started/secure_your_account.md): Enable two-factor authentication and configure your account security settings.
-- [Workspace and communities](/getting_started/workspace_and_communities.md): Understand the environment you have joined.
-- [Troubleshooting common issues](/getting_started/troubleshooting_common_issues.md): Solutions for connectivity and login problems.
+- [Secure your account](secure_your_account.md): Enable two-factor authentication and configure your account security settings.
+- [Workspace and communities](workspace_and_communities.md): Understand the environment you have joined.
+- [Troubleshooting common issues](troubleshooting_common_issues.md): Solutions for connectivity and login problems.

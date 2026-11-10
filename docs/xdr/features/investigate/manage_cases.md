@@ -4,7 +4,7 @@ The cases listing page centralizes all cases across your community. This article
 
 ## Filter and sort cases
 
-![Case listing with filter](/assets/operation_center/cases/cases-filter.png){: style="max-width:100%"}
+![Case listing with filter](../../../assets/operation_center/cases/cases-filter.png)
 
 You can filter cases by the following criteria:
 
@@ -25,13 +25,13 @@ You can sort the listing by:
 * **Creation date**
 * **Highest priority**
 
-To keep a filter, column and sort combination and share it with your team, save it as a [case custom view](/xdr/features/investigate/case_custom_views.md).
+To keep a filter, column and sort combination and share it with your team, save it as a [case custom view](case_custom_views.md).
 
 ## Perform bulk actions on cases
 
 You can act on multiple cases simultaneously from the listing page. This is useful for triaging large volumes of cases or reassigning incidents at scale.
 
-![Case listing with bulk actions](/assets/operation_center/cases/cases-bulk-actions.png){: style="max-width:100%"}
+![Case listing with bulk actions](../../../assets/operation_center/cases/cases-bulk-actions.png)
 
 ### Select multiple cases
 
@@ -41,8 +41,11 @@ Three selection methods are available:
 2. **Page selection**: Click the checkbox in the table header to select all cases visible on the current page (up to 25, 50, or 100 cases depending on your page size setting).
 3. **Global selection**: After activating page selection, a banner appears at the top of the list. Use it to extend your selection to all cases matching your active filters, up to the platform limit.
 
-!!! note "Selection limit"
-    Mass selections are capped at 5,000 cases at a time to maintain platform performance. If your filtered results exceed 5,000 cases, a tooltip informs you of this limit. Use the **Clear selection** button in the action banner to deselect all cases and reset the view.
+{% hint style="info" %}
+**Selection limit**
+
+Mass selections are capped at 5,000 cases at a time to maintain platform performance. If your filtered results exceed 5,000 cases, a tooltip informs you of this limit. Use the **Clear selection** button in the action banner to deselect all cases and reset the view.
+{% endhint %}
 
 ### Available bulk actions
 
@@ -59,10 +62,11 @@ Once you select at least one case, the bulk action toolbar replaces the **Filter
 
 When you change the status of the selected cases to a status in the **Closed** stage, the **Close cases** modal opens. If the new status belongs to another stage, the status is applied directly and no modal appears.
 
-![Close cases modal](/assets/operation_center/cases/cases-bulk-close-modal.png){: style="max-width:60%"}
+![Close cases modal](../../../assets/operation_center/cases/cases-bulk-close-modal.png)
 
-!!! warning
-    Once closed, a case no longer receives alerts.
+{% hint style="warning" %}
+Once closed, a case no longer receives alerts.
+{% endhint %}
 
 To close the selected cases:
 
@@ -79,8 +83,11 @@ The status name, the case ID and the message reflect your selection and the comm
 
 ## Edit a case
 
-!!! warning "Editing restriction"
-    You can only edit cases with a status in the **Open** or **In progress** stage. Cases with a **Closed** status cannot be edited.
+{% hint style="warning" %}
+**Editing restriction**
+
+You can only edit cases with a status in the **Open** or **In progress** stage. Cases with a **Closed** status cannot be edited.
+{% endhint %}
 
 To edit a case:
 
@@ -91,11 +98,11 @@ To edit a case:
 
 ## Related articles
 
-* [Cases](/xdr/features/investigate/cases.md): Overview of what cases are and how they are structured.
-* [Create a case](/xdr/features/investigate/create_a_case.md): Step-by-step instructions to open a new case and attach alerts to it.
-* [Case details](/xdr/features/investigate/case_details.md): Reference for every tab and field available on the case details page.
-* [Custom fields](/xdr/features/investigate/custom_fields.md): How to filter alerts and cases by custom field values and manage field definitions.
-* [Alerts](/xdr/features/investigate/alerts.md): How alerts are created and how to manage them before grouping them into cases.
-* [Playbooks](/xdr/features/automate/index.md): How to automate case workflows and trigger actions based on case updates.
-* [Dashboards](/xdr/features/report/dashboards.md): How to monitor case activity and investigation KPIs across your community.
-* [Case custom views](/xdr/features/investigate/case_custom_views.md): How to save and share filters, columns, sort order and search text as named views.
+* [Cases](cases.md): Overview of what cases are and how they are structured.
+* [Create a case](create_a_case.md): Step-by-step instructions to open a new case and attach alerts to it.
+* [Case details](case_details.md): Reference for every tab and field available on the case details page.
+* [Custom fields](custom_fields.md): How to filter alerts and cases by custom field values and manage field definitions.
+* [Alerts](alerts.md): How alerts are created and how to manage them before grouping them into cases.
+* [Playbooks](../automate/index.md): How to automate case workflows and trigger actions based on case updates.
+* [Dashboards](../report/dashboards.md): How to monitor case activity and investigation KPIs across your community.
+* [Case custom views](case_custom_views.md): How to save and share filters, columns, sort order and search text as named views.

@@ -4,8 +4,8 @@ A runbook defines how the Elevate agent reasons and carries out its investigatio
 
 ## Prerequisites
 
-- Elevate is activated on your workspace or community. See [Activate Elevate on a workspace](/xdr/features/modules/elevate_activate.md).
-- You understand how runbooks fit into an investigation. See [The Elevate investigation method](/xdr/features/modules/elevate_investigation_method.md).
+- Elevate is activated on your workspace or community. See [Activate Elevate on a workspace](elevate_activate.md).
+- You understand how runbooks fit into an investigation. See [The Elevate investigation method](elevate_investigation_method.md).
 
 ## Understand the three runbook sections
 
@@ -17,8 +17,11 @@ Sekoia Elevate generates a runbook automatically for every detection rule, inclu
 | **Legitimate scenarios** | The benign situations that could trigger this detection. Describing them helps the agent spot likely false positives. |
 | **Investigation questions** | The questions the agent works through during the investigation. They are closely tied to the reasoning questions shown on the alert and can be expanded or modified. The agent may also add its own questions while processing an alert. |
 
-!!! tip "Custom rules vs. Sekoia rules"
-    You can edit the runbook of any detection rule you created. If the triggering rule was built by Sekoia, duplicate it and edit the runbook on the copy. The duplicated rule will not receive automatic updates from Sekoia.
+{% hint style="success" %}
+**Custom rules vs. Sekoia rules**
+
+You can edit the runbook of any detection rule you created. If the triggering rule was built by Sekoia, duplicate it and edit the runbook on the copy. The duplicated rule will not receive automatic updates from Sekoia.
+{% endhint %}
 
 ## Edit the runbook
 
@@ -28,10 +31,13 @@ Sekoia Elevate generates a runbook automatically for every detection rule, inclu
 4. Edit the **Detection Rational**, **Legitimate scenarios** or **Investigation questions** according to your needs.
 5. Select **Save runbook**.
 
-![Runbook panel showing its three sections and the Edit runbook button](/assets/elevate/runbook-from-alert.png){: style="max-width:100%"}
+![Runbook panel showing its three sections and the Edit runbook button](../../../assets/elevate/runbook-from-alert.png)
 
-!!! note "Scope of runbook changes"
-    Runbook modifications apply to all communities in your workspace. From the next alert triggered by this rule, the agent applies your updated runbook.
+{% hint style="info" %}
+**Scope of runbook changes**
+
+Runbook modifications apply to all communities in your workspace. From the next alert triggered by this rule, the agent applies your updated runbook.
+{% endhint %}
 
 ## Result
 
@@ -39,6 +45,6 @@ The agent uses your updated runbook for every new alert triggered by this detect
 
 ## Related articles
 
-- [The Elevate investigation method](/xdr/features/modules/elevate_investigation_method.md): How runbooks, reasoning questions, findings and verdicts work together.
-- [Add custom instructions for an Elevate agent](/xdr/features/modules/elevate_custom_instructions.md): How to give the agent environment-specific context at the workspace or community level.
-- [Write effective instructions for Elevate](/xdr/features/modules/elevate_instructions_best_practices.md): Guidance and examples for instructions that improve investigation quality.
+- [The Elevate investigation method](elevate_investigation_method.md): How runbooks, reasoning questions, findings and verdicts work together.
+- [Add custom instructions for an Elevate agent](elevate_custom_instructions.md): How to give the agent environment-specific context at the workspace or community level.
+- [Write effective instructions for Elevate](elevate_instructions_best_practices.md): Guidance and examples for instructions that improve investigation quality.

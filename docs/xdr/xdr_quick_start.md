@@ -16,7 +16,7 @@ An Entity is an organizational unit mostly used for configuration and reporting 
 1. Go to the Entities page and create an Entity.
 2. Select the `Alert generation` mode of your choice.  We suggest you to select “Automatic” which will simplify the workflow of alert management for you. More details [here](https://docs.sekoia.com/xdr/features/collect/entities/).
 
-![entities](/assets/operation_center/quick_start/entities.png){: style="max-width:100%"}
+![entities](../assets/operation_center/quick_start/entities.png)
 
 ### Create intakes
 
@@ -27,10 +27,11 @@ To create intakes associated to the technology you would like to collect:
 1. Go to the Intakes page and create intakes one by one from the catalog.
 2. Make sure the logs are pushed to Sekoia.io using [syslog](https://docs.sekoia.com/integration/ingestion_methods/syslog/overview/) or [HTTPS](https://docs.sekoia.com/integration/ingestion_methods/https/overview/) protocols providing the `Intake key` accordingly, or pulled by API.
 
-!!! note
-    Find more details on each integration in our [integrations catalog](https://docs.sekoia.com/integration/).
+{% hint style="info" %}
+Find more details on each integration in our [integrations catalog](https://docs.sekoia.com/integration/).
+{% endhint %}
 
-![intakes](/assets/operation_center/quick_start/intakes.png){: style="max-width:100%"}
+![intakes](../assets/operation_center/quick_start/intakes.png)
 
 ### Activate detection rules
 
@@ -39,7 +40,7 @@ Once your event logs are collected and normalized by Sekoia.io, you probably wan
 1. Enable all detection rules of effort levels 1 or 2 by filtering on each effort level then clicking on the `Enable all` button.
 2. Automate the activation of future detection rules with the same effort levels following [this procedure](https://docs.sekoia.com/xdr/features/detect/rules_catalog/#enable-new-rules).
 
-![rules](/assets/operation_center/quick_start/rules.png){: style="max-width:100%"}
+![rules](../assets/operation_center/quick_start/rules.png)
 
 **That’s it!**
 

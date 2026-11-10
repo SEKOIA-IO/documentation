@@ -4,7 +4,7 @@ type: playbook
 
 # Palo Alto Cortex XSIAM
 
-![Palo Alto Cortex XSIAM](/assets/playbooks/library/palo-alto-cortex-xsiam.png){ align=right width=150 }
+![Palo Alto Cortex XSIAM](../../../../assets/playbooks/library/palo-alto-cortex-xsiam.png)
 
 Palo Alto Cortex XSIAM is Palo Alto Networks’ security analytics platform that unifies SIEM, XDR, threat intelligence and SOAR for real-time detection and response.
 

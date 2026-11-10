@@ -21,7 +21,7 @@ The SHC is built on three design pillars.
 
 ## Available commands
 
-Run `./run-shc.sh` without a command to open the TUI. Use it for streamed command output, installation progress, and live Machines, Kubernetes, Storage, and Diagnostics views. See [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md).
+Run `./run-shc.sh` without a command to open the TUI. Use it for streamed command output, installation progress, and live Machines, Kubernetes, Storage, and Diagnostics views. See [Use the SHC interface](../operations/controller_interface.md).
 
 The SHC accepts the following commands, in the TUI and in one-shot CLI mode:
 
@@ -33,11 +33,14 @@ The SHC accepts the following commands, in the TUI and in one-shot CLI mode:
 | `exec <MODULE> --set KEY=VALUE` | Runs a module with a configuration value overridden for this run only. Repeat `--set` to override several values. |
 | `help` | Displays the command reference. |
 | `help <MODULE>` | Lists the configuration keys that the module accepts as `--set` overrides, with their default value and format. |
-| `config help [PREFIX]` | Displays the configuration reference. See [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md#inspect-the-configuration-with-the-shc). |
+| `config help [PREFIX]` | Displays the configuration reference. See [Configure the deployment](deployment_configuration.md#inspect-the-configuration-with-the-shc). |
 | `config show [PREFIX]` | Displays the computed configuration. |
 
-!!! note "Runtime overrides"
-    A module accepts `--set` only for the keys it declares. To see them, run `help <MODULE>`. An override applies to the module and to the prerequisite modules it runs, and is never written to `config.yml`. The values `on`, `off`, `yes`, and `no` stay text values: a boolean key accepts only `true` or `false`.
+{% hint style="info" %}
+**Runtime overrides**
+
+A module accepts `--set` only for the keys it declares. To see them, run `help <MODULE>`. An override applies to the module and to the prerequisite modules it runs, and is never written to `config.yml`. The values `on`, `off`, `yes`, and `no` stay text values: a boolean key accepts only `true` or `false`.
+{% endhint %}
 
 To display the list of SHC modules grouped by function, run:
 
@@ -45,70 +48,74 @@ To display the list of SHC modules grouped by function, run:
 list
 ```
 
-??? example "Example output"
-    ```text
-    Release management
-    DownloadDataFiles          Download self-hosted data bundles from S3 to local storage
-    DownloadReleaseFiles       Download release files from S3 to local storage
-    PushArgoStacks             Sync ArgoCD application stacks to the git repository
-    PushCharts                 Push Helm chart archives to the OCI registry
-    PushDataBundles            Push self-hosted data bundles to the OCI registry
-    PushImages                 Push Docker image archives to the OCI registry
-    UpdatePlatformData         Update intake formats and rules catalog data releases
+<details>
+<summary>Example output</summary>
 
-    Preflight checks
-    CheckKubernetesCluster     Check the Kubernetes cluster is reachable and all nodes are Ready
-    CheckLocalConfig           Validate the local controller configuration file
-    CheckLocalGit              Verify connectivity and access to the git repository
-    CheckLocalOCIRegistry      Verify push/pull/delete access to the OCI registry
-    CheckLocalReleaseFiles     Verify that all release files are present on disk
-    CheckLocalTools            Check presence of local binary tools
-    CheckNodePortReachability  Check every node can reach the other nodes on the cluster ports (6443, etcd, cilium, intake)
-    CheckS3Performance         Benchmark the S3 endpoint per worker node with warp and check thresholds
-    CheckServerSpec            Check that servers meet hardware and OS requirements
-    CheckServersAreReachable   Check SSH connectivity to all configured servers
+```text
+Release management
+DownloadDataFiles          Download self-hosted data bundles from S3 to local storage
+DownloadReleaseFiles       Download release files from S3 to local storage
+PushArgoStacks             Sync ArgoCD application stacks to the git repository
+PushCharts                 Push Helm chart archives to the OCI registry
+PushDataBundles            Push self-hosted data bundles to the OCI registry
+PushImages                 Push Docker image archives to the OCI registry
+UpdatePlatformData         Update intake formats and rules catalog data releases
 
-    Installation
-    Install                    Run the full installation workflow
-    K3SInstall                 Install a K3s cluster on managers and workers via Ansible
-    PlatformInstallation       Run the platform installation via a single installer job
+Preflight checks
+CheckKubernetesCluster     Check the Kubernetes cluster is reachable and all nodes are Ready
+CheckLocalConfig           Validate the local controller configuration file
+CheckLocalGit              Verify connectivity and access to the git repository
+CheckLocalOCIRegistry      Verify push/pull/delete access to the OCI registry
+CheckLocalReleaseFiles     Verify that all release files are present on disk
+CheckLocalTools            Check presence of local binary tools
+CheckNodePortReachability  Check every node can reach the other nodes on the cluster ports (6443, etcd, cilium, intake)
+CheckS3Performance         Benchmark the S3 endpoint per worker node with warp and check thresholds
+CheckServerSpec            Check that servers meet hardware and OS requirements
+CheckServersAreReachable   Check SSH connectivity to all configured servers
 
-    Operations
-    Backups                    Check (-m status) or trigger (-m run_now) Vault, PostgreSQL, ArangoDB and ClickHouse backups
-    GetKubeconfig              Retrieve kubeconfig from the first K3s manager node
-    GetServerStatus            Fetch live status (CPU/RAM/disk/load) for all servers, read-only
-    ImportArangoCollection     Import one or more ArangoDB collections from S3 or a local directory (mirrors arango-export)
-    KubeCrashRecovery          Restart all pods in ordered namespace phases
-    PlatformAccess             Display platform access credentials (URLs, users, passwords)
-    RebootNodes                Reboot all nodes in the inventory
-    RestartAllMicroservices    Restart all marked microservices and wait for their rollouts, leaving databases running
-    ScaleServices              Scale Deployments (e.g. ingest/sigma-workflow workers) to their configured replica count
+Installation
+Install                    Run the full installation workflow
+K3SInstall                 Install a K3s cluster on managers and workers via Ansible
+PlatformInstallation       Run the platform installation via a single installer job
 
-    Diagnostics
-    CleanupHelmReleases        Remove pending, failed, or uninstalling Helm revision secrets
-    DebugArgoCD                Display ArgoCD status dashboard (repositories, root app, applications)
-    DebugArgoCDSyncAll         Sync all ArgoCD applications (partial → restart operator → full sync)
-    DebugDatabases             Report health of StatefulSets and CNPG Clusters in support namespace
-    DebugMissingSecrets        Check SecretGenerator objects for missing or incomplete secrets
-    DebugResourceAllocation    Show per-pod RAM request vs actual usage, sorted by waste
-    Diagnostic                 Run diagnostic checks on the self-hosted platform
+Operations
+Backups                    Check (-m status) or trigger (-m run_now) Vault, PostgreSQL, ArangoDB and ClickHouse backups
+GetKubeconfig              Retrieve kubeconfig from the first K3s manager node
+GetServerStatus            Fetch live status (CPU/RAM/disk/load) for all servers, read-only
+ImportArangoCollection     Import one or more ArangoDB collections from S3 or a local directory (mirrors arango-export)
+KubeCrashRecovery          Restart all pods in ordered namespace phases
+PlatformAccess             Display platform access credentials (URLs, users, passwords)
+RebootNodes                Reboot all nodes in the inventory
+RestartAllMicroservices    Restart all marked microservices and wait for their rollouts, leaving databases running
+ScaleServices              Scale Deployments (e.g. ingest/sigma-workflow workers) to their configured replica count
 
-    Uninstall
-    CleanupCilium              Destructively remove Cilium networking on dedicated nodes after K3s is stopped
-    K3SUninstall               Uninstall K3s and remove Cilium networking on dedicated nodes via Ansible
-    PlatformDestroy            Irreversibly destroy the platform (requires modules.platform_scale_down.enabled; auto-mode Ceph disk wiping also requires
-                               modules.wipe_storage.enabled)
-    PlatformScaleDown          Irreversibly delete non-protected namespaces and verify client volume release
-    WipeStorageDisks           Wipe auto-mode Ceph disks and Rook host state (requires modules.wipe_storage.enabled; K3s/Ceph stopped)
+Diagnostics
+CleanupHelmReleases        Remove pending, failed, or uninstalling Helm revision secrets
+DebugArgoCD                Display ArgoCD status dashboard (repositories, root app, applications)
+DebugArgoCDSyncAll         Sync all ArgoCD applications (partial → restart operator → full sync)
+DebugDatabases             Report health of StatefulSets and CNPG Clusters in support namespace
+DebugMissingSecrets        Check SecretGenerator objects for missing or incomplete secrets
+DebugResourceAllocation    Show per-pod RAM request vs actual usage, sorted by waste
+Diagnostic                 Run diagnostic checks on the self-hosted platform
 
-    Internal
-    HelmInstall                Install Helm and deploy offline charts via Ansible
-    InstanceBootstrap          Bootstrap default storage and per-community Quickwit indexes
-    PlatformConfigurationFile  Generate the platform-installer Helm values file
-    SyncArgoRootApp            Sync the ArgoCD root application and wait for completion
-    SyncIntakeFormats          Sync the intake formats data bundle through ArgoCD
-    SyncRulesCatalog           Sync the rules catalog data bundle through ArgoCD
-    ```
+Uninstall
+CleanupCilium              Destructively remove Cilium networking on dedicated nodes after K3s is stopped
+K3SUninstall               Uninstall K3s and remove Cilium networking on dedicated nodes via Ansible
+PlatformDestroy            Irreversibly destroy the platform (requires modules.platform_scale_down.enabled; auto-mode Ceph disk wiping also requires
+                           modules.wipe_storage.enabled)
+PlatformScaleDown          Irreversibly delete non-protected namespaces and verify client volume release
+WipeStorageDisks           Wipe auto-mode Ceph disks and Rook host state (requires modules.wipe_storage.enabled; K3s/Ceph stopped)
+
+Internal
+HelmInstall                Install Helm and deploy offline charts via Ansible
+InstanceBootstrap          Bootstrap default storage and per-community Quickwit indexes
+PlatformConfigurationFile  Generate the platform-installer Helm values file
+SyncArgoRootApp            Sync the ArgoCD root application and wait for completion
+SyncIntakeFormats          Sync the intake formats data bundle through ArgoCD
+SyncRulesCatalog           Sync the rules catalog data bundle through ArgoCD
+```
+
+</details>
 
 ExaLog, the event storage and search capability, runs on Quickwit. Some module names, logs, and configuration keys keep the `quickwit` name, such as the `InstanceBootstrap` description above.
 
@@ -118,8 +125,8 @@ The following commands delete data, interrupt the service, or exist for Sekoia s
 
 | Command | Category | Effect |
 | :--- | :--- | :--- |
-| `PlatformDestroy` | Destructive | Deletes the platform workloads, uninstalls K3s, and wipes the Ceph disks. Everything stored on Ceph is lost. Requires `modules.platform_scale_down.enabled` and, in `auto` storage mode, `modules.wipe_storage.enabled`. See [Reset or destroy the platform](/self_hosted/1.0.1/operations/reset_platform.md). |
-| `PlatformScaleDown` | Destructive | Deletes the platform namespaces and the platform data stored in the cluster, and keeps the Kubernetes cluster. Requires `modules.platform_scale_down.enabled`. See [Reset or destroy the platform](/self_hosted/1.0.1/operations/reset_platform.md). |
+| `PlatformDestroy` | Destructive | Deletes the platform workloads, uninstalls K3s, and wipes the Ceph disks. Everything stored on Ceph is lost. Requires `modules.platform_scale_down.enabled` and, in `auto` storage mode, `modules.wipe_storage.enabled`. See [Reset or destroy the platform](../operations/reset_platform.md). |
+| `PlatformScaleDown` | Destructive | Deletes the platform namespaces and the platform data stored in the cluster, and keeps the Kubernetes cluster. Requires `modules.platform_scale_down.enabled`. See [Reset or destroy the platform](../operations/reset_platform.md). |
 | `WipeStorageDisks` | Destructive | Wipes the Ceph disks and the Rook host state of every node. Requires `modules.wipe_storage.enabled`, with K3s and Ceph stopped. |
 | `K3SUninstall` | Destructive | Uninstalls K3s and removes the Cilium networking from every node. It requires no safety flag. |
 | `CleanupCilium` | Destructive | Removes the Cilium networking from nodes where K3s is stopped. It requires no safety flag. |
@@ -166,7 +173,7 @@ When a module fails, `Install` stops on that module and the log reports `Install
 To resume the installation:
 
 1. Fix the cause reported in the log.
-2. Run `exec Install` again, or run the failed module alone with `exec <MODULE>`, then the next modules of the plan in order, as in the [step-by-step deployment](/self_hosted/1.0.1/deployment/deployment_guide.md#option-2-step-by-step-deployment).
+2. Run `exec Install` again, or run the failed module alone with `exec <MODULE>`, then the next modules of the plan in order, as in the [step-by-step deployment](deployment_guide.md#option-2-step-by-step-deployment).
 
 `Install` always starts again from the `checks` stage. On nodes where K3s already runs, `CheckServerSpec` skips its port and storage disk checks, `CheckNodePortReachability` is skipped once every node runs K3s, and `K3SInstall` does not reinstall K3s.
 
@@ -176,8 +183,11 @@ A failed `PlatformInstallation` removes its installer job and the `shpi-*` Helm 
 
 An installation interrupted during a Helm operation leaves the Helm release in a `pending-install`, `pending-upgrade`, `pending-rollback`, `failed`, or `uninstalling` state, which blocks the next Helm operation on that release. `CleanupHelmReleases` deletes these revision records in every namespace before each module that runs Helm. The deployed and superseded revisions and the resources created by the charts are preserved.
 
-!!! warning "Run it only when no Helm operation is in progress"
-    `CleanupHelmReleases` also deletes the record of a Helm operation that is still running. Do not run a module that depends on it while another SHC session is installing or upgrading the platform.
+{% hint style="warning" %}
+**Run it only when no Helm operation is in progress**
+
+`CleanupHelmReleases` also deletes the record of a Helm operation that is still running. Do not run a module that depends on it while another SHC session is installing or upgrading the platform.
+{% endhint %}
 
 ### Post-installation bootstrap
 
@@ -190,7 +200,7 @@ The last two modules of the `platform` stage bring a freshly-installed region in
 
 On a new region ExaLog has no index, so without this step the indexers stay idle and never write to your S3-compatible storage.
 
-`ScaleServices` then scales the ingestion and detection Deployments (for example `ingestworker1` and `sigma-workflow-worker1`) to their configured replica count. Deployments already at their target count are left untouched. The module runs last so the workers start consuming only once the storage layer is ready. See [Worker replica counts](/self_hosted/1.0.1/deployment/deployment_configuration.md#worker-replica-counts) for the configuration mapping and [Change worker replica counts](/self_hosted/1.0.1/operations/apply_configuration_change.md#change-worker-replica-counts) to apply it without a full installation run.
+`ScaleServices` then scales the ingestion and detection Deployments (for example `ingestworker1` and `sigma-workflow-worker1`) to their configured replica count. Deployments already at their target count are left untouched. The module runs last so the workers start consuming only once the storage layer is ready. See [Worker replica counts](deployment_configuration.md#worker-replica-counts) for the configuration mapping and [Change worker replica counts](../operations/apply_configuration_change.md#change-worker-replica-counts) to apply it without a full installation run.
 
 ## Lifecycle operations
 
@@ -201,27 +211,27 @@ The SHC handles the full platform lifecycle beyond initial installation.
 | Post-deployment health check | `CheckKubernetesCluster`, `DebugArgoCD` |
 | Database diagnostics | `DebugDatabases` |
 | Resource usage analysis | `DebugResourceAllocation` |
-| Apply a change of `config.yml` to an installed platform | `Install`. See [Apply a configuration change](/self_hosted/1.0.1/operations/apply_configuration_change.md). |
+| Apply a change of `config.yml` to an installed platform | `Install`. See [Apply a configuration change](../operations/apply_configuration_change.md). |
 | Platform configuration re-apply | `PlatformConfigurationFile`, `PlatformInstallation` |
 | Full ArgoCD re-synchronization | `DebugArgoCDSyncAll` |
-| Cold restart of the whole cluster, with a full outage | `RebootNodes`, then `KubeCrashRecovery`. See [Run a cold restart of the whole cluster](/self_hosted/1.0.1/operations/node_maintenance.md#run-a-cold-restart-of-the-whole-cluster). |
-| Restart every pod after a crash of several nodes, with a full outage | `KubeCrashRecovery`. See [KubeCrashRecovery](/self_hosted/1.0.1/troubleshooting/debug_tool.md#kubecrashrecovery). |
+| Cold restart of the whole cluster, with a full outage | `RebootNodes`, then `KubeCrashRecovery`. See [Run a cold restart of the whole cluster](../operations/node_maintenance.md#run-a-cold-restart-of-the-whole-cluster). |
+| Restart every pod after a crash of several nodes, with a full outage | `KubeCrashRecovery`. See [KubeCrashRecovery](../troubleshooting/debug_tool.md#kubecrashrecovery). |
 | Live node resource usage | `GetServerStatus` |
 | Service health check per platform area | `Diagnostic` |
-| Import the CTI database | `ImportArangoCollection`. See [Import the CTI database](/self_hosted/1.0.1/operations/import_cti_database.md). |
-| Check or trigger the backups | `Backups`. See [Back up the platform](/self_hosted/1.0.1/operations/backups.md). |
-| Update the detection rules and the intake formats | `UpdatePlatformData`. See [Update the security content](/self_hosted/1.0.1/operations/update_security_content.md). |
-| Rotate the platform certificate or credentials | `PlatformConfigurationFile`, `PlatformInstallation`, `RestartAllMicroservices`. See [Rotate the certificate and credentials](/self_hosted/1.0.1/operations/rotate_certificate_and_credentials.md). |
+| Import the CTI database | `ImportArangoCollection`. See [Import the CTI database](../operations/import_cti_database.md). |
+| Check or trigger the backups | `Backups`. See [Back up the platform](../operations/backups.md). |
+| Update the detection rules and the intake formats | `UpdatePlatformData`. See [Update the security content](../operations/update_security_content.md). |
+| Rotate the platform certificate or credentials | `PlatformConfigurationFile`, `PlatformInstallation`, `RestartAllMicroservices`. See [Rotate the certificate and credentials](../operations/rotate_certificate_and_credentials.md). |
 | Object storage performance benchmark, at the request of Sekoia support | `CheckS3Performance` |
 | Clean up interrupted Helm operations | `CleanupHelmReleases` |
 | Redeploy the detection rules catalog and the intake formats | `SyncRulesCatalog`, `SyncIntakeFormats` |
-| Delete the platform workloads and keep the cluster | `PlatformScaleDown`. See [Reset or destroy the platform](/self_hosted/1.0.1/operations/reset_platform.md). |
-| Destroy the platform and wipe the storage disks | `PlatformDestroy`. See [Reset or destroy the platform](/self_hosted/1.0.1/operations/reset_platform.md). |
+| Delete the platform workloads and keep the cluster | `PlatformScaleDown`. See [Reset or destroy the platform](../operations/reset_platform.md). |
+| Destroy the platform and wipe the storage disks | `PlatformDestroy`. See [Reset or destroy the platform](../operations/reset_platform.md). |
 
 ## Related links
 
-- [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md): Step-by-step installation instructions.
-- [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md): Starter configuration and required-field reference.
-- [Debug your deployment](/self_hosted/1.0.1/troubleshooting/debug_tool.md): Full SHC debug command reference.
-- [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md): The interactive interface of the SHC.
-- [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md): Targeted Prometheus health checks per platform area.
+- [Deploy the platform](deployment_guide.md): Step-by-step installation instructions.
+- [Configure the deployment](deployment_configuration.md): Starter configuration and required-field reference.
+- [Debug your deployment](../troubleshooting/debug_tool.md): Full SHC debug command reference.
+- [Use the SHC interface](../operations/controller_interface.md): The interactive interface of the SHC.
+- [Run platform diagnostics](../monitoring/run_diagnostics.md): Targeted Prometheus health checks per platform area.

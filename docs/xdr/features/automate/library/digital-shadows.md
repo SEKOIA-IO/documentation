@@ -4,7 +4,7 @@ type: playbook
 
 # Digital Shadows
 
-![Digital Shadows](/assets/playbooks/library/digital-shadows.png){ align=right width=150 }
+![Digital Shadows](../../../../assets/playbooks/library/digital-shadows.png)
 
 Digital Shadows is a cybersecurity company that offers digital risk protection solutions to help organizations manage their digital footprints and detect threats. It provides monitoring and intelligence to safeguard against data leaks, phishing, and other cyber risks.
 

@@ -4,24 +4,27 @@ Once your event logs are collected and normalized by Sekoia, you probably want t
 
 All rules are applied to your event stream in real-time, so that you can detect - and respond to - threats as fast as possible.
 
-See the [dedicated FAQ page](/xdr/FAQ/intelligence/detection_rules.md) related to detection rule strategy.
+See the [dedicated FAQ page](../../FAQ/intelligence/detection_rules.md) related to detection rule strategy.
 
 ## Detection Rule Types
 
 Sekoia supports the following detection types:
 
-- **Sigma**: signature rules using the [Sigma detection language](/xdr/features/detect/sigma.md)
-- **SOL**: detection rules that execute a Sekoia Operating Language (SOL) query on a defined schedule and generate alerts when the query returns results. You can reuse existing SOL investigation queries as detections without converting them to another rule language. See the [SOL detection rules overview](/xdr/features/detect/sol_detection_rule.md).
+- **Sigma**: signature rules using the [Sigma detection language](sigma.md)
+- **SOL**: detection rules that execute a Sekoia Operating Language (SOL) query on a defined schedule and generate alerts when the query returns results. You can reuse existing SOL investigation queries as detections without converting them to another rule language. See the [SOL detection rules overview](sol_detection_rule.md).
 - **CTI**: rules based on Indicators Of Compromise (IOCs) coming from a Threat Intelligence feed. These rules automatically detect thousands of known malicious indicators (such as domain names, URLs, IP addresses, etc.). A CTI rule "SEKOIA Intelligence Feed" is already built-in to detect malicious activity based on a list of indicators from Sekoia's own Intelligence feed, continuously updated by our Threat & Detection Research team
-- **Anomaly**: [univariate anomaly detection rules](/xdr/features/detect/anomaly.md).
+- **Anomaly**: [univariate anomaly detection rules](anomaly.md).
 
 ## Rules Catalog
 
 The Rules Catalog page can be used to list and manage all detection rules. Many filters are available and can be combined to easily find the rules you are looking for.
 
-!!! tip "Manage rules in bulk"
+{% hint style="success" %}
+**Manage rules in bulk**
 
-    You can enable or disable rules one by one or all at once according to the current filters.
+
+You can enable or disable rules one by one or all at once according to the current filters.
+{% endhint %}
 
 ### Rules Attributes
 
@@ -92,9 +95,12 @@ To streamline your security operations, Sekoia provides an option to automatical
 - Enable "Automatically disable deprecated rules"
 - When enabled, deprecated rules will be automatically disabled on their deprecation date
 
-!!! tip "Review deprecated custom rules"
+{% hint style="success" %}
+**Review deprecated custom rules**
 
-    We recommend enabling automatic deprecation for Sekoia's verified rules to stay aligned with the latest detection strategies. You may want to review deprecated custom rules manually before they are disabled to avoid losing a required detection.
+
+We recommend enabling automatic deprecation for Sekoia's verified rules to stay aligned with the latest detection strategies. You may want to review deprecated custom rules manually before they are disabled to avoid losing a required detection.
+{% endhint %}
 
 #### Intake formats
 
@@ -102,11 +108,11 @@ Rules are associated with Intake formats that they are compatible with. Detectio
 
 Select an intake format in the left panel to list rules compatible with the intake format.
 
-![intakes](/assets/operation_center/rules_catalog/filter_by_intake.png)
+![intakes](../../../assets/operation_center/rules_catalog/filter_by_intake.png)
 
 You can also filter by intake formats that you have already configured with the associated filter.
 
-![filter](/assets/operation_center/rules_catalog/intake_configured.png)
+![filter](../../../assets/operation_center/rules_catalog/intake_configured.png)
 
 #### Threats
 
@@ -114,11 +120,11 @@ Rules are associated with Threats or Attack Pattern that they can detect.
 
 Use the associated search filter to list rules associated to specific threats.
 
-![threats](/assets/operation_center/rules_catalog/search_filters.png)
+![threats](../../../assets/operation_center/rules_catalog/search_filters.png)
 
 #### Tags
 
-To have a filtered view of your rules, you can rely on filters cited before (Available/Verified, [Effort level](/xdr/features/detect/rules_catalog.md#effort-level), Capabilities) but also on tags associated with rules.
+To have a filtered view of your rules, you can rely on filters cited before (Available/Verified, [Effort level](rules_catalog.md#effort-level), Capabilities) but also on tags associated with rules.
 
 These tags are defined by Sekoia analysts to help make searching for a rule easier and provide categories such as `AWS`, `CVE`, `O365` and `phishing`.
 
@@ -134,14 +140,14 @@ The MITRE ATT&CK framework is a comprehensive matrix of **tactics** and **techni
 
 Whenever you filter the Rules Catalog, the matrix will update and rules will appear in blue on the matrix in one or many cells. Each cell represents an attack technique.
 
-![security_profile](/assets/operation_center/rules_catalog/security_profilev3.png)
+![security_profile](../../../assets/operation_center/rules_catalog/security_profilev3.png)
 
 The color changes depending on the number of rules contained in one cell:
 
 - Colored cells signify the presence of rules. **Darker cells** indicate a higher number of rules available for that specific technique. **Lighter cells** suggest that there are fewer enabled rules for the technique.
 - A white cell means that no rule is available for that technique.
 
-![mitre_details](/assets/operation_center/rules_catalog/mitre_details.gif)
+![mitre_details](../../../assets/operation_center/rules_catalog/mitre_details.gif)
 
 Click on the MITRE preview to explore the distribution of rules across each technique and sub-technique.
 
@@ -156,7 +162,7 @@ You can scroll through the MITRE details both horizontally and vertically.
 
 You can click on the name of a rule to display additional details, such as, but not limited to:
 
-- The severity which should be used to later determine the [Alert's Urgency](/xdr/features/investigate/alerts.md#alert-urgency)
+- The severity which should be used to later determine the [Alert's Urgency](../investigate/alerts.md#alert-urgency)
 - The validity date of the rule
 - The category of created alerts
 - Associated Threats
@@ -164,9 +170,9 @@ You can click on the name of a rule to display additional details, such as, but 
 - Known False Positives
 - The detection logic (the rule pattern)
 - Alert filters
-- [Similarity strategy](/xdr/features/investigate/alerts.md#similarity-strategies) for the produced alerts
+- [Similarity strategy](../investigate/alerts.md#similarity-strategies) for the produced alerts
 
-![rule details](/assets/operation_center/rules_catalog/rule_details2.png)
+![rule details](../../../assets/operation_center/rules_catalog/rule_details2.png)
 
 ### Compatible intake formats
 
@@ -174,13 +180,16 @@ This section list the compatible intake formats you can use with the detection r
 
 In the list, the `configured` badge indicates intake formats that are already configured. You can click on the configured intake to go the intake page.
 
-![configured intake](/assets/operation_center/rules_catalog/configured_intake.png)
+![configured intake](../../../assets/operation_center/rules_catalog/configured_intake.png)
 
-!!! tip "Preview MITRE ATT&CK coverage"
+{% hint style="success" %}
+**Preview MITRE ATT&CK coverage**
 
-    You can use this feature to run simulations with the MITRE matrix to improve your security posture.
 
-    Select a new intake to preview the techniques covered when you configure this data source.
+You can use this feature to run simulations with the MITRE matrix to improve your security posture.
+
+Select a new intake to preview the techniques covered when you configure this data source.
+{% endhint %}
 
 ### Alert filters
 
@@ -188,7 +197,7 @@ In the section `Alert filters`, you can consult the list of alert filters that a
 
 Click on the `arrow` to expand the alert filter and consult the exclusion pattern.
 
-![alert filters](/assets/operation_center/rules_catalog/alert_filters.png)
+![alert filters](../../../assets/operation_center/rules_catalog/alert_filters.png)
 
 The `Expired` tab list all the alert filters that had an `expiration date` set and whose date has been reached. Expired alert filters can be deleted if needed.
 
@@ -197,7 +206,7 @@ The `Expired` tab list all the alert filters that had an `expiration date` set a
 To search for rules that have at least one active alert filter, use the search `Alert filter` and select the criteria `Rules with alert filters`.
 All rules with active alert filters will be returned in the list.
 
-![search alert filters](/assets/operation_center/rules_catalog/search_alert_filters.png)
+![search alert filters](../../../assets/operation_center/rules_catalog/search_alert_filters.png)
 
 You can also search for rules that have no active alert filters with the other search criteria.
 
@@ -231,25 +240,34 @@ The Sigma Pattern Testing feature allows SOC analysts to validate detection rule
 
 #### Testing overview
 
-!!! warning "Unsupported rule types"
+{% hint style="warning" %}
+**Unsupported rule types**
 
-    Detection rules with `Sigma Correlation` are not supported for testing. Only `Sigma` rules are supported by the pattern testing feature.
 
-    Correlation rules identify relationships and patterns across multiple events. These capabilities go beyond the scope of standard event search.
+Detection rules with `Sigma Correlation` are not supported for testing. Only `Sigma` rules are supported by the pattern testing feature.
 
-!!! warning "Time-based detection is not supported"
+Correlation rules identify relationships and patterns across multiple events. These capabilities go beyond the scope of standard event search.
+{% endhint %}
 
-    Detection rules with `Time-based detection` are not supported for testing and will not be supported in the future.
+{% hint style="warning" %}
+**Time-based detection is not supported**
 
-    Time-based detection uses modifiers such as `timerange`, `day_of_week`, `day_of_year`, and `public_holiday_in` to detect events during specific time periods. These temporal filters are not supported by the pattern-testing search architecture.
 
-    For more information about time-based detection in Sigma rules, see the [Sigma documentation](/xdr/features/detect/sigma.md#detection-on-specific-time-range).
+Detection rules with `Time-based detection` are not supported for testing and will not be supported in the future.
 
-!!! warning "Large fields may not be searchable"
+Time-based detection uses modifiers such as `timerange`, `day_of_week`, `day_of_year`, and `public_holiday_in` to detect events during specific time periods. These temporal filters are not supported by the pattern-testing search architecture.
 
-    Some fields, such as `process.command_line`, can grow very large. Beyond a certain size, they are not indexed in the storage system, so pattern testing cannot query them or return matches.
+For more information about time-based detection in Sigma rules, see the [Sigma documentation](sigma.md#detection-on-specific-time-range).
+{% endhint %}
 
-    This limitation only affects querying. The live detection system still evaluates the full field value, so the rule can match incoming events as expected.
+{% hint style="warning" %}
+**Large fields may not be searchable**
+
+
+Some fields, such as `process.command_line`, can grow very large. Beyond a certain size, they are not indexed in the storage system, so pattern testing cannot query them or return matches.
+
+This limitation only affects querying. The live detection system still evaluates the full field value, so the rule can match incoming events as expected.
+{% endhint %}
 
 Pattern testing provides two distinct testing modes:
 
@@ -277,7 +295,7 @@ Rule testing allows you to evaluate how a Sigma pattern performs against histori
 2. Create a new rule.
 3. Click the **Test pattern** button to open the testing modal.
 
-![test-pattern](/assets/operation_center/rules_catalog/rules-test-pattern.gif)
+![test-pattern](../../../assets/operation_center/rules_catalog/rules-test-pattern.gif)
 
 ##### Community scope for existing detections
 
@@ -290,18 +308,21 @@ For an MSSP community, **Test pattern** evaluates events according to the detect
 
 The **Community** filter in the Rules Catalog only filters the detections displayed in the list. It does not change the communities evaluated by **Test pattern**, and the test does not currently provide an independent community selector.
 
-!!! warning "The Rules Catalog community filter does not scope Test pattern"
+{% hint style="warning" %}
+**The Rules Catalog community filter does not scope Test pattern**
 
-    Selecting one community in the Rules Catalog does not guarantee that **Test pattern** evaluates events only from that community.
 
-    The community selector in **Rule Details > Rule scope** applies to alert filters. It does not control the scope of **Test pattern**.
+Selecting one community in the Rules Catalog does not guarantee that **Test pattern** evaluates events only from that community.
+
+The community selector in **Rule Details > Rule scope** applies to alert filters. It does not control the scope of **Test pattern**.
+{% endhint %}
 
 For example:
 
 - If the detection rule is disabled, **Test pattern** evaluates events from all communities, even when the Rules Catalog is filtered to one community.
 - If the detection rule is enabled for Communities B and C, **Test pattern** evaluates events from Communities B and C. It does not evaluate Community A unless the detection is also enabled there.
 
-For related answers, see [Questions about detection rules](/xdr/FAQ/intelligence/detection_rules.md#why-does-test-pattern-show-results-from-other-communities).
+For related answers, see [Questions about detection rules](../../FAQ/intelligence/detection_rules.md#why-does-test-pattern-show-results-from-other-communities).
 
 ##### Testing interface
 
@@ -311,7 +332,7 @@ The testing modal displays the following components:
 - **Time range selector**: Choose from 7, 30, or 60 days of historical data
 - **Test pattern button**: Launches the pattern testing process
 
-![test-modal](/assets/operation_center/rules_catalog/rule-test-modal.png)
+![test-modal](../../../assets/operation_center/rules_catalog/rule-test-modal.png)
 
 ##### Running a test
 
@@ -324,7 +345,7 @@ The testing modal displays the following components:
 
 Test results are presented in two complementary formats:
 
-![test-results](/assets/operation_center/rules_catalog/rule-test-results.png)
+![test-results](../../../assets/operation_center/rules_catalog/rule-test-results.png)
 
 **1\. Chronological bar graph**
 
@@ -339,7 +360,7 @@ Test results are presented in two complementary formats:
 - **Show fields** component to select relevant event properties to display
 - **Show more** button for progressive loading of additional results
 
-![test-results-values](/assets/operation_center/rules_catalog/rule-test-results-values.gif)
+![test-results-values](../../../assets/operation_center/rules_catalog/rule-test-results-values.gif)
 
 **3\. Event property analysis**
 
@@ -368,7 +389,7 @@ Alert filter testing includes all rule testing components plus:
 - Displays alert metadata: ID, rule name, creation date, and status
 - **Matches filter**: Boolean indicator showing whether the pattern fully excludes the alert. Helps verify filter effectiveness and coverage
 
-![test-rule-alerts](/assets/operation_center/rules_catalog/rule-test-alerts.png)
+![test-rule-alerts](../../../assets/operation_center/rules_catalog/rule-test-alerts.png)
 
 ##### Alert filter testing process
 
@@ -380,7 +401,7 @@ Alert filter testing includes all rule testing components plus:
    - **Non-matching events**: Events that don't match the filter pattern (will still generate alerts)
 5. **Analyze coverage**: Review both matching and non-matching events to ensure proper filter scope
 
-![test-rule-matching](/assets/operation_center/rules_catalog/rule-test-matching.png)
+![test-rule-matching](../../../assets/operation_center/rules_catalog/rule-test-matching.png)
 
 ##### Alert filter testing best practices
 
@@ -429,15 +450,18 @@ Two options are available: select `All communities` or select a specific communi
 
 If you choose `All communities`, your rule will be available for all your communities and you can enable it later on the desired community.
 
-![Create rules for MSSP community](/assets/operation_center/rules_catalog/create_new_rule_mssp_communities.png)
+![Create rules for MSSP community](../../../assets/operation_center/rules_catalog/create_new_rule_mssp_communities.png)
 
 #### Detection Pattern
 
 This is the detection logic itself. It varies according to the selected rule type.
 
-!!! note "Detection pattern fields"
+{% hint style="info" %}
+**Detection pattern fields**
 
-    Fields available for detection patterns follow the ECS standard. Find them on the Events page under **Show fields and top values**.
+
+Fields available for detection patterns follow the ECS standard. Find them on the Events page under **Show fields and top values**.
+{% endhint %}
 
 #### Security alerts
 
@@ -457,13 +481,19 @@ You can select these event fields in your rule configuration. To do so, click on
 
 In addition to that, these event fields can be added to the `Swappable fields`. A typical example of that is `source.ip` and `destination.ip`.
 
-!!! warning "Sigma correlation rules"
+{% hint style="warning" %}
+**Sigma correlation rules**
 
-    Custom similarity strategies are not supported with Sigma correlation rules. Fields used in the `group-by` clause are used as the similarity strategy.
 
-!!! note "Similarity strategies"
+Custom similarity strategies are not supported with Sigma correlation rules. Fields used in the `group-by` clause are used as the similarity strategy.
+{% endhint %}
 
-    Learn more about similarity strategies in the [alerts documentation](/xdr/features/investigate/alerts.md#similarity-strategies).
+{% hint style="info" %}
+**Similarity strategies**
+
+
+Learn more about similarity strategies in the [alerts documentation](../investigate/alerts.md#similarity-strategies).
+{% endhint %}
 
 ### Edit your custom rules
 
@@ -483,11 +513,11 @@ You can limit a rule's scope with the filters described below. For an MSSP commu
 
 The **Community** filter in the Rules Catalog only filters the detections displayed in the list. It does not define the community scope of **Test pattern** when you test an existing detection.
 
-- **Alert Filters**: are additional patterns that you can add to any rule to exclude matching events. This is useful to exclude known false positives so that your detections are always spot on. It is often easier to create Alert Filters [directly from an Alert](/xdr/features/investigate/alerts.md#create-an-alert-filter).
+- **Alert Filters**: are additional patterns that you can add to any rule to exclude matching events. This is useful to exclude known false positives so that your detections are always spot on. It is often easier to create Alert Filters [directly from an Alert](../investigate/alerts.md#create-an-alert-filter).
 - **Entities**: select the entities this rule should apply to. By default, rules apply to all entities. To ease the selection of entities, users can include or exclude specific entities. Use the filter on top of the table to include or exclude. Have a quick look at your selection by clicking on `selected entities`.
 - **Assets**: select the assets this rule should apply to. By default, rules apply to all assets. To ease the selection of assets, users can include or exclude specific entities. To ease the selection of entities, users can include or exclude specific entities. Use the filter on top of the table to include or exclude. Have a quick look at your selection by clicking on `selected assets`.
 
-![limit-scope](/assets/operation_center/rules_catalog/rules_catalog_filters.png)
+![limit-scope](../../../assets/operation_center/rules_catalog/rules_catalog_filters.png)
 
 When rules have limited scope with selected entities or assets, these rules will not automatically apply to new entities or assets that are later created.
 
@@ -503,7 +533,7 @@ To prevent known false positives from raising alerts in the future:
 
 ### Notify on new rules
 
-![notif_rules](/assets/operation_center/rules_catalog/notification_rules.png)
+![notif_rules](../../../assets/operation_center/rules_catalog/notification_rules.png)
 
 We continuously update the rules catalog with new rules.
 
@@ -517,6 +547,6 @@ Back to top
 
 ## Related articles
 
-[Questions about detection rules](/xdr/FAQ/intelligence/detection_rules.md): Answers to common questions about detection rules and alert filters.
+[Questions about detection rules](../../FAQ/intelligence/detection_rules.md): Answers to common questions about detection rules and alert filters.
 
-[Sigma rules](/xdr/features/detect/sigma.md): Reference for Sigma detection patterns and supported rule behavior.
+[Sigma rules](sigma.md): Reference for Sigma detection patterns and supported rule behavior.

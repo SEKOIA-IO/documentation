@@ -55,12 +55,13 @@ First create a new playbook by following those steps:
 	* **URL**: `YOUR_PRODUCT_EXTERNAL_URL`
 	* **Headers**: `{"Authorization": "Bearer YOUR_EXTERNAL_PRODUCT_API_KEY_NOT_THE_SEKOIAIO_ONE"}`
 
-!!! info
-	Please replace the headers by following your third party product documentation.
+{% hint style="info" %}
+Please replace the headers by following your third party product documentation.
+{% endhint %}
 
 Your playbook should look like the following:
 
-![Playbook Use Case](/assets/operation_center/playbooks/playbook_usecase_request_url.PNG)
+![Playbook Use Case](../../../assets/operation_center/playbooks/playbook_usecase_request_url.PNG)
 
 ## Your Playbook is ready
 
@@ -73,11 +74,11 @@ Your playbook should look like the following:
 - **Confirm** the displayed `Status` is `Succeeded`
 - If you click on a run from the history, you will be redirected to the Graph page. Then you will be able to see the results of each block by clicking on it, as of the following picture:
 
-![Playbook History](/assets/operation_center/playbooks/playbook_history.PNG)
+![Playbook History](../../../assets/operation_center/playbooks/playbook_history.PNG)
 
 ## Bonus
 
-To highlight this specific example, we tested to send a message with alert metadata to a simple [Custom format Intake](/integration/develop_integration/formats/create_a_format.md) of Sekoia.io made for this occasion on a personal Community.
+To highlight this specific example, we tested to send a message with alert metadata to a simple [Custom format Intake](../../../integration/develop_integration/formats/create_a_format.md) of Sekoia.io made for this occasion on a personal Community.
 With the same playbook logic, we only changed the `Request URL` block configuration parameters as following:
 * **JSON**:
 ```json
@@ -87,9 +88,10 @@ With the same playbook logic, we only changed the `Request URL` block configurat
 * **Method**: `post`
 * **URL**: `https://intake.sekoia.io`
 
-!!! info
-	Those configuration parameters were filled-in by following this [documentation](../../features/automate/library/http.md#request-url).
+{% hint style="info" %}
+Those configuration parameters were filled-in by following this [documentation](../../features/automate/library/http.md#request-url).
+{% endhint %}
 
 The result is an event received on Sekoia.io in a dedicated Intake, with the content of the POST request that was mapped in the relevant ECS fields (thanks to the Custom Format) mandatory to display a SMART Description.
 
-![Display the Request](/assets/operation_center/playbooks/request_display.PNG)
+![Display the Request](../../../assets/operation_center/playbooks/request_display.PNG)

@@ -3,7 +3,7 @@
 In the Asset timeline, events that triggered an asset detection will be displayed.
 
 **Steps:** Go to assets page, click on an asset then click on `See trigger event`.
-![Assets_timeline](/assets/operation_center/FAQ/Assets_timeline.png){: style="max-width:80%"}
+![Assets_timeline](../../assets/operation_center/FAQ/Assets_timeline.png)
 
 The details of the event will be displayed in the events page.
 
@@ -13,10 +13,11 @@ Only `account`, `host` and `network` will be taken into account in asset detecti
 
 However, the information of the intake associated can be found by clicking on an event in the timeline.
 
-!!! note
-     For example, a source IP is a field that will be discovered as an atom extracted from an event.
-     This atom can be attached to one or several assets (seen in the Atoms tab).
-     Please consult [this documentation about atoms](https://docs.sekoia.com/xdr/features/collect/assets/#what-is-an-atom).
+{% hint style="info" %}
+ For example, a source IP is a field that will be discovered as an atom extracted from an event.
+ This atom can be attached to one or several assets (seen in the Atoms tab).
+ Please consult [this documentation about atoms](https://docs.sekoia.com/xdr/features/collect/assets/#what-is-an-atom).
+{% endhint %}
 
 ## Is there any impact on the assets set as "Reviewed" ?
 

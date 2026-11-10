@@ -22,7 +22,7 @@ Telemetry on observables only concerns these types of observed data:
 - **Domain Names** linked to Public Top-Level Domains (TLDs) such as .com, .gov.uk, .fr, and others.
 - **File Hashes**
 
-![telemetry-on-objects](/assets/intelligence_center/telemetry/observable-telemetry-types.png)
+![telemetry-on-objects](../../../assets/intelligence_center/telemetry/observable-telemetry-types.png)
 
 ### How it's computed
 
@@ -33,7 +33,7 @@ An observable telemetry is calculated based on the number of time **the value of
 
 The telemetry data is presented in a daily breakdown over the past year, where each day is represented by a compact square box. The color intensity of the square box corresponds to the proportional number of observable sightings.
 
-![telemetry-heatmap](/assets/intelligence_center/telemetry/telemetry-heatmap.png){style="max-width:100%"}
+![telemetry-heatmap](../../../assets/intelligence_center/telemetry/telemetry-heatmap.png)
 
 
 ### Available filters
@@ -58,7 +58,7 @@ The easiest way to access the telemetry of an observable is to follow these step
 2. Search for an observable and open the tab `Observables`
 3. Click on the observable in the table and access the Observable details page
 
-![telemetry-observables](/assets/intelligence_center/telemetry/telemetry-observable.png){style="max-width:100%"}
+![telemetry-observables](../../../assets/intelligence_center/telemetry/telemetry-observable.png)
 
 If your observable is an IPv4, IPv6, a domain name or a file hash, you should be able to access how many times this observable appeared in parsed events.
 
@@ -68,7 +68,7 @@ When a security alert is triggered, context is crucial to understand the urgency
 
 The telemetry visualization can display the past occurrences and fluctuations in the observable's sightings. By comparing the current sighting with historical data, security analysts can determine if the current alert is part of a larger pattern or an isolated incident, aiding in appropriate response decisions.
 
-![telemetry-observables](/assets/intelligence_center/telemetry/telemetry-alerts.png){style="max-width:100%"}
+![telemetry-observables](../../../assets/intelligence_center/telemetry/telemetry-alerts.png)
 
 
 It is possible to see the telemetry of some observables in the graph by following these steps: 
@@ -87,17 +87,18 @@ The telemetry data provides a valuable resource to scrutinize the observable's h
 
 In this case, the telemetry heatmap serves as a dynamic timeline, allowing security analysts to efficiently assess the observable's credibility.
 
-Since you can import external IOCs to the platform by using the [IOC collections](/xdr/features/detect/ioccollections.md) feature, it's possible to generate a `telemetry report` to help verify the viability of the imported IOCs. 
+Since you can import external IOCs to the platform by using the [IOC collections](../../../xdr/features/detect/ioccollections.md) feature, it's possible to generate a `telemetry report` to help verify the viability of the imported IOCs. 
 
-!!! Warning
-    The generated telemetry report contains the associated observable telemetry, not the threat telemetry. This telemetry is calculated based on the occurence of a value, not a threat ID. 
+{% hint style="warning" %}
+The generated telemetry report contains the associated observable telemetry, not the threat telemetry. This telemetry is calculated based on the occurence of a value, not a threat ID. 
+{% endhint %}
 
 
 ## Telemetry of a threat
 
 Sekoia.io employs telemetry visualization to track the occurrence patterns of various threat instances over time. Threats, in this context, encompass distinct categories of intelligence (STIX) objects. 
 
-![telemetry-objects](/assets/intelligence_center/telemetry/object-telemetry-types.png){style="max-width:80%"}
+![telemetry-objects](../../../assets/intelligence_center/telemetry/object-telemetry-types.png)
 
 These are 8 types of objects we have telemetry on: Attack patterns, campaigns, infrastructures, intrusion sets, malware, threat actors, tools, vulnerabilities 
 
@@ -123,7 +124,7 @@ For simple and multi-tenants communities, the following filters are available to
 
 ### How to access it 
 
-![telemetry-heatmap-objects](/assets/intelligence_center/telemetry/telemetry-heatmap-object.png){style="max-width:100%"}
+![telemetry-heatmap-objects](../../../assets/intelligence_center/telemetry/telemetry-heatmap-object.png)
 
 
 You can access the telemetry of a threat by following these guidelines:

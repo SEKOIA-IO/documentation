@@ -19,8 +19,9 @@ Besides matching a rule in real time, an alert can be triggered with a delay whe
         * the log collection was interrupted, if logs are buffered loccaly on customer's side, before being sent later when the collection restarts
         * Reingestion of old logs
 
-!!! Note
-    See more information on `timestamp` and `event.created`fields [here](Events_qa.md).
+{% hint style="info" %}
+See more information on `timestamp` and `event.created`fields [here](Events_qa.md).
+{% endhint %}
 
 ## Alert Storm Control
 
@@ -88,27 +89,28 @@ You can configure a notification when a rule enters a rate-limited state.
 
 ### How it works
 
-- The limit applies to each group of [similar events](/xdr/features/investigate/alerts.md#alert-similarity), so each alert has its own counter.
+- The limit applies to each group of [similar events](../features/investigate/alerts.md#alert-similarity), so each alert has its own counter.
 - The 60-second window starts with the first matching event. The first 10 events are added to the alert, and the following ones are not.
 - After 60 seconds, the counter resets and new matching events are added to the alert again.
 - Events that are not similar go to another alert, with its own counter.
 
-The alert is still created, and its **Occurrence** count only includes the events that were added. The other events are not added later, but they remain available on the [Events page](/xdr/features/investigate/events.md). No indicator is displayed on these events, and no notification is sent.
+The alert is still created, and its **Occurrence** count only includes the events that were added. The other events are not added later, but they remain available on the [Events page](../features/investigate/events.md). No indicator is displayed on these events, and no notification is sent.
 
 **Example:** A rule matches 28 similar events within the same second. The first 10 events create the alert, and the other 18 are not added to it. Testing the rule over the same period returns all 28 events.
 
-!!! note
-    This limit is different from [Alert Storm Control](#alert-storm-control).
+{% hint style="info" %}
+This limit is different from [Alert Storm Control](#alert-storm-control).
 
-    | | Alert Storm Control | Events per alert limit |
-    | --- | --- | --- |
-    | What is counted | Distinct alerts raised by a rule | Events added to the same alert |
-    | Threshold | 30 alerts in 30 seconds | 10 events in 60 seconds |
-    | Effect | No new alert for the rule | Additional events are not added to the alert |
-    | Duration | 30 minutes without a new breach | Until the end of the 60-second window |
-    | Visible in the UI | Rate-limited indicator and notification | No |
+| | Alert Storm Control | Events per alert limit |
+| --- | --- | --- |
+| What is counted | Distinct alerts raised by a rule | Events added to the same alert |
+| Threshold | 30 alerts in 30 seconds | 10 events in 60 seconds |
+| Effect | No new alert for the rule | Additional events are not added to the alert |
+| Duration | 30 minutes without a new breach | Until the end of the 60-second window |
+| Visible in the UI | Rate-limited indicator and notification | No |
+{% endhint %}
 
 **What to do:**
 
-1. To see every event that matched the rule, [test the rule](/xdr/features/detect/rules_catalog.md#rule-testing) over the period of the alert. Sigma correlation rules cannot be tested: search their events on the [Events page](/xdr/features/investigate/events.md) instead.
-2. If bursts of similar events are expected and each event must appear in an alert, create a custom rule with a more specific [similarity strategy](/xdr/features/detect/rules_catalog.md#custom-similarity-strategy). Events with different similarity values go to different alerts, and each alert has its own limit.
+1. To see every event that matched the rule, [test the rule](../features/detect/rules_catalog.md#rule-testing) over the period of the alert. Sigma correlation rules cannot be tested: search their events on the [Events page](../features/investigate/events.md) instead.
+2. If bursts of similar events are expected and each event must appear in an alert, create a custom rule with a more specific [similarity strategy](../features/detect/rules_catalog.md#custom-similarity-strategy). Events with different similarity values go to different alerts, and each alert has its own limit.

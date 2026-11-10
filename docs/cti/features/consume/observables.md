@@ -6,7 +6,7 @@ Use observables to investigate technical values such as IP addresses, domains, U
 
 ## Find an observable
 
-Use the [Intelligence search workflow](/cti/features/consume/intelligence.md) to search for one or more observable values.
+Use the [Intelligence search workflow](intelligence.md) to search for one or more observable values.
 
 When you paste multiple values, review the **Known** and **Unknown** result views. The **Known** view contains values available in the Intelligence database. The **Unknown** view contains values that Sekoia has not identified.
 
@@ -59,7 +59,7 @@ An observable can relate to other observables and intelligence objects. For exam
 - an observable can be associated with a malware, campaign, or intrusion set;
 - an observable can become an IoC when its threat context confirms malicious activity.
 
-Use these relationships to move from a technical value to the wider threat context. For relationship workflows, see [Investigate an object](/cti/features/consume/investigate_an_object.md).
+Use these relationships to move from a technical value to the wider threat context. For relationship workflows, see [Investigate an object](investigate_an_object.md).
 
 ## Review observable details
 
@@ -92,10 +92,10 @@ You find several domains during an investigation and want to check whether Sekoi
 
 ## Related articles
 
-[Intelligence](/cti/features/consume/intelligence.md): How to search and filter objects and observables.
+[Intelligence](intelligence.md): How to search and filter objects and observables.
 
-[Investigate an object](/cti/features/consume/investigate_an_object.md): How to review an object’s context, relationships, graph, and reports.
+[Investigate an object](investigate_an_object.md): How to review an object’s context, relationships, graph, and reports.
 
-[Data model](/cti/features/data_model.md): Reference for objects, observables, relationships, sources, and confidence.
+[Data model](../data_model.md): Reference for objects, observables, relationships, sources, and confidence.
 
-[Graph Explorations](/cti/features/consume/graph_explorations.md): How to explore relationships in a visual graph.
+[Graph Explorations](graph_explorations.md): How to explore relationships in a visual graph.

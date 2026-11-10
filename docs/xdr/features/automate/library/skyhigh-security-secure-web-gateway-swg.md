@@ -1,6 +1,6 @@
 # Skyhigh Security Secure Web Gateway (SWG)
 
-![Skyhigh Security Secure Web Gateway (SWG)](/assets/playbooks/library/skyhigh-security-secure-web-gateway-swg.png){ align=right width=150 }
+![Skyhigh Security Secure Web Gateway (SWG)](../../../../assets/playbooks/library/skyhigh-security-secure-web-gateway-swg.png)
 
 Skyhigh Security Secure Web Gateway (SWG)
 

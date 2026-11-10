@@ -4,7 +4,7 @@ type: playbook
 
 # Palo Alto Cortex XDR (EDR)
 
-![Palo Alto Cortex XDR (EDR)](/assets/playbooks/library/palo-alto-cortex-xdr-edr.png){ align=right width=150 }
+![Palo Alto Cortex XDR (EDR)](../../../../assets/playbooks/library/palo-alto-cortex-xdr-edr.png)
 
 Cortex XDR is the detection and response app that natively integrates network, endpoint and cloud data to stop sophisticated attacks.
 

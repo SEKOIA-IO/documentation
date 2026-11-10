@@ -1,6 +1,6 @@
 # CrowdStrike
 
-![CrowdStrike](/assets/playbooks/library/crowdstrike.png){ align=right width=150 }
+![CrowdStrike](../../../../assets/playbooks/library/crowdstrike.png)
 
 [CrowdStrike] CrowdStrike provides cloud workload and endpoint security, threat intelligence, and cyberattack response services and products.
  This module provides triggers to collect events from CrowdStrike

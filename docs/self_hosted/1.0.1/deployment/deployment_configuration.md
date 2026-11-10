@@ -6,8 +6,11 @@ The SHC combines the built-in defaults, the selected sizing profile, and your `c
 
 This page explains every required field, the settings whose default value is a placeholder, and the most common optional settings. To inspect every other supported setting, use the [SHC configuration commands](#inspect-the-configuration-with-the-shc).
 
-!!! warning "Validation does not catch every incorrect value"
-    `CheckLocalConfig` rejects a required field that is missing or empty, but it does not check the optional fields that your environment needs. For example, the S3 credentials of the online mode are optional for the validator: when they are empty, the installation fails later, when `DownloadReleaseFiles` runs in the `checks` stage. In the same way, when backups are enabled, a missing encryption key stops the installation only in the `platform` stage. To confirm that every value your deployment needs is present and correct, inspect the computed configuration with `config show`, with the precautions described in [Inspect the configuration with the SHC](#inspect-the-configuration-with-the-shc).
+{% hint style="warning" %}
+**Validation does not catch every incorrect value**
+
+`CheckLocalConfig` rejects a required field that is missing or empty, but it does not check the optional fields that your environment needs. For example, the S3 credentials of the online mode are optional for the validator: when they are empty, the installation fails later, when `DownloadReleaseFiles` runs in the `checks` stage. In the same way, when backups are enabled, a missing encryption key stops the installation only in the `platform` stage. To confirm that every value your deployment needs is present and correct, inspect the computed configuration with `config show`, with the precautions described in [Inspect the configuration with the SHC](#inspect-the-configuration-with-the-shc).
+{% endhint %}
 
 ## Create the configuration file
 
@@ -61,8 +64,11 @@ modules:
 
 References such as `${env.STORAGE_S3_REGION}` read values from environment variables when the SHC loads the file. Use this syntax for credentials instead of storing secrets directly in `config.yml`. The former `env.VARIABLE_NAME` syntax is not supported.
 
-!!! warning "Protect the configuration and the credentials"
-    `config.yml` and these environment variables give access to your nodes, registry, Git repository, and storage. Restrict `config.yml`, the SSH private key, and any file that stores the variables to the accounts that need them, for example with `chmod 600`. The SHC container runs as UID 1000 and must still be able to read `config.yml`: when another account owns the file, give UID 1000 read access to it. Do not type a secret value on the command line, for example in `export VARIABLE=value`, because the shell history keeps it. Load the values from a protected file instead, for example with `set -a; . /path/to/shc.env; set +a`.
+{% hint style="warning" %}
+**Protect the configuration and the credentials**
+
+`config.yml` and these environment variables give access to your nodes, registry, Git repository, and storage. Restrict `config.yml`, the SSH private key, and any file that stores the variables to the accounts that need them, for example with `chmod 600`. The SHC container runs as UID 1000 and must still be able to read `config.yml`: when another account owns the file, give UID 1000 read access to it. Do not type a secret value on the command line, for example in `export VARIABLE=value`, because the shell history keeps it. Load the values from a protected file instead, for example with `set -a; . /path/to/shc.env; set +a`.
+{% endhint %}
 
 Set these environment variables before running the SHC:
 
@@ -80,14 +86,14 @@ Set these environment variables before running the SHC:
 | `SEKOIA_INSTANCE_PUBLIC_KEY` | Base64-encoded instance public key provided by Sekoia. |
 | `TRAEFIK_PUBKEY` | Platform certificate in PEM format. See [TLS certificate](#tls-certificate). |
 | `TRAEFIK_PRIVKEY` | Private key of the platform certificate in PEM format. |
-| `SERVERS_SUDO_PASSWORD` | Optional. Password that `sudo` asks for on the nodes, if any. See [Node access](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#node-access). |
+| `SERVERS_SUDO_PASSWORD` | Optional. Password that `sudo` asks for on the nodes, if any. See [Node access](deployment_prerequisites.md#node-access). |
 | `S3_ACCESS_KEY` | Online mode only. Access key for the Sekoia release bucket, provided by Sekoia. |
 | `S3_SECRET_KEY` | Online mode only. Secret key for the Sekoia release bucket, provided by Sekoia. |
 | `BACKUP_VAULT_CRYPT_KEY` | Required when Vault backups are enabled. Encryption key of the Vault snapshots, at least 16 characters. See [Backups](#backups). |
 | `BACKUP_ARANGO_CRYPT_KEY` | Required when ArangoDB backups are enabled. Passphrase of the ArangoDB backups, at least 16 characters. |
 | `BACKUP_CLICKHOUSE_CRYPT_KEY` | Required when ClickHouse backups are enabled. AES-256 key of the ClickHouse backups: exactly 64 hexadecimal characters, for example the output of `openssl rand -hex 32`. |
 
-The [deployment guide](/self_hosted/1.0.1/deployment/deployment_guide.md#step-4-create-the-execution-script) shows how to pass these variables to the SHC container. Pass every variable you set, including the `BACKUP_*` variables when you enable backups.
+The [deployment guide](deployment_guide.md#step-4-create-the-execution-script) shows how to pass these variables to the SHC container. Pass every variable you set, including the `BACKUP_*` variables when you enable backups.
 
 ## Select and adjust a sizing profile
 
@@ -103,14 +109,17 @@ The SHC image ships three sizing profiles. They adjust only the resources whose 
 
 The `sizing/` path resolves against the configuration directory shipped in the SHC image, wherever you mount your own `config.yml`.
 
-The values of the profiles are initial estimates, pending performance validation: the throughput that a profile sustains depends on the events of your site. Once the platform ingests your events, check the consumer lag of the ingestion and detection workers in the [monitoring dashboards](/self_hosted/1.0.1/monitoring/monitoring_guide.md). Asset discovery can fall behind even when event ingestion keeps up.
+The values of the profiles are initial estimates, pending performance validation: the throughput that a profile sustains depends on the events of your site. Once the platform ingests your events, check the consumer lag of the ingestion and detection workers in the [monitoring dashboards](../monitoring/monitoring_guide.md). Asset discovery can fall behind even when event ingestion keeps up.
 
-A profile sets the resources and the replicas of the services, not the number of nodes: size the servers and the object storage with [Cluster sizing](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#cluster-sizing). The 500 GB/day and 2 TB/day profiles target the daily volumes of the Small and Medium sizes of that table. No profile targets the Large size: size it with Sekoia.
+A profile sets the resources and the replicas of the services, not the number of nodes: size the servers and the object storage with [Cluster sizing](deployment_prerequisites.md#cluster-sizing). The 500 GB/day and 2 TB/day profiles target the daily volumes of the Small and Medium sizes of that table. No profile targets the Large size: size it with Sekoia.
 
 The 500 GB/day profile keeps the Kafka partitions, the volume sizes, and the database redundancy of the 1 TB/day profile. An installed 1 TB/day platform can move to it without shrinking its storage.
 
-!!! note "Contact Sekoia before you select the 2 TB/day profile"
-    The 2 TB/day profile runs 12 ExaLog indexing pipelines per community, and the Kafka topic of each community needs at least 12 partitions. The SHC does not set these partitions, and it applies the number of pipelines only to the communities created after the change. Sekoia makes these changes with you.
+{% hint style="info" %}
+**Contact Sekoia before you select the 2 TB/day profile**
+
+The 2 TB/day profile runs 12 ExaLog indexing pipelines per community, and the Kafka topic of each community needs at least 12 partitions. The SHC does not set these partitions, and it applies the number of pipelines only to the communities created after the change. Sekoia makes these changes with you.
+{% endhint %}
 
 ### Override the values of a profile
 
@@ -151,7 +160,7 @@ The counts are examples, not a sizing recommendation. Choose them with Sekoia an
 
 The SHC merges this mapping with the built-in defaults and the selected sizing profile. Deployments that you do not override keep their inherited target counts: omitting one does not remove it from the scaling plan. Review the complete mapping with `config show modules.scale_services.deploy` before applying it. `ScaleServices` processes every entry in that mapping, not only your overrides.
 
-For replica-only changes on an installed platform, follow [Change worker replica counts](/self_hosted/1.0.1/operations/apply_configuration_change.md#change-worker-replica-counts). For a sizing change that also modifies resources, storage, or other platform settings, use the general [configuration-change procedure](/self_hosted/1.0.1/operations/apply_configuration_change.md#change-the-configuration-and-run-install).
+For replica-only changes on an installed platform, follow [Change worker replica counts](../operations/apply_configuration_change.md#change-worker-replica-counts). For a sizing change that also modifies resources, storage, or other platform settings, use the general [configuration-change procedure](../operations/apply_configuration_change.md#change-the-configuration-and-run-install).
 
 ## Required fields
 
@@ -168,7 +177,7 @@ The platform services resolve names outside the cluster only through `global.for
 
 ### Platform storage
 
-The platform stores the ExaLog indexes in S3-compatible object storage. These credentials must allow the platform to use the ExaLog event buckets. The platform does not create these buckets; see [Event storage buckets](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#event-storage-buckets).
+The platform stores the ExaLog indexes in S3-compatible object storage. These credentials must allow the platform to use the ExaLog event buckets. The platform does not create these buckets; see [Event storage buckets](deployment_prerequisites.md#event-storage-buckets).
 
 | Field | Description |
 | :--- | :--- |
@@ -197,10 +206,10 @@ The following optional fields adjust how the platform reaches the storage:
 | Field | Description |
 | :--- | :--- |
 | `utils.ansible.ssh-key` | Private key used by the self-hosted-controller (SHC) to connect to and configure every Kubernetes node. Use an environment-variable reference. |
-| `utils.ansible.user` | SSH user used on every Kubernetes node. The account must meet the requirements in [Node access](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#node-access). |
+| `utils.ansible.user` | SSH user used on every Kubernetes node. The account must meet the requirements in [Node access](deployment_prerequisites.md#node-access). |
 | `utils.ansible.inventory.managers` | List of the IPv4 addresses of the manager nodes. Hostnames and IPv6 addresses are rejected. Set exactly three managers: this is the supported production topology. |
 
-The validator only rejects an empty list of managers: it accepts any other number. Do not deploy another number in production. With one or two managers, etcd has no fault tolerance, and the loss of a single manager stops the Kubernetes API. The manager nodes also run platform workloads, like the worker nodes. See [Cluster sizing](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#cluster-sizing).
+The validator only rejects an empty list of managers: it accepts any other number. Do not deploy another number in production. With one or two managers, etcd has no fault tolerance, and the loss of a single manager stops the Kubernetes API. The manager nodes also run platform workloads, like the worker nodes. See [Cluster sizing](deployment_prerequisites.md#cluster-sizing).
 
 Worker nodes are configured under `utils.ansible.inventory.workers`, with their IPv4 addresses. The field is not required by the configuration validator, but production sizing profiles require workers to provide the expected capacity: when you omit it, the SHC installs a cluster of manager nodes only, without any error.
 
@@ -216,8 +225,11 @@ The SHC publishes the stacks to a branch of this repository, and ArgoCD tracks t
 | :--- | :--- | :--- |
 | `modules.push_argo_stacks.base_branch` | Branch to publish the stacks to and to track in ArgoCD. Required when the repository is empty. Otherwise, the branch must already exist. | Default branch of the repository |
 
-!!! warning "Empty repository"
-    If the repository has no commit yet, set `modules.push_argo_stacks.base_branch`. Without it, `PushArgoStacks` fails. `PushArgoStacks` also fails, without overwriting anything, when its local checkout has uncommitted changes or when the local and remote branches have diverged.
+{% hint style="warning" %}
+**Empty repository**
+
+If the repository has no commit yet, set `modules.push_argo_stacks.base_branch`. Without it, `PushArgoStacks` fails. `PushArgoStacks` also fails, without overwriting anything, when its local checkout has uncommitted changes or when the local and remote branches have diverged.
+{% endhint %}
 
 If the repository requires authentication, use `config help utils.git` to inspect the supported HTTP authentication settings. ArgoCD connects to the repository with a username and a password over HTTP or HTTPS.
 
@@ -255,7 +267,7 @@ The SHC publishes the images under `<project>/images/`, the Helm charts under `<
 
 ### TLS certificate
 
-Traefik serves the platform with your certificate on HTTPS and on the syslog and RELP intake ports. Provide the certificate and its private key in PEM format. The SHC reads them from two environment variables, and the [execution script](/self_hosted/1.0.1/deployment/deployment_guide.md#step-4-create-the-execution-script) passes both to the SHC container.
+Traefik serves the platform with your certificate on HTTPS and on the syslog and RELP intake ports. Provide the certificate and its private key in PEM format. The SHC reads them from two environment variables, and the [execution script](deployment_guide.md#step-4-create-the-execution-script) passes both to the SHC container.
 
 | Field | Environment variable | Description |
 | :--- | :--- | :--- |
@@ -275,17 +287,23 @@ export TRAEFIK_PUBKEY="$(cat /path/to/certificate.pem)"
 export TRAEFIK_PRIVKEY="$(cat /path/to/private-key.pem)"
 ```
 
-!!! warning "A certificate is required"
-    Sekoia Self-Hosted 1.0.1 does not support an installation without a certificate. When `TRAEFIK_PUBKEY` is empty, the `CustomCA` step of the installation fails with `Custom CA not defined`. When the variables are not passed to the SHC container at all, the SHC only logs an `Unresolved template marker` warning: the certificate secret of Traefik then holds no valid certificate, Traefik serves its own default certificate, and the `console` and `ingest` diagnostics report the certificate secret as critical. For a test platform, generate a self-signed certificate that covers the platform hostnames.
+{% hint style="warning" %}
+**A certificate is required**
 
-To check the certificate that the platform serves on HTTPS, syslog, and RELP, see [Check the load balancer listeners](/self_hosted/1.0.1/deployment/network_requirements.md#check-the-load-balancer-listeners). To renew or replace the certificate after the installation, see [Rotate the certificate and credentials](/self_hosted/1.0.1/operations/rotate_certificate_and_credentials.md).
+Sekoia Self-Hosted 1.0.1 does not support an installation without a certificate. When `TRAEFIK_PUBKEY` is empty, the `CustomCA` step of the installation fails with `Custom CA not defined`. When the variables are not passed to the SHC container at all, the SHC only logs an `Unresolved template marker` warning: the certificate secret of Traefik then holds no valid certificate, Traefik serves its own default certificate, and the `console` and `ingest` diagnostics report the certificate secret as critical. For a test platform, generate a self-signed certificate that covers the platform hostnames.
+{% endhint %}
+
+To check the certificate that the platform serves on HTTPS, syslog, and RELP, see [Check the load balancer listeners](network_requirements.md#check-the-load-balancer-listeners). To renew or replace the certificate after the installation, see [Rotate the certificate and credentials](../operations/rotate_certificate_and_credentials.md).
 
 ## Settings with placeholder defaults
 
 The following settings are not required by the validator, but their default values are examples that do not match your environment. `CheckLocalConfig` accepts them as they are, so review each one before the installation.
 
-!!! warning "Replace the placeholder values"
-    With the default values, the platform sends its emails to a server named `mail.server.local` and builds the Grafana links on `admin.sekoia.local`. Set the values for your domain before you run `Install`.
+{% hint style="warning" %}
+**Replace the placeholder values**
+
+With the default values, the platform sends its emails to a server named `mail.server.local` and builds the Grafana links on `admin.sekoia.local`. Set the values for your domain before you run `Install`.
+{% endhint %}
 
 ### Email notifications
 
@@ -315,28 +333,32 @@ The `tls` and `starttls` fields accept only the strings `"True"` and `"False"`, 
 | :--- | :--- | :--- |
 | `global.alternative_hosts` | Additional FQDN accepted by the platform alongside `global.host`. It accepts one hostname. Set it to a hostname of your domain and create its DNS record. | `api.sekoia.local` |
 
-??? example "Placeholder settings in `config.yml`"
-    ```yaml
-    global:
-      alternative_hosts: "api.example.com"
+<details>
+<summary>Placeholder settings in `config.yml`</summary>
 
-    modules:
-      platform_configuration:
-        config:
-          grafana:
-            root_url: "https://admin.example.com/grafana"
-          email:
-            email_sender: "noreply@example.com"
-            smtp:
-              host: "smtp.example.com"
-              port: "587"
-              user: "sekoia"
-              password: "${env.SMTP_PASSWORD}"
-              tls: "False"
-              starttls: "True"
-    ```
+```yaml
+global:
+  alternative_hosts: "api.example.com"
 
-    Pass every environment variable you reference to the SHC container. For example, add `-e SMTP_PASSWORD="$SMTP_PASSWORD"` to the `docker run` command of the [execution script](/self_hosted/1.0.1/deployment/deployment_guide.md#step-4-create-the-execution-script).
+modules:
+  platform_configuration:
+    config:
+      grafana:
+        root_url: "https://admin.example.com/grafana"
+      email:
+        email_sender: "noreply@example.com"
+        smtp:
+          host: "smtp.example.com"
+          port: "587"
+          user: "sekoia"
+          password: "${env.SMTP_PASSWORD}"
+          tls: "False"
+          starttls: "True"
+```
+
+Pass every environment variable you reference to the SHC container. For example, add `-e SMTP_PASSWORD="$SMTP_PASSWORD"` to the `docker run` command of the [execution script](deployment_guide.md#step-4-create-the-execution-script).
+
+</details>
 
 ## Optional settings
 
@@ -355,23 +377,30 @@ The SHC reads the platform release and the security content bundles from local d
 | `global.version.data.detection-rules.version` | Online mode only. Detection rules bundle to download: `latest`, or the release ID of a bundle to pin. | `latest` |
 | `global.version.data.intake-formats.version` | Online mode only. Intake formats bundle to download: `latest`, or the release ID of a bundle to pin. | `latest` |
 | `global.version.data.playbook-library.version` | Online mode only. Playbook library bundle to download: `latest`, or the release ID of a bundle to pin. | `latest` |
-| `global.version.data.cti.version` | CTI export imported by `ImportArangoCollection`: `latest`, a day such as `2026-09-03`, or an exact export such as `2026-09-03T09`. See [Import the CTI database](/self_hosted/1.0.1/operations/import_cti_database.md). | `latest` |
+| `global.version.data.cti.version` | CTI export imported by `ImportArangoCollection`: `latest`, a day such as `2026-09-03`, or an exact export such as `2026-09-03T09`. See [Import the CTI database](../operations/import_cti_database.md). | `latest` |
 | `global.version.data.<TYPE>.path` | Local directory of the bundles of each type. The bundles are stored in a `<TYPE>` subdirectory. | `/opt/sekoia/data/` |
 
-??? example "Online mode in `config.yml`"
-    ```yaml
-    global:
-      version:
-        fetch:
-          endpoint: "https://self-hosted.delivery.sekoia.io"
-    ```
+<details>
+<summary>Online mode in `config.yml`</summary>
 
-    The SHC reads the bucket credentials from the `S3_ACCESS_KEY` and `S3_SECRET_KEY` environment variables. The [execution script](/self_hosted/1.0.1/deployment/deployment_guide.md#step-4-create-the-execution-script) passes them to the container.
+```yaml
+global:
+  version:
+    fetch:
+      endpoint: "https://self-hosted.delivery.sekoia.io"
+```
+
+The SHC reads the bucket credentials from the `S3_ACCESS_KEY` and `S3_SECRET_KEY` environment variables. The [execution script](deployment_guide.md#step-4-create-the-execution-script) passes them to the container.
+
+</details>
 
 The release ID of a bundle is its file name without the `<TYPE>-` prefix and the `.tar.gz` extension. For example, the file `detection-rules-2.20260813-31688094717-35a441d88ed9c2b23b078e476fb35a6c2a40df84.tar.gz` has the release ID `2.20260813-31688094717-35a441d88ed9c2b23b078e476fb35a6c2a40df84`.
 
-!!! note "Bundle selection in air-gapped mode"
-    In air-gapped mode, the `version` fields of the bundles are ignored. The SHC uses the bundle named in the `latest` file of each `data/<TYPE>/` directory.
+{% hint style="info" %}
+**Bundle selection in air-gapped mode**
+
+In air-gapped mode, the `version` fields of the bundles are ignored. The SHC uses the bundle named in the `latest` file of each `data/<TYPE>/` directory.
+{% endhint %}
 
 ### Proxy
 
@@ -390,8 +419,11 @@ Configure these fields when the platform, the container runtime, or the SHC reac
 | `modules.k3s_install.k3s_no_proxy` | Destinations reached without the proxy for image pulls. | `127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,.svc,.cluster.local,.lab` |
 | `utils.git.http.proxy` | Proxy URL used by the SHC for Git operations over HTTP or HTTPS. | Empty |
 
-!!! tip "Keep the default exclusions"
-    To exclude more destinations from the proxy, set them in `additional_no_proxy` instead of editing `no_proxy`. The default `no_proxy` list keeps the cluster-internal and private addresses out of the proxy, and the platform FQDNs are added automatically. Add your Git, OCI registry, and S3 hostnames when they are reachable without the proxy: an address range does not match a hostname.
+{% hint style="success" %}
+**Keep the default exclusions**
+
+To exclude more destinations from the proxy, set them in `additional_no_proxy` instead of editing `no_proxy`. The default `no_proxy` list keeps the cluster-internal and private addresses out of the proxy, and the platform FQDNs are added automatically. Add your Git, OCI registry, and S3 hostnames when they are reachable without the proxy: an address range does not match a hostname.
+{% endhint %}
 
 The SHC computes the final `no_proxy` value when `PlatformConfigurationFile` runs, by concatenating three lists:
 
@@ -401,16 +433,20 @@ The SHC computes the final `no_proxy` value when `PlatformConfigurationFile` run
 
 Duplicate entries are removed. These three fields only apply to the platform components. The image pulls of the nodes use `modules.k3s_install.k3s_no_proxy`, which is applied as is.
 
-??? example "Proxy configuration in `config.yml`"
-    ```yaml
-    modules:
-      platform_configuration:
-        config:
-          proxy:
-            http_proxy: "http://proxy.example.com:3128"
-            https_proxy: "http://proxy.example.com:3128"
-            additional_no_proxy: "git.example.com,registry.example.com,s3.example.com"
-    ```
+<details>
+<summary>Proxy configuration in `config.yml`</summary>
+
+```yaml
+modules:
+  platform_configuration:
+    config:
+      proxy:
+        http_proxy: "http://proxy.example.com:3128"
+        https_proxy: "http://proxy.example.com:3128"
+        additional_no_proxy: "git.example.com,registry.example.com,s3.example.com"
+```
+
+</details>
 
 ### Traefik service IP
 
@@ -420,8 +456,11 @@ Traefik is the HTTP entry point of the platform. The SHC gives its Kubernetes se
 | :--- | :--- | :--- |
 | `modules.platform_configuration.config.traefik.service_ip` | Fixed ClusterIP of the Traefik service, inside the K3s service network `10.43.0.0/16`. Leave empty to let Kubernetes assign one. | `10.43.111.111` |
 
-!!! warning "Empty value disables the internal resolution of the platform FQDNs"
-    When the field is empty, `HelmInstall` adds no entry to CoreDNS, so the platform FQDNs resolve inside the cluster through the DNS servers of `global.forward_dns` only.
+{% hint style="warning" %}
+**Empty value disables the internal resolution of the platform FQDNs**
+
+When the field is empty, `HelmInstall` adds no entry to CoreDNS, so the platform FQDNs resolve inside the cluster through the DNS servers of `global.forward_dns` only.
+{% endhint %}
 
 ### SHC log file
 
@@ -431,26 +470,36 @@ Every SHC run, in CLI or TUI mode, writes its log lines to a dedicated file. The
 | :--- | :--- | :--- |
 | `global.logging.file` | Path of the per-run log file, inside the SHC container. Set it under `/opt/sekoia`, the mount point of `$SEKOIA_LOCAL_DIR`, to keep the file on the orchestration node. The field does not appear in `config help`. | `/tmp/self-hosted-controller.log` |
 
-!!! warning "The default path loses the file"
-    The execution script runs the container with `--rm` and mounts only `$SEKOIA_CONFIG_FILE` and `$SEKOIA_LOCAL_DIR`. With the default value, the file is written to `/tmp` inside the container and deleted when the command exits. Set the field in every deployment.
+{% hint style="warning" %}
+**The default path loses the file**
 
-??? example "Log file on the orchestration node in `config.yml`"
-    ```yaml
-    global:
-      logging:
-        file: /opt/sekoia/logs/self-hosted-controller.log
-    ```
+The execution script runs the container with `--rm` and mounts only `$SEKOIA_CONFIG_FILE` and `$SEKOIA_LOCAL_DIR`. With the default value, the file is written to `/tmp` inside the container and deleted when the command exits. Set the field in every deployment.
+{% endhint %}
 
-    With this value, the log of a run started on 23 October 2026 at 15:30:00 is kept at `$SEKOIA_LOCAL_DIR/logs/20261023-153000_self-hosted-controller.log` on the orchestration node.
+<details>
+<summary>Log file on the orchestration node in `config.yml`</summary>
 
-The SHC creates the directory if it does not exist. If it cannot create the file, it starts without file logging: the CLI reports nothing, and the TUI displays `log: (disabled)` at the bottom of the interface. Give UID 1000 write access to `$SEKOIA_LOCAL_DIR`, as described in the [container user](/self_hosted/1.0.1/deployment/deployment_guide.md#step-4-create-the-execution-script) note of the deployment guide.
+```yaml
+global:
+  logging:
+    file: /opt/sekoia/logs/self-hosted-controller.log
+```
+
+With this value, the log of a run started on 23 October 2026 at 15:30:00 is kept at `$SEKOIA_LOCAL_DIR/logs/20261023-153000_self-hosted-controller.log` on the orchestration node.
+
+</details>
+
+The SHC creates the directory if it does not exist. If it cannot create the file, it starts without file logging: the CLI reports nothing, and the TUI displays `log: (disabled)` at the bottom of the interface. Give UID 1000 write access to `$SEKOIA_LOCAL_DIR`, as described in the [container user](deployment_guide.md#step-4-create-the-execution-script) note of the deployment guide.
 
 ### Database storage
 
 These fields set the disk size of each instance of the PostgreSQL clusters of the platform. Each cluster runs three instances. The asset management, alerts, workflow engine, playbooks, and ExaLog metastore databases grow with platform usage.
 
-!!! warning "Storage size can only increase"
-    CloudNativePG cannot shrink a volume. Set a value equal to or larger than the current size of the cluster volumes.
+{% hint style="warning" %}
+**Storage size can only increase**
+
+CloudNativePG cannot shrink a volume. Set a value equal to or larger than the current size of the cluster volumes.
+{% endhint %}
 
 | Field | Description | Default |
 | :--- | :--- | :--- |
@@ -471,29 +520,33 @@ The asset management database also defaults to 2 CPUs and 4 GiB of memory per in
 
 ### Ceph storage devices
 
-By default, Ceph uses every unused raw disk of every node, as described in [Dedicated storage disk](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#dedicated-storage-disk). To use only the disks or the LVM logical volumes that you select, set the manual mode:
+By default, Ceph uses every unused raw disk of every node, as described in [Dedicated storage disk](deployment_prerequisites.md#dedicated-storage-disk). To use only the disks or the LVM logical volumes that you select, set the manual mode:
 
 | Field | Description | Default |
 | :--- | :--- | :--- |
 | `modules.platform_configuration.config.rook.storage.mode` | `auto` to use every unused raw disk, or `manual` to use only the devices listed in `nodes`. | `auto` |
 | `modules.platform_configuration.config.rook.storage.nodes` | Manual mode only. List of nodes, each with a `name`, the hostname of the node, and a `devices` list of `name` entries, the `/dev/` paths of the selected devices. Must be empty in `auto` mode. | `[]` |
 
-??? example "Manual Ceph storage in `config.yml`"
-    ```yaml
-    modules:
-      platform_configuration:
-        config:
-          rook:
-            storage:
-              mode: manual
-              nodes:
-                - name: node-01
-                  devices:
-                    - name: /dev/sdb
-                - name: node-02
-                  devices:
-                    - name: /dev/vg-ceph/lv-ceph
-    ```
+<details>
+<summary>Manual Ceph storage in `config.yml`</summary>
+
+```yaml
+modules:
+  platform_configuration:
+    config:
+      rook:
+        storage:
+          mode: manual
+          nodes:
+            - name: node-01
+              devices:
+                - name: /dev/sdb
+            - name: node-02
+              devices:
+                - name: /dev/vg-ceph/lv-ceph
+```
+
+</details>
 
 In manual mode, the following conditions apply:
 
@@ -511,36 +564,44 @@ The feed compiler of Sigma Workflow compiles the indicators of the threat intell
 | :--- | :--- | :--- |
 | `modules.platform_configuration.config.sigma-workflow.sigma-workflow-feed-compiler.feed_refresh_limit` | Maximum number of indicators per compilation batch, as a positive whole number. | `2000` |
 
-??? example "Smaller batches in `config.yml`"
-    ```yaml
-    modules:
-      platform_configuration:
-        config:
-          sigma-workflow:
-            sigma-workflow-feed-compiler:
-              feed_refresh_limit: "500"
-    ```
+<details>
+<summary>Smaller batches in `config.yml`</summary>
 
-A smaller batch skips no indicator: the compiler fetches more batches to compile the whole feed. To apply the change on an installed platform, follow [Apply a configuration change](/self_hosted/1.0.1/operations/apply_configuration_change.md).
+```yaml
+modules:
+  platform_configuration:
+    config:
+      sigma-workflow:
+        sigma-workflow-feed-compiler:
+          feed_refresh_limit: "500"
+```
+
+</details>
+
+A smaller batch skips no indicator: the compiler fetches more batches to compile the whole feed. To apply the change on an installed platform, follow [Apply a configuration change](../operations/apply_configuration_change.md).
 
 ### Backups
 
 Backups are disabled by default. To back up Vault, the PostgreSQL databases, ArangoDB, and ClickHouse to S3, set `modules.platform_configuration.config.backups.enabled` to `true`. Before you enable backups:
 
-- Create the backup bucket, `exalog-self-hosted-backups` by default, on your S3-compatible storage. See [Backup bucket](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#backup-bucket).
+- Create the backup bucket, `exalog-self-hosted-backups` by default, on your S3-compatible storage. See [Backup bucket](deployment_prerequisites.md#backup-bucket).
 - Set the `BACKUP_VAULT_CRYPT_KEY`, `BACKUP_ARANGO_CRYPT_KEY`, and `BACKUP_CLICKHOUSE_CRYPT_KEY` environment variables, and pass them to the SHC container. Keep a copy of each key outside the platform.
 
-!!! warning "Missing backup keys stop the installation late"
-    `CheckLocalConfig` does not report a missing backup encryption key. When backups are enabled and a key is empty, `PlatformConfigurationFile` stops the installation in the `platform` stage, after Kubernetes is installed.
+{% hint style="warning" %}
+**Missing backup keys stop the installation late**
 
-For the per-component settings, the schedules, the retention, and the backup status check, see [Back up the platform](/self_hosted/1.0.1/operations/backups.md).
+`CheckLocalConfig` does not report a missing backup encryption key. When backups are enabled and a key is empty, `PlatformConfigurationFile` stops the installation in the `platform` stage, after Kubernetes is installed.
+{% endhint %}
+
+For the per-component settings, the schedules, the retention, and the backup status check, see [Back up the platform](../operations/backups.md).
 
 ## Inspect the configuration with the SHC
 
 Use the SHC itself to discover supported optional fields and verify the computed configuration.
 
-!!! note
-    These commands require the SHC Docker image and the execution script. If you have not prepared them yet, complete the [Preparation](/self_hosted/1.0.1/deployment/deployment_guide.md#preparation) steps of the deployment guide, then come back to this section before you start the installation.
+{% hint style="info" %}
+These commands require the SHC Docker image and the execution script. If you have not prepared them yet, complete the [Preparation](deployment_guide.md#preparation) steps of the deployment guide, then come back to this section before you start the installation.
+{% endhint %}
 
 To list supported configuration fields, run:
 
@@ -555,8 +616,11 @@ config help global.platform_storage
 config help utils.oci_registry
 ```
 
-!!! warning "Protect resolved secrets"
-    `config show` prints every resolved value in clear text, including the S3 keys, the registry and Git passwords, the SSH private key, the private key of the certificate, and the backup encryption keys. It has no option to mask them. Prefer displaying a section that holds no secret, such as `config show utils.ansible.inventory`. Do not paste its output into tickets, chat messages, or logs. Redact all secrets before sharing it with Sekoia support. To check for missing or invalid values without printing them, run `exec CheckLocalConfig` instead.
+{% hint style="warning" %}
+**Protect resolved secrets**
+
+`config show` prints every resolved value in clear text, including the S3 keys, the registry and Git passwords, the SSH private key, the private key of the certificate, and the backup encryption keys. It has no option to mask them. Prefer displaying a section that holds no secret, such as `config show utils.ansible.inventory`. Do not paste its output into tickets, chat messages, or logs. Redact all secrets before sharing it with Sekoia support. To check for missing or invalid values without printing them, run `exec CheckLocalConfig` instead.
+{% endhint %}
 
 To display the configuration after defaults, inheritance, environment references, and derived values have been resolved, run:
 
@@ -580,7 +644,7 @@ The command reports missing required values, invalid formats, and unsupported ke
 
 ## Related links
 
-- [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md): Prepare the SHC execution script and install the platform.
-- [Apply a configuration change](/self_hosted/1.0.1/operations/apply_configuration_change.md): Change `config.yml` after the installation and apply it with `Install`.
-- [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md): Run configuration commands from the interactive interface.
-- [Debug your deployment](/self_hosted/1.0.1/troubleshooting/debug_tool.md): Resolve configuration and connectivity failures.
+- [Deploy the platform](deployment_guide.md): Prepare the SHC execution script and install the platform.
+- [Apply a configuration change](../operations/apply_configuration_change.md): Change `config.yml` after the installation and apply it with `Install`.
+- [Use the SHC interface](../operations/controller_interface.md): Run configuration commands from the interactive interface.
+- [Debug your deployment](../troubleshooting/debug_tool.md): Resolve configuration and connectivity failures.

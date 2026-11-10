@@ -1,6 +1,6 @@
 # 1Password
 
-![1Password](/assets/playbooks/library/1password.png){ align=right width=150 }
+![1Password](../../../../assets/playbooks/library/1password.png)
 
 1Password's Enterprise Password Manager offers robust security features for businesses, enabling secure sharing and management of passwords and sensitive data across teams, with advanced admin controls and seamless integration into existing workflows.
 

@@ -4,7 +4,7 @@ type: playbook
 
 # Censys
 
-![Censys](/assets/playbooks/library/censys.png){ align=right width=150 }
+![Censys](../../../../assets/playbooks/library/censys.png)
 
 Censys is Cybersecurity company discovering and inventoring assets exposed on Internet. The Censys API provides programmatic access to the same data accessible through the web interface
 

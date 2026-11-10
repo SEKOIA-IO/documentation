@@ -23,8 +23,9 @@ To install the FortiSOAR integration, you first have to create an API Key in Sek
 | ASSETMANAGEMENT_VIEW_ASSET_TYPE | d53187c1-b6c4-4660-a2e7-30b598b6150e | Allow to list types of assets |
 
 
-!!! tip
-    You can find more details on how to create an API Key in this [section.](../../../getting_started/manage_api_keys.md)
+{% hint style="success" %}
+You can find more details on how to create an API Key in this [section.](../../../getting_started/manage_api_keys.md)
+{% endhint %}
 
 On the FortiSOAR server, make sure you have the outbound connectivity to app.sekoia.io on the port 443 (HTTPS).
 

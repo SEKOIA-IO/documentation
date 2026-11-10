@@ -40,8 +40,11 @@ The default Defend trial shown in the current workflow runs for 45 days and incl
 
 If the subscription that you need does not appear, click **Contact us** and provide the module, plan, and target community.
 
-!!! note "Assign and Create are different actions"
-    Use **Assign a subscription** when the subscription already exists. Use **Create a subscription** when you need to configure a new subscription in the Self-Service wizard.
+{% hint style="info" %}
+**Assign and Create are different actions**
+
+Use **Assign a subscription** when the subscription already exists. Use **Create a subscription** when you need to configure a new subscription in the Self-Service wizard.
+{% endhint %}
 
 ## Result
 
@@ -49,5 +52,5 @@ After you assign the subscription, it is attached to the selected community and 
 
 ## Related articles
 
-- [Subscriptions](/getting_started/subscriptions.md): Overview of the Subscriptions page and its available workflows.
-- [Create a subscription](/getting_started/create_a_subscription.md): How to configure a new subscription with the Self-Service wizard.
+- [Subscriptions](subscriptions.md): Overview of the Subscriptions page and its available workflows.
+- [Create a subscription](create_a_subscription.md): How to configure a new subscription with the Self-Service wizard.

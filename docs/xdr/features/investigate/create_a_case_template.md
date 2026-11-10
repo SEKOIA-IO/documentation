@@ -12,20 +12,23 @@ You need access to **Settings** to create and manage case templates. Contact you
 2. Under **Configuration**, select **Case Templates**.
 3. Select **New case template**.
 
-![Case templates list page with a "New case template" button](/assets/operation_center/cases/case-templates.png){: style="max-width:100%"}
+![Case templates list page with a "New case template" button](../../../assets/operation_center/cases/case-templates.png)
 
 4. In the **Template name** field, enter a clear, descriptive name for the template (for example, `Standard phishing investigation`).
 5. In the **Description** field, enter a short explanation of when to use this template. A good description helps analysts choose the right template and allows AI to automatically match it with relevant cases.
 6. Under **Custom fields**, select **Add a custom field** and choose one or more fields from the dropdown. Repeat for each field you want to include.
 
-!!! note "Custom fields must exist first"
-    The dropdown only lists custom fields that have already been created in **Settings > Configuration > Custom Fields**. Create any missing fields before configuring your template.
+{% hint style="info" %}
+**Custom fields must exist first**
+
+The dropdown only lists custom fields that have already been created in **Settings > Configuration > Custom Fields**. Create any missing fields before configuring your template.
+{% endhint %}
 
 7. Under **Tasks**, select **+ Add a task** to add investigation steps. For each task, enter a name. Optionally, add a description to provide guidance for the analyst.
 8. Under **Notebook template**, select **Choose notebook templates** and pick the investigation notebook to attach.
 9. Select **Save** to create the template.
 
-![Create a case template](/assets/operation_center/cases/create-case-template.png){: style="max-width:100%"}
+![Create a case template](../../../assets/operation_center/cases/create-case-template.png)
 
 ## Edit, duplicate, or delete a template
 
@@ -37,6 +40,6 @@ On the **Case Templates** list page, select the **...** menu at the end of a tem
 
 ## Related articles
 
-- [Case templates](/xdr/features/investigate/case_templates.md): Overview of what case templates are and how they work.
-- [Apply a case template to a case](/xdr/features/investigate/apply_a_case_template.md): How to apply a template at case creation or on an existing case.
-- [Custom fields](/xdr/features/investigate/custom_fields.md): Reference for the custom fields available to include in templates.
+- [Case templates](case_templates.md): Overview of what case templates are and how they work.
+- [Apply a case template to a case](apply_a_case_template.md): How to apply a template at case creation or on an existing case.
+- [Custom fields](custom_fields.md): Reference for the custom fields available to include in templates.

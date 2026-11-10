@@ -33,9 +33,9 @@ You can insert an existing query created in the Query Builder into your dashboar
 
 * **Synchronization:** Changes made to a Query on the Query Builder page are automatically propagated to all Dashboards using it.
 * **Tracking:** On the Query Builder’s edit page, you can view a list of all Dashboards utilizing that specific Query.
-* **Visualization:** The Widget utilizes the visualization settings saved within the Query Builder (refer to [Query builder documentation](/xdr/features/investigate/query_builder.md) to know more).
+* **Visualization:** The Widget utilizes the visualization settings saved within the Query Builder (refer to [Query builder documentation](../investigate/query_builder.md) to know more).
 
-![insert_qb_in_dashboard](/assets/xdr/dashboards/insert_qb_in_dashboard.gif){: style="max-width:100%"}
+![insert_qb_in_dashboard](../../../assets/xdr/dashboards/insert_qb_in_dashboard.gif)
 
 ### Insert a query from the Query Builder
 You can add a query to a Dashboard directly after its creation in the Builder.
@@ -51,9 +51,10 @@ You can add a query to a Dashboard directly after its creation in the Builder.
 
 Your dashboard name moves to the top of the list so that it is more visible. A **Remove** button replaces the **Add** button.
 
-!!! Note
-    Any changes made in a query will be applied to all dashboards where it is used.
-    You can check and manage the dashboards that use it by returning to the **+ Add to a dashboard** menu at any time.
+{% hint style="info" %}
+Any changes made in a query will be applied to all dashboards where it is used.
+You can check and manage the dashboards that use it by returning to the **+ Add to a dashboard** menu at any time.
+{% endhint %}
 
 ### Manage a query widget
 
@@ -68,6 +69,6 @@ From the **+ Add to a dashboard** menu:
 ---
 **Next steps**
 
-* See the list of available presets in the [Built-in Widgets reference article](/xdr/features/report/built_in_widget_reference.md).
-* Learn how to create meaningful custom widgets in the [Query Builder documentation](/xdr/features/investigate/query_builder.md)
-* Discover how to use SOL language in your dashboard to [Filter your dashboard's data](/xdr/features/report/share_dashboards.md).
+* See the list of available presets in the [Built-in Widgets reference article](built_in_widget_reference.md).
+* Learn how to create meaningful custom widgets in the [Query Builder documentation](../investigate/query_builder.md)
+* Discover how to use SOL language in your dashboard to [Filter your dashboard's data](share_dashboards.md).

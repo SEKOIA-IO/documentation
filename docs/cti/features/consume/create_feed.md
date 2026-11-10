@@ -12,8 +12,11 @@ You must have the necessary permissions within your community to manage CTI conf
 2. At the top right of the page, click **+ Feed**.
 3. In the **Define your feed** section, select the **Object type** filters to include specific STIX objects.
 
-    !!! note "Relationship handling"
-        The feed includes only the selected object types. Relationships between objects are excluded. If you leave this field empty, all object types are included.
+    {% hint style="info" %}
+    **Relationship handling**
+
+    The feed includes only the selected object types. Relationships between objects are excluded. If you leave this field empty, all object types are included.
+    {% endhint %}
 
 4. Select the **Intelligence sources** to scope the data.
 5. Select the allowed **TLP levels**: White, Green, Amber, or Red.
@@ -24,11 +27,15 @@ You must have the necessary permissions within your community to manage CTI conf
     - Select **Oldest to newest** for paginated retrieval.
 9. Select the output **Format** and configure its specific parameters.
 
-    ??? example "Feed format specifications"
-        * **JSON / STIX** — Standard for CTI platforms. Maximum 10,000 objects per call.
-        * **Text** — One object per line. Ideal for firewall EDLs. Maximum 2,000 objects per call.
-        * **CSV** — Customizable spreadsheet format. Maximum 2,000 objects per call.
-        * **Custom** — User-defined template using variables such as `$tlp`, `$id`, `$name`, and `$observables`. Maximum 2,000 objects per call.
+    <details>
+    <summary>Feed format specifications</summary>
+
+    * **JSON / STIX** — Standard for CTI platforms. Maximum 10,000 objects per call.
+    * **Text** — One object per line. Ideal for firewall EDLs. Maximum 2,000 objects per call.
+    * **CSV** — Customizable spreadsheet format. Maximum 2,000 objects per call.
+    * **Custom** — User-defined template using variables such as `$tlp`, `$id`, `$name`, and `$observables`. Maximum 2,000 objects per call.
+
+    </details>
 
 10. Click **Save**.
 
@@ -36,6 +43,6 @@ The feed is now active and appears in the feed listing, ready for internal use o
 
 ## Related articles
 
-- [Feeds](/cti/features/consume/feeds.md): Understand what feeds are, how they work, available formats, and the default feed.
-- [Manage feeds](/cti/features/consume/manage_feeds.md): Consume, edit, duplicate, or delete an existing feed.
-- [Create a detection rule from a feed](/cti/features/consume/create_detection_rule_from_feed.md): Link a feed to a CTI detection rule to automatically match IOCs against your telemetry. Requires a Defend subscription.
+- [Feeds](feeds.md): Understand what feeds are, how they work, available formats, and the default feed.
+- [Manage feeds](manage_feeds.md): Consume, edit, duplicate, or delete an existing feed.
+- [Create a detection rule from a feed](create_detection_rule_from_feed.md): Link a feed to a CTI detection rule to automatically match IOCs against your telemetry. Requires a Defend subscription.

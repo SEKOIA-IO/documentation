@@ -13,14 +13,15 @@ This use case describes how to get the MAC address of events associated with an 
 	* `View anomaly dataset`
 	* `View event stats in asset listing`
 
-!!! note 
-    To create your API Key, follow this [documentation](/getting_started/manage_api_keys.md).
+{% hint style="info" %}
+To create your API Key, follow this [documentation](../../../getting_started/manage_api_keys.md).
+{% endhint %}
     
 ## Playbook configuration
 
 Here is the configuration below: 
 
-![Playbook Enrich_information_in_alert](/assets/playbooks/library/UseCases/Enrich_information_in_alert.png)
+![Playbook Enrich_information_in_alert](../../../assets/playbooks/library/UseCases/Enrich_information_in_alert.png)
 
 | Module | Configuration |
 | --- | --- |

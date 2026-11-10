@@ -14,7 +14,7 @@ To give a team member access to Sekoia, you send them an invitation from the wor
 ## Before you begin
 
 - You must have the **Admin** role to invite users.
-- Decide which community the user should join and which role they should receive. See [Roles and permissions](/getting_started/roles_and_permissions.md) if you need help choosing.
+- Decide which community the user should join and which role they should receive. See [Roles and permissions](roles_and_permissions.md) if you need help choosing.
 
 ## Invite a user by email
 
@@ -27,14 +27,23 @@ To give a team member access to Sekoia, you send them an invitation from the wor
 
 Invited users receive a welcome email with a link to set their password. The link is valid for 24 hours.
 
-!!! note "Existing Sekoia users"
-    If an invited user already has a Sekoia account in another workspace, they do not receive a password setup email. They can access the new community immediately using their existing credentials.
+{% hint style="info" %}
+**Existing Sekoia users**
 
-!!! note "Multi-tenant workspaces"
-    In a multi-tenant workspace, an invited user only has access to the specific communities you selected during invitation. They do not have access to the workspace as a whole or to other communities.
+If an invited user already has a Sekoia account in another workspace, they do not receive a password setup email. They can access the new community immediately using their existing credentials.
+{% endhint %}
 
-!!! note "Not responding user"
-    A user who has already been invited and didn't click the password setup link won't be invited again if you delete and re-add them. Use the **Re-send invitation** button for this purpose.
+{% hint style="info" %}
+**Multi-tenant workspaces**
+
+In a multi-tenant workspace, an invited user only has access to the specific communities you selected during invitation. They do not have access to the workspace as a whole or to other communities.
+{% endhint %}
+
+{% hint style="info" %}
+**Not responding user**
+
+A user who has already been invited and didn't click the password setup link won't be invited again if you delete and re-add them. Use the **Re-send invitation** button for this purpose.
+{% endhint %}
 
 ## Set up automatic user creation with SSO Okta
 
@@ -51,6 +60,6 @@ See the SSO configuration guide for the full setup procedure.
 
 ## Related links
 
-- [Manage users](/getting_started/manage_users.md): How to edit roles, deactivate accounts, and remove users after they have been invited.
-- [Roles and permissions](/getting_started/roles_and_permissions.md): Overview of built-in and custom roles to help you choose the right access level.
-- [Workspace setup overview](/getting_started/workspace_setup_overview.md): Full admin checklist for configuring a workspace.
+- [Manage users](manage_users.md): How to edit roles, deactivate accounts, and remove users after they have been invited.
+- [Roles and permissions](roles_and_permissions.md): Overview of built-in and custom roles to help you choose the right access level.
+- [Workspace setup overview](workspace_setup_overview.md): Full admin checklist for configuring a workspace.

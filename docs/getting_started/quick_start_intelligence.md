@@ -11,7 +11,7 @@ type: tutorial
 
 Sekoia Intelligence is a continuously updated cyber threat intelligence (CTI) knowledge base maintained by Sekoia analysts. In two steps, you will learn how to search the intelligence database and investigate and disseminate threat reports that are relevant to your organization. By the end of this guide, you will be able to use Sekoia Intelligence as a daily operational resource.
 
-The intelligence is produced by a team of over 25 analysts with backgrounds in military, national cyber agencies, and private industry, and is built on open standards such as STIX 2.1 and MITRE ATT&CK. Sekoia's team collaborates with organizations including Europol, NATO, and the FBI. Over half of the indicators of compromise in the database come from Sekoia's own research; the rest are curated from open-source intelligence (OSINT) and validated before publication. All threat objects are connected in a single knowledge graph, which is what the [threat context](/getting_started/intelligence_step1_explore_threat_database.md#use-the-threat-context) feature lets you explore.
+The intelligence is produced by a team of over 25 analysts with backgrounds in military, national cyber agencies, and private industry, and is built on open standards such as STIX 2.1 and MITRE ATT&CK. Sekoia's team collaborates with organizations including Europol, NATO, and the FBI. Over half of the indicators of compromise in the database come from Sekoia's own research; the rest are curated from open-source intelligence (OSINT) and validated before publication. All threat objects are connected in a single knowledge graph, which is what the [threat context](intelligence_step1_explore_threat_database.md#use-the-threat-context) feature lets you explore.
 
 ## What Sekoia Intelligence is used for
 
@@ -44,8 +44,8 @@ After completing this guide, you will be able to:
 
 | Step | What you do | Time estimate |
 |---|---|---|
-| [Step 1](/getting_started/intelligence_step1_explore_threat_database.md) | Explore the threat intelligence database | 15-20 min |
-| [Step 2](/getting_started/intelligence_step2_read_threat_reports.md) | Investigate and disseminate threat intelligence | 15-20 min |
+| [Step 1](intelligence_step1_explore_threat_database.md) | Explore the threat intelligence database | 15-20 min |
+| [Step 2](intelligence_step2_read_threat_reports.md) | Investigate and disseminate threat intelligence | 15-20 min |
 
 ## What you will find in the Intelligence product
 
@@ -73,6 +73,6 @@ Visit the [Sekoia Academy](https://academy.sekoia.io) for video tutorials on usi
 
 ## Related links
 
-- [Step 1: Explore the threat intelligence database](/getting_started/intelligence_step1_explore_threat_database.md): Search for threat objects and understand the data model.
-- [Step 2: Investigate and disseminate threat intelligence](/getting_started/intelligence_step2_read_threat_reports.md): Read reports, disseminate intelligence, and set up feeds.
-- [Glossary](/getting_started/glossary.md): Definitions of CTI terms including indicator, observable, IOC, STIX, TLP, and FLINT.
+- [Step 1: Explore the threat intelligence database](intelligence_step1_explore_threat_database.md): Search for threat objects and understand the data model.
+- [Step 2: Investigate and disseminate threat intelligence](intelligence_step2_read_threat_reports.md): Read reports, disseminate intelligence, and set up feeds.
+- [Glossary](glossary.md): Definitions of CTI terms including indicator, observable, IOC, STIX, TLP, and FLINT.

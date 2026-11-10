@@ -6,7 +6,7 @@ Alert similarity controls how the matches of a SOL detection rule are grouped in
 
 A similarity strategy is a list of fields. Alerts that share the same values for every field in the strategy are considered similar: instead of raising a new alert, the platform attaches the new match to the existing alert and increments its occurrence counter. This keeps repeated detections of the same condition in one place rather than flooding the alert list.
 
-Similarity applies across the platform, not only to SOL rules. For the full model, including how similarity interacts with alert status and the occurrence counter, see [Alert similarity](/xdr/features/investigate/alerts.md#alert-similarity).
+Similarity applies across the platform, not only to SOL rules. For the full model, including how similarity interacts with alert status and the occurrence counter, see [Alert similarity](../investigate/alerts.md#alert-similarity).
 
 ## Why SOL rules have no default similarity strategy
 
@@ -18,19 +18,25 @@ A SOL detection rule can query any datasource: events, alerts, assets, intakes, 
 
 When no similarity strategy is configured, all of a rule's matches are grouped into the same alert. Each new match increments that alert's occurrence counter instead of creating a separate alert. In effect, the SOL query is the grouping key: whatever the query returns belongs to one alert.
 
-!!! note "Default grouping"
-    Without a configured similarity strategy, a SOL detection rule produces a single alert that accumulates occurrences over time, regardless of the datasource it queries.
+{% hint style="info" %}
+**Default grouping**
+
+Without a configured similarity strategy, a SOL detection rule produces a single alert that accumulates occurrences over time, regardless of the datasource it queries.
+{% endhint %}
 
 ## Configuring a similarity strategy
 
 To group a rule's matches into separate alerts, configure one or more similarity strategies on the rule. You select the fields that define similarity. Matches that share the same values for those fields are grouped into one alert; matches with different values are raised as separate alerts.
 
-!!! note "Available fields depend on your query"
-    The fields listed in the similarity strategy selector reflect what your query actually returns. If your query targets `events` without a `select` clause, all event fields are available. If your query uses a `select` on specific fields (for example, `select events.id, source.ip`), only those selected fields are listed. This ensures you can only configure similarity on data the rule will actually produce.
+{% hint style="info" %}
+**Available fields depend on your query**
+
+The fields listed in the similarity strategy selector reflect what your query actually returns. If your query targets `events` without a `select` clause, all event fields are available. If your query uses a `select` on specific fields (for example, `select events.id, source.ip`), only those selected fields are listed. This ensures you can only configure similarity on data the rule will actually produce.
+{% endhint %}
 
 You can also group fields that are interchangeable so their values can be swapped when matching. Interchangeable fields are written as a nested list, for example `[source.ip, destination.ip]`, following the same notation used elsewhere for similarity strategies.
 
-For the step-by-step procedure, see [Create a SOL detection rule](/xdr/features/detect/create_sol_detection_rule.md).
+For the step-by-step procedure, see [Create a SOL detection rule](create_sol_detection_rule.md).
 
 ## Example
 
@@ -43,7 +49,7 @@ This lets you choose between a single consolidated alert for the whole rule and 
 
 ## Related articles
 
-* [SOL detection rules](/xdr/features/detect/sol_detection_rule.md): Conceptual overview of the SOL and Event Drop detection patterns, how they work, and when to use them.
-* [Create a SOL detection rule](/xdr/features/detect/create_sol_detection_rule.md): Step-by-step instructions to configure and activate a SOL or Event Drop detection rule, including the similarity strategy.
-* [Alert similarity](/xdr/features/investigate/alerts.md#similarity-strategies): The platform-wide similarity model, occurrence counter, and how similarity interacts with alert status.
-* [Lag management for SOL detection rules](/xdr/features/detect/sol_detection_lag_management.md): How rules handle late-arriving events through a fixed run overlap and deduplication.
+* [SOL detection rules](sol_detection_rule.md): Conceptual overview of the SOL and Event Drop detection patterns, how they work, and when to use them.
+* [Create a SOL detection rule](create_sol_detection_rule.md): Step-by-step instructions to configure and activate a SOL or Event Drop detection rule, including the similarity strategy.
+* [Alert similarity](../investigate/alerts.md#similarity-strategies): The platform-wide similarity model, occurrence counter, and how similarity interacts with alert status.
+* [Lag management for SOL detection rules](sol_detection_lag_management.md): How rules handle late-arriving events through a fixed run overlap and deduplication.

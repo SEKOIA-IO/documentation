@@ -4,7 +4,7 @@ type: playbook
 
 # Fortigate Firewalls
 
-![Fortigate Firewalls](/assets/playbooks/library/fortigate-firewalls.png){ align=right width=150 }
+![Fortigate Firewalls](../../../../assets/playbooks/library/fortigate-firewalls.png)
 
 Fortigate is a firewall appliance from Fortinet with anti-spam and anti-virus features. Initially distributed as a physical, rack-mounted product, Fortigate can now be installed as a virtual appliance that could run on virtualization platforms such as VMware vSphere
 

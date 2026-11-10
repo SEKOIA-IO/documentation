@@ -4,7 +4,7 @@ type: playbook
 
 # MISP
 
-![MISP](/assets/playbooks/library/misp.png){ align=right width=150 }
+![MISP](../../../../assets/playbooks/library/misp.png)
 
 MISP is a opensource platform to gather, store, share and correlate threat intelligence like cyber security indicators
 

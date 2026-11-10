@@ -1,6 +1,6 @@
 # SentinelOneDeepVisibility
 
-![SentinelOneDeepVisibility](/assets/playbooks/library/sentinelonedeepvisibility.png){ align=right width=150 }
+![SentinelOneDeepVisibility](../../../../assets/playbooks/library/sentinelonedeepvisibility.png)
 
 This module interacts with the SentinelOne DeepVisibility using AWS S3
 

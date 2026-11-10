@@ -2,9 +2,12 @@
 
 The playbook canvas supports keyboard shortcuts for selecting, editing, and navigating nodes, letting you build and iterate on automations without switching to your mouse. A built-in shortcuts reference menu is available directly on the canvas.
 
-!!! tip "In-canvas reference"
-    Select the shortcuts menu icon on the canvas to display the full shortcut list without leaving the editor.
-    ![gif displaying keyboard shortcut icon opening](/assets/playbooks/gif_shortcuts.gif){: style="width: 100%; max-width: 100%"}
+{% hint style="success" %}
+**In-canvas reference**
+
+Select the shortcuts menu icon on the canvas to display the full shortcut list without leaving the editor.
+![gif displaying keyboard shortcut icon opening](../../../assets/playbooks/gif_shortcuts.gif)
+{% endhint %}
 
 ## Navigation
 
@@ -43,5 +46,5 @@ The playbook canvas supports keyboard shortcuts for selecting, editing, and navi
 
 ## Related articles
 
-- [Build a playbook](/xdr/features/automate/build_playbooks.md): How to create and configure nodes in the playbook canvas.
-- [Navigate playbooks](/xdr/features/automate/navigate_playbooks.md): Learn how to navigate playbooks interface.
+- [Build a playbook](../automate/build_playbooks.md): How to create and configure nodes in the playbook canvas.
+- [Navigate playbooks](../automate/navigate_playbooks.md): Learn how to navigate playbooks interface.

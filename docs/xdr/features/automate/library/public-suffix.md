@@ -4,7 +4,7 @@ type: playbook
 
 # Public Suffix
 
-![Public Suffix](/assets/playbooks/library/public-suffix.png){ align=right width=150 }
+![Public Suffix](../../../../assets/playbooks/library/public-suffix.png)
 
 The Public Suffix List is an initiative of Mozilla to list of all known public suffixes
 

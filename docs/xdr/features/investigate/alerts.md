@@ -8,8 +8,9 @@ Urgency is a numerical score that reflects the risk associated with a specific a
 
 **Formula:** Alert urgency = (Rule severity + Asset criticality) / 2
 
-!!! note
-    When asset criticality is set to 0 (N/A), the alert urgency equals the rule severity alone.
+{% hint style="info" %}
+When asset criticality is set to 0 (N/A), the alert urgency equals the rule severity alone.
+{% endhint %}
 
 Urgency is displayed in two forms across the platform:
 
@@ -31,12 +32,13 @@ Alerts are considered similar when a defined set of fields share identical value
 2. [Similarity by event](#similarity-by-event)
 3. [Default similarity](#default-similarity)
 
-!!! note
-    The effective similarity strategy for an alert is displayed in the **Details** tab of that alert.
+{% hint style="info" %}
+The effective similarity strategy for an alert is displayed in the **Details** tab of that alert.
+{% endhint %}
 
 #### Similarity by rule
 
-Rules in the Rules Catalog may define a custom similarity strategy, configured at rule creation time. See [Custom similarity strategy](/xdr/features/detect/rules_catalog.md#custom-similarity-strategy).
+Rules in the Rules Catalog may define a custom similarity strategy, configured at rule creation time. See [Custom similarity strategy](../detect/rules_catalog.md#custom-similarity-strategy).
 
 #### Similarity by event
 
@@ -54,15 +56,17 @@ When no rule-level strategy is defined, Sekoia applies a strategy based on the e
 | `file.hash.sha1` matches the rule | `sekoiaio.entity.uuid`, `file.hash.sha1` |
 | `file.hash.md5` matches the rule | `sekoiaio.entity.uuid`, `file.hash.md5` |
 
-!!! note
-    If event-based similarity does not meet your needs, contact your support team.
+{% hint style="info" %}
+If event-based similarity does not meet your needs, contact your support team.
+{% endhint %}
 
 #### Default similarity
 
 When no rule-level or event-level strategy applies, Sekoia uses the following default formula: same entity, same `source.ip`, and same `destination.ip`. The values of `source.ip` and `destination.ip` are interchangeable.
 
-!!! warning
-    When no data is available due to parsing issues, alert similarity is not shown, except when `source.ip` or `destination.ip` is NULL. When both fields are empty, a NULL value may serve as the similarity basis.
+{% hint style="warning" %}
+When no data is available due to parsing issues, alert similarity is not shown, except when `source.ip` or `destination.ip` is NULL. When both fields are empty, a NULL value may serve as the similarity basis.
+{% endhint %}
 
 #### Similarity and alert status
 
@@ -70,19 +74,20 @@ As long as a similar alert exists with a status in the **Open** or **In Progress
 
 If all similar alerts carry a status in the **Closed** stage, a new alert is created. Those closed similar alerts are then listed in the **Similar alerts** tab of the new alert.
 
-!!! note
-    Sekoia adds at most 10 events to the same alert every 60 seconds. During a burst, the **Occurrence** count can be lower than the number of events that matched the rule. See [Why does an alert contain fewer events than the rule matched?](/xdr/FAQ/Alerts_qa.md#why-does-an-alert-contain-fewer-events-than-the-rule-matched).
+{% hint style="info" %}
+Sekoia adds at most 10 events to the same alert every 60 seconds. During a burst, the **Occurrence** count can be lower than the number of events that matched the rule. See [Why does an alert contain fewer events than the rule matched?](../../FAQ/Alerts_qa.md#why-does-an-alert-contain-fewer-events-than-the-rule-matched).
+{% endhint %}
 
 ## Alert types and categories
 
 The alert type is determined by the rule that triggered the alert but can be overridden by the value associated with specific indicators in CTI rules. Alert types follow a custom taxonomy derived from the Reference Incident Classification Taxonomy of ENISA.
 
-![alert_categories](/assets/operation_center/alerts/alert_categories.png){: style="max-width:100%"}
+![alert_categories](../../../assets/operation_center/alerts/alert_categories.png)
 
 ## Related links
 
-- [Alerts listing](/xdr/features/investigate/alerts_listing.md): How to browse, filter, sort, and take bulk actions on alerts.
-- [Alert details](/xdr/features/investigate/alert_details.md): How to investigate an individual alert across its details, events, and graph investigation tabs.
-- [Custom statuses](/xdr/features/investigate/custom_statuses.md): What custom statuses are, the three stages, and how one status serves both alerts and cases.
-- [Custom verdicts](/xdr/features/investigate/custom_verdicts.md): How to standardize the classification of alert and case outcomes.
-- [Rules catalog](/xdr/features/detect/rules_catalog.md): Reference for detection rules, including how to configure custom similarity strategies.
+- [Alerts listing](alerts_listing.md): How to browse, filter, sort, and take bulk actions on alerts.
+- [Alert details](alert_details.md): How to investigate an individual alert across its details, events, and graph investigation tabs.
+- [Custom statuses](custom_statuses.md): What custom statuses are, the three stages, and how one status serves both alerts and cases.
+- [Custom verdicts](custom_verdicts.md): How to standardize the classification of alert and case outcomes.
+- [Rules catalog](../detect/rules_catalog.md): Reference for detection rules, including how to configure custom similarity strategies.

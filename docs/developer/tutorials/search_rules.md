@@ -19,34 +19,37 @@ GET /v1/sic/conf/rules-catalog/rules
 
 Use the `match[name]` parameter to find a rule by its name.
 
-=== "curl"
+{% tabs %}
+{% tab title="curl" %}
 
-    ```bash
-    curl -X GET \
-      "https://api.sekoia.io/v1/sic/conf/rules-catalog/rules?match[name]=Suspicious%20Windows%20Defender%20Exclusion%20Command" \
-      -H "Authorization: Bearer YOUR_API_KEY"
-    ```
+```bash
+curl -X GET \
+  "https://api.sekoia.io/v1/sic/conf/rules-catalog/rules?match[name]=Suspicious%20Windows%20Defender%20Exclusion%20Command" \
+  -H "Authorization: Bearer YOUR_API_KEY"
+```
+{% endtab %}
+{% tab title="Python" %}
 
-=== "Python"
+```python
+import json
+import requests
 
-    ```python
-    import json
-    import requests
+API_KEY = "YOUR_API_KEY"
+BASE_URL = "https://api.sekoia.io/v1"
 
-    API_KEY = "YOUR_API_KEY"
-    BASE_URL = "https://api.sekoia.io/v1"
+def search_rules(name: str):
+    url = f"{BASE_URL}/sic/conf/rules-catalog/rules"
+    params = {"match[name]": name}
+    response = requests.get(url, headers={"Authorization": f"Bearer {API_KEY}"}, params=params)
+    response.raise_for_status()
+    return response.json()
 
-    def search_rules(name: str):
-        url = f"{BASE_URL}/sic/conf/rules-catalog/rules"
-        params = {"match[name]": name}
-        response = requests.get(url, headers={"Authorization": f"Bearer {API_KEY}"}, params=params)
-        response.raise_for_status()
-        return response.json()
-
-    if __name__ == "__main__":
-        results = search_rules("Suspicious Windows Defender Exclusion Command")
-        print(json.dumps(results, indent=4))
-    ```
+if __name__ == "__main__":
+    results = search_rules("Suspicious Windows Defender Exclusion Command")
+    print(json.dumps(results, indent=4))
+```
+{% endtab %}
+{% endtabs %}
 
 ## Filter by multiple values
 

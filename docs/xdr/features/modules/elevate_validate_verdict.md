@@ -5,7 +5,7 @@ This article explains how to override an Elevate verdict when it is incorrect or
 ## Prerequisites
 
 - The alert has an AI-generated verdict. AI verdicts are marked with a sparkle icon in the **Verdict** column of the alert list.
-- You have reviewed the investigation. See [Investigate an alert with Elevate](/xdr/features/modules/elevate_investigate_alert.md).
+- You have reviewed the investigation. See [Investigate an alert with Elevate](elevate_investigate_alert.md).
 
 ## When to override
 
@@ -15,10 +15,13 @@ There is no separate step to validate an Elevate verdict. If the verdict is corr
 
 To override the verdict, select a different verdict from the **Select a verdict** dropdown in the alert header.
 
-![Alert header with the verdict dropdown open showing the available verdicts grouped by verdict stage](/assets/elevate/alert-override-verdict.png){: style="max-width:100%"}
+![Alert header with the verdict dropdown open showing the available verdicts grouped by verdict stage](../../../assets/elevate/alert-override-verdict.png)
 
-!!! note "Your verdict always takes precedence"
-    Once you select a verdict, the sparkle icon disappears from the alert list. The alert reflects your analyst verdict, not the AI attribution. The AI verdict is not retained after you override it.
+{% hint style="info" %}
+**Your verdict always takes precedence**
+
+Once you select a verdict, the sparkle icon disappears from the alert list. The alert reflects your analyst verdict, not the AI attribution. The AI verdict is not retained after you override it.
+{% endhint %}
 
 ## Result
 
@@ -26,5 +29,5 @@ The alert verdict is updated immediately. The **Verdict** column in the alert li
 
 ## Related articles
 
-- [Investigate an alert with Elevate](/xdr/features/modules/elevate_investigate_alert.md): How to read the AI investigation report before setting a verdict.
-- [Elevate analysis states](/xdr/features/modules/elevate_analysis_states.md): Reference table of all possible AI analysis states and their meaning.
+- [Investigate an alert with Elevate](elevate_investigate_alert.md): How to read the AI investigation report before setting a verdict.
+- [Elevate analysis states](elevate_analysis_states.md): Reference table of all possible AI analysis states and their meaning.

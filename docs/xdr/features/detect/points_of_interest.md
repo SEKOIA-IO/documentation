@@ -1,10 +1,10 @@
 # Points of interest
 
-_**[Reveal module](/xdr/features/modules/reveal_index.md)** — This feature requires the Reveal add-on module._ 
+_**[Reveal module](../modules/reveal_index.md)** — This feature requires the Reveal add-on module._ 
 
-Points of interest (PoIs) are behavioral investigation signals surfaced in the [Asset context panel](/xdr/features/investigate/asset_context_panel.md) to help analysts assess whether an asset is associated with unusual or otherwise meaningful activity. A PoI provides context to support analyst judgment; it does not by itself confirm malicious activity.
+Points of interest (PoIs) are behavioral investigation signals surfaced in the [Asset context panel](../investigate/asset_context_panel.md) to help analysts assess whether an asset is associated with unusual or otherwise meaningful activity. A PoI provides context to support analyst judgment; it does not by itself confirm malicious activity.
 
-![Asset context panel showing a point of interest entry in the timeline](/assets/operation_center/POI_overview.png)
+![Asset context panel showing a point of interest entry in the timeline](../../../assets/operation_center/POI_overview.png)
 
 ## Why it matters
 Points of Interest help by surfacing behavioral context directly on the asset being investigated. This can help analysts:
@@ -22,12 +22,15 @@ To benefit from points of interest:
 - Relevant authentication telemetry must be ingested.
 - Enough historical data must exist for the underlying rules to operate meaningfully.
 
-!!! note "Limited history or telemetry"
-    If telemetry is incomplete or historical data is limited, PoIs may be absent or less useful. Newly onboarded environments and low-volume entities may not generate PoIs immediately.
+{% hint style="info" %}
+**Limited history or telemetry**
+
+If telemetry is incomplete or historical data is limited, PoIs may be absent or less useful. Newly onboarded environments and low-volume entities may not generate PoIs immediately.
+{% endhint %}
 
 ## Where points of interest appear
 
-Points of interest are displayed in the [asset context panel](/xdr/features/investigate/asset_context_panel.md). This allows analysts to review them while triaging a case, reviewing an asset, investigating related alerts or events, or building context before deciding whether escalation is needed. Displaying PoIs in the asset context panel reduces context switching and keeps behavioral context close to the entity under review.
+Points of interest are displayed in the [asset context panel](../investigate/asset_context_panel.md). This allows analysts to review them while triaging a case, reviewing an asset, investigating related alerts or events, or building context before deciding whether escalation is needed. Displaying PoIs in the asset context panel reduces context switching and keeps behavioral context close to the entity under review.
 
 ## Types of points of interest
 
@@ -73,8 +76,12 @@ Depending on its type, a PoI may indicate:
 
 PoIs are most useful when reviewed together with cases, alerts, related events, risk and exposure context, identity or host context, and known business or operational activity.
 
-??? example "Contextual triage scenario"
-    An alert fires on an asset. The same asset also shows a PoI for an unusual login time and another for a rare login location. These signals together may indicate compromised credentials with remote access from an unfamiliar country — a pattern that warrants escalation. Individually, each signal may have a benign explanation.
+<details>
+<summary>Contextual triage scenario</summary>
+
+An alert fires on an asset. The same asset also shows a PoI for an unusual login time and another for a rare login location. These signals together may indicate compromised credentials with remote access from an unfamiliar country — a pattern that warrants escalation. Individually, each signal may have a benign explanation.
+
+</details>
 
 ## What current UEBA PoIs can indicate
 
@@ -89,8 +96,11 @@ Current UEBA PoIs are login-focused and can help surface behaviors such as:
 
 These behaviors may indicate compromised credentials, suspicious remote access, password spray or brute-force attempts, broken service credentials or automation, infrastructure changes, or legitimate travel and changes in working patterns.
 
-!!! warning "Always review PoIs in context"
-    Because the same signal can have both benign and suspicious explanations, PoIs must always be reviewed alongside other investigation evidence. Treat PoIs as decision-support signals, not standalone evidence.
+{% hint style="warning" %}
+**Always review PoIs in context**
+
+Because the same signal can have both benign and suspicious explanations, PoIs must always be reviewed alongside other investigation evidence. Treat PoIs as decision-support signals, not standalone evidence.
+{% endhint %}
 
 ## Limitations
 
@@ -104,6 +114,6 @@ Keep the following in mind when using points of interest:
 
 ## Related links
 
-- [Asset context panel](/xdr/features/investigate/asset_context_panel.md) — Full reference for the asset context panel, where points of interest appear in the timeline and overview sections.
-- [Attack path visualization](/xdr/features/investigate/attack_path_visualization.md) — How to assess potential lateral movement paths from an asset, complementing the behavioral context provided by PoIs.
-- [Detection — IOC detection](/xdr/features/detect/iocdetection.md) — Overview of detection capabilities in Sekoia, including rule-based and analytics-driven approaches that PoIs complement.
+- [Asset context panel](../investigate/asset_context_panel.md) — Full reference for the asset context panel, where points of interest appear in the timeline and overview sections.
+- [Attack path visualization](../investigate/attack_path_visualization.md) — How to assess potential lateral movement paths from an asset, complementing the behavioral context provided by PoIs.
+- [Detection — IOC detection](iocdetection.md) — Overview of detection capabilities in Sekoia, including rule-based and analytics-driven approaches that PoIs complement.

@@ -35,8 +35,11 @@ Each alert trigger passes the following fields to subsequent actions:
 | `urgency` | Urgency level of the alert |
 | `event_type` | Action that triggered the alert notification |
 
-!!! note "Operations Center only"
-    Alert triggers are only available in the Operations Center.
+{% hint style="info" %}
+**Operations Center only**
+
+Alert triggers are only available in the Operations Center.
+{% endhint %}
 
 ### Manual trigger (webhook)
 
@@ -50,7 +53,7 @@ Once a playbook uses this trigger as its entry node and is set to **On**, it app
 
 Chain this trigger with the **Get case** action to retrieve the case content.
 
-To start a playbook from a case and read its results, see [Run a playbook from a case](/xdr/features/investigate/run_playbook_case.md).
+To start a playbook from a case and read its results, see [Run a playbook from a case](../investigate/run_playbook_case.md).
 
 ### Cron trigger
 
@@ -96,8 +99,8 @@ Logs are retained for different durations depending on their severity:
 
 ## Related articles
 
-[Run a playbook from a case](/xdr/features/investigate/run_playbook_case.md): How to start a playbook directly from a case and read the run results.
+[Run a playbook from a case](../investigate/run_playbook_case.md): How to start a playbook directly from a case and read the run results.
 
-[Playbooks](/xdr/features/automate/build_playbooks.md): Overview of the playbook builder, including operators and actions.
+[Playbooks](build_playbooks.md): Overview of the playbook builder, including operators and actions.
 
-[Cases](/xdr/features/investigate/cases.md): Overview of the case management workflow in Sekoia.
+[Cases](../investigate/cases.md): Overview of the case management workflow in Sekoia.

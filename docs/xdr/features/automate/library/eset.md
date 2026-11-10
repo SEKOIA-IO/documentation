@@ -4,7 +4,7 @@ type: playbook
 
 # Eset
 
-![Eset](/assets/playbooks/library/eset.png){ align=right width=150 }
+![Eset](../../../../assets/playbooks/library/eset.png)
 
 ESET is a global cybersecurity company known for its antivirus and security software solutions for both businesses and consumers, providing advanced threat detection and malware protection.
 
@@ -100,22 +100,22 @@ Initialize a scan on a list of endpoints
 1. Log in to the ESET Protect Hub console as administrator
 2. On the left panel, go to `USERS`
 
-    ![Step 1](/assets/playbooks/library/setup/eset/Step01.png){: style="max-width:100%"}
+    ![Step 1](../../../../assets/playbooks/library/setup/eset/Step01.png)
 
 3. Click `ADD USER`
 
-    ![Step 2](/assets/playbooks/library/setup/eset/Step02.png){: style="max-width:100%"}
+    ![Step 2](../../../../assets/playbooks/library/setup/eset/Step02.png)
 
 4. Type the email of the user and click `NEXT`
 
-    ![Step 3](/assets/playbooks/library/setup/eset/Step03.png){: style="max-width:100%"}
+    ![Step 3](../../../../assets/playbooks/library/setup/eset/Step03.png)
 
 5. Select `Read access` for the `My company` permission
 6. Select `Access` for the `ESET PROTECT` permission 
 7. Check `Integrations`
 8. Click `NEXT`
 
-    ![Step 4](/assets/playbooks/library/setup/eset/Step04.png){: style="max-width:100%"}
+    ![Step 4](../../../../assets/playbooks/library/setup/eset/Step04.png)
 
 9. Click `CREATE`
 

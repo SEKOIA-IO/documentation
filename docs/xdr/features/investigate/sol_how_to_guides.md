@@ -8,85 +8,97 @@ Use the `aggregate` operator to group rows and perform calculations. SOL support
 
 ### Basic aggregation
 
-=== "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-    ```shell
-    events
-    | where timestamp > ago(24h)
-    | aggregate count() by source.ip
-    | order by count desc
-    | limit 20
-    ```
+```shell
+events
+| where timestamp > ago(24h)
+| aggregate count() by source.ip
+| order by count desc
+| limit 20
+```
+{% endtab %}
+{% tab title="Results" %}
 
-=== "Results"
-
-    | source.ip     | count |
-    | ------------- | ----- |
-    | 192.168.2.10  | 204   |
-    | 192.168.2.22  | 202   |
-    | 192.168.2.100 | 188   |
+| source.ip     | count |
+| ------------- | ----- |
+| 192.168.2.10  | 204   |
+| 192.168.2.22  | 202   |
+| 192.168.2.100 | 188   |
+{% endtab %}
+{% endtabs %}
 
 ### Multiple aggregations
 
 You can perform multiple aggregations in a single query:
 
-=== "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-    ```shell
-    alerts
-    | where created_at > ago(30d)
-    | aggregate alert_count = count(), avg_ttd = avg(time_to_detect), max_urgency = max(urgency) by rule_name
-    | order by alert_count desc
-    | limit 20
-    ```
+```shell
+alerts
+| where created_at > ago(30d)
+| aggregate alert_count = count(), avg_ttd = avg(time_to_detect), max_urgency = max(urgency) by rule_name
+| order by alert_count desc
+| limit 20
+```
+{% endtab %}
+{% tab title="Results" %}
 
-=== "Results"
-
-    | rule_name                  | alert_count | avg_ttd | max_urgency |
-    | -------------------------- | ----------- | ------- | ----------- |
-    | SEKOIA Intelligence Feed   | 132         | 1035.66 | 95          |
-    | Suspicious Mshta Execution | 82          | 523.40  | 80          |
+| rule_name                  | alert_count | avg_ttd | max_urgency |
+| -------------------------- | ----------- | ------- | ----------- |
+| SEKOIA Intelligence Feed   | 132         | 1035.66 | 95          |
+| Suspicious Mshta Execution | 82          | 523.40  | 80          |
+{% endtab %}
+{% endtabs %}
 
 ### Aggregation over time
 
 Use `bin()` to group data into time buckets:
 
-=== "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-    ```shell
-    events
-    | where timestamp > ago(7d)
-    | aggregate count() by bin(timestamp, 1d)
-    ```
+```shell
+events
+| where timestamp > ago(7d)
+| aggregate count() by bin(timestamp, 1d)
+```
+{% endtab %}
+{% tab title="Results" %}
 
-=== "Results"
-
-    | bin_timestamp            | count |
-    | ------------------------ | ----- |
-    | 2026-03-20T00:00:00.000Z | 6234  |
-    | 2026-03-21T00:00:00.000Z | 7891  |
-    | 2026-03-22T00:00:00.000Z | 7234  |
+| bin_timestamp            | count |
+| ------------------------ | ----- |
+| 2026-03-20T00:00:00.000Z | 6234  |
+| 2026-03-21T00:00:00.000Z | 7891  |
+| 2026-03-22T00:00:00.000Z | 7234  |
+{% endtab %}
+{% endtabs %}
 
 ### Conditional counting
 
 Use `countif()` to count rows matching specific conditions:
 
-=== "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-    ```shell
-    events
-    | where timestamp >= ago(24h) and event.category == 'authentication'
-    | aggregate success = countif(action.outcome == 'success'), failure = countif(action.outcome == 'failure') by source.ip
-    | order by failure desc
-    | limit 100
-    ```
+```shell
+events
+| where timestamp >= ago(24h) and event.category == 'authentication'
+| aggregate success = countif(action.outcome == 'success'), failure = countif(action.outcome == 'failure') by source.ip
+| order by failure desc
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-=== "Results"
-
-    | source.ip  | success | failure |
-    | ---------- | ------- | ------- |
-    | 1.0.0.95   | 142     | 33      |
-    | 1.5.178.82 | 136     | 24      |
+| source.ip  | success | failure |
+| ---------- | ------- | ------- |
+| 1.0.0.95   | 142     | 33      |
+| 1.5.178.82 | 136     | 24      |
+{% endtab %}
+{% endtabs %}
 
 For the full operator reference, see [Aggregate rows](sol_ref_operators.md#aggregate-rows).
 
@@ -99,23 +111,26 @@ SOL provides `join` and `lookup` operators to combine data from multiple tables.
 
 The `join` operator combines two tables based on matching columns. The right table is injected into a `model` object:
 
-=== "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-    ```shell
-    events
-    | where timestamp > ago(24h)
-    | limit 100
-    | inner join intakes on sekoiaio.intake.uuid == uuid
-    | distinct intake.name
-    ```
+```shell
+events
+| where timestamp > ago(24h)
+| limit 100
+| inner join intakes on sekoiaio.intake.uuid == uuid
+| distinct intake.name
+```
+{% endtab %}
+{% tab title="Results" %}
 
-=== "Results"
-
-    | intake.name  |
-    | ------------ |
-    | Sekoia Agent |
-    | Zscaler      |
-    | Zscaler ZIA  |
+| intake.name  |
+| ------------ |
+| Sekoia Agent |
+| Zscaler      |
+| Zscaler ZIA  |
+{% endtab %}
+{% endtabs %}
 
 Available join types:
 
@@ -126,42 +141,48 @@ Available join types:
 
 Prefer `lookup` over `join` when the right table is small — it's faster and more efficient:
 
-=== "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-    ```shell
-    events
-    | where timestamp > ago(24h)
-    | aggregate count() by sekoiaio.entity.uuid
-    | lookup entities on sekoiaio.entity.uuid == uuid
-    | select entity.name, count
-    ```
+```shell
+events
+| where timestamp > ago(24h)
+| aggregate count() by sekoiaio.entity.uuid
+| lookup entities on sekoiaio.entity.uuid == uuid
+| select entity.name, count
+```
+{% endtab %}
+{% tab title="Results" %}
 
-=== "Results"
-
-    | entity.name        | count |
-    | ------------------ | ----- |
-    | HQ - London Office | 100   |
-    | Cambridge Campus   | 20    |
+| entity.name        | count |
+| ------------------ | ----- |
+| HQ - London Office | 100   |
+| Cambridge Campus   | 20    |
+{% endtab %}
+{% endtabs %}
 
 ### Custom model names
 
 Use the `into` keyword to define a custom name for the model object:
 
-=== "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-    ```shell
-    alerts
-    | where created_at > ago(24h)
-    | inner join entities on entity_uuid == uuid into my_entity
-    | select my_entity.name
-    ```
+```shell
+alerts
+| where created_at > ago(24h)
+| inner join entities on entity_uuid == uuid into my_entity
+| select my_entity.name
+```
+{% endtab %}
+{% tab title="Results" %}
 
-=== "Results"
-
-    | my_entity.name     |
-    | ------------------ |
-    | HQ - London Office |
-    | Cambridge Campus   |
+| my_entity.name     |
+| ------------------ |
+| HQ - London Office |
+| Cambridge Campus   |
+{% endtab %}
+{% endtabs %}
 
 For the full operator reference, see [Join tables](sol_ref_operators.md#join-tables) and [Lookup](sol_ref_operators.md#lookup).
 
@@ -170,26 +191,29 @@ For the full operator reference, see [Join tables](sol_ref_operators.md#join-tab
 
 Use nested queries to filter data based on the results of a previous query. Define a subquery with `let`, then reference it with `in`:
 
-=== "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-    ```shell
-    let chromium_browsers = events
-    | where timestamp > ago(30d)
-    | where process.command_line contains " --type=renderer " and process.command_line contains " --extension-process "
-    | distinct process.command_line;
+```shell
+let chromium_browsers = events
+| where timestamp > ago(30d)
+| where process.command_line contains " --type=renderer " and process.command_line contains " --extension-process "
+| distinct process.command_line;
 
-    events
-    | where process.command_line in chromium_browsers
-    | aggregate count_agents=count_distinct(agent.id), executables=make_set(process.executable) by process.name
-    | order by count_agents
-    ```
+events
+| where process.command_line in chromium_browsers
+| aggregate count_agents=count_distinct(agent.id), executables=make_set(process.executable) by process.name
+| order by count_agents
+```
+{% endtab %}
+{% tab title="Results" %}
 
-=== "Results"
-
-    | process.name | count_agents | executables                      |
-    | ------------ | ------------ | -------------------------------- |
-    | chrome       | 304          | ["chrome.exe"]                   |
-    | chrome.exe   | 290          | ["chrome.exe", "chrome_sandbox"] |
+| process.name | count_agents | executables                      |
+| ------------ | ------------ | -------------------------------- |
+| chrome       | 304          | ["chrome.exe"]                   |
+| chrome.exe   | 290          | ["chrome.exe", "chrome_sandbox"] |
+{% endtab %}
+{% endtabs %}
 
 For the full operator reference, see [Nested query](sol_ref_operators.md#nested-query).
 
@@ -208,45 +232,51 @@ Use the `render` operator to display query results as charts. Supported chart ty
 
 ### Basic chart
 
-=== "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-    ```shell
-    events
-    | where timestamp > ago(24h)
-    | aggregate count() by sekoiaio.any_asset.name
-    | render barchart with (y=sekoiaio.any_asset.name)
-    | limit 100
-    ```
+```shell
+events
+| where timestamp > ago(24h)
+| aggregate count() by sekoiaio.any_asset.name
+| render barchart with (y=sekoiaio.any_asset.name)
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-=== "Results"
-
-    | sekoiaio.any_asset.name | count |
-    | ----------------------- | ----- |
-    | laptop-6a1ec62f         | 16    |
-    | laptop-chris            | 525   |
-    | laptop-b3205bc2         | 517   |
+| sekoiaio.any_asset.name | count |
+| ----------------------- | ----- |
+| laptop-6a1ec62f         | 16    |
+| laptop-chris            | 525   |
+| laptop-b3205bc2         | 517   |
+{% endtab %}
+{% endtabs %}
 
 ### Chart with breakdown
 
 Use `breakdown_by` to split data into series, and `mode` to control stacking:
 
-=== "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-    ```shell
-    events
-    | where timestamp > ago(7d)
-    | aggregate count() by bin(timestamp, 1d), event.category
-    | render linechart with (x=bin, y=count, breakdown_by=event.category, mode=stacked)
-    ```
+```shell
+events
+| where timestamp > ago(7d)
+| aggregate count() by bin(timestamp, 1d), event.category
+| render linechart with (x=bin, y=count, breakdown_by=event.category, mode=stacked)
+```
+{% endtab %}
+{% tab title="Results" %}
 
-=== "Results"
-
-    | bin_timestamp            | event.category | count |
-    | ------------------------ | -------------- | ----- |
-    | 2026-03-20T00:00:00.000Z | authentication | 234   |
-    | 2026-03-20T00:00:00.000Z | network        | 1560  |
-    | 2026-03-21T00:00:00.000Z | authentication | 198   |
-    | 2026-03-21T00:00:00.000Z | network        | 1734  |
+| bin_timestamp            | event.category | count |
+| ------------------------ | -------------- | ----- |
+| 2026-03-20T00:00:00.000Z | authentication | 234   |
+| 2026-03-20T00:00:00.000Z | network        | 1560  |
+| 2026-03-21T00:00:00.000Z | authentication | 198   |
+| 2026-03-21T00:00:00.000Z | network        | 1734  |
+{% endtab %}
+{% endtabs %}
 
 For the full operator reference, see [Render results in chart](sol_ref_operators.md#render-results-in-chart).
 
@@ -254,48 +284,55 @@ For the full operator reference, see [Render results in chart](sol_ref_operators
 
 Use `geomap` to visualize event distribution by country or geographic coordinates. For a country-based map, provide a country column containing ISO 3166-1 alpha-2 codes or full English country names. For a coordinate-based map, provide latitude and longitude columns instead.
 
-=== "By country"
+{% tabs %}
+{% tab title="By country" %}
 
-    ```shell
-    events
-    | where timestamp > ago(24h)
-    | where event.category == "authentication" and action.outcome == "failure"
-    | aggregate count() by source.geo.country_iso_code
-    | render geomap with (country=source.geo.country_iso_code, value=count)
-    ```
+```shell
+events
+| where timestamp > ago(24h)
+| where event.category == "authentication" and action.outcome == "failure"
+| aggregate count() by source.geo.country_iso_code
+| render geomap with (country=source.geo.country_iso_code, value=count)
+```
+{% endtab %}
+{% tab title="By coordinates" %}
 
-=== "By coordinates"
-
-    ```shell
-    events
-    | where timestamp > ago(24h)
-    | aggregate count() by source.geo.location.lat, source.geo.location.lon
-    | render geomap with (lat=source.geo.location.lat, lon=source.geo.location.lon, label=source.geo.city_name, value=count)
-    ```
+```shell
+events
+| where timestamp > ago(24h)
+| aggregate count() by source.geo.location.lat, source.geo.location.lon
+| render geomap with (lat=source.geo.location.lat, lon=source.geo.location.lon, label=source.geo.city_name, value=count)
+```
+{% endtab %}
+{% endtabs %}
 
 
 ## How to use external data with SOL Datasets
 
 SOL Datasets allow you to import CSV files and use them in your queries. This is useful for enriching events with external context like threat intelligence, asset inventories, or user directories.
 
-!!! example
+{% hint style="info" %}
 
-    === "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-        ```shell
-        events
-        | where timestamp > ago(24h) and url.domain != null
-        | where not url.domain in (authorized_domains | select url_domain)
-        | select timestamp, source.ip, url.domain
-        | limit 100
-        ```
+```shell
+events
+| where timestamp > ago(24h) and url.domain != null
+| where not url.domain in (authorized_domains | select url_domain)
+| select timestamp, source.ip, url.domain
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-    === "Results"
-
-        | timestamp                | source.ip    | url.domain            |
-        | ------------------------ | ------------ | --------------------- |
-        | 2026-03-26T15:35:14.738Z | 192.168.2.10 | www.sohu.com          |
-        | 2026-03-26T15:35:03.740Z | 192.168.2.22 | www.princeton.edu     |
+| timestamp                | source.ip    | url.domain            |
+| ------------------------ | ------------ | --------------------- |
+| 2026-03-26T15:35:14.738Z | 192.168.2.10 | www.sohu.com          |
+| 2026-03-26T15:35:03.740Z | 192.168.2.22 | www.princeton.edu     |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 For the full guide on importing CSVs, multi-tenancy rules, and advanced query patterns, see the dedicated [SOL Datasets](sol_datasets.md) page.
 
@@ -306,67 +343,76 @@ Many event fields are optional and may be absent from some records. Use `!= null
 
 ### Filter out rows with a missing field
 
-=== "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-    ```shell
-    events
-    | where timestamp > ago(24h) and user.name != null
-    | select timestamp, host.name, user.name
-    | order by timestamp desc
-    | limit 100
-    ```
+```shell
+events
+| where timestamp > ago(24h) and user.name != null
+| select timestamp, host.name, user.name
+| order by timestamp desc
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-=== "Results"
-
-    | timestamp                | host.name    | user.name    |
-    | ------------------------ | ------------ | ------------ |
-    | 2026-03-26T15:35:14.738Z | laptop-chris | ada_lovelace |
-    | 2026-03-26T15:30:02.110Z | laptop-chris | grace_hopper |
+| timestamp                | host.name    | user.name    |
+| ------------------------ | ------------ | ------------ |
+| 2026-03-26T15:35:14.738Z | laptop-chris | ada_lovelace |
+| 2026-03-26T15:30:02.110Z | laptop-chris | grace_hopper |
+{% endtab %}
+{% endtabs %}
 
 ### Find rows where a field is absent
 
 Checking for `== null` is useful to detect incomplete or unparsed events:
 
-=== "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-    ```shell
-    events
-    | where timestamp > ago(24h) and process.name != null and process.command_line == null
-    | select timestamp, host.name, process.name
-    | order by timestamp desc
-    | limit 100
-    ```
+```shell
+events
+| where timestamp > ago(24h) and process.name != null and process.command_line == null
+| select timestamp, host.name, process.name
+| order by timestamp desc
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-=== "Results"
-
-    | timestamp                | host.name       | process.name |
-    | ------------------------ | --------------- | ------------ |
-    | 2026-03-26T14:20:15.441Z | laptop-6a1ec62f | svchost.exe  |
-    | 2026-03-26T14:17:31.554Z | laptop-b3205bc2 | lsass.exe    |
+| timestamp                | host.name       | process.name |
+| ------------------------ | --------------- | ------------ |
+| 2026-03-26T14:20:15.441Z | laptop-6a1ec62f | svchost.exe  |
+| 2026-03-26T14:17:31.554Z | laptop-b3205bc2 | lsass.exe    |
+{% endtab %}
+{% endtabs %}
 
 ### Combine multiple null checks
 
 You can combine null checks with other conditions in the same `where` clause:
 
-=== "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-    ```shell
-    events
-    | where timestamp >= ago(24h)
-          and event.action == 'blocked'
-          and user.name != null
-          and url.domain != null
-    | select timestamp, user.name, url.domain
-    | order by timestamp desc
-    | limit 100
-    ```
+```shell
+events
+| where timestamp >= ago(24h)
+      and event.action == 'blocked'
+      and user.name != null
+      and url.domain != null
+| select timestamp, user.name, url.domain
+| order by timestamp desc
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-=== "Results"
-
-    | timestamp                | user.name    | url.domain      |
-    | ------------------------ | ------------ | --------------- |
-    | 2026-03-26T15:35:14.738Z | ada_lovelace | www.example.com |
-    | 2026-03-26T15:30:02.110Z | grace_hopper | www.test.org    |
+| timestamp                | user.name    | url.domain      |
+| ------------------------ | ------------ | --------------- |
+| 2026-03-26T15:35:14.738Z | ada_lovelace | www.example.com |
+| 2026-03-26T15:30:02.110Z | grace_hopper | www.test.org    |
+{% endtab %}
+{% endtabs %}
 
 For the full reference, see [Where](sol_ref_operators.md#where).
 
@@ -378,25 +424,28 @@ Build a collection of reusable queries to accelerate your team's investigations:
 1. **Start with common use cases**: Create queries for frequent investigations (failed logins, suspicious processes, network anomalies)
 2. **Use variables** for configurable time ranges with `let`:
 
-    === "Query"
+    {% tabs %}
+    {% tab title="Query" %}
 
-        ```shell
-        let StartTime = ago(24h);
-        let EndTime = now();
+    ```shell
+    let StartTime = ago(24h);
+    let EndTime = now();
 
-        events
-        | where timestamp between (StartTime .. EndTime)
-        | where event.category == 'authentication' and action.outcome == 'failure'
-        | aggregate count() by source.ip
-        | order by count desc
-        ```
+    events
+    | where timestamp between (StartTime .. EndTime)
+    | where event.category == 'authentication' and action.outcome == 'failure'
+    | aggregate count() by source.ip
+    | order by count desc
+    ```
+    {% endtab %}
+    {% tab title="Results" %}
 
-    === "Results"
-
-        | source.ip     | count |
-        | ------------- | ----- |
-        | 192.168.2.10  | 204   |
-        | 192.168.2.22  | 202   |
+    | source.ip     | count |
+    | ------------- | ----- |
+    | 192.168.2.10  | 204   |
+    | 192.168.2.22  | 202   |
+    {% endtab %}
+    {% endtabs %}
 
 3. **Save your queries**: Use the Query Builder's save functionality to store queries for reuse.
 4. **Browse examples**: See the [Query examples](sol_query_examples.md) page for ready-to-use queries covering events, alerts, and joins.
@@ -412,8 +461,9 @@ For full instructions on creating and managing dashboards, see [Create and manag
 
 Filters make SOL queries dynamic and interactive. They let you reuse the same query across dashboards and contexts by substituting values dynamically without modifying the query itself.
 
-!!! Note
-    Filters are currently released under the Early Access Program.
+{% hint style="info" %}
+Filters are currently released under the Early Access Program.
+{% endhint %}
 
 <center>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/9q6K7vwEYv8?si=5x24TPninNak550B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -436,12 +486,16 @@ Use the `?filter_name` notation anywhere you would normally write a static value
 | where <column> == ?filter_name
 ```
 
-??? example "Example with a time range filter"
+<details>
+<summary>Example with a time range filter</summary>
 
-    ```shell
-    events
-    | where timestamp between (?time.start .. ?time.end)
-    ```
+
+```shell
+events
+| where timestamp between (?time.start .. ?time.end)
+```
+
+</details>
 
 #### Built-in Filters
 
@@ -458,16 +512,17 @@ Certain filters are predefined and automatically available across all queries an
 
 You can create additional filters for values that depend on your investigation context (e.g., hostname, domain, community, entity, etc.).
 
-!!! example
+{% hint style="info" %}
 
-    ```shell
-    events
-    | where timestamp between (?time.start .. ?time.end)
-    | where process.name == ?process_name
-    | select timestamp, host.name, user.name, process.name, process.command_line
-    | order by timestamp desc
-    | limit 100
-    ```
+```shell
+events
+| where timestamp between (?time.start .. ?time.end)
+| where process.name == ?process_name
+| select timestamp, host.name, user.name, process.name, process.command_line
+| order by timestamp desc
+| limit 100
+```
+{% endhint %}
 
 
 Filters in SOL are created and managed in the Query Builder or Dashboard editor.
@@ -503,39 +558,42 @@ For Single or Multiple selection filters, you can define authorized values in tw
 
 Enter comma-separated values directly in the configuration panel.
 
-!!! example
-    ```shell
-    powershell.exe, cmd.exe, rundll32.exe, chrome.exe
-    ```
+{% hint style="info" %}
+```shell
+powershell.exe, cmd.exe, rundll32.exe, chrome.exe
+```
+{% endhint %}
 
 **Dynamic List**
 
 Generate authorized values automatically using a SOL query.
 
-!!! example
-    ```shell
-    events
-    | distinct process.name
-    | limit 100
-    ```
+{% hint style="info" %}
+```shell
+events
+| distinct process.name
+| limit 100
+```
+{% endhint %}
 This example retrieves the top 100 unique process names observed in recent events and uses them as selectable options.
 Dynamic lists update automatically as new data becomes available, ensuring filters stay relevant to current activity.
 
 
-!!! note
+{% hint style="info" %}
 
-    You can dissociate the technical value from its display label by using the syntax `value:Label`.
-    The value (left side) is used in the SOL query, while the label (right side) is what the user sees in the interface.
+You can dissociate the technical value from its display label by using the syntax `value:Label`.
+The value (left side) is used in the SOL query, while the label (right side) is what the user sees in the interface.
 
-    For example:
+For example:
 
-    ```shell
-    powershell.exe:PowerShell, cmd.exe:Command Prompt, bash:Bash
-    ```
-    In this configuration:
+```shell
+powershell.exe:PowerShell, cmd.exe:Command Prompt, bash:Bash
+```
+In this configuration:
 
-    - The user sees **PowerShell**, **Command Prompt**, and **Bash** in the dropdown
-    - The query receives `powershell.exe`, `cmd.exe`, or `bash` as the actual filter value
+- The user sees **PowerShell**, **Command Prompt**, and **Bash** in the dropdown
+- The query receives `powershell.exe`, `cmd.exe`, or `bash` as the actual filter value
+{% endhint %}
 
 
 **Behavior**
@@ -551,12 +609,13 @@ Dynamic lists update automatically as new data becomes available, ensuring filte
 
 The Preview panel (right side of the editor) shows how the filter will appear to users in dashboards or query widgets.
 
-!!! example
+{% hint style="info" %}
 
-    * Boolean filter → toggle with labels "On" / "Off"
-    * Text filter → input field
-    * Selection filters → dropdown menus
-    * Time filter → unified date range picker
+* Boolean filter → toggle with labels "On" / "Off"
+* Text filter → input field
+* Selection filters → dropdown menus
+* Time filter → unified date range picker
+{% endhint %}
 
 #### Using Filters in Queries
 
@@ -592,16 +651,16 @@ When added to a dashboard, users can adjust these filters without modifying the 
 ## Related articles
 
 ### Getting Started & Overview
-* [SOL Overview](/xdr/features/investigate/sol_overview.md): Sekoia Operating Language overview.
-* [SOL Getting Started](/xdr/features/investigate/sol_getting_started.md): This tutorial walks you through writing your first SOL queries. By the end, you'll be able to search events, filter results, and save queries for reuse.
-* [SOL Best Practices](/xdr/features/investigate/sol_best_practices.md): Best practices to use SOL effectively.
+* [SOL Overview](sol_overview.md): Sekoia Operating Language overview.
+* [SOL Getting Started](sol_getting_started.md): This tutorial walks you through writing your first SOL queries. By the end, you'll be able to search events, filter results, and save queries for reuse.
+* [SOL Best Practices](sol_best_practices.md): Best practices to use SOL effectively.
 
 ### User Guides
-* [Create and Manage Queries](/xdr/features/investigate/create_manage_queries.md): Create and manage queries using SOL.
-* [SOL Query Examples](/xdr/features/investigate/sol_query_examples.md): Get inspiration from our examples.
-* [SOL Datasets](/xdr/features/investigate/sol_datasets.md): Discover the CSV import feature that enables SOC analysts to enrich security investigations by importing external data sources directly into the SOL query environment.
+* [Create and Manage Queries](create_manage_queries.md): Create and manage queries using SOL.
+* [SOL Query Examples](sol_query_examples.md): Get inspiration from our examples.
+* [SOL Datasets](sol_datasets.md): Discover the CSV import feature that enables SOC analysts to enrich security investigations by importing external data sources directly into the SOL query environment.
 
 ### Technical Reference
-* [SOL Data Sources Reference](/xdr/features/investigate/sol_ref_datasources.md): Technical references to access security data within the Sekoia platform thanks to SOL.
-* [SOL Functions Reference](/xdr/features/investigate/sol_ref_functions.md): Reference article regarding functions used in SOL.
-* [SOL Operators Reference](/xdr/features/investigate/sol_ref_operators.md): Reference article regarding operators used in the SOL language.
+* [SOL Data Sources Reference](sol_ref_datasources.md): Technical references to access security data within the Sekoia platform thanks to SOL.
+* [SOL Functions Reference](sol_ref_functions.md): Reference article regarding functions used in SOL.
+* [SOL Operators Reference](sol_ref_operators.md): Reference article regarding operators used in the SOL language.

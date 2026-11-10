@@ -30,8 +30,9 @@ A term without a field name and an operator will search the literal value in all
 | Wildcards | Wildcard characters can be used to match more events. Use `?` to match a single character or `*` to replace any number of characters. | `evil*` |
 | Regular Expressions | Regular Expressions can be used to filter for specific values. The regular expression is surrounded by forward slashes (`/`) | `/(evil|bad).*/`
 
-!!! Note
-    For regular expressions, do not use `^` and `$` which delimits the beginning and the ending of a line.
+{% hint style="info" %}
+For regular expressions, do not use `^` and `$` which delimits the beginning and the ending of a line.
+{% endhint %}
 
 ## Operators
 
@@ -49,8 +50,9 @@ Term Operators can be used to customize the search
 | `:<=` | The numerical value must be less than or equal to the specified number | `destination.bytes:<=42` |
 | `:[X TO Y]` | The numerical value must be between X and Y | `destination.bytes:[100 TO 200]` |
 
-!!! note
-    for IP search, `:[X TO Y]` is available with X and Y as IP ranges e.g. `source.ip:[145.0.0.0 TO 145.255.255.255]`
+{% hint style="info" %}
+for IP search, `:[X TO Y]` is available with X and Y as IP ranges e.g. `source.ip:[145.0.0.0 TO 145.255.255.255]`
+{% endhint %}
 
 ### Logical operators
 
@@ -60,8 +62,9 @@ Term Operators can be used to customize the search
 | OR | Match if one of the terms is verified | `source.ip:"1.2.3.4" OR destination.ip:"1.2.3.4"` |
 | NOT | Inverse the result of the term | `NOT event.type:connection` |
 
-!!! note
-    Take care, operators need to be uppercase in your query.
+{% hint style="info" %}
+Take care, operators need to be uppercase in your query.
+{% endhint %}
 
 ### Grouping operators
 

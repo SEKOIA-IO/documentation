@@ -6,8 +6,11 @@ The Massive Event Export feature allows you to extract up to 100 million securit
 
 While the platform offers a Direct Export for small, immediate datasets (up to 1000 events), the Massive Export is designed for large-scale data movements, automated workflows, and regulatory log retention. 
 
-!!! note "Small export"
-    [Learn more about this option in our Events FAQ](/xdr/FAQ/get_events.md))
+{% hint style="info" %}
+**Small export**
+
+[Learn more about this option in our Events FAQ](../../FAQ/get_events.md))
+{% endhint %}
 
 ## How it works
 
@@ -21,12 +24,13 @@ The export process is asynchronous and follows a specific security and operation
       * `FINISHED`: The export is complete and the file is ready for download.
       * `FAILED`: An error occurred (e.g., quota exceeded or search job expired).
 
-!!! note 
+{% hint style="info" %}
 
-    You can monitor progress at any time: 
-    
-    * With **CLI (recommended)**: The sekoia-event-exporter handles monitoring automatically by default, but you can also check the status of a specific task manually. (Read our article dedicated to [CLI massive export for more details](/xdr/features/investigate/export_event_cli.md).)
-    * With **API**: If you are integrating the export into a custom script or SOAR, you must poll the task endpoint to track progress. (Read our article dedicated to [API massive export for more details](/xdr/features/investigate/export_event_API.md).)
+You can monitor progress at any time: 
+
+* With **CLI (recommended)**: The sekoia-event-exporter handles monitoring automatically by default, but you can also check the status of a specific task manually. (Read our article dedicated to [CLI massive export for more details](export_event_cli.md).)
+* With **API**: If you are integrating the export into a custom script or SOAR, you must poll the task endpoint to track progress. (Read our article dedicated to [API massive export for more details](export_event_API.md).)
+{% endhint %}
 
 **Key Capabilities:**
 
@@ -45,9 +49,9 @@ The export process is asynchronous and follows a specific security and operation
 
 
 ## Next steps:
-- [Export events with the CLI (recommended)](/xdr/features/investigate/export_event_cli.md): To begin your first export using our official tool, follow the **Export events with the CLI** guide.
+- [Export events with the CLI (recommended)](export_event_cli.md): To begin your first export using our official tool, follow the **Export events with the CLI** guide.
 - [Export Large Volumes of Events - Use Case Guide](../../usecases/massive_export.md)  Practical examples and step-by-step workflows for common scenarios
-- [Export events with the API](/xdr/features/investigate/export_event_API.md): If you rather like exporting with API, follow the **Export events with the API** guide.
+- [Export events with the API](export_event_API.md): If you rather like exporting with API, follow the **Export events with the API** guide.
 
 
 

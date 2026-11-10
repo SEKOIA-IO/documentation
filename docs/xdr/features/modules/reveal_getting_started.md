@@ -13,14 +13,17 @@ Confirm that the following conditions are met before you start:
 - The Reveal add-on module is enabled for your community. Without it, Reveal-specific capabilities are not available.
 - You have access to at least one supported telemetry source.
 
-You do not need all data sources to start. Each source unlocks additional capabilities. Refer to the [Reveal feature enablement matrix](/xdr/features/modules/reveal_feature_enablement.md) to understand what each source provides.
+You do not need all data sources to start. Each source unlocks additional capabilities. Refer to the [Reveal feature enablement matrix](reveal_feature_enablement.md) to understand what each source provides.
 
 ## Step 1: Onboard telemetry
 
 Onboard the telemetry required to start Passive Asset Discovery.
 
-!!! note "Passive Asset Discovery starts automatically"
-    You do not need to enable Passive Asset Discovery manually. It starts as soon as Sekoia receives supported telemetry containing asset identifiers.
+{% hint style="info" %}
+**Passive Asset Discovery starts automatically**
+
+You do not need to enable Passive Asset Discovery manually. It starts as soon as Sekoia receives supported telemetry containing asset identifiers.
+{% endhint %}
 
 Passive Asset Discovery creates, merges, and lightly enriches asset records from identifiers observed in your telemetry. It gives you a starting point for asset-centric investigation before you configure any connectors.
 
@@ -39,7 +42,7 @@ Event data is required for asset timelines, Points of Interest, Attack Path Visu
 
 ## Step 3: Configure Asset Connectors
 
-[Configure Asset Connectors](/xdr/features/modules/reveal_asset_connectors_create.md) to enrich assets with structured context from your external systems.
+[Configure Asset Connectors](reveal_asset_connectors_create.md) to enrich assets with structured context from your external systems.
 
 To get the most value, prioritize connectors that provide:
 
@@ -81,11 +84,11 @@ To get the most out of Reveal, combine all four data sources: telemetry for pass
 
 ## Related links
 
-- [Reveal](/xdr/features/modules/reveal_index.md) — Reveal overview and full list of capabilities.
-- [Reveal feature enablement matrix](/xdr/features/modules/reveal_feature_enablement.md) — Which data sources are required or optional for each Reveal capability.
-- [Create an asset connector](/xdr/features/modules/reveal_asset_connectors_create.md) — How to configure a connector from the integration catalog.
-- [Asset context panel](/xdr/features/investigate/asset_context_panel.md) — Core investigation surface for all clients.
-- [Points of Interest](/xdr/features/detect/points_of_interest.md) — How Reveal surfaces behavioral anomalies on assets.
-- [Endpoint Hygiene](/xdr/features/modules/reveal_hygiene.md) — How to read and interpret hygiene signals.
-- [Vulnerability enrichment](/xdr/features/modules/reveal_vulnerabilities.md) — How CVE exposure data is aggregated and scored.
-- [Attack Path Visualization](/xdr/features/investigate/attack_path_visualization.md) — How to navigate the attack path graph.
+- [Reveal](reveal_index.md) — Reveal overview and full list of capabilities.
+- [Reveal feature enablement matrix](reveal_feature_enablement.md) — Which data sources are required or optional for each Reveal capability.
+- [Create an asset connector](reveal_asset_connectors_create.md) — How to configure a connector from the integration catalog.
+- [Asset context panel](../investigate/asset_context_panel.md) — Core investigation surface for all clients.
+- [Points of Interest](../detect/points_of_interest.md) — How Reveal surfaces behavioral anomalies on assets.
+- [Endpoint Hygiene](reveal_hygiene.md) — How to read and interpret hygiene signals.
+- [Vulnerability enrichment](reveal_vulnerabilities.md) — How CVE exposure data is aggregated and scored.
+- [Attack Path Visualization](../investigate/attack_path_visualization.md) — How to navigate the attack path graph.

@@ -4,7 +4,7 @@ type: playbook
 
 # WithSecure
 
-![WithSecure](/assets/playbooks/library/withsecure.png){ align=right width=150 }
+![WithSecure](../../../../assets/playbooks/library/withsecure.png)
 
 WithSecure, formerly known as F-Secure Business, provides cybersecurity solutions focusing on threat detection, incident response, and endpoint protection. It delivers comprehensive security services tailored to businesses to safeguard against evolving cyber threats.
 

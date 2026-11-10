@@ -4,7 +4,7 @@ type: playbook
 
 # SentinelOne
 
-![SentinelOne](/assets/playbooks/library/sentinelone.png){ align=right width=150 }
+![SentinelOne](../../../../assets/playbooks/library/sentinelone.png)
 
 SentinelOne is a cybersecurity company that provides autonomous endpoint protection through AI-powered threat detection and response. Its platform offers real-time prevention, detection, and remediation of cyber threats across networks.
 

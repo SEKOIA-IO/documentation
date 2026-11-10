@@ -36,13 +36,36 @@ To create the rule:
 2. Send it with a `POST` request, replacing `YOUR_API_KEY` with your own key.
 3. Keep the `uuid` returned in the response: it identifies your rule for any later update or lookup.
 
-=== "curl"
+{% tabs %}
+{% tab title="curl" %}
 
-    ```bash
-    curl -X POST https://api.sekoia.io/v1/sic/conf/rules-catalog/rules \
-      -H "Authorization: Bearer YOUR_API_KEY" \
-      -H "Content-Type: application/json" \
-      -d '{
+```bash
+curl -X POST https://api.sekoia.io/v1/sic/conf/rules-catalog/rules \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "My custom SIGMA rule",
+    "type": "sigma",
+    "description": "Detect spawn of Powershell",
+    "payload": "detection:\n  selection:\n    process.command_line|contains: powershell\n  condition: selection",
+    "severity": 40,
+    "effort": 3,
+    "alert_type_uuid": "599f4b1a-dd60-43fe-8ee9-07d3c5d00ded",
+    "enabled": true
+  }'
+```
+{% endtab %}
+{% tab title="Python" %}
+
+```python
+import requests
+
+API_KEY = "YOUR_API_KEY"
+BASE_URL = "https://api.sekoia.io/v1"
+
+def create_sigma_rule():
+    url = f"{BASE_URL}/sic/conf/rules-catalog/rules"
+    body = {
         "name": "My custom SIGMA rule",
         "type": "sigma",
         "description": "Detect spawn of Powershell",
@@ -50,37 +73,17 @@ To create the rule:
         "severity": 40,
         "effort": 3,
         "alert_type_uuid": "599f4b1a-dd60-43fe-8ee9-07d3c5d00ded",
-        "enabled": true
-      }'
-    ```
+        "enabled": True,
+    }
+    response = requests.post(url, json=body, headers={"Authorization": f"Bearer {API_KEY}"})
+    response.raise_for_status()
+    print("Rule created:", response.json().get("uuid"))
 
-=== "Python"
-
-    ```python
-    import requests
-
-    API_KEY = "YOUR_API_KEY"
-    BASE_URL = "https://api.sekoia.io/v1"
-
-    def create_sigma_rule():
-        url = f"{BASE_URL}/sic/conf/rules-catalog/rules"
-        body = {
-            "name": "My custom SIGMA rule",
-            "type": "sigma",
-            "description": "Detect spawn of Powershell",
-            "payload": "detection:\n  selection:\n    process.command_line|contains: powershell\n  condition: selection",
-            "severity": 40,
-            "effort": 3,
-            "alert_type_uuid": "599f4b1a-dd60-43fe-8ee9-07d3c5d00ded",
-            "enabled": True,
-        }
-        response = requests.post(url, json=body, headers={"Authorization": f"Bearer {API_KEY}"})
-        response.raise_for_status()
-        print("Rule created:", response.json().get("uuid"))
-
-    if __name__ == "__main__":
-        create_sigma_rule()
-    ```
+if __name__ == "__main__":
+    create_sigma_rule()
+```
+{% endtab %}
+{% endtabs %}
 
 ## Response
 

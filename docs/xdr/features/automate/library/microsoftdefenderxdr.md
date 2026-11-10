@@ -4,7 +4,7 @@ type: playbook
 
 # MicrosoftDefenderXDR
 
-![MicrosoftDefenderXDR](/assets/playbooks/library/microsoftdefenderxdr.png){ align=right width=150 }
+![MicrosoftDefenderXDR](../../../../assets/playbooks/library/microsoftdefenderxdr.png)
 
 Microsoft Defender for Endpoint is an Endpoint Detection and Response (EDR) product that monitors the security of endpoints. The module required, at least, the Microsoft Defender for Endpoint plan 1
 

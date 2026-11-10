@@ -23,8 +23,11 @@ For each incoming alert, the Elevate agent:
 
 Elevate also investigates cases. Assign a case to Roy and it produces a verdict, findings, and reasoning questions at the case level.
 
-!!! note "Private by architecture"
-    All AI computation runs on Sekoia infrastructure. No data is sent to external LLM providers, which makes Elevate suitable for regulated environments.
+{% hint style="info" %}
+**Private by architecture**
+
+All AI computation runs on Sekoia infrastructure. No data is sent to external LLM providers, which makes Elevate suitable for regulated environments.
+{% endhint %}
 
 <div>
   <script async src="https://js.storylane.io/js/v2/storylane.js" data-verify-origin=""></script>
@@ -52,22 +55,25 @@ Elevate also investigates cases. Assign a case to Roy and it produces a verdict,
 
 The Elevate agent is disabled by default. Enabling it starts automatic analysis of all new incoming alerts.
 
-!!! warning "Run consumption starts immediately"
-    Enabling auto-analyze triggers analysis of all new incoming alerts across all communities. Each analysis consumes one run from your monthly run pack. Review your run pack before activating.
+{% hint style="warning" %}
+**Run consumption starts immediately**
 
-For step-by-step activation, see [Activate Elevate on a workspace](/xdr/features/modules/elevate_activate.md).
+Enabling auto-analyze triggers analysis of all new incoming alerts across all communities. Each analysis consumes one run from your monthly run pack. Review your run pack before activating.
+{% endhint %}
+
+For step-by-step activation, see [Activate Elevate on a workspace](../xdr/features/modules/elevate_activate.md).
 
 ## Go further
 
 Once Elevate is active, explore these guides to tune and get the most out of it:
 
-- [Elevate overview](/xdr/features/modules/elevate_overview.md): Full concept guide covering the investigation method, runbooks, verdicts, and key concepts.
-- [Investigate an alert with Elevate](/xdr/features/modules/elevate_investigate_alert.md): How to read a verdict, findings, and reasoning questions.
-- [Add custom instructions](/xdr/features/modules/elevate_custom_instructions.md): Teach the agent about your environment to improve verdict accuracy.
-- [Manage your Elevate runs](/xdr/features/modules/elevate_quota.md): Monitor consumption and optimize your monthly run pack.
+- [Elevate overview](../xdr/features/modules/elevate_overview.md): Full concept guide covering the investigation method, runbooks, verdicts, and key concepts.
+- [Investigate an alert with Elevate](../xdr/features/modules/elevate_investigate_alert.md): How to read a verdict, findings, and reasoning questions.
+- [Add custom instructions](../xdr/features/modules/elevate_custom_instructions.md): Teach the agent about your environment to improve verdict accuracy.
+- [Manage your Elevate runs](../xdr/features/modules/elevate_quota.md): Monitor consumption and optimize your monthly run pack.
 
 ## Related links
 
-- [Workspace setup overview](/getting_started/workspace_setup_overview.md): Admin checklist for enabling modules and preparing your workspace.
-- [Quick start: Defend](/getting_started/quick_start_defend.md): Complete the Defend quick start before setting up Elevate.
-- [Glossary](/getting_started/glossary.md): Definitions for alert, verdict, runbook, and agentic triage.
+- [Workspace setup overview](workspace_setup_overview.md): Admin checklist for enabling modules and preparing your workspace.
+- [Quick start: Defend](quick_start_defend.md): Complete the Defend quick start before setting up Elevate.
+- [Glossary](glossary.md): Definitions for alert, verdict, runbook, and agentic triage.

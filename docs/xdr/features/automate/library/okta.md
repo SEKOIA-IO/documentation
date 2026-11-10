@@ -1,6 +1,6 @@
 # Okta
 
-![Okta](/assets/playbooks/library/okta.png){ align=right width=150 }
+![Okta](../../../../assets/playbooks/library/okta.png)
 
 [Okta](https://www.okta.com/) is an entreprise-grade, identity management service compatible with cloud apps as well as many on-premises applications
 

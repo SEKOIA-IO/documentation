@@ -11,7 +11,7 @@ Sekoia.io offers various features to manage your assets and use them to empower 
 Assets play a pivotal role in empowering your SOC team to effectively safeguard your organization's IT infrastructure from cyber threats and respond proactively to security incidents.
 The comprehensive understanding of assets offered by Sekoia.io enables your SOC team to gain vital visibility into the defended perimeter, monitoring all components with ease and precision.
 
-![assets-details](/assets/operation_center/assets_v2/assets-details.png){align="center", style="max-width:100%"}
+![assets-details](../../../assets/operation_center/assets_v2/assets-details.png)
 
 By categorizing assets based on their criticality, Sekoia.io support the prioritization of all the alert management efforts and resources, focusing on protecting the most valuable elements and reducing overall risk exposure.
 
@@ -23,7 +23,7 @@ In alert investigations, assets serve as valuable reference points, allowing SOC
 
 ### Categories and sub-categories
 
-![Assets-types](/assets/operation_center/assets_v2/assets-types.png){align="center", style="max-width:100%"}
+![Assets-types](../../../assets/operation_center/assets_v2/assets-types.png)
 
 Sekoia.io supports three types of assets: **Accounts**, **hosts** and **networks**.
 
@@ -39,7 +39,7 @@ For each category, there are additional sub-categories to add an optional additi
 
 The asset criticality value is a numerical indicator that represents the level of criticality or importance of each asset within the organization's IT infrastructure. It ranges from 0 to 100, where 0 indicates that the asset has no criticality or minimal importance, and 100 signifies maximum criticality, denoting assets crucial for the organization's operations.
 
-This value contributes to the [urgency score of alerts](/xdr/features/investigate/alerts.md). Hence it plays a key role in computing and prioritizing alerts related to assets, ensuring that your SOC team focuses on addressing the most critical security incidents promptly.
+This value contributes to the [urgency score of alerts](../investigate/alerts.md). Hence it plays a key role in computing and prioritizing alerts related to assets, ensuring that your SOC team focuses on addressing the most critical security incidents promptly.
 
 
 ### Asset risk score
@@ -64,29 +64,33 @@ Use the `asset_risk_scores` SOL data source to query the current score. Use `ass
 
 See also:
 
-- [SOL technical reference: data sources](/xdr/features/investigate/sol_ref_datasources.md#asset_risk_scores)
-- [Asset risk score query examples](/xdr/features/investigate/sol_query_examples.md#asset-risk-score-query-examples)
+- [SOL technical reference: data sources](../investigate/sol_ref_datasources.md#asset_risk_scores)
+- [Asset risk score query examples](../investigate/sol_query_examples.md#asset-risk-score-query-examples)
 
 ### Detection Properties
 
-![detection properties](/assets/operation_center/assets_v2/detection-properties.png){align="right", style="max-width:40%"}
+![detection properties](../../../assets/operation_center/assets_v2/detection-properties.png)
 
 Asset matching and detection properties are fundamental features that enhance our system's event correlation and enrichment capabilities. Each asset type comes with a predefined set of detection properties that determine the criteria for matching incoming events with specific assets. When an event matches an asset based on these properties, the event is enriched with the asset UUID and inherits all the contextual properties associated with the asset, including its criticality and other relevant information.
 
 Your SOC team can effectively correlate these events with specific assets through **asset matching**, enabling them to grasp the context and comprehend the potential impact on critical systems.
-!!! note
-    Detection properties are case-insensitive; they will match events fields regardless of letter casing.
+{% hint style="info" %}
+Detection properties are case-insensitive; they will match events fields regardless of letter casing.
+{% endhint %}
 
-!!! note "Limits on detection properties"
-    An asset holds at most 50 detection properties of one type, for instance 50 IPv4 addresses or 50 SIDs. Once an asset reaches this limit, the new detection properties of that type found by asset discovery or pushed by an asset connector are ignored, and the ones already on the asset are kept. A detection property you add yourself is always accepted: if the asset is at the limit, it takes the place of the oldest detection property of that type that was added automatically.
+{% hint style="info" %}
+**Limits on detection properties**
 
-    An asset with more than 1,000 detection properties in total receives no new automatic ones.
+An asset holds at most 50 detection properties of one type, for instance 50 IPv4 addresses or 50 SIDs. Once an asset reaches this limit, the new detection properties of that type found by asset discovery or pushed by an asset connector are ignored, and the ones already on the asset are kept. A detection property you add yourself is always accepted: if the asset is at the limit, it takes the place of the oldest detection property of that type that was added automatically.
+
+An asset with more than 1,000 detection properties in total receives no new automatic ones.
+{% endhint %}
 
 ### Contextual Properties
 
 The contextual properties enhance asset management within our system by allowing users to associate additional context and metadata with each asset. These properties provide valuable information beyond the standard asset details, enabling better asset classification and enriched insights into the organization's IT infrastructure.
 
-![Asset contextual properties](/assets/operation_center/assets_v2/context-properties.png){align="right", style="max-width:50%"}
+![Asset contextual properties](../../../assets/operation_center/assets_v2/context-properties.png)
 
 A contextual property is an additional attribute that can be assigned to an asset to provide more context and details about the asset. It can include any relevant information, such as names, labels, descriptions, categories, or custom identifiers.
 
@@ -118,9 +122,10 @@ The page also includes powerful filtering options to help you efficiently locate
 
 You can use multiple filters simultaneously to refine your view. The number next to the `Filters` button indicates the total number of assets that match your applied filter criteria.
 
-!!! note
-    - Each asset can have up to 100 tags, 
-    - Tags can only have string-type values.
+{% hint style="info" %}
+- Each asset can have up to 100 tags, 
+- Tags can only have string-type values.
+{% endhint %}
 
 ### Bulk Actions 
 
@@ -131,8 +136,9 @@ The Asset Listing page supports bulk actions, allowing you to perform operations
 - Change criticality: Update the criticality level for a group of selected assets
 - Change status: Edit the review status (Reviewed or Not Reviewed) for multiple selected assets
 
-!!! note
-    Applying an action to a large number of assets (e.g., 10,000 assets) might take some time to process in the background. While the results won't appear instantly, the system is working, and changes will reflect gradually.
+{% hint style="info" %}
+Applying an action to a large number of assets (e.g., 10,000 assets) might take some time to process in the background. While the results won't appear instantly, the system is working, and changes will reflect gradually.
+{% endhint %}
     
 
 
@@ -202,7 +208,7 @@ An asset can be associated with various atoms (e.g., bound IP addresses and host
 
 Some atoms are considered **exclusive identifiers**. For example, the Windows `SID` of an Active Directory user is known to be unique. In the same Active Directory, there is no user with two different `SIDs`.
 
-![atoms-list](/assets/operation_center/assets_v2/atoms-list.png){align="center", style="max-width:100%"}
+![atoms-list](../../../assets/operation_center/assets_v2/atoms-list.png)
 
 Although these assets are not yet fully qualified, tracking atoms is still valuable and allowed in Sekoia.io:
 
@@ -269,8 +275,9 @@ The following table lists the available fields for defining asset-based detectio
 | `sekoiaio.any_asset.criticality_display` | Set of Strings      | `{"high", "low"}`                      |
 | `sekoiaio.any_asset.criticality_value`   | Set of Integers    | `{80, 0}`                              |
 
-!!! Warning
-    Some of the fields listed above are removed from the events before indexing them, but they can be used in detection and filtering patterns. Indexed events only contain `sekoiaio.any_asset.uuid`, `sekoiaio.any_asset.name`, `sekoiaio.any_asset.criticality_value` and `sekoiaio.assets.*.uuid`. In particular, `sekoiaio.any_asset.tags` cannot be used in the event search: to work on tagged assets, use a detection rule, an alert filter or a [SOL query](/xdr/features/investigate/sol_query_examples.md#search-the-events-of-assets-with-a-specific-tag) that reads the tags from the `assets` table.
+{% hint style="warning" %}
+Some of the fields listed above are removed from the events before indexing them, but they can be used in detection and filtering patterns. Indexed events only contain `sekoiaio.any_asset.uuid`, `sekoiaio.any_asset.name`, `sekoiaio.any_asset.criticality_value` and `sekoiaio.assets.*.uuid`. In particular, `sekoiaio.any_asset.tags` cannot be used in the event search: to work on tagged assets, use a detection rule, an alert filter or a [SOL query](../investigate/sol_query_examples.md#search-the-events-of-assets-with-a-specific-tag) that reads the tags from the `assets` table.
+{% endhint %}
 
 ##### Use Case Example
 
@@ -303,12 +310,13 @@ detection:
 
 By using custom tags, you can precisely control which assets are included in or excluded from your detection rules, ensuring a more targeted and effective threat detection strategy. For more information on how to tag assets using the Sekoia.io API, refer to the API documentation.
 
-!!! Note
-    There is no need to add the `contains` modifier when referring to a tag. Because the `sekoiaio.any_asset.tags` field is a list, `sekoiaio.any_asset.tags: mytag` already means "match if any of the tags is mytag".
+{% hint style="info" %}
+There is no need to add the `contains` modifier when referring to a tag. Because the `sekoiaio.any_asset.tags` field is a list, `sekoiaio.any_asset.tags: mytag` already means "match if any of the tags is mytag".
+{% endhint %}
 
 ### Manual Asset Creation
 
-![Assets-list](/assets/operation_center/assets_v2/assets-list.png){align="center", style="max-width:100%"}
+![Assets-list](../../../assets/operation_center/assets_v2/assets-list.png)
 
 To create an asset from our UI, you have to:
 
@@ -331,7 +339,7 @@ The asset investigation feature provides a detailed view of an asset's history, 
 
 Authentications are an essential part of securing a perimeter. Analyzing all the authentications of an asset provides a comprehensive view of its security posture. In this view, the user can easily spot all the authentications of an asset.
 
-![asset_authentications](/assets/operation_center/assets_v2/asset_authentications.png){: style="max-width:100%"}
+![asset_authentications](../../../assets/operation_center/assets_v2/asset_authentications.png)
 
 An authentication is denoted by the following properties:
 
@@ -352,7 +360,7 @@ By leveraging this detailed authentication data, users can enhance their underst
 
 Each entry in the authentication logs supports pivoting to the detailed view of the source and target hosts and accounts. 
 
-![asset_pivot](/assets/operation_center/assets_v2/asset_auth_pivot.png){: style="max-width:100%"}
+![asset_pivot](../../../assets/operation_center/assets_v2/asset_auth_pivot.png)
 
 This feature allows users to dive deeper into the specifics of each authentication attempt, facilitating thorough investigation and analysis. Here's how it can be used:
 
@@ -379,15 +387,15 @@ This feature allows users to dive deeper into the specifics of each authenticati
 
 ### Asset risk and prioritization
 
-* [Alerts](/xdr/features/investigate/alerts.md): Understand how asset criticality contributes to the urgency score of alerts.
-* [Points of interest](/xdr/features/detect/points_of_interest.md): Discover the notable activity and UEBA signals that feed the asset risk score.
+* [Alerts](../investigate/alerts.md): Understand how asset criticality contributes to the urgency score of alerts.
+* [Points of interest](../detect/points_of_interest.md): Discover the notable activity and UEBA signals that feed the asset risk score.
 
 ### SOL data sources and queries
 
-* [SOL technical reference: Datasources](/xdr/features/investigate/sol_ref_datasources.md): Reference for the `asset_risk_scores` and `asset_risk_score_history` data sources, along with all other asset data sources.
-* [Asset risk score query examples](/xdr/features/investigate/sol_query_examples.md#asset-risk-score-query-examples): Ready-to-use SOL queries to report on asset risk scores and score-driving events.
-* [SOL Query Examples](/xdr/features/investigate/sol_query_examples.md): More SOL query examples, including asset management queries.
+* [SOL technical reference: Datasources](../investigate/sol_ref_datasources.md): Reference for the `asset_risk_scores` and `asset_risk_score_history` data sources, along with all other asset data sources.
+* [Asset risk score query examples](../investigate/sol_query_examples.md#asset-risk-score-query-examples): Ready-to-use SOL queries to report on asset risk scores and score-driving events.
+* [SOL Query Examples](../investigate/sol_query_examples.md): More SOL query examples, including asset management queries.
 
 ### Going further
 
-* [Assets FAQ](/xdr/FAQ/Assets_qa.md): Answers to frequently asked questions about assets.
+* [Assets FAQ](../../FAQ/Assets_qa.md): Answers to frequently asked questions about assets.

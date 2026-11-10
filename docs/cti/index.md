@@ -1,8 +1,11 @@
 # Sekoia Intelligence (CTI) for security operations
 
-!!! note "Availability"
+{% hint style="info" %}
+**Availability**
 
-    Sekoia Intelligence is available in the Sekoia SOC platform with a **Sekoia Defend** license, or as a standalone **Cyber Threat Intelligence (CTI)** product delivered through API integration.
+
+Sekoia Intelligence is available in the Sekoia SOC platform with a **Sekoia Defend** license, or as a standalone **Cyber Threat Intelligence (CTI)** product delivered through API integration.
+{% endhint %}
 
 Sekoia Intelligence gives security teams current, contextualized threat intelligence for detection, investigation, and threat hunting. Each intelligence record includes explicit validity timestamps and is updated as new evidence emerges. Analysts can distinguish active threat activity from expired indicators and focus on intelligence that applies to their environment.
 

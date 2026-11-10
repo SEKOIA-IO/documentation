@@ -1,6 +1,6 @@
 # Trellix
 
-![Trellix](/assets/playbooks/library/trellix.png){ align=right width=150 }
+![Trellix](../../../../assets/playbooks/library/trellix.png)
 
 Trellix has been involved in the detection and prevention of major cybersecurity attacks. It provides hardware, software, and services to investigate cybersecurity attacks, protect against malicious software, and analyze IT security risks
 

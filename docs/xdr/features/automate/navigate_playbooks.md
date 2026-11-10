@@ -6,15 +6,15 @@ The **Playbooks** page lets you create, organize, activate, and monitor playbook
 
 The **Playbooks** page lists the playbooks available in your community, sorted by the last update. From this page, you can create playbooks, manage their connected accounts, and monitor their runs.
 
-![Playbooks list in table view](/assets/operation_center/playbooks/playbook-listing.png){: style="max-width:100%"}
+![Playbooks list in table view](../../../assets/operation_center/playbooks/playbook-listing.png)
 
 ### Header actions
 
 | Button | Action |
 | --- | --- |
-| **Local runners** | Manage the runners that execute playbook actions in your own infrastructure. See [Playbooks On-premises](/xdr/features/automate/playbooks-on-premises.md). |
-| **Connected accounts** | Manage the accounts that playbooks use to connect to third-party services. See [Manage accounts](/xdr/features/automate/manage-accounts.md). |
-| **New playbook** | Create a playbook. See [Build playbooks](/xdr/features/automate/build_playbooks.md). |
+| **Local runners** | Manage the runners that execute playbook actions in your own infrastructure. See [Playbooks On-premises](playbooks-on-premises.md). |
+| **Connected accounts** | Manage the accounts that playbooks use to connect to third-party services. See [Manage accounts](manage-accounts.md). |
+| **New playbook** | Create a playbook. See [Build playbooks](build_playbooks.md). |
 
 The **Playbooks** tab lists playbooks. The **Runs** tab lists the runs of all playbooks.
 
@@ -25,7 +25,7 @@ The **Playbooks** tab lists playbooks. The **Runs** tab lists the runs of all pl
 | **Name** | Name of the playbook. Click the name to open the playbook. |
 | **Status** | Status badges for the playbook. Click a badge to open the corresponding tab. |
 | **Runs**, **In progress**, **Succeeded**, **Failed** | Counters for the playbook runs. |
-| **Custom fields** | Custom field values assigned to the playbook. See [Organize playbooks with custom fields](/xdr/features/automate/organize_playbooks_with_custom_fields.md). |
+| **Custom fields** | Custom field values assigned to the playbook. See [Organize playbooks with custom fields](organize_playbooks_with_custom_fields.md). |
 | **Communities** | Communities where the playbook runs. |
 | **Author** | User who created the playbook. |
 | **Updated at** | Date of the last change to the playbook. |
@@ -42,14 +42,17 @@ The **Name** and **Status** columns are always displayed. The **Actions** column
 
 ### Group playbooks
 
-To group the table by activation, community, or custom field, click **Group by**. See [Organize playbooks with custom fields](/xdr/features/automate/organize_playbooks_with_custom_fields.md).
+To group the table by activation, community, or custom field, click **Group by**. See [Organize playbooks with custom fields](organize_playbooks_with_custom_fields.md).
 
 ### Activate, duplicate, or delete a playbook
 
 These actions require permission to edit playbooks.
 
-!!! warning "Deactivating a playbook"
-    Deactivating a playbook stops it in all its communities and ends its runs in progress.
+{% hint style="warning" %}
+**Deactivating a playbook**
+
+Deactivating a playbook stops it in all its communities and ends its runs in progress.
+{% endhint %}
 
 - To activate or deactivate a playbook, click the toggle in the **Activated** column.
 - To duplicate a playbook, click **...** at the end of its row, then select **Duplicate playbook**.
@@ -77,7 +80,7 @@ The following status badges indicate the state of a playbook:
 | **Failed runs** | One or more runs have failed. Click the badge to open the **Runs** tab with a **Failed** filter applied. |
 | **Trigger crashed** | A trigger configuration has a log with the **Critical** level. Click the badge to open the **Trigger logs** tab with a **Critical** filter applied. |
 
-![Playbook details and workflow view](/assets/operation_center/playbooks/playbook-editing.png){: style="max-width:100%"}
+![Playbook details and workflow view](../../../assets/operation_center/playbooks/playbook-editing.png)
 
 ### Overview
 
@@ -92,9 +95,9 @@ The **Overview** tab contains the following information:
 - The date of the last activation.
 - The description of the playbook.
 - Community details, including options to add or remove communities, activate or deactivate a community, and review the playbook status for each community.
-- Custom fields assigned to the playbook. See [Organize playbooks with custom fields](/xdr/features/automate/organize_playbooks_with_custom_fields.md).
+- Custom fields assigned to the playbook. See [Organize playbooks with custom fields](organize_playbooks_with_custom_fields.md).
 
-![Overview tab of a playbook](/assets/operation_center/playbooks/playbook_custom_fields.png){: style="max-width:100%"}
+![Overview tab of a playbook](../../../assets/operation_center/playbooks/playbook_custom_fields.png)
 
 ### Workflow
 
@@ -102,7 +105,7 @@ The workflow view contains the module menu, the graph area, and the configuratio
 
 #### Module menu
 
-The module menu provides the [triggers](/xdr/features/automate/triggers.md), [actions](/xdr/features/automate/actions.md), and [operators](/xdr/features/automate/operators.md) that you can add to a workflow. The menu contains **Triggers**, **Actions**, **Integrations**, and **Operators** buttons. Click a button to open its panel, then click it again to close the panel.
+The module menu provides the [triggers](triggers.md), [actions](actions.md), and [operators](operators.md) that you can add to a workflow. The menu contains **Triggers**, **Actions**, **Integrations**, and **Operators** buttons. Click a button to open its panel, then click it again to close the panel.
 
 | Panel | Content |
 | --- | --- |
@@ -115,10 +118,11 @@ To add a module to the workflow, click it or drag it to the graph area. The modu
 
 To insert a block between two existing blocks, click the **+** on the link between them. Then select **Add an action** or **Add an operator**.
 
-![Module menu with the Actions panel open on an empty playbook](/assets/operation_center/playbooks/playbook_module_menu.png){: style="max-width:100%"}
+![Module menu with the Actions panel open on an empty playbook](../../../assets/operation_center/playbooks/playbook_module_menu.png)
 
-!!! note
-    Configuration details for these blocks are available in the [Library section](/xdr/features/automate/library/aws.md) of the documentation.
+{% hint style="info" %}
+Configuration details for these blocks are available in the [Library section](library/aws.md) of the documentation.
+{% endhint %}
 
 #### Graph area
 
@@ -139,8 +143,9 @@ Each block displays:
 | Undo | Undo the last action. |
 | Redo | Redo an action. |
 
-!!! note
-    If a block has missing configuration, an alert showing the number of errors appears in the graph area.
+{% hint style="info" %}
+If a block has missing configuration, an alert showing the number of errors appears in the graph area.
+{% endhint %}
 
 During a playbook run, colors indicate the status of blocks and nodes:
 
@@ -158,7 +163,7 @@ Click a block in the graph area to open its configuration panel. The panel conte
 
 You can edit the trigger name in the header.
 
-![Trigger name field](/assets/operation_center/playbooks/playbook-trigger-name.png){: style="max-width:100%"}
+![Trigger name field](../../../assets/operation_center/playbooks/playbook-trigger-name.png)
 
 | Tab | Content |
 | --- | --- |
@@ -168,15 +173,15 @@ You can edit the trigger name in the header.
 
 In an MSSP workspace, the **Account** and **Configuration** sections contain a section for each community included in the playbook.
 
-![MSSP account configuration](/assets/operation_center/playbooks/playbooks-account-mssp.png){: style="max-width:100%"}
+![MSSP account configuration](../../../assets/operation_center/playbooks/playbooks-account-mssp.png)
 
 To add a community, click **+ Community**, then select one of your remaining communities.
 
-![Community selection for a playbook](/assets/operation_center/playbooks/playbooks-account-community.png){: style="max-width:100%"}
+![Community selection for a playbook](../../../assets/operation_center/playbooks/playbooks-account-community.png)
 
 To remove a community, click **...** in the community section header, then select **Delete community**.
 
-![Delete a community from a playbook](/assets/operation_center/playbooks/playbooks-account-delete.png){: style="max-width:100%"}
+![Delete a community from a playbook](../../../assets/operation_center/playbooks/playbooks-account-delete.png)
 
 ##### Operators
 
@@ -202,13 +207,13 @@ To remove a community, click **...** in the community section header, then selec
 | **Name** | Name of the operator. You can edit this value. |
 | **Modifications** | Modifications to apply. To add a modification, hover over the title and select **Use variable** or **Add one entry to array**. |
 | **Use a variable** | Field where you enter the value of a variable. |
-| **Add form** | Form with the **Key**, **Type**, and **Value** fields. See the [Store operator reference](/xdr/features/automate/operators.md#store). |
+| **Add form** | Form with the **Key**, **Type**, and **Value** fields. See the [Store operator reference](operators.md#store). |
 
 ##### Actions
 
 You can edit the action name in the header.
 
-![Action name field](/assets/operation_center/playbooks/playbooks-action-name.png){: style="max-width:100%"}
+![Action name field](../../../assets/operation_center/playbooks/playbooks-action-name.png)
 
 | Tab | Content |
 | --- | --- |
@@ -216,12 +221,13 @@ You can edit the action name in the header.
 | **Configuration** | Configuration steps for the selected action, including a search bar. You can extend the height of a field by dragging its lower-right corner. |
 | **Variables** | Variables related to the action, including their names, descriptions, and a copy button. |
 
-!!! note
-    To resize the configuration panel, drag its left edge. Sekoia.io remembers the selected width for later configurations.
+{% hint style="info" %}
+To resize the configuration panel, drag its left edge. Sekoia.io remembers the selected width for later configurations.
+{% endhint %}
 
 In an MSSP workspace, the **Account** tab contains a section for each community included in the playbook.
 
-![MSSP action account configuration](/assets/operation_center/playbooks/playbooks-action-mssp.png){: style="max-width:100%"}
+![MSSP action account configuration](../../../assets/operation_center/playbooks/playbooks-action-mssp.png)
 
 For information about adding or removing communities, see the [Triggers](#triggers) section.
 
@@ -229,13 +235,13 @@ For information about adding or removing communities, see the [Triggers](#trigge
 
 In an MSSP workspace, the issue panel lists configuration issues for each community. Click **Go to issues** to open the relevant module and the **Account** or **Configuration** tab where you can resolve the issue.
 
-![Playbook issue panel](/assets/operation_center/playbooks/playbooks-issue-panel.png){: style="max-width:100%"}
+![Playbook issue panel](../../../assets/operation_center/playbooks/playbooks-issue-panel.png)
 
 ### Code
 
 The **Code** tab displays the playbook in JSON. You can use [Jinja 3](https://jinja.palletsprojects.com/en/3.0.x/templates/) to fill variable fields.
 
-From this tab, you can compare the JSON of a previous version with the current version. See [Restore a playbook version](/xdr/features/automate/restore_a_playbook_version.md#compare-a-version-with-the-current-one).
+From this tab, you can compare the JSON of a previous version with the current version. See [Restore a playbook version](restore_a_playbook_version.md#compare-a-version-with-the-current-one).
 
 To test a Jinja expression against a JSON file:
 
@@ -299,11 +305,11 @@ Use the filters to filter logs by **Level**, such as **Critical**, **Debug**, or
 
 ### Version history
 
-The **...** menu in the playbook header gives access to **Version history**. The panel lists the last 30 saved versions, with the date and author for each version. You can preview, compare, and restore a version. See [Restore a playbook version](/xdr/features/automate/restore_a_playbook_version.md).
+The **...** menu in the playbook header gives access to **Version history**. The panel lists the last 30 saved versions, with the date and author for each version. You can preview, compare, and restore a version. See [Restore a playbook version](restore_a_playbook_version.md).
 
 ## Related articles
 
-* [Build playbooks](/xdr/features/automate/build_playbooks.md): How to create a playbook from a template or from scratch.
-* [Organize playbooks with custom fields](/xdr/features/automate/organize_playbooks_with_custom_fields.md): How to add custom fields to playbooks and group the playbooks list.
-* [Restore a playbook version](/xdr/features/automate/restore_a_playbook_version.md): How to preview, compare, and restore a previous version of a playbook.
-* [Debug playbooks](/xdr/features/automate/debug-playbooks.md): How to investigate failed runs and trigger errors.
+* [Build playbooks](build_playbooks.md): How to create a playbook from a template or from scratch.
+* [Organize playbooks with custom fields](organize_playbooks_with_custom_fields.md): How to add custom fields to playbooks and group the playbooks list.
+* [Restore a playbook version](restore_a_playbook_version.md): How to preview, compare, and restore a previous version of a playbook.
+* [Debug playbooks](debug-playbooks.md): How to investigate failed runs and trigger errors.

@@ -4,7 +4,7 @@ type: playbook
 
 # Mattermost
 
-![Mattermost](/assets/playbooks/library/mattermost.png){ align=right width=150 }
+![Mattermost](../../../../assets/playbooks/library/mattermost.png)
 
 Mattermost is a secure, open and flexible collaboration platform
 

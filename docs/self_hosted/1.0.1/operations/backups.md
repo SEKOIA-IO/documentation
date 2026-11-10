@@ -36,8 +36,11 @@ Vault, ArangoDB, and ClickHouse encrypt their backups with a key that you provid
 
 When a component is enabled, `PlatformConfigurationFile` stops if its key is missing or does not match its format. The error names the variable, not its value.
 
-!!! warning "Keep a copy of each key outside the platform"
-    The platform stores the keys in Vault, and Vault is one of the components that the backups protect. Without a copy outside the platform, you cannot decrypt the backups once the cluster is lost. Once a key is in use, do not change it: the retained backups still need it. The SHC refuses a new ArangoDB or ClickHouse key, including after you disable and enable the backups again. It does not check the Vault key.
+{% hint style="warning" %}
+**Keep a copy of each key outside the platform**
+
+The platform stores the keys in Vault, and Vault is one of the components that the backups protect. Without a copy outside the platform, you cannot decrypt the backups once the cluster is lost. Once a key is in use, do not change it: the retained backups still need it. The SHC refuses a new ArangoDB or ClickHouse key, including after you disable and enable the backups again. It does not check the Vault key.
+{% endhint %}
 
 1. To generate the three keys and add them to the protected file that holds your SHC environment variables, run:
 
@@ -49,7 +52,7 @@ When a component is enabled, `PlatformConfigurationFile` stops if its key is mis
 
     `openssl rand -hex 32` returns 64 hexadecimal characters, which matches the format of every key. Copy the three keys to a secret store outside the platform.
 
-2. To pass the keys to the SHC container, add the following options to the `docker run` command of the [execution script](/self_hosted/1.0.1/deployment/deployment_guide.md#step-4-create-the-execution-script), next to the other `-e` options:
+2. To pass the keys to the SHC container, add the following options to the `docker run` command of the [execution script](../deployment/deployment_guide.md#step-4-create-the-execution-script), next to the other `-e` options:
 
     ```bash
       -e BACKUP_VAULT_CRYPT_KEY="$BACKUP_VAULT_CRYPT_KEY" \
@@ -96,8 +99,11 @@ The following optional fields are under `modules.platform_configuration.config.b
 
 The backup settings reach the platform through the ArgoCD stacks and through the platform installer. Apply them with the following modules: as in the `platform` stage of `Install`, `PushArgoStacks` runs before `PlatformInstallation`.
 
-!!! warning "ClickHouse restarts"
-    When the ClickHouse backups are enabled, or when their destination or credentials change, `PlatformInstallation` restarts the ClickHouse server pods and waits until they are ready. `PlatformInstallation` also restarts the secret operator of the platform each time it runs. Apply the configuration in a maintenance window.
+{% hint style="warning" %}
+**ClickHouse restarts**
+
+When the ClickHouse backups are enabled, or when their destination or credentials change, `PlatformInstallation` restarts the ClickHouse server pods and waits until they are ready. `PlatformInstallation` also restarts the secret operator of the platform each time it runs. Apply the configuration in a maintenance window.
+{% endhint %}
 
 1. To validate the backup settings, run:
 
@@ -133,8 +139,11 @@ exec Backups
 
 `exec Backups -m status` is equivalent. The command runs on the orchestration node and reads the backup bucket directly, with the backup S3 settings of your `config.yml`. It does not need the Kubernetes cluster.
 
-!!! note "The status is not a restore test"
-    The status checks the presence and the size of the backup files. It does not decrypt them, does not check their content, and does not restore them.
+{% hint style="info" %}
+**The status is not a restore test**
+
+The status checks the presence and the size of the backup files. It does not decrypt them, does not check their content, and does not restore them.
+{% endhint %}
 
 The command prints the `S3 backup health (not a restore test)` table, with one row for Vault, ArangoDB, and ClickHouse, and one row per PostgreSQL server:
 
@@ -235,7 +244,7 @@ The restore needs the encryption keys of the Vault, ArangoDB, and ClickHouse bac
 
 ## Related links
 
-- [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md#backups): Enable the backups and set the encryption keys at installation time.
-- [Rotate the certificate and credentials](/self_hosted/1.0.1/operations/rotate_certificate_and_credentials.md): Change the backup S3 credentials, and the keys that cannot change.
-- [Reset or destroy the platform](/self_hosted/1.0.1/operations/reset_platform.md): Data kept in S3 after a reset.
-- [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md): Run SHC commands from the interactive interface.
+- [Configure the deployment](../deployment/deployment_configuration.md#backups): Enable the backups and set the encryption keys at installation time.
+- [Rotate the certificate and credentials](rotate_certificate_and_credentials.md): Change the backup S3 credentials, and the keys that cannot change.
+- [Reset or destroy the platform](reset_platform.md): Data kept in S3 after a reset.
+- [Use the SHC interface](controller_interface.md): Run SHC commands from the interactive interface.

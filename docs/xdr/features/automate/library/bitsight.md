@@ -1,6 +1,6 @@
 # Bitsight
 
-![Bitsight](/assets/playbooks/library/bitsight.png){ align=right width=150 }
+![Bitsight](../../../../assets/playbooks/library/bitsight.png)
 
 Bitsight connector for audit logs
 

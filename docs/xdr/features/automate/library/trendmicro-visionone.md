@@ -4,7 +4,7 @@ type: playbook
 
 # TrendMicro VisionOne
 
-![TrendMicro VisionOne](/assets/playbooks/library/trendmicro-visionone.png){ align=right width=150 }
+![TrendMicro VisionOne](../../../../assets/playbooks/library/trendmicro-visionone.png)
 
 Trend Micro Vision One is a comprehensive XDR platform that integrates data from various sources, such as: email, company intranet, workstations and servers, containerized environments, cloud environments, integrated solutions from the Trend Micro ecosystem, and third-party integrations (EntraID, Okta, Office365, etc.) to detect, analyze, and respond to threats.
 

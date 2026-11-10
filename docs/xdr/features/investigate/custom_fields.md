@@ -35,14 +35,14 @@ Each definition carries two independent options:
 
 Enabling one option does not enable the other. A field can be auto-added to alerts only, to cases only, to both, or to neither. Playbooks have no auto-add option.
 
-A case template can also carry custom fields. When you apply the template, its fields are added to the case. See [Case templates](/xdr/features/investigate/case_templates.md).
+A case template can also carry custom fields. When you apply the template, its fields are added to the case. See [Case templates](case_templates.md).
 
 ## Change history
 
 Changes to custom field values are tracked on cases and playbooks:
 
 - On a case, every change is recorded in the case history.
-- On a playbook, every change creates a new version in the version history of the playbook. See [Restore a playbook version](/xdr/features/automate/restore_a_playbook_version.md).
+- On a playbook, every change creates a new version in the version history of the playbook. See [Restore a playbook version](../automate/restore_a_playbook_version.md).
 
 ## Multi-tenancy
 
@@ -64,11 +64,11 @@ The following limits apply to custom fields:
 
 ## Related articles
 
-* [Manage custom field definitions](/xdr/features/investigate/manage_custom_field_definitions.md): How to create, edit, and delete custom field definitions in your workspace settings.
-* [Use custom fields](/xdr/features/investigate/use_custom_fields.md): How to add and edit custom field values on individual alerts and cases.
-* [Organize playbooks with custom fields](/xdr/features/automate/organize_playbooks_with_custom_fields.md): How to add custom fields to playbooks and group the playbooks list by custom field.
-* [Query custom fields](/xdr/features/investigate/query_custom_fields.md): SOL syntax and examples for filtering, aggregating, and building dashboards from custom field data.
-* [Case templates](/xdr/features/investigate/case_templates.md): How case templates add predefined custom fields, tasks and a notebook to a case.
-* [Alerts](/xdr/features/investigate/alerts.md): Overview of what alerts are, how they are triaged, and how to filter the alerts listing.
-* [Cases](/xdr/features/investigate/cases.md): Overview of what cases are and how they are structured.
-* [Case details](/xdr/features/investigate/case_details.md): Reference for every tab and field available on the case details page.
+* [Manage custom field definitions](manage_custom_field_definitions.md): How to create, edit, and delete custom field definitions in your workspace settings.
+* [Use custom fields](use_custom_fields.md): How to add and edit custom field values on individual alerts and cases.
+* [Organize playbooks with custom fields](../automate/organize_playbooks_with_custom_fields.md): How to add custom fields to playbooks and group the playbooks list by custom field.
+* [Query custom fields](query_custom_fields.md): SOL syntax and examples for filtering, aggregating, and building dashboards from custom field data.
+* [Case templates](case_templates.md): How case templates add predefined custom fields, tasks and a notebook to a case.
+* [Alerts](alerts.md): Overview of what alerts are, how they are triaged, and how to filter the alerts listing.
+* [Cases](cases.md): Overview of what cases are and how they are structured.
+* [Case details](case_details.md): Reference for every tab and field available on the case details page.

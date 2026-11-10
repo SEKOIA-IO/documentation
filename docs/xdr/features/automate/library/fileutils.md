@@ -1,6 +1,6 @@
 # fileutils
 
-![fileutils](/assets/playbooks/library/fileutils.svg){ align=right width=150 }
+![fileutils](../../../../assets/playbooks/library/fileutils.svg)
 
 This module exposes action to manipulate files. It extracts data from XML or JSON files.
 

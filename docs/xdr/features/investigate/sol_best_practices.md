@@ -46,13 +46,16 @@ Why it's fast:
 - Avoids transferring unnecessary data
 - Runs close to storage
 
-!!! example "simple filtering options are typically pushed down"
+{% hint style="info" %}
+**simple filtering options are typically pushed down**
 
-    ```shell
-    events
-    | where timestamp > ago(24h)
-    | where event.category == "authentication"
-    ```
+
+```shell
+events
+| where timestamp > ago(24h)
+| where event.category == "authentication"
+```
+{% endhint %}
 
 ## Engine Execution: The Flexible Path
 
@@ -64,12 +67,15 @@ Why this can be slower:
 - Processing happens in memory
 - Performance depends on the volume of data fetched
 
-!!! example "`extract` is never supported at the datasource level, so the engine must fetch all matching events before processing"
+{% hint style="info" %}
+**`extract` is never supported at the datasource level, so the engine must fetch all matching events before processing**
 
-    ```shell
-    events
-    | extend domain = extract(@'https?://([^/]+)', 1, url.original)
-    ```
+
+```shell
+events
+| extend domain = extract(@'https?://([^/]+)', 1, url.original)
+```
+{% endhint %}
 
 ## Mental Model: "Where Does This Run?"
 
@@ -107,7 +113,7 @@ Use this table to identify which operations can be pushed down to the datasource
 | `\| aggregate <aggregations>` | When `<aggregations>` operate on simple field references. Only the first `aggregate` command can be pushed down |
 | `\| limit ...` | ✅ Always |
 | `\| top X by <definitions>` | When `<definitions>` are simple field references. For the `events` and `eternal_events` datasources, `top` cannot be pushed down after an aggregation |
-| `\| where <conditions>` | When `<conditions>` are simple comparison expressions over simple field references, or a `cidr_match()` predicate over a simple IP field reference such as `source.ip` (see [cidr_match()](/xdr/features/investigate/sol_ref_functions.md#network-cidr_match)) |
+| `\| where <conditions>` | When `<conditions>` are simple comparison expressions over simple field references, or a `cidr_match()` predicate over a simple IP field reference such as `source.ip` (see [cidr_match()](sol_ref_functions.md#network-cidr_match)) |
 | Constants and time functions (e.g. `now()`, `ago(24h)`) | ✅ Always |
 | Group-by time functions (`bin`, `year`, `month`, `week`) | ✅ Always |
 | `countif` aggregation function | ❌ Never |
@@ -132,12 +138,15 @@ When writing `| where` conditions, prefer operators that rank higher in this tab
 | 9 | `endswith~` | `file.name endswith~ ".EXE"` | 🟠 Slower | Case-insensitive suffix; comparable cost to `contains~` |
 | 10 | `matches regex` | `url.original matches regex @"https?://.*\.exe$"` | 🔴 Slowest / varies | Full regex evaluation per row; behavior and support level differ by datasource — see note below |
 
-!!! note "`matches regex`: datasource behavior"
-    Support and cost for `matches regex` depend on the underlying datasource:
+{% hint style="info" %}
+**`matches regex`: datasource behavior**
 
-    - **Telemetry datasource**: not supported.
-    - **Events datasource**: supported, but case-insensitive regex modifiers do not work.
-    - **All other datasources**: supported; regex evaluation is moderately costly.
+Support and cost for `matches regex` depend on the underlying datasource:
+
+- **Telemetry datasource**: not supported.
+- **Events datasource**: supported, but case-insensitive regex modifiers do not work.
+- **All other datasources**: supported; regex evaluation is moderately costly.
+{% endhint %}
 
 **Key takeaway**: prefer `==` or `in` whenever possible. Only use `contains~` or `matches regex` when your use case strictly requires it, and always apply more selective filters earlier in the pipeline.
 
@@ -163,9 +172,11 @@ To protect the engine from runaway queries, the SOL Engine enforces a limit on t
 
 When this limit is hit, a warning is displayed and only partial results are returned:
 
-!!! example
-    !!! warning
-        There were too many rows to process, please refine your query. Partial results are displayed. For more information about this warning, refer to the documentation.
+{% hint style="info" %}
+{% hint style="warning" %}
+There were too many rows to process, please refine your query. Partial results are displayed. For more information about this warning, refer to the documentation.
+{% endhint %}
+{% endhint %}
 
 If your query legitimately requires more rows, you can raise the limit up to **1 000 000** by adding the following at the top of your query:
 
@@ -176,8 +187,9 @@ datasource
 | where ...
 ```
 
-!!! warning
-    Do not set `internal_fetch_limit` as a default in all your queries. Doing so masks performance issues and makes it harder to diagnose query errors. Only use it when you are confident your query is well-designed and genuinely requires a larger result set.
+{% hint style="warning" %}
+Do not set `internal_fetch_limit` as a default in all your queries. Doing so masks performance issues and makes it harder to diagnose query errors. Only use it when you are confident your query is well-designed and genuinely requires a larger result set.
+{% endhint %}
 
 ### Memory Limit
 
@@ -264,16 +276,16 @@ events
 ## Related articles
 
 ### Getting Started & Overview
-* [SOL Overview](/xdr/features/investigate/sol_overview.md): Sekoia Operating Language overview.
-* [SOL Getting Started](/xdr/features/investigate/sol_getting_started.md): This tutorial walks you through writing your first SOL queries. By the end, you'll be able to search events, filter results, and save queries for reuse.
+* [SOL Overview](sol_overview.md): Sekoia Operating Language overview.
+* [SOL Getting Started](sol_getting_started.md): This tutorial walks you through writing your first SOL queries. By the end, you'll be able to search events, filter results, and save queries for reuse.
 
 ### User Guides
-* [Create and Manage Queries](/xdr/features/investigate/create_manage_queries.md): Create and manage queries using SOL.
-* [SOL How-to Guides](/xdr/features/investigate/sol_how_to_guides.md): Learn how to use the main functions of SOL to reach your goals (aggregate data, join tables, use external data, build a query library...).
-* [SOL Query Examples](/xdr/features/investigate/sol_query_examples.md): Get inspiration from our examples.
-* [SOL Datasets](/xdr/features/investigate/sol_datasets.md): Discover the CSV import feature that enables SOC analysts to enrich security investigations by importing external data sources directly into the SOL query environment.
+* [Create and Manage Queries](create_manage_queries.md): Create and manage queries using SOL.
+* [SOL How-to Guides](sol_how_to_guides.md): Learn how to use the main functions of SOL to reach your goals (aggregate data, join tables, use external data, build a query library...).
+* [SOL Query Examples](sol_query_examples.md): Get inspiration from our examples.
+* [SOL Datasets](sol_datasets.md): Discover the CSV import feature that enables SOC analysts to enrich security investigations by importing external data sources directly into the SOL query environment.
 
 ### Technical Reference
-* [SOL Data Sources Reference](/xdr/features/investigate/sol_ref_datasources.md): Technical references to access security data within the Sekoia platform thanks to SOL.
-* [SOL Functions Reference](/xdr/features/investigate/sol_ref_functions.md): Reference article regarding functions used in SOL.
-* [SOL Operators Reference](/xdr/features/investigate/sol_ref_operators.md): Reference article regarding operators used in the SOL language.
+* [SOL Data Sources Reference](sol_ref_datasources.md): Technical references to access security data within the Sekoia platform thanks to SOL.
+* [SOL Functions Reference](sol_ref_functions.md): Reference article regarding functions used in SOL.
+* [SOL Operators Reference](sol_ref_operators.md): Reference article regarding operators used in the SOL language.

@@ -134,16 +134,16 @@ For more details, see [Create and manage queries](create_manage_queries.md).
 ## Related articles
 
 ### Getting Started & Overview
-* [SOL Overview](/xdr/features/investigate/sol_overview.md): Sekoia Operating Language overview.
-* [SOL Best Practices](/xdr/features/investigate/sol_best_practices.md): Best practices to use SOL effectively.
+* [SOL Overview](sol_overview.md): Sekoia Operating Language overview.
+* [SOL Best Practices](sol_best_practices.md): Best practices to use SOL effectively.
 
 ### User Guides
-* [Create and Manage Queries](/xdr/features/investigate/create_manage_queries.md): Create and manage queries using SOL.
-* [SOL How-to Guides](/xdr/features/investigate/sol_how_to_guides.md): Learn how to use the main functions of SOL to reach your goals (aggregate data, join tables, use external data, build a query library...).
-* [SOL Query Examples](/xdr/features/investigate/sol_query_examples.md): Get inspiration from our examples.
-* [SOL Datasets](/xdr/features/investigate/sol_datasets.md): Discover the CSV import feature that enables SOC analysts to enrich security investigations by importing external data sources directly into the SOL query environment.
+* [Create and Manage Queries](create_manage_queries.md): Create and manage queries using SOL.
+* [SOL How-to Guides](sol_how_to_guides.md): Learn how to use the main functions of SOL to reach your goals (aggregate data, join tables, use external data, build a query library...).
+* [SOL Query Examples](sol_query_examples.md): Get inspiration from our examples.
+* [SOL Datasets](sol_datasets.md): Discover the CSV import feature that enables SOC analysts to enrich security investigations by importing external data sources directly into the SOL query environment.
 
 ### Technical Reference
-* [SOL Data Sources Reference](/xdr/features/investigate/sol_ref_datasources.md): Technical references to access security data within the Sekoia platform thanks to SOL.
-* [SOL Functions Reference](/xdr/features/investigate/sol_ref_functions.md): Reference article regarding functions used in SOL.
-* [SOL Operators Reference](/xdr/features/investigate/sol_ref_operators.md): Reference article regarding operators used in the SOL language.
+* [SOL Data Sources Reference](sol_ref_datasources.md): Technical references to access security data within the Sekoia platform thanks to SOL.
+* [SOL Functions Reference](sol_ref_functions.md): Reference article regarding functions used in SOL.
+* [SOL Operators Reference](sol_ref_operators.md): Reference article regarding operators used in the SOL language.

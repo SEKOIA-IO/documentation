@@ -9,7 +9,7 @@ With IOC detection, you can automatically identify potential threats in your pas
 Sekoia Threat Detection & Research (TDR) team maintains the CTI database with millions of IOCs through their investigation and dedicated expertise.
 All this incredible work benefits Sekoia XDR clients, who can consult the number of IOCs available on the Rules catalog page in the section `Active IOCs`.
 
-![verified iocs](/assets/operation_center/rules_catalog/verified_iocs.gif){: style="max-width:100%"}
+![verified iocs](../../../assets/operation_center/rules_catalog/verified_iocs.gif)
 
 Each new event ingested by Sekoia XDR is scanned against our CTI database. If an Indicator is detected, our Sekoia Intelligence Feed rule will immediately alert you.
 
@@ -21,7 +21,7 @@ Each time a new indicator is added to our CTI database, Sekoia XDR will also per
 
 On the Alerts page, look for the Detection type of the alert. `CTI Retrohunt` alerts are triggered retroactively when a new indicator appears in our CTI database.
 
-![detection type](/assets/operation_center/alerts/detection_type.gif){: style="max-width:100%"}
+![detection type](../../../assets/operation_center/alerts/detection_type.gif)
 
 #### Would your SOC team like to scan a specific list of IOCs to perform retrohunt?
 That’s possible via the IOC collections. You can import a specific list of IOCs to perform retrohunting.
@@ -38,7 +38,7 @@ Another option is to create your own custom CTI rule and choose a feed source. T
 
 If no CTI rule is enabled, a warning message will be displayed on the Rules catalog page.
 
-![retrohunt disabled](/assets/operation_center/rules_catalog/retrohunt_disabled.gif){: style="max-width:100%"}
+![retrohunt disabled](../../../assets/operation_center/rules_catalog/retrohunt_disabled.gif)
 
 ### How far in the past is retrohunting performed?
 
@@ -83,8 +83,9 @@ The tables below list the ECS event fields that are verified by IOC detection.
 
 #### Observable type: IPv4 Address & IPv6 Address
 
-!!! Note
-    To avoid false positives, IP addresses that are marked as "Command an Control" are only matched against `destination.ip`.
+{% hint style="info" %}
+To avoid false positives, IP addresses that are marked as "Command an Control" are only matched against `destination.ip`.
+{% endhint %}
 
 | STIX path | ECS event field |
 | --- | --- |

@@ -2,9 +2,12 @@
 
 Asset risk scoring gives assets a current security priority based on persistent exposure, recent asset-linked security activity, and configured asset criticality. The score helps you understand which assets need attention now and why, but it does not represent breach probability, compromise likelihood, or organization-wide security posture.
 
-!!! note "Reveal requirement"
+{% hint style="info" %}
+**Reveal requirement**
 
-    Asset risk scoring requires the Reveal add-on module. The score is calculated per asset and includes a last updated timestamp.
+
+Asset risk scoring requires the Reveal add-on module. The score is calculated per asset and includes a last updated timestamp.
+{% endhint %}
 
 ## What the score represents
 
@@ -53,7 +56,7 @@ An asset has an Exposure Score of `32` and a Recent Activity Score of `18`.
 
 The displayed result is **63, High**. The criticality adjustment increases the score because the asset has a high configured criticality.
 
-![Asset risk breakdown with exposure, recent activity, base score, criticality factor, and final score](/assets/reveal/asset_risk_breakdown.png){: style="width: 100%; max-width: 100%"}
+![Asset risk breakdown with exposure, recent activity, base score, criticality factor, and final score](../../../assets/reveal/asset_risk_breakdown.png)
 
 
 ## Understand the score bands
@@ -229,13 +232,13 @@ Timeline entries can include vulnerability state changes, hygiene changes, alert
 
 The trajectory graph shows the Asset Risk Score on the Y-axis and time on the X-axis. It reflects exposure, recent activity, and criticality changes without adding a marker for every score recalculation.
 
-![sset timeline with a risk score trajectory and contributing security events.](/assets/reveal/asset_risk_timeline.png){: style="width: 100%; max-width: 100%"}
+![sset timeline with a risk score trajectory and contributing security events.](../../../assets/reveal/asset_risk_timeline.png)
 
 
 
 ## Related articles
 
-- [Asset context panel](/xdr/features/investigate/asset_context_panel.md): Overview of the asset investigation surface and its core tabs.
-- [Asset context panel, Reveal capabilities](/xdr/features/modules/reveal_asset_context_panel.md): Overview of Reveal-specific asset context, including hygiene, vulnerabilities, Points of Interest, and security controls.
-- [Assets](/xdr/features/collect/assets.md): Reference for asset categories, criticality, and asset management.
-- [Interpret asset risk scores](/xdr/features/modules/interpret_asset_risk_scores.md): How to read and use the score during an investigation.
+- [Asset context panel](../investigate/asset_context_panel.md): Overview of the asset investigation surface and its core tabs.
+- [Asset context panel, Reveal capabilities](reveal_asset_context_panel.md): Overview of Reveal-specific asset context, including hygiene, vulnerabilities, Points of Interest, and security controls.
+- [Assets](../collect/assets.md): Reference for asset categories, criticality, and asset management.
+- [Interpret asset risk scores](interpret_asset_risk_scores.md): How to read and use the score during an investigation.

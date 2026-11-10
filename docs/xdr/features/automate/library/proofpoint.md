@@ -1,6 +1,6 @@
 # Proofpoint
 
-![Proofpoint](/assets/playbooks/library/proofpoint.png){ align=right width=150 }
+![Proofpoint](../../../../assets/playbooks/library/proofpoint.png)
 
 Proofpoint Module
 

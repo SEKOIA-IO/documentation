@@ -18,8 +18,11 @@ To create a new case:
 
 The new case opens immediately so you can start adding alerts and tasks.
 
-!!! tip "Apply a template after creation"
-    Selecting a template at creation is optional. You can apply or change a template at any point during the investigation from the **Case template** button in the top-right corner of the case.
+{% hint style="success" %}
+**Apply a template after creation**
+
+Selecting a template at creation is optional. You can apply or change a template at any point during the investigation from the **Case template** button in the top-right corner of the case.
+{% endhint %}
 
 ## Add alerts to a case
 
@@ -38,19 +41,25 @@ You can attach alerts to a case immediately after creation or at any point durin
 2. Click **Add to case**.
 3. Search for the target case and confirm.
 
-!!! tip "Adding multiple alerts to a case"
-    Copy the case ID from the case details page and paste it into the search bar on the alerts page. Select the case from the results, then click **Add to alerts**.
+{% hint style="success" %}
+**Adding multiple alerts to a case**
 
-!!! tip "Adding an alert to multiple cases"
-    Copy the alert ID from the alert details page and paste it into the search bar. Select the alert from the results, or scroll and select all the alerts you need, then click **Add to case**.
+Copy the case ID from the case details page and paste it into the search bar on the alerts page. Select the case from the results, then click **Add to alerts**.
+{% endhint %}
+
+{% hint style="success" %}
+**Adding an alert to multiple cases**
+
+Copy the alert ID from the alert details page and paste it into the search bar. Select the alert from the results, or scroll and select all the alerts you need, then click **Add to case**.
+{% endhint %}
 
 ## Related articles
 
-* [Cases](/xdr/features/investigate/cases.md): Overview of what cases are and how they are structured.
-* [Manage cases](/xdr/features/investigate/manage_cases.md): How to filter, sort, bulk-edit, and edit cases from the listing page.
-* [Case details](/xdr/features/investigate/case_details.md): Reference for every tab and field available on the case details page.
-* [Alerts](/xdr/features/investigate/alerts.md): How alerts are created and how to manage them before grouping them into cases.
-* [AI Cases](/xdr/features/investigate/ai_cases.md): How Sekoia.io automatically correlates alerts into cases using AI.
-* [Case templates](/xdr/features/investigate/case_templates.md): Overview of what case templates are and how they work.
-* [Create a case template](/xdr/features/investigate/create_a_case_template.md): How to build and configure a reusable template in Settings.
-* [Apply a case template to a case](/xdr/features/investigate/apply_a_case_template.md): How to apply a template at case creation or on an existing case.
+* [Cases](cases.md): Overview of what cases are and how they are structured.
+* [Manage cases](manage_cases.md): How to filter, sort, bulk-edit, and edit cases from the listing page.
+* [Case details](case_details.md): Reference for every tab and field available on the case details page.
+* [Alerts](alerts.md): How alerts are created and how to manage them before grouping them into cases.
+* [AI Cases](ai_cases.md): How Sekoia.io automatically correlates alerts into cases using AI.
+* [Case templates](case_templates.md): Overview of what case templates are and how they work.
+* [Create a case template](create_a_case_template.md): How to build and configure a reusable template in Settings.
+* [Apply a case template to a case](apply_a_case_template.md): How to apply a template at case creation or on an existing case.

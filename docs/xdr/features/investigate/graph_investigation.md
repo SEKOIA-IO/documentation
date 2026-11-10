@@ -13,8 +13,11 @@ The graph displays four types of elements:
 | CTI objects | STIX-compliant threat intelligence objects from the intelligence database that provide contextual threat information. |
 | STIX relationships | Standardized connections between intelligence objects that reveal broader threat context. |
 
-!!! note "Automatic saving"
-    All changes in the graph are saved automatically. The graph updates dynamically on each visit as new events are associated with the case. New objects discovered through additional events are integrated into the existing graph structure automatically.
+{% hint style="info" %}
+**Automatic saving**
+
+All changes in the graph are saved automatically. The graph updates dynamically on each visit as new events are associated with the case. New objects discovered through additional events are integrated into the existing graph structure automatically.
+{% endhint %}
 
 ## Observable and CTI object panels
 
@@ -88,7 +91,7 @@ Layers are especially useful for complex, multi-alert cases. The following strat
 
 ## Related articles
 
-* [Case details](/xdr/features/investigate/case_details.md): Reference for every tab and field available on the case details page, including the Graph investigation tab entry point.
-* [Cases](/xdr/features/investigate/cases.md): Overview of what cases are and how they are structured.
-* [Events](/xdr/features/investigate/events.md): How to explore events and run contextual searches associated with a case.
-* [AI Cases](/xdr/features/investigate/ai_cases.md): How Sekoia.io automatically correlates alerts into cases using AI.
+* [Case details](case_details.md): Reference for every tab and field available on the case details page, including the Graph investigation tab entry point.
+* [Cases](cases.md): Overview of what cases are and how they are structured.
+* [Events](events.md): How to explore events and run contextual searches associated with a case.
+* [AI Cases](ai_cases.md): How Sekoia.io automatically correlates alerts into cases using AI.

@@ -18,43 +18,61 @@ Navigate to **Detection > Rules catalog**, then click **+ New rule**.
 
 In the **Specify your detection patterns** section, select the **SOL** tab. SOL sits alongside the Sigma, CTI, Anomaly and Event Drop patterns.
 
-![Detection pattern tabs with the SOL pattern selected](/assets/operation_center/rules_catalog/sol-patterns.png){: style="max-width:100%"}
+![Detection pattern tabs with the SOL pattern selected](../../../assets/operation_center/rules_catalog/sol-patterns.png)
 
 ### Step 3: Write your SOL query
 
 In the **Query** field, enter your SOL query. This is the query that will execute on each scheduled run.
 
-!!! warning "Time conditions are required"
-    Whatever the datasource, your SOL pattern must bound the query with a start and an end time using the `?time.start` and `?time.end` placeholders. The platform replaces them with each run's time window. A rule whose pattern omits these conditions cannot be saved or executed.
+{% hint style="warning" %}
+**Time conditions are required**
 
-    ```
-    events
-    | where timestamp between (?time.start .. ?time.end)
-    | limit 100
-    ```
+Whatever the datasource, your SOL pattern must bound the query with a start and an end time using the `?time.start` and `?time.end` placeholders. The platform replaces them with each run's time window. A rule whose pattern omits these conditions cannot be saved or executed.
 
-!!! tip "Reuse an existing investigation"
-    You can copy a SOL query directly from a Notebook or investigation. Before saving, make sure it bounds the time range with `?time.start` and `?time.end`.
+```
+events
+| where timestamp between (?time.start .. ?time.end)
+| limit 100
+```
+{% endhint %}
 
-!!! note "Result cap"
-    The platform automatically appends a 10,000-row limit to your query. You do not need to add it manually. This is a temporary protective limit and may be raised in the future.
+{% hint style="success" %}
+**Reuse an existing investigation**
+
+You can copy a SOL query directly from a Notebook or investigation. Before saving, make sure it bounds the time range with `?time.start` and `?time.end`.
+{% endhint %}
+
+{% hint style="info" %}
+**Result cap**
+
+The platform automatically appends a 10,000-row limit to your query. You do not need to add it manually. This is a temporary protective limit and may be raised in the future.
+{% endhint %}
 
 ### Step 4: Set the run schedule
 
 In the **Query Run Scheduling** section, enter a value in the **Run query every** field and select the time unit: minutes, hours, or days. The rule then runs at that frequency. By default, each run only checks the events received since the last run, as summarized in the information banner: "Runs every **5 hours**, only checking events since the last run."
 
-!!! warning "Minimum schedule interval"
-    The minimum accepted schedule is every 5 minutes.
+{% hint style="warning" %}
+**Minimum schedule interval**
 
-!!! note "Late-arriving events"
-    You do not need to widen the schedule or the search window to account for ingestion lag. The platform automatically extends each run 5 minutes into the past to catch events that arrive after their timestamp, and deduplicates overlapping results so the same alert is not raised twice. See [Lag management for SOL detection rules](/xdr/features/detect/sol_detection_lag_management.md).
+The minimum accepted schedule is every 5 minutes.
+{% endhint %}
+
+{% hint style="info" %}
+**Late-arriving events**
+
+You do not need to widen the schedule or the search window to account for ingestion lag. The platform automatically extends each run 5 minutes into the past to catch events that arrive after their timestamp, and deduplicates overlapping results so the same alert is not raised twice. See [Lag management for SOL detection rules](sol_detection_lag_management.md).
+{% endhint %}
 
 ### Step 5: Widen the search window (optional)
 
 The search window is the period of events each run checks. You can set it independently of the schedule, so a rule can run every few hours while looking back over a longer period. This is useful when your detection logic needs more history than the run interval, such as an aggregation or a threshold computed over the last 24 hours.
 
-!!! note "Hourly schedules only"
-    The search window option is available for schedules between 1 hour and 24 hours. When the schedule is set in minutes or days, the **Search a wider window than the schedule** toggle is disabled and a tooltip explains why.
+{% hint style="info" %}
+**Hourly schedules only**
+
+The search window option is available for schedules between 1 hour and 24 hours. When the schedule is set in minutes or days, the **Search a wider window than the schedule** toggle is disabled and a tooltip explains why.
+{% endhint %}
 
 To widen the search window:
 
@@ -62,15 +80,18 @@ To widen the search window:
 2. To set how far back each run looks, drag the **Search window** slider to a value between 1 hour and 24 hours.
 3. To confirm the configuration, read the summary in the information banner. For example, with a 5-hour schedule and a 1-day search window, it reads: "Runs every **5 hours**, checking the last **1 day** of events each time. If an alert was already raised for an event, later runs won't raise a duplicate."
 
-![Query Run Scheduling section with the search window set to 1 day](/assets/operation_center/rules_catalog/sol-search-window.png){: style="max-width:100%"}
+![Query Run Scheduling section with the search window set to 1 day](../../../assets/operation_center/rules_catalog/sol-search-window.png)
 
 | Search a wider window than the schedule | Events checked on each run | Duplicate alerts |
 |---|---|---|
 | Off | The events received since the last run | Not applicable, runs do not overlap beyond the 5-minute lag overlap |
 | On | The last 1 to 24 hours of events, as set with the **Search window** slider | Not raised: if an alert was already raised for an event, later runs do not raise it again |
 
-!!! warning "Search window shorter than the schedule"
-    The slider also accepts a search window shorter than the schedule. In that case, each run only checks the end of the period since the last run, and events in the rest of that period are never evaluated. For example, with a 5-hour schedule and a 1-hour search window, the banner reads: "Runs every **5 hours** but only checks the last **1 hour** of events." Set a search window at least as long as the schedule to cover every event.
+{% hint style="warning" %}
+**Search window shorter than the schedule**
+
+The slider also accepts a search window shorter than the schedule. In that case, each run only checks the end of the period since the last run, and events in the rest of that period are never evaluated. For example, with a 5-hour schedule and a 1-hour search window, the banner reads: "Runs every **5 hours** but only checks the last **1 hour** of events." Set a search window at least as long as the schedule to cover every event.
+{% endhint %}
 
 ### Step 6: Configure the similarity strategy (optional)
 
@@ -78,8 +99,11 @@ By default, all of a rule's matches are grouped into a single alert: each new ma
 
 To split matches into separate alerts, configure a similarity strategy by selecting one or more fields. Matches that share the same values for those fields are grouped into one alert, and matches with different values are raised as separate alerts. You can also group interchangeable fields, written as `[source.ip, destination.ip]`, so their values can be swapped when matching.
 
-!!! note "Similarity for SOL rules"
-   The fields available in the **Similarity strategy** selector depend on your query.  SOL detection rules apply no default similarity strategy based on the datasource, because a SOL rule can query any datasource. See [Alert similarity for SOL detection rules](/xdr/features/detect/sol_detection_similarity.md) to understand the default grouping and when to configure a strategy.
+{% hint style="info" %}
+**Similarity for SOL rules**
+
+The fields available in the **Similarity strategy** selector depend on your query.  SOL detection rules apply no default similarity strategy based on the datasource, because a SOL rule can query any datasource. See [Alert similarity for SOL detection rules](sol_detection_similarity.md) to understand the default grouping and when to configure a strategy.
+{% endhint %}
 
 ### Step 7: Complete the rule metadata
 
@@ -106,19 +130,22 @@ Event Drop rules follow the same creation flow as SOL rules, with the following 
 - In the **Query** field, enter the SOL pattern targeting the events, intake or asset you want to monitor for missing data. Like any SOL pattern, it must bound the query with `?time.start` and `?time.end`.
 - The **Threats** and security alert classification fields are not available for Event Drop rules, as they apply to threat detection rather than availability monitoring. The **Effort** field remains available.
 
-!!! tip "Create from an intake or asset"
-    You can start Event Drop rule creation directly from an intake or an asset, with the pattern pre-filled on the source UUID. See [Create an Event Drop rule from an intake or asset](/xdr/features/detect/create_event_drop_from_source.md).
+{% hint style="success" %}
+**Create from an intake or asset**
+
+You can start Event Drop rule creation directly from an intake or an asset, with the pattern pre-filled on the source UUID. See [Create an Event Drop rule from an intake or asset](create_event_drop_from_source.md).
+{% endhint %}
 
 ## What happens next
 
 Once saved, your rule begins executing immediately according to its schedule. When the query returns results, an alert is created. You can open any alert generated by a SOL or Event Drop rule to access the **Results** tab, which shows the raw query results for that execution.
 
-![SOL alert results tab](/assets/operation_center/rules_catalog/sol-alert-results.png){: style="max-width:100%"}
+![SOL alert results tab](../../../assets/operation_center/rules_catalog/sol-alert-results.png)
 
 ## Related articles
 
-* [SOL detection rules](/xdr/features/detect/sol_detection_rule.md): Conceptual overview of the SOL and Event Drop detection patterns, how they work, and when to use them.
-* [Create an Event Drop rule from an intake or asset](/xdr/features/detect/create_event_drop_from_source.md): Create a pre-filled Event Drop rule directly from an intake or asset details page.
-* [Alert similarity for SOL detection rules](/xdr/features/detect/sol_detection_similarity.md): How SOL rules group matches into alerts, the group-all default, and how to configure a similarity strategy.
-* [Lag management for SOL detection rules](/xdr/features/detect/sol_detection_lag_management.md): How rules handle late-arriving events through a fixed run overlap and deduplication.
-* [Write queries in SOL](/xdr/features/investigate/sol_how_to_guides.md): Reference guide for SOL syntax, operators, and functions.
+* [SOL detection rules](sol_detection_rule.md): Conceptual overview of the SOL and Event Drop detection patterns, how they work, and when to use them.
+* [Create an Event Drop rule from an intake or asset](create_event_drop_from_source.md): Create a pre-filled Event Drop rule directly from an intake or asset details page.
+* [Alert similarity for SOL detection rules](sol_detection_similarity.md): How SOL rules group matches into alerts, the group-all default, and how to configure a similarity strategy.
+* [Lag management for SOL detection rules](sol_detection_lag_management.md): How rules handle late-arriving events through a fixed run overlap and deduplication.
+* [Write queries in SOL](../investigate/sol_how_to_guides.md): Reference guide for SOL syntax, operators, and functions.

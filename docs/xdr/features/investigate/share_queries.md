@@ -17,9 +17,12 @@ To make a query available to other communities:
 4. In the list provided, select the communities you want to share the query with.
 5. Click **Save**.
 
-!!! note "Read-only mode"
+{% hint style="info" %}
+**Read-only mode**
 
-    Shared queries are available to users in the destination community in read-only mode. Users in these communities can execute the query but cannot modify the original version.
+
+Shared queries are available to users in the destination community in read-only mode. Users in these communities can execute the query but cannot modify the original version.
+{% endhint %}
 
 
 ## Duplicate a shared query
@@ -31,13 +34,19 @@ If you need to edit a query that has been shared with your community, you must d
 3. Click the **...** (three dots) icon associated with the query.
 4. Select **Duplicate query**.
     
-    !!! warning "Query validation"
-        By duplicating the query, you will lose access to filter and SOL datasets attached to that query. That could impact the good run of the query and require some improvement.
+    {% hint style="warning" %}
+    **Query validation**
+
+    By duplicating the query, you will lose access to filter and SOL datasets attached to that query. That could impact the good run of the query and require some improvement.
+    {% endhint %}
 
 5. Enter a new name for the duplicated query.
 6. Resolve duplication issue
 7. Click **Save**.
 
-!!! tip "Customization"
+{% hint style="success" %}
+**Customization**
 
-    Once duplicated, the query is considered a **Personal** type query. You can freely modify the SOL code, filters, or visualization settings.
+
+Once duplicated, the query is considered a **Personal** type query. You can freely modify the SOL code, filters, or visualization settings.
+{% endhint %}

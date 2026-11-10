@@ -56,10 +56,10 @@ Monitoring both regularly helps ensure your data collection remains healthy and 
 
 ## Related articles
 
-- [Intake details page](/xdr/features/collect/intakes_details.md): Reference for all metrics, indicators, and menu options available on the intake details page, including a full explanation of the event delivery metric.
+- [Intake details page](intakes_details.md): Reference for all metrics, indicators, and menu options available on the intake details page, including a full explanation of the event delivery metric.
 
-- [Manage intakes](/xdr/features/collect/manage_intakes.md): Step-by-step procedures for creating, configuring, renaming, and deleting intakes.
+- [Manage intakes](manage_intakes.md): Step-by-step procedures for creating, configuring, renaming, and deleting intakes.
 
-- [Turn on notifications](/getting_started/create_a_notification.md): How to configure notification channels and triggers for intake inactivity alerts.
+- [Turn on notifications](../../../getting_started/create_a_notification.md): How to configure notification channels and triggers for intake inactivity alerts.
 
-- [Integrations](/integration/index.md): Full catalog of supported data source integrations and their setup documentation.
+- [Integrations](../../../integration/index.md): Full catalog of supported data source integrations and their setup documentation.

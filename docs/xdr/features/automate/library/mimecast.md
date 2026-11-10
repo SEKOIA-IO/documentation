@@ -1,6 +1,6 @@
 # Mimecast
 
-![Mimecast](/assets/playbooks/library/mimecast.png){ align=right width=150 }
+![Mimecast](../../../../assets/playbooks/library/mimecast.png)
 
 Mimecast offers cloud-based email security, archiving, and continuity solutions to protect against cyber threats and ensure compliance.
 

@@ -14,7 +14,7 @@
 ## Overview
 Notebooks is a powerful incident response feature that allows SOC analysts to centralize their `investigation queries`, `automation actions`, and `reporting` in a single document. With support for markdown syntax and rich media, Notebooks streamlines the incident response process and facilitates team collaboration.
 
-![notebook](/assets/operation_center/notebook.gif){: style="max-width:100%"}
+![notebook](../../../assets/operation_center/notebook.gif)
 
 ## Feature Benefits
 * Centralized incident response
@@ -46,10 +46,11 @@ Notebooks is a powerful incident response feature that allows SOC analysts to ce
 2. Click `New Notebook`
 3. Edit blank notebook or use an existing template
 
-![notebook_blank](/assets/operation_center/notebook_case.png){: style="max-width:100%"}
+![notebook_blank](../../../assets/operation_center/notebook_case.png)
 
-!!! Warning
-    In a **multi-tenant** environment, notebooks are created in the **parent** workspace by default. They are not visible to child tenants unless you explicitly share the notebook with them.
+{% hint style="warning" %}
+In a **multi-tenant** environment, notebooks are created in the **parent** workspace by default. They are not visible to child tenants unless you explicitly share the notebook with them.
+{% endhint %}
 
 ### Basic Features
 * Markdown syntax support
@@ -59,14 +60,15 @@ Notebooks is a powerful incident response feature that allows SOC analysts to ce
 * Automations execution
 * Real-time modifications saving
 
-!!! Info
-    Currently, Markdown table syntax is not supported.
+{% hint style="info" %}
+Currently, Markdown table syntax is not supported.
+{% endhint %}
 
 ### Tracking Changes
 * Last modification date
 * Last modification author
 
-![notebook_changes](/assets/operation_center/notebook_changes.png){: style="max-width:100%"}
+![notebook_changes](../../../assets/operation_center/notebook_changes.png)
 
 ## Notebook Templates
 
@@ -91,13 +93,13 @@ Enhance incident response capabilities by creating template notebooks tailored t
 
 The `default` notebook template will be suggested for use in cases and alerts, enabling the SOC team to standardize their response processes.
 
-![notebook_template](/assets/operation_center/notebook_template.gif){: style="max-width:100%"}
+![notebook_template](../../../assets/operation_center/notebook_template.gif)
 
 ### Template Creation Methods
 * Create notebook template from scratch
 * Convert existing notebook to template
 
-![notebook_convert_template](/assets/operation_center/notebook_convert_template.gif){: style="max-width:100%"}
+![notebook_convert_template](../../../assets/operation_center/notebook_convert_template.gif)
 
 ## Command Menu and Formatting
 
@@ -105,23 +107,24 @@ The `default` notebook template will be suggested for use in cases and alerts, e
 * Press the slash key (/) to open the Command menu
 * Access notebook capabilities
 
-![notebook_command](/assets/operation_center/notebook_command.gif){: style="max-width:100%"}
+![notebook_command](../../../assets/operation_center/notebook_command.gif)
 
-!!! Tip
-    When the command menu is open, quickly search for an integration by typing its name.
+{% hint style="success" %}
+When the command menu is open, quickly search for an integration by typing its name.
+{% endhint %}
 
 ### Available Commands
 * Text formatting options
 * Query builder insertion
 * Automation insertion
 
-![notebook_menu](/assets/operation_center/notebook_menu.png){: style="max-width:100%"}
+![notebook_menu](../../../assets/operation_center/notebook_menu.png)
 
 ### Query Builder Editor
 * Display data in tables
 * Create various data visualizations, including pie charts, line charts, bar charts, column charts, Sankey charts, geo maps, and numeric displays
 
-![notebook_viz](/assets/operation_center/notebook_viz.png){: style="max-width:100%"}
+![notebook_viz](../../../assets/operation_center/notebook_viz.png)
 
 ## Sharing Notebooks
 
@@ -129,7 +132,7 @@ The `default` notebook template will be suggested for use in cases and alerts, e
 
 Convert notebooks into PDF files to efficiently share incident, threat hunting, and KPI reports.
 
-![notebook_share](/assets/operation_center/notebook_pdf.gif){: style="max-width:100%"}
+![notebook_share](../../../assets/operation_center/notebook_pdf.gif)
 
 ### Multi-tenant support
 * Individual notebook sharing
@@ -138,7 +141,7 @@ Convert notebooks into PDF files to efficiently share incident, threat hunting, 
 
 Share notebooks and templates directly with child tenants to ensure secure information distribution, provide incident reports, and share best practices with customers.
 
-![notebook_share](/assets/operation_center/notebook_share.gif){: style="max-width:100%"}
+![notebook_share](../../../assets/operation_center/notebook_share.gif)
 
 ## Notebook Management
 
@@ -151,7 +154,7 @@ Share notebooks and templates directly with child tenants to ensure secure infor
 * Permanent deletion after 30 days
 * Restore option available
 
-![notebook_share](/assets/operation_center/notebook_delete.gif){: style="max-width:100%"}
+![notebook_share](../../../assets/operation_center/notebook_delete.gif)
 
 ## Best Practices
 1. Use templates for standardized investigations

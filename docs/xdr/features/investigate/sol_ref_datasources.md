@@ -80,7 +80,7 @@ Query **eternal_events** when the alert or case you are investigating has passed
 
 **eternal_events** shares the same schema as `events`. The filters, aggregations and functions you use against `events` apply here without change.
 
-For a full explanation of what is preserved and how to reach it from the interface, see [Eternal events](/xdr/features/investigate/eternal_events.md).
+For a full explanation of what is preserved and how to reach it from the interface, see [Eternal events](eternal_events.md).
 
 ## alerts
 
@@ -114,22 +114,25 @@ For a full explanation of what is preserved and how to reach it from the interfa
 | threats                   | List of threats associated the alert.                                                        |
 | custom_fields             | Structured metadata attached to the alert. Access a field with `custom_fields.<field_name>`. |
 
-!!! note "Using alert timing fields for SLA reporting"
+{% hint style="info" %}
+**Using alert timing fields for SLA reporting**
 
-    Alert timing fields are populated by status transitions, not directly by comments, urgency changes, playbook executions, or remediation actions. An automated action can populate them if it performs the corresponding status transition.
 
-    - **`time_to_acknowledge`** measures the duration from alert creation to the transition to `Acknowledged`.
-    - **`time_to_respond`** measures the duration from acknowledgement to the transition to `Ongoing`. If no acknowledgement duration has been recorded, it is measured from alert creation instead.
-    - **`time_to_resolve`** is recorded when the alert transitions to `Closed` or `Rejected`. It is calculated as the duration since alert creation, minus the recorded acknowledgement and response durations. It is therefore **not necessarily the total time from creation to closure**.
+Alert timing fields are populated by status transitions, not directly by comments, urgency changes, playbook executions, or remediation actions. An automated action can populate them if it performs the corresponding status transition.
 
-    A closed alert can have a `null` `time_to_respond` if it never transitioned to `Ongoing`. This does not imply that the alert was not investigated or remediated.
+- **`time_to_acknowledge`** measures the duration from alert creation to the transition to `Acknowledged`.
+- **`time_to_respond`** measures the duration from acknowledgement to the transition to `Ongoing`. If no acknowledgement duration has been recorded, it is measured from alert creation instead.
+- **`time_to_resolve`** is recorded when the alert transitions to `Closed` or `Rejected`. It is calculated as the duration since alert creation, minus the recorded acknowledgement and response durations. It is therefore **not necessarily the total time from creation to closure**.
 
-    For SLA reporting, distinguish two indicators:
+A closed alert can have a `null` `time_to_respond` if it never transitioned to `Ongoing`. This does not imply that the alert was not investigated or remediated.
 
-    - **Time to acknowledge:** use `time_to_acknowledge` for alerts with a recorded acknowledgement.
-    - **Total time to close:** add `time_to_acknowledge`, `time_to_respond`, and `time_to_resolve`. Treat missing acknowledgement and response durations as zero, but only include alerts with a non-null `time_to_resolve`.
+For SLA reporting, distinguish two indicators:
 
-    All durations are expressed in seconds. Report missing measurements separately: excluding null values from an SLA percentage means that the percentage covers only alerts with a recorded measurement, not all alerts.
+- **Time to acknowledge:** use `time_to_acknowledge` for alerts with a recorded acknowledgement.
+- **Total time to close:** add `time_to_acknowledge`, `time_to_respond`, and `time_to_resolve`. Treat missing acknowledgement and response durations as zero, but only include alerts with a non-null `time_to_resolve`.
+
+All durations are expressed in seconds. Report missing measurements separately: excluding null values from an SLA percentage means that the percentage covers only alerts with a recorded measurement, not all alerts.
+{% endhint %}
     
 ## cases
 
@@ -355,22 +358,30 @@ Applications reported by the Sekoia agent are refreshed at each inventory. When 
 | updated_at        | Last update timestamp                                                                             |
 | deleted_at        | Timestamp when the application was considered removed from the asset. Removed applications remain in the data source. Filter on `isnull(deleted_at)` to query installed applications only. |
 
-??? example "Count unsigned applications across assets"
+<details>
+<summary>Count unsigned applications across assets</summary>
 
-    ```
-    asset_applications
-    | where signed == false and isnull(deleted_at)
-    | aggregate count_distinct(asset_uuid)
-    ```
 
-??? example "Top 20 most widespread applications by number of assets"
+```
+asset_applications
+| where signed == false and isnull(deleted_at)
+| aggregate count_distinct(asset_uuid)
+```
 
-    ```
-    asset_applications
-    | where isnull(deleted_at)
-    | aggregate asset_count = count_distinct(asset_uuid) by name, version
-    | top 20 by asset_count
-    ```
+</details>
+
+<details>
+<summary>Top 20 most widespread applications by number of assets</summary>
+
+
+```
+asset_applications
+| where isnull(deleted_at)
+| aggregate asset_count = count_distinct(asset_uuid) by name, version
+| top 20 by asset_count
+```
+
+</details>
 
 ## asset_vulnerabilities
 
@@ -403,22 +414,30 @@ Use this data source to track open vulnerabilities, prioritize remediation by CV
 | closed_by                 | User or system that closed the vulnerability                                          |
 | closed_by_type            | Type of entity that closed the vulnerability (e.g., avatar, apikey)                  |
 
-??? example "Count assets with at least one open critical vulnerability (CVSS >= 9)"
+<details>
+<summary>Count assets with at least one open critical vulnerability (CVSS >= 9)</summary>
 
-    ```
-    asset_vulnerabilities
-    | where status == "open" and cvss_score >= 9
-    | aggregate count_distinct(asset_uuid)
-    ```
 
-??? example "Top 20 assets with the most open vulnerabilities"
+```
+asset_vulnerabilities
+| where status == "open" and cvss_score >= 9
+| aggregate count_distinct(asset_uuid)
+```
 
-    ```
-    asset_vulnerabilities
-    | where status == "open"
-    | aggregate count() by asset_uuid
-    | top 20 by count
-    ```
+</details>
+
+<details>
+<summary>Top 20 assets with the most open vulnerabilities</summary>
+
+
+```
+asset_vulnerabilities
+| where status == "open"
+| aggregate count() by asset_uuid
+| top 20 by count
+```
+
+</details>
 
 ## asset_poi
 
@@ -426,7 +445,7 @@ Use this data source to track open vulnerabilities, prioritize remediation by CV
 
 The **asset_poi** data source exposes points of interest (POIs) detected on assets, derived from UEBA analysis and notable activity detection. Each record is linked to a MITRE ATT&CK phase, giving you a structured view of behavioral signals across your asset inventory.
 
-Use this data source to surface suspicious activity, map behavioral patterns to MITRE ATT&CK, and prioritize assets for investigation. For a functional overview of how points of interest work, see [Points of interest](/xdr/features/detect/points_of_interest.md).
+Use this data source to surface suspicious activity, map behavioral patterns to MITRE ATT&CK, and prioritize assets for investigation. For a functional overview of how points of interest work, see [Points of interest](../detect/points_of_interest.md).
 
 | **Property**          | **Description**                                                          |
 |-----------------------|--------------------------------------------------------------------------|
@@ -440,24 +459,35 @@ Use this data source to surface suspicious activity, map behavioral patterns to 
 | description           | Description of the POI                                                   |
 | created_at            | Timestamp when the POI was created                                       |
 
-!!! tip "Coming soon"
-    The `notable_activity` value for `poi_type` is not yet available. Queries filtering on `poi_type == "notable_activity"` will return no results until this capability is released.
+{% hint style="success" %}
+**Coming soon**
 
-??? example "Top 20 assets with the most points of interest"
+The `notable_activity` value for `poi_type` is not yet available. Queries filtering on `poi_type == "notable_activity"` will return no results until this capability is released.
+{% endhint %}
 
-    ```
-    asset_poi
-    | aggregate poi_count = count() by asset_uuid
-    | top 20 by poi_count
-    ```
+<details>
+<summary>Top 20 assets with the most points of interest</summary>
 
-??? example "Count POIs by MITRE ATT&CK phase"
 
-    ```
-    asset_poi
-    | aggregate count() by mitre_attack_phase
-    | sort by count desc
-    ```
+```
+asset_poi
+| aggregate poi_count = count() by asset_uuid
+| top 20 by poi_count
+```
+
+</details>
+
+<details>
+<summary>Count POIs by MITRE ATT&CK phase</summary>
+
+
+```
+asset_poi
+| aggregate count() by mitre_attack_phase
+| sort by count desc
+```
+
+</details>
 
 
 ## asset_risk_scores
@@ -586,29 +616,36 @@ It can be joined with `rule_definitions` to produce reports on which rules are e
 | updated_by                | The user or system that last updated the rule instance.                                    |
 | updated_by_type           | The type of entity that last updated the rule instance.                                    |
 
-??? example "Breakdown of detection rules by source and type, with enabled rules count"
+<details>
+<summary>Breakdown of detection rules by source and type, with enabled rules count</summary>
 
-    The following query generates a breakdown of detection rules by source and type, with the count of enabled rules per category. It is useful for monthly client reporting or coverage monitoring:
 
-    ```
-    rule_definitions
-    | lookup rule_instances on uuid == rule_definition_uuid into rule
-    | aggregate
-        rules_count = count(),
-        enabled_rules_count = count(iff(rule.enabled == True, True, null))
-      by source = coalesce(source, "Custom"), type
-    | order by source, type
-    | select source, type, rules_count, enabled_rules_count
-    ```
+The following query generates a breakdown of detection rules by source and type, with the count of enabled rules per category. It is useful for monthly client reporting or coverage monitoring:
+
+```
+rule_definitions
+| lookup rule_instances on uuid == rule_definition_uuid into rule
+| aggregate
+    rules_count = count(),
+    enabled_rules_count = count(iff(rule.enabled == True, True, null))
+  by source = coalesce(source, "Custom"), type
+| order by source, type
+| select source, type, rules_count, enabled_rules_count
+```
+
+</details>
 
 ## playbooks
 
 The **playbooks** data source lists the playbooks of your community, with their current status and their trigger configurations. Each record represents the current version of a playbook.
 
-Use this data source to monitor the health of your automation: count active playbooks, find playbooks in error, and spot activated playbooks that stopped running. For a functional overview of playbooks, see [Playbooks](/xdr/features/automate/index.md).
+Use this data source to monitor the health of your automation: count active playbooks, find playbooks in error, and spot activated playbooks that stopped running. For a functional overview of playbooks, see [Playbooks](../automate/index.md).
 
-!!! note "Required permission"
-    Querying this data source requires the **View playbooks** permission.
+{% hint style="info" %}
+**Required permission**
+
+Querying this data source requires the **View playbooks** permission.
+{% endhint %}
 
 | **Property**             | **Description**                                                                                                       |
 |--------------------------|-----------------------------------------------------------------------------------------------------------------------|
@@ -636,38 +673,56 @@ Use this data source to monitor the health of your automation: count active play
 | trigger_configurations.* | Trigger configurations of the playbook: `uuid`, `name`, `value`, `trigger_id`, and `status` (`running`, `stopped`, `starting`, or `stopping`) |
 | playbook_runs.*          | Runs of the playbook: `uuid`, `status`, `error`, `store`, `started_at`, `started_by`, `started_by_type`, `pending_at`, `running_at`, and `finished_at`. See [playbook_runs](#playbook_runs) |
 
-!!! note "Properties available in SOL"
-    This data source exposes a subset of the properties returned by the [Playbooks API](https://docs.sekoia.com/xdr/develop/rest_api/playbooks/). Properties such as `description`, `custom_fields`, `doctor_status`, `doctor_codes`, or `status_tags` are not available in SOL.
+{% hint style="info" %}
+**Properties available in SOL**
 
-!!! tip "Working with the runs of a playbook"
-    Each playbook record includes the list of all its runs in the `playbook_runs.*` fields. Use `project` to return only the columns you need, for example `playbooks | project name, status`. In a `where` clause, a condition on `playbook_runs.*` matches a playbook when at least one of its runs matches.
+This data source exposes a subset of the properties returned by the [Playbooks API](https://docs.sekoia.com/xdr/develop/rest_api/playbooks/). Properties such as `description`, `custom_fields`, `doctor_status`, `doctor_codes`, or `status_tags` are not available in SOL.
+{% endhint %}
 
-??? example "Count activated playbooks"
+{% hint style="success" %}
+**Working with the runs of a playbook**
 
-    ```shell
-    playbooks
-    | where status == "activated"
-    | aggregate active_playbooks = count()
-    ```
+Each playbook record includes the list of all its runs in the `playbook_runs.*` fields. Use `project` to return only the columns you need, for example `playbooks | project name, status`. In a `where` clause, a condition on `playbook_runs.*` matches a playbook when at least one of its runs matches.
+{% endhint %}
 
-??? example "List activated playbooks without any run in the last 7 days"
+<details>
+<summary>Count activated playbooks</summary>
 
-    These playbooks are active but no longer run. Their trigger or the data they listen to may be broken.
 
-    ```shell
-    playbooks
-    | where status == "activated"
-    | where not playbook_runs.started_at > ago(7d)
-    | project name, activated_at, updated_at
-    ```
+```shell
+playbooks
+| where status == "activated"
+| aggregate active_playbooks = count()
+```
 
-??? example "List playbooks in error with the reason"
+</details>
 
-    ```shell
-    playbooks
-    | where status == "error"
-    | project name, status_message, updated_at
-    ```
+<details>
+<summary>List activated playbooks without any run in the last 7 days</summary>
+
+
+These playbooks are active but no longer run. Their trigger or the data they listen to may be broken.
+
+```shell
+playbooks
+| where status == "activated"
+| where not playbook_runs.started_at > ago(7d)
+| project name, activated_at, updated_at
+```
+
+</details>
+
+<details>
+<summary>List playbooks in error with the reason</summary>
+
+
+```shell
+playbooks
+| where status == "error"
+| project name, status_message, updated_at
+```
+
+</details>
 
 ## playbook_runs
 
@@ -675,8 +730,11 @@ The **playbook_runs** data source lists the executions of your playbooks. Each r
 
 Use this data source to measure the success rate of your automation, find the playbooks that fail the most, and detect runs that never finish.
 
-!!! note "Required permission"
-    Querying this data source requires the **View playbook runs** permission.
+{% hint style="info" %}
+**Required permission**
+
+Querying this data source requires the **View playbook runs** permission.
+{% endhint %}
 
 | **Property**      | **Description**                                                                                  |
 |-------------------|--------------------------------------------------------------------------------------------------|
@@ -694,51 +752,70 @@ Use this data source to measure the success rate of your automation, find the pl
 | running_at        | Date the run started executing                                                                   |
 | finished_at       | Date the run ended                                                                               |
 
-!!! tip "Find why a run failed"
-    The `error` field of a run is only filled for failures raised by the playbook engine. When an action fails, the run status is `error` and the error message is stored on the failed step. To get it, query [node_runs](#node_runs) and filter on `playbook_run.status == "error"`.
+{% hint style="success" %}
+**Find why a run failed**
 
-??? example "Success rate over the last 7 days"
+The `error` field of a run is only filled for failures raised by the playbook engine. When an action fails, the run status is `error` and the error message is stored on the failed step. To get it, query [node_runs](#node_runs) and filter on `playbook_run.status == "error"`.
+{% endhint %}
 
-    The success rate only counts ended runs: runs still pending or running are excluded.
+<details>
+<summary>Success rate over the last 7 days</summary>
 
-    ```shell
-    playbook_runs
-    | where started_at > ago(7d)
-    | aggregate successful_runs = sum(iff(status == "finished", 1, 0)), failed_runs = sum(iff(status == "error", 1, 0))
-    | where successful_runs + failed_runs > 0
-    | extend success_rate = round(100.0 * successful_runs / (successful_runs + failed_runs), 1)
-    ```
 
-??? example "Daily runs by status over the last 30 days"
+The success rate only counts ended runs: runs still pending or running are excluded.
 
-    ```shell
-    playbook_runs
-    | where started_at > ago(30d)
-    | aggregate runs = count() by bin(started_at, 1d), status
-    | sort by started_at asc
-    | render columnchart with (x=started_at, y=runs, breakdown_by=status, mode=stacked)
-    ```
+```shell
+playbook_runs
+| where started_at > ago(7d)
+| aggregate successful_runs = sum(iff(status == "finished", 1, 0)), failed_runs = sum(iff(status == "error", 1, 0))
+| where successful_runs + failed_runs > 0
+| extend success_rate = round(100.0 * successful_runs / (successful_runs + failed_runs), 1)
+```
 
-??? example "Top 10 playbooks with the most failed runs over the last 7 days"
+</details>
 
-    ```shell
-    playbook_runs
-    | where started_at > ago(7d)
-    | aggregate total_runs = count(), failed_runs = sum(iff(status == "error", 1, 0)) by playbook.name
-    | where failed_runs > 0
-    | extend error_rate = round(100.0 * failed_runs / total_runs, 1)
-    | top 10 by failed_runs
-    ```
+<details>
+<summary>Daily runs by status over the last 30 days</summary>
 
-??? example "Runs pending or running for more than one hour"
 
-    ```shell
-    playbook_runs
-    | where status in ["running", "pending"]
-    | where started_at < ago(1h)
-    | aggregate stuck_runs = count(), oldest_run = min(started_at) by playbook.name
-    | sort by stuck_runs desc
-    ```
+```shell
+playbook_runs
+| where started_at > ago(30d)
+| aggregate runs = count() by bin(started_at, 1d), status
+| sort by started_at asc
+| render columnchart with (x=started_at, y=runs, breakdown_by=status, mode=stacked)
+```
+
+</details>
+
+<details>
+<summary>Top 10 playbooks with the most failed runs over the last 7 days</summary>
+
+
+```shell
+playbook_runs
+| where started_at > ago(7d)
+| aggregate total_runs = count(), failed_runs = sum(iff(status == "error", 1, 0)) by playbook.name
+| where failed_runs > 0
+| extend error_rate = round(100.0 * failed_runs / total_runs, 1)
+| top 10 by failed_runs
+```
+
+</details>
+
+<details>
+<summary>Runs pending or running for more than one hour</summary>
+
+
+```shell
+playbook_runs
+| where status in ["running", "pending"]
+| where started_at < ago(1h)
+| aggregate stuck_runs = count(), oldest_run = min(started_at) by playbook.name
+| sort by stuck_runs desc
+```
+
+</details>
 
 ## node_runs
 
@@ -746,8 +823,11 @@ The **node_runs** data source lists the executions of each step of your playbook
 
 Use this data source to find the root cause of failed runs, and to list the actions that failed with their error message.
 
-!!! note "Required permission"
-    Querying this data source requires the **View playbook runs** permission.
+{% hint style="info" %}
+**Required permission**
+
+Querying this data source requires the **View playbook runs** permission.
+{% endhint %}
 
 | **Property**               | **Description**                                                                                     |
 |----------------------------|-----------------------------------------------------------------------------------------------------|
@@ -775,59 +855,74 @@ Use this data source to find the root cause of failed runs, and to list the acti
 | playbook.*                 | Playbook the step belongs to: `uuid`, `name`, `version`, and `status`                               |
 | playbook_run.*             | Run the step belongs to: `uuid`, `status`, `error`, `store`, `started_at`, `started_by`, `started_by_type`, `pending_at`, `running_at`, and `finished_at` |
 
-!!! note "Steps inside loops"
-    Each iteration of a loop creates its own step execution. A loop over 500 items that fails on every item counts 500 errors.
+{% hint style="info" %}
+**Steps inside loops**
 
-??? example "Top 20 errors that made a run fail over the last 7 days"
+Each iteration of a loop creates its own step execution. A loop over 500 items that fails on every item counts 500 errors.
+{% endhint %}
 
-    ```shell
-    node_runs
-    | where started_at > ago(7d)
-    | where status == "error"
-    | where playbook_run.status == "error"
-    | aggregate occurrences = count(), last_seen = max(started_at) by playbook.name, error
-    | top 20 by occurrences
-    ```
+<details>
+<summary>Top 20 errors that made a run fail over the last 7 days</summary>
 
-??? example "New errors over the last 30 days"
 
-    Errors are sorted by first occurrence. A recent first occurrence often points to a change in a third-party API or in a playbook.
+```shell
+node_runs
+| where started_at > ago(7d)
+| where status == "error"
+| where playbook_run.status == "error"
+| aggregate occurrences = count(), last_seen = max(started_at) by playbook.name, error
+| top 20 by occurrences
+```
 
-    ```shell
-    node_runs
-    | where started_at > ago(30d)
-    | where status == "error"
-    | aggregate first_seen = min(started_at), last_seen = max(started_at), occurrences = count() by error
-    | sort by first_seen desc
-    ```
+</details>
 
-??? example "Failed actions over the last 24 hours"
+<details>
+<summary>New errors over the last 30 days</summary>
 
-    ```shell
-    node_runs
-    | where started_at > ago(24h)
-    | where node_type == "action"
-    | where status == "error"
-    | project started_at, playbook.name, action_name, error
-    | sort by started_at desc
-    ```
+
+Errors are sorted by first occurrence. A recent first occurrence often points to a change in a third-party API or in a playbook.
+
+```shell
+node_runs
+| where started_at > ago(30d)
+| where status == "error"
+| aggregate first_seen = min(started_at), last_seen = max(started_at), occurrences = count() by error
+| sort by first_seen desc
+```
+
+</details>
+
+<details>
+<summary>Failed actions over the last 24 hours</summary>
+
+
+```shell
+node_runs
+| where started_at > ago(24h)
+| where node_type == "action"
+| where status == "error"
+| project started_at, playbook.name, action_name, error
+| sort by started_at desc
+```
+
+</details>
 
 ## Related articles
 
 ### Getting started and overview
 
-* [SOL Overview](/xdr/features/investigate/sol_overview.md): Sekoia Operating Language overview.
-* [SOL Getting Started](/xdr/features/investigate/sol_getting_started.md): This tutorial walks you through writing your first SOL queries. By the end, you'll be able to search events, filter results, and save queries for reuse.
-* [SOL Best Practices](/xdr/features/investigate/sol_best_practices.md): Best practices to use SOL effectively.
+* [SOL Overview](sol_overview.md): Sekoia Operating Language overview.
+* [SOL Getting Started](sol_getting_started.md): This tutorial walks you through writing your first SOL queries. By the end, you'll be able to search events, filter results, and save queries for reuse.
+* [SOL Best Practices](sol_best_practices.md): Best practices to use SOL effectively.
 
 ### User guides
 
-* [Create and Manage Queries](/xdr/features/investigate/create_manage_queries.md): Create and manage queries using SOL.
-* [SOL How-to Guides](/xdr/features/investigate/sol_how_to_guides.md): Learn how to use the main functions of SOL to reach your goals (aggregate data, join tables, use external data, build a query library...).
-* [SOL Query Examples](/xdr/features/investigate/sol_query_examples.md): Get inspiration from our examples.
-* [SOL Datasets](/xdr/features/investigate/sol_datasets.md): Discover the CSV import feature that enables SOC analysts to enrich security investigations by importing external data sources directly into the SOL query environment.
+* [Create and Manage Queries](create_manage_queries.md): Create and manage queries using SOL.
+* [SOL How-to Guides](sol_how_to_guides.md): Learn how to use the main functions of SOL to reach your goals (aggregate data, join tables, use external data, build a query library...).
+* [SOL Query Examples](sol_query_examples.md): Get inspiration from our examples.
+* [SOL Datasets](sol_datasets.md): Discover the CSV import feature that enables SOC analysts to enrich security investigations by importing external data sources directly into the SOL query environment.
 
 ### Technical reference
 
-* [SOL Functions Reference](/xdr/features/investigate/sol_ref_functions.md): Reference article regarding functions used in SOL.
-* [SOL Operators Reference](/xdr/features/investigate/sol_ref_operators.md): Reference article regarding operators used in the SOL language.
+* [SOL Functions Reference](sol_ref_functions.md): Reference article regarding functions used in SOL.
+* [SOL Operators Reference](sol_ref_operators.md): Reference article regarding operators used in the SOL language.

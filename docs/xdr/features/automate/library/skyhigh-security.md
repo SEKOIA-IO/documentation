@@ -1,6 +1,6 @@
 # Skyhigh Security
 
-![Skyhigh Security](/assets/playbooks/library/skyhigh-security.png){ align=right width=150 }
+![Skyhigh Security](../../../../assets/playbooks/library/skyhigh-security.png)
 
 Skyhigh Security
 

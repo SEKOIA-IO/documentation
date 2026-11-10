@@ -4,7 +4,7 @@ type: playbook
 
 # IPtoASN
 
-![IPtoASN](/assets/playbooks/library/iptoasn.png){ align=right width=150 }
+![IPtoASN](../../../../assets/playbooks/library/iptoasn.png)
 
 IPtoASN is a free, downloadable and frequently updated ASN database. It allow associating IP addresses to ASN
 

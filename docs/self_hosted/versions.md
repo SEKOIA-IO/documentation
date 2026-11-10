@@ -2,14 +2,17 @@
 
 Sekoia Self-Hosted documentation is published per platform version. Each version is a frozen snapshot: it describes the configuration keys, CLI commands, and behavior of that release only.
 
-!!! warning "Check your version before following any procedure"
-    Configuration keys and CLI commands change between releases. Running a procedure from the wrong version can break your deployment.
+{% hint style="warning" %}
+**Check your version before following any procedure**
+
+Configuration keys and CLI commands change between releases. Running a procedure from the wrong version can break your deployment.
+{% endhint %}
 
 ## Available versions
 
 | Version | Status | Documentation |
 | :--- | :--- | :--- |
-| 1.0.1 | Current | [Read the documentation](/self_hosted/1.0.1/index.md) |
+| 1.0.1 | Current | [Read the documentation](1.0.1/index.md) |
 
 The current version is the one shown in the navigation menu. Superseded versions stay published and reachable from this page, but they are no longer updated and are excluded from the site search.
 
@@ -17,7 +20,7 @@ The current version is the one shown in the navigation menu. Superseded versions
 
 | Version | Release notes |
 | :--- | :--- |
-| 1.0.1 | [Release notes v1.0.1](/self_hosted/1.0.1/release_notes.md) |
+| 1.0.1 | [Release notes v1.0.1](1.0.1/release_notes.md) |
 
 ## Upgrading
 

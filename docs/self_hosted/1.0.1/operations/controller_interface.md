@@ -12,17 +12,23 @@ The one-shot command-line interface (CLI) remains fully supported. Both interfac
 ## Prerequisites
 
 - You have access to the orchestration node.
-- The SHC Docker image is loaded and the `run-shc.sh` execution script is in place. See [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md).
-- Your terminal is attached to a TTY. The `run-shc.sh` script in [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md) allocates one automatically when it runs in a terminal.
+- The SHC Docker image is loaded and the `run-shc.sh` execution script is in place. See [Deploy the platform](../deployment/deployment_guide.md).
+- Your terminal is attached to a TTY. The `run-shc.sh` script in [Deploy the platform](../deployment/deployment_guide.md) allocates one automatically when it runs in a terminal.
 - For the Kubernetes, Storage, and Diagnostics tabs, the cluster is installed and the SHC holds a valid kubeconfig. Run `GetKubeconfig` if it does not.
 
-!!! note "Same commands, two interfaces"
-    The TUI and one-shot CLI share the same command implementation. For example, `exec CheckKubernetesCluster` runs the same module in both interfaces.
+{% hint style="info" %}
+**Same commands, two interfaces**
+
+The TUI and one-shot CLI share the same command implementation. For example, `exec CheckKubernetesCluster` runs the same module in both interfaces.
+{% endhint %}
 
 ## Open the interface
 
-!!! note "Interactive terminal required"
-    The SHC opens the interface only when an interactive terminal is attached to the container. Both stdin and stdout must be terminals, `TERM` must hold a usable value such as `xterm-256color`, and the terminal must answer the SHC within one second. Otherwise, the SHC displays a warning and the CLI help, then exits. Run the container with `-it`: `-t` alone is not enough. To skip these checks, set `SHC_FORCE_TUI=1` inside the container: add `-e SHC_FORCE_TUI=1` to the `docker run` command of `run-shc.sh`, because the script does not pass the variable through. The variable does not restore a disconnected input.
+{% hint style="info" %}
+**Interactive terminal required**
+
+The SHC opens the interface only when an interactive terminal is attached to the container. Both stdin and stdout must be terminals, `TERM` must hold a usable value such as `xterm-256color`, and the terminal must answer the SHC within one second. Otherwise, the SHC displays a warning and the CLI help, then exits. Run the container with `-it`: `-t` alone is not enough. To skip these checks, set `SHC_FORCE_TUI=1` inside the container: add `-e SHC_FORCE_TUI=1` to the `docker run` command of `run-shc.sh`, because the script does not pass the variable through. The variable does not restore a disconnected input.
+{% endhint %}
 
 To open the interface, run the execution script with no command:
 
@@ -32,7 +38,7 @@ To open the interface, run the execution script with no command:
 
 The TUI opens on the **Controller** tab. Passing a command instead, such as `exec`, `list`, `help`, or `config`, keeps the SHC in one-shot CLI mode and returns to your shell when the command completes.
 
-![The SHC TUI open on the Controller tab, with the command input and log file path below the output panel.](/assets/self_hosted/1.0.1/controller_interface/controller.png){: style="max-width:100%"}
+![The SHC TUI open on the Controller tab, with the command input and log file path below the output panel.](../../../assets/self_hosted/1.0.1/controller_interface/controller.png)
 
 ## Navigate the interface
 
@@ -46,12 +52,15 @@ The TUI opens on the **Controller** tab. Passing a command instead, such as `exe
 
 Every run writes a timestamped log file, whose path is displayed at the bottom of the interface: `/tmp/<TIMESTAMP>_self-hosted-controller.log`, for example `/tmp/20261026-143000_self-hosted-controller.log`. The one-shot CLI also writes a log file with the same name pattern for each run.
 
-!!! warning "The log file contains secrets"
-    In the TUI, the log file holds the output of the modules, including the credentials that `PlatformAccess` displays in clear. The output that you copy from the interface can also contain these credentials and the secrets that `config show` displays. Before you attach the file or copied output to a ticket, redact the credentials, tokens, API keys, private hostnames, and customer data. See [Collecting logs for a support ticket](/self_hosted/1.0.1/troubleshooting/debug_tool.md#collecting-logs-for-a-support-ticket).
+{% hint style="warning" %}
+**The log file contains secrets**
+
+In the TUI, the log file holds the output of the modules, including the credentials that `PlatformAccess` displays in clear. The output that you copy from the interface can also contain these credentials and the secrets that `config show` displays. Before you attach the file or copied output to a ticket, redact the credentials, tokens, API keys, private hostnames, and customer data. See [Collecting logs for a support ticket](../troubleshooting/debug_tool.md#collecting-logs-for-a-support-ticket).
+{% endhint %}
 
 Attach the redacted log file when you escalate an issue to Sekoia support.
 
-The path is inside the container. Set `global.logging.file` to a path under `/opt/sekoia`, such as `/opt/sekoia/logs/self-hosted-controller.log`, so that the file lands in `$SEKOIA_LOCAL_DIR` on the orchestration node. With the default value, the file is written to `/tmp` inside the container and deleted when the SHC exits. When the interface displays `log: (disabled)`, the SHC could not create the file: give UID 1000 write access to the directory. See [SHC log file](/self_hosted/1.0.1/deployment/deployment_configuration.md#shc-log-file).
+The path is inside the container. Set `global.logging.file` to a path under `/opt/sekoia`, such as `/opt/sekoia/logs/self-hosted-controller.log`, so that the file lands in `$SEKOIA_LOCAL_DIR` on the orchestration node. With the default value, the file is written to `/tmp` inside the container and deleted when the SHC exits. When the interface displays `log: (disabled)`, the SHC could not create the file: give UID 1000 write access to the directory. See [SHC log file](../deployment/deployment_configuration.md#shc-log-file).
 
 ## Run a command from the Controller tab
 
@@ -75,7 +84,7 @@ The interface runs one command at a time. A command submitted while another is s
 
 To copy the visible output, right-click the log panel. The interface copies the lines currently in the viewport to your clipboard and confirms with a notification. Lines scrolled out of the viewport are not copied. Redact the copied output before you share it.
 
-![The Controller tab displaying streamed output from an SHC module.](/assets/self_hosted/1.0.1/controller_interface/controller-command-output.png){: style="max-width:100%"}
+![The Controller tab displaying streamed output from an SHC module.](../../../assets/self_hosted/1.0.1/controller_interface/controller-command-output.png)
 
 ### Follow the platform installation
 
@@ -96,7 +105,7 @@ The CPU, RAM, and disk bars indicate how close a metric is to saturation: green 
 
 The cards are laid out on a responsive grid, recomputed when you resize the terminal, and refreshed every 60 seconds. The data comes from the read-only `GetServerStatus` module, which changes nothing on the hosts.
 
-![The Machines tab showing live and booked CPU and RAM, disk usage, and load for each host.](/assets/self_hosted/1.0.1/controller_interface/machines.png){: style="max-width:100%"}
+![The Machines tab showing live and booked CPU and RAM, disk usage, and load for each host.](../../../assets/self_hosted/1.0.1/controller_interface/machines.png)
 
 ## Read the Kubernetes tab
 
@@ -110,7 +119,7 @@ The Kubernetes tab renders three `kubectl` views of the cluster:
 
 Use the Pods not running panel first when the platform misbehaves: an empty panel means no pod is stuck.
 
-![The Kubernetes tab showing nodes, continuously updated pods, and pods that are not running.](/assets/self_hosted/1.0.1/controller_interface/kubernetes.png){: style="max-width:100%"}
+![The Kubernetes tab showing nodes, continuously updated pods, and pods that are not running.](../../../assets/self_hosted/1.0.1/controller_interface/kubernetes.png)
 
 ## Read the Storage tab
 
@@ -126,7 +135,7 @@ The panels run against the `rook-ceph-tools` deployment in the `rook-ceph` names
 
 Start with **Ceph status**. A healthy cluster reports `HEALTH_OK`. If it reports a warning or error, use **OSD usage** to identify a full or unavailable OSD and **OSD tree** to locate it on a host.
 
-![The Storage tab showing Ceph health, per-OSD capacity, and the OSD topology by host.](/assets/self_hosted/1.0.1/controller_interface/storage.png){: style="max-width:100%"}
+![The Storage tab showing Ceph health, per-OSD capacity, and the OSD topology by host.](../../../assets/self_hosted/1.0.1/controller_interface/storage.png)
 
 ## Run a diagnostic from the Diagnostics tab
 
@@ -137,15 +146,15 @@ To run a target:
 1. Select the tab with `Shift+Tab` until **Diagnostics** is active.
 2. Select a target in the **Available diagnostics** list and press `Enter`.
 
-![The Diagnostics tab showing the Available diagnostics list of targets, such as alerts, ingest, kafka, and node, with one target selected.](/assets/self_hosted/1.0.1/diagnostic/list.png){: style="max-width:100%"}
+![The Diagnostics tab showing the Available diagnostics list of targets, such as alerts, ingest, kafka, and node, with one target selected.](../../../assets/self_hosted/1.0.1/diagnostic/list.png)
 
 The interface opens a result view with one collapsible panel per rule of that target, in file order. Each panel starts as `NOT_STARTED`, switches to `RUNNING` while its rule is evaluated, and ends on `OK`, `WARN`, or `CRIT`. Rules are evaluated one at a time, and the first panel to reach a result is focused automatically so you can navigate from the keyboard.
 
-![The result view of the node diagnostic, with one collapsed panel per rule showing its OK or WARN status and title.](/assets/self_hosted/1.0.1/diagnostic/result.png){: style="max-width:100%"}
+![The result view of the node diagnostic, with one collapsed panel per rule showing its OK or WARN status and title.](../../../assets/self_hosted/1.0.1/diagnostic/result.png)
 
 A completed panel holds a results table with the measured values and their labels, and a **Likely causes & remediation** section when the status is `WARN` or `CRIT`. Sort the table by selecting a column header. To copy the full report of the current run to your clipboard, right-click the result view or the table.
 
-![An expanded WARN panel with its results table of status, value, and tags per node, followed by the Likely causes & remediation section.](/assets/self_hosted/1.0.1/diagnostic/explanation.png){: style="max-width:100%"}
+![An expanded WARN panel with its results table of status, value, and tags per node, followed by the Likely causes & remediation section.](../../../assets/self_hosted/1.0.1/diagnostic/explanation.png)
 
 To return to the target list, press `Escape`.
 
@@ -158,12 +167,15 @@ To check every platform area in one run:
 
 The interface opens a result view titled `Diagnostic: all`. It runs the targets one after the other in alphabetical order, like the `Diagnostic` module of the CLI, and evaluates their rules one at a time. Each panel title starts with the name of its target, and a divider separates the panels of two targets. The copied report keeps these prefixes, so you can tell which target each rule belongs to.
 
-![The result view of all diagnostics.](/assets/self_hosted/1.0.1/diagnostic/result_all.png){: style="max-width:100%"}
+![The result view of all diagnostics.](../../../assets/self_hosted/1.0.1/diagnostic/result_all.png)
 
 When a rule file of a target fails to load, the interface shows a `Failed to load <target>` error notification, skips that target, and runs the remaining ones.
 
-!!! note "No diagnostics listed"
-    When the tab reports that no diagnostics were found, the rule files are missing from the SHC image. Verify the image that the execution script runs, `sekoialab/self-hosted-controller-cli:v1.0.1` unless you set `DOCKER_IMAGE`, then contact Sekoia support with the path shown in the warning.
+{% hint style="info" %}
+**No diagnostics listed**
+
+When the tab reports that no diagnostics were found, the rule files are missing from the SHC image. Verify the image that the execution script runs, `sekoialab/self-hosted-controller-cli:v1.0.1` unless you set `DOCKER_IMAGE`, then contact Sekoia support with the path shown in the warning.
+{% endhint %}
 
 When you escalate a diagnostic result, copy the full report and attach the timestamped SHC log shown at the bottom of the TUI. Include the target name, or state that you ran all diagnostics, and the time at which you ran it. Before you share them, redact the credentials, tokens, private hostnames, and customer data that the report or the log contain.
 
@@ -173,7 +185,7 @@ You can drive the SHC, follow an installation, inspect your machines, cluster, a
 
 ## Related links
 
-- [The deployment process](/self_hosted/1.0.1/deployment/deployment_process.md): The modules the SHC exposes and the installation execution plan.
-- [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md): The diagnostic targets and how to read a result.
-- [Debug your deployment](/self_hosted/1.0.1/troubleshooting/debug_tool.md): Full SHC debug command reference with remediation steps.
-- [Monitor your platform](/self_hosted/1.0.1/monitoring/monitoring_guide.md): Observability stack and daily monitoring workflows.
+- [The deployment process](../deployment/deployment_process.md): The modules the SHC exposes and the installation execution plan.
+- [Run platform diagnostics](../monitoring/run_diagnostics.md): The diagnostic targets and how to read a result.
+- [Debug your deployment](../troubleshooting/debug_tool.md): Full SHC debug command reference with remediation steps.
+- [Monitor your platform](../monitoring/monitoring_guide.md): Observability stack and daily monitoring workflows.

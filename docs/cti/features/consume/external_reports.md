@@ -26,8 +26,9 @@ Reports open in **PDF view** by default, rendering the original source article. 
 - Switch to **text view** using the toggle at the top of the report to read a summary of the publication.
 - Resize the report list panel on the left to give more space to the reading area.
 
-!!! note
-    The text view sometimes displays a summary, not a full transcription of the original article. Not all reports have a text version available.
+{% hint style="info" %}
+The text view sometimes displays a summary, not a full transcription of the original article. Not all reports have a text version available.
+{% endhint %}
 
 ### Filter reports using Feeds
 

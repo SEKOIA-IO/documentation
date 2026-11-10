@@ -4,7 +4,7 @@ type: playbook
 
 # Microsoft Active Directory
 
-![Microsoft Active Directory](/assets/playbooks/library/microsoft-active-directory.png){ align=right width=150 }
+![Microsoft Active Directory](../../../../assets/playbooks/library/microsoft-active-directory.png)
 
 Microsoft Active Directory (Microsoft AD), is a directory service developed by Microsoft for Windows domain networks. It is a centralized system that stores information about networked resources and makes these resources easily accessible to users and administrators. Active Directory provides services for authentication and authorization, organizing and managing resources, such as users, computers, and devices, in a networked environment.
 

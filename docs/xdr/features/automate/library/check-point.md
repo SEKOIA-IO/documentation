@@ -1,6 +1,6 @@
 # Check Point
 
-![Check Point](/assets/playbooks/library/check-point.png){ align=right width=150 }
+![Check Point](../../../../assets/playbooks/library/check-point.png)
 
 Check Point Harmony is the industry’s first unified security solution for users devices and access.
 

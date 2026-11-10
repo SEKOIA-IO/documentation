@@ -1,6 +1,6 @@
 # Trend Micro
 
-![Trend Micro](/assets/playbooks/library/trend-micro.png){ align=right width=150 }
+![Trend Micro](../../../../assets/playbooks/library/trend-micro.png)
 
 
 

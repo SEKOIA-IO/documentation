@@ -1,6 +1,6 @@
 # Vade Cloud
 
-![Vade Cloud](/assets/playbooks/library/vade-cloud.png){ align=right width=150 }
+![Vade Cloud](../../../../assets/playbooks/library/vade-cloud.png)
 
 
 

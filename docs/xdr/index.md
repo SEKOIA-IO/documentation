@@ -1,8 +1,11 @@
 # Sekoia Defend
 
-!!! note "Licensing and ecosystem"
+{% hint style="info" %}
+**Licensing and ecosystem**
 
-    Sekoia Defend is the core detection and response module of the [Sekoia SOC platform](/index.md). It can operate as a **standalone product** and expand with [Sekoia Intelligence](/cti/index.md), [Reveal for Asset Intelligence](features/modules/reveal_index.md), and [Sekoia Elevate](features/modules/elevate_overview.md) for AI-assisted SOC workflows.
+
+Sekoia Defend is the core detection and response module of the [Sekoia SOC platform](../index.md). It can operate as a **standalone product** and expand with [Sekoia Intelligence](../cti/index.md), [Reveal for Asset Intelligence](features/modules/reveal_index.md), and [Sekoia Elevate](features/modules/elevate_overview.md) for AI-assisted SOC workflows.
+{% endhint %}
 
 Defend collects and analyzes security events from applications, endpoints, cloud services, and SaaS environments. It gives security teams the tools to detect suspicious activity, investigate incidents, automate response actions, and report on their security operations.
 
@@ -21,8 +24,8 @@ Sekoia Defend supports multiple ingestion methods for bringing security data int
 
 The collection workflow includes:
 
-1. **Choose an ingestion method:** Select the method that fits the data source and deployment model. See the supported [ingestion methods](/integration/ingestion_methods/index.md).
-2. **Connect an integration:** Use the supported [Integrations](/integration/categories/index.md) catalog to collect data from security and business applications.
+1. **Choose an ingestion method:** Select the method that fits the data source and deployment model. See the supported [ingestion methods](../integration/ingestion_methods/index.md).
+2. **Connect an integration:** Use the supported [Integrations](../integration/categories/index.md) catalog to collect data from security and business applications.
 3. **Configure Intakes:** Set up the [Intakes](features/collect/intakes.md) that receive and process incoming logs.
 4. **Organize Intakes into Entities:** Structure data sources around the systems, environments, or business units they represent with [Entities](features/collect/entities.md).
 5. **Enrich events with Assets:** Add [asset](features/collect/assets.md) context to help analysts understand which systems and resources are involved.

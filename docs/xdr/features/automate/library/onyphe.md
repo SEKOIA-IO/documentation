@@ -4,7 +4,7 @@ type: playbook
 
 # Onyphe
 
-![Onyphe](/assets/playbooks/library/onyphe.png){ align=right width=150 }
+![Onyphe](../../../../assets/playbooks/library/onyphe.png)
 
 Onyphe is a Cyber Defense Search Engine for open-source and cyber threat intelligence data collected by crawling various sources available on the Internet or by listening to Internet background noise
 

@@ -69,8 +69,11 @@ Each notification rule can send alerts through one or more channels simultaneous
 | **Mattermost** | Message posted to a Mattermost channel using an incoming webhook URL |
 | **Custom webhook** | JSON payload sent to a custom HTTP endpoint for integration with other systems |
 
-!!! note "Email rate limit"
-    Each email recipient can receive a maximum of 10 emails per hour for a single notification rule.
+{% hint style="info" %}
+**Email rate limit**
+
+Each email recipient can receive a maximum of 10 emails per hour for a single notification rule.
+{% endhint %}
 
 ## Notification scope
 
@@ -79,8 +82,11 @@ When you create a notification rule, the **it concerns** field lets you choose w
 - **All communities**: the rule monitors the trigger across every community you have access to.
 - **A specific community**: the rule only monitors the community you select.
 
-!!! note "Exception: intake monitoring"
-    The **No events are received** trigger must be configured for one specific community. This trigger requires selecting the intake to monitor, and an intake always belongs to a single community.
+{% hint style="info" %}
+**Exception: intake monitoring**
+
+The **No events are received** trigger must be configured for one specific community. This trigger requires selecting the intake to monitor, and an intake always belongs to a single community.
+{% endhint %}
 
 ## Personal visibility
 
@@ -88,6 +94,6 @@ Notification rules are personal: only the user who created a rule can see or man
 
 ## Related links
 
-- [Create a notification](/getting_started/create_a_notification.md): Step-by-step procedure to set up your first notification rule.
-- [Manage notifications](/getting_started/manage_notifications.md): How to edit, disable, or delete existing rules.
-- [Notification examples](/getting_started/notification_examples.md): Ready-to-use templates for common notification scenarios.
+- [Create a notification](create_a_notification.md): Step-by-step procedure to set up your first notification rule.
+- [Manage notifications](manage_notifications.md): How to edit, disable, or delete existing rules.
+- [Notification examples](notification_examples.md): Ready-to-use templates for common notification scenarios.

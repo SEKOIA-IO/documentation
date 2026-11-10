@@ -4,7 +4,7 @@ type: playbook
 
 # Vade Secure
 
-![Vade Secure](/assets/playbooks/library/vade-secure.png){ align=right width=150 }
+![Vade Secure](../../../../assets/playbooks/library/vade-secure.png)
 
 Vade Secure Module
 

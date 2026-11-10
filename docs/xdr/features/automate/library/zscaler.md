@@ -4,7 +4,7 @@ type: playbook
 
 # Zscaler
 
-![Zscaler](/assets/playbooks/library/zscaler.png){ align=right width=150 }
+![Zscaler](../../../../assets/playbooks/library/zscaler.png)
 
 Zscaler is a cloud security company providing secure internet access and zero trust network access to protect enterprise data and applications. Its platform offers scalable, cloud-native solutions for secure browsing, data protection, and threat prevention.
 

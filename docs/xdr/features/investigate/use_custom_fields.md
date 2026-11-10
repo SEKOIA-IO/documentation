@@ -6,17 +6,23 @@ Custom fields let you attach structured metadata to individual alerts and cases.
 
 Custom field definitions must exist in your workspace before you can use them. If no fields are available, ask your administrator to create definitions in **Settings > Custom fields**.
 
-!!! tips "Definition creation"
-    [Read more about custom field definition creation in our dedicated article.](https://docs.sekoia.com/xdr/features/investigate/manage_custom_field_definitions/)
+{% hint style="info" %}
+**Definition creation**
+
+[Read more about custom field definition creation in our dedicated article.](https://docs.sekoia.com/xdr/features/investigate/manage_custom_field_definitions/)
+{% endhint %}
 
 ## Add a custom field
 
 The screenshot below shows the **Custom fields** section on a case. The section looks and behaves identically on the alert details page.
 
-![Custom fields section on a case](/assets/operation_center/cases/case-custom-fields-section.png){: style="max-width:100%"}
+![Custom fields section on a case](../../../assets/operation_center/cases/case-custom-fields-section.png)
 
-!!! note "Auto-added fields"
-    Fields configured with **Auto-add to new alerts** or **Auto-add to new cases** appear automatically on every new alert or case. You only need to fill in their values.
+{% hint style="info" %}
+**Auto-added fields**
+
+Fields configured with **Auto-add to new alerts** or **Auto-add to new cases** appear automatically on every new alert or case. You only need to fill in their values.
+{% endhint %}
 
 To add a custom field value:
 
@@ -40,9 +46,9 @@ All changes to custom field values on a case are recorded in the case history, p
 
 ## Related articles
 
-* [Custom fields](/xdr/features/investigate/custom_fields.md): Overview of custom field types, shared definitions, multi-tenancy behavior, and workspace limits.
-* [Manage custom field definitions](/xdr/features/investigate/manage_custom_field_definitions.md): How to create, edit, and delete custom field definitions in workspace settings.
-* [Query custom fields](/xdr/features/investigate/query_custom_fields.md): SOL syntax and examples for filtering and aggregating alerts and cases by custom field values.
-* [Alerts](/xdr/features/investigate/alerts.md): How to filter the alerts listing by custom field values and read the alert details page.
-* [Case details](/xdr/features/investigate/case_details.md): Reference for every tab and field available on the case details page.
-* [Manage cases](/xdr/features/investigate/manage_cases.md): How to filter cases by custom field values from the cases listing page.
+* [Custom fields](custom_fields.md): Overview of custom field types, shared definitions, multi-tenancy behavior, and workspace limits.
+* [Manage custom field definitions](manage_custom_field_definitions.md): How to create, edit, and delete custom field definitions in workspace settings.
+* [Query custom fields](query_custom_fields.md): SOL syntax and examples for filtering and aggregating alerts and cases by custom field values.
+* [Alerts](alerts.md): How to filter the alerts listing by custom field values and read the alert details page.
+* [Case details](case_details.md): Reference for every tab and field available on the case details page.
+* [Manage cases](manage_cases.md): How to filter cases by custom field values from the cases listing page.

@@ -4,7 +4,7 @@ type: playbook
 
 # Google
 
-![Google](/assets/playbooks/library/google.svg){ align=right width=150 }
+![Google](../../../../assets/playbooks/library/google.svg)
 
 Google module
 

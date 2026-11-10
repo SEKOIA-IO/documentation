@@ -12,11 +12,17 @@ Roy can:
 
 Roy responds in English, French, and Polish.
 
-!!! note "Availability"
-    Roy must be enabled for your community before the **Ask Roy** button appears in the navigation menu. Contact your workspace administrator if Roy is not visible.
+{% hint style="info" %}
+**Availability**
 
-!!! warning "Verify critical information"
-    Roy's responses are AI-generated. Always verify outputs before acting on them in a production environment, particularly for detection rules and queries.
+Roy must be enabled for your community before the **Ask Roy** button appears in the navigation menu. Contact your workspace administrator if Roy is not visible.
+{% endhint %}
+
+{% hint style="warning" %}
+**Verify critical information**
+
+Roy's responses are AI-generated. Always verify outputs before acting on them in a production environment, particularly for detection rules and queries.
+{% endhint %}
 
 ## Access Roy
 
@@ -87,5 +93,8 @@ Roy Assistant is designed with user privacy and data security as top priorities.
 
 The chat feature does not have access to your personal data. It orchestrates the web interface directly to assist you.
 
-!!! note "Private by architecture"
-    Roy runs entirely on Sekoia-hosted infrastructure. The models behind the chat, the event attribute explanations and AI Cases all run on Sekoia's own servers, and no data is sent to external LLM providers. This makes Roy suitable for regulated environments and sensitive data contexts.
+{% hint style="info" %}
+**Private by architecture**
+
+Roy runs entirely on Sekoia-hosted infrastructure. The models behind the chat, the event attribute explanations and AI Cases all run on Sekoia's own servers, and no data is sent to external LLM providers. This makes Roy suitable for regulated environments and sensitive data contexts.
+{% endhint %}

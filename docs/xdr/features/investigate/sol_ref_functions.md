@@ -18,23 +18,27 @@ now([offset])
 
 Returns the current UTC datetime, optionally shifted by the given offset.
 
-!!! example
+{% hint style="info" %}
 
-    === "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-        ``` shell
-        let time = now();
+``` shell
+let time = now();
 
-        let time_earlier = now(-2d);
+let time_earlier = now(-2d);
 
-        ```
+```
+{% endtab %}
+{% tab title="Results" %}
 
-    === "Results"
-
-        | variable     | result                   |
-        | ------------ | ------------------------ |
-        | time         | 2026-03-26T10:30:00.000Z |
-        | time_earlier | 2026-03-24T10:30:00.000Z |
+| variable     | result                   |
+| ------------ | ------------------------ |
+| time         | 2026-03-26T10:30:00.000Z |
+| time_earlier | 2026-03-24T10:30:00.000Z |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 
 ## Datetime: ago()
@@ -62,11 +66,12 @@ ago(<timespan>)
 
 Returns a datetime equal to the current UTC time minus the specified timespan.
 
-!!! example
-    ``` shell
-    let time = ago(1h);
+{% hint style="info" %}
+``` shell
+let time = ago(1h);
 
-    ```
+```
+{% endhint %}
 
 ## Timestamp: bin()
 
@@ -87,23 +92,27 @@ bin(<value>, <bin_size>)
 
 Returns the value rounded down to the nearest multiple of `bin_size`.
 
-!!! example
+{% hint style="info" %}
 
-    === "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-        ``` shell
-        events
-        | aggregate count() by bin(timestamp, 1d)
+``` shell
+events
+| aggregate count() by bin(timestamp, 1d)
 
-        ```
+```
+{% endtab %}
+{% tab title="Results" %}
 
-    === "Results"
-
-        | bin_timestamp            | count |
-        | ------------------------ | ----- |
-        | 2026-03-20T00:00:00.000Z | 6234  |
-        | 2026-03-21T00:00:00.000Z | 7891  |
-        | 2026-03-22T00:00:00.000Z | 7234  |
+| bin_timestamp            | count |
+| ------------------------ | ----- |
+| 2026-03-20T00:00:00.000Z | 6234  |
+| 2026-03-21T00:00:00.000Z | 7891  |
+| 2026-03-22T00:00:00.000Z | 7234  |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 
 
@@ -125,20 +134,24 @@ year(<date>)
 
 Returns the year in `YYYY` format.
 
-!!! example
+{% hint style="info" %}
 
-    === "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-        ``` shell
-        let time = year(now());
+``` shell
+let time = year(now());
 
-        ```
+```
+{% endtab %}
+{% tab title="Results" %}
 
-    === "Results"
-
-        | result |
-        | ------ |
-        | 2026   |
+| result |
+| ------ |
+| 2026   |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Month
 
@@ -158,20 +171,24 @@ month(<date>)
 
 Returns the year and month in `YYYY-MM` format.
 
-!!! example
+{% hint style="info" %}
 
-    === "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-        ``` shell
-        let time = month(now());
+``` shell
+let time = month(now());
 
-        ```
+```
+{% endtab %}
+{% tab title="Results" %}
 
-    === "Results"
-
-        | result  |
-        | ------- |
-        | 2026-03 |
+| result  |
+| ------- |
+| 2026-03 |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Week
 
@@ -191,20 +208,24 @@ week(<date>)
 
 Returns the year and week number in `YYYY - Week {week number}` format.
 
-!!! example
+{% hint style="info" %}
 
-    === "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-        ``` shell
-        let time = week(now());
+``` shell
+let time = week(now());
 
-        ```
+```
+{% endtab %}
+{% tab title="Results" %}
 
-    === "Results"
-
-        | result         |
-        | -------------- |
-        | 2026 - Week 13 |
+| result         |
+| -------------- |
+| 2026 - Week 13 |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## To scalar
 
@@ -224,27 +245,31 @@ toscalar(<expression>)
 
 Returns the scalar value of the expression, usable as a constant in the rest of the query.
 
-!!! example
+{% hint style="info" %}
 
-    === "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-        ``` shell
-        let total = toscalar(alerts | where created_at >= ago(7d) | count);
+``` shell
+let total = toscalar(alerts | where created_at >= ago(7d) | count);
 
-        alerts
-        | where created_at >= ago(7d)
-        | aggregate count() by detection_type
-        | extend percentage = (count / total) * 100
+alerts
+| where created_at >= ago(7d)
+| aggregate count() by detection_type
+| extend percentage = (count / total) * 100
 
-        ```
+```
+{% endtab %}
+{% tab title="Results" %}
 
-    === "Results"
-
-        | detection_type    | count | percentage |
-        | ----------------- | ----- | ---------- |
-        | Sigma             | 238   | 88.81      |
-        | Sigma Correlation | 14    | 5.22       |
-        | CTI Retrohunt     | 5     | 1.86       |
+| detection_type    | count | percentage |
+| ----------------- | ----- | ---------- |
+| Sigma             | 238   | 88.81      |
+| Sigma Correlation | 14    | 5.22       |
+| CTI Retrohunt     | 5     | 1.86       |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## String: tolower()
 
@@ -264,27 +289,31 @@ tolower(<string>)
 
 Returns the lowercase version of the input string.
 
-!!! example
+{% hint style="info" %}
 
-    Normalize user names to lowercase for consistent analysis:
+Normalize user names to lowercase for consistent analysis:
 
-    === "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-        ``` shell
-        events
-        | where timestamp > ago(24h) and user.name != null
-        | aggregate count_by_user = count() by user.name
-        | aggregate sum(count_by_user) by normalized_user = tolower(user.name)
-        | limit 100
-        ```
+``` shell
+events
+| where timestamp > ago(24h) and user.name != null
+| aggregate count_by_user = count() by user.name
+| aggregate sum(count_by_user) by normalized_user = tolower(user.name)
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-    === "Results"
-
-        | normalized_user | sum_count_by_user |
-        | --------------- | ----------------- |
-        | ada_lovelace    | 152               |
-        | ken_thompson    | 138               |
-        | barbara_liskov  | 120               |
+| normalized_user | sum_count_by_user |
+| --------------- | ----------------- |
+| ada_lovelace    | 152               |
+| ken_thompson    | 138               |
+| barbara_liskov  | 120               |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## String: toupper()
 
@@ -304,26 +333,30 @@ toupper(<string>)
 
 Returns the uppercase version of the input string.
 
-!!! example
+{% hint style="info" %}
 
-    Normalize command lines to uppercase for consistent analysis:
+Normalize command lines to uppercase for consistent analysis:
 
-    === "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-        ``` shell
-        events
-        | where timestamp > ago(24h) and process.command_line != null
-        | aggregate count_by_cmd = count() by process.command_line
-        | aggregate sum(count_by_cmd) by normalized_cmd = toupper(process.command_line)
-        | limit 100
-        ```
+``` shell
+events
+| where timestamp > ago(24h) and process.command_line != null
+| aggregate count_by_cmd = count() by process.command_line
+| aggregate sum(count_by_cmd) by normalized_cmd = toupper(process.command_line)
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-    === "Results"
-
-        | normalized_cmd                  | sum_count_by_cmd |
-        | ------------------------------- | ---------------- |
-        | C:\WINDOWS\SYSTEM32\CMD.EXE     | 204              |
-        | POWERSHELL.EXE -EXECUTIONPOLICY | 188              |
+| normalized_cmd                  | sum_count_by_cmd |
+| ------------------------------- | ---------------- |
+| C:\WINDOWS\SYSTEM32\CMD.EXE     | 204              |
+| POWERSHELL.EXE -EXECUTIONPOLICY | 188              |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## String: extract()
 
@@ -345,44 +378,56 @@ extract(<regex>, <capture_group>, <source>)
 
 Returns the matched substring for the specified capture group. Returns `null` if the regex finds no match.
 
-!!! example " Extract the domain from a URL"
+{% hint style="info" %}
+** Extract the domain from a URL**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(24h) and url.original != null
-        | select timestamp, domain = extract(@'https?://([^/]+)', 1, url.original)
-        | limit 100
-        ```
+{% tabs %}
+{% tab title="Query" %}
 
-    === "Results"
+``` shell
+events
+| where timestamp > ago(24h) and url.original != null
+| select timestamp, domain = extract(@'https?://([^/]+)', 1, url.original)
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | timestamp                | domain              |
-        | ------------------------ | ------------------- |
-        | 2026-03-26T15:35:14.738Z | clients2.google.com |
-        | 2026-03-26T15:35:03.740Z | www.deloitte.com    |
-        | 2026-03-26T15:35:04.539Z | www.squarespace.com |
+| timestamp                | domain              |
+| ------------------------ | ------------------- |
+| 2026-03-26T15:35:14.738Z | clients2.google.com |
+| 2026-03-26T15:35:03.740Z | www.deloitte.com    |
+| 2026-03-26T15:35:04.539Z | www.squarespace.com |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-!!! example "Extract user identifiers from log messages"
+{% hint style="info" %}
+**Extract user identifiers from log messages**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(24h) and message != null
-        | select timestamp, user_id = extract(@'user_(\d+)', 1, message)
-        | where user_id != null
-        | limit 100
-        ```
+{% tabs %}
+{% tab title="Query" %}
 
-    === "Results"
+``` shell
+events
+| where timestamp > ago(24h) and message != null
+| select timestamp, user_id = extract(@'user_(\d+)', 1, message)
+| where user_id != null
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | timestamp                | user_id |
-        | ------------------------ | ------- |
-        | 2026-03-26T15:35:14.738Z | 1042    |
-        | 2026-03-26T15:35:03.740Z | 2891    |
-        | 2026-03-26T15:35:04.539Z | 305     |
+| timestamp                | user_id |
+| ------------------------ | ------- |
+| 2026-03-26T15:35:14.738Z | 1042    |
+| 2026-03-26T15:35:03.740Z | 2891    |
+| 2026-03-26T15:35:04.539Z | 305     |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## String: replace_regex()
 
@@ -407,44 +452,56 @@ replace_regex(<source>, <lookup_regex>, <rewrite_pattern>)
 Returns the modified string with all non-overlapping matches replaced. If no matches are found, the original string is returned unchanged.
 
 
-!!! example "Strip the protocol from URLs"
-
-    === "Query"
-
-        ``` shell
-        events
-        | where timestamp > ago(24h) and url.original != null
-        | select timestamp, cleaned_url = replace_regex(url.original, @'https?://', '')
-        | limit 100
-        ```
-
-    === "Results"
-
-        | timestamp                | cleaned_url                     |
-        | ------------------------ | ------------------------------- |
-        | 2026-03-26T15:35:14.738Z | clients2.google.com/generate204 |
-        | 2026-03-26T15:35:03.740Z | www.deloitte.com/services       |
-        | 2026-03-26T15:35:04.539Z | www.squarespace.com/login       |
+{% hint style="info" %}
+**Strip the protocol from URLs**
 
 
-!!! example "Sanitize email addresses in logs"
+{% tabs %}
+{% tab title="Query" %}
 
-    === "Query"
+``` shell
+events
+| where timestamp > ago(24h) and url.original != null
+| select timestamp, cleaned_url = replace_regex(url.original, @'https?://', '')
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        ``` shell
-        events
-        | where timestamp > ago(24h) and user.email != null
-        | select timestamp, sanitized_email = replace_regex(user.email, @'(\w+)@.*', '$1@example.com')
-        | limit 100
-        ```
+| timestamp                | cleaned_url                     |
+| ------------------------ | ------------------------------- |
+| 2026-03-26T15:35:14.738Z | clients2.google.com/generate204 |
+| 2026-03-26T15:35:03.740Z | www.deloitte.com/services       |
+| 2026-03-26T15:35:04.539Z | www.squarespace.com/login       |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-    === "Results"
 
-        | timestamp                | sanitized_email   |
-        | ------------------------ | ----------------- |
-        | 2026-03-26T15:35:14.738Z | ada@example.com   |
-        | 2026-03-26T15:35:03.740Z | ken@example.com   |
-        | 2026-03-26T15:35:04.539Z | grace@example.com |
+{% hint style="info" %}
+**Sanitize email addresses in logs**
+
+
+{% tabs %}
+{% tab title="Query" %}
+
+``` shell
+events
+| where timestamp > ago(24h) and user.email != null
+| select timestamp, sanitized_email = replace_regex(user.email, @'(\w+)@.*', '$1@example.com')
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
+
+| timestamp                | sanitized_email   |
+| ------------------------ | ----------------- |
+| 2026-03-26T15:35:14.738Z | ada@example.com   |
+| 2026-03-26T15:35:03.740Z | ken@example.com   |
+| 2026-03-26T15:35:04.539Z | grace@example.com |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## String: split()
 
@@ -468,49 +525,64 @@ split(<source>, <delimiter>[, <requested_index>])
 
 Returns an array of strings, even when `requested_index` is set. Without `requested_index`, the array holds every item. With `requested_index`, the array holds one item, or is empty (`[]`) when the index is out of range or the delimiter is absent from `source`.
 
-!!! note "Read a single item with `[0]`"
-    Because the function always returns an array, append `[0]` to get the item as a string: `split(process.command_line, "-EncodedCommand ", 1)[0]`. On an empty array, `[0]` returns `null`.
+{% hint style="info" %}
+**Read a single item with `[0]`**
 
-!!! example "Split a command line into tokens"
+Because the function always returns an array, append `[0]` to get the item as a string: `split(process.command_line, "-EncodedCommand ", 1)[0]`. On an empty array, `[0]` returns `null`.
+{% endhint %}
 
-    === "Query"
+{% hint style="info" %}
+**Split a command line into tokens**
 
-        ``` shell
-        events
-        | where timestamp > ago(24h)
-        | where process.command_line != null
-        | extend tokens = split(process.command_line, " ")
-        | select process.command_line, tokens
-        | limit 100
-        ```
 
-    === "Results"
+{% tabs %}
+{% tab title="Query" %}
 
-        | process.command_line                                 | tokens                                                                   |
-        | ---------------------------------------------------- | ------------------------------------------------------------------------ |
-        | `pwsh.exe -NoLogo -NoExit -EncodedCommand SGVsbG8=`  | `["pwsh.exe", "-NoLogo", "-NoExit", "-EncodedCommand", "SGVsbG8="]`      |
-        | `cmd.exe /c whoami`                                  | `["cmd.exe", "/c", "whoami"]`                                            |
+``` shell
+events
+| where timestamp > ago(24h)
+| where process.command_line != null
+| extend tokens = split(process.command_line, " ")
+| select process.command_line, tokens
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-!!! example "Extract the value that follows a flag"
+| process.command_line                                 | tokens                                                                   |
+| ---------------------------------------------------- | ------------------------------------------------------------------------ |
+| `pwsh.exe -NoLogo -NoExit -EncodedCommand SGVsbG8=`  | `["pwsh.exe", "-NoLogo", "-NoExit", "-EncodedCommand", "SGVsbG8="]`      |
+| `cmd.exe /c whoami`                                  | `["cmd.exe", "/c", "whoami"]`                                            |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-    Splitting on the flag itself, including its trailing space, puts the value at index `1`.
+{% hint style="info" %}
+**Extract the value that follows a flag**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(24h)
-        | where process.command_line contains "-EncodedCommand "
-        | extend encoded_command = split(process.command_line, "-EncodedCommand ", 1)[0]
-        | select process.command_line, encoded_command
-        | limit 100
-        ```
+Splitting on the flag itself, including its trailing space, puts the value at index `1`.
 
-    === "Results"
+{% tabs %}
+{% tab title="Query" %}
 
-        | process.command_line                                 | encoded_command |
-        | ---------------------------------------------------- | --------------- |
-        | `pwsh.exe -NoLogo -NoExit -EncodedCommand SGVsbG8=`  | `SGVsbG8=`      |
+``` shell
+events
+| where timestamp > ago(24h)
+| where process.command_line contains "-EncodedCommand "
+| extend encoded_command = split(process.command_line, "-EncodedCommand ", 1)[0]
+| select process.command_line, encoded_command
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
+
+| process.command_line                                 | encoded_command |
+| ---------------------------------------------------- | --------------- |
+| `pwsh.exe -NoLogo -NoExit -EncodedCommand SGVsbG8=`  | `SGVsbG8=`      |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## String: base64_encode()
 
@@ -532,22 +604,28 @@ base64_encode(<value>)
 
 Returns the Base64-encoded string. Returns `null` when `value` is `null`.
 
-!!! example "Encode a string"
+{% hint style="info" %}
+**Encode a string**
 
-    === "Query"
 
-        ``` shell
-        events
-        | limit 1
-        | extend encoded = base64_encode("Hello from SOL")
-        | select encoded
-        ```
+{% tabs %}
+{% tab title="Query" %}
 
-    === "Results"
+``` shell
+events
+| limit 1
+| extend encoded = base64_encode("Hello from SOL")
+| select encoded
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | encoded                |
-        | ---------------------- |
-        | `SGVsbG8gZnJvbSBTT0w=` |
+| encoded                |
+| ---------------------- |
+| `SGVsbG8gZnJvbSBTT0w=` |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## String: base64_decode()
 
@@ -577,44 +655,56 @@ Returns the decoded string. The table below lists the other outcomes.
 | The decoded bytes are not valid for `encoding`         | `null`       |
 | `encoding` is not a recognized encoding name           | Query error  |
 
-!!! example "Decode a UTF-8 Base64 string"
+{% hint style="info" %}
+**Decode a UTF-8 Base64 string**
 
-    === "Query"
 
-        ``` shell
-        events
-        | limit 1
-        | extend decoded = base64_decode("SGVsbG8gZnJvbSBTT0w=")
-        | select decoded
-        ```
+{% tabs %}
+{% tab title="Query" %}
 
-    === "Results"
+``` shell
+events
+| limit 1
+| extend decoded = base64_decode("SGVsbG8gZnJvbSBTT0w=")
+| select decoded
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | decoded          |
-        | ---------------- |
-        | `Hello from SOL` |
+| decoded          |
+| ---------------- |
+| `Hello from SOL` |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-!!! example "Decode a PowerShell encoded command"
+{% hint style="info" %}
+**Decode a PowerShell encoded command**
 
-    PowerShell encodes `-EncodedCommand` payloads as UTF-16LE. Extract the payload with `split()`, then decode it with the `utf-16le` encoding.
 
-    === "Query"
+PowerShell encodes `-EncodedCommand` payloads as UTF-16LE. Extract the payload with `split()`, then decode it with the `utf-16le` encoding.
 
-        ``` shell
-        events
-        | where timestamp > ago(24h)
-        | where process.command_line contains "-EncodedCommand "
-        | extend encoded_command = split(process.command_line, "-EncodedCommand ", 1)[0]
-        | extend decoded_command = base64_decode(encoded_command, "utf-16le")
-        | select process.command_line, decoded_command
-        | limit 100
-        ```
+{% tabs %}
+{% tab title="Query" %}
 
-    === "Results"
+``` shell
+events
+| where timestamp > ago(24h)
+| where process.command_line contains "-EncodedCommand "
+| extend encoded_command = split(process.command_line, "-EncodedCommand ", 1)[0]
+| extend decoded_command = base64_decode(encoded_command, "utf-16le")
+| select process.command_line, decoded_command
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | process.command_line                                                                                                                                     | decoded_command                        |
-        | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
-        | `pwsh.exe -NoLogo -NoExit -EncodedCommand VwByAGkAdABlAC0ATwB1AHQAcAB1AHQAIAAnAEgAZQBsAGwAbwAgAGYAcgBvAG0AIABQAG8AdwBlAHIAUwBoAGUAbABsACcA` | `Write-Output 'Hello from PowerShell'` |
+| process.command_line                                                                                                                                     | decoded_command                        |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| `pwsh.exe -NoLogo -NoExit -EncodedCommand VwByAGkAdABlAC0ATwB1AHQAcAB1AHQAIAAnAEgAZQBsAGwAbwAgAGYAcgBvAG0AIABQAG8AdwBlAHIAUwBoAGUAbABsACcA` | `Write-Output 'Hello from PowerShell'` |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 
 ## Network: cidr_match()
@@ -638,73 +728,97 @@ cidr_match(<ip>, <cidr_or_cidrs>)
 
 Returns `true` if `ip` belongs to at least one valid CIDR in `cidr_or_cidrs`, otherwise `false`. The function supports IPv4 only. The following inputs never match: invalid IP addresses, invalid CIDRs, `null` values and array elements that are not strings.
 
-!!! note "Host bits are normalized"
-    A CIDR whose host bits are set is accepted and normalized to its network address. For example, `10.1.2.3/24` is treated as `10.1.2.0/24`.
+{% hint style="info" %}
+**Host bits are normalized**
 
-!!! tip "Push-down"
-    A `where cidr_match(...)` filter is pushed down to the `events` datasource. Apply it before a `lookup` or `join` so that only matching events reach the in-memory step. See [Enrich events using a CIDR dataset](/xdr/features/investigate/sol_datasets.md#enrich-events-using-a-cidr-dataset).
+A CIDR whose host bits are set is accepted and normalized to its network address. For example, `10.1.2.3/24` is treated as `10.1.2.0/24`.
+{% endhint %}
 
-!!! example "Filter events by an IPv4 CIDR range"
+{% hint style="success" %}
+**Push-down**
 
-    === "Query"
+A `where cidr_match(...)` filter is pushed down to the `events` datasource. Apply it before a `lookup` or `join` so that only matching events reach the in-memory step. See [Enrich events using a CIDR dataset](sol_datasets.md#enrich-events-using-a-cidr-dataset).
+{% endhint %}
 
-        ``` shell
-        events
-        | where timestamp > ago(24h)
-        | where cidr_match(source.ip, "80.94.95.0/24")
-        | select timestamp, source.ip, destination.ip
-        | limit 100
-        ```
+{% hint style="info" %}
+**Filter events by an IPv4 CIDR range**
 
-    === "Results"
 
-        | timestamp                | source.ip    | destination.ip |
-        | ------------------------ | ------------ | -------------- |
-        | 2026-03-26T15:35:14.738Z | 80.94.95.12  | 192.168.2.10   |
-        | 2026-03-26T15:35:03.740Z | 80.94.95.201 | 192.168.2.22   |
-        | 2026-03-26T15:35:04.539Z | 80.94.95.12  | 192.168.2.10   |
+{% tabs %}
+{% tab title="Query" %}
 
-!!! example "Match against several ranges"
+``` shell
+events
+| where timestamp > ago(24h)
+| where cidr_match(source.ip, "80.94.95.0/24")
+| select timestamp, source.ip, destination.ip
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-    === "Query"
+| timestamp                | source.ip    | destination.ip |
+| ------------------------ | ------------ | -------------- |
+| 2026-03-26T15:35:14.738Z | 80.94.95.12  | 192.168.2.10   |
+| 2026-03-26T15:35:03.740Z | 80.94.95.201 | 192.168.2.22   |
+| 2026-03-26T15:35:04.539Z | 80.94.95.12  | 192.168.2.10   |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-        ``` shell
-        events
-        | where timestamp > ago(24h)
-        | where cidr_match(source.ip, ["80.94.95.0/24", "198.51.100.0/24"])
-        | select timestamp, source.ip
-        | limit 100
-        ```
+{% hint style="info" %}
+**Match against several ranges**
 
-    === "Results"
 
-        | timestamp                | source.ip      |
-        | ------------------------ | -------------- |
-        | 2026-03-26T15:35:14.738Z | 80.94.95.12    |
-        | 2026-03-26T15:35:03.740Z | 198.51.100.47  |
+{% tabs %}
+{% tab title="Query" %}
 
-!!! example "Match against the ranges of a SOL dataset"
+``` shell
+events
+| where timestamp > ago(24h)
+| where cidr_match(source.ip, ["80.94.95.0/24", "198.51.100.0/24"])
+| select timestamp, source.ip
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-    The `known_scanner_ranges` dataset holds a `cidr` column. The `let` statement turns that column into an array.
+| timestamp                | source.ip      |
+| ------------------------ | -------------- |
+| 2026-03-26T15:35:14.738Z | 80.94.95.12    |
+| 2026-03-26T15:35:03.740Z | 198.51.100.47  |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-    === "Query"
+{% hint style="info" %}
+**Match against the ranges of a SOL dataset**
 
-        ``` shell
-        let cidrs = known_scanner_ranges | select cidr;
 
-        events
-        | where timestamp > ago(24h)
-        | where cidr_match(source.ip, cidrs)
-        | select timestamp, source.ip
-        | limit 100
-        ```
+The `known_scanner_ranges` dataset holds a `cidr` column. The `let` statement turns that column into an array.
 
-    === "Results"
+{% tabs %}
+{% tab title="Query" %}
 
-        | timestamp                | source.ip      |
-        | ------------------------ | -------------- |
-        | 2026-03-26T15:35:14.738Z | 80.94.95.12    |
-        | 2026-03-26T15:35:03.740Z | 198.51.100.47  |
+``` shell
+let cidrs = known_scanner_ranges | select cidr;
+
+events
+| where timestamp > ago(24h)
+| where cidr_match(source.ip, cidrs)
+| select timestamp, source.ip
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
+
+| timestamp                | source.ip      |
+| ------------------------ | -------------- |
+| 2026-03-26T15:35:14.738Z | 80.94.95.12    |
+| 2026-03-26T15:35:03.740Z | 198.51.100.47  |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 
 ## Math: round()
@@ -728,24 +842,30 @@ round(<number> [, <precision>])
 
 Returns the rounded number to the specified precision.
 
-!!! example "Round time_to_detect values to 2 decimal places for cleaner reporting"
+{% hint style="info" %}
+**Round time_to_detect values to 2 decimal places for cleaner reporting**
 
-    === "Query"
 
-        ``` shell
-        alerts
-        | where created_at > ago(7d)
-        | select ttd_minutes = round(time_to_detect / 60.0, 2)
-        | limit 100
-        ```
+{% tabs %}
+{% tab title="Query" %}
 
-    === "Results"
+``` shell
+alerts
+| where created_at > ago(7d)
+| select ttd_minutes = round(time_to_detect / 60.0, 2)
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | ttd_minutes |
-        | ----------- |
-        | 17.25       |
-        | 0.13        |
-        | 31.73       |
+| ttd_minutes |
+| ----------- |
+| 17.25       |
+| 0.13        |
+| 31.73       |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 
 ## Type conversion: toint()
@@ -772,47 +892,59 @@ If the input is a decimal number, the value is truncated to the integer portion 
 
 **Example 1**
 
-!!! example "Convert a string field to integer for numeric comparison"
-
-    === "Query"
-
-        ``` shell
-        events
-        | where timestamp > ago(24h)
-        | select port_number = toint(destination.port)
-        | where port_number > 1024
-        | limit 100
-        ```
-
-    === "Results"
-
-        | port_number |
-        | ----------- |
-        | 443         |
-        | 8080        |
-        | 3389        |
+{% hint style="info" %}
+**Convert a string field to integer for numeric comparison**
 
 
+{% tabs %}
+{% tab title="Query" %}
 
-!!! example "Convert and aggregate by numeric field"
+``` shell
+events
+| where timestamp > ago(24h)
+| select port_number = toint(destination.port)
+| where port_number > 1024
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-    === "Query"
+| port_number |
+| ----------- |
+| 443         |
+| 8080        |
+| 3389        |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-        ``` shell
-        events
-        | where timestamp > ago(24h)
-        | extend severity_int = toint(event.severity)
-        | aggregate count() by severity_int
-        | order by severity_int desc
-        ```
 
-    === "Results"
 
-        | severity_int | count |
-        | ------------ | ----- |
-        | 10            | 204   |
-        | 20            | 188   |
-        | 30            | 42    |
+{% hint style="info" %}
+**Convert and aggregate by numeric field**
+
+
+{% tabs %}
+{% tab title="Query" %}
+
+``` shell
+events
+| where timestamp > ago(24h)
+| extend severity_int = toint(event.severity)
+| aggregate count() by severity_int
+| order by severity_int desc
+```
+{% endtab %}
+{% tab title="Results" %}
+
+| severity_int | count |
+| ------------ | ----- |
+| 10            | 204   |
+| 20            | 188   |
+| 30            | 42    |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Type conversion: tostring()
 
@@ -835,25 +967,31 @@ tostring(<value>)
 Returns the string representation of the value. Returns an empty string if the value is `null`.
 
 
-!!! example "Build a human-readable label by concatenating a count with a string literal"
+{% hint style="info" %}
+**Build a human-readable label by concatenating a count with a string literal**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp between (?time.start .. ?time.end)
-        | aggregate count() by sekoiaio.intake.dialect
-        | select tostring(count) + " Number of dialect"
-        | limit 10
-        ```
+{% tabs %}
+{% tab title="Query" %}
 
-    === "Results"
+``` shell
+events
+| where timestamp between (?time.start .. ?time.end)
+| aggregate count() by sekoiaio.intake.dialect
+| select tostring(count) + " Number of dialect"
+| limit 10
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | result                 |
-        | ---------------------- |
-        | 1523 Number of dialect |
-        | 842 Number of dialect  |
-        | 317 Number of dialect  |
+| result                 |
+| ---------------------- |
+| 1523 Number of dialect |
+| 842 Number of dialect  |
+| 317 Number of dialect  |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Dynamic: parse_json()
 
@@ -876,25 +1014,31 @@ parse_json(<string>)
 Returns the JSON value represented by the input string. Individual properties can then be accessed using dot notation. Returns `null` if the input is `null` or is not valid JSON.
 
 
-!!! example "Filter AWS CloudTrail events by a nested property inside a JSON-encoded field"
+{% hint style="info" %}
+**Filter AWS CloudTrail events by a nested property inside a JSON-encoded field**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp between (?time.start .. ?time.end)
-        | select parsed = parse_json(aws.cloudtrail.flattened.request_parameters)
-        | where parsed.sourceIPAddress == '10.0.166.149'
-        | limit 100
-        ```
+{% tabs %}
+{% tab title="Query" %}
 
-    === "Results"
+``` shell
+events
+| where timestamp between (?time.start .. ?time.end)
+| select parsed = parse_json(aws.cloudtrail.flattened.request_parameters)
+| where parsed.sourceIPAddress == '10.0.166.149'
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | parsed                                                                    |
-        | ------------------------------------------------------------------------- |
-        | {"sourceIPAddress": "10.0.166.149", "userAgent": "aws-cli/2.15.0", ...}   |
-        | {"sourceIPAddress": "10.0.166.149", "userAgent": "Boto3/1.34.0", ...}     |
-        | {"sourceIPAddress": "10.0.166.149", "userAgent": "console.amazonaws", ...}|
+| parsed                                                                    |
+| ------------------------------------------------------------------------- |
+| {"sourceIPAddress": "10.0.166.149", "userAgent": "aws-cli/2.15.0", ...}   |
+| {"sourceIPAddress": "10.0.166.149", "userAgent": "Boto3/1.34.0", ...}     |
+| {"sourceIPAddress": "10.0.166.149", "userAgent": "console.amazonaws", ...}|
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Conditional: iff()
 
@@ -919,25 +1063,31 @@ Returns a value based on a conditional expression. Evaluates a boolean condition
 Returns the `then_value` when condition is true, otherwise returns `else_value`.
 
 
-!!! example  "Categorize alerts based on urgency and time to detect"
+{% hint style="info" %}
+**Categorize alerts based on urgency and time to detect**
 
-    === "Query"
 
-        ``` shell
-        alerts
-        | where created_at > ago(7d)
-        | aggregate count() by severity_category = iff(urgency >= 80, "Critical",
-            iff(urgency >= 50, "High", "Medium"))
-        | limit 100
-        ```
+{% tabs %}
+{% tab title="Query" %}
 
-    === "Results"
+``` shell
+alerts
+| where created_at > ago(7d)
+| aggregate count() by severity_category = iff(urgency >= 80, "Critical",
+    iff(urgency >= 50, "High", "Medium"))
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | severity_category | count |
-        | ----------------- | ----- |
-        | Critical          | 82    |
-        | High              | 52    |
-        | Medium            | 14    |
+| severity_category | count |
+| ----------------- | ----- |
+| Critical          | 82    |
+| High              | 52    |
+| Medium            | 14    |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Null handling: coalesce()
 
@@ -960,24 +1110,30 @@ coalesce(<arg1>, <arg2>, [<arg3>, ...])
 Returns the first non-null value from the argument list, or null if all arguments are null.
 
 
-!!! example "Provide fallback values for user identification when some fields might be null"
+{% hint style="info" %}
+**Provide fallback values for user identification when some fields might be null**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(24h)
-        | aggregate count() by user_identifier = coalesce(user.name, user.email, "Unknown")
-        | limit 100
-        ```
+{% tabs %}
+{% tab title="Query" %}
 
-    === "Results"
+``` shell
+events
+| where timestamp > ago(24h)
+| aggregate count() by user_identifier = coalesce(user.name, user.email, "Unknown")
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | user_identifier   | count |
-        | ----------------- | ----- |
-        | ada_lovelace      | 152   |
-        | ken@example.com   | 42    |
-        | Unknown           | 18    |
+| user_identifier   | count |
+| ----------------- | ----- |
+| ada_lovelace      | 152   |
+| ken@example.com   | 42    |
+| Unknown           | 18    |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 
 ## Datetime: format_datetime()
@@ -1017,26 +1173,32 @@ Returns a formatted string representation of the datetime.
 
 
 
-!!! example  "Format timestamps for cleaner reporting"
+{% hint style="info" %}
+**Format timestamps for cleaner reporting**
 
-    === "Query"
 
-        ``` shell
-        alerts
-        | where created_at > ago(24h)
-        | extend date_only = format_datetime(created_at, '%Y-%m-%d')
-        | extend readable_time = format_datetime(created_at, '%B %d, %Y at %H:%M')
-        | extend eu_format = format_datetime(created_at, '%d-%m-%Y')
-        | aggregate count() by date_only, readable_time, eu_format, detection_type
-        | limit 100
-        ```
+{% tabs %}
+{% tab title="Query" %}
 
-    === "Results"
+``` shell
+alerts
+| where created_at > ago(24h)
+| extend date_only = format_datetime(created_at, '%Y-%m-%d')
+| extend readable_time = format_datetime(created_at, '%B %d, %Y at %H:%M')
+| extend eu_format = format_datetime(created_at, '%d-%m-%Y')
+| aggregate count() by date_only, readable_time, eu_format, detection_type
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | date_only  | readable_time              | eu_format  | detection_type | count |
-        | ---------- | -------------------------- | ---------- | -------------- | ----- |
-        | 2026-03-26 | March 26, 2026 at 15:35    | 26-03-2026 | CTI            | 14    |
-        | 2026-03-26 | March 26, 2026 at 16:02    | 26-03-2026 | Sigma          | 8     |
+| date_only  | readable_time              | eu_format  | detection_type | count |
+| ---------- | -------------------------- | ---------- | -------------- | ----- |
+| 2026-03-26 | March 26, 2026 at 15:35    | 26-03-2026 | CTI            | 14    |
+| 2026-03-26 | March 26, 2026 at 16:02    | 26-03-2026 | Sigma          | 8     |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Aggregation: countif()
 
@@ -1059,57 +1221,69 @@ countif(<predicate>)
 Returns the count of rows for which the predicate is `true`. Returns `0` if no rows match.
 
 
-!!! example "Count successful and failed login attempts per source IP"
-
-    === "Query"
-
-        ``` shell
-        events
-        | where timestamp > ago(24h) and event.category == 'authentication'
-        | aggregate success_count = countif(event.code == '4624'), failed_count = countif(event.code == '4625') by source.ip
-        | order by failed_count desc
-        | limit 100
-        ```
-
-    === "Results"
-
-        | source.ip  | success_count | failed_count |
-        | ---------- | ------------- | ------------ |
-        | 1.0.0.95   | 142           | 33           |
-        | 1.5.178.82 | 136           | 24           |
+{% hint style="info" %}
+**Count successful and failed login attempts per source IP**
 
 
-!!! example  "Count high-urgency vs. low-urgency alerts per detection type"
+{% tabs %}
+{% tab title="Query" %}
 
-    === "Query"
+``` shell
+events
+| where timestamp > ago(24h) and event.category == 'authentication'
+| aggregate success_count = countif(event.code == '4624'), failed_count = countif(event.code == '4625') by source.ip
+| order by failed_count desc
+| limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        ``` shell
-        alerts
-        | where created_at > ago(7d)
-        | aggregate high = countif(urgency >= 80), low = countif(urgency < 80) by detection_type
-        ```
+| source.ip  | success_count | failed_count |
+| ---------- | ------------- | ------------ |
+| 1.0.0.95   | 142           | 33           |
+| 1.5.178.82 | 136           | 24           |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-    === "Results"
 
-        | detection_type    | high | low |
-        | ----------------- | ---- | --- |
-        | Sigma             | 52   | 186 |
-        | Sigma Correlation | 8    | 6   |
-        | CTI               | 2    | 3   |
+{% hint style="info" %}
+**Count high-urgency vs. low-urgency alerts per detection type**
+
+
+{% tabs %}
+{% tab title="Query" %}
+
+``` shell
+alerts
+| where created_at > ago(7d)
+| aggregate high = countif(urgency >= 80), low = countif(urgency < 80) by detection_type
+```
+{% endtab %}
+{% tab title="Results" %}
+
+| detection_type    | high | low |
+| ----------------- | ---- | --- |
+| Sigma             | 52   | 186 |
+| Sigma Correlation | 8    | 6   |
+| CTI               | 2    | 3   |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Related articles
 
 ### Getting Started & Overview
-* [SOL Overview](/xdr/features/investigate/sol_overview.md): Sekoia Operating Language overview.
-* [SOL Getting Started](/xdr/features/investigate/sol_getting_started.md): This tutorial walks you through writing your first SOL queries. By the end, you'll be able to search events, filter results, and save queries for reuse.
-* [SOL Best Practices](/xdr/features/investigate/sol_best_practices.md): Best practices to use SOL effectively.
+* [SOL Overview](sol_overview.md): Sekoia Operating Language overview.
+* [SOL Getting Started](sol_getting_started.md): This tutorial walks you through writing your first SOL queries. By the end, you'll be able to search events, filter results, and save queries for reuse.
+* [SOL Best Practices](sol_best_practices.md): Best practices to use SOL effectively.
 
 ### User Guides
-* [Create and Manage Queries](/xdr/features/investigate/create_manage_queries.md): Create and manage queries using SOL.
-* [SOL How-to Guides](/xdr/features/investigate/sol_how_to_guides.md): Learn how to use the main functions of SOL to reach your goals (aggregate data, join tables, use external data, build a query library...).
-* [SOL Query Examples](/xdr/features/investigate/sol_query_examples.md): Get inspiration from our examples.
-* [SOL Datasets](/xdr/features/investigate/sol_datasets.md): Discover the CSV import feature that enables SOC analysts to enrich security investigations by importing external data sources directly into the SOL query environment.
+* [Create and Manage Queries](create_manage_queries.md): Create and manage queries using SOL.
+* [SOL How-to Guides](sol_how_to_guides.md): Learn how to use the main functions of SOL to reach your goals (aggregate data, join tables, use external data, build a query library...).
+* [SOL Query Examples](sol_query_examples.md): Get inspiration from our examples.
+* [SOL Datasets](sol_datasets.md): Discover the CSV import feature that enables SOC analysts to enrich security investigations by importing external data sources directly into the SOL query environment.
 
 ### Technical Reference
-* [SOL Data Sources Reference](/xdr/features/investigate/sol_ref_datasources.md): Technical references to access security data within the Sekoia platform thanks to SOL.
-* [SOL Operators Reference](/xdr/features/investigate/sol_ref_operators.md): Reference article regarding operators used in the SOL language.
+* [SOL Data Sources Reference](sol_ref_datasources.md): Technical references to access security data within the Sekoia platform thanks to SOL.
+* [SOL Operators Reference](sol_ref_operators.md): Reference article regarding operators used in the SOL language.

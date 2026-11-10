@@ -3,12 +3,18 @@
 Sekoia automatically sends notifications to administrators when a subscription is approaching expiration or 
 has expired. Notifications are delivered by email and, in some cases, through in-app banners.
 
-!!! warning "No real-time processing"
-    Sekoia evaluates subscription status changes through scheduled daily processes. 
-    Notifications are not sent in real time, except when triggered by a manual operation.
+{% hint style="warning" %}
+**No real-time processing**
 
-!!! note "Admin-only notifications"
-    Only users with the (built-in) **Admin** role receive subscription-related email notifications.
+Sekoia evaluates subscription status changes through scheduled daily processes. 
+Notifications are not sent in real time, except when triggered by a manual operation.
+{% endhint %}
+
+{% hint style="info" %}
+**Admin-only notifications**
+
+Only users with the (built-in) **Admin** role receive subscription-related email notifications.
+{% endhint %}
 
 ## Expired license notifications
 
@@ -48,7 +54,7 @@ You receive a notification when your community subscription is close to expirati
 
 When a nearly expired license notification is triggered, an in-app banner appears at the top of the application.
 
-![pale orange banner displayed at the top of the page notifying user of nearly ended subscription with a CTA to consult subscription page](/assets/in_app_banner.png){: style="max-width:100%"}
+![pale orange banner displayed at the top of the page notifying user of nearly ended subscription with a CTA to consult subscription page](../../../assets/in_app_banner.png)
 
 The banner is displayed to:
 
@@ -73,7 +79,7 @@ temporarily hide the message.
 
 ## Related links
 
-- [Subscriptions](/getting_started/understand_your_subscription.md): An overview of the Subscriptions page, including access requirements, 
+- [Subscriptions](../../../getting_started/understand_your_subscription.md): An overview of the Subscriptions page, including access requirements, 
 subscription details, and trial specifications for single-tenant and MSSP communities.
-- [Assign a trial subscription](/getting_started/assign_a_subscription.md): Step-by-step instructions for manually 
+- [Assign a trial subscription](../../../getting_started/assign_a_subscription.md): Step-by-step instructions for manually 
 assigning a trial subscription to a community from the MSSP workspace.

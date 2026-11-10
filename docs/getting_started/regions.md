@@ -4,11 +4,13 @@ Sekoia is currently available in several regions across Europe, the Middle East,
 
 ## Watch out for region-specific URLS
 
-!!! warning
-    ✋ Please note that the region in which you are located has an impact on the product URLs.
+{% hint style="warning" %}
+✋ Please note that the region in which you are located has an impact on the product URLs.
+{% endhint %}
 
-!!! warning
-    ⌛ Some URLS may change in the future.
+{% hint style="warning" %}
+⌛ Some URLS may change in the future.
+{% endhint %}
 
 When you find URLs of the type <code>app.sekoia.io</code> in the product documentation, be sure to replace this value with that of your region ("URL" in the tables below).
 

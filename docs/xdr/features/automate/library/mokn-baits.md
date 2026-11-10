@@ -4,7 +4,7 @@ type: playbook
 
 # MokN - Baits
 
-![MokN - Baits](/assets/playbooks/library/mokn-baits.png){ align=right width=150 }
+![MokN - Baits](../../../../assets/playbooks/library/mokn-baits.png)
 
 MokN helps detect malicious authentication activity by exposing login attempts captured on bait services.
 

@@ -20,8 +20,11 @@ The details page is organized into three main sections:
 
 The events graph displays ingestion metrics for the selected period: 24 hours, 7 days, or 30 days.
 
-!!! warning "Events are plotted by reception date"
-    Events are displayed using their reception date, not the source timestamp. This ensures recently received events always appear in the graph, even when source timestamps are incorrect or significantly delayed.
+{% hint style="warning" %}
+**Events are plotted by reception date**
+
+Events are displayed using their reception date, not the source timestamp. This ensures recently received events always appear in the graph, even when source timestamps are incorrect or significantly delayed.
+{% endhint %}
 
 ### Graph metrics
 
@@ -33,8 +36,11 @@ The events graph displays ingestion metrics for the selected period: 24 hours, 7
 | **Valid events** | Number of successfully parsed events |
 | **Event delivery** | Average time between the original event creation date at the source and its reception date at Sekoia |
 
-!!! tip "View per-unit event counts"
-    Hover over the graph to view the number of events for each time unit.
+{% hint style="success" %}
+**View per-unit event counts**
+
+Hover over the graph to view the number of events for each time unit.
+{% endhint %}
 
 ![Events graph hover tooltip](../../../assets/operation_center/intakes/intakes-graph-hover.png)
 
@@ -42,11 +48,17 @@ The events graph displays ingestion metrics for the selected period: 24 hours, 7
 
 The event delivery metric is a lag indicator. It computes the average time elapsed between when a source system generates an event and when Sekoia receives and indexes it.
 
-!!! warning "A high value does not always indicate a Sekoia issue"
-    This metric covers the full end-to-end path from the source to Sekoia. A high value can reflect delays introduced outside of Sekoia's infrastructure, such as buffering on your network, on an intermediary relay (for example, an Event Hub), or at the endpoint level. If the **Connector log** tab shows no errors, the delay is most likely introduced upstream.
+{% hint style="warning" %}
+**A high value does not always indicate a Sekoia issue**
 
-!!! tip "The average can be misleading in burst scenarios"
-    Because this is an average, a small number of heavily delayed events can significantly inflate the displayed value, even if most events arrive in near real-time. For example, if an endpoint was offline for several hours and reconnects while flushing all its buffered events at once, the average delivery time will appear high even though Sekoia's collection pipeline is operating normally.
+This metric covers the full end-to-end path from the source to Sekoia. A high value can reflect delays introduced outside of Sekoia's infrastructure, such as buffering on your network, on an intermediary relay (for example, an Event Hub), or at the endpoint level. If the **Connector log** tab shows no errors, the delay is most likely introduced upstream.
+{% endhint %}
+
+{% hint style="success" %}
+**The average can be misleading in burst scenarios**
+
+Because this is an average, a small number of heavily delayed events can significantly inflate the displayed value, even if most events arrive in near real-time. For example, if an endpoint was offline for several hours and reconnects while flushing all its buffered events at once, the average delivery time will appear high even though Sekoia's collection pipeline is operating normally.
+{% endhint %}
 
 ### Abnormal value causes
 
@@ -93,8 +105,11 @@ Select an entry to inspect the last occurrence of the event and troubleshoot the
 
 ![Invalid event detail panel](../../../assets/operation_center/intakes/intakes-details-error.png)
 
-!!! note "Storage optimization"
-    To manage storage costs, Sekoia only stores the last occurrence of each invalid event.
+{% hint style="info" %}
+**Storage optimization**
+
+To manage storage costs, Sekoia only stores the last occurrence of each invalid event.
+{% endhint %}
 
 ## Connector log
 
@@ -131,10 +146,10 @@ The intake menu is accessible from the intake details page. It exposes all manag
 
 ## Related articles
 
-- [Intakes](/xdr/features/collect/intakes.md): Concept overview of what intakes are, how they connect to Sekoia, and what the different event types mean.
+- [Intakes](intakes.md): Concept overview of what intakes are, how they connect to Sekoia, and what the different event types mean.
 
-- [Manage intakes](/xdr/features/collect/manage_intakes.md): Step-by-step procedures for creating, configuring, renaming, and deleting intakes.
+- [Manage intakes](manage_intakes.md): Step-by-step procedures for creating, configuring, renaming, and deleting intakes.
 
-- [Turn on notifications](/getting_started/create_a_notification.md): How to configure notification channels and triggers for intake inactivity alerts.
+- [Turn on notifications](../../../getting_started/create_a_notification.md): How to configure notification channels and triggers for intake inactivity alerts.
 
-- [Integrations](/integration/index.md): Full catalog of supported data source integrations and their setup documentation.
+- [Integrations](../../../integration/index.md): Full catalog of supported data source integrations and their setup documentation.

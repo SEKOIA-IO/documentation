@@ -4,7 +4,7 @@ type: playbook
 
 # DNS
 
-![DNS](/assets/playbooks/library/dns.png){ align=right width=150 }
+![DNS](../../../../assets/playbooks/library/dns.png)
 
 Module for DNS-related automations and lookups
 

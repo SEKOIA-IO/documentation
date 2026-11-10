@@ -10,7 +10,7 @@ Use the Intelligence page to search Sekoia’s database for objects and observab
 
     You can search for an object name, report title, domain, IP address, hash, observable value, or other indexed content.
 
-![!Intelligence page with the search bar and results tabs.](/assets/intelligence_center/intelligence_search.png){: style="max-width:100%"}
+![!Intelligence page with the search bar and results tabs.](../../../assets/intelligence_center/intelligence_search.png)
 
 ## Run a search
 
@@ -26,8 +26,9 @@ To search for a Location, enter its name. Results can include countries, regions
 
 For a country, you can also use its two-letter country code, following the [ISO 3166-1](https://www.iso.org/obp/ui/#iso:pub:PUB500001:en) reference. For example, use `FR` for France or `CN` for China.
 
-!!! tip
-    To open several results in new tabs, right-click an object or use **Option+click** on macOS or **Shift+click** on Windows.
+{% hint style="success" %}
+To open several results in new tabs, right-click an object or use **Option+click** on macOS or **Shift+click** on Windows.
+{% endhint %}
 
 ## Select a result type
 
@@ -83,11 +84,11 @@ When you reopen the filter menu, the selected object type is already checked. Se
 
 The **Filters** menu lists the available filter categories:
 
-![!Filters menu listing the available filter categories.](/assets/intelligence_center/cti_filters.png){: style="max-width:100%"}
+![!Filters menu listing the available filter categories.](../../../assets/intelligence_center/cti_filters.png)
 
 The **Object types** filter with **Location** selected:
 
-![!Object types filter with Location checked and the Clear filters button displayed.](/assets/intelligence_center/cti_object_types_filter.png){: style="max-width:100%"}
+![!Object types filter with Location checked and the Clear filters button displayed.](../../../assets/intelligence_center/cti_object_types_filter.png)
 
 ## Review search results
 
@@ -124,7 +125,7 @@ Sekoia can identify some pasted values and leave others as unknown. Review both 
 
 ## Open a result
 
-Select an object or observable name to open its details page. Continue with [Investigate an object](/cti/features/consume/investigate_an_object.md) to review an object’s context, relationships, graph, and reports.
+Select an object or observable name to open its details page. Continue with [Investigate an object](investigate_an_object.md) to review an object’s context, relationships, graph, and reports.
 
 ## Result
 
@@ -132,8 +133,8 @@ You can search objects and observables from one page, apply filters without repe
 
 ## Related articles
 
-[Observables](/cti/features/consume/observables.md): Overview of observable types, tags, validity, sources, and relationships.
+[Observables](observables.md): Overview of observable types, tags, validity, sources, and relationships.
 
-[Investigate an object](/cti/features/consume/investigate_an_object.md): How to review an object’s context, relationships, graph, and reports.
+[Investigate an object](investigate_an_object.md): How to review an object’s context, relationships, graph, and reports.
 
-[Data model](/cti/features/data_model.md): Reference for objects, observables, relationships, sources, and confidence.
+[Data model](../data_model.md): Reference for objects, observables, relationships, sources, and confidence.

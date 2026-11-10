@@ -21,13 +21,19 @@ Every custom verdict belongs to one of two verdict stages.
 4. Enter a **Description** explaining when your team should use this verdict and what it signifies.
 5. Save your changes.
 
-!!! tip "Write the description, not just the name"
-    A documented definition is what stops two analysts from classifying the same evidence differently. The description is also what the Elevate AI agents read when they select the verdict that fits an alert.
+{% hint style="success" %}
+**Write the description, not just the name**
 
-!!! warning "Verdicts do not offer a migration"
-    Custom statuses are the only type that can be retired while in use. Verdicts and priorities cannot: you have to clear the verdict from every alert and case before you can delete it. See [Migrate custom statuses](/xdr/features/investigate/migrate_custom_statuses.md) for the status behavior.
+A documented definition is what stops two analysts from classifying the same evidence differently. The description is also what the Elevate AI agents read when they select the verdict that fits an alert.
+{% endhint %}
 
-![Custom verdicts configuration](/assets/operation_center/alerts/custom-verdicts-config.png){: style="max-width:100%"}
+{% hint style="warning" %}
+**Verdicts do not offer a migration**
+
+Custom statuses are the only type that can be retired while in use. Verdicts and priorities cannot: you have to clear the verdict from every alert and case before you can delete it. See [Migrate custom statuses](migrate_custom_statuses.md) for the status behavior.
+{% endhint %}
+
+![Custom verdicts configuration](../../../assets/operation_center/alerts/custom-verdicts-config.png)
 
 ## Edit a custom verdict
 
@@ -44,7 +50,7 @@ A verdict can be deleted only if no alert and no case currently carries it.
 
 ## Related articles
 
-* [Custom statuses](/xdr/features/investigate/custom_statuses.md): What custom statuses are, and how they differ from verdicts and priorities.
-* [Migrate custom statuses](/xdr/features/investigate/migrate_custom_statuses.md): How to disable or delete a status that is already in use, which verdicts do not support.
-* [Manage custom statuses](/xdr/features/investigate/manage_custom_statuses.md): How to create, edit, reorder and enable custom statuses.
-* [Elevate investigation method](/xdr/features/modules/elevate_investigation_method.md): How the AI agents pick a verdict from the ones your SOC defines.
+* [Custom statuses](custom_statuses.md): What custom statuses are, and how they differ from verdicts and priorities.
+* [Migrate custom statuses](migrate_custom_statuses.md): How to disable or delete a status that is already in use, which verdicts do not support.
+* [Manage custom statuses](manage_custom_statuses.md): How to create, edit, reorder and enable custom statuses.
+* [Elevate investigation method](../modules/elevate_investigation_method.md): How the AI agents pick a verdict from the ones your SOC defines.

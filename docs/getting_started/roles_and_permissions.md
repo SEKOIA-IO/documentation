@@ -32,8 +32,11 @@ The Admin role includes all Analyst permissions plus:
 - Reset user 2FA
 - Configure SSO and workspace security policies
 
-!!! tip "Least privilege principle"
-    Assign users the lowest role that allows them to do their job. Grant Admin access only to users who actively need to manage the workspace or community.
+{% hint style="success" %}
+**Least privilege principle**
+
+Assign users the lowest role that allows them to do their job. Grant Admin access only to users who actively need to manage the workspace or community.
+{% endhint %}
 
 ## Custom roles
 
@@ -76,6 +79,6 @@ A user can hold multiple roles simultaneously. Their effective permissions are t
 
 ## Related links
 
-- [Invite users](/getting_started/invite_users.md): How to add users and assign roles during the invitation process.
-- [Manage users](/getting_started/manage_users.md): How to view and modify user access after onboarding.
-- [Workspace setup overview](/getting_started/workspace_setup_overview.md): Full checklist for configuring your workspace.
+- [Invite users](invite_users.md): How to add users and assign roles during the invitation process.
+- [Manage users](manage_users.md): How to view and modify user access after onboarding.
+- [Workspace setup overview](workspace_setup_overview.md): Full checklist for configuring your workspace.

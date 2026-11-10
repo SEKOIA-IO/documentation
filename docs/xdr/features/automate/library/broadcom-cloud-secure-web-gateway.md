@@ -1,6 +1,6 @@
 # Broadcom Cloud Secure Web Gateway
 
-![Broadcom Cloud Secure Web Gateway](/assets/playbooks/library/broadcom-cloud-secure-web-gateway.png){ align=right width=150 }
+![Broadcom Cloud Secure Web Gateway](../../../../assets/playbooks/library/broadcom-cloud-secure-web-gateway.png)
 
 Broadcom Cloud Secure Web Gateway is a cloud-native security solution providing advanced threat protection, content filtering, and data loss prevention, ensuring secure internet access and compliance for organizations with flexible deployment options and comprehensive web security features.
 

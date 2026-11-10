@@ -8,13 +8,17 @@ The Sekoia.io REST API allows you to programmatically trigger event exports and 
 * A tool to send HTTP requests (e.g., cURL or Postman).
 * Sekoia.io operates in multiple regions. **Configure your region** when using the CLI.
 
-??? info "API Configuration"
-    Use the appropriate API host in your requests:
-    example for USA1 region:
-    ```
-    https://api.usa1.sekoia.io/v1/sic/conf/events/search/jobs/{job_uuid}/export
-    ```
-    For a complete list of regions, see the [Sekoia.io Regions Documentation](https://docs.sekoia.com/getting_started/regions/).
+<details>
+<summary>API Configuration</summary>
+
+Use the appropriate API host in your requests:
+example for USA1 region:
+```
+https://api.usa1.sekoia.io/v1/sic/conf/events/search/jobs/{job_uuid}/export
+```
+For a complete list of regions, see the [Sekoia.io Regions Documentation](https://docs.sekoia.com/getting_started/regions/).
+
+</details>
 
 
 ### Step 1: Trigger the export
@@ -22,7 +26,7 @@ To start the export, send a `POST` request to the export endpoint. You must spec
 
 **Request:**
 ```bash
-curl -X POST "[https://api.sekoia.io/v1/sic/conf/events/search/jobs/](https://api.sekoia.io/v1/sic/conf/events/search/jobs/){job_uuid}/export" \
+curl -X POST "[https://api.sekoia.io/v1/sic/conf/events/search/jobs/](https://api.sekoia.io/v1/sic/conf/events/search/jobs/)/export" \
      -H "Authorization: Bearer YOUR_API_KEY" \
      -H "Content-Type: application/json" \
      -d '{
@@ -40,7 +44,7 @@ The API returns a `task_uuid`. You must use this ID to monitor the status in the
 **Request:**
 ```bash
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-     "[https://api.sekoia.io/v1/tasks/](https://api.sekoia.io/v1/tasks/){task_uuid}"
+     "[https://api.sekoia.io/v1/tasks/](https://api.sekoia.io/v1/tasks/)"
 ```
 **Result:**
 The response indicates the `status`. Possible values are `PENDING`, `RUNNING`, `FINISHED`, or `FAILED`.
@@ -51,14 +55,17 @@ Once the status is `FINISHED`, retrieve the pre-signed S3 URL and the metadata f
 **Request:** 
 ```bash
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-     "[https://api.sekoia.io/v1/sic/conf/events/search/jobs/](https://api.sekoia.io/v1/sic/conf/events/search/jobs/){job_uuid}/export-jobs"
+     "[https://api.sekoia.io/v1/sic/conf/events/search/jobs/](https://api.sekoia.io/v1/sic/conf/events/search/jobs/)/export-jobs"
 ```
 **Result:** 
 The response provides the `download_url`, `the export_size_compressed`, and the `expire_at timestamp`.
 
-!!! warning "Encryption key retrieval"
-    The API response includes the unique SSE-C encryption key. You must provide this key in the header of your final download request to S3 to decrypt the stream. This key is only valid for the current export `job.download_url`, the `export_size_compressed`, and the `expire_at` timestamp.
+{% hint style="warning" %}
+**Encryption key retrieval**
+
+The API response includes the unique SSE-C encryption key. You must provide this key in the header of your final download request to S3 to decrypt the stream. This key is only valid for the current export `job.download_url`, the `export_size_compressed`, and the `expire_at` timestamp.
+{% endhint %}
 
 ## See also: 
-- To see how these API steps are automated into a single command-line interface, refer to the [Export events with the CLI](/xdr/features/investigate/export_event_cli.md) guide.
+- To see how these API steps are automated into a single command-line interface, refer to the [Export events with the CLI](export_event_cli.md) guide.
 - Get inspired by practical examples and step-by-step workflows for common scenarios with our  [Export Large Volumes of Events - Use Case Guide](../../usecases/massive_export.md)

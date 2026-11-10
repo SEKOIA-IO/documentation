@@ -4,7 +4,7 @@ type: playbook
 
 # Whois
 
-![Whois](/assets/playbooks/library/whois.svg){ align=right width=150 }
+![Whois](../../../../assets/playbooks/library/whois.svg)
 
 Provides data enrichment for domains and IP addresses.
 

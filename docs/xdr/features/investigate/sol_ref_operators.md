@@ -12,22 +12,28 @@ Use the `count` operator to count the number of rows returned by the statement.
 
 ```
 
-!!! example "Count the number of rows in the `events` table"
+{% hint style="info" %}
+**Count the number of rows in the `events` table**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(30m)
-        | count
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(30m)
+| count
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | count |
-        | ----- |
-        | 1284  |
+| count |
+| ----- |
+| 1284  |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 
 
@@ -41,25 +47,31 @@ Use the `select` operator to define the columns to retrieve from the table. The 
 
 ```
 
-!!! example "Select the columns host.name and source.ip from the `events` table"
+{% hint style="info" %}
+**Select the columns host.name and source.ip from the `events` table**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(1h)
-        | select host.name, source.ip
-        | limit 100
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(1h)
+| select host.name, source.ip
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | host.name       | source.ip     |
-        | --------------- | ------------- |
-        | laptop-chris    | 192.168.2.10  |
-        | laptop-6a1ec62f | 192.168.2.22  |
-        | laptop-b3205bc2 | 10.0.0.45     |
+| host.name       | source.ip     |
+| --------------- | ------------- |
+| laptop-chris    | 192.168.2.10  |
+| laptop-6a1ec62f | 192.168.2.22  |
+| laptop-b3205bc2 | 10.0.0.45     |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 
 ## Distinct
@@ -72,25 +84,31 @@ Use the `distinct` operator to list all the unique values of a column.
 
 ```
 
-!!! example "List the unique values of client.ip from the events table"
+{% hint style="info" %}
+**List the unique values of client.ip from the events table**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(24h)
-        | distinct client.ip
-        | limit 100
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(24h)
+| distinct client.ip
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | client.ip     |
-        | ------------- |
-        | 192.168.2.10  |
-        | 192.168.2.22  |
-        | 10.0.0.45     |
+| client.ip     |
+| ------------- |
+| 192.168.2.10  |
+| 192.168.2.22  |
+| 10.0.0.45     |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Where
 
@@ -102,105 +120,135 @@ Use the `where` operator to filter rows by a list of conditions. Use parenthesis
 
 ```
 
-!!! example "Filter the query by excluding events older than `5 days` and retrieving only user agent from `Mac`"
+{% hint style="info" %}
+**Filter the query by excluding events older than `5 days` and retrieving only user agent from `Mac`**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(5d) and user_agent.device.name == 'Mac'
-        | limit 100
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(5d) and user_agent.device.name == 'Mac'
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | timestamp                | user_agent.device.name |
-        | ------------------------ | ---------------------- |
-        | 2026-03-26T14:22:03.120Z | Mac                    |
-        | 2026-03-26T14:19:47.883Z | Mac                    |
-        | 2026-03-26T14:17:31.554Z | Mac                    |
+| timestamp                | user_agent.device.name |
+| ------------------------ | ---------------------- |
+| 2026-03-26T14:22:03.120Z | Mac                    |
+| 2026-03-26T14:19:47.883Z | Mac                    |
+| 2026-03-26T14:17:31.554Z | Mac                    |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-!!! example "Filter the query by excluding events older than `5 days` and retrieving only user agent from `Mac` or `Android`"
+{% hint style="info" %}
+**Filter the query by excluding events older than `5 days` and retrieving only user agent from `Mac` or `Android`**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(5d) and (user_agent.device.name == 'Mac' or user_agent.device.name == 'Android')
-        | limit 100
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(5d) and (user_agent.device.name == 'Mac' or user_agent.device.name == 'Android')
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | timestamp                | user_agent.device.name |
-        | ------------------------ | ---------------------- |
-        | 2026-03-26T14:22:03.120Z | Mac                    |
-        | 2026-03-26T14:20:15.441Z | Android                |
-        | 2026-03-26T14:19:47.883Z | Mac                    |
+| timestamp                | user_agent.device.name |
+| ------------------------ | ---------------------- |
+| 2026-03-26T14:22:03.120Z | Mac                    |
+| 2026-03-26T14:20:15.441Z | Android                |
+| 2026-03-26T14:19:47.883Z | Mac                    |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-!!! example "Same as previous but with multiple `where` statements"
+{% hint style="info" %}
+**Same as previous but with multiple `where` statements**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(5d)
-        | where user_agent.device.name == 'Mac' or user_agent.device.name == 'Android'
-        | limit 100
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(5d)
+| where user_agent.device.name == 'Mac' or user_agent.device.name == 'Android'
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | timestamp                | user_agent.device.name |
-        | ------------------------ | ---------------------- |
-        | 2026-03-26T14:22:03.120Z | Mac                    |
-        | 2026-03-26T14:20:15.441Z | Android                |
-        | 2026-03-26T14:19:47.883Z | Mac                    |
+| timestamp                | user_agent.device.name |
+| ------------------------ | ---------------------- |
+| 2026-03-26T14:22:03.120Z | Mac                    |
+| 2026-03-26T14:20:15.441Z | Android                |
+| 2026-03-26T14:19:47.883Z | Mac                    |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ### Checking for non-null properties
 
 Many event fields are optional and may not be present in every event. Use `!= null` to keep only rows where a field has a value, or `== null` to find rows where the field is absent.
 
-!!! example "Retrieve events where `user.name` is present"
+{% hint style="info" %}
+**Retrieve events where `user.name` is present**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(24h) and user.name != null
-        | select timestamp, host.name, user.name
-        | limit 100
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(24h) and user.name != null
+| select timestamp, host.name, user.name
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | timestamp                | host.name    | user.name      |
-        | ------------------------ | ------------ | -------------- |
-        | 2026-03-26T14:22:03.120Z | laptop-chris | ada_lovelace   |
-        | 2026-03-26T14:19:47.883Z | laptop-chris | grace_hopper   |
+| timestamp                | host.name    | user.name      |
+| ------------------------ | ------------ | -------------- |
+| 2026-03-26T14:22:03.120Z | laptop-chris | ada_lovelace   |
+| 2026-03-26T14:19:47.883Z | laptop-chris | grace_hopper   |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-!!! example "Find events where `process.command_line` is missing"
+{% hint style="info" %}
+**Find events where `process.command_line` is missing**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(24h) and process.name != null and process.command_line == null
-        | select timestamp, host.name, process.name
-        | limit 100
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(24h) and process.name != null and process.command_line == null
+| select timestamp, host.name, process.name
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | timestamp                | host.name       | process.name |
-        | ------------------------ | --------------- | ------------ |
-        | 2026-03-26T14:20:15.441Z | laptop-6a1ec62f | svchost.exe  |
-        | 2026-03-26T14:17:31.554Z | laptop-b3205bc2 | lsass.exe    |
+| timestamp                | host.name       | process.name |
+| ------------------------ | --------------- | ------------ |
+| 2026-03-26T14:20:15.441Z | laptop-6a1ec62f | svchost.exe  |
+| 2026-03-26T14:17:31.554Z | laptop-b3205bc2 | lsass.exe    |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Nested query
 
@@ -214,30 +262,34 @@ let query = <table name> | select <column name>;
 
 ```
 
-!!! example
+{% hint style="info" %}
 
-    === "Query"
+{% tabs %}
+{% tab title="Query" %}
 
-        ``` shell
-        let chromium_browsers =  events
-        | where timestamp > ago(30d)
-        | where process.command_line contains " --type=renderer " and process.command_line contains " --extension-process "
-        | distinct process.command_line;
+``` shell
+let chromium_browsers =  events
+| where timestamp > ago(30d)
+| where process.command_line contains " --type=renderer " and process.command_line contains " --extension-process "
+| distinct process.command_line;
 
-        events
-        | where timestamp > ago(1h)
-        | where process.command_line in chromium_browsers
-        | aggregate count_agents=count_distinct(agent.id), executables=make_set(process.executable) by process.name
-        | order by count_agents
+events
+| where timestamp > ago(1h)
+| where process.command_line in chromium_browsers
+| aggregate count_agents=count_distinct(agent.id), executables=make_set(process.executable) by process.name
+| order by count_agents
 
-        ```
+```
+{% endtab %}
+{% tab title="Results" %}
 
-    === "Results"
-
-        | process.name | count_agents | executables                      |
-        | ------------ | ------------ | -------------------------------- |
-        | chrome       | 304          | ["chrome.exe"]                   |
-        | chrome.exe   | 290          | ["chrome.exe", "chrome_sandbox"] |
+| process.name | count_agents | executables                      |
+| ------------ | ------------ | -------------------------------- |
+| chrome       | 304          | ["chrome.exe"]                   |
+| chrome.exe   | 290          | ["chrome.exe", "chrome_sandbox"] |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Sort results
 
@@ -249,46 +301,58 @@ Use the `order by` operator to sort rows by a column. The default sort order is 
 
 ```
 
-!!! example "Order the rows by the timestamp column in ascending order"
+{% hint style="info" %}
+**Order the rows by the timestamp column in ascending order**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(1h)
-        | order by timestamp asc
-        | limit 100
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(1h)
+| order by timestamp asc
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | timestamp                | host.name       | source.ip    |
-        | ------------------------ | --------------- | ------------ |
-        | 2026-03-19T00:00:01.002Z | laptop-6a1ec62f | 10.0.0.45    |
-        | 2026-03-19T00:00:04.118Z | laptop-chris    | 192.168.2.10 |
-        | 2026-03-19T00:00:07.553Z | laptop-b3205bc2 | 192.168.2.22 |
+| timestamp                | host.name       | source.ip    |
+| ------------------------ | --------------- | ------------ |
+| 2026-03-19T00:00:01.002Z | laptop-6a1ec62f | 10.0.0.45    |
+| 2026-03-19T00:00:04.118Z | laptop-chris    | 192.168.2.10 |
+| 2026-03-19T00:00:07.553Z | laptop-b3205bc2 | 192.168.2.22 |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-!!! example "Order alerts by descending urgency and ascending first_seen_at"
+{% hint style="info" %}
+**Order alerts by descending urgency and ascending first_seen_at**
 
-    === "Query"
 
-        ``` shell
-        alerts
-        | where created_at > ago(1h)
-        | select short_id, rule_name, urgency, first_seen_at
-        | order by urgency desc, first_seen_at asc
-        | limit 100
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+alerts
+| where created_at > ago(1h)
+| select short_id, rule_name, urgency, first_seen_at
+| order by urgency desc, first_seen_at asc
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | short_id | rule_name                  | urgency | first_seen_at            |
-        | -------- | -------------------------- | ------- | ------------------------ |
-        | ALT-0042 | SEKOIA Intelligence Feed   | 95      | 2026-03-20T08:14:22.000Z |
-        | ALT-0087 | Suspicious Mshta Execution | 80      | 2026-03-21T11:03:47.000Z |
-        | ALT-0031 | Suspicious Mshta Execution | 80      | 2026-03-22T09:55:10.000Z |
+| short_id | rule_name                  | urgency | first_seen_at            |
+| -------- | -------------------------- | ------- | ------------------------ |
+| ALT-0042 | SEKOIA Intelligence Feed   | 95      | 2026-03-20T08:14:22.000Z |
+| ALT-0087 | Suspicious Mshta Execution | 80      | 2026-03-21T11:03:47.000Z |
+| ALT-0031 | Suspicious Mshta Execution | 80      | 2026-03-22T09:55:10.000Z |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Limit results
 
@@ -300,24 +364,30 @@ Use the `limit` operator to retrieve the last n number of rows based on the curr
 
 ```
 
-!!! example "Get `1000` events from `events` table"
+{% hint style="info" %}
+**Get `1000` events from `events` table**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(1h)
-        | limit 1000
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(1h)
+| limit 1000
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | timestamp                | host.name       | source.ip     |
-        | ------------------------ | --------------- | ------------- |
-        | 2026-03-26T14:22:03.120Z | laptop-chris    | 192.168.2.10  |
-        | 2026-03-26T14:21:58.774Z | laptop-6a1ec62f | 192.168.2.22  |
-        | 2026-03-26T14:21:44.331Z | laptop-b3205bc2 | 10.0.0.45     |
+| timestamp                | host.name       | source.ip     |
+| ------------------------ | --------------- | ------------- |
+| 2026-03-26T14:22:03.120Z | laptop-chris    | 192.168.2.10  |
+| 2026-03-26T14:21:58.774Z | laptop-6a1ec62f | 192.168.2.22  |
+| 2026-03-26T14:21:44.331Z | laptop-b3205bc2 | 10.0.0.45     |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Get the Top n rows
 
@@ -329,36 +399,42 @@ Use the `top` operator to returns the first n rows sorted by the specified colum
 
 ```
 
-!!! example "Get the top `5` alerts with the most occurrences from `alerts` table in the last 7 days"
+{% hint style="info" %}
+**Get the top `5` alerts with the most occurrences from `alerts` table in the last 7 days**
 
-    === "Query"
 
-        ``` shell
-        alerts
-        | where created_at > ago(7d)
-        | top 5 by occurrences
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+alerts
+| where created_at > ago(7d)
+| top 5 by occurrences
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | rule_name                        | occurrences |
-        | -------------------------------- | ----------- |
-        | SEKOIA Intelligence Feed         | 312         |
-        | Suspicious Mshta Execution       | 204         |
-        | Brute Force Authentication       | 187         |
-        | Credential Dumping via Mimikatz  | 143         |
-        | Suspicious PowerShell Invocation | 98          |
+| rule_name                        | occurrences |
+| -------------------------------- | ----------- |
+| SEKOIA Intelligence Feed         | 312         |
+| Suspicious Mshta Execution       | 204         |
+| Brute Force Authentication       | 187         |
+| Credential Dumping via Mimikatz  | 143         |
+| Suspicious PowerShell Invocation | 98          |
+{% endtab %}
+{% endtabs %}
 
-    Note that the query below is equivalent.
+Note that the query below is equivalent.
 
-    ``` shell
-    alerts
-    | where created_at > ago(7d)
-    | order by occurrences desc
-    | limit 5
+``` shell
+alerts
+| where created_at > ago(7d)
+| order by occurrences desc
+| limit 5
 
-    ```
+```
+{% endhint %}
 
 ## Create calculated columns
 
@@ -371,25 +447,31 @@ Use `select` to specify the columns to display. When using `extend`, the calcula
 
 ```
 
-!!! example "Create a calculated column named total that sums the `time_to_detect`, `time_to_respond` and `time_to_resolve` values"
+{% hint style="info" %}
+**Create a calculated column named total that sums the `time_to_detect`, `time_to_respond` and `time_to_resolve` values**
 
-    === "Query"
 
-        ``` shell
-        alerts
-        | where created_at > ago(1h)
-        | limit 100
-        | select total = time_to_detect + time_to_respond + time_to_resolve
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+alerts
+| where created_at > ago(1h)
+| limit 100
+| select total = time_to_detect + time_to_respond + time_to_resolve
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | total    |
-        | -------- |
-        | 3847.20  |
-        | 2103.55  |
-        | 1589.80  |
+| total    |
+| -------- |
+| 3847.20  |
+| 2103.55  |
+| 1589.80  |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Aggregate rows
 
@@ -401,196 +483,253 @@ Use the `aggregate` operator to group rows by a column and perform aggregations 
 
 ```
 
-!!! example "Count the number of events per asset in the `events` table"
-
-    === "Query"
-
-        ``` shell
-        events
-        | where timestamp > ago(1h)
-        | aggregate count() by sekoiaio.any_asset.name
-        | limit 100
-
-        ```
-
-    === "Results"
-
-        | sekoiaio.any_asset.name | count |
-        | ----------------------- | ----- |
-        | laptop-6a1ec62f         | 16    |
-        | laptop-chris            | 525   |
-        | laptop-b3205bc2         | 517   |
-
-    Note that you can specify a column name for the aggregation. In the example below, the column name is defined as `total`.
-
-    === "Query"
-
-        ``` shell
-        events
-        | where timestamp > ago(1h)
-        | aggregate total = count() by sekoiaio.any_asset.name
-        | limit 100
-
-        ```
-
-    === "Results"
-
-        | sekoiaio.any_asset.name | total |
-        | ----------------------- | ----- |
-        | laptop-6a1ec62f         | 16    |
-        | laptop-chris            | 525   |
-        | laptop-b3205bc2         | 517   |
-
-!!! example "Count the number of events per source.ip and per action.outcome in the `events` table"
-
-    === "Query"
-
-        ``` shell
-        events
-        | where timestamp >= ago(24h) and event.category == 'authentication'
-        | aggregate count() by source.ip, action.outcome
-
-        ```
-
-    === "Results"
-
-        | source.ip    | action.outcome | count |
-        | ------------ | -------------- | ----- |
-        | 192.168.2.10 | success        | 142   |
-        | 192.168.2.10 | failure        | 33    |
-        | 1.5.178.82   | success        | 136   |
-        | 1.5.178.82   | failure        | 24    |
-
-!!! example "Sum the values of 'time_to_detect' column in the `alerts` table"
-
-    === "Query"
-
-        ``` shell
-        alerts
-        | where created_at > ago(1h)
-        | aggregate sum(time_to_detect)
-        | limit 100
-
-        ```
-
-    === "Results"
-
-        | sum_time_to_detect |
-        | ------------------ |
-        | 284610.40          |
-
-!!! example "Retrieve the minimum value of 'time_to_detect' column in the `alerts` table"
-
-    === "Query"
-
-        ``` shell
-        alerts
-        | where created_at > ago(1h)
-        | aggregate min(time_to_detect)
-        | limit 100
-
-        ```
-
-    === "Results"
-
-        | min_time_to_detect |
-        | ------------------ |
-        | 12.50              |
-
-!!! example "Retrieve the maximum value of 'time_to_detect' column in the `alerts` table"
-
-    === "Query"
-
-        ``` shell
-        alerts
-        | where created_at > ago(1h)
-        | aggregate max(time_to_detect)
-        | limit 100
-
-        ```
-
-    === "Results"
-
-        | max_time_to_detect |
-        | ------------------ |
-        | 7284.00            |
-
-!!! example "Calculate the average value of 'time_to_detect' column in the `alerts` table"
-
-    === "Query"
-
-        ``` shell
-        alerts
-        | where created_at > ago(1h)
-        | aggregate avg(time_to_detect)
-        | limit 100
-
-        ```
-
-    === "Results"
-
-        | avg_time_to_detect |
-        | ------------------ |
-        | 1035.66            |
+{% hint style="info" %}
+**Count the number of events per asset in the `events` table**
 
 
-!!! example "Count unique values of 'source.ip' column in the `events` table"
+{% tabs %}
+{% tab title="Query" %}
 
-    === "Query"
+``` shell
+events
+| where timestamp > ago(1h)
+| aggregate count() by sekoiaio.any_asset.name
+| limit 100
 
-        ``` shell
-        events
-        | where timestamp > ago(1h)
-        | aggregate count_distinct(source.ip)
-        | limit 100
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        ```
+| sekoiaio.any_asset.name | count |
+| ----------------------- | ----- |
+| laptop-6a1ec62f         | 16    |
+| laptop-chris            | 525   |
+| laptop-b3205bc2         | 517   |
+{% endtab %}
+{% endtabs %}
 
-    === "Results"
+Note that you can specify a column name for the aggregation. In the example below, the column name is defined as `total`.
 
-        | count_distinct_source.ip |
-        | ------------------------ |
-        | 47                       |
+{% tabs %}
+{% tab title="Query" %}
 
-!!! example "Create an array of the set of distinct values of 'source.ip' column in the `events` table"
-    Note that `null` values are ignored.
+``` shell
+events
+| where timestamp > ago(1h)
+| aggregate total = count() by sekoiaio.any_asset.name
+| limit 100
 
-    === "Query"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        ``` shell
-        events
-        | where created_at > ago(1h)
-        | aggregate make_set(source.ip)
-        | limit 100
+| sekoiaio.any_asset.name | total |
+| ----------------------- | ----- |
+| laptop-6a1ec62f         | 16    |
+| laptop-chris            | 525   |
+| laptop-b3205bc2         | 517   |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-        ```
+{% hint style="info" %}
+**Count the number of events per source.ip and per action.outcome in the `events` table**
 
-    === "Results"
 
-        | make_set_source.ip                                      |
-        | ------------------------------------------------------- |
-        | ["192.168.2.10", "192.168.2.22", "10.0.0.45", "1.5.178.82"] |
+{% tabs %}
+{% tab title="Query" %}
 
-!!! example "Count allowed and denied network events per destination port using `countif`"
+``` shell
+events
+| where timestamp >= ago(24h) and event.category == 'authentication'
+| aggregate count() by source.ip, action.outcome
 
-    === "Query"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        ``` shell
-        events
-        | where timestamp >= ago(24h) and event.category == 'network'
-        | aggregate allowed = countif(action.outcome == 'success'), denied = countif(action.outcome == 'failure') by destination.port
-        | order by denied desc
-        | limit 100
+| source.ip    | action.outcome | count |
+| ------------ | -------------- | ----- |
+| 192.168.2.10 | success        | 142   |
+| 192.168.2.10 | failure        | 33    |
+| 1.5.178.82   | success        | 136   |
+| 1.5.178.82   | failure        | 24    |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-        ```
+{% hint style="info" %}
+**Sum the values of 'time_to_detect' column in the `alerts` table**
 
-    === "Results"
 
-        | destination.port | allowed | denied |
-        | ---------------- | ------- | ------ |
-        | 443              | 8412    | 124    |
-        | 80               | 3201    | 87     |
-        | 22               | 145     | 63     |
+{% tabs %}
+{% tab title="Query" %}
+
+``` shell
+alerts
+| where created_at > ago(1h)
+| aggregate sum(time_to_detect)
+| limit 100
+
+```
+{% endtab %}
+{% tab title="Results" %}
+
+| sum_time_to_detect |
+| ------------------ |
+| 284610.40          |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
+
+{% hint style="info" %}
+**Retrieve the minimum value of 'time_to_detect' column in the `alerts` table**
+
+
+{% tabs %}
+{% tab title="Query" %}
+
+``` shell
+alerts
+| where created_at > ago(1h)
+| aggregate min(time_to_detect)
+| limit 100
+
+```
+{% endtab %}
+{% tab title="Results" %}
+
+| min_time_to_detect |
+| ------------------ |
+| 12.50              |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
+
+{% hint style="info" %}
+**Retrieve the maximum value of 'time_to_detect' column in the `alerts` table**
+
+
+{% tabs %}
+{% tab title="Query" %}
+
+``` shell
+alerts
+| where created_at > ago(1h)
+| aggregate max(time_to_detect)
+| limit 100
+
+```
+{% endtab %}
+{% tab title="Results" %}
+
+| max_time_to_detect |
+| ------------------ |
+| 7284.00            |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
+
+{% hint style="info" %}
+**Calculate the average value of 'time_to_detect' column in the `alerts` table**
+
+
+{% tabs %}
+{% tab title="Query" %}
+
+``` shell
+alerts
+| where created_at > ago(1h)
+| aggregate avg(time_to_detect)
+| limit 100
+
+```
+{% endtab %}
+{% tab title="Results" %}
+
+| avg_time_to_detect |
+| ------------------ |
+| 1035.66            |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
+
+
+{% hint style="info" %}
+**Count unique values of 'source.ip' column in the `events` table**
+
+
+{% tabs %}
+{% tab title="Query" %}
+
+``` shell
+events
+| where timestamp > ago(1h)
+| aggregate count_distinct(source.ip)
+| limit 100
+
+```
+{% endtab %}
+{% tab title="Results" %}
+
+| count_distinct_source.ip |
+| ------------------------ |
+| 47                       |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
+
+{% hint style="info" %}
+**Create an array of the set of distinct values of 'source.ip' column in the `events` table**
+
+Note that `null` values are ignored.
+
+{% tabs %}
+{% tab title="Query" %}
+
+``` shell
+events
+| where created_at > ago(1h)
+| aggregate make_set(source.ip)
+| limit 100
+
+```
+{% endtab %}
+{% tab title="Results" %}
+
+| make_set_source.ip                                      |
+| ------------------------------------------------------- |
+| ["192.168.2.10", "192.168.2.22", "10.0.0.45", "1.5.178.82"] |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
+
+{% hint style="info" %}
+**Count allowed and denied network events per destination port using `countif`**
+
+
+{% tabs %}
+{% tab title="Query" %}
+
+``` shell
+events
+| where timestamp >= ago(24h) and event.category == 'network'
+| aggregate allowed = countif(action.outcome == 'success'), denied = countif(action.outcome == 'failure') by destination.port
+| order by denied desc
+| limit 100
+
+```
+{% endtab %}
+{% tab title="Results" %}
+
+| destination.port | allowed | denied |
+| ---------------- | ------- | ------ |
+| 443              | 8412    | 124    |
+| 80               | 3201    | 87     |
+| 22               | 145     | 63     |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Render results in chart
 
@@ -638,60 +777,78 @@ For the `geomap` chart, use one of the following syntaxes:
 
 The `country` parameter accepts ISO 3166-1 alpha-2 country codes and full English country names. Use either `country` or the `lat` and `lon` parameters; they cannot be combined. The `label` and `value` parameters are optional.
 
-!!! example "Count the number of events per asset in the events table and render it in a bar chart"
+{% hint style="info" %}
+**Count the number of events per asset in the events table and render it in a bar chart**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(1h)
-        | aggregate count() by sekoiaio.any_asset.name
-        | render barchart with (y=sekoiaio.any_asset.name)
-        | limit 100
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(1h)
+| aggregate count() by sekoiaio.any_asset.name
+| render barchart with (y=sekoiaio.any_asset.name)
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | sekoiaio.any_asset.name | count |
-        | ----------------------- | ----- |
-        | laptop-6a1ec62f         | 16    |
-        | laptop-chris            | 525   |
-        | laptop-b3205bc2         | 517   |
+| sekoiaio.any_asset.name | count |
+| ----------------------- | ----- |
+| laptop-6a1ec62f         | 16    |
+| laptop-chris            | 525   |
+| laptop-b3205bc2         | 517   |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-!!! example "Visualize network flows between source and destination IPs as a Sankey chart"
+{% hint style="info" %}
+**Visualize network flows between source and destination IPs as a Sankey chart**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(1h)
-        | aggregate count() by source.ip, destination.ip
-        | limit 50
-        | render sankey with (source=source.ip, target=destination.ip, value=count)
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(1h)
+| aggregate count() by source.ip, destination.ip
+| limit 50
+| render sankey with (source=source.ip, target=destination.ip, value=count)
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        A Sankey chart showing the volume of connections from each source IP to each destination IP.
+A Sankey chart showing the volume of connections from each source IP to each destination IP.
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-!!! example "Visualize authentication failures by source country on a map"
+{% hint style="info" %}
+**Visualize authentication failures by source country on a map**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(24h)
-        | where event.category == "authentication" and action.outcome == "failure"
-        | aggregate count() by source.geo.country_iso_code
-        | render geomap with (country=source.geo.country_iso_code, value=count)
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(24h)
+| where event.category == "authentication" and action.outcome == "failure"
+| aggregate count() by source.geo.country_iso_code
+| render geomap with (country=source.geo.country_iso_code, value=count)
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        A world map in which each country is colored according to the number of authentication failures originating from it.
+A world map in which each country is colored according to the number of authentication failures originating from it.
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Join tables
 
@@ -715,99 +872,124 @@ When performing `join`, the right table is injected into a `model` object.
 
 This `model` object (similar to a class Object in code development) contains a set properties. Each `property` represents a `column` of the original table.
 
-!!! info
-    By convention, we consider that when using `join`, the **left part** of the statement represents the column of the **left table** and the **right part** of the statement represents the column of the **right table**.
+{% hint style="info" %}
+By convention, we consider that when using `join`, the **left part** of the statement represents the column of the **left table** and the **right part** of the statement represents the column of the **right table**.
+{% endhint %}
 
-!!! example "Join the tables events and intakes"
+{% hint style="info" %}
+**Join the tables events and intakes**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(24h)
-        | limit 100
-        | inner join intakes on sekoiaio.intake.uuid == uuid   // sekoiaio.intake.uuid belongs to events table and uuid belongs to intakes table
-        | distinct intake.name
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(24h)
+| limit 100
+| inner join intakes on sekoiaio.intake.uuid == uuid   // sekoiaio.intake.uuid belongs to events table and uuid belongs to intakes table
+| distinct intake.name
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | intake.name  |
-        | ------------ |
-        | Sekoia Agent |
-        | Zscaler      |
-        | Zscaler ZIA  |
+| intake.name  |
+| ------------ |
+| Sekoia Agent |
+| Zscaler      |
+| Zscaler ZIA  |
+{% endtab %}
+{% endtabs %}
 
-    The `model` object default name is related to the table name it is originating from. In this case, the model name is `intake` since the join was performed on the `intakes` table.
+The `model` object default name is related to the table name it is originating from. In this case, the model name is `intake` since the join was performed on the `intakes` table.
+{% endhint %}
 
-!!! example "Join the tables alerts and entities"
+{% hint style="info" %}
+**Join the tables alerts and entities**
 
-    === "Query"
 
-        ``` shell
-        alerts
-        | where created_at > ago(24h)
-        | limit 100
-        | inner join entities on entity_uuid == uuid   // entity_uuid belongs to alerts table and uuid belongs to entities table
-        | distinct entity.name
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+alerts
+| where created_at > ago(24h)
+| limit 100
+| inner join entities on entity_uuid == uuid   // entity_uuid belongs to alerts table and uuid belongs to entities table
+| distinct entity.name
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | entity.name        |
-        | ------------------ |
-        | HQ - London Office |
-        | Cambridge Campus   |
+| entity.name        |
+| ------------------ |
+| HQ - London Office |
+| Cambridge Campus   |
+{% endtab %}
+{% endtabs %}
 
-    The `model` object default name is related to the table name it is originating from. In this case, the model name is `entity` since the join was performed on the `entities` table.
+The `model` object default name is related to the table name it is originating from. In this case, the model name is `entity` since the join was performed on the `entities` table.
+{% endhint %}
 
-!!! example "Join the tables alerts and assets"
+{% hint style="info" %}
+**Join the tables alerts and assets**
 
-    === "Query"
 
-        ``` shell
-        alerts
-        | join assets on assets.uuid == uuid
-        | select short_id, rule_name, asset.name, asset.type
-        | limit 10
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+alerts
+| join assets on assets.uuid == uuid
+| select short_id, rule_name, asset.name, asset.type
+| limit 10
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | short_id     | rule_name                                                     | asset.name      | asset.type |
-        | ------------ | ------------------------------------------------------------- | --------------- | ---------- |
-        | ALqUHCbZMbnY | Mshta Suspicious Child Process                                | desktop-4932-vm | host       |
-        | ALK5mN68LpbB | Mshta Command From A Scheduled Task                           | desktop-4932-vm | host       |
-        | ALWzDs9pcVVb | CrowdStrike Falcon Intrusion Detection                        | root            | account    |
-        | ALQbzwMvo1Aj | CrowdStrike Falcon Intrusion Detection Informational Severity | root            | account    |
-        | ALTwu5cU16LK | PsExec Process                                                | root            | account    |
-        | ALHGJU7tcoGb | CrowdStrike Falcon Intrusion Detection                        | root            | account    |
-        | ALqPWeuUow4p | CrowdStrike Falcon Intrusion Detection High Severity          | root            | account    |
+| short_id     | rule_name                                                     | asset.name      | asset.type |
+| ------------ | ------------------------------------------------------------- | --------------- | ---------- |
+| ALqUHCbZMbnY | Mshta Suspicious Child Process                                | desktop-4932-vm | host       |
+| ALK5mN68LpbB | Mshta Command From A Scheduled Task                           | desktop-4932-vm | host       |
+| ALWzDs9pcVVb | CrowdStrike Falcon Intrusion Detection                        | root            | account    |
+| ALQbzwMvo1Aj | CrowdStrike Falcon Intrusion Detection Informational Severity | root            | account    |
+| ALTwu5cU16LK | PsExec Process                                                | root            | account    |
+| ALHGJU7tcoGb | CrowdStrike Falcon Intrusion Detection                        | root            | account    |
+| ALqPWeuUow4p | CrowdStrike Falcon Intrusion Detection High Severity          | root            | account    |
+{% endtab %}
+{% endtabs %}
 
-    The `model` object default name is related to the table name it is originating from. In this case, the model name is `asset` since the join was performed on the `assets` table.
+The `model` object default name is related to the table name it is originating from. In this case, the model name is `asset` since the join was performed on the `assets` table.
+{% endhint %}
 
-!!! example "Define model object name"
+{% hint style="info" %}
+**Define model object name**
 
-    In this example, we define a specific name for the model object with the into operator.
 
-    === "Query"
+In this example, we define a specific name for the model object with the into operator.
 
-        ``` shell
-        alerts
-        | where created_at > ago(24h)
-        | inner join entities on entity_uuid == uuid into my_entity
-        | select my_entity.name
-        ```
+{% tabs %}
+{% tab title="Query" %}
 
-    === "Results"
+``` shell
+alerts
+| where created_at > ago(24h)
+| inner join entities on entity_uuid == uuid into my_entity
+| select my_entity.name
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | my_entity.name     |
-        | ------------------ |
-        | HQ - London Office |
-        | Cambridge Campus   |
+| my_entity.name     |
+| ------------------ |
+| HQ - London Office |
+| Cambridge Campus   |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ### Anti-join
 
@@ -815,57 +997,67 @@ Anti-join operators (`leftanti join` and `rightanti join`) are used to find rows
 
 Unlike `inner` or `left` joins, anti-joins do **not** produce a `model` object — they simply filter rows.
 
-!!! warning
-    Fields used in the `on` clause should not contain `null` values. Rows where a join field is `null` will not match and will always appear in the anti-join result. Filter them out beforehand with `| where <field> != null`.
+{% hint style="warning" %}
+Fields used in the `on` clause should not contain `null` values. Rows where a join field is `null` will not match and will always appear in the anti-join result. Filter them out beforehand with `| where <field> != null`.
+{% endhint %}
 
-!!! example "Detect source IPs not seen in a known intake (leftanti)"
+{% hint style="info" %}
+**Detect source IPs not seen in a known intake (leftanti)**
 
-    Find all source IPs that appear in your events in the last 24 hours but **not** in a specific intake — useful to spot unexpected data sources.
 
-    ``` shell
-    let known_ips = events
-    | where timestamp > ago(24h)
-    | where sekoiaio.intake.dialect_uuid == "1a1502f5-5a93-44b4-b0b5-359bbcb14902"
-    | distinct source.ip;
+Find all source IPs that appear in your events in the last 24 hours but **not** in a specific intake — useful to spot unexpected data sources.
 
-    events
-    | where timestamp > ago(24h)
-    | distinct source.ip
-    | leftanti join known_ips on source.ip
-    ```
+``` shell
+let known_ips = events
+| where timestamp > ago(24h)
+| where sekoiaio.intake.dialect_uuid == "1a1502f5-5a93-44b4-b0b5-359bbcb14902"
+| distinct source.ip;
 
-!!! example "Detect new (host, user) pairs not seen in the past 7 days (leftanti)"
+events
+| where timestamp > ago(24h)
+| distinct source.ip
+| leftanti join known_ips on source.ip
+```
+{% endhint %}
 
-    Compare the last 24 hours of activity against the previous 7 days to surface new host/user combinations — useful to detect lateral movement.
+{% hint style="info" %}
+**Detect new (host, user) pairs not seen in the past 7 days (leftanti)**
 
-    ``` shell
-    let baseline = events
-    | where timestamp between (ago(7d) .. ago(1d))
-    | where host.name != null and user.name != null
-    | distinct host.name, user.name;
 
-    events
-    | where timestamp > ago(1d)
-    | where host.name != null and user.name != null
-    | distinct host.name, user.name
-    | leftanti join baseline on host.name, user.name
-    ```
+Compare the last 24 hours of activity against the previous 7 days to surface new host/user combinations — useful to detect lateral movement.
 
-!!! example "Find IPs seen globally but absent from a specific source (rightanti)"
+``` shell
+let baseline = events
+| where timestamp between (ago(7d) .. ago(1d))
+| where host.name != null and user.name != null
+| distinct host.name, user.name;
 
-    The `rightanti` variant returns rows from the **right** table with no match on the left. Useful when the reference dataset is your starting point.
+events
+| where timestamp > ago(1d)
+| where host.name != null and user.name != null
+| distinct host.name, user.name
+| leftanti join baseline on host.name, user.name
+```
+{% endhint %}
 
-    ``` shell
-    let all_ips = events
-    | where timestamp > ago(24h)
-    | distinct source.ip;
+{% hint style="info" %}
+**Find IPs seen globally but absent from a specific source (rightanti)**
 
-    events
-    | where timestamp > ago(24h)
-    | where sekoiaio.intake.dialect_uuid == "1a1502f5-5a93-44b4-b0b5-359bbcb14902"
-    | distinct source.ip
-    | rightanti join all_ips on source.ip
-    ```
+
+The `rightanti` variant returns rows from the **right** table with no match on the left. Useful when the reference dataset is your starting point.
+
+``` shell
+let all_ips = events
+| where timestamp > ago(24h)
+| distinct source.ip;
+
+events
+| where timestamp > ago(24h)
+| where sekoiaio.intake.dialect_uuid == "1a1502f5-5a93-44b4-b0b5-359bbcb14902"
+| distinct source.ip
+| rightanti join all_ips on source.ip
+```
+{% endhint %}
 
 ## Lookup
 
@@ -873,13 +1065,19 @@ Use the `lookup` operator to extend a table with values from another table. Pref
 
 Like `join`, `lookup` injects the right table into a `model` object. The `into` clause names that object. Without `into`, the object takes a default name derived from the right table name, as for `join`. The result does not repeat the right table columns used in the matching condition.
 
-!!! note "A lookup is always a left lookup"
-    All rows from the left table remain in the result. For an unmatched row, the `model` object is empty. When several rows of the right table match, the result contains one enriched row per match.
+{% hint style="info" %}
+**A lookup is always a left lookup**
 
-!!! warning "Multiple matches and aggregations"
-    When a lookup condition matches several rows in the right table, the lookup returns one enriched row per match. A subsequent `aggregate` can therefore count the same source row more than once. The same applies to `join`.
+All rows from the left table remain in the result. For an unmatched row, the `model` object is empty. When several rows of the right table match, the result contains one enriched row per match.
+{% endhint %}
 
-    To count source events uniquely, use `count_distinct()` on an event identifier.
+{% hint style="warning" %}
+**Multiple matches and aggregations**
+
+When a lookup condition matches several rows in the right table, the lookup returns one enriched row per match. A subsequent `aggregate` can therefore count the same source row more than once. The same applies to `join`.
+
+To count source events uniquely, use `count_distinct()` on an event identifier.
+{% endhint %}
 
 For an equality lookup, compare one column of each table:
 
@@ -899,21 +1097,24 @@ For more complex matching conditions, such as a function call or a range compari
 
 In a predicate lookup, qualify every field of the left table with `$left.` and every field of the right table with `$right.`.
 
-!!! example "Enrich events with the label of a matching CIDR range"
+{% hint style="info" %}
+**Enrich events with the label of a matching CIDR range**
 
-    The `known_scanner_ranges` dataset holds `cidr` and `label` columns.
 
-    ``` shell
-    events
-    | where timestamp > ago(24h)
-    | lookup known_scanner_ranges
-        on cidr_match($left.source.ip, $right.cidr)
-        into matched_range
-    | select timestamp, source.ip, matched_range.label
-    | limit 100
-    ```
+The `known_scanner_ranges` dataset holds `cidr` and `label` columns.
 
-A predicate lookup is not pushed down to the datasource. For the complete pattern, which filters events with `cidr_match()` before the lookup, see [Enrich events using a CIDR dataset](/xdr/features/investigate/sol_datasets.md#enrich-events-using-a-cidr-dataset).
+``` shell
+events
+| where timestamp > ago(24h)
+| lookup known_scanner_ranges
+    on cidr_match($left.source.ip, $right.cidr)
+    into matched_range
+| select timestamp, source.ip, matched_range.label
+| limit 100
+```
+{% endhint %}
+
+A predicate lookup is not pushed down to the datasource. For the complete pattern, which filters events with `cidr_match()` before the lookup, see [Enrich events using a CIDR dataset](sol_datasets.md#enrich-events-using-a-cidr-dataset).
 
 
 ## Compare
@@ -944,45 +1145,57 @@ Use `in~` to filter on a set of case-insensitive strings.
 
 ```
 
-!!! example "Find events where `client.ip` equals to theses values: 192.168.0.1, 192.168.0.2."
+{% hint style="info" %}
+**Find events where `client.ip` equals to theses values: 192.168.0.1, 192.168.0.2.**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(1h)
-        | where client.ip in ['192.168.0.1', '192.168.0.2']
-        | limit 100
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(1h)
+| where client.ip in ['192.168.0.1', '192.168.0.2']
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | timestamp                | client.ip   |
-        | ------------------------ | ----------- |
-        | 2026-03-26T14:22:03.120Z | 192.168.0.1 |
-        | 2026-03-26T14:19:47.883Z | 192.168.0.2 |
-        | 2026-03-26T14:17:31.554Z | 192.168.0.1 |
+| timestamp                | client.ip   |
+| ------------------------ | ----------- |
+| 2026-03-26T14:22:03.120Z | 192.168.0.1 |
+| 2026-03-26T14:19:47.883Z | 192.168.0.2 |
+| 2026-03-26T14:17:31.554Z | 192.168.0.1 |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-!!! example "Find events where `process.name` equals to theses values ignoring case-sensitivity: powershell.exe, powershell_ise.exe"
+{% hint style="info" %}
+**Find events where `process.name` equals to theses values ignoring case-sensitivity: powershell.exe, powershell_ise.exe**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(1h)
-        | where process.name in~ ['powershell.exe', 'powershell_ise.exe']
-        | limit 100
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(1h)
+| where process.name in~ ['powershell.exe', 'powershell_ise.exe']
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | timestamp                | process.name      |
-        | ------------------------ | ----------------- |
-        | 2026-03-26T14:20:15.441Z | powershell.exe    |
-        | 2026-03-26T14:18:52.007Z | PowerShell.exe    |
-        | 2026-03-26T14:15:33.229Z | powershell_ise.exe |
+| timestamp                | process.name      |
+| ------------------------ | ----------------- |
+| 2026-03-26T14:20:15.441Z | powershell.exe    |
+| 2026-03-26T14:18:52.007Z | PowerShell.exe    |
+| 2026-03-26T14:15:33.229Z | powershell_ise.exe |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Contains
 
@@ -994,45 +1207,57 @@ Use `contains~` to switch to case-insensitive strings.
 | where <column name> contains <value 1>
 
 ```
-!!! example "Find events where `user.full_name` contains the string `Admin` (case sensitive)"
+{% hint style="info" %}
+**Find events where `user.full_name` contains the string `Admin` (case sensitive)**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(1h)
-        | where user.full_name contains 'Admin'
-        | limit 100
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(1h)
+| where user.full_name contains 'Admin'
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | timestamp                | user.full_name      |
-        | ------------------------ | ------------------- |
-        | 2026-03-26T14:22:03.120Z | Admin User          |
-        | 2026-03-26T14:19:47.883Z | AdminSecOps         |
-        | 2026-03-26T14:17:31.554Z | John Admin          |
+| timestamp                | user.full_name      |
+| ------------------------ | ------------------- |
+| 2026-03-26T14:22:03.120Z | Admin User          |
+| 2026-03-26T14:19:47.883Z | AdminSecOps         |
+| 2026-03-26T14:17:31.554Z | John Admin          |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-!!! example "Find events where `user.full_name` contains the string `ADMIN` (case insensitive)"
+{% hint style="info" %}
+**Find events where `user.full_name` contains the string `ADMIN` (case insensitive)**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(1h)
-        | where user.full_name contains~ 'ADMIN'
-        | limit 100
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(1h)
+| where user.full_name contains~ 'ADMIN'
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | timestamp                | user.full_name      |
-        | ------------------------ | ------------------- |
-        | 2026-03-26T14:22:03.120Z | Admin User          |
-        | 2026-03-26T14:20:15.441Z | admin-svc           |
-        | 2026-03-26T14:19:47.883Z | AdminSecOps         |
+| timestamp                | user.full_name      |
+| ------------------------ | ------------------- |
+| 2026-03-26T14:22:03.120Z | Admin User          |
+| 2026-03-26T14:20:15.441Z | admin-svc           |
+| 2026-03-26T14:19:47.883Z | AdminSecOps         |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Starts with
 
@@ -1045,45 +1270,57 @@ Use `startswith~` to switch to case-insensitive strings.
 
 ```
 
-!!! example "Find events where `url.domain` starts with the string `api.prod`"
+{% hint style="info" %}
+**Find events where `url.domain` starts with the string `api.prod`**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(1h)
-        | where url.domain startswith 'api.prod'
-        | limit 100
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(1h)
+| where url.domain startswith 'api.prod'
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | timestamp                | url.domain               |
-        | ------------------------ | ------------------------ |
-        | 2026-03-26T14:22:03.120Z | api.prod.example.com     |
-        | 2026-03-26T14:19:47.883Z | api.prod-eu.example.com  |
-        | 2026-03-26T14:17:31.554Z | api.prod.internal        |
+| timestamp                | url.domain               |
+| ------------------------ | ------------------------ |
+| 2026-03-26T14:22:03.120Z | api.prod.example.com     |
+| 2026-03-26T14:19:47.883Z | api.prod-eu.example.com  |
+| 2026-03-26T14:17:31.554Z | api.prod.internal        |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-!!! example "Find events where `process.command_line` starts with the string `Invoke` ignoring case-sensitivity"
+{% hint style="info" %}
+**Find events where `process.command_line` starts with the string `Invoke` ignoring case-sensitivity**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(1h)
-        | where process.command_line startswith~ 'Invoke'
-        | limit 100
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(1h)
+| where process.command_line startswith~ 'Invoke'
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | timestamp                | process.command_line                                  |
-        | ------------------------ | ----------------------------------------------------- |
-        | 2026-03-26T14:22:03.120Z | Invoke-Expression -Command "IEX (New-Object Net...)"  |
-        | 2026-03-26T14:19:47.883Z | invoke-webrequest -Uri http://malicious.example.com   |
-        | 2026-03-26T14:17:31.554Z | Invoke-Mimikatz -DumpCreds                            |
+| timestamp                | process.command_line                                  |
+| ------------------------ | ----------------------------------------------------- |
+| 2026-03-26T14:22:03.120Z | Invoke-Expression -Command "IEX (New-Object Net...)"  |
+| 2026-03-26T14:19:47.883Z | invoke-webrequest -Uri http://malicious.example.com   |
+| 2026-03-26T14:17:31.554Z | Invoke-Mimikatz -DumpCreds                            |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Ends with
 
@@ -1096,45 +1333,57 @@ Use `endswith~` to switch to case-insensitive strings.
 
 ```
 
-!!! example "Find events where `url.path` ends with the string `/admin`"
+{% hint style="info" %}
+**Find events where `url.path` ends with the string `/admin`**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(1h)
-        | where url.path endswith '/admin'
-        | limit 100
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(1h)
+| where url.path endswith '/admin'
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | timestamp                | url.path              |
-        | ------------------------ | --------------------- |
-        | 2026-03-26T14:22:03.120Z | /dashboard/admin      |
-        | 2026-03-26T14:19:47.883Z | /api/v1/admin         |
-        | 2026-03-26T14:17:31.554Z | /admin                |
+| timestamp                | url.path              |
+| ------------------------ | --------------------- |
+| 2026-03-26T14:22:03.120Z | /dashboard/admin      |
+| 2026-03-26T14:19:47.883Z | /api/v1/admin         |
+| 2026-03-26T14:17:31.554Z | /admin                |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-!!! example "Find events where `process.command_line` ends with the string `.DLl` ignoring case-sensitivity"
+{% hint style="info" %}
+**Find events where `process.command_line` ends with the string `.DLl` ignoring case-sensitivity**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(1h)
-        | where process.command_line endswith~ '.DLl'
-        | limit 100
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(1h)
+| where process.command_line endswith~ '.DLl'
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | timestamp                | process.command_line                            |
-        | ------------------------ | ----------------------------------------------- |
-        | 2026-03-26T14:22:03.120Z | rundll32.exe C:\Windows\System32\shell32.dll    |
-        | 2026-03-26T14:19:47.883Z | regsvr32.exe /s C:\Temp\malicious.DLL           |
-        | 2026-03-26T14:17:31.554Z | C:\Windows\System32\svchost.exe kernel32.DLl    |
+| timestamp                | process.command_line                            |
+| ------------------------ | ----------------------------------------------- |
+| 2026-03-26T14:22:03.120Z | rundll32.exe C:\Windows\System32\shell32.dll    |
+| 2026-03-26T14:19:47.883Z | regsvr32.exe /s C:\Temp\malicious.DLL           |
+| 2026-03-26T14:17:31.554Z | C:\Windows\System32\svchost.exe kernel32.DLl    |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Not
 
@@ -1145,85 +1394,109 @@ Use the `not` operator to negate any comparison.
 | where not <column name> <comparison operator> <pattern>
 
 ```
-!!! example "Find events where `client.ip` does not equal to theses values: 192.168.0.1, 192.168.0.2"
+{% hint style="info" %}
+**Find events where `client.ip` does not equal to theses values: 192.168.0.1, 192.168.0.2**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(1h)
-        | where not client.ip in ['192.168.0.1', '192.168.0.2']
-        | limit 100
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(1h)
+| where not client.ip in ['192.168.0.1', '192.168.0.2']
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | timestamp                | client.ip     |
-        | ------------------------ | ------------- |
-        | 2026-03-26T14:22:03.120Z | 192.168.2.10  |
-        | 2026-03-26T14:20:15.441Z | 10.0.0.45     |
-        | 2026-03-26T14:19:47.883Z | 1.5.178.82    |
+| timestamp                | client.ip     |
+| ------------------------ | ------------- |
+| 2026-03-26T14:22:03.120Z | 192.168.2.10  |
+| 2026-03-26T14:20:15.441Z | 10.0.0.45     |
+| 2026-03-26T14:19:47.883Z | 1.5.178.82    |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-!!! example "Find events where `user.full_name` does not contain the string `Admin` (case sensitive)"
+{% hint style="info" %}
+**Find events where `user.full_name` does not contain the string `Admin` (case sensitive)**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(1h)
-        | where not user.full_name contains 'Admin'
-        | limit 100
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(1h)
+| where not user.full_name contains 'Admin'
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | timestamp                | user.full_name  |
-        | ------------------------ | --------------- |
-        | 2026-03-26T14:22:03.120Z | john.doe        |
-        | 2026-03-26T14:20:15.441Z | alice.smith     |
-        | 2026-03-26T14:19:47.883Z | bob.jones       |
+| timestamp                | user.full_name  |
+| ------------------------ | --------------- |
+| 2026-03-26T14:22:03.120Z | john.doe        |
+| 2026-03-26T14:20:15.441Z | alice.smith     |
+| 2026-03-26T14:19:47.883Z | bob.jones       |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-!!! example "Find events where `process.command_line` does not start with the string `Invoke` ignoring case-sensitivity"
+{% hint style="info" %}
+**Find events where `process.command_line` does not start with the string `Invoke` ignoring case-sensitivity**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(1h)
-        | where not process.command_line startswith~ 'Invoke'
-        | limit 100
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(1h)
+| where not process.command_line startswith~ 'Invoke'
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | timestamp                | process.command_line                         |
-        | ------------------------ | -------------------------------------------- |
-        | 2026-03-26T14:22:03.120Z | C:\Windows\System32\svchost.exe -k netsvcs   |
-        | 2026-03-26T14:20:15.441Z | chrome.exe --type=renderer                   |
-        | 2026-03-26T14:19:47.883Z | python.exe script.py                         |
+| timestamp                | process.command_line                         |
+| ------------------------ | -------------------------------------------- |
+| 2026-03-26T14:22:03.120Z | C:\Windows\System32\svchost.exe -k netsvcs   |
+| 2026-03-26T14:20:15.441Z | chrome.exe --type=renderer                   |
+| 2026-03-26T14:19:47.883Z | python.exe script.py                         |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
-!!! example "Find events where `process.command_line` does not end with the string `.DLl` ignoring case-sensitivity"
+{% hint style="info" %}
+**Find events where `process.command_line` does not end with the string `.DLl` ignoring case-sensitivity**
 
-    === "Query"
 
-        ``` shell
-        events
-        | where timestamp > ago(1h)
-        | where not process.command_line endswith~ '.DLl'
-        | limit 100
+{% tabs %}
+{% tab title="Query" %}
 
-        ```
+``` shell
+events
+| where timestamp > ago(1h)
+| where not process.command_line endswith~ '.DLl'
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | timestamp                | process.command_line                         |
-        | ------------------------ | -------------------------------------------- |
-        | 2026-03-26T14:22:03.120Z | powershell.exe -ExecutionPolicy Bypass       |
-        | 2026-03-26T14:20:15.441Z | cmd.exe /c whoami                            |
-        | 2026-03-26T14:19:47.883Z | python.exe -c "import os; os.system('id')"   |
+| timestamp                | process.command_line                         |
+| ------------------------ | -------------------------------------------- |
+| 2026-03-26T14:22:03.120Z | powershell.exe -ExecutionPolicy Bypass       |
+| 2026-03-26T14:20:15.441Z | cmd.exe /c whoami                            |
+| 2026-03-26T14:19:47.883Z | python.exe -c "import os; os.system('id')"   |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Regex
 
@@ -1260,31 +1533,38 @@ The following constructs are **not supported**. Using them will return no result
 | Lookaheads / lookbehinds | `(?=...)`, `(?!...)`, `(?<=...)`, `(?<!...)` |
 | Backreferences | `\1`, `\k<name>` |
 
-!!! info
-    Some characters are reserved as operators: `.` `?` `+` `*` `|` `{` `}` `[` `]` `(` `)` `"` `\` .<br>Escape reserved operators with a preceding backslash `\` or surround them with double quotes `""`.<br>`\@` renders as a literal '@'.<br>`\\` renders as a literal '\'.<br>`"john@smith.com"` renders as 'john@smith.com'.
+{% hint style="info" %}
+Some characters are reserved as operators: `.` `?` `+` `*` `|` `{` `}` `[` `]` `(` `)` `"` `\` .<br>Escape reserved operators with a preceding backslash `\` or surround them with double quotes `""`.<br>`\@` renders as a literal '@'.<br>`\\` renders as a literal '\'.<br>`"john@smith.com"` renders as 'john@smith.com'.
+{% endhint %}
 
-!!! example "Find events where `file.name` contains '.sh'"
+{% hint style="info" %}
+**Find events where `file.name` contains '.sh'**
 
-    === "Query"
 
-        ``` shell
-        let StartTime = ago(1h);
-        let EndTime = now();
+{% tabs %}
+{% tab title="Query" %}
 
-        events
-        | where timestamp between (StartTime .. EndTime)
-        | where file.name matches regex '.*\.sh'
-        | limit 100
+``` shell
+let StartTime = ago(1h);
+let EndTime = now();
 
-        ```
+events
+| where timestamp between (StartTime .. EndTime)
+| where file.name matches regex '.*\.sh'
+| limit 100
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | timestamp                | file.name           |
-        | ------------------------ | ------------------- |
-        | 2026-03-26T14:22:03.120Z | deploy.sh           |
-        | 2026-03-26T14:19:47.883Z | cleanup.sh          |
-        | 2026-03-26T14:17:31.554Z | install_agent.sh    |
+| timestamp                | file.name           |
+| ------------------------ | ------------------- |
+| 2026-03-26T14:22:03.120Z | deploy.sh           |
+| 2026-03-26T14:19:47.883Z | cleanup.sh          |
+| 2026-03-26T14:17:31.554Z | install_agent.sh    |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
         
 
 ## Variables
@@ -1299,53 +1579,60 @@ let <variable name> = <string | integer>;
 
 ```
 
-!!! example "Count the number of events in the last 24 hours"
+{% hint style="info" %}
+**Count the number of events in the last 24 hours**
 
-    === "Query"
 
-        ``` shell
-        let StartTime = ago(24h);
-        let EndTime = now();
+{% tabs %}
+{% tab title="Query" %}
 
-        events
-        | where event.created > StartTime and event.created <= EndTime
-        | count
+``` shell
+let StartTime = ago(24h);
+let EndTime = now();
 
-        ```
+events
+| where event.created > StartTime and event.created <= EndTime
+| count
 
-    === "Results"
+```
+{% endtab %}
+{% tab title="Results" %}
 
-        | count |
-        | ----- |
-        | 8924  |
+| count |
+| ----- |
+| 8924  |
+{% endtab %}
+{% endtabs %}
+{% endhint %}
 
 ## Comments
 
 Use `//` to add comments in the query.
 
-!!! example
-    ``` shell
-    // Comment the filtering condition
+{% hint style="info" %}
+``` shell
+// Comment the filtering condition
 
-    <table name>
-    //| where <column name> = <variable name>
-    | limit 100
+<table name>
+//| where <column name> = <variable name>
+| limit 100
 
-    ```
+```
+{% endhint %}
 
 ## Related articles
 
 ### Getting Started & Overview
-* [SOL Overview](/xdr/features/investigate/sol_overview.md): Sekoia Operating Language overview.
-* [SOL Getting Started](/xdr/features/investigate/sol_getting_started.md): This tutorial walks you through writing your first SOL queries. By the end, you'll be able to search events, filter results, and save queries for reuse.
-* [SOL Best Practices](/xdr/features/investigate/sol_best_practices.md): Best practices to use SOL effectively.
+* [SOL Overview](sol_overview.md): Sekoia Operating Language overview.
+* [SOL Getting Started](sol_getting_started.md): This tutorial walks you through writing your first SOL queries. By the end, you'll be able to search events, filter results, and save queries for reuse.
+* [SOL Best Practices](sol_best_practices.md): Best practices to use SOL effectively.
 
 ### User Guides
-* [Create and Manage Queries](/xdr/features/investigate/create_manage_queries.md): Create and manage queries using SOL.
-* [SOL How-to Guides](/xdr/features/investigate/sol_how_to_guides.md): Learn how to use the main functions of SOL to reach your goals (aggregate data, join tables, use external data, build a query library...).
-* [SOL Query Examples](/xdr/features/investigate/sol_query_examples.md): Get inspiration from our examples.
-* [SOL Datasets](/xdr/features/investigate/sol_datasets.md): Discover the CSV import feature that enables SOC analysts to enrich security investigations by importing external data sources directly into the SOL query environment.
+* [Create and Manage Queries](create_manage_queries.md): Create and manage queries using SOL.
+* [SOL How-to Guides](sol_how_to_guides.md): Learn how to use the main functions of SOL to reach your goals (aggregate data, join tables, use external data, build a query library...).
+* [SOL Query Examples](sol_query_examples.md): Get inspiration from our examples.
+* [SOL Datasets](sol_datasets.md): Discover the CSV import feature that enables SOC analysts to enrich security investigations by importing external data sources directly into the SOL query environment.
 
 ### Technical Reference
-* [SOL Data Sources Reference](/xdr/features/investigate/sol_ref_datasources.md): Technical references to access security data within the Sekoia platform thanks to SOL.
-* [SOL Functions Reference](/xdr/features/investigate/sol_ref_functions.md): Reference article regarding functions used in SOL.
+* [SOL Data Sources Reference](sol_ref_datasources.md): Technical references to access security data within the Sekoia platform thanks to SOL.
+* [SOL Functions Reference](sol_ref_functions.md): Reference article regarding functions used in SOL.

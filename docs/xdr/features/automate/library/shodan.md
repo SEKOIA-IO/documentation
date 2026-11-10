@@ -4,7 +4,7 @@ type: playbook
 
 # Shodan
 
-![Shodan](/assets/playbooks/library/shodan.png){ align=right width=150 }
+![Shodan](../../../../assets/playbooks/library/shodan.png)
 
 Shodan is a Cybersecurity company keeping track of devices exposed to the Internet. It collect information on devices, running software and related CVEs.
 

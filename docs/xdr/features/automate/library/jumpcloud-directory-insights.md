@@ -1,6 +1,6 @@
 # Jumpcloud Directory Insights
 
-![Jumpcloud Directory Insights](/assets/playbooks/library/jumpcloud-directory-insights.png){ align=right width=150 }
+![Jumpcloud Directory Insights](../../../../assets/playbooks/library/jumpcloud-directory-insights.png)
 
 Directory Insights allows you to read event logs, view activity in your directory, and monitor user authentications to the console, RADIUS, LDAP, and SSO apps. Directory Insights analyzes the audit trails that lead to critical events so you know the what, where, when, how, and who of your directory activities.
 

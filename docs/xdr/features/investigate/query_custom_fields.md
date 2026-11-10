@@ -12,10 +12,13 @@ Custom fields are accessible in SOL through the `custom_fields` prefix, on both 
 | Impacted teams | `custom_fields.impacted_teams` |
 | Attack vector | `custom_fields.attack_vector` |
 
-!!! tip "Autocomplete support"
-    The SOL query editor provides autocomplete for custom field columns. Enter `custom_fields.` to see all available fields for your workspace.
+{% hint style="success" %}
+**Autocomplete support**
 
-![SOL autocomplete custom fields](/assets/operation_center/cases/sol-autocomplete-custom-fields.png){: style="max-width:100%"}
+The SOL query editor provides autocomplete for custom field columns. Enter `custom_fields.` to see all available fields for your workspace.
+{% endhint %}
+
+![SOL autocomplete custom fields](../../../assets/operation_center/cases/sol-autocomplete-custom-fields.png)
 
 ## Query examples
 
@@ -25,73 +28,82 @@ Each example is shown against both datasources. The syntax is identical, only th
 
 To retrieve alerts or cases where a numeric custom field exceeds a given value:
 
-=== "Alerts"
+{% tabs %}
+{% tab title="Alerts" %}
 
-    ```
-    alerts
-    | where created_at > ago(90d) and custom_fields.number_of_impacted_users != null
-    | where custom_fields.number_of_impacted_users > 2
-    ```
+```
+alerts
+| where created_at > ago(90d) and custom_fields.number_of_impacted_users != null
+| where custom_fields.number_of_impacted_users > 2
+```
+{% endtab %}
+{% tab title="Cases" %}
 
-=== "Cases"
-
-    ```
-    cases
-    | where created_at > ago(90d) and custom_fields.number_of_impacted_users != null
-    | where custom_fields.number_of_impacted_users > 2
-    ```
+```
+cases
+| where created_at > ago(90d) and custom_fields.number_of_impacted_users != null
+| where custom_fields.number_of_impacted_users > 2
+```
+{% endtab %}
+{% endtabs %}
 
 ### Filter by a multi select field
 
 To retrieve alerts or cases where a multi select field contains specific values:
 
-=== "Alerts"
+{% tabs %}
+{% tab title="Alerts" %}
 
-    ```
-    alerts
-    | where created_at > ago(90d)
-    | where custom_fields.impacted_teams in ["HR", "Finance"]
-    ```
+```
+alerts
+| where created_at > ago(90d)
+| where custom_fields.impacted_teams in ["HR", "Finance"]
+```
+{% endtab %}
+{% tab title="Cases" %}
 
-=== "Cases"
-
-    ```
-    cases
-    | where created_at > ago(90d)
-    | where custom_fields.impacted_teams in ["HR", "Finance"]
-    ```
+```
+cases
+| where created_at > ago(90d)
+| where custom_fields.impacted_teams in ["HR", "Finance"]
+```
+{% endtab %}
+{% endtabs %}
 
 ### Aggregate by a custom field
 
 To count alerts or cases grouped by a custom field value:
 
-=== "Alerts"
+{% tabs %}
+{% tab title="Alerts" %}
 
-    ```
-    alerts
-    | where created_at > ago(90d)
-    | aggregate count() by custom_fields.impacted_teams
-    ```
+```
+alerts
+| where created_at > ago(90d)
+| aggregate count() by custom_fields.impacted_teams
+```
+{% endtab %}
+{% tab title="Cases" %}
 
-=== "Cases"
+```
+cases
+| where created_at > ago(90d)
+| aggregate count() by custom_fields.impacted_teams
+```
+{% endtab %}
+{% endtabs %}
 
-    ```
-    cases
-    | where created_at > ago(90d)
-    | aggregate count() by custom_fields.impacted_teams
-    ```
-
-![SOL query results aggregated by custom field](/assets/operation_center/cases/sol-query-result-custom-fields.png){: style="max-width:100%"}
+![SOL query results aggregated by custom field](../../../assets/operation_center/cases/sol-query-result-custom-fields.png)
 
 ## Use query results in dashboards
 
-You can use any custom field query as the data source for a dashboard widget. For instructions on creating and configuring widgets, see the [dashboards documentation](/xdr/features/report/add_widgets_dashboards.md).
+You can use any custom field query as the data source for a dashboard widget. For instructions on creating and configuring widgets, see the [dashboards documentation](../report/add_widgets_dashboards.md).
 
 ## Related articles
 
-* [Custom fields](/xdr/features/investigate/custom_fields.md): Overview of custom field types, shared definitions, multi-tenancy behavior, and workspace limits.
-* [Manage custom field definitions](/xdr/features/investigate/manage_custom_field_definitions.md): How to create, edit, and delete custom field definitions.
-* [Use custom fields](/xdr/features/investigate/use_custom_fields.md): How to add and edit custom field values on individual alerts and cases.
-* [Reference: Datasources](/xdr/features/investigate/sol_ref_datasources.md): Every property exposed by the `alerts` and `cases` datasources.
-* [Manage cases](/xdr/features/investigate/manage_cases.md): How to filter cases by custom field values from the listing page.
-* [Dashboards](/xdr/features/report/add_widgets_dashboards.md): How to build widgets and visualizations from SOL queries including custom field data.
+* [Custom fields](custom_fields.md): Overview of custom field types, shared definitions, multi-tenancy behavior, and workspace limits.
+* [Manage custom field definitions](manage_custom_field_definitions.md): How to create, edit, and delete custom field definitions.
+* [Use custom fields](use_custom_fields.md): How to add and edit custom field values on individual alerts and cases.
+* [Reference: Datasources](sol_ref_datasources.md): Every property exposed by the `alerts` and `cases` datasources.
+* [Manage cases](manage_cases.md): How to filter cases by custom field values from the listing page.
+* [Dashboards](../report/add_widgets_dashboards.md): How to build widgets and visualizations from SOL queries including custom field data.

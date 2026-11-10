@@ -4,7 +4,7 @@ type: playbook
 
 # HarfangLab
 
-![HarfangLab](/assets/playbooks/library/harfanglab.png){ align=right width=150 }
+![HarfangLab](../../../../assets/playbooks/library/harfanglab.png)
 
 HarfangLab is an Endpoint detection and response (EDR) solution certified by ANSSI since 2020
 

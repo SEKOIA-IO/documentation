@@ -1,6 +1,6 @@
 # Retarus
 
-![Retarus](/assets/playbooks/library/retarus.png){ align=right width=150 }
+![Retarus](../../../../assets/playbooks/library/retarus.png)
 
 Retarus connector
 

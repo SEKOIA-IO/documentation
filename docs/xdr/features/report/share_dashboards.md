@@ -16,8 +16,11 @@ Before you start make sure that:
 2. Click **Manage access**.
 3. Select the communities you want to share the dashboard with.
     
-    !!! warning "Query validation"
-        Review all queries within the dashboard to ensure the logic and data exposure (filters and Sol Dataset) are appropriate for the target communities.
+    {% hint style="warning" %}
+    **Query validation**
+
+    Review all queries within the dashboard to ensure the logic and data exposure (filters and Sol Dataset) are appropriate for the target communities.
+    {% endhint %}
 
 4. Click **Save**.
 
@@ -41,8 +44,11 @@ To track and organize shared content, use the dashboard listing tools:
 
 To modify a dashboard shared by another community, you must create a local copy.
 
-!!!note "Internal query persistence"
-    Duplicating a dashboard does not make the internal queries editable. To modify data visualizations, you must duplicate the individual queries within the dashboard separately.
+{% hint style="info" %}
+**Internal query persistence**
+
+Duplicating a dashboard does not make the internal queries editable. To modify data visualizations, you must duplicate the individual queries within the dashboard separately.
+{% endhint %}
 
 1. Navigate to the shared dashboard you wish to edit.
 2. Click **Duplicate**.

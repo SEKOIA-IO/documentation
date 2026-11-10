@@ -4,7 +4,7 @@ type: playbook
 
 # Detection Rules
 
-![Detection Rules](/assets/playbooks/library/detection-rules.svg){ align=right width=150 }
+![Detection Rules](../../../../assets/playbooks/library/detection-rules.svg)
 
 This module exposes a trigger to detect new snort rules on a repository
 

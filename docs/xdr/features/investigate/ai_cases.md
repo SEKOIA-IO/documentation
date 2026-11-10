@@ -11,7 +11,7 @@
 ## Overview
 AI Cases is an intelligent case management feature that automatically creates and manages security incidents by correlating related alerts. This feature streamlines the incident response process by providing SOC analysts with automated case creation, alert correlation, and contextual information.
 
-![ai_case](/assets/operation_center/ai-case.gif){: style="max-width:100%"}
+![ai_case](../../../assets/operation_center/ai-case.gif)
 
 ## Feature Benefits
 * Automated case creation and alert correlation

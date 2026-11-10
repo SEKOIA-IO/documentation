@@ -2,7 +2,7 @@
 
 ### 1. **Does the Sekoia.io Endpoint Agent require Internet access to function?**
 
-Yes, the Sekoia.io Endpoint Agent requires Internet access to send events directly to Sekoia.io via HTTPS. If your information system uses an HTTP proxy that allows access to the [HTTP intake endpoint for your region](/getting_started/regions.md), you can configure the agent to use this proxy. In the absence of direct Internet access, alternatives like **NXLog** for Windows or **Auditbeat** for Linux may be considered.
+Yes, the Sekoia.io Endpoint Agent requires Internet access to send events directly to Sekoia.io via HTTPS. If your information system uses an HTTP proxy that allows access to the [HTTP intake endpoint for your region](../../getting_started/regions.md), you can configure the agent to use this proxy. In the absence of direct Internet access, alternatives like **NXLog** for Windows or **Auditbeat** for Linux may be considered.
 
 ### 2. **Can events be redirected to a log forwarder without Internet access?**
 
@@ -33,15 +33,15 @@ The agent is compatible with the following 64-bit operating systems:
 - **Linux**, on x86-64 and ARM64
 - **MacOS**, on Apple Silicon and Intel
 
-For a detailed list of supported versions, please refer to [this link](/integration/categories/endpoint/sekoiaio.md).
+For a detailed list of supported versions, please refer to [this link](../../integration/categories/endpoint/sekoiaio.md).
 
 ### 8. **Can the agent be uninstalled?**
 
-Yes, the agent can be uninstalled. Refer to [this page](/integration/categories/endpoint/sekoiaio.md#uninstall) for the command corresponding to your operating system. For versions earlier than 0.3.0, you must stop and uninstall the service before deleting the agent’s directories. Detailed instructions are available in the [documentation](/integration/categories/endpoint/sekoiaio.md).
+Yes, the agent can be uninstalled. Refer to [this page](../../integration/categories/endpoint/sekoiaio.md#uninstall) for the command corresponding to your operating system. For versions earlier than 0.3.0, you must stop and uninstall the service before deleting the agent’s directories. Detailed instructions are available in the [documentation](../../integration/categories/endpoint/sekoiaio.md).
 
 ### 9. **How does the automatic update feature of the agent work?**
 
-By default, the agent updates automatically. To disable this feature, use the `--disable-auto-update` option during installation. To update manually, execute the appropriate command for your operating system, available [here](/integration/categories/endpoint/sekoiaio.md#manual-update) .
+By default, the agent updates automatically. To disable this feature, use the `--disable-auto-update` option during installation. To update manually, execute the appropriate command for your operating system, available [here](../../integration/categories/endpoint/sekoiaio.md#manual-update) .
 
 ### 10. **How to diagnose a problem with the agent installation?**
 
@@ -105,5 +105,5 @@ The agent, based on Auditd, effectively monitors system activities on Linux host
 ---
 
 ### **Useful Links:**
-- [Sekoia.io Endpoint Agent Documentation](/integration/categories/endpoint/sekoiaio.md)
+- [Sekoia.io Endpoint Agent Documentation](../../integration/categories/endpoint/sekoiaio.md)
 

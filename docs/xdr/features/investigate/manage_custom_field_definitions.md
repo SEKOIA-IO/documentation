@@ -2,8 +2,11 @@
 
 Custom field definitions determine which structured metadata fields are available across alerts, cases, and **playbooks** in your workspace. This article explains how to create, edit, and delete those definitions from the workspace settings.
 
-!!! note "Definitions are shared between alerts, cases and playbooks"
-    A definition you create here can be attached to alerts, to cases, or to both. Playbooks use the same definitions. You do not need to create the same field twice.
+{% hint style="info" %}
+**Definitions are shared between alerts, cases and playbooks**
+
+A definition you create here can be attached to alerts, to cases, or to both. Playbooks use the same definitions. You do not need to create the same field twice.
+{% endhint %}
 
 ## Prerequisites
 
@@ -13,12 +16,15 @@ By default, users with the **Admin** or **Analyst** role can manage custom field
 
 To open the custom field management page, navigate to **Settings > Custom fields**.
 
-![Custom Fields Settings](/assets/operation_center/cases/custom-fields-settings.png){: style="max-width:100%"}
+![Custom Fields Settings](../../../assets/operation_center/cases/custom-fields-settings.png)
 
 ## Create a custom field
 
-!!! tip "Naming custom fields"
-    Use descriptive names that clearly indicate what data the field should capture. For example, "Number of impacted users" is clearer than "User count".
+{% hint style="success" %}
+**Naming custom fields**
+
+Use descriptive names that clearly indicate what data the field should capture. For example, "Number of impacted users" is clearer than "User count".
+{% endhint %}
 
 To create a new custom field definition:
 
@@ -37,8 +43,11 @@ The two auto-add options are independent. Leave both disabled if you want analys
 
 ## Edit a custom field
 
-!!! note "Type cannot be changed"
-    The **Type** of a custom field cannot be changed after creation. To use a different type, delete the existing field and create a new one.
+{% hint style="info" %}
+**Type cannot be changed**
+
+The **Type** of a custom field cannot be changed after creation. To use a different type, delete the existing field and create a new one.
+{% endhint %}
 
 To modify an existing custom field definition:
 
@@ -49,8 +58,11 @@ To modify an existing custom field definition:
 
 ## Delete a custom field
 
-!!! warning "Permanent data loss"
-    Deleting a custom field definition removes the field and all its values from every alert, case, and **playbook** in your workspace. This action cannot be undone.
+{% hint style="warning" %}
+**Permanent data loss**
+
+Deleting a custom field definition removes the field and all its values from every alert, case, and **playbook** in your workspace. This action cannot be undone.
+{% endhint %}
 
 To remove a custom field definition:
 
@@ -61,7 +73,7 @@ To remove a custom field definition:
 
 ## Related articles
 
-* [Custom fields](/xdr/features/investigate/custom_fields.md): Overview of custom field types, shared definitions, multi-tenancy behavior, and workspace limits.
-* [Use custom fields](/xdr/features/investigate/use_custom_fields.md): How to add and edit custom field values on individual alerts and cases.
-* [Query custom fields](/xdr/features/investigate/query_custom_fields.md): SOL syntax and examples for filtering and aggregating alerts and cases by custom field values.
-* [Case details](/xdr/features/investigate/case_details.md): Reference for every tab and field available on the case details page.
+* [Custom fields](custom_fields.md): Overview of custom field types, shared definitions, multi-tenancy behavior, and workspace limits.
+* [Use custom fields](use_custom_fields.md): How to add and edit custom field values on individual alerts and cases.
+* [Query custom fields](query_custom_fields.md): SOL syntax and examples for filtering and aggregating alerts and cases by custom field values.
+* [Case details](case_details.md): Reference for every tab and field available on the case details page.

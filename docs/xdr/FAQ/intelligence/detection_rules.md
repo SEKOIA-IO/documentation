@@ -9,20 +9,20 @@ Sekoia supports the following types of detection rules:
 1. **Sigma rules** (simple and correlation): Signature-based rules using the Sigma detection language.
 2. **CTI (Cyber Threat Intelligence) rules**: Rules based on indicators of compromise (IoCs) from threat intelligence feeds.
 3. **Anomaly rules**: Detect anomalies by identifying deviations from normal behavior using time-series machine learning.
-4. **SOL detection rules**: Execute a Sekoia Operating Language (SOL) query on a defined schedule and generate alerts when the query returns results. See the [SOL detection rules overview](/xdr/features/detect/sol_detection_rule.md).
+4. **SOL detection rules**: Execute a Sekoia Operating Language (SOL) query on a defined schedule and generate alerts when the query returns results. See the [SOL detection rules overview](../../features/detect/sol_detection_rule.md).
 5. **STIX rules (deprecated)**: Signature rules based on the STIX language, now deprecated.
 
 ## Which detection engine should I use to trigger an alert for a specific event?
 
 The appropriate engine for triggering an alert on a specific event is the **Sigma engine**.
 
-For more details, visit the [Sigma documentation](/xdr/features/detect/sigma.md).
+For more details, visit the [Sigma documentation](../../features/detect/sigma.md).
 
 ## Which detection engine should I use to trigger an alert for a set of events?
 
 **Sigma correlation rules** rely on one or more Sigma rules and correlation attributes such as action, type, reference, and time period. Depending on the correlation type (temporal, event\_count, value\_count), the rule evaluates if events occur within the same timeframe, exceed a frequency threshold, or compare the number of values in a given field to a threshold.
 
-Learn more in the [Sigma correlation rules documentation](/xdr/features/detect/sigma.md#correlation).
+Learn more in the [Sigma correlation rules documentation](../../features/detect/sigma.md#correlation).
 
 ## Which detection engine should I use to detect anomalies in time-series data?
 
@@ -73,7 +73,7 @@ For example:
 - If the detection rule is disabled, **Test pattern** evaluates events from all communities, even when the Rules Catalog is filtered to one community.
 - If the detection rule is enabled for Communities B and C, **Test pattern** evaluates events from Communities B and C. It does not evaluate Community A unless the detection is also enabled there.
 
-For the rule-testing procedure, see [Rules Catalog](/xdr/features/detect/rules_catalog.md#community-scope-for-existing-detections).
+For the rule-testing procedure, see [Rules Catalog](../../features/detect/rules_catalog.md#community-scope-for-existing-detections).
 
 ## How do I distinguish between OR and AND logic in Sigma patterns?
 
@@ -115,6 +115,6 @@ Back to top
 
 ## Related articles
 
-[Rules Catalog](/xdr/features/detect/rules_catalog.md): How to create, test, enable, and scope detection rules.
+[Rules Catalog](../../features/detect/rules_catalog.md): How to create, test, enable, and scope detection rules.
 
-[SOL detection rules](/xdr/features/detect/sol_detection_rule.md): Overview of scheduled SOL queries that generate security alerts.
+[SOL detection rules](../../features/detect/sol_detection_rule.md): Overview of scheduled SOL queries that generate security alerts.

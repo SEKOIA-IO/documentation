@@ -4,16 +4,17 @@ The alert details page gives you a dedicated workspace to investigate an individ
 
 ## Page header
 
-Click any alert in the [alerts listing](/xdr/features/investigate/alerts_listing.md) to open its details page. The header displays the alert's urgency score, name, and short ID, along with the following actions:
+Click any alert in the [alerts listing](alerts_listing.md) to open its details page. The header displays the alert's urgency score, name, and short ID, along with the following actions:
 
 - **Alert status**: move the alert through its lifecycle by selecting a new status.
 - **Add to case**: attach the alert to a case for a broader investigation.
 - **Playbooks**: view and trigger on-demand playbooks associated with the alert.
 
-!!! note
-    Only manual playbooks (with a manual trigger) that are enabled in the community appear in the Playbooks list.
+{% hint style="info" %}
+Only manual playbooks (with a manual trigger) that are enabled in the community appear in the Playbooks list.
+{% endhint %}
 
-![alert_details](/assets/operation_center/alerts/alert-detail-layout.png){: style="max-width:100%"}
+![alert_details](../../../assets/operation_center/alerts/alert-detail-layout.png)
 
 The page is organized into five tabs: **Details**, **Tasks**, **Similar alerts**, **Events**, and **Graph investigation**.
 
@@ -34,7 +35,7 @@ The left column displays:
 - Threat intelligence from the Intelligence Center for all threats linked to this alert.
 - Custom fields attached to the alert.
 
-Custom fields let you capture structured metadata on the alert, such as the number of affected users or the attack vector. Field definitions are shared with cases, so a field created once can be used on both. See [Custom fields](/xdr/features/investigate/custom_fields.md) for supported data types, and [Use custom fields](/xdr/features/investigate/use_custom_fields.md) to add a value to an alert.
+Custom fields let you capture structured metadata on the alert, such as the number of affected users or the attack vector. Field definitions are shared with cases, so a field created once can be used on both. See [Custom fields](custom_fields.md) for supported data types, and [Use custom fields](use_custom_fields.md) to add a value to an alert.
 
 The right column is the **timeline**, which records the complete history of the alert:
 
@@ -46,14 +47,15 @@ The right column is the **timeline**, which records the complete history of the 
 
 You can filter the timeline to display only items of a specific type.
 
-!!! note
-    An alert can contain a maximum of 500 comments. Once the limit is reached, no new comment can be added to the alert. To make room for new comments, delete existing ones. A comment can only be deleted by its author.
+{% hint style="info" %}
+An alert can contain a maximum of 500 comments. Once the limit is reached, no new comment can be added to the alert. To make room for new comments, delete existing ones. A comment can only be deleted by its author.
+{% endhint %}
 
 ## Tasks tab
 
 The **Tasks** tab lists all tasks and subtasks associated with the alert.
 
-![tasks](/assets/operation_center/alerts/alert-tasks.png){: style="max-width:100%"}
+![tasks](../../../assets/operation_center/alerts/alert-tasks.png)
 
 Completing a task informs the Operations Center that you have taken the corresponding action on your perimeter. The alert's urgency score and risk indicator decrease accordingly.
 
@@ -63,24 +65,26 @@ Subtasks may include an OpenC2 specification, visible by clicking the automation
 
 The **Similar alerts** tab shows previous alerts that match the current alert's similarity criteria. It helps you make faster triage decisions by surfacing how comparable alerts were handled in the past.
 
-![similar_alerts](/assets/operation_center/alerts/similar_alerts.png){: style="max-width:100%"}
+![similar_alerts](../../../assets/operation_center/alerts/similar_alerts.png)
 
 The tab contains two sections:
 
 - **Suggestion message**: a callout summarizing how the majority of previous similar alerts were handled, with a suggested status and an action button to apply it. This action is not available for alerts in the Closed stage.
 - **Similar alerts table**: lists all matching previous alerts. Customize the columns displayed to compare relevant fields.
 
-!!! tip
-    Click any similar alert to view its full details, or open several in new tabs to compare them side by side.
+{% hint style="success" %}
+Click any similar alert to view its full details, or open several in new tabs to compare them side by side.
+{% endhint %}
 
-!!! note
-    If no previous similar alerts exist, the tab displays a message to that effect.
+{% hint style="info" %}
+If no previous similar alerts exist, the tab displays a message to that effect.
+{% endhint %}
 
 ## Events tab
 
-The **Events** tab lists the events that triggered the alert, using the same display as the [Events page](/xdr/features/investigate/events.md).
+The **Events** tab lists the events that triggered the alert, using the same display as the [Events page](events.md).
 
-![events](/assets/operation_center/alerts/alert-events.png){: style="max-width:100%"}
+![events](../../../assets/operation_center/alerts/alert-events.png)
 
 When interacting with an individual field value, you can:
 
@@ -94,7 +98,7 @@ Toggle **Value selection** mode using the button at the top of the event list to
 
 Alert filters prevent known false positives from triggering the same alert again in the future.
 
-![alert-filter](/assets/operation_center/alerts/alert-filter.png){align=right}
+![alert-filter](../../../assets/operation_center/alerts/alert-filter.png)
 
 1. Go to the **Events** tab.
 2. Click **Toggle value selection**.
@@ -105,14 +109,15 @@ Alert filters prevent known false positives from triggering the same alert again
 7. Review the filter pattern, generated automatically from the selected values.
 8. Click **Add** to apply the filter to the rule that triggered this alert.
 
-!!! note
-    **Reject the alert** is selected by default, which automatically rejects the current alert after the filter is created.
+{% hint style="info" %}
+**Reject the alert** is selected by default, which automatically rejects the current alert after the filter is created.
+{% endhint %}
 
 ### Search events with a value
 
 This feature searches all events that occurred within the alert's timeframe (±1 hour).
 
-![search-events](/assets/operation_center/alerts/search-events.png){align=right}
+![search-events](../../../assets/operation_center/alerts/search-events.png)
 
 1. Go to the **Events** tab.
 2. Click **Toggle value selection**.
@@ -125,8 +130,9 @@ A side panel opens with the results so you can investigate without leaving the a
 
 The **Graph investigation** tab provides an interactive visualization of the alert, linking security events with threat intelligence data for visual threat analysis.
 
-!!! note
-    All changes in the graph are saved automatically. The graph updates on each visit as new events are processed, and newly discovered objects are integrated into the existing structure.
+{% hint style="info" %}
+All changes in the graph are saved automatically. The graph updates on each visit as new events are processed, and newly discovered objects are integrated into the existing structure.
+{% endhint %}
 
 ### Graph elements
 
@@ -182,8 +188,8 @@ Additional layer actions include renaming layers, moving objects between layers,
 
 ## Related links
 
-- [Alerts](/xdr/features/investigate/alerts.md): Overview of how alerts work, including urgency calculation, similarity strategies, and types.
-- [Alerts listing](/xdr/features/investigate/alerts_listing.md): How to browse, filter, and act on alerts from the alerts table.
-- [Cases](/xdr/features/investigate/cases.md): How to create and manage cases grouping multiple alerts.
-- [Custom fields](/xdr/features/investigate/custom_fields.md): Reference for adding structured metadata to alerts and cases.
-- [Events](/xdr/features/investigate/events.md): How to browse and search raw events.
+- [Alerts](alerts.md): Overview of how alerts work, including urgency calculation, similarity strategies, and types.
+- [Alerts listing](alerts_listing.md): How to browse, filter, and act on alerts from the alerts table.
+- [Cases](cases.md): How to create and manage cases grouping multiple alerts.
+- [Custom fields](custom_fields.md): Reference for adding structured metadata to alerts and cases.
+- [Events](events.md): How to browse and search raw events.

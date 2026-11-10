@@ -14,10 +14,13 @@ An intake is the connection between one of your data sources (a firewall, an EDR
 ## Before you begin
 
 - You need the **Admin** role or a custom role with intake management permissions to create an intake.
-- Identify at least one data source you want to connect. If you are unsure where to start, refer to the [best practices for intake configuration](/getting_started/best_practices.md) for recommendations on which sources to prioritize.
+- Identify at least one data source you want to connect. If you are unsure where to start, refer to the [best practices for intake configuration](best_practices.md) for recommendations on which sources to prioritize.
 
-!!! note "No admin access?"
-    If you do not have permission to create intakes, share this article with your administrator and ask them to create the intake. Once it is created, you can continue from [Step 2: Verify event reception](/getting_started/defend_step2_verify_event_reception.md).
+{% hint style="info" %}
+**No admin access?**
+
+If you do not have permission to create intakes, share this article with your administrator and ask them to create the intake. Once it is created, you can continue from [Step 2: Verify event reception](defend_step2_verify_event_reception.md).
+{% endhint %}
 
 ## Understand intake types
 
@@ -42,22 +45,25 @@ For pull intakes, you start and stop collection using an On/Off toggle. For push
 
 For pull intakes, an additional configuration step appears. Enter the credentials or API parameters required to connect to the source.
 
-![Intake creation modal with fields for name and entity selection](/assets/getting_started/intake_creation_modal.png){: style="width: 100%; max-width: 100%"}
+![Intake creation modal with fields for name and entity selection](../assets/getting_started/intake_creation_modal.png)
 
 
 ## Copy and deploy the intake key
 
 After creating the intake, Sekoia generates a unique **intake key** for this data source.
 
-!!! warning "Copy the intake key now"
-    The intake key is used to route incoming logs to this specific intake. You will need it to configure forwarding on your data source. Copy it before leaving this page.
+{% hint style="warning" %}
+**Copy the intake key now**
+
+The intake key is used to route incoming logs to this specific intake. You will need it to configure forwarding on your data source. Copy it before leaving this page.
+{% endhint %}
 
 To copy the intake key:
 
 1. Click **...** on the intake card.
 2. Select **Copy intake key**.
 
-Deploy the intake key on your data source following the technology-specific setup guide available in the [integration catalog](/integration/categories/index.md).
+Deploy the intake key on your data source following the technology-specific setup guide available in the [integration catalog](../integration/categories/index.md).
 
 ## What to expect after creating an intake
 
@@ -67,6 +73,6 @@ For **pull intakes**, the intake is inactive by default. To start data collectio
 
 ## Related links
 
-- [Step 2: Verify event reception](/getting_started/defend_step2_verify_event_reception.md): Confirm that logs are arriving and being parsed correctly.
-- [Integration catalog](/integration/categories/index.md): Technology-specific setup guides for each supported data source.
-- [Notification system overview](/getting_started/notification_system_overview.md): How to set up alerts when an intake stops receiving data.
+- [Step 2: Verify event reception](defend_step2_verify_event_reception.md): Confirm that logs are arriving and being parsed correctly.
+- [Integration catalog](../integration/categories/index.md): Technology-specific setup guides for each supported data source.
+- [Notification system overview](notification_system_overview.md): How to set up alerts when an intake stops receiving data.

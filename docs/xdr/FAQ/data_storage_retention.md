@@ -16,11 +16,17 @@ The storage engine available to your workspace depends on your region and provis
 | UAE1 | Hot/Cold storage | — |
 | USA1 | Hot/Cold storage | — |
 
-!!! tip "FRA1 workspaces created before May 2026"
-    If your workspace is on FRA1 and was provisioned before May 2026, you can request migration to ExaLog. Migration gives you a unified retention window, direct search across all retained events, and no rehydration step for older data. Contact your Customer Success Manager or see [Migrate your workspace to ExaLog](/xdr/FAQ/migrate_workspace_to_exalog.md).
+{% hint style="success" %}
+**FRA1 workspaces created before May 2026**
 
-!!! note "Rollout to additional regions"
-    ExaLog is being rolled out to additional regions. When ExaLog becomes available in a new region, only events ingested after the activation date are indexed in ExaLog. Existing data is not migrated retroactively. Full capabilities become available progressively as your original retention window expires.
+If your workspace is on FRA1 and was provisioned before May 2026, you can request migration to ExaLog. Migration gives you a unified retention window, direct search across all retained events, and no rehydration step for older data. Contact your Customer Success Manager or see [Migrate your workspace to ExaLog](migrate_workspace_to_exalog.md).
+{% endhint %}
+
+{% hint style="info" %}
+**Rollout to additional regions**
+
+ExaLog is being rolled out to additional regions. When ExaLog becomes available in a new region, only events ingested after the activation date are indexed in ExaLog. Existing data is not migrated retroactively. Full capabilities become available progressively as your original retention window expires.
+{% endhint %}
 
 ---
 
@@ -51,15 +57,21 @@ You can verify the storage durations included in your subscription directly in t
 1. Navigate to **Settings > Subscription**.
 2. Locate the **Storage** section to see your allocated days for each tier.
 
-![Navigation to Settings > Subscription to view hot and cold storage days](/assets/xdr/storage_subscription.png)
+![Navigation to Settings > Subscription to view hot and cold storage days](../../assets/xdr/storage_subscription.png)
 
 ### Storage limitations
 
-!!! warning "Permanent data deletion"
-    Sekoia.io cannot retrieve data that exceeds your defined storage thresholds. If your total retention is 120 days, any data older than this limit is permanently deleted and cannot be recovered.
+{% hint style="warning" %}
+**Permanent data deletion**
 
-!!! note "Events attached to an alert or a case"
-    Events that raised an alert, and events added to a case, are the exception. They are preserved permanently as [eternal events](/xdr/features/investigate/eternal_events.md), whatever your retention subscription, and stay available for investigation after your retention window has elapsed.
+Sekoia.io cannot retrieve data that exceeds your defined storage thresholds. If your total retention is 120 days, any data older than this limit is permanently deleted and cannot be recovered.
+{% endhint %}
+
+{% hint style="info" %}
+**Events attached to an alert or a case**
+
+Events that raised an alert, and events added to a case, are the exception. They are preserved permanently as [eternal events](../features/investigate/eternal_events.md), whatever your retention subscription, and stay available for investigation after your retention window has elapsed.
+{% endhint %}
 
 Retention periods are strictly governed by your contractual agreement.
 
@@ -76,14 +88,14 @@ ExaLog is Sekoia.io's log storage and search engine for high-volume workloads. I
 | Encryption | Data is encrypted at rest; Sekoia.io manages the encryption keys |
 | Export | Large-volume exports to S3-compatible storage are supported (available June 2026) |
 
-To learn more about ExaLog capabilities, see [ExaLog storage engine](/xdr/FAQ/exalog_storage_engine.md).
+To learn more about ExaLog capabilities, see [ExaLog storage engine](exalog_storage_engine.md).
 
 ---
 
 ## Related articles
 
-- [ExaLog storage engine](/xdr/FAQ/exalog_storage_engine.md) — Learn about ExaLog's capabilities and how it differs from Hot/Cold storage.
-- [Migrate your workspace to ExaLog](/xdr/FAQ/migrate_workspace_to_exalog.md) — Step-by-step guide to checking your current storage model and requesting a migration to ExaLog.
-- [Restore data from cold storage](/xdr/FAQ/restore_data_cold_storage.md) — How to rehydrate archived events from cold storage.
-- [Events page](/xdr/features/investigate/events.md) — How to search and filter events in the Sekoia.io investigation interface.
-- [Understand massive event export](/xdr/features/investigate/event_export.md) — How to export large volumes of events to an external S3-compatible storage.
+- [ExaLog storage engine](exalog_storage_engine.md) — Learn about ExaLog's capabilities and how it differs from Hot/Cold storage.
+- [Migrate your workspace to ExaLog](migrate_workspace_to_exalog.md) — Step-by-step guide to checking your current storage model and requesting a migration to ExaLog.
+- [Restore data from cold storage](restore_data_cold_storage.md) — How to rehydrate archived events from cold storage.
+- [Events page](../features/investigate/events.md) — How to search and filter events in the Sekoia.io investigation interface.
+- [Understand massive event export](../features/investigate/event_export.md) — How to export large volumes of events to an external S3-compatible storage.

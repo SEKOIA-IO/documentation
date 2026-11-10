@@ -82,8 +82,9 @@ However, we recognize the potential value of scanner IPs in specific contexts, s
 - Categorize scanner IPs as observables and tags them with "scanner" instead of treating them as IOCs. This allows you to easily search for them on the events page.
 - Offer two master rules: `Internet Scanner` and `Internet Scanner Target`, which leverage these tags.
 
-!!! note
-    Be careful with these rules as they are master rules and might raise a significant number of alerts. 
+{% hint style="info" %}
+Be careful with these rules as they are master rules and might raise a significant number of alerts. 
+{% endhint %}
 
 ## What is your processus for creating detection rules? Are they tested?
     
@@ -106,4 +107,4 @@ For more insights on how we create rules and how we test them, check our blogpos
 - [Detection engineering at scale: one step closer (part two)](https://blog.sekoia.io/detection-engineering-at-scale-one-step-closer-part-two/).
 - [Detection engineering at scale: one step closer (part three)](https://blog.sekoia.io/detection-engineering-at-scale-one-step-closer-part-three/).
 
-A [full PDF version](/assets/detection_engineering_at_scale_one_step_closer.pdf) of our three parts blogpost above is also available.
+A [full PDF version](../../../assets/detection_engineering_at_scale_one_step_closer.pdf) of our three parts blogpost above is also available.

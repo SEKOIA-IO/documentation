@@ -10,13 +10,13 @@ This use case describes how to extract an IP address from a URL and a country.
 	* Be an Administrator or an Analyst of the community.
     * Have an API Key with a role that contains at least the permission "View alerts"
 
-> To create your API Key, follow this [documentation](/getting_started/manage_api_keys.md).
+> To create your API Key, follow this [documentation](../../../getting_started/manage_api_keys.md).
 
 ## Playbook configuration
 
 Here is the playbook configuration to set:
 
-![Playbook ExtractIP](/assets/playbooks/library/UseCases/ExtractIP.png)
+![Playbook ExtractIP](../../../assets/playbooks/library/UseCases/ExtractIP.png)
 
 Alert created => set module & trigger configuration
 Get Alert => **uuid** = `short_id` variables in **Alert created**
@@ -33,8 +33,9 @@ This Jinja recipe consists in splitting the URL into 2 strings: the one precedin
 The value is set with the second string stored in the array, with the use of [1].
 ```
 
-!!!note
-   You can find the CODE Feature section in documentation page and in particular built-in filters existing in Jinja [here](https://jinja.palletsprojects.com/en/3.0.x/templates/#builtin-filters).
+{% hint style="info" %}
+You can find the CODE Feature section in documentation page and in particular built-in filters existing in Jinja [here](https://jinja.palletsprojects.com/en/3.0.x/templates/#builtin-filters).
+{% endhint %}
    (split is coming from Python)
 
 ### Extract IP from Country

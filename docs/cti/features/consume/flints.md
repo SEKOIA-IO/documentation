@@ -10,9 +10,12 @@ The FLINT Reports page enables you to read, browse, and explore intelligence pub
 
 Over 50 FLINTs are published annually. The number of reports available to you depends on your subscription.
 
-!!! info "Access by subscription"
-    - **Defend**: Access to the last 4 FLINT reports via the Threat Landscape page. 
-    - **Intelligence**: Access to the full archive.
+{% hint style="info" %}
+**Access by subscription**
+
+- **Defend**: Access to the last 4 FLINT reports via the Threat Landscape page. 
+- **Intelligence**: Access to the full archive.
+{% endhint %}
 
 ## How to access
 

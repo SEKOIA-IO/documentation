@@ -41,8 +41,11 @@ Eternal events preserve the narrow context around an incident: the events that r
 
 Sekoia.io applies throttling when a disproportionate share of your ingested events would be preserved this way. Past that point, the excess events are not preserved. The alert itself is unaffected and remains fully usable, but some of the events behind it will no longer be available once your retention window has elapsed.
 
-!!! warning "Keep your detection rules specific"
-    A rule whose pattern matches a large fraction of your telemetry preserves a correspondingly large volume of events, and can trigger throttling. Specific rule patterns keep the volume proportionate and the evidence behind each alert complete.
+{% hint style="warning" %}
+**Keep your detection rules specific**
+
+A rule whose pattern matches a large fraction of your telemetry preserves a correspondingly large volume of events, and can trigger throttling. Specific rule patterns keep the volume proportionate and the evidence behind each alert complete.
+{% endhint %}
 
 ## How to access eternal events
 
@@ -56,7 +59,7 @@ This is transparent. There is no switch to flip, no separate view, and no differ
 
 ### With a SOL query
 
-To query preserved events directly, use the `eternal_events` datasource in the [Query Builder](/xdr/features/investigate/query_builder.md). Reach for it in two situations:
+To query preserved events directly, use the `eternal_events` datasource in the [Query Builder](query_builder.md). Reach for it in two situations:
 
 * **The events have passed your retention window.** They are no longer returned by the `events` datasource or the **Events** page, and `eternal_events` is the only place they still exist.
 * **You want to scope a query to alert or case evidence.** Even while the events are still within your retention window, `eternal_events` holds nothing but the events attached to an alert or a case. There is no full telemetry search to narrow down, which makes it the natural datasource for investigating a given alert or building metrics over the events that raised your alerts.
@@ -69,8 +72,11 @@ eternal_events
 
 Eternal events share the same schema as events, so the filters, aggregations and functions you already use against `events` work here too.
 
-!!! tip "Scope your queries"
-    Because eternal events are not subject to automatic time-based deletion, the datasource spans your entire history. Filter on an alert, a case or a time range rather than scanning everything.
+{% hint style="success" %}
+**Scope your queries**
+
+Because eternal events are not subject to automatic time-based deletion, the datasource spans your entire history. Filter on an alert, a case or a time range rather than scanning everything.
+{% endhint %}
 
 ## Eternal events and the events datasource
 
@@ -86,7 +92,7 @@ Eternal events live in a store of their own rather than being folded into `event
 
 ## Eternal events and cold storage
 
-If your workspace uses the Hot/Cold storage model, you can also [restore data from cold storage](/xdr/FAQ/restore_data_cold_storage.md). The two mechanisms solve different problems and are easy to confuse:
+If your workspace uses the Hot/Cold storage model, you can also [restore data from cold storage](../../FAQ/restore_data_cold_storage.md). The two mechanisms solve different problems and are easy to confuse:
 
 | | Eternal events | Cold storage restore |
 |---|---|---|
@@ -99,9 +105,9 @@ Use eternal events when you need the evidence behind a specific alert or case. U
 
 ## Related articles
 
-* [Alerts](/xdr/features/investigate/alerts.md): How alerts are raised and how to investigate them.
-* [Cases](/xdr/features/investigate/cases.md): How to group alerts, events and findings into a single investigation.
-* [Events page](/xdr/features/investigate/events.md): How to search and filter events within your retention window.
-* [SOL Data Sources Reference](/xdr/features/investigate/sol_ref_datasources.md): Reference for the `eternal_events` datasource and every other datasource available to SOL.
-* [Data storage and retention](/xdr/FAQ/data_storage_retention.md): Storage engines, retention windows and region availability.
-* [Restore data from cold storage](/xdr/FAQ/restore_data_cold_storage.md): How to rehydrate archived events for a given timespan.
+* [Alerts](alerts.md): How alerts are raised and how to investigate them.
+* [Cases](cases.md): How to group alerts, events and findings into a single investigation.
+* [Events page](events.md): How to search and filter events within your retention window.
+* [SOL Data Sources Reference](sol_ref_datasources.md): Reference for the `eternal_events` datasource and every other datasource available to SOL.
+* [Data storage and retention](../../FAQ/data_storage_retention.md): Storage engines, retention windows and region availability.
+* [Restore data from cold storage](../../FAQ/restore_data_cold_storage.md): How to rehydrate archived events for a given timespan.

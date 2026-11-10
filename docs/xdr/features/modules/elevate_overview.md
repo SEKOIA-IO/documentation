@@ -31,7 +31,7 @@ Elevate supports a range of SOC scenarios: enabling noisy detection rules instea
 
 ### Verdict
 
-The verdict is the outcome of the AI investigation, accompanied by a confidence score and a plain-language explanation of the reasoning. Analysts can override any verdict at any time. For how Elevate selects a verdict, see [The Elevate investigation method](/xdr/features/modules/elevate_investigation_method.md).
+The verdict is the outcome of the AI investigation, accompanied by a confidence score and a plain-language explanation of the reasoning. Analysts can override any verdict at any time. For how Elevate selects a verdict, see [The Elevate investigation method](elevate_investigation_method.md).
 
 ### Findings
 
@@ -39,7 +39,7 @@ Findings are the individual evidence items the agent collected during its invest
 
 ### Runbooks and reasoning questions
 
-A runbook defines how the agent reasons and investigates a given detection rule, and the reasoning questions show every line of investigation the agent explored for an alert. Together they make the agent's method transparent and tunable. See [The Elevate investigation method](/xdr/features/modules/elevate_investigation_method.md).
+A runbook defines how the agent reasons and investigates a given detection rule, and the reasoning questions show every line of investigation the agent explored for an alert. Together they make the agent's method transparent and tunable. See [The Elevate investigation method](elevate_investigation_method.md).
 
 ### Runs
 
@@ -47,9 +47,9 @@ Elevate operates on a monthly run pack. Each investigation the agent runs, wheth
 
 ## Related articles
 
-- [The Elevate investigation method](/xdr/features/modules/elevate_investigation_method.md): How runbooks, reasoning questions, findings and verdicts work together.
-- [Elevate analysis states](/xdr/features/modules/elevate_analysis_states.md): Reference table of all possible AI analysis states and their meaning.
-- [Activate Elevate on a workspace](/xdr/features/modules/elevate_activate.md): How to enable the Elevate agent and configure auto-analysis.
-- [Investigate an alert with Elevate](/xdr/features/modules/elevate_investigate_alert.md): How to read an AI investigation report and interpret findings.
-- [Audit an Elevate investigation with Traces](/xdr/features/modules/elevate_traces.md): How to review the full timeline of actions the agent performed.
-- [Elevate analytics](/xdr/features/modules/elevate_analytics.md): Reference for the Analytics page that measures Elevate speed, volume and verdict accuracy.
+- [The Elevate investigation method](elevate_investigation_method.md): How runbooks, reasoning questions, findings and verdicts work together.
+- [Elevate analysis states](elevate_analysis_states.md): Reference table of all possible AI analysis states and their meaning.
+- [Activate Elevate on a workspace](elevate_activate.md): How to enable the Elevate agent and configure auto-analysis.
+- [Investigate an alert with Elevate](elevate_investigate_alert.md): How to read an AI investigation report and interpret findings.
+- [Audit an Elevate investigation with Traces](elevate_traces.md): How to review the full timeline of actions the agent performed.
+- [Elevate analytics](elevate_analytics.md): Reference for the Analytics page that measures Elevate speed, volume and verdict accuracy.

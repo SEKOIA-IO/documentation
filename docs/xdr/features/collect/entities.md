@@ -14,7 +14,7 @@ All fields of entities are editable and mandatory.
 ### Alert generation mode
 The **Alert generation mode** affects the alert processing workflow. There are two generation modes:
 
-- `automatic`: the alert is set on creation to the **Alert default status** configured in **Settings > Custom Statuses**. See [Set the alert default status](/xdr/features/investigate/manage_custom_statuses.md#set-the-alert-default-status).
+- `automatic`: the alert is set on creation to the **Alert default status** configured in **Settings > Custom Statuses**. See [Set the alert default status](../investigate/manage_custom_statuses.md#set-the-alert-default-status).
 - `manual`: the alert stays in the `Pending` status until an analyst acts on it.
 
 ## Entities listing
@@ -27,8 +27,9 @@ On the listing page of entities, you can find:
 
 Under the entity details, you will find the associated data sources.
 
-!!! Note
-    To activate a new intake for your entity, please refer to the [intakes](intakes.md) documentation.
+{% hint style="info" %}
+To activate a new intake for your entity, please refer to the [intakes](intakes.md) documentation.
+{% endhint %}
 
 ## Create an entity
 To create a new entity:
@@ -49,5 +50,6 @@ On the details view of an entity, you can find:
 This detailed view allows you to edit the entity or delete it if needed.
 You can also add [intakes](intakes.md) to it by clicking on the `+ Add Intake` button on the upper right side of the table.
 
-!!! Note
-    One entity can have as many intakes in different formats as it requires.
+{% hint style="info" %}
+One entity can have as many intakes in different formats as it requires.
+{% endhint %}

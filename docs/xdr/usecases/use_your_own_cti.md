@@ -49,17 +49,19 @@ print(f"Collection created with id {res.json()['id']}")
 
 1. Replace the content of this string with your API Key
 
-!!! tip
-    When creating an IOC Collection it is also possible to specify:
+{% hint style="success" %}
+When creating an IOC Collection it is also possible to specify:
 
-    - A description using the `description` field
-    - For Multi-tenant users it is possible to specify:
-        - For which sub-community the collection must be created for by providing the `community_uuid` attribute
-        - If the collection must be made available to sub-communities by  setting `available_for_sub_communities` to  `true`.
+- A description using the `description` field
+- For Multi-tenant users it is possible to specify:
+    - For which sub-community the collection must be created for by providing the `community_uuid` attribute
+    - If the collection must be made available to sub-communities by  setting `available_for_sub_communities` to  `true`.
+{% endhint %}
 
 ### Import indicators
-!!! note
-    This is the preferred way for API integration.
+{% hint style="info" %}
+This is the preferred way for API integration.
+{% endhint %}
 
 A dedicated endpoint allows to import indicators by sending them as the payload of a POST request. It supports batch creation of indicators, **up to 100 at once**.
 

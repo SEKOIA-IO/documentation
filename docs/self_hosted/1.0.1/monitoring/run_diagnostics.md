@@ -7,10 +7,13 @@ The Diagnostic module runs targeted health checks against the platform's Prometh
 - You have access to the orchestration node.
 - The platform and its Prometheus service are running.
 - The SHC can connect over SSH to the first manager node. When `utils.prometheus.url` is empty, which is the default, the `Diagnostic` module first runs `GetKubeconfig`, which copies the kubeconfig from that node and changes nothing on the cluster. See [Prometheus connection](#prometheus-connection).
-- You completed the post-deployment validation in [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md).
+- You completed the post-deployment validation in [Deploy the platform](../deployment/deployment_guide.md).
 
-!!! warning "Run diagnostics before changing the platform"
-    Use the reported likely causes and remediation steps to investigate a failed check. Do not restart or reconfigure services based only on a diagnostic result.
+{% hint style="warning" %}
+**Run diagnostics before changing the platform**
+
+Use the reported likely causes and remediation steps to investigate a failed check. Do not restart or reconfigure services based only on a diagnostic result.
+{% endhint %}
 
 ## Run all diagnostic targets
 
@@ -37,8 +40,11 @@ The module runs these targets in alphabetical order:
 | `symphony` | Playbook execution: playbook pod and job counts by state, excess ConfigMaps, per-playbook job activity, action worker availability, and Celery queue backlog, retry, and API server error rates. |
 | `telemetry` | The telemetry services: available replicas, consumption by the events, sightings, and notifications workers, and ClickHouse push failures. |
 
-!!! note "Ceph storage pool"
-    No target checks the Ceph storage pool. The `node` target checks the persistent volumes that Ceph provides, but not the capacity of the Ceph pool or of its disks, which carry no node filesystem. To inspect Ceph, use the **Ceph** row of the Default dashboard, described in [Monitor your platform](/self_hosted/1.0.1/monitoring/monitoring_guide.md#ceph), or the Storage tab of the [SHC interface](/self_hosted/1.0.1/operations/controller_interface.md), which shows the output of `ceph status`, `ceph osd df`, and `ceph osd tree`.
+{% hint style="info" %}
+**Ceph storage pool**
+
+No target checks the Ceph storage pool. The `node` target checks the persistent volumes that Ceph provides, but not the capacity of the Ceph pool or of its disks, which carry no node filesystem. To inspect Ceph, use the **Ceph** row of the Default dashboard, described in [Monitor your platform](monitoring_guide.md#ceph), or the Storage tab of the [SHC interface](../operations/controller_interface.md), which shows the output of `ceph status`, `ceph osd df`, and `ceph osd tree`.
+{% endhint %}
 
 By default, the terminal report hides successful checks. Failed or warning checks show the affected value and labels, an explanation, likely causes, and remediation actions. Each check reports one of these statuses:
 
@@ -106,7 +112,7 @@ Change the `utils.prometheus.port_forward` keys only with guidance from Sekoia: 
 
 ## Run a diagnostic from the SHC interface
 
-The interactive interface of the self-hosted-controller (SHC) exposes the same targets on its Diagnostics tab, with one collapsible panel per rule, live status, sortable result tables, and clipboard copy. You run one target at a time, or select **Run all diagnostics** to run every target in a single result view. See [Run a diagnostic from the Diagnostics tab](/self_hosted/1.0.1/operations/controller_interface.md#run-a-diagnostic-from-the-diagnostics-tab).
+The interactive interface of the self-hosted-controller (SHC) exposes the same targets on its Diagnostics tab, with one collapsible panel per rule, live status, sortable result tables, and clipboard copy. You run one target at a time, or select **Run all diagnostics** to run every target in a single result view. See [Run a diagnostic from the Diagnostics tab](../operations/controller_interface.md#run-a-diagnostic-from-the-diagnostics-tab).
 
 ## Result
 
@@ -114,8 +120,8 @@ You have a diagnostic report for the selected platform areas. Use a `CRIT` resul
 
 ## Related links
 
-- [Monitor your platform](/self_hosted/1.0.1/monitoring/monitoring_guide.md): Daily monitoring and incident-response workflows.
-- [Platform alerts reference](/self_hosted/1.0.1/monitoring/platform_alerts.md): Platform alerts by type, and the diagnostic to run for each type.
-- [Debug your deployment](/self_hosted/1.0.1/troubleshooting/debug_tool.md): Additional SHC diagnostic commands and log collection guidance.
-- [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md): Post-deployment validation procedure.
-- [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md): Run the same diagnostics from the interactive interface.
+- [Monitor your platform](monitoring_guide.md): Daily monitoring and incident-response workflows.
+- [Platform alerts reference](platform_alerts.md): Platform alerts by type, and the diagnostic to run for each type.
+- [Debug your deployment](../troubleshooting/debug_tool.md): Additional SHC diagnostic commands and log collection guidance.
+- [Deploy the platform](../deployment/deployment_guide.md): Post-deployment validation procedure.
+- [Use the SHC interface](../operations/controller_interface.md): Run the same diagnostics from the interactive interface.

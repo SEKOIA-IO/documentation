@@ -8,8 +8,9 @@ If you need to deactivate inactive accounts on your workspace, follow these step
 2. Find the section `Deactivate inactive accounts`
 3. Enable the toggle `On/Off` and click on `Confirm`
 
-!!! tip 
-    You can see deactivated accounts in your list of users through the tab `Users`. Their status will be marked as `Deactivated`. To list only deactivated accounts, use the **Filter by Status > Deactivated**.
+{% hint style="success" %}
+You can see deactivated accounts in your list of users through the tab `Users`. Their status will be marked as `Deactivated`. To list only deactivated accounts, use the **Filter by Status > Deactivated**.
+{% endhint %}
 
 ## How to reactivate an account?
 
@@ -19,8 +20,9 @@ If you need to reactivate a deactivated account, follow these steps:
 2. Locate the deactivated user's name and click the ellipsis `"..."` button on the right-hand side. You can use the `Filter by Status` and select `Deactivated` to list only deactivated accounts 
 3. Choose the `Reactivate` option and confirm your choice
 
-!!! note
-    Please note that only admins have the right permissions to reactivate accounts. Additionally, the reactivated user must re-authenticate their account **at least once before midnight** **on the same day**. If they fail to do so within this time frame, their account will be deactivated again.
+{% hint style="info" %}
+Please note that only admins have the right permissions to reactivate accounts. Additionally, the reactivated user must re-authenticate their account **at least once before midnight** **on the same day**. If they fail to do so within this time frame, their account will be deactivated again.
+{% endhint %}
 
 ## Your account have been deactivated
 

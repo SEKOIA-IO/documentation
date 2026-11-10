@@ -2,8 +2,9 @@
 
 Sigma is a generic and open format you can use to write signatures that will be applied to your event stream in real-time. This format makes it easy to write rules applicable to any field available in normalized events. Rules are documents using the YAML format.
 
-!!! Warning
-    Do not use comments `# My comment on a line ...` to build your rules, they are not supported
+{% hint style="warning" %}
+Do not use comments `# My comment on a line ...` to build your rules, they are not supported
+{% endhint %}
 
 ## Detection Object
 Each rule should contain a `detection` object using a set of `Search-Identifier`s to define a matching `condition`:
@@ -315,12 +316,14 @@ Time-based modifiers can be used in:
 - **SIGMA detection rules**
 - **SIGMA alert filters**
 
-!!! Info
-    Theses time-based modifiers are not part of Sigma standard. They are only available in Sekoia SOC platform.
+{% hint style="info" %}
+Theses time-based modifiers are not part of Sigma standard. They are only available in Sekoia SOC platform.
+{% endhint %}
 
-!!! Warning
-    By default, all `time-based` modifiers are `UTC` based. To specify a local time, use the `timezone` metadata. 
-    We recommend using `timezone` rather than `UTC` to automatically account for Daylight Savings.
+{% hint style="warning" %}
+By default, all `time-based` modifiers are `UTC` based. To specify a local time, use the `timezone` metadata. 
+We recommend using `timezone` rather than `UTC` to automatically account for Daylight Savings.
+{% endhint %}
 
 ### Hour
 

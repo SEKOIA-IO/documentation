@@ -6,13 +6,19 @@ Sekoia Self-Hosted evaluates a set of Prometheus alert rules against the platfor
 
 Prometheus evaluates the alert rules bundled with the platform every 15 seconds and forwards any firing alert to the Alertmanager instance installed on the platform. In Sekoia Self-Hosted 1.0.1, Alertmanager has no notification receiver configured: a firing alert is not sent by email or to any external tool. Review the alerts in Grafana.
 
-!!! note "Where to check firing alerts"
-    Prometheus and Alertmanager are not exposed outside the cluster: only Grafana has an ingress. To review the alert rules and their state, open `https://<global.delivery_host>/grafana`, then select **Alerting > Alert rules**. The platform alerts appear as data-source-managed rules of the Prometheus data source, grouped by alert group, with their `Normal`, `Pending`, or `Firing` state. The rows of the **Default** Grafana dashboard show the underlying metrics, not the alert states. See [Monitor your platform](/self_hosted/1.0.1/monitoring/monitoring_guide.md) for the full dashboard reference.
+{% hint style="info" %}
+**Where to check firing alerts**
 
-!!! warning "Investigate before taking action"
-    A firing alert can cascade into ingestion, correlation, and alerting delays across the whole platform. Follow the [recommended incident response workflow](/self_hosted/1.0.1/monitoring/monitoring_guide.md#recommended-incident-response-workflow) to confirm cluster and database health before restarting or scaling affected resources.
+Prometheus and Alertmanager are not exposed outside the cluster: only Grafana has an ingress. To review the alert rules and their state, open `https://<global.delivery_host>/grafana`, then select **Alerting > Alert rules**. The platform alerts appear as data-source-managed rules of the Prometheus data source, grouped by alert group, with their `Normal`, `Pending`, or `Firing` state. The rows of the **Default** Grafana dashboard show the underlying metrics, not the alert states. See [Monitor your platform](monitoring_guide.md) for the full dashboard reference.
+{% endhint %}
 
-Alerts are grouped by type, one type per infrastructure component or service. For each type, a global diagnostic analyzes the whole group: it identifies the affected component, explains the likely causes, and proposes remediations. Each alert is named after the diagnostic rule it mirrors and uses the same query and thresholds. When an alert fires, run the diagnostic of its type from the orchestration node. See [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md) for the output formats and how to read a result.
+{% hint style="warning" %}
+**Investigate before taking action**
+
+A firing alert can cascade into ingestion, correlation, and alerting delays across the whole platform. Follow the [recommended incident response workflow](monitoring_guide.md#recommended-incident-response-workflow) to confirm cluster and database health before restarting or scaling affected resources.
+{% endhint %}
+
+Alerts are grouped by type, one type per infrastructure component or service. For each type, a global diagnostic analyzes the whole group: it identifies the affected component, explains the likely causes, and proposes remediations. Each alert is named after the diagnostic rule it mirrors and uses the same query and thresholds. When an alert fires, run the diagnostic of its type from the orchestration node. See [Run platform diagnostics](run_diagnostics.md) for the output formats and how to read a result.
 
 ### Severity levels
 
@@ -228,7 +234,7 @@ exec Diagnostic --set modules.diagnostic.targets=node
 | NodePvcInodesUsageHigh | Warning, Error | A persistent volume uses at least 80% (warning) or 95% (error) of its inodes, for 5 minutes. | Once exhausted, the owning service cannot create any new file. |
 | NodePvcPredictedFull | Warning | A persistent volume more than 60% full is predicted to fill up within 24 hours, for 1 hour. | The volume will be full without action. |
 
-The node filesystem alerts exclude the Ceph-backed volumes (`rbd` devices), which the persistent volume alerts cover. The persistent volume alerts exclude the Kafka and ClickHouse data volumes, which have their own alerts in the [Kafka](#kafka) and [ClickHouse](#clickhouse) groups. No alert covers the Ceph storage pool. To check the Ceph status, use the **Ceph** row of the Default dashboard, described in [Monitor your platform](/self_hosted/1.0.1/monitoring/monitoring_guide.md#ceph), or the Storage tab of the [SHC interface](/self_hosted/1.0.1/operations/controller_interface.md).
+The node filesystem alerts exclude the Ceph-backed volumes (`rbd` devices), which the persistent volume alerts cover. The persistent volume alerts exclude the Kafka and ClickHouse data volumes, which have their own alerts in the [Kafka](#kafka) and [ClickHouse](#clickhouse) groups. No alert covers the Ceph storage pool. To check the Ceph status, use the **Ceph** row of the Default dashboard, described in [Monitor your platform](monitoring_guide.md#ceph), or the Storage tab of the [SHC interface](../operations/controller_interface.md).
 
 ## Detection
 
@@ -312,6 +318,6 @@ exec Diagnostic --set modules.diagnostic.targets=<target>
 
 ## Related links
 
-- [Monitor your platform](/self_hosted/1.0.1/monitoring/monitoring_guide.md): Daily monitoring and incident-response workflows, including the Grafana dashboard reference.
-- [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md): Targeted Prometheus health checks to narrow an incident to the affected service.
-- [Debug your deployment](/self_hosted/1.0.1/troubleshooting/debug_tool.md): Full SHC debug command reference with remediation steps.
+- [Monitor your platform](monitoring_guide.md): Daily monitoring and incident-response workflows, including the Grafana dashboard reference.
+- [Run platform diagnostics](run_diagnostics.md): Targeted Prometheus health checks to narrow an incident to the affected service.
+- [Debug your deployment](../troubleshooting/debug_tool.md): Full SHC debug command reference with remediation steps.

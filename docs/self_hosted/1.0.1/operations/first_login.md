@@ -4,7 +4,7 @@ During the installation, the self-hosted-controller (SHC) displays the platform 
 
 ## Before you begin
 
-- You completed the post-deployment validation steps in [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md).
+- You completed the post-deployment validation steps in [Deploy the platform](../deployment/deployment_guide.md).
 - You have the platform URL configured in `global.host` (for example, `https://app.sekoia.local`).
 - You have the license file provided by Sekoia for your subscription.
 
@@ -14,34 +14,44 @@ During the installation, the `PlatformAccess` module displays the access credent
 
 The platform installer generates these credentials at installation time and stores them in Vault. `PlatformAccess` reads them from Vault each time it runs, so you can display them again with the same command.
 
-!!! warning "The output contains credentials in clear"
-    The output holds the administrator passwords of the Sekoia platform, ArgoCD, and Grafana, and the API key of the instance administrator. Run the command only when you need them, on a terminal that nobody else can see, and never paste its output in a ticket, a chat, or a screenshot. In the TUI, the output is also written to the run log file. See [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md#navigate-the-interface).
+{% hint style="warning" %}
+**The output contains credentials in clear**
 
-??? example "Example output"
-    ```text
-    Instance access
+The output holds the administrator passwords of the Sekoia platform, ArgoCD, and Grafana, and the API key of the instance administrator. Run the command only when you need them, on a terminal that nobody else can see, and never paste its output in a ticket, a chat, or a screenshot. In the TUI, the output is also written to the run log file. See [Use the SHC interface](controller_interface.md#navigate-the-interface).
+{% endhint %}
 
-    argocd
-      url:      https://<global.delivery_host>/argo
-      user:     admin
-      password: <password>
+<details>
+<summary>Example output</summary>
 
-    grafana
-      url:      https://<global.delivery_host>/grafana
-      user:     admin
-      password: <password>
+```text
+Instance access
 
-    sekoiaio
-      url:      https://<global.host>/user
-      user:     instanceadmin@sekoia.io
-      password: <password>
-      apikey:   <API key>
-    ```
+argocd
+  url:      https://<global.delivery_host>/argo
+  user:     admin
+  password: <password>
+
+grafana
+  url:      https://<global.delivery_host>/grafana
+  user:     admin
+  password: <password>
+
+sekoiaio
+  url:      https://<global.host>/user
+  user:     instanceadmin@sekoia.io
+  password: <password>
+  apikey:   <API key>
+```
+
+</details>
 
 The output lists three services: the Sekoia platform (`sekoiaio`), the ArgoCD GitOps console (`argocd`), and the Grafana observability dashboard (`grafana`). The URLs come from your `config.yml`: the platform is served on `global.host`, and ArgoCD and Grafana under the `/argo` and `/grafana` paths of `global.delivery_host`. For example, with `delivery_host: "admin.example.com"`, the Grafana URL is `https://admin.example.com/grafana`. The `sekoiaio` entry also gives the `apikey` of the instance administrator, used by the API calls of this guide. Save the three sets of credentials in a secure location.
 
-!!! warning "Credentials are auto-generated"
-    Passwords and API keys are randomly generated at installation time. They are displayed once during the installation. If you did not save them, use the command in the next step to redisplay them.
+{% hint style="warning" %}
+**Credentials are auto-generated**
+
+Passwords and API keys are randomly generated at installation time. They are displayed once during the installation. If you did not save them, use the command in the next step to redisplay them.
+{% endhint %}
 
 To display the credentials, run:
 
@@ -49,26 +59,30 @@ To display the credentials, run:
 exec PlatformAccess
 ```
 
-??? example "Example output (sensitive)"
-    ```text
-    Instance access
+<details>
+<summary>Example output (sensitive)</summary>
 
-    argocd
-      url:      https://admin.sekoia.local/argo
-      user:     admin
-      password: <PASSWORD>
+```text
+Instance access
 
-    grafana
-      url:      https://admin.sekoia.local/grafana
-      user:     admin
-      password: <PASSWORD>
+argocd
+  url:      https://admin.sekoia.local/argo
+  user:     admin
+  password: <PASSWORD>
 
-    sekoiaio
-      url:      https://app.sekoia.local/user
-      user:     instanceadmin@sekoia.io
-      password: <PASSWORD>
-      apikey:   <API_KEY>
-    ```
+grafana
+  url:      https://admin.sekoia.local/grafana
+  user:     admin
+  password: <PASSWORD>
+
+sekoiaio
+  url:      https://app.sekoia.local/user
+  user:     instanceadmin@sekoia.io
+  password: <PASSWORD>
+  apikey:   <API_KEY>
+```
+
+</details>
 
 The output provides access to three services: the ArgoCD GitOps console (`argocd`) and the Grafana observability dashboard (`grafana`), both served under `global.delivery_host`, and the Sekoia platform (`sekoiaio`), served under `global.host`. The `sekoiaio` entry also holds the API key of the instance administrator. Save these credentials in a secure location, such as a password manager.
 
@@ -81,19 +95,22 @@ The output provides access to three services: the ArgoCD GitOps console (`argocd
 
 You are now logged in to the **Administration Community**. This community is dedicated to managing users and communities across your entire instance. It is not a workspace for security operations.
 
-!!! note "Community overview"
-    Your instance contains two built-in communities after installation, each with a built-in account:
+{% hint style="info" %}
+**Community overview**
 
-    | Community                | Built-in account          | Purpose                                                                                          |
-    | :---                     | :---                      | :---                                                                                             |
-    | Administration Community | `instanceadmin@sekoia.io` | Manages users and communities across the instance. Use this community for administrative tasks only. |
-    | sekoia community         | `admin@sekoia.io`         | Reserved for internal platform operations: it holds the permissions of the platform applications. Do not use or modify this community or its account. `PlatformAccess` does not display the credentials of this account. |
+Your instance contains two built-in communities after installation, each with a built-in account:
 
-    You must create a separate community to run your security operations.
+| Community                | Built-in account          | Purpose                                                                                          |
+| :---                     | :---                      | :---                                                                                             |
+| Administration Community | `instanceadmin@sekoia.io` | Manages users and communities across the instance. Use this community for administrative tasks only. |
+| sekoia community         | `admin@sekoia.io`         | Reserved for internal platform operations: it holds the permissions of the platform applications. Do not use or modify this community or its account. `PlatformAccess` does not display the credentials of this account. |
+
+You must create a separate community to run your security operations.
+{% endhint %}
 
 ## Create your community
 
-![The Communities page of the Administration Community, listing the two built-in communities, with the Create button in the top right corner.](/assets/self_hosted/1.0.1/first_login/communities.png)
+![The Communities page of the Administration Community, listing the two built-in communities, with the Create button in the top right corner.](../../../assets/self_hosted/1.0.1/first_login/communities.png)
 
 1. In the left navigation panel, select **Communities**.
 2. In the top right corner, select **+ Create**.
@@ -108,7 +125,7 @@ Your new community appears in the list alongside the two built-in communities.
 
 Your community has no active subscription until you import the license file provided by Sekoia.
 
-![The Subscriptions tab of a new community with no active subscription, and the Allocate a subscription button.](/assets/self_hosted/1.0.1/first_login/allocate.png)
+![The Subscriptions tab of a new community with no active subscription, and the Allocate a subscription button.](../../../assets/self_hosted/1.0.1/first_login/allocate.png)
 
 1. In the communities list, select your community.
 2. Select the **Subscriptions** tab.
@@ -119,7 +136,7 @@ Your community has no active subscription until you import the license file prov
 
 Your subscription appears in the **Subscriptions** tab with its tier name, validity period, asset limit, and storage option.
 
-![The Subscriptions tab of a community showing the imported subscription with its tier, validity period, region, asset limit, and storage options.](/assets/self_hosted/1.0.1/first_login/subscription.png)
+![The Subscriptions tab of a community showing the imported subscription with its tier, validity period, region, asset limit, and storage options.](../../../assets/self_hosted/1.0.1/first_login/subscription.png)
 
 ## Connect to your community
 
@@ -175,8 +192,11 @@ curl 'https://<PLATFORM-DOMAIN>/api/v1/communities/<COMMUNITY-UUID>/domains' \
 | `<SSO-DOMAIN>`       | The domain name to register for SSO (for example, `example.com`)                |
 | `<CA-BUNDLE>`        | The path of the PEM bundle of the private certificate authority that signs the platform certificate. If a certificate authority that the orchestration node already trusts signs it, remove the `--cacert` option. |
 
-!!! warning "Self-signed test certificate"
-    `curl` cannot verify a self-signed certificate. Only on a test instance that uses a self-signed certificate, replace `--cacert '<CA-BUNDLE>'` with `--insecure`. This option disables the verification of the server identity, while the request sends the API key of the instance administrator: never use it on a production instance.
+{% hint style="warning" %}
+**Self-signed test certificate**
+
+`curl` cannot verify a self-signed certificate. Only on a test instance that uses a self-signed certificate, replace `--cacert '<CA-BUNDLE>'` with `--insecure`. This option disables the verification of the server identity, while the request sends the API key of the instance administrator: never use it on a production instance.
+{% endhint %}
 
 ### Step 4: Verify the domain registration
 
@@ -189,10 +209,10 @@ curl 'https://<PLATFORM-DOMAIN>/api/v1/communities/<COMMUNITY-UUID>/domains' \
 2. Enter your identity provider's client ID, client secret, and authorization endpoint.
 3. Select **Save**.
 
-For the full OpenID Connect configuration, see [Configure SSO with OpenID Connect](/getting_started/sso/openid_connect.md).
+For the full OpenID Connect configuration, see [Configure SSO with OpenID Connect](../../../getting_started/sso/openid_connect.md).
 
 ## Related links
 
-- [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md): Deployment steps and post-deployment validation.
-- [Monitor your platform](/self_hosted/1.0.1/monitoring/monitoring_guide.md): How to set up alerts and dashboards for daily operations.
-- [Release notes v1.0.1](/self_hosted/1.0.1/release_notes.md): Feature scope and functional constraints.
+- [Deploy the platform](../deployment/deployment_guide.md): Deployment steps and post-deployment validation.
+- [Monitor your platform](../monitoring/monitoring_guide.md): How to set up alerts and dashboards for daily operations.
+- [Release notes v1.0.1](../release_notes.md): Feature scope and functional constraints.

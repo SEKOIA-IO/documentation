@@ -1,6 +1,6 @@
 # Manage feeds
 
-This article covers how to consume, edit, duplicate, and delete an existing feed. To create a new feed, see [Create a feed](/cti/features/consume/create_feed.md).
+This article covers how to consume, edit, duplicate, and delete an existing feed. To create a new feed, see [Create a feed](create_feed.md).
 
 ## Consume a feed
 
@@ -49,8 +49,11 @@ Sekoia.io creates an exact copy of the feed's filters and settings.
 
 Remove a feed that is no longer required for your operations.
 
-!!! warning "Permanent action"
-    Deleting a feed is irreversible. Any external tools relying on this Feed ID or URL will lose access to the data stream.
+{% hint style="warning" %}
+**Permanent action**
+
+Deleting a feed is irreversible. Any external tools relying on this Feed ID or URL will lose access to the data stream.
+{% endhint %}
 
 **Procedure**
 
@@ -61,7 +64,7 @@ Remove a feed that is no longer required for your operations.
 
 ## Related articles
 
-- [Feeds](/cti/features/consume/feeds.md) — Understand what feeds are, how they work, available formats, and the default feed.
-- [Create a feed](/cti/features/consume/create_feed.md) — Configure and activate a new feed by selecting object types, sources, TLP levels, and output format.
-- [Create a detection rule from a feed](/cti/features/consume/create_detection_rule_from_feed.md) — Link a feed to a CTI detection rule to automatically match IOCs against your telemetry. Requires a Defend subscription.
+- [Feeds](feeds.md) — Understand what feeds are, how they work, available formats, and the default feed.
+- [Create a feed](create_feed.md) — Configure and activate a new feed by selecting object types, sources, TLP levels, and output format.
+- [Create a detection rule from a feed](create_detection_rule_from_feed.md) — Link a feed to a CTI detection rule to automatically match IOCs against your telemetry. Requires a Defend subscription.
  

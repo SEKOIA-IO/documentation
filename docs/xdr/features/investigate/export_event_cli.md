@@ -9,23 +9,30 @@ The `sekoia-event-exporter` is the official command-line tool for automating the
 * The **Search Job UUID** (copied from the browser URL when viewing results).
 * Sekoia.io operates in multiple regions. **Configure your region** when using the CLI.
 
-??? info "CLI Configuration"
-    ```bash
-    # Using environment variable
-    export API_HOST=api.usa1.sekoia.io
-    uvx sekoia-event-exporter export <job_uuid>
+<details>
+<summary>CLI Configuration</summary>
 
-    # Using command flag
-    uvx sekoia-event-exporter export <job_uuid> --api-host api.usa1.sekoia.io
-    ```
+```bash
+# Using environment variable
+export API_HOST=api.usa1.sekoia.io
+uvx sekoia-event-exporter export <job_uuid>
 
-!!! note "Re-execution behavior"
-    When you trigger an export, SEKOIA **does not reuse** the cached search results. Instead, it:
+# Using command flag
+uvx sekoia-event-exporter export <job_uuid> --api-host api.usa1.sekoia.io
+```
 
-    - Re-runs your exact search query
-    - Uses the same time range and filters
-    - Streams results directly to storage
-    This means **exported results may include new or late-arriving events **that weren't in your original search.
+</details>
+
+{% hint style="info" %}
+**Re-execution behavior**
+
+When you trigger an export, SEKOIA **does not reuse** the cached search results. Instead, it:
+
+- Re-runs your exact search query
+- Uses the same time range and filters
+- Streams results directly to storage
+This means **exported results may include new or late-arriving events **that weren't in your original search.
+{% endhint %}
 
 ## Basic export procedure
 1.  Open your terminal and set your API key:
@@ -38,14 +45,20 @@ The `sekoia-event-exporter` is the official command-line tool for automating the
     ```
 3.  Wait for the real-time progress bar to finish.
 
-!!! warning "Encryption key storage"
-    The tool displays a unique encryption key upon completion. Save this key in a secure vault. Without it, you cannot re-download the file from S3 storage if the local copy is lost.
+{% hint style="warning" %}
+**Encryption key storage**
 
-!!! tip "Manual status check"
-    If you disconnected or closed your terminal, you can resume monitoring using the status command and your Task UUID. (The task UUID appears in the first few lines of the output):
-    ```bash
-     uvx sekoia-event-exporter status <task_uuid>
-    ```
+The tool displays a unique encryption key upon completion. Save this key in a secure vault. Without it, you cannot re-download the file from S3 storage if the local copy is lost.
+{% endhint %}
+
+{% hint style="success" %}
+**Manual status check**
+
+If you disconnected or closed your terminal, you can resume monitoring using the status command and your Task UUID. (The task UUID appears in the first few lines of the output):
+```bash
+ uvx sekoia-event-exporter status <task_uuid>
+```
+{% endhint %}
 
 ## Advanced: Export to custom S3 buckets
 You can skip manual downloads by feeding events directly into your own data lake or S3 bucket. The tool supports AWS S3 and S3-compatible storage such as MinIO or Wasabi.
@@ -64,6 +77,6 @@ You can skip manual downloads by feeding events directly into your own data lake
     ```
 
 ## See also: 
-- To export with API, follow the [Export events with the API](/xdr/features/investigate/export_event_API.md) guide
-- To review the exact quotas, processing times, and troubleshooting steps, consult the [Export technical reference](/xdr/features/investigate/export_reference.md).
-- For practical examples of how to configure fields for specific security investigations, see our [Event export use cases](/xdr/usecases/massive_export.md).
+- To export with API, follow the [Export events with the API](export_event_API.md) guide
+- To review the exact quotas, processing times, and troubleshooting steps, consult the [Export technical reference](export_reference.md).
+- For practical examples of how to configure fields for specific security investigations, see our [Event export use cases](../../usecases/massive_export.md).

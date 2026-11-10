@@ -16,12 +16,15 @@ An empty playbook offers two ways to start:
 - **Start from a template**: Select a ready-made playbook from the Playbooks Catalog.
 - **Add a trigger** or **Add an action**: Build the workflow block by block.
 
-![Empty playbook with the Start from a template, Add a trigger, and Add an action cards](/assets/operation_center/playbooks/playbook_empty_state.png){: style="max-width:100%"}
+![Empty playbook with the Start from a template, Add a trigger, and Add an action cards](../../../assets/operation_center/playbooks/playbook_empty_state.png)
 
-!!! tip "Playbook name"
-    A new playbook is named "New playbook". If you start it with **Start from a template**, **Add a trigger**, or **Add an action**, the playbook takes the name of the template or module you select, followed by the name of its community. For example, "Enrich alerts with VirusTotal - Acme". The community name is not added to a meta-playbook that runs on several communities. A module added directly from the module menu does not rename the playbook.
+{% hint style="success" %}
+**Playbook name**
 
-    To rename the playbook, click the edit icon next to its name in the playbook header, enter the new name, and click **Save**.
+A new playbook is named "New playbook". If you start it with **Start from a template**, **Add a trigger**, or **Add an action**, the playbook takes the name of the template or module you select, followed by the name of its community. For example, "Enrich alerts with VirusTotal - Acme". The community name is not added to a meta-playbook that runs on several communities. A module added directly from the module menu does not rename the playbook.
+
+To rename the playbook, click the edit icon next to its name in the playbook header, enter the new name, and click **Save**.
+{% endhint %}
 
 ## Start from a template {#templates}
 
@@ -34,7 +37,7 @@ To start from a template:
 3. Select a template to preview its workflow.
 4. Click **Use this template**.
 
-![Select a template from our Playbooks Catalog window](/assets/operation_center/playbooks/playbook_template_picker.png){: style="max-width:100%"}
+![Select a template from our Playbooks Catalog window](../../../assets/operation_center/playbooks/playbook_template_picker.png)
 
 The template workflow fills the graph area. Configure the accounts and settings of each block before activating the playbook.
 
@@ -84,23 +87,23 @@ To build a playbook from scratch:
 
 A playbook combines the following building blocks:
 
-1. [Triggers](/xdr/features/automate/triggers.md): Alert-related, manual, and Cron triggers.
-2. [Operators](/xdr/features/automate/operators.md): Condition, Foreach, and Store operators.
-3. [Actions](/xdr/features/automate/actions.md): Getters, setters, external data enrichers, and notifications.
+1. [Triggers](triggers.md): Alert-related, manual, and Cron triggers.
+2. [Operators](operators.md): Condition, Foreach, and Store operators.
+3. [Actions](actions.md): Getters, setters, external data enrichers, and notifications.
 
-For more information about the module menu, see [Navigate playbooks](/xdr/features/automate/navigate_playbooks.md#module-menu).
+For more information about the module menu, see [Navigate playbooks](navigate_playbooks.md#module-menu).
 
-You can also refer to the [playbook templates](https://github.com/SEKOIA-IO/Community/tree/main/playbooks/templates) and [playbook use cases](/xdr/usecases/playbook/synchronize_alerts.md) for examples.
+You can also refer to the [playbook templates](https://github.com/SEKOIA-IO/Community/tree/main/playbooks/templates) and [playbook use cases](../../usecases/playbook/synchronize_alerts.md) for examples.
 
 ## Create a meta-playbook
 
 When you create a playbook from a multi-tenant workspace, the **Create new playbook** window asks you to **Choose a community for your playbook**. You can select one community, several communities, or all communities with **Select all**, then click **Create**. A playbook created for several communities is a meta-playbook.
 
-![Community selection when creating a playbook](/assets/operation_center/playbooks/playbooks-meta-new.png){: style="max-width:100%"}
+![Community selection when creating a playbook](../../../assets/operation_center/playbooks/playbooks-meta-new.png)
 
 If you select a single sub-community, the **Grant access to this playbook** step follows the community selection.
 
-![Single-community selection when creating a playbook](/assets/operation_center/playbooks/playbooks-meta-single.png){: style="max-width:100%"}
+![Single-community selection when creating a playbook](../../../assets/operation_center/playbooks/playbooks-meta-single.png)
 
 Choose whether users from this community can access the playbook, then click **Create**:
 
@@ -109,13 +112,13 @@ Choose whether users from this community can access the playbook, then click **C
 | **No access** | Users from the community cannot access or edit the playbook. The playbook remains a meta-playbook managed from the workspace, and you can add more communities later. |
 | **Access** | All users from the community can access and edit the playbook. You cannot add more communities to the playbook later. |
 
-![Grant access with No access selected](/assets/operation_center/playbooks/playbooks-meta-access-ok.png){: style="max-width:100%"}
+![Grant access with No access selected](../../../assets/operation_center/playbooks/playbooks-meta-access-ok.png)
 
-![Grant access with Access selected](/assets/operation_center/playbooks/playbooks-meta-access-ko.png){: style="max-width:100%"}
+![Grant access with Access selected](../../../assets/operation_center/playbooks/playbooks-meta-access-ko.png)
 
 ## Related articles
 
-* [Navigate playbooks](/xdr/features/automate/navigate_playbooks.md): Reference for the playbooks list and the playbook interface.
-* [Organize playbooks with custom fields](/xdr/features/automate/organize_playbooks_with_custom_fields.md): How to add custom fields to playbooks and group the playbooks list.
-* [Restore a playbook version](/xdr/features/automate/restore_a_playbook_version.md): How to preview, compare, and restore a previous version of a playbook.
-* [Debug playbooks](/xdr/features/automate/debug-playbooks.md): How to investigate failed runs and trigger errors.
+* [Navigate playbooks](navigate_playbooks.md): Reference for the playbooks list and the playbook interface.
+* [Organize playbooks with custom fields](organize_playbooks_with_custom_fields.md): How to add custom fields to playbooks and group the playbooks list.
+* [Restore a playbook version](restore_a_playbook_version.md): How to preview, compare, and restore a previous version of a playbook.
+* [Debug playbooks](debug-playbooks.md): How to investigate failed runs and trigger errors.

@@ -1,6 +1,6 @@
 # Lacework
 
-![Lacework](/assets/playbooks/library/lacework.png){ align=right width=150 }
+![Lacework](../../../../assets/playbooks/library/lacework.png)
 
 [Lacework](https://www.lacework.com/) is a cybersecurity company specializing in cloud security and compliance, offering automated threat detection and response solutions for modern cloud environments.
 

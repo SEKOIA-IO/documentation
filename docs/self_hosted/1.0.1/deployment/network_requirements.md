@@ -29,17 +29,23 @@ Traefik runs on every Kubernetes node, and K3s binds its ports 80, 443, 10514, a
 | RELP over TLS | Event ingestion | Application load balancer | Kubernetes application backends | TCP | 11514 |
 | Kubernetes API | K3s API access and node registration in a highly available deployment | Kubernetes API load balancer | All manager nodes | TCP | 6443 |
 
-!!! warning "Do not send PROXY Protocol headers"
-    Traefik does not accept PROXY Protocol headers on ports 80 and 443. On ports 10514 and 11514, it accepts them only from the `10.0.255.0/24` range. Configure your load balancer without PROXY Protocol.
+{% hint style="warning" %}
+**Do not send PROXY Protocol headers**
 
-!!! note "Port 10901"
-    Traefik also binds TCP 10901 on every node. No flow uses this port, so keep it blocked at the perimeter, but leave it free on every node: if another process uses it, the node stops serving ports 80, 443, 10514, and 11514.
+Traefik does not accept PROXY Protocol headers on ports 80 and 443. On ports 10514 and 11514, it accepts them only from the `10.0.255.0/24` range. Configure your load balancer without PROXY Protocol.
+{% endhint %}
+
+{% hint style="info" %}
+**Port 10901**
+
+Traefik also binds TCP 10901 on every node. No flow uses this port, so keep it blocked at the perimeter, but leave it free on every node: if another process uses it, the node stops serving ports 80, 443, 10514, and 11514.
+{% endhint %}
 
 The Kubernetes API load balancer flow is required when `global.kube_manager_host` points to a load balancer for a highly available control plane. Restrict access to trusted cluster and administration networks.
 
 ### Check the load balancer listeners
 
-After the installation, check from a client network that each listener passes the TLS connection through to Traefik. Each check must show your platform certificate. Another certificate means that the load balancer terminates TLS itself. A certificate with the subject `CN = TRAEFIK DEFAULT CERT` means that Traefik has no valid platform certificate: see [TLS certificate](/self_hosted/1.0.1/deployment/deployment_configuration.md#tls-certificate).
+After the installation, check from a client network that each listener passes the TLS connection through to Traefik. Each check must show your platform certificate. Another certificate means that the load balancer terminates TLS itself. A certificate with the subject `CN = TRAEFIK DEFAULT CERT` means that Traefik has no valid platform certificate: see [TLS certificate](deployment_configuration.md#tls-certificate).
 
 To check the HTTPS listener, run:
 
@@ -61,8 +67,11 @@ Expected output: a redirect status with a `Location` header that starts with `ht
 
 ## NodePort services
 
-!!! warning "Block the NodePort range from untrusted networks"
-    The platform creates NodePort services that answer on the IP address of every node, whatever the node that runs the service. Loki on TCP 30011 does not require any authentication: anyone who reaches this port can read the platform logs and push log entries. The standard deployment needs none of these ports from outside the cluster. Block TCP and UDP 30000-32767 at the perimeter, and open only the individual NodePort that an authorized external consumer requires, restricted to the addresses of this consumer.
+{% hint style="warning" %}
+**Block the NodePort range from untrusted networks**
+
+The platform creates NodePort services that answer on the IP address of every node, whatever the node that runs the service. Loki on TCP 30011 does not require any authentication: anyone who reaches this port can read the platform logs and push log entries. The standard deployment needs none of these ports from outside the cluster. Block TCP and UDP 30000-32767 at the perimeter, and open only the individual NodePort that an authorized external consumer requires, restricted to the addresses of this consumer.
+{% endhint %}
 
 | Port | Service | Authentication |
 | :--- | :--- | :--- |
@@ -108,11 +117,17 @@ Allow these flows on the private network between Kubernetes nodes, in both direc
 | Cilium VXLAN | Encapsulated pod-to-pod traffic | All manager and worker nodes | All manager and worker nodes | UDP | 8472 |
 | ICMP | Path MTU discovery and network diagnostics | All manager and worker nodes | All manager and worker nodes | ICMP | N/A |
 
-!!! warning "Open the cluster ports between all nodes"
-    Etcd runs only on the manager nodes, but the `CheckNodePortReachability` preflight check probes TCP 6443, 2379, 2380, 4240, 4250, 10514, and 11514 from every node to every other node, whatever its role. Allow these ports between all manager and worker nodes, or the check blocks the installation. See [CheckNodePortReachability](/self_hosted/1.0.1/troubleshooting/debug_tool.md#checknodeportreachability).
+{% hint style="warning" %}
+**Open the cluster ports between all nodes**
 
-!!! note "Free ports on every node"
-    The cluster binds TCP 80, 443, 2379, 2380, 4240, 4250, 6443, 10514, and 11514 on every node. `CheckServerSpec` fails when another process already listens on one of them. See [Free ports](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#free-ports).
+Etcd runs only on the manager nodes, but the `CheckNodePortReachability` preflight check probes TCP 6443, 2379, 2380, 4240, 4250, 10514, and 11514 from every node to every other node, whatever its role. Allow these ports between all manager and worker nodes, or the check blocks the installation. See [CheckNodePortReachability](../troubleshooting/debug_tool.md#checknodeportreachability).
+{% endhint %}
+
+{% hint style="info" %}
+**Free ports on every node**
+
+The cluster binds TCP 80, 443, 2379, 2380, 4240, 4250, 6443, 10514, and 11514 on every node. `CheckServerSpec` fails when another process already listens on one of them. See [Free ports](deployment_prerequisites.md#free-ports).
+{% endhint %}
 
 The standard deployment disables Flannel and kube-proxy and installs Cilium with VXLAN tunneling. Cilium also handles the Kubernetes services, so a NodePort service answers on the IP address of every node. Ensure host firewalls permit forwarding for the pod network and do not apply network address translation between cluster nodes.
 
@@ -121,7 +136,7 @@ The cluster uses the following fixed internal ranges. Make sure that they do not
 | Range | Usage |
 | :--- | :--- |
 | `10.42.0.0/16` | Pod network. |
-| `10.43.0.0/16` | Service network. CoreDNS uses `10.43.0.10` and Traefik uses `10.43.111.111`, set by `modules.platform_configuration.config.traefik.service_ip`. See [Traefik service IP](/self_hosted/1.0.1/deployment/deployment_configuration.md#traefik-service-ip). |
+| `10.43.0.0/16` | Service network. CoreDNS uses `10.43.0.10` and Traefik uses `10.43.111.111`, set by `modules.platform_configuration.config.traefik.service_ip`. See [Traefik service IP](deployment_configuration.md#traefik-service-ip). |
 
 ## Outbound flows to infrastructure services
 
@@ -156,10 +171,13 @@ Allow the following flows only when you enable or use the corresponding feature.
 
 Before you open a NodePort, read the security constraints in [NodePort services](#nodeport-services).
 
-!!! note "Git and OCI protocols"
-    ArgoCD connects to the Git repository with a username and a password over HTTP or HTTPS, and pulls the Helm charts from the OCI registry over HTTPS. Git over SSH and an OCI registry served over plain HTTP are not supported.
+{% hint style="info" %}
+**Git and OCI protocols**
 
-When a proxy is configured, allow clients to reach the proxy and configure the proxy to reach the destinations that use it. On the platform side, the proxy applies to ArgoCD, ExaLog indexing, the threat intelligence backend, and playbook actions. Email (SMTP) and OpenID Connect connections do not use the proxy. See [Proxy](/self_hosted/1.0.1/deployment/deployment_configuration.md#proxy).
+ArgoCD connects to the Git repository with a username and a password over HTTP or HTTPS, and pulls the Helm charts from the OCI registry over HTTPS. Git over SSH and an OCI registry served over plain HTTP are not supported.
+{% endhint %}
+
+When a proxy is configured, allow clients to reach the proxy and configure the proxy to reach the destinations that use it. On the platform side, the proxy applies to ArgoCD, ExaLog indexing, the threat intelligence backend, and playbook actions. Email (SMTP) and OpenID Connect connections do not use the proxy. See [Proxy](deployment_configuration.md#proxy).
 
 ## Air-gapped environments
 
@@ -169,6 +187,6 @@ The orchestration node pushes release artifacts to the local Git and OCI service
 
 ## Related links
 
-- [Technical requirements](/self_hosted/1.0.1/deployment/deployment_prerequisites.md): Hardware, OS, and operational prerequisites.
-- [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md): Step-by-step installation instructions.
-- [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md): Required platform storage, registry, DNS, and endpoint settings.
+- [Technical requirements](deployment_prerequisites.md): Hardware, OS, and operational prerequisites.
+- [Deploy the platform](deployment_guide.md): Step-by-step installation instructions.
+- [Configure the deployment](deployment_configuration.md): Required platform storage, registry, DNS, and endpoint settings.

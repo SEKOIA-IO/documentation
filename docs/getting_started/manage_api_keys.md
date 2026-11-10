@@ -20,8 +20,11 @@ API keys are required for:
 - CTI interconnection with third-party threat intelligence platforms
 - Automated scripts or pipelines that query the platform
 
-!!! note "Permissions-based, not role-based"
-    Sekoia API keys are permissions-based. When you create a key, you select exactly which permissions it carries, independent of any user role. Always apply the principle of least privilege: grant only the permissions the integration actually needs.
+{% hint style="info" %}
+**Permissions-based, not role-based**
+
+Sekoia API keys are permissions-based. When you create a key, you select exactly which permissions it carries, independent of any user role. Always apply the principle of least privilege: grant only the permissions the integration actually needs.
+{% endhint %}
 
 ## Create an API key
 
@@ -35,8 +38,11 @@ Only users with the Admin role can create API keys.
 6. Select the permissions the key requires.
 7. Click **Save**.
 
-!!! warning "Copy the key immediately"
-    The API key is displayed only once, immediately after creation. Copy it and store it in a secure vault before closing the window. Sekoia cannot display the key value again after you navigate away.
+{% hint style="warning" %}
+**Copy the key immediately**
+
+The API key is displayed only once, immediately after creation. Copy it and store it in a secure vault before closing the window. Sekoia cannot display the key value again after you navigate away.
+{% endhint %}
 
 The maximum length of an API key is 100 characters.
 
@@ -58,8 +64,11 @@ Keys are listed by creation date, most recent first.
 
 Revoking a key permanently disables it. This action cannot be undone.
 
-!!! warning "Irreversible action"
-    Revoking an API key immediately breaks any integration or automation that relies on it. Before revoking, confirm that the key is no longer in use or that a replacement key has been deployed.
+{% hint style="warning" %}
+**Irreversible action**
+
+Revoking an API key immediately breaks any integration or automation that relies on it. Before revoking, confirm that the key is no longer in use or that a replacement key has been deployed.
+{% endhint %}
 
 To revoke an API key:
 
@@ -77,5 +86,5 @@ To revoke an API key:
 
 ## Related links
 
-- [Workspace setup overview](/getting_started/workspace_setup_overview.md): Full admin checklist for configuring your workspace.
-- [Roles and permissions](/getting_started/roles_and_permissions.md): How user roles differ from API key permissions.
+- [Workspace setup overview](workspace_setup_overview.md): Full admin checklist for configuring your workspace.
+- [Roles and permissions](roles_and_permissions.md): How user roles differ from API key permissions.

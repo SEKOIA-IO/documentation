@@ -22,8 +22,11 @@ Consider a rule that runs every 15 minutes:
 
 The 10:30 run reaches back to 10:10, so it re-covers the final 5 minutes of the 10:15 run. An event timestamped 10:14 that only arrives in Sekoia at 10:21 is missed by the 10:15 run, but the 10:30 run still evaluates it because its window starts at 10:10. The detection fires.
 
-!!! note "Automatic behavior"
-    The 5-minute overlap is applied to every SOL detection run. It is managed by the platform and is not configurable on the rule.
+{% hint style="info" %}
+**Automatic behavior**
+
+The 5-minute overlap is applied to every SOL detection run. It is managed by the platform and is not configurable on the rule.
+{% endhint %}
 
 ## Deduplication in the overlap window
 
@@ -33,11 +36,14 @@ To prevent this, the engine deduplicates the overlapping results before any aler
 
 Using the same example, an event timestamped 10:12 that arrived on time was already evaluated by the 10:15 run. It falls inside the 10:10 to 10:15 overlap that the 10:30 run re-reads, so the 10:30 run discards it during deduplication and does not raise a second alert for it.
 
-!!! note "Different from alert similarity"
-    Overlap deduplication is a row-level safeguard internal to rule execution: it removes results the rule has already evaluated. It is not the same as alert similarity, which groups similar events from different matches into a single alert as occurrences. The two work at different layers. For how matches are grouped into an alert, see [Alert similarity](/xdr/features/investigate/alerts.md#alert-similarity).
+{% hint style="info" %}
+**Different from alert similarity**
+
+Overlap deduplication is a row-level safeguard internal to rule execution: it removes results the rule has already evaluated. It is not the same as alert similarity, which groups similar events from different matches into a single alert as occurrences. The two work at different layers. For how matches are grouped into an alert, see [Alert similarity](../investigate/alerts.md#alert-similarity).
+{% endhint %}
 
 ## Related articles
 
-* [SOL detection rules](/xdr/features/detect/sol_detection_rule.md): Conceptual overview of the SOL and Event Drop detection patterns, how they work, and when to use them.
-* [Create a SOL detection rule](/xdr/features/detect/create_sol_detection_rule.md): Step-by-step instructions to configure and activate a SOL or Event Drop detection rule.
-* [Alert similarity](/xdr/features/investigate/alerts.md#similarity-strategies): How the platform groups similar events into a single alert as occurrences.
+* [SOL detection rules](sol_detection_rule.md): Conceptual overview of the SOL and Event Drop detection patterns, how they work, and when to use them.
+* [Create a SOL detection rule](create_sol_detection_rule.md): Step-by-step instructions to configure and activate a SOL or Event Drop detection rule.
+* [Alert similarity](../investigate/alerts.md#similarity-strategies): How the platform groups similar events into a single alert as occurrences.

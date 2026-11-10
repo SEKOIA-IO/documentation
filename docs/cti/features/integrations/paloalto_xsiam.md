@@ -26,7 +26,7 @@ The playbook has **3 nodes**:
 3. **Send Batch to XSIAM** (Action)
    Calls the XSIAM `indicators/insert_jsons` API to inject indicators into a Collection.
 
-![xsiam_playbook_workflow](/assets/intelligence_center/XSIAM/xsiam_playbook_workflow.png){:style="max-width:80%"}
+![xsiam_playbook_workflow](../../../assets/intelligence_center/XSIAM/xsiam_playbook_workflow.png)
 
 ---
 
@@ -45,12 +45,12 @@ The playbook has **3 nodes**:
 6. Keep the **Feed format** as **JSON (default)**.
 7. Click **Save**.
 
-![xsiam_custom_feed](/assets/intelligence_center/XSIAM/xsiam_custom_feed.png){:style="max-width:100%"}
+![xsiam_custom_feed](../../../assets/intelligence_center/XSIAM/xsiam_custom_feed.png)
 
 8. In the feed details view, click **Copy Feed ID**.
    You will need this in the playbook configuration.
 
-![xsiam_custom_feed_copy_id](/assets/intelligence_center/XSIAM/xsiam_custom_feed_copy_id.png){:style="max-width:50%"}
+![xsiam_custom_feed_copy_id](../../../assets/intelligence_center/XSIAM/xsiam_custom_feed_copy_id.png)
 
 ---
 
@@ -77,7 +77,7 @@ The playbook has **3 nodes**:
   - **Modified After**: an RFC-3339 timestamp (e.g. `2025-06-12T23:20:50.52Z`). We recommend to start with a week of history to avoid disruption of SOC Analysts processes.
   - **Resolve Sources**: `true`
 
-![xsiam_custom_feed_consumption_configuration](/assets/intelligence_center/XSIAM/xsiam_custom_feed_consumption_configuration.png){:style="max-width:100%"}
+![xsiam_custom_feed_consumption_configuration](../../../assets/intelligence_center/XSIAM/xsiam_custom_feed_consumption_configuration.png)
 
 > This trigger outputs `{{ node.0.stix_objects_path }}`, a JSONPath to the STIX objects array.
 
@@ -140,7 +140,7 @@ You can override these arguments in the node’s UI:
 
 - Force all severities to LOW (i.e. all Confidence values highier than 0 will be traduced in "LOW"):
 
-![xsiam_override_severity](/assets/intelligence_center/XSIAM/xsiam_override_severity.png){:style="max-width:80%"}
+![xsiam_override_severity](../../../assets/intelligence_center/XSIAM/xsiam_override_severity.png)
 
 - Custom reliability bands:
 
@@ -151,7 +151,7 @@ You can override these arguments in the node’s UI:
    | 0–49       | C           |
    | —          | D / E / F / G (unused) |
 
-![xsiam_override_reliability](/assets/intelligence_center/XSIAM/xsiam_override_reliability.png){:style="max-width:80%"}
+![xsiam_override_reliability](../../../assets/intelligence_center/XSIAM/xsiam_override_reliability.png)
 
 > After running, `{{ node.1.data }}` contains a list of XSIAM-ready JSON objects.
 
@@ -203,7 +203,7 @@ Fetched 200 objects from the feed
 
 4. Verify the run status under **Runs**.
 
-![xsiam_run_success](/assets/intelligence_center/XSIAM/xsiam_run_success.png){:style="max-width:100%"}
+![xsiam_run_success](../../../assets/intelligence_center/XSIAM/xsiam_run_success.png)
 
 5. In Palo Alto XSIAM, go to **Collections ➔ Indicators** to confirm your IOCs arrived.
 

@@ -16,7 +16,7 @@ It provides a table with the following information:
 
 ### Filter and sort
 To quickly find a Dashboard, you have a few options accessible from the top of listing page:
-![image locating search, filter and sort CTA on the page](/assets/xdr/dashboards/dashboard_sort_option.png)
+![image locating search, filter and sort CTA on the page](../../../assets/xdr/dashboards/dashboard_sort_option.png)
 
 * **Search:** Enter keywords in the search bar to retrieve a specific dashboard.
 * **Filter:** Choose between **All community dashboards** or **Personal dashboards (Created by me)**.
@@ -29,8 +29,9 @@ You can easily create a new Dashboard directly from the Listing page:
 1.  Click the **+ New dashboard** button.
 2.  Start building your custom view.
 
-!!! note
-    Dashboards you create will be available to all members of your community.
+{% hint style="info" %}
+Dashboards you create will be available to all members of your community.
+{% endhint %}
 
 ## Manage existing dashboards
 
@@ -42,8 +43,9 @@ Select **Duplicate** to automatically create a copy of the Dashboard with all it
 ### Delete
 Select **Delete** to remove the Dashboard.
 
-!!! warning
-    This will remove the dashboard for **all members** of the community.
+{% hint style="warning" %}
+This will remove the dashboard for **all members** of the community.
+{% endhint %}
 
 ### Set as homepage
 Select **Set as homepage** to make this Dashboard your default landing page.
@@ -55,8 +57,9 @@ Select **Set as homepage** to make this Dashboard your default landing page.
 
 Managing the time range is essential for analyzing trends over specific periods. The Dashboard offers flexible options for configuring the time range for each Widget or the overall view. 
 
-!!! note
-    You can pin the widget's time filter to the dashboard and apply the new time filter to the whole dashboard. More information in our [Filter data in dashboards article](https://docs.sekoia.com/xdr/features/report/dashboards_filters/#:~:text=Apply%20filters%20to%20all%20widgets%20in%20the%20dashboard%20to%20synchronize%20changes,-The%20primary%20benefit)
+{% hint style="info" %}
+You can pin the widget's time filter to the dashboard and apply the new time filter to the whole dashboard. More information in our [Filter data in dashboards article](https://docs.sekoia.com/xdr/features/report/dashboards_filters/#:~:text=Apply%20filters%20to%20all%20widgets%20in%20the%20dashboard%20to%20synchronize%20changes,-The%20primary%20benefit)
+{% endhint %}
 
 ### Dashboard date range
 For Built-in Widgets, you can synchronize the time range with the overall Dashboard's date range.
@@ -80,8 +83,9 @@ To manually update data across all Widgets on the current Dashboard:
 * Click the **Refresh** button located near the top of the Dashboard.
 * The date and time of the last successful refresh are displayed next to the button.
 
-!!! note
-    You can only trigger a manual refresh once every minute.
+{% hint style="info" %}
+You can only trigger a manual refresh once every minute.
+{% endhint %}
 
 ### Auto-refresh
 If you prefer automated updates, you can enable the **Auto-refresh** option in the Dashboard settings.
@@ -91,4 +95,4 @@ If you prefer automated updates, you can enable the **Auto-refresh** option in t
 ---
 **Next steps**
 
-* Your Dashboard is created; now populate it by [Configuring Widgets and layout](/xdr/features/report/add_widgets_dashboards.md).
+* Your Dashboard is created; now populate it by [Configuring Widgets and layout](add_widgets_dashboards.md).

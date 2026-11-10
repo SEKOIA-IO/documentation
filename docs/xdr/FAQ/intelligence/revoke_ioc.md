@@ -8,7 +8,7 @@ Reporting a false positive helps Sekoia.io improve the accuracy of its detection
 
 ### **How to Request the Revocation of an IoC?**
 
-You can do this directly by following these [steps in the documentation](/xdr/features/detect/ioccollections.md#revoke-an-indicator).
+You can do this directly by following these [steps in the documentation](../../features/detect/ioccollections.md#revoke-an-indicator).
 
 ### **What Happens After Requesting the Revocation of an IoC?**
 

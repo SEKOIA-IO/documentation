@@ -4,7 +4,7 @@ type: playbook
 
 # OSINT
 
-![OSINT](/assets/playbooks/library/osint.svg){ align=right width=150 }
+![OSINT](../../../../assets/playbooks/library/osint.svg)
 
 This module exposes actions to process OSINT data
 

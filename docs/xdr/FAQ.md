@@ -74,9 +74,9 @@ This way, you will be able to exactly identify what data is sent to Sekoia.io.
 ### Can I access logs older than my hot storage period?
 Yes. If your subscription includes cold storage (**Archiving**, you can request the temporary restoration of archived events. 
 
-To understand how tiers work, see our article on [Data storage and retention](/xdr/FAQ/data_storage_retention.md). 
+To understand how tiers work, see our article on [Data storage and retention](FAQ/data_storage_retention.md). 
 
-To start a restoration, follow the procedure to [restore data from cold storage](/xdr/FAQ/restore_data_cold_storage.md).
+To start a restoration, follow the procedure to [restore data from cold storage](FAQ/restore_data_cold_storage.md).
 
 **Restoration flow**
 
@@ -123,8 +123,9 @@ Anomalies are evaluated in real-time and can impact the user's credibility. Here
     - **Response Time**: Limit requests to less than 100 ms per second over a 10-second period.
     - **Error Requests**: Do not exceed 8 errors/s (4XX or 5XX codes) per 5-second period.
 
-!!! Note
-    **Error Code 429**: Indicates rate limiting when too many requests are received in a short time.
+{% hint style="info" %}
+**Error Code 429**: Indicates rate limiting when too many requests are received in a short time.
+{% endhint %}
 
 ### 4. Recommendations and Best Practices
 
@@ -135,7 +136,8 @@ To avoid being blocked by our WAF, it is important to follow these best practice
 - **Handle Errors**: Pause scripts if the return code is 4XX or 5XX for 2 requests within a 10-second period.
 - **Impact Duration**: In case of blocking, the user will be impacted for between 30 seconds and 10 minutes (randomized duration).
 
-!!! Note
-    Users sharing the same VPN exit point will be considered as a single user. Ensure that multiple users accessing the service through the same VPN do not collectively exceed the recommended limits.
+{% hint style="info" %}
+Users sharing the same VPN exit point will be considered as a single user. Ensure that multiple users accessing the service through the same VPN do not collectively exceed the recommended limits.
+{% endhint %}
 
 By following these recommendations, you can improve the user experience and ensure smooth interaction with our product while respecting the security measures implemented by our WAF.

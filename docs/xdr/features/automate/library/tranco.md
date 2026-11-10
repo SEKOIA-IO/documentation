@@ -4,7 +4,7 @@ type: playbook
 
 # Tranco
 
-![Tranco](/assets/playbooks/library/tranco.png){ align=right width=150 }
+![Tranco](../../../../assets/playbooks/library/tranco.png)
 
 Tranco is an top sites ranking list hardened against manipulation.
 

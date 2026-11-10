@@ -4,7 +4,7 @@ type: playbook
 
 # Triage
 
-![Triage](/assets/playbooks/library/triage.svg){ align=right width=150 }
+![Triage](../../../../assets/playbooks/library/triage.svg)
 
 Triage is a malware analysis sandbox as a service, brought by Hatching
 

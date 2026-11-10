@@ -67,7 +67,7 @@ Depending on the object type, it can include:
 
 For example, a Campaign page can display its source, objective, first seen date, and description. A **Latest reports** section can appear alongside the object details when reports are associated with the object.
 
-![!Campaign object with the Details tab selected, showing metadata, description, and latest reports.](/assets/intelligence_center/campaign_details.png){: style="max-width:100%"}
+![!Campaign object with the Details tab selected, showing metadata, description, and latest reports.](../../../assets/intelligence_center/campaign_details.png)
 
 ## Read the Overview tab
 
@@ -82,7 +82,7 @@ For example, a Location page can include:
 
 The content shown on a Location or Sector page should not be assumed to be available for other object types.
 
-![!Location object with the Overview tab selected, showing the Intelligence Brief and latest reports.](/assets/intelligence_center/location_page.png){: style="max-width:100%"}
+![!Location object with the Overview tab selected, showing the Intelligence Brief and latest reports.](../../../assets/intelligence_center/location_page.png)
 
 ### Read an Intelligence Brief
 
@@ -192,16 +192,16 @@ For general export behavior, see [Data Export](export.md).
 
 ## Related articles
 
-[Intelligence](/cti/features/consume/intelligence.md): How to search and filter objects and observables.
+[Intelligence](intelligence.md): How to search and filter objects and observables.
 
-[Observables](/cti/features/consume/observables.md): Overview of observable types, tags, validity, sources, and relationships.
+[Observables](observables.md): Overview of observable types, tags, validity, sources, and relationships.
 
-[Data model](/cti/features/data_model.md): Reference for object types, relationships, sources, and confidence.
+[Data model](../data_model.md): Reference for object types, relationships, sources, and confidence.
 
-[Graph Explorations](/cti/features/consume/graph_explorations.md): How to explore relationships in a visual graph.
+[Graph Explorations](graph_explorations.md): How to explore relationships in a visual graph.
 
-[Data Export](/cti/features/consume/export.md): How to export related objects.
+[Data Export](export.md): How to export related objects.
 
-[FLINT Reports](/cti/features/consume/flints.md): Overview of Sekoia threat intelligence reports.
+[FLINT Reports](flints.md): Overview of Sekoia threat intelligence reports.
 
-[External Reports](/cti/features/consume/external_reports.md): Overview of reports from external sources.
+[External Reports](external_reports.md): Overview of reports from external sources.

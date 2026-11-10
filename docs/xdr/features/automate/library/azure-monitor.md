@@ -4,7 +4,7 @@ type: playbook
 
 # Azure Monitor
 
-![Azure Monitor](/assets/playbooks/library/azure-monitor.png){ align=right width=150 }
+![Azure Monitor](../../../../assets/playbooks/library/azure-monitor.png)
 
 Azure Monitor is a comprehensive solution for collecting, analyzing, and acting on telemetry from cloud and on-premises environments to maximize the performance and availability of applications.
 

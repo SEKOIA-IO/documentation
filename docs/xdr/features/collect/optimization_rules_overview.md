@@ -1,17 +1,23 @@
 # Optimization rules overview
 
-!!! note "This article covers platform-level optimization rules"
-    Platform-level optimization rules filter events after they reach Sekoia, at the intake level. If you use the Sekoia Endpoint Agent, a separate set of agent-level optimization rules lets you filter events before transmission. See [Reduce event volume with the Sekoia Endpoint Agent](/integration/categories/endpoint/reduce_event_volume_endpoint_agent.md).
+{% hint style="info" %}
+**This article covers platform-level optimization rules**
+
+Platform-level optimization rules filter events after they reach Sekoia, at the intake level. If you use the Sekoia Endpoint Agent, a separate set of agent-level optimization rules lets you filter events before transmission. See [Reduce event volume with the Sekoia Endpoint Agent](../../../integration/categories/endpoint/reduce_event_volume_endpoint_agent.md).
+{% endhint %}
 
 Intake optimization rules allow you to control the processing and handling of incoming events before they are subjected to detection. These rules can be tailored to specific needs using filters and actions to effectively manage event data.
 
-!!! note "This article covers platform-level optimization rules"
-    Platform-level rules filter events after they reach Sekoia, at the intake level. The Sekoia Endpoint Agent has its own agent-level optimization rules that filter before transmission. See [Reduce event volume with the Endpoint Agent](/integration/categories/endpoint/reduce_event_volume_endpoint_agent.md).
+{% hint style="info" %}
+**This article covers platform-level optimization rules**
+
+Platform-level rules filter events after they reach Sekoia, at the intake level. The Sekoia Endpoint Agent has its own agent-level optimization rules that filter before transmission. See [Reduce event volume with the Endpoint Agent](../../../integration/categories/endpoint/reduce_event_volume_endpoint_agent.md).
+{% endhint %}
 
 
 ## When to use platform-level optimization rules
 
-Use platform-level rules when you cannot filter at the source or forwarder level, or when your source is not the Sekoia Endpoint Agent. If you are unsure which approach fits your situation, start with [Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reduction_strategies.md).
+Use platform-level rules when you cannot filter at the source or forwarder level, or when your source is not the Sekoia Endpoint Agent. If you are unsure which approach fits your situation, start with [Log volume reduction strategies](../../usecases/playbook/log_volume_reduction_strategies.md).
 
 ## Logic and execution
 
@@ -27,8 +33,11 @@ A rule is defined by the following components:
 
 * **Scope**: You can target specific intakes using a **Community UUID**, **Dialect UUID**, or **Intake UUID**.
 * **Filters**: A rule can accept several filters. All defined filters of a rule must match an existing field to apply.
-!!! warning "Enriched fields are not available in filters"
-    Rules are evaluated at parsing time, before enrichment runs. Fields added during enrichment, such as `sekoiaio.tags.*`, are not available when rules are evaluated and will never match. Use only fields present in the raw parsed event.
+{% hint style="warning" %}
+**Enriched fields are not available in filters**
+
+Rules are evaluated at parsing time, before enrichment runs. Fields added during enrichment, such as `sekoiaio.tags.*`, are not available when rules are evaluated and will never match. Use only fields present in the raw parsed event.
+{% endhint %}
 * **Action**: This specifies the particular operation executed to optimize the event.
 
 ## Benefits
@@ -38,7 +47,7 @@ A rule is defined by the following components:
 * **Processing efficiency**: Actions like shrinking events or deleting message fields optimize the internal workflow and associated storage.
 
 ## See also
-* [Investigate overusage](/xdr/usecases/playbook/investigate_overusage.md) to learn more about overusage and how to avoid it. 
-* [Optimization rules technical reference](/xdr/features/collect/optimization_rules_reference.md) to learn more about filter operators, action bitmask values and more.
-* [Create an optimization rule](/xdr/features/collect/create_optimization_rule.md) to start creating your rule thanks to our step by step guide. 
-* [Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reduction_strategies.md) to align your rules on your usage.
+* [Investigate overusage](../../usecases/playbook/investigate_overusage.md) to learn more about overusage and how to avoid it. 
+* [Optimization rules technical reference](optimization_rules_reference.md) to learn more about filter operators, action bitmask values and more.
+* [Create an optimization rule](create_optimization_rule.md) to start creating your rule thanks to our step by step guide. 
+* [Log volume reduction strategies](../../usecases/playbook/log_volume_reduction_strategies.md) to align your rules on your usage.
