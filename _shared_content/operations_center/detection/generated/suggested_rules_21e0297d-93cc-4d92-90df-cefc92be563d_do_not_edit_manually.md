@@ -3,17 +3,185 @@
 The following Sekoia.io built-in rules match the intake **Corelight**. This documentation is updated automatically and is based solely on the fields used by the intake which are checked against our rules. This means that some rules will be listed but might not be relevant with the intake.
 
 [SEKOIA.IO x Corelight on ATT&CK Navigator](https://mitre-attack.github.io/attack-navigator/#layerURL=https%3A%2F%2Fraw.githubusercontent.com%2FSEKOIA-IO%2Fdocumentation%2Fmain%2F_shared_content%2Foperations_center%2Fdetection%2Fgenerated%2Fattack_21e0297d-93cc-4d92-90df-cefc92be563d_do_not_edit_manually.json){ .md-button }
+??? abstract "Adidnsdump Enumeration"
+    
+    Detects use of the tool adidnsdump for enumeration and discovering DNS records.
+    
+    - **Effort:** advanced
+
+??? abstract "Advanced IP Scanner"
+    
+    Detects the use of Advanced IP Scanner. Seems to be a popular tool for ransomware groups.
+    
+    - **Effort:** master
+
+??? abstract "Authentication Impossible Travel"
+    
+    Detects impossible travel when performing authentication from a source IP address, grouped by user name. This could require some alert filtering for some user generic accounts, and known IP address range. Microsoft / Office 365 format is not covered by this rule.
+    
+    - **Effort:** master
+
 ??? abstract "Bazar Loader DGA (Domain Generation Algorithm)"
     
     Detects Bazar Loader domains based on the Bazar Loader DGA
     
     - **Effort:** elementary
 
+??? abstract "Burp Suite Tool Detected"
+    
+    Burp Suite is a cybersecurity tool. When used as a proxy service, its purpose is to intercept packets and modify them to send them to the server. Burp Collaborator is a network service that Burp Suite uses to help discover many kinds of vulnerabilities (vulnerabilities scanner).
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE-2018-11776 Apache Struts2"
+    
+    Apache Struts versions 2.3 to 2.3.34 and 2.5 to 2.5.16 suffer from possible Remote Code Execution when alwaysSelectFullNamespace is true (either by user or a plugin like Convention Plugin) and then: results are used with no namespace and in same time, its upper package have no or wildcard namespace and similar to results, same possibility when using url tag which doesn't have value and action set and in same time, its upper package have no or wildcard namespace.
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE-2018-13379 Fortinet Exploit"
+    
+    Detects the successful exploitation of the Fortinet FortiOS CVE-2018-13379. This CVE is one of the most exploited CVEs since 2018. It is exploited by APT threat actors as well as cybercriminals. The exploitation of this CVE lead an unauthenticated user to get full access to FortiOS system file through SSL VPN via specially crafted HTTP resource requests. The exploit read /dev/cmdb/sslvpn_websession file, that contains login and passwords in (clear/text). An HTTP response status code = 200, means the file was successfully accessed. This vulnerability affects FortiOS 5.6.3 to 5.6.7 and FortiOS 6.0.0 to 6.0.4.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2019-0604 SharePoint"
+    
+    Detects the exploitation of the SharePoint vulnerability (CVE-2019-0604).
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2019-11510 Pulse Secure Exploit"
+    
+    Detects the successful exploitation of the Pulse Secure vulnerability CVE-2019-11510. This CVE is one of the most exploited CVEs since 2019. It is exploited by diverse threat actors, leading sometimes in ransomware deployement among these groups: Maze, Conti, Egregor, DoppelPaymer, NetWalker and REvil. But also APT actors such as APT29. The exploitation of this CVE allows a remote, unauthenticated attacker to compromise a vulnerable VPN server. The attacker may be able to gain access to all active users and their plain-text credentials. It may also be possible for the attacker to execute arbitrary commands on each VPN client as it successfully connects to the VPN server. The exploit reads /etc/passwd file to get access to login and passwords in (clear/text). An HTTP response status code = 200, means the file was successfully accessed. This vulnerability affects 8.1R15.1, 8.2 before 8.2R12.1, 8.3 before 8.3R7.1, and 9.0 before 9.0R3.4 products.
+    
+    - **Effort:** elementary
+
+??? abstract "CVE-2019-19781 Citrix NetScaler (ADC)"
+    
+    Detects CVE-2019-19781 exploitation attempt against Citrix NetScaler (ADC), Application Delivery Controller and Citrix Gateway Attack.
+    
+    - **Effort:** elementary
+
+??? abstract "CVE-2019-2725 Oracle Weblogic Exploit"
+    
+    Detects the successful exploitation of a deserialization vulnerability in Oracle Weblogic Server, CVE-2019-2725. This vulnerability affects versions 10.X and 12.1.3 of WebLogic that have the components wls9_async_response.war and wls-wsat.war enabled. It is a remote code execution which can be exploited without authentication via HTTP. An HTTP response status code = 202, means the target is vulnerable, the analyst then has to look in depth to check if a webshell has been uploaded or something else has been done.
+    
+    - **Effort:** elementary
+
+??? abstract "CVE-2020-0688 Microsoft Exchange Server Exploit"
+    
+    Detects the exploitation of CVE-2020-0688. The POC exploit a .NET serialization vulnerability in the Exchange Control Panel (ECP) web page. The vulnerability is due to Microsoft Exchange Server not randomizing the keys on a per-installation basis resulting in them using the same validationKey and decryptionKey values. With knowledge of these, values an attacker can craft a special viewstate to use an OS command to be executed by NT_AUTHORITY\SYSTEM using .NET deserialization. To exploit this vulnerability, an attacker needs to leverage the credentials of an account it had already compromised to authenticate to OWA.
+    
+    - **Effort:** elementary
+
+??? abstract "CVE-2020-1147 SharePoint"
+    
+    Detection of SharePoint vulnerability CVE-2020-1147.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2020-14882 Oracle WebLogic Server"
+    
+    Detects the exploitation of the Oracle WebLogic Server vulnerability (CVE-2020-16952).
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2020-17530 Apache Struts RCE"
+    
+    Detects the exploitation of the Apache Struts RCE vulnerability (CVE-2020-17530).
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE-2020-5902 F5 BIG-IP Exploitation Attempts"
+    
+    Detects the exploitation attempt of the vulnerability found in F5 BIG-IP and described in CVE-2020-5902.
+    
+    - **Effort:** elementary
+
+??? abstract "CVE-2021-20021 SonicWall Unauthenticated Administrator Access"
+    
+    Detects the exploitation of SonicWall Unauthenticated Admin Access.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2021-20023 SonicWall Arbitrary File Read"
+    
+    Detects Arbitrary File Read, which can be used with other vulnerabilities as a mean to obtain outputs generated by attackers, or sensitive data.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2021-21972 VMware vCenter"
+    
+    The vSphere Client (HTML5) contains a remote code execution vulnerability in a vCenter Server plugin. A malicious actor with network access to port 443 may exploit this issue to execute commands with unrestricted privileges on the underlying operating system that hosts vCenter Server. This affects VMware vCenter Server (7.x before 7.0 U1c, 6.7 before 6.7 U3l and 6.5 before 6.5 U3n) and VMware Cloud Foundation (4.x before 4.2 and 3.x before 3.10.1.2). POST request on the following PATH "/ui/vropspluginui/rest/services/uploadova". If in response body (500) the words it has "uploadFile", that means the vCenter is available to accept files via POST without any restrictions.
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE-2021-21985 VMware vCenter"
+    
+    The VMware vSphere Client (HTML5) contains a remote code execution vulnerability due to lack of input validation in the Virtual SAN Health Check plug-in which is enabled by default in vCenter Server. A malicious actor with network access to port 443 may exploit this issue to execute commands with unrestricted privileges on the underlying operating system that hosts vCenter Server. This affects VMware vCenter Server (7.0 before 7.0 U2b, 6.7 before 6.7 U3n and 6.5 before 6.5 U3p) and VMware Cloud Foundation (4.x before 4.2.1 and 3.x before 3.10.2.1).
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2021-22123 Fortinet FortiWeb OS Command Injection"
+    
+    Detects Fortinet FortiWeb OS Command Injection (August 2021) vulnerability exploitation attempt. A remote, authenticated attacker can execute arbitrary commands on the system hosting a vulnerable FortiWeb WAF by sending a POST request with the command in the name field. At the time of writing this rule, it would appear that the request would respond in code 500 for a successful exploitation attempt.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2021-22893 Pulse Connect Secure RCE Vulnerability"
+    
+    Detects potential exploitation of the authentication by-pass vulnerability that can allow an unauthenticated user to perform remote arbitrary file execution on the Pulse Connect Secure gateway. It is highly recommended to apply the Pulse Secure mitigations and seach for indicators of compromise on affected servers if you are in doubt over the integrity of your Pulse Connect Secure product.
+    
+    - **Effort:** intermediate
+
+??? abstract "CVE-2021-26855 Exchange SSRF"
+    
+    Detects the exploitation of ProyxLogon vulerability on Exchange servers.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2021-34473 ProxyShell Attempt"
+    
+    Detects CVE-2021-34473 ProxyShell attempt against Microsoft Exchange Server, Remote Code Execution Vulnerability.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2021-41773 Apache 2.4.49 Path Traversal"
+    
+    Detects successful exploitation of the Apache Path Traversal CVE-2021-41773.
+    
+    - **Effort:** advanced
+
+??? abstract "CVE-2021-43798 Grafana Directory Traversal"
+    
+    Grafana version 8.x has a 0day arbitrary file read (with no fix yet) based on a directory traversal vulnerability
+    
+    - **Effort:** intermediate
+
+??? abstract "Certify Or Certipy"
+    
+    Detects the use of certify and certipy which are two different tools used to enumerate and abuse Active Directory Certificate Services.
+    
+    - **Effort:** advanced
+
 ??? abstract "Cobalt Strike DNS Beaconing"
     
     Detects suspicious DNS queries known from Cobalt Strike beacons. The threshold is more than 50 suspicious DNS requests to avoid false positives.
     
     - **Effort:** advanced
+
+??? abstract "Cobalt Strike Default Beacons Names"
+    
+    Detects the default names of Cobalt Strike beacons / payloads.
+    
+    - **Effort:** intermediate
+
+??? abstract "Cookies Deletion"
+    
+    Detects when cookies are deleted by a suspicious process.
+    
+    - **Effort:** master
 
 ??? abstract "Corelight DNS NULL Record Query (Possible Tunneling)"
     
@@ -69,17 +237,41 @@ The following Sekoia.io built-in rules match the intake **Corelight**. This docu
     
     - **Effort:** intermediate
 
+??? abstract "Credential Dump Tools Related Files"
+    
+    Detects processes or file names related to credential dumping tools and the dropped files they generate by default.
+    
+    - **Effort:** advanced
+
+??? abstract "Cron Files Alteration"
+    
+    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation. To ensure full performance on this rule, `auditbeat` intake must be configure with the module `file_integrity` containing path mentionned in the pattern.
+    
+    - **Effort:** advanced
+
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.
     
     - **Effort:** master
 
+??? abstract "Detect requests to Konni C2 servers"
+    
+    This rule detects requests to Konni C2 servers. These patterns come from an analysis done in 2022, September.
+    
+    - **Effort:** elementary
+
 ??? abstract "Discord Suspicious Download"
     
     Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
     
     - **Effort:** advanced
+
+??? abstract "Download Files From Suspicious TLDs"
+    
+    Detects download of certain file types from hosts in suspicious TLDs
+    
+    - **Effort:** master
 
 ??? abstract "Dynamic DNS Contacted"
     
@@ -96,6 +288,42 @@ The following Sekoia.io built-in rules match the intake **Corelight**. This docu
 ??? abstract "Exfiltration Domain"
     
     Detects traffic toward a domain flagged as a possible exfiltration vector.
+    
+    - **Effort:** master
+
+??? abstract "FoggyWeb HTTP Default GET/POST Requests"
+    
+    Detects GET or POST request pattern observed within the first FoggyWeb campaign detected by Microsoft.
+    
+    - **Effort:** advanced
+
+??? abstract "GitLab CVE-2021-22205"
+    
+    Detects GitLab vulnerability CVE-2021-22205 exploitation success. It allows an attacker to do some remote code execution with user git. The HTTP return code 422 indicates a successfull exploitation.
+    
+    - **Effort:** intermediate
+
+??? abstract "HTA Infection Chains"
+    
+    Detect the creation of a ZIP file and an HTA file as it is often used in infection chains. Furthermore it also detects the use of suspicious processes launched by explorer.exe combined with the creation of an HTA file, since it is also often used in infection chains (LNK - HTA for instance).
+    
+    - **Effort:** advanced
+
+??? abstract "HTML Smuggling Suspicious Usage"
+    
+    Based on several samples from different botnets, this rule aims at detecting HTML infection chain by looking for HTML created files followed by suspicious files being executed.
+    
+    - **Effort:** advanced
+
+??? abstract "HackTools Suspicious Names"
+    
+    Quick-win rule to detect the default process names or file names of several HackTools.
+    
+    - **Effort:** advanced
+
+??? abstract "ISO LNK Infection Chain"
+    
+    Detection of an ISO (or any other similar archive file) downloaded file, followed by a child-process of explorer, which is characteristic of an infection using an ISO containing an LNK file. For events with `host.name`.
     
     - **Effort:** master
 
@@ -117,11 +345,53 @@ The following Sekoia.io built-in rules match the intake **Corelight**. This docu
     
     - **Effort:** intermediate
 
+??? abstract "Login Brute-Force Successful On Jumpcloud Portal"
+    
+    A user has attempted to login several times (brute-force) on Jumpcloud Portal and succeeded to login.
+    
+    - **Effort:** advanced
+
+??? abstract "LokiBot Default C2 URL"
+    
+    Detects default C2 URL for trojan LokiBot
+    
+    - **Effort:** elementary
+
+??? abstract "NTDS.dit File In Suspicious Directory"
+    
+    The file NTDS.dit is supposed to be located mainly in C:\Windows\NTDS. The rule checks whether the file is in a legitimate directory or not (through file creation events). This is usually really suspicious and could indicate an attacker trying copy the file to then look for users password hashes.
+    
+    - **Effort:** advanced
+
 ??? abstract "Nimbo-C2 User Agent"
     
     Nimbo-C2 Uses an unusual User-Agent format in its implants.
     
     - **Effort:** intermediate
+
+??? abstract "OneNote Embedded File"
+    
+    Detects creation or uses of OneNote embedded files with unusual extensions.  
+    
+    - **Effort:** intermediate
+
+??? abstract "Package Manager Alteration"
+    
+    Package manager (eg: apt, yum) can be altered to install malicious software. To ensure full performance on this rule, `auditbeat` intake must be configure with the module `file_integrity` containing path mentionned in the pattern.
+    
+    - **Effort:** advanced
+
+??? abstract "PasswordDump SecurityXploded Tool"
+    
+    Detects the execution of the PasswordDump SecurityXploded Tool
+    
+    - **Effort:** elementary
+
+??? abstract "Possible Malicious File Double Extension"
+    
+    Detects request to potential malicious file with double extension
+    
+    - **Effort:** elementary
 
 ??? abstract "Potential Azure AD Phishing Page (Adversary-in-the-Middle)"
     
@@ -153,6 +423,36 @@ The following Sekoia.io built-in rules match the intake **Corelight**. This docu
     
     - **Effort:** intermediate
 
+??? abstract "Privilege Escalation Awesome Scripts (PEAS)"
+    
+    Detect PEAS privileges escalation scripts and binaries
+    
+    - **Effort:** elementary
+
+??? abstract "Process Trace Alteration"
+    
+    PTrace syscall provides a means by which one process ("tracer") may observe and control the execution of another process ("tracee") and examine and change the tracee's memory and registers. Attacker might want to abuse ptrace functionnality to analyse memory process. It requires to be admin or set ptrace_scope to 0 to allow all user to trace any process.
+    
+    - **Effort:** advanced
+
+??? abstract "ProxyShell Microsoft Exchange Suspicious Paths"
+    
+    Detects suspicious calls to Microsoft Exchange resources, in locations related to webshells observed in campaigns using this vulnerability.
+    
+    - **Effort:** elementary
+
+??? abstract "RTLO Character"
+    
+    Detects RTLO (Right-To-Left character) in file and process names.
+    
+    - **Effort:** elementary
+
+??? abstract "Raccoon Stealer 2.0 Legitimate Third-Party DLL Download URL"
+    
+    Detects Raccoon Stealer 2.0 malware downloading legitimate third-party DLLs from its C2 server. These legitimate DLLs are used by the information stealer to collect data on the compromised hosts.
+    
+    - **Effort:** elementary
+
 ??? abstract "Remote Access Tool Domain"
     
     Detects traffic toward a domain flagged as a Remote Administration Tool (RAT).
@@ -177,11 +477,23 @@ The following Sekoia.io built-in rules match the intake **Corelight**. This docu
     
     - **Effort:** elementary
 
+??? abstract "SSH Authorized Key Alteration"
+    
+    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision.
+    
+    - **Effort:** advanced
+
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
     
     - **Effort:** master
+
+??? abstract "SharePoint Authenticated SSRF"
+    
+    Detects succesful SSRF from an authenticated SharePoint user.
+    
+    - **Effort:** elementary
 
 ??? abstract "Sigma Intelligence Arcane Stealer HTTP Communication"
     
@@ -189,15 +501,57 @@ The following Sekoia.io built-in rules match the intake **Corelight**. This docu
     
     - **Effort:** elementary
 
+??? abstract "Sigma Intelligence Pangolin8RAT Working Directory File Artifacts"
+    
+    Detects access to filesystem artifacts associated with Pangolin8RAT.
+    
+    - **Effort:** intermediate
+
 ??? abstract "Sliver DNS Beaconing"
     
     Detects suspicious DNS queries known from Sliver beaconing 
     
     - **Effort:** intermediate
 
+??? abstract "Suspicious Download Links From Legitimate Services"
+    
+    Detects users clicking on Google docs links to download suspicious files. This technique was used a lot by Bazar Loader in the past.
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious Email Attachment Received"
+    
+    Detects email containing a suspicious file as an attachment, based on its extension.
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious File Name"
+    
+    Detects suspicious file name possibly linked to malicious tool.
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious PROCEXP152.sys File Created In Tmp"
+    
+    Detects the creation of the PROCEXP152.sys file in the application-data local temporary folder. This driver is used by Sysinternals Process Explorer but also by KDU (https://github.com/hfiref0x/KDU) or Ghost-In-The-Logs (https://github.com/bats3c/Ghost-In-The-Logs), which uses KDU. Note - Clever attackers may easily bypass this detection by just renaming the driver filename. Therefore just Medium-level and don't rely on it.
+    
+    - **Effort:** advanced
+
 ??? abstract "Suspicious TOR Gateway"
     
     Detects suspicious TOR gateways. Gateways are often used by the victim to pay and decrypt the encrypted files without installing TOR. Tor intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
+    
+    - **Effort:** advanced
+
+??? abstract "Suspicious URI Used In A Lazarus Campaign"
+    
+    Detects suspicious requests to a specific URI, usually on an .asp page. The website is often compromised.
+    
+    - **Effort:** intermediate
+
+??? abstract "Suspicious URL Requested By Curl Or Wget Commands"
+    
+    Correlation rule aiming to be multi-source to detect URL with suspicious files extensions (seen on a network level by proxies or firewalls) being requested by curl or wget processes (seen on a host level).
     
     - **Effort:** advanced
 
@@ -216,5 +570,29 @@ The following Sekoia.io built-in rules match the intake **Corelight**. This docu
 ??? abstract "Telegram Bot API Request"
     
     Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
+    
+    - **Effort:** advanced
+
+??? abstract "TrevorC2 HTTP Communication"
+    
+    Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
+    
+    - **Effort:** elementary
+
+??? abstract "WCE wceaux.dll Creation"
+    
+    Detects wceaux.dll creation while Windows Credentials Editor (WCE) is executed.
+    
+    - **Effort:** intermediate
+
+??? abstract "Webshell Creation"
+    
+    Detects possible webshell file creation. It requires File Creation monitoring, which can be done using Sysmon's Event ID 11. However the recommended SwiftOnSecurity configuration does not fully cover the needs for this rule, it needs to be updated with the proper file names extensions.
+    
+    - **Effort:** master
+
+??? abstract "ZIP LNK Infection Chain"
+    
+    Detection of an ZIP download followed by a child-process of explorer, followed by multiple Windows processes.This is widely used as an infection chain mechanism.
     
     - **Effort:** advanced
