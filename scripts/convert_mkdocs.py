@@ -29,7 +29,7 @@ from pathlib import Path
 HINT_STYLE = {
     "note": "info", "info": "info", "abstract": "info", "summary": "info", "example": "info",
     "quote": "info", "question": "info", "alternative": "info",
-    "tip": "success", "success": "success", "check": "success", "done": "success",
+    "tip": "success", "tips": "success", "success": "success", "check": "success", "done": "success",
     "warning": "warning", "important": "warning", "caution": "warning", "attention": "warning",
     "danger": "danger", "error": "danger", "failure": "danger", "bug": "danger",
 }
