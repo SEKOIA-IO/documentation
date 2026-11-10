@@ -41,7 +41,7 @@ The Vertical Bar Chart allows you to compare values across different groups effe
 
 !!! note "Number of value allowed"
 
-To ensure a clear display, the maximum number of values allowed is limited to 80.
+    To ensure a clear display, the maximum number of values allowed is limited to 80.
 
 **Configuration**: 
 * In the **X-axis**, select the column to use for grouping (any data type).
