@@ -336,6 +336,7 @@ Applications reported by the Sekoia agent are refreshed at each inventory. When 
 | uuid              | Unique identifier of the application record                                                       |
 | community_uuid    | UUID of the community the asset belongs to                                                        |
 | asset_uuid        | Unique identifier of the asset                                                                    |
+| asset_name        | Name of the asset                                                                                 |
 | name              | Application name                                                                                  |
 | version           | Application version                                                                               |
 | publisher         | Vendor or publisher of the application                                                            |
