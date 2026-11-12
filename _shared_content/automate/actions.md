@@ -82,7 +82,7 @@ If you have an account in one of the listed tools below, you can easily extract 
 
 | Name | Description |
 | --- | --- |
-| [fileutils](/integration/action_library/fileutils.md) | Extract data from XML or JSON files |
+| [Utils](/integration/action_library/generic/utils.md) | Extract data from XML or JSON files |
 | [http](/integration/action_library/generic/http.md) | Request HTTP resources (download file, request URL) |
 | [STIX](/integration/action_library/stix.md) | Add source, add tags, create relationships, cryptolaemus to STIX, CVE to STIX, filter bundle, JSON objects to observables, VirusTotal LiveHunt to observables, MISP to STIX, observables to contextualized indicators, observables to indicators, remove orphan objects, STIX to MISP, string to observables |
 

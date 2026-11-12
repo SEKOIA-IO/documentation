@@ -384,3 +384,4 @@
     * [Triage](action_library/threat_intelligence/triage.md)
     * [VirusTotal](action_library/threat_intelligence/virustotal.md)
     * [Whois](action_library/threat_intelligence/whois.md)
+* [STIX](action_library/stix.md)

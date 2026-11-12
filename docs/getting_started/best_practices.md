@@ -70,7 +70,7 @@ Playbooks complement operational optimization by automating various types of man
     - **Some [Operator](/xdr/features/automate/operators.md) modules** like "[Condition](https://docs.sekoia.io/xdr/features/automate/operators/#condition)" and "[Foreach](/xdr/features/automate/operators.md#foreach)" to halt the playbook execution if new information gathered during the process indicates that the playbook is unnecessary in the current context.
     - **A majority of [Action](/xdr/features/automate/actions.md) modules** making it easily understandable for new team members and maintainable over time. To give you more details on the top 10 most used playbook Actions, here is a list:
 
-        1. [Read JSON File](/integration/action_library/fileutils.md#read-json-file)
+        1. [Read JSON File](/integration/action_library/generic/utils.md#read-json-file)
         2. [Comment Alert](/integration/action_library/generic/sekoia-io.md#comment-alert)
         3. [Get Alert](/integration/action_library/generic/sekoia-io.md#get-alert)
         4. [Request URL](/integration/action_library/generic/http.md#request-url)
