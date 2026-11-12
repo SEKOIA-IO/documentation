@@ -66,3 +66,4 @@ redirects:
   action_library/fortigate-fw: action_library/network/fortigate-firewalls.md
   action_library/intra_id: action_library/iam/microsoft-entra-id.md
   action_library/fileutils: action_library/generic/utils.md
+  action_library/microsoft-remote-server: action_library/endpoint/microsoft-windows-server.md
