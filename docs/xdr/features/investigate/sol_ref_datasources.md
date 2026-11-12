@@ -373,6 +373,26 @@ Applications reported by the Sekoia agent are refreshed at each inventory. When 
     | top 20 by asset_count
     ```
 
+??? example "Number of installed applications per asset"
+
+    ```
+    asset_applications
+    | where isnull(deleted_at)
+    | aggregate application_count = count() by asset_name
+    | order by application_count desc
+    ```
+
+??? example "Assets running a given application, with their IP addresses"
+
+    `asset_applications` does not return the IP addresses of the asset. Join it with the [assets](#assets) data source to get them from the asset atoms. Filter `assets` on a community before the lookup, to stay under the 10,000-row limit on the right side of a lookup.
+
+    ```
+    asset_applications
+    | where isnull(deleted_at) and name == "OpenSSL"
+    | lookup (assets | where community_uuid == "<community_uuid>") on asset_uuid == uuid into asset
+    | select asset_name, version, asset.atoms
+    ```
+
 ## asset_vulnerabilities
 
 *This data source is part of the Reveal plan.*
