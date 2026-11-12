@@ -1,6 +1,8 @@
 """Usage: python3 update_gitbook_asset_connectors.py /path/to/automation-library /path/to/documentation [--section-root docs]"""
 
 import json
+import os
+import re
 from pathlib import Path
 from typing import Dict, List, Tuple
 
@@ -15,6 +17,8 @@ CAPABILITY_TO_ASSET_TYPE = {
     "software_enrichment": "software",
     "vulnerability_enrichment": "vulnerability",
 }
+
+LEGACY_INCLUDE_PATTERN = re.compile(r"\{!(?:[^!\n]*/)?generated\\?_assets\\?_documentation/(?P<name>[^!/\n]+\.md)!\}")
 
 
 def find_asset_connectors_folder(module_path: Path) -> Path | None:
@@ -132,3 +136,28 @@ def write_includes(connectors: List[Dict], includes_path: Path) -> Tuple[List[st
             print(f"Removed stale {stale_file.name}")
 
     return written, removed
+
+
+def rewrite_page_includes(section_path: Path, includes_path: Path) -> Tuple[List[Path], List[str]]:
+    rewritten: List[Path] = []
+    missing = set()
+
+    for page in sorted(section_path.rglob("*.md")):
+        if ".gitbook" in page.relative_to(section_path).parts:
+            continue
+
+        def replace_include(match: re.Match) -> str:
+            name = match["name"].replace("\\_", "_")
+            if not (includes_path / name).exists():
+                missing.add(name)
+            path = Path(os.path.relpath(includes_path / name, page.parent)).as_posix()
+            return f'{{% include "{path}" %}}'
+
+        content = page.read_text(encoding="utf-8")
+        new_content = LEGACY_INCLUDE_PATTERN.sub(replace_include, content)
+        if new_content != content:
+            page.write_text(new_content, encoding="utf-8")
+            rewritten.append(page)
+            print(f"Rewrote includes in {page.relative_to(section_path).as_posix()}")
+
+    return rewritten, sorted(missing)

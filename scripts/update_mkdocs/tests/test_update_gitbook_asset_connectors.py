@@ -270,5 +270,81 @@ class WriteIncludesTests(unittest.TestCase):
         self.assertTrue((self.includes / ".DS_Store").is_file())
 
 
+PLAIN = "{!_shared_content/operations_center/integrations/generated_assets_documentation/okta_user.md!}"
+ESCAPED = (
+    "{!\\_shared\\_content/operations\\_center/integrations/generated\\_assets\\_documentation/okta\\_user.md!}"
+)
+OKTA_PAGE = "integration/assets_categories/user/okta_user.md"
+OKTA_INCLUDE = '{% include "../../../.gitbook/includes/asset_connectors/okta_user.md" %}'
+
+
+class RewritePageIncludesTests(unittest.TestCase):
+    def setUp(self):
+        directory = tempfile.TemporaryDirectory()
+        self.addCleanup(directory.cleanup)
+        self.section = Path(directory.name) / "docs"
+        self.includes = self.section / ".gitbook" / "includes" / "asset_connectors"
+        self.includes.mkdir(parents=True)
+        (self.includes / "okta_user.md").write_text("block")
+
+    def write_page(self, relative: str, content: str) -> Path:
+        page = self.section / relative
+        page.parent.mkdir(parents=True, exist_ok=True)
+        page.write_text(content)
+        return page
+
+    def rewrite(self):
+        with redirect_stdout(io.StringIO()):
+            return generator.rewrite_page_includes(self.section, self.includes)
+
+    def test_plain_include_is_rewritten(self):
+        page = self.write_page(OKTA_PAGE, f"# Okta\n\nIntro\n\n{PLAIN}\n\n## Further Reading\n")
+        self.assertEqual(self.rewrite(), ([page], []))
+        self.assertEqual(page.read_text(), f"# Okta\n\nIntro\n\n{OKTA_INCLUDE}\n\n## Further Reading\n")
+
+    def test_escaped_include_is_rewritten(self):
+        page = self.write_page(OKTA_PAGE, f"{ESCAPED}\n")
+        self.rewrite()
+        self.assertEqual(page.read_text(), f"{OKTA_INCLUDE}\n")
+
+    def test_relative_path_follows_page_depth(self):
+        top = self.write_page("okta.md", PLAIN)
+        deep = self.write_page("a/b/c/okta.md", PLAIN)
+        self.rewrite()
+        self.assertEqual(top.read_text(), '{% include ".gitbook/includes/asset_connectors/okta_user.md" %}')
+        self.assertEqual(deep.read_text(), '{% include "../../../.gitbook/includes/asset_connectors/okta_user.md" %}')
+
+    def test_two_includes_in_one_page(self):
+        (self.includes / "okta_device.md").write_text("block")
+        page = self.write_page("integration/okta.md", f"{PLAIN}\n\ntext\n\n{PLAIN.replace('okta_user', 'okta_device')}\n")
+        self.rewrite()
+        self.assertEqual(
+            page.read_text(),
+            '{% include "../.gitbook/includes/asset_connectors/okta_user.md" %}\n\ntext\n\n'
+            '{% include "../.gitbook/includes/asset_connectors/okta_device.md" %}\n',
+        )
+
+    def test_page_without_legacy_include_is_untouched(self):
+        page = self.write_page("intro.md", "# Intro\n")
+        self.assertEqual(self.rewrite(), ([], []))
+        self.assertEqual(page.read_text(), "# Intro\n")
+
+    def test_gitbook_folder_is_skipped(self):
+        inside = self.section / ".gitbook" / "includes" / "other.md"
+        inside.write_text(PLAIN)
+        self.assertEqual(self.rewrite(), ([], []))
+        self.assertEqual(inside.read_text(), PLAIN)
+
+    def test_missing_block_is_reported(self):
+        page = self.write_page("ghost.md", PLAIN.replace("okta_user", "ghost_device"))
+        self.assertEqual(self.rewrite(), ([page], ["ghost_device.md"]))
+        self.assertEqual(page.read_text(), '{% include ".gitbook/includes/asset_connectors/ghost_device.md" %}')
+
+    def test_second_run_changes_nothing(self):
+        self.write_page(OKTA_PAGE, ESCAPED)
+        self.rewrite()
+        self.assertEqual(self.rewrite(), ([], []))
+
+
 if __name__ == "__main__":
     unittest.main()
