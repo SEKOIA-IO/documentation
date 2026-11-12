@@ -208,6 +208,17 @@ class GenerateConnectorDocTests(unittest.TestCase):
     def test_samples_are_trimmed_code_blocks(self):
         self.assertIn('#### Active user\nA user\n\n```json\n{\n  "id": "1"\n}\n```\n', self.render())
 
+    def test_sample_without_description_has_no_blank_line_run(self):
+        mapping = {
+            **MAPPING["mapping"],
+            "samples": [{"name": "Bare", "data": "{}"}],
+            "ocsf_samples": [{"name": "Bare OCSF", "description": "", "data": "{}"}],
+        }
+        content = self.render(mapping)
+        self.assertIn("#### Bare\n\n```json\n{}\n```\n", content)
+        self.assertIn("#### Bare OCSF\n\n```json\n{}\n```\n", content)
+        self.assertNotIn("\n\n\n", content)
+
     def test_no_mkdocs_syntax_and_no_blank_line_runs(self):
         content = self.render()
         for marker in ("{!", "!!!", '=== "'):

@@ -22,7 +22,9 @@ The {{ config.name | default('Connector') }} fetches comprehensive information a
 {% for sample in mapping.samples %}
 
 #### {{ sample.name }}
+{% if sample.description %}
 {{ sample.description }}
+{% endif %}
 
 ```json
 {{ sample.data | trim }}
@@ -47,7 +49,9 @@ The following table shows how source data is mapped to OCSF model fields:
 {% for sample in mapping.ocsf_samples %}
 
 #### {{ sample.name }}
+{% if sample.description %}
 {{ sample.description }}
+{% endif %}
 
 ```json
 {{ sample.data | trim }}
