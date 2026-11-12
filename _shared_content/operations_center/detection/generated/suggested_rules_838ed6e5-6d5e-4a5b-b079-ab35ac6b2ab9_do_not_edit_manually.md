@@ -63,9 +63,21 @@ The following Sekoia.io built-in rules match the intake **Vade Cloud**. This doc
     
     - **Effort:** elementary
 
+??? abstract "Scam Detected By Vade Cloud"
+    
+    Detects when an email is tagged as scam by Vade Cloud.
+    
+    - **Effort:** master
+
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
+    
+    - **Effort:** master
+
+??? abstract "Spam Detected By Vade Cloud"
+    
+    Detects when an email is tagged as spam by Vade Cloud.
     
     - **Effort:** master
 
@@ -86,3 +98,9 @@ The following Sekoia.io built-in rules match the intake **Vade Cloud**. This doc
     Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
     
     - **Effort:** advanced
+
+??? abstract "Virus Detected By Vade Cloud"
+    
+    Detects when an email is tagged as virus by Vade Cloud.
+    
+    - **Effort:** master

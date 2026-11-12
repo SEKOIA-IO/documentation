@@ -1,4 +1,4 @@
-Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-11-10_](rules_changelog.md)).
+Rules catalog includes **1127 built-in detection rules** ([_last update on 2026-11-12_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2000,6 +2000,12 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** elementary
     
+??? abstract "Scam Detected By Vade Cloud"
+    
+    Detects when an email is tagged as scam by Vade Cloud.
+    
+    - **Effort:** master
+    
 ??? abstract "Scam Detected By Vade For M365"
     
     Vade Secure product Vade for M365, has detected a scam e-mail.
@@ -2026,6 +2032,12 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
         - 12/11/2025 - minor - Update rule type to integration
             
+??? abstract "Spam Detected By Vade Cloud"
+    
+    Detects when an email is tagged as spam by Vade Cloud.
+    
+    - **Effort:** master
+    
 ??? abstract "Spam Detected By Vade For M365"
     
     Vade Secure product Vade for M365, has detected a spam e-mail.
@@ -2124,6 +2136,12 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
         - 12/11/2025 - minor - Update rule type to integration
             
+??? abstract "Virus Detected By Vade Cloud"
+    
+    Detects when an email is tagged as virus by Vade Cloud.
+    
+    - **Effort:** master
+    
 ## Execution
 **Windows Management Instrumentation**
 
