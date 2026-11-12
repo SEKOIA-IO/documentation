@@ -103,12 +103,17 @@ def escape_table_cell(value) -> str:
     return str(value).strip().replace("|", "\\|").replace("\n", "<br/>")
 
 
+def escape_markdown_text(value) -> str:
+    return str(value).replace("<", "\\<")
+
+
 def generate_connector_doc(connector: Dict) -> str:
     config = connector["config"]
     module_slug = connector["module_slug"]
 
     env = Environment(loader=FileSystemLoader(SCRIPT_DIR / "templates"), trim_blocks=True, lstrip_blocks=True)
     env.filters["table_cell"] = escape_table_cell
+    env.filters["markdown_text"] = escape_markdown_text
     body = env.get_template("asset_connector_gitbook.md.jinja").render(
         config=config,
         mapping=connector["mapping"],
@@ -146,6 +151,8 @@ def rewrite_page_includes(section_path: Path, includes_path: Path) -> Tuple[List
     missing = set()
 
     for page in sorted(section_path.rglob("*.md")):
+        if page.is_symlink():
+            continue
         if ".gitbook" in page.relative_to(section_path).parts:
             continue
 

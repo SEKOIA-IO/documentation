@@ -181,6 +181,10 @@ class GenerateConnectorDocTests(unittest.TestCase):
         self.assertIn("**OCSF Class:** `User Inventory Info`", content)
         self.assertIn("**Class UID:** `5003`", content)
         self.assertIn("**OCSF Version:** `1.6.0`", content)
+        self.assertIn("### API Response Examples", content)
+        self.assertIn("### Data Mapping Table", content)
+        self.assertIn("### OCSF Model Structure", content)
+        self.assertIn('#### OCSF user\nMapped user\n\n```json\n{"uid": "1"}\n```\n', content)
 
     def test_ocsf_version_falls_back_to_version(self):
         mapping = {key: value for key, value in MAPPING["mapping"].items() if key != "ocsf_version"}
@@ -201,6 +205,22 @@ class GenerateConnectorDocTests(unittest.TestCase):
         for row in table_rows(content):
             self.assertEqual(len(re.split(r"(?<!\\)\|", row)[1:-1]), 5, row)
 
+    def test_angle_brackets_in_text_cells_are_escaped(self):
+        fields = [
+            {
+                "source": "tags<0>",
+                "target": "device.name",
+                "description": "Port <port>\nsecond",
+                "type": "string",
+                "logic": "Format as 'AWS Account <OwnerId>'",
+            }
+        ]
+        content = self.render({**MAPPING["mapping"], "fields": fields})
+        self.assertIn(
+            "| `tags<0>` | `device.name` | Port \\<port><br/>second | `string` | Format as 'AWS Account \\<OwnerId>' |",
+            content,
+        )
+
     def test_missing_cell_values_render_as_dash(self):
         fields = [{"source": "id", "target": "user.uid", "type": None, "logic": None}]
         self.assertIn("| `id` | `user.uid` | - | `-` | - |", self.render({**MAPPING["mapping"], "fields": fields}))
@@ -217,6 +237,17 @@ class GenerateConnectorDocTests(unittest.TestCase):
         content = self.render(mapping)
         self.assertIn("#### Bare\n\n```json\n{}\n```\n", content)
         self.assertIn("#### Bare OCSF\n\n```json\n{}\n```\n", content)
+        self.assertNotIn("\n\n\n", content)
+
+    def test_sample_description_is_trimmed_and_escaped(self):
+        mapping = {
+            **MAPPING["mapping"],
+            "samples": [{"name": "Padded", "description": "Agent <agent_uid>\n", "data": "{}"}],
+            "ocsf_samples": [{"name": "Blank", "description": "   ", "data": "{}"}],
+        }
+        content = self.render(mapping)
+        self.assertIn("#### Padded\nAgent \\<agent_uid>\n\n```json\n{}\n```\n", content)
+        self.assertIn("#### Blank\n\n```json\n{}\n```\n", content)
         self.assertNotIn("\n\n\n", content)
 
     def test_no_mkdocs_syntax_and_no_blank_line_runs(self):
@@ -334,6 +365,21 @@ class RewritePageIncludesTests(unittest.TestCase):
         inside.write_text(PLAIN)
         self.assertEqual(self.rewrite(), ([], []))
         self.assertEqual(inside.read_text(), PLAIN)
+
+    def test_symlinked_page_is_skipped(self):
+        target = self.section.parent / "shared.md"
+        target.write_text(PLAIN)
+        link = self.section / "integration" / "shared.md"
+        link.parent.mkdir(parents=True, exist_ok=True)
+        link.symlink_to(target)
+        self.assertEqual(self.rewrite(), ([], []))
+        self.assertEqual(target.read_text(), PLAIN)
+
+    def test_other_includes_are_untouched(self):
+        other = "{!_shared_content/operations_center/integrations/generated/0a1b2c.md!}"
+        page = self.write_page(OKTA_PAGE, f"{other}\n\n{PLAIN}\n")
+        self.rewrite()
+        self.assertEqual(page.read_text(), f"{other}\n\n{OKTA_INCLUDE}\n")
 
     def test_missing_block_is_reported(self):
         page = self.write_page("ghost.md", PLAIN.replace("okta_user", "ghost_device"))

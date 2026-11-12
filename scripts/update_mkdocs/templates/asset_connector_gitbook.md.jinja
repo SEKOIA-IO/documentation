@@ -22,8 +22,8 @@ The {{ config.name | default('Connector') }} fetches comprehensive information a
 {% for sample in mapping.samples %}
 
 #### {{ sample.name }}
-{% if sample.description %}
-{{ sample.description }}
+{% if sample.description | trim %}
+{{ sample.description | trim | markdown_text }}
 {% endif %}
 
 ```json
@@ -40,7 +40,7 @@ The following table shows how source data is mapped to OCSF model fields:
 | Source Field | OCSF Field Path | Description | Data Type | Logic |
 |--------------|-----------------|-------------|-----------|-------|
 {% for field in mapping.fields %}
-| `{{ field.source | default('-', true) | table_cell }}` | `{{ field.target | default('-', true) | table_cell }}` | {{ field.description | default('-', true) | table_cell }} | `{{ field.type | default('-', true) | table_cell }}` | {{ field.logic | default('-', true) | table_cell }} |
+| `{{ field.source | default('-', true) | table_cell }}` | `{{ field.target | default('-', true) | table_cell }}` | {{ field.description | default('-', true) | markdown_text | table_cell }} | `{{ field.type | default('-', true) | table_cell }}` | {{ field.logic | default('-', true) | markdown_text | table_cell }} |
 {% endfor %}
 {% endif %}
 {% if mapping.ocsf_samples %}
@@ -49,8 +49,8 @@ The following table shows how source data is mapped to OCSF model fields:
 {% for sample in mapping.ocsf_samples %}
 
 #### {{ sample.name }}
-{% if sample.description %}
-{{ sample.description }}
+{% if sample.description | trim %}
+{{ sample.description | trim | markdown_text }}
 {% endif %}
 
 ```json

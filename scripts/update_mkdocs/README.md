@@ -10,7 +10,7 @@ uv run --project scripts/update_mkdocs python -m unittest discover -s scripts/up
 The generator writes one GitBook reusable content block per asset connector to
 `docs/.gitbook/includes/asset_connectors/<slug>_<type>.md` and removes the blocks
 of connectors that no longer exist. `docs/` is the root of the GitBook space
-(see `.gitbook.yaml`). Use `--section-root` to select another root, for example
+(see `.gitbook.yaml` on the `gitbook` branch). Use `--section-root` to select another root, for example
 `--section-root docs/integration` for a space rooted at `docs/integration`.
 
 It also rewrites the legacy MkDocs includes in the pages of that space
