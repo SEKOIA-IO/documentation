@@ -346,5 +346,86 @@ class RewritePageIncludesTests(unittest.TestCase):
         self.assertEqual(self.rewrite(), ([], []))
 
 
+SCRIPT = Path(__file__).resolve().parents[1] / "update_gitbook_asset_connectors.py"
+
+
+def snapshot(root: Path) -> dict:
+    return {str(path.relative_to(root)): path.read_bytes() for path in sorted(root.rglob("*")) if path.is_file()}
+
+
+class UpdateAssetDocTests(unittest.TestCase):
+    def setUp(self):
+        directory = tempfile.TemporaryDirectory()
+        self.addCleanup(directory.cleanup)
+        self.root = Path(directory.name)
+        self.library = self.root / "automation-library"
+        self.documentation = self.root / "documentation"
+        write_module(
+            self.library, "Okta", "okta",
+            {"connector_okta_user_assets.json": connector_config("Okta Users", "account_detection")}, {"user": MAPPING},
+        )
+        self.page = self.documentation / "docs" / OKTA_PAGE
+        self.page.parent.mkdir(parents=True)
+        self.page.write_text(f"# Okta\n\n{PLAIN}\n")
+
+    def run_generator(self, *args: str) -> str:
+        output = io.StringIO()
+        with redirect_stdout(output):
+            generator.update_asset_doc(str(self.library), str(self.documentation), *args)
+        return output.getvalue()
+
+    def test_default_section_root_is_docs(self):
+        self.assertEqual(generator.DEFAULT_SECTION_ROOT, "docs")
+        output = self.run_generator()
+        self.assertTrue((self.documentation / "docs" / generator.INCLUDES_SUBDIR / "okta_user.md").is_file())
+        self.assertEqual(self.page.read_text(), f"# Okta\n\n{OKTA_INCLUDE}\n")
+        self.assertIn("Generated 1 includes in docs/.gitbook/includes/asset_connectors (0 stale removed)", output)
+        self.assertIn("Rewrote includes in 1 pages", output)
+
+    def test_custom_section_root(self):
+        poc_page = self.documentation / "docs" / "integration" / "assets_categories" / "device" / "okta_device.md"
+        poc_page.parent.mkdir(parents=True)
+        poc_page.write_text(ESCAPED)
+        self.run_generator("docs/integration")
+        includes = self.documentation / "docs" / "integration" / generator.INCLUDES_SUBDIR
+        self.assertTrue((includes / "okta_user.md").is_file())
+        self.assertEqual(poc_page.read_text(), '{% include "../../.gitbook/includes/asset_connectors/okta_user.md" %}')
+
+    def test_missing_section_root_raises(self):
+        with self.assertRaises(FileNotFoundError):
+            self.run_generator("missing")
+        self.assertFalse((self.documentation / "missing").exists())
+
+    def test_no_connectors_raises_without_touching_anything(self):
+        includes = self.documentation / "docs" / generator.INCLUDES_SUBDIR
+        includes.mkdir(parents=True)
+        (includes / "okta_user.md").write_text("existing")
+        (self.root / "empty").mkdir()
+        before = snapshot(self.documentation)
+        with self.assertRaises(ValueError), redirect_stdout(io.StringIO()):
+            generator.update_asset_doc(str(self.root / "empty"), str(self.documentation))
+        self.assertEqual(snapshot(self.documentation), before)
+
+    def test_second_run_is_a_no_op(self):
+        self.run_generator()
+        first = snapshot(self.documentation)
+        output = self.run_generator()
+        self.assertEqual(snapshot(self.documentation), first)
+        self.assertIn("Rewrote includes in 0 pages", output)
+
+    def test_missing_block_warning(self):
+        self.page.write_text(PLAIN.replace("okta_user", "ghost_device"))
+        output = self.run_generator()
+        self.assertIn("Warning: pages reference missing includes: ghost_device.md", output)
+
+    def test_cli_runs_from_any_working_directory(self):
+        result = subprocess.run(
+            [sys.executable, str(SCRIPT), str(self.library), str(self.documentation)],
+            cwd=self.root, capture_output=True, text=True,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("Rewrote includes in 1 pages", result.stdout)
+
+
 if __name__ == "__main__":
     unittest.main()

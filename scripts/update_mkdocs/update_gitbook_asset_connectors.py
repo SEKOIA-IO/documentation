@@ -1,5 +1,6 @@
 """Usage: python3 update_gitbook_asset_connectors.py /path/to/automation-library /path/to/documentation [--section-root docs]"""
 
+import argparse
 import json
 import os
 import re
@@ -10,6 +11,8 @@ import yaml
 from jinja2 import Environment, FileSystemLoader
 
 SCRIPT_DIR = Path(__file__).resolve().parent
+DEFAULT_SECTION_ROOT = "docs"
+INCLUDES_SUBDIR = Path(".gitbook") / "includes" / "asset_connectors"
 
 CAPABILITY_TO_ASSET_TYPE = {
     "host_detection": "device",
@@ -161,3 +164,43 @@ def rewrite_page_includes(section_path: Path, includes_path: Path) -> Tuple[List
             print(f"Rewrote includes in {page.relative_to(section_path).as_posix()}")
 
     return rewritten, sorted(missing)
+
+
+def update_asset_doc(
+    connectors_repository: str, documentation_repository: str, section_root: str = DEFAULT_SECTION_ROOT
+) -> None:
+    section_path = Path(documentation_repository) / section_root
+    if not section_path.is_dir():
+        raise FileNotFoundError(f"GitBook section root not found: {section_path}")
+
+    connectors = load_asset_connectors(connectors_repository)
+    if not connectors:
+        raise ValueError(f"No asset connectors found in {connectors_repository}")
+
+    includes_path = section_path / INCLUDES_SUBDIR
+    written, removed = write_includes(connectors, includes_path)
+    pages, missing = rewrite_page_includes(section_path, includes_path)
+
+    location = includes_path.relative_to(documentation_repository)
+    print(f"Generated {len(written)} includes in {location} ({len(removed)} stale removed)")
+    print(f"Rewrote includes in {len(pages)} pages")
+    if missing:
+        print(f"Warning: pages reference missing includes: {', '.join(missing)}")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Update GitBook reusable content for asset connectors")
+    parser.add_argument("connectors_repository", help="Path to the automation-library repository")
+    parser.add_argument("documentation_repository", help="Path to the documentation repository")
+    parser.add_argument(
+        "--section-root",
+        default=DEFAULT_SECTION_ROOT,
+        help="GitBook space root relative to the documentation repository",
+    )
+
+    args = parser.parse_args()
+    update_asset_doc(
+        connectors_repository=args.connectors_repository,
+        documentation_repository=args.documentation_repository,
+        section_root=args.section_root,
+    )
