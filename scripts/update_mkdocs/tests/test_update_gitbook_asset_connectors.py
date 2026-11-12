@@ -139,5 +139,87 @@ class LoadAssetConnectorsTests(unittest.TestCase):
         self.assertEqual(connector["mapping"], {})
 
 
+def make_connector(mapping: dict, name: str = "Okta Users") -> dict:
+    return {
+        "module_slug": "okta",
+        "asset_type": "user",
+        "config": {"name": name},
+        "mapping": mapping,
+        "output_name": "okta_user.md",
+    }
+
+
+def front_matter(content: str) -> dict:
+    _, header, _ = content.split("---\n", 2)
+    return yaml.safe_load(header)
+
+
+def table_rows(content: str) -> list:
+    return [line for line in content.splitlines() if line.startswith("| `")]
+
+
+class GenerateConnectorDocTests(unittest.TestCase):
+    def render(self, mapping: dict = MAPPING["mapping"], name: str = "Okta Users") -> str:
+        return generator.generate_connector_doc(make_connector(mapping, name))
+
+    def test_escape_table_cell(self):
+        self.assertEqual(generator.escape_table_cell(" a|b\nc \n"), "a\\|b<br/>c")
+        self.assertEqual(generator.escape_table_cell(5003), "5003")
+
+    def test_front_matter_has_title(self):
+        content = self.render()
+        self.assertTrue(content.startswith("---\n"))
+        self.assertEqual(front_matter(content), {"title": "Okta Users OCSF mapping"})
+        self.assertIn("---\n\n## OCSF Mapping for Okta Users\n", content)
+
+    def test_title_with_yaml_special_characters(self):
+        content = self.render(name='Foo: "Bar" #1')
+        self.assertEqual(front_matter(content)["title"], 'Foo: "Bar" #1 OCSF mapping')
+
+    def test_ocsf_header(self):
+        content = self.render()
+        self.assertIn("**OCSF Class:** `User Inventory Info`", content)
+        self.assertIn("**Class UID:** `5003`", content)
+        self.assertIn("**OCSF Version:** `1.6.0`", content)
+
+    def test_ocsf_version_falls_back_to_version(self):
+        mapping = {key: value for key, value in MAPPING["mapping"].items() if key != "ocsf_version"}
+        self.assertIn("**OCSF Version:** `1.5.0`", self.render({**mapping, "version": "1.5.0"}))
+
+    def test_table_cells_are_escaped(self):
+        fields = [
+            {
+                "source": "a|b",
+                "target": "x.type || x.type_id",
+                "description": "line one\nline two\n",
+                "type": "string",
+                "logic": "Direct",
+            }
+        ]
+        content = self.render({**MAPPING["mapping"], "fields": fields})
+        self.assertIn("| `a\\|b` | `x.type \\|\\| x.type_id` | line one<br/>line two | `string` | Direct |", content)
+        for row in table_rows(content):
+            self.assertEqual(len(re.split(r"(?<!\\)\|", row)[1:-1]), 5, row)
+
+    def test_missing_cell_values_render_as_dash(self):
+        fields = [{"source": "id", "target": "user.uid", "type": None, "logic": None}]
+        self.assertIn("| `id` | `user.uid` | - | `-` | - |", self.render({**MAPPING["mapping"], "fields": fields}))
+
+    def test_samples_are_trimmed_code_blocks(self):
+        self.assertIn('#### Active user\nA user\n\n```json\n{\n  "id": "1"\n}\n```\n', self.render())
+
+    def test_no_mkdocs_syntax_and_no_blank_line_runs(self):
+        content = self.render()
+        for marker in ("{!", "!!!", '=== "'):
+            self.assertNotIn(marker, content)
+        self.assertNotIn("\n\n\n", content)
+
+    def test_empty_mapping_renders_headings_only(self):
+        content = self.render({})
+        self.assertIn("## OCSF Mapping for Okta Users\n\n## Information Collected\n", content)
+        self.assertNotIn("###", content)
+        self.assertNotIn("\n\n\n", content)
+
+
 if __name__ == "__main__":
     unittest.main()

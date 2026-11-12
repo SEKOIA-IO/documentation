@@ -5,6 +5,9 @@ from pathlib import Path
 from typing import Dict, List
 
 import yaml
+from jinja2 import Environment, FileSystemLoader
+
+SCRIPT_DIR = Path(__file__).resolve().parent
 
 CAPABILITY_TO_ASSET_TYPE = {
     "host_detection": "device",
@@ -87,3 +90,26 @@ def load_asset_connectors(automation_module_repository: str) -> List[Dict]:
             print(f"  - Found: {module_slug} ({asset_type})")
 
     return asset_connectors
+
+
+def escape_table_cell(value) -> str:
+    return str(value).strip().replace("|", "\\|").replace("\n", "<br/>")
+
+
+def generate_connector_doc(connector: Dict) -> str:
+    config = connector["config"]
+    module_slug = connector["module_slug"]
+
+    env = Environment(loader=FileSystemLoader(SCRIPT_DIR / "templates"), trim_blocks=True, lstrip_blocks=True)
+    env.filters["table_cell"] = escape_table_cell
+    body = env.get_template("asset_connector_gitbook.md.jinja").render(
+        config=config,
+        mapping=connector["mapping"],
+        module_slug=module_slug,
+        asset_type=connector["asset_type"],
+    )
+
+    front_matter = yaml.safe_dump(
+        {"title": f"{config.get('name', module_slug)} OCSF mapping"}, sort_keys=False, allow_unicode=True, width=1000
+    )
+    return "---\n" + front_matter + "---\n\n" + body
