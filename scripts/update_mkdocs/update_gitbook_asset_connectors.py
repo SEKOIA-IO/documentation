@@ -2,7 +2,7 @@
 
 import json
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Tuple
 
 import yaml
 from jinja2 import Environment, FileSystemLoader
@@ -113,3 +113,22 @@ def generate_connector_doc(connector: Dict) -> str:
         {"title": f"{config.get('name', module_slug)} OCSF mapping"}, sort_keys=False, allow_unicode=True, width=1000
     )
     return "---\n" + front_matter + "---\n\n" + body
+
+
+def write_includes(connectors: List[Dict], includes_path: Path) -> Tuple[List[str], List[str]]:
+    includes_path.mkdir(parents=True, exist_ok=True)
+
+    written: List[str] = []
+    for connector in connectors:
+        (includes_path / connector["output_name"]).write_text(generate_connector_doc(connector), encoding="utf-8")
+        written.append(connector["output_name"])
+        print(f"Generated {connector['output_name']}")
+
+    removed: List[str] = []
+    for stale_file in sorted(includes_path.glob("*.md")):
+        if stale_file.name not in written:
+            stale_file.unlink()
+            removed.append(stale_file.name)
+            print(f"Removed stale {stale_file.name}")
+
+    return written, removed

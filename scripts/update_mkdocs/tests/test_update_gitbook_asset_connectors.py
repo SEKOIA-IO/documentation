@@ -232,5 +232,43 @@ class GenerateConnectorDocTests(unittest.TestCase):
         self.assertNotIn("\n\n\n", content)
 
 
+class WriteIncludesTests(unittest.TestCase):
+    def setUp(self):
+        directory = tempfile.TemporaryDirectory()
+        self.addCleanup(directory.cleanup)
+        self.includes = Path(directory.name) / "docs" / ".gitbook" / "includes" / "asset_connectors"
+
+    def write(self, connectors: list) -> tuple:
+        with redirect_stdout(io.StringIO()):
+            return generator.write_includes(connectors, self.includes)
+
+    def test_writes_blocks_and_prunes_stale_ones(self):
+        self.includes.mkdir(parents=True)
+        (self.includes / "old_device.md").write_text("stale")
+        foreign = self.includes.parent / "restart-the-endpoint-agent.md"
+        foreign.write_text("keep")
+        connector = make_connector(MAPPING["mapping"])
+
+        written, removed = self.write([connector])
+
+        self.assertEqual((written, removed), (["okta_user.md"], ["old_device.md"]))
+        self.assertEqual(sorted(path.name for path in self.includes.iterdir()), ["okta_user.md"])
+        self.assertEqual(
+            (self.includes / "okta_user.md").read_text(encoding="utf-8"), generator.generate_connector_doc(connector)
+        )
+        self.assertEqual(foreign.read_text(), "keep")
+
+    def test_creates_missing_includes_folder(self):
+        self.write([make_connector(MAPPING["mapping"])])
+        self.assertTrue((self.includes / "okta_user.md").is_file())
+
+    def test_non_markdown_files_are_not_pruned(self):
+        self.includes.mkdir(parents=True)
+        (self.includes / ".DS_Store").write_text("finder")
+        _, removed = self.write([make_connector(MAPPING["mapping"])])
+        self.assertEqual(removed, [])
+        self.assertTrue((self.includes / ".DS_Store").is_file())
+
+
 if __name__ == "__main__":
     unittest.main()
