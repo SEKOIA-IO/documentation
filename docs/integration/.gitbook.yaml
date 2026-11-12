@@ -63,3 +63,5 @@ redirects:
   action_library/whois: action_library/threat_intelligence/whois.md
   action_library/withsecure: action_library/endpoint/withsecure.md
   action_library/zscaler: action_library/network/zscaler.md
+  action_library/fortigate-fw: action_library/network/fortigate-firewalls.md
+  action_library/intra_id: action_library/iam/microsoft-entra-id.md
