@@ -399,6 +399,7 @@ nav:
       - LockSelf LockPass/LockTransfer/LockFiles: integration/categories/applicative/lockself.md
       - Microsoft IIS: integration/categories/applicative/microsoft_iis.md
       - Microsoft Sentinel: integration/categories/applicative/microsoft_sentinel.md
+      - Nasuni: integration/categories/applicative/nasuni.md
       - Nutanix: integration/categories/applicative/nutanix.md
       - New Relic Alerts: integration/categories/applicative/newrelic_alerts.md
       - Salesforce: integration/categories/applicative/salesforce.md
