@@ -162,7 +162,9 @@ Use the `where` operator to filter rows by a list of conditions. Use parenthesis
 
 ### Checking for non-null properties
 
-Many event fields are optional and may not be present in every event. Use `!= null` to keep only rows where a field has a value, or `== null` to find rows where the field is absent.
+Many scalar event fields are optional and may not be present in every event. Use `!= null` to keep only rows where a field has a value, or `== null` to find rows where the field is absent.
+
+For relationship-backed fields, a null check is not a relationship-presence check. An empty related collection is not SQL `NULL`.
 
 !!! example "Retrieve events where `user.name` is present"
 
@@ -183,6 +185,8 @@ Many event fields are optional and may not be present in every event. Use `!= nu
         | 2026-03-26T14:22:03.120Z | laptop-chris | ada_lovelace   |
         | 2026-03-26T14:19:47.883Z | laptop-chris | grace_hopper   |
 
+
+
 !!! example "Find events where `process.command_line` is missing"
 
     === "Query"
@@ -201,6 +205,16 @@ Many event fields are optional and may not be present in every event. Use `!= nu
         | ------------------------ | --------------- | ------------ |
         | 2026-03-26T14:20:15.441Z | laptop-6a1ec62f | svchost.exe  |
         | 2026-03-26T14:17:31.554Z | laptop-b3205bc2 | lsass.exe    |
+        
+
+For example, in the `alerts` datasource, use the following expressions for `threats.name`:
+
+| Goal | Expression |
+| --- | --- |
+| Select alerts without a related threat name | `not threats.name` |
+| Select alerts with at least one related threat name | `not (not threats.name)` |
+
+The nested `not` expression is specific to relationship-field presence. It is not a generic array-length operator. For complete examples, see [How to filter empty relationship-backed lists](/xdr/features/investigate/sol_how_to_guides.md#how-to-filter-empty-relationship-backed-lists).
 
 ## Nested query
 
