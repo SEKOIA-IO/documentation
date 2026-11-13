@@ -446,6 +446,7 @@ nav:
       - Microsoft Defender XDR (Graph API): integration/categories/endpoint/microsoft_365_defender_graphapi.md
       - Microsoft Defender XDR Incidents (Graph API): integration/categories/endpoint/microsoft_365_defender_graphapi_incidents.md
       - Microsoft Intune: integration/categories/endpoint/microsoft_intune.md
+      - Nextron THOR Cloud: integration/categories/endpoint/nextron_thor_cloud.md
       - Nozomi Central Management Console: integration/categories/endpoint/nozomi_cmc.md
       - Nucleon EDR: integration/categories/endpoint/nucleon_edr.md
       - Palo Alto Cortex XDR (EDR): integration/categories/endpoint/paloalto_cortex_edr.md
@@ -692,6 +693,7 @@ nav:
       - SentinelOne: integration/action_library/sentinelone.md
       - Sophos: integration/action_library/sophos.md
       - Stormshield SES: integration/action_library/stormshield-ses.md
+      - THOR Cloud: integration/action_library/thor-cloud.md
       - TrendMicro VisionOne: integration/action_library/trendmicro-visionone.md
       - WithSecure: integration/action_library/withsecure.md
     - Generic:
