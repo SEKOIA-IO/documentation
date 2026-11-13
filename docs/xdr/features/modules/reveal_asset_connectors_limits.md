@@ -27,6 +27,8 @@ Rate limits and vulnerability caps use the current platform defaults. Custom sto
 
 ## Storage limits for custom asset connectors
 
+A custom asset connector with a bug, such as one that creates a new asset at every run or never closes findings, can fill your inventory with duplicate and stale data. Storage limits protect your inventory from such a connector.
+
 !!! note "Custom asset connectors only"
     The limits in this section apply only to custom asset connectors. Built-in asset connectors are subject to the rate limits and vulnerability caps described above.
 
