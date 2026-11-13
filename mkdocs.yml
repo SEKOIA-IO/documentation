@@ -517,6 +517,7 @@ nav:
       - Amazon VPC Flow Logs (Parquet): integration/categories/network/aws_flow_logs_parquet.md
       - Azure Application Gateway: integration/categories/network/azure_application_gateway.md
       - ArubaOS Switch: integration/categories/network/arubaos.md
+      - ArubaOS Mobility Controller: integration/categories/network/arubaos_mobility_controller.md
       - BIND: integration/categories/network/bind.md
       - Cato SASE: integration/categories/network/cato_sase.md
       - Cisco Catalyst SD-WAN: integration/categories/network/cisco_catalyst_sd_wan.md
