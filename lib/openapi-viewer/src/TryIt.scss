@@ -27,6 +27,15 @@
             border-radius: 4px;
             margin: 2px 12px;
             flex: 1;
+            // Let the field shrink below its intrinsic width (a file input's
+            // button + file name), so it stays inside the panel
+            min-width: 0;
+
+            &[type="file"] {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
 
             &::placeholder {
                 color: rgb(212, 31, 28);
