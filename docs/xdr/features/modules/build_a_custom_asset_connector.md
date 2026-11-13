@@ -6,33 +6,56 @@ This article explains how to build a custom asset connector that sends valid dat
 
 ## Before you begin
 
-- Create the connector in a custom integration. See [Create your own integration](/xdr/features/collect/integrations_hub.md#create-your-own-integration).
-- Use `sekoia-automation-models` 1.5.0 or later.
-- A community can own up to 10 custom integrations with an asset connector. See [Storage limits for custom asset connectors](/xdr/features/modules/reveal_asset_connectors_limits.md#storage-limits-for-custom-asset-connectors).
+- The Reveal add-on module is enabled for your community.
+- You have Python 3.11 or later and the `sekoia-automation-sdk` package.
+- You use `sekoia-automation-models` 1.5.0 or later.
 
-## Build valid connector items
+## Step 1: Set up the custom integration
 
-- Build every item with the OCSF models of `sekoia-automation-models`: `DeviceOCSFModel`, `UserOCSFModel`, `SoftwareOCSFModel` or `VulnerabilityOCSFModel`.
-- Send the items in an `AssetList`. Sekoia validates each push against the same models.
-- Build `hostname` and `domain` with `split_hostname()`. It applies the hostname rule of Sekoia.
-- Skip a device when `split_hostname()` returns no hostname. Sekoia would reject it.
+1. Create the integration that will hold the asset connector. See [Create your own integration](/xdr/features/collect/integrations_hub.md#create-your-own-integration).
+2. Add the asset connector to the integration.
+3. Import the integration into your community.
+4. Check that the import passes the **Validating integration** step.
 
-## Send data efficiently
+A community can own up to 10 custom integrations that contain an asset connector. Over this number, the import fails at the **Validating integration** step.
 
-- Send items in batches, not one by one. Each configuration has a rate limit on pushes per minute and a daily item quota.
-- Keep each item under the item-size limit.
-- Filter findings in the connector code before sending them, for instance by severity or known exploitation.
+## Step 2: Build valid connector items
 
-The values are in [Asset connector limits](/xdr/features/modules/reveal_asset_connectors_limits.md).
+1. Build every item with an OCSF model of `sekoia-automation-models`: `DeviceOCSFModel`, `UserOCSFModel`, `SoftwareOCSFModel` or `VulnerabilityOCSFModel`.
+2. Send the items in an `AssetList`.
 
-## Keep findings up to date
+Sekoia validates each push against the same models.
 
-- Send a finding with the Close activity when the source reports it fixed. Its status becomes remediated.
-- Send it again without Close if it comes back. Its status becomes open.
+## Step 3: Normalize hostnames
+
+1. Build `hostname` and `domain` with `split_hostname()`.
+2. Skip a device when `split_hostname()` returns no hostname.
+
+`split_hostname()` applies the hostname rule of Sekoia. A device without a usable hostname would be rejected.
+
+## Step 4: Send items in batches
+
+1. Group items into batches instead of sending them one by one.
+2. Keep each item under the item-size limit.
+3. Filter findings in the connector code before sending them, for instance by severity or known exploitation.
+
+Each configuration has a rate limit on pushes per minute and a 24-hour item quota. The values are in [Asset connector limits](/xdr/features/modules/reveal_asset_connectors_limits.md).
+
+## Step 5: Keep findings up to date
+
+1. Send a finding with the Close activity when the source reports it fixed. Its status becomes remediated.
+2. Send the finding again without Close if the source reports it again. Its status becomes open.
 
 A push never changes a status a user set, such as accepted risk or false positive.
 
-## Understand how pushed data is matched
+## Step 6: Plan for storage limits
+
+1. Close fixed findings, so that open findings stay under their limit.
+2. Send each machine and account with the same hostname or username at every run, so that each one updates a single asset.
+
+Each configuration and each community can store a limited number of active assets, active applications and open findings. The limits follow the number of assets your community subscribed. When a configuration reaches a storage limit, every push of the configuration receives a 429 `ASSET_CONNECTOR_LIMIT_REACHED`. See [Storage limits for custom asset connectors](/xdr/features/modules/reveal_asset_connectors_limits.md#storage-limits-for-custom-asset-connectors).
+
+## How pushed data is matched
 
 A custom asset connector updates the assets your community already has, whatever source created them.
 
@@ -47,15 +70,6 @@ When an item matches an asset:
 - Each property the item carries overwrites the stored value.
 - Empty core properties of a device, such as OS, IP address or MAC address, clear the stored value.
 - Interfaces, groups, partitions and accounts the item carries replace the stored ones. When the item carries none, the stored ones are kept.
-
-## Plan for custom connector storage limits
-
-Each configuration and each community can store a limited number of active assets, active applications and open findings. The limits follow the number of assets your community subscribed.
-
-- Close fixed findings, so that open findings stay under their limit.
-- Send each machine and account with the same hostname or username at every run, so that it updates one asset instead of creating new ones.
-
-When a configuration reaches a storage limit, every push of the configuration receives a 429 `ASSET_CONNECTOR_LIMIT_REACHED`. See [Storage limits for custom asset connectors](/xdr/features/modules/reveal_asset_connectors_limits.md#storage-limits-for-custom-asset-connectors).
 
 ## Related articles
 

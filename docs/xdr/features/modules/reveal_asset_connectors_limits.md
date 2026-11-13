@@ -14,13 +14,13 @@ Rate limits and vulnerability caps use the current platform defaults. Custom sto
 | Limit | Value | Applies to | When reached |
 |---|---|---|---|
 | Pushes | 60 per minute | Asset connector configuration | 429 `ASSET_CONNECTOR_RATE_LIMIT_EXCEEDED` |
-| Daily item quota | 200,000 items per day, counted before validation | Asset connector configuration | 429 `ASSET_CONNECTOR_RATE_LIMIT_EXCEEDED`, with `details.limit` set to `items per day` |
+| 24-hour item quota | 200,000 items per 24 hours, counted before validation | Asset connector configuration | 429 `ASSET_CONNECTOR_RATE_LIMIT_EXCEEDED`, with `details.limit` set to `items per day` |
 | Item size | 900 KB | Item | 413 `ASSET_CONNECTOR_PUSH_TOO_LARGE` |
 | Vulnerabilities per application | 1,000 | Application | Nothing is returned. Extra vulnerabilities are not stored. |
 | Vulnerabilities per asset | 20,000 | Asset | Nothing is returned. New vulnerabilities are not stored. |
 
-- The daily item quota is not a rolling window and does not reset at a fixed time. It resets 24 hours after the first counted push.
-- After a 429, the connector pauses for an hour by default. Then it fetches again from its last checkpoint.
+- The 24-hour item quota is not a rolling window and does not reset at a fixed time. It resets 24 hours after the first counted push.
+- After a 429, the connector waits for one hour by default before retrying from its last checkpoint. This pause does not reset the 24-hour item quota.
 - The vulnerabilities-per-application cap applies only to CVEs that Sekoia matches from the NVD. It keeps known exploited CVEs first, then the highest CVSS scores.
 - The vulnerabilities-per-asset cap applies to pushed findings and to CVEs matched from the NVD. Stored vulnerabilities are still updated and closed.
 - Nothing warns when a cap leaves vulnerabilities out. They remain in the source tool, or in the NVD.
