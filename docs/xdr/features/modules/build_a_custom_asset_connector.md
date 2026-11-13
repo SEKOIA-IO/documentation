@@ -59,6 +59,6 @@ When a configuration reaches a storage limit, every push of the configuration re
 
 ## Related articles
 
-- [Troubleshoot asset connectors](/xdr/features/modules/reveal_asset_connectors_troubleshoot.md#diagnose-push-errors) — Push errors and the action for each.
-- [Asset connector limits](/xdr/features/modules/reveal_asset_connectors_limits.md) — Rate limits, caps and storage limits.
-- [Create an asset connector](/xdr/features/modules/reveal_asset_connectors_create.md) — How to configure an asset connector from the integration catalog.
+- [Troubleshoot asset connectors](/xdr/features/modules/reveal_asset_connectors_troubleshoot.md#diagnose-push-errors): Push errors and the action for each.
+- [Asset connector limits](/xdr/features/modules/reveal_asset_connectors_limits.md): Rate limits, caps and storage limits.
+- [Create an asset connector](/xdr/features/modules/reveal_asset_connectors_create.md): How to configure an asset connector from the integration catalog.

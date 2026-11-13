@@ -7,7 +7,7 @@ This article lists the limits that apply to asset connectors and what happens wh
 !!! note "Scope"
     Rate limits, item-size limits and vulnerability caps apply to built-in and custom asset connectors. Active and lifetime storage limits apply only to custom asset connectors.
 
-The values on this page are defaults. They can change.
+Rate limits and vulnerability caps use the current platform defaults. Custom storage limits depend on the number of assets included in the community subscription. These values may change.
 
 ## Rate limits and caps for every asset connector
 
@@ -19,7 +19,7 @@ The values on this page are defaults. They can change.
 | Vulnerabilities per application | 1,000 | Application | Nothing is returned. Extra vulnerabilities are not stored. |
 | Vulnerabilities per asset | 20,000 | Asset | Nothing is returned. New vulnerabilities are not stored. |
 
-- The daily item quota resets at most one day after the first push it counts.
+- The daily item quota is not a rolling window and does not reset at a fixed time. It resets 24 hours after the first counted push.
 - After a 429, the connector pauses for an hour by default. Then it fetches again from its last checkpoint.
 - The vulnerabilities-per-application cap applies only to CVEs that Sekoia matches from the NVD. It keeps known exploited CVEs first, then the highest CVSS scores.
 - The vulnerabilities-per-asset cap applies to pushed findings and to CVEs matched from the NVD. Stored vulnerabilities are still updated and closed.
@@ -58,6 +58,7 @@ For example, a community subscribed to 2,000 assets can have 10,000 active asset
 
 - Usage is computed every 15 minutes. A push accepted before the next computation is processed in full.
 - While a configuration or its community has reached a limit, every push of the configuration receives a 429 `ASSET_CONNECTOR_LIMIT_REACHED`. Closures are refused too.
+- When the community reaches a limit, every custom asset connector configuration of the community is blocked, not only the one that sent the most data. All of them push again once the community is back under the limit.
 - `details.limits` lists each reached limit by `figure` and `scope` (`configuration` or `community`). It gives no usage or remaining count.
 - The connector pauses for an hour by default, then fetches again from its last checkpoint. Data the source deleted in the meantime is not recovered.
 
@@ -65,11 +66,11 @@ For example, a community subscribed to 2,000 assets can have 10,000 active asset
 
 | Limit | How usage decreases |
 |---|---|
-| Active assets, active applications | By itself. While the configuration is blocked, nothing is reported, so assets and applications leave the 30-day window. |
+| Active assets, active applications | By itself. While blocked, the configurations report nothing, so their assets and applications leave the 30-day window. |
 | Open vulnerability findings | Only when users change finding statuses to remediated, accepted risk or false positive. The blocked connector cannot close findings. |
 | Lifetime limits | Never. |
 
 ## Related articles
 
-- [Build a custom asset connector](/xdr/features/modules/build_a_custom_asset_connector.md) — How to send valid data and avoid duplicate assets.
-- [Troubleshoot asset connectors](/xdr/features/modules/reveal_asset_connectors_troubleshoot.md#diagnose-push-errors) — Push errors and the action for each.
+- [Build a custom asset connector](/xdr/features/modules/build_a_custom_asset_connector.md): How to send valid data and avoid duplicate assets.
+- [Troubleshoot asset connectors](/xdr/features/modules/reveal_asset_connectors_troubleshoot.md#diagnose-push-errors): Push errors and the action for each.
