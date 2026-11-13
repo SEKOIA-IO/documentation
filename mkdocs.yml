@@ -420,6 +420,7 @@ nav:
       - Proofpoint On Demand: integration/categories/email/proofpoint_pod.md
       - Proofpoint Targeted Attack Protection: integration/categories/email/proofpoint_tap.md
       - Retarus Email Security: integration/categories/email/retarus_email_security.md
+      - SECUSERVE e-securemail: integration/categories/email/secuserve_e-securemail.md
       - SpamAssassin: integration/categories/email/spamassassin.md
       - Trend Micro Email Security: integration/categories/email/trend_micro_email_security.md
       - Vade Cloud: integration/categories/email/vade_cloud.md
