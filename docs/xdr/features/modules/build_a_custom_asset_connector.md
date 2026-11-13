@@ -46,12 +46,12 @@ Sekoia validates each push against the same models.
 
 
     def is_worth_sending(finding: VulnerabilityOCSFModel) -> bool:
-    return any(
-        cvss.base_score is not None and cvss.base_score >= 7.0
-        for vulnerability in finding.vulnerabilities
-        if vulnerability.cve
-        for cvss in vulnerability.cve.cvss or []
-    )
+        return any(
+            cvss.base_score is not None and cvss.base_score >= 7.0
+            for vulnerability in finding.vulnerabilities
+            if vulnerability.cve
+            for cvss in vulnerability.cve.cvss or []
+        )
     ```
 
 Each configuration has a rate limit on pushes per minute and a 24-hour item quota. The values are in [Asset connector limits](/xdr/features/modules/reveal_asset_connectors_limits.md).
