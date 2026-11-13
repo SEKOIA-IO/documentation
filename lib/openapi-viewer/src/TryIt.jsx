@@ -2,6 +2,16 @@ import { reactive } from "vue";
 import { data } from "./OpenAPIViewer";
 import "./TryIt.scss"
 import { Code } from "./Code";
+import { getRequestBodyContent } from "./requestBody.mjs";
+import {
+  buildFormBody,
+  curlFormArgs,
+  formEntries,
+  isFileField,
+  isFormMediaType,
+  jsFormBody,
+  pythonFormArgs,
+} from "./formBody.mjs";
 
 /** Vue component to render an interactive Try-it editor for an API endpoint */
 export const TryIt = {
@@ -79,16 +89,21 @@ export const TryIt = {
 };
 
 
-export const Field = ({ name, required }, payload) => <div class="field">
+export const Field = ({ name, required, file }, payload) => <div class="field">
   <label>{name} <span class="required">{!!required && "*"}</span></label>
-  <input
+  {file ? <input
+    type="file"
+    class={{ error: !payload[name] && required }}
+    onChange={({ target }) => payload[name] = target.files?.[0]}
+    name={`sekoia-${name}`}
+  ></input> : <input
     class={{ error: !payload[name] && required }}
     onInput={({ target }) => payload[name] = target.value}
     value={payload[name] || ""}
     placeholder={required ? "required" : ""}
     name={`sekoia-${name}`}
     type={name === "API Key" ? "password" : "text"}
-  ></input>
+  ></input>}
 </div>
 
 
@@ -110,18 +125,23 @@ function gather_params(endpoint) {
     }
   }
 
-  // ... body params
-  let bodySchema = endpoint.requestBody?.content?.["application/json"]?.schema;
+  // ... body params (JSON, or form fields, where files are flagged)
+  const { mediaType, schema } = getRequestBodyContent(endpoint.requestBody) || {};
+  const bodyParam = (k, s) =>
+    isFormMediaType(mediaType) && isFileField(s)
+      ? { name: k, in: "body", file: true }
+      : { name: k, in: "body" };
+  let bodySchema = schema;
   if (bodySchema?.["$ref"]) {
     bodySchema = bodySchema?.["$ref"]?.replace(/^#\/components\/schemas\//, "");
     const body = data.schema.components?.schemas?.[bodySchema]?.properties || {};
     for (const k in body) {
-      params.push({ name: k, in: "body" });
+      params.push(bodyParam(k, body[k]));
     }
   } else {
     const body = bodySchema?.properties || {};
     for (const k in body) {
-      params.push({ name: k, in: "body" });
+      params.push(bodyParam(k, body[k]));
     }
   }
 
@@ -148,7 +168,8 @@ function generate_query(
     (p) => p.in === "body" && ![undefined, ""].includes(p.value)
   );
   let headers = { Authorization: "Bearer <YOUR_API_KEY>" };
-  let body, query_params;
+  let body, query_params, form;
+  const mediaType = getRequestBodyContent(endpoint.requestBody)?.mediaType;
 
   // Interpolate path params
   url = url.replaceAll(
@@ -169,6 +190,12 @@ function generate_query(
     }
   }
 
+  // Generate form body: the browser sets its Content-Type (and multipart boundary)
+  else if (hasBodyParams && isFormMediaType(mediaType)) {
+    form = formEntries(params.filter((p) => p.in === "body"));
+    body = buildFormBody(mediaType, form);
+  }
+
   // Generate JSON body
   else if (hasBodyParams) {
     body = Object.fromEntries(bodyParams.map((p) => [p.name, p.value]));
@@ -183,21 +210,22 @@ function generate_query(
     body = JSON.stringify(body);
   }
 
-  return { method, url, headers, body, query_params };
+  return { method, url, headers, body, query_params, mediaType, form };
 }
 
 // Generate a CURL command line for an OpenAPI endpoint
 function generate_curl(endpoint, payload) {
-  let { url, headers, body } = generate_query(endpoint, payload);
+  let { url, headers, body, mediaType, form } = generate_query(endpoint, payload);
   let out = `curl -X ${endpoint.method.toUpperCase()} ${url}`;
   Object.entries(headers).forEach(([h, v]) => (out += ` -H '${h}:${v}'`));
-  if (body) out += ` --data-raw '${body}'`;
+  if (form) out += curlFormArgs(mediaType, form);
+  else if (body) out += ` --data-raw '${body}'`;
   return out
 }
 
 // Generate a Python example code for an OpenAPI endpoint
 function generate_python(endpoint, payload) {
-  let { url, headers, body, query_params } = generate_query(
+  let { url, headers, body, query_params, mediaType, form } = generate_query(
     endpoint,
     payload,
     {
@@ -218,7 +246,9 @@ result = requests.request(
       4
     ).replaceAll("\n", "\n    ")},\n`;
   }
-  if (body) {
+  if (form) {
+    out += pythonFormArgs(mediaType, form);
+  } else if (body) {
     out += `    json=${JSON.stringify(JSON.parse(body), null, 4).replaceAll(
       "\n",
       "\n    "
@@ -238,11 +268,14 @@ print(json.dumps(result, indent=4))
 
 // Generate a Javascript example code for an OpenAPI endpoint
 function generate_js(endpoint, payload) {
-  let { url, headers, body } = generate_query(endpoint, payload);
-  let out = `await fetch("${url}", {
+  let { url, headers, body, mediaType, form } = generate_query(endpoint, payload);
+  let out = form ? `${jsFormBody(mediaType, form)}\n` : "";
+  out += `await fetch("${url}", {
     method: "${endpoint.method.toUpperCase()}",
 `;
-  if (body) {
+  if (form) {
+    out += `    body,\n`;
+  } else if (body) {
     out += `    body: \`${JSON.stringify(JSON.parse(body), null, 4).replaceAll(
       "\n",
       "\n    "
