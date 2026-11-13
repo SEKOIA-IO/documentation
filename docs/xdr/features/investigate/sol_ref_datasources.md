@@ -336,6 +336,7 @@ Applications reported by the Sekoia agent are refreshed at each inventory. When 
 | uuid              | Unique identifier of the application record                                                       |
 | community_uuid    | UUID of the community the asset belongs to                                                        |
 | asset_uuid        | Unique identifier of the asset                                                                    |
+| asset_name        | Name of the asset                                                                                 |
 | name              | Application name                                                                                  |
 | version           | Application version                                                                               |
 | publisher         | Vendor or publisher of the application                                                            |
@@ -370,6 +371,26 @@ Applications reported by the Sekoia agent are refreshed at each inventory. When 
     | where isnull(deleted_at)
     | aggregate asset_count = count_distinct(asset_uuid) by name, version
     | top 20 by asset_count
+    ```
+
+??? example "Number of installed applications per asset"
+
+    ```
+    asset_applications
+    | where isnull(deleted_at)
+    | aggregate application_count = count() by asset_name
+    | order by application_count desc
+    ```
+
+??? example "Assets running a given application, with their IP addresses"
+
+    `asset_applications` does not return the IP addresses of the asset. Join it with the [assets](#assets) data source to get them from the asset atoms. Filter `assets` on a community before the lookup, to stay under the 10,000-row limit on the right side of a lookup.
+
+    ```
+    asset_applications
+    | where isnull(deleted_at) and name == "OpenSSL"
+    | lookup (assets | where community_uuid == "<community_uuid>") on asset_uuid == uuid into asset
+    | select asset_name, version, asset.atoms
     ```
 
 ## asset_vulnerabilities
