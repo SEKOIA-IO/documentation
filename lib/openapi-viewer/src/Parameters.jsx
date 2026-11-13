@@ -1,5 +1,6 @@
 import { Chevron } from "./utils"
 import { resolveSchema } from "./OpenAPIViewer"
+import { getRequestBodyContent, isFileSchema } from "./requestBody.mjs"
 
 /** A Vue component to render an API endpoint's parameters */
 export const Parameters = {
@@ -13,8 +14,8 @@ export const Parameters = {
             const queryParameters = parameters.filter(p => p.in === "query")
             const bodyParameters = parameters.filter(p => p.in === "body")
 
-            // Incorporate requestBody to body parameters list
-            let bodySchema = requestBody?.content?.["application/json"]?.schema
+            // Incorporate requestBody to body parameters list (JSON, or form fields)
+            let bodySchema = getRequestBodyContent(requestBody)?.schema
             if (bodySchema) bodySchema = resolveSchema(bodySchema)
             if (bodySchema?.properties) bodyParameters.push(...Object.entries(bodySchema.properties).map(([name, p]) => {
                 p.name = name;
@@ -95,7 +96,8 @@ export const Property = (prop, override = {}, stack = null, level = 0) => {
     const p = { ...prop, ...override }
     let isExpandable = p.type === 'array' || p.items?.type === 'object' || p.type === "object"
 
-    let type = p.type
+    const isFile = isFileSchema(p)
+    let type = isFile ? "file" : p.type
     if (type === "array") {
         if (!p.items?.type && p.items?.$ref) p.items.type = "object"
         if (p.items?.type) type += ` of ${p.items?.type}s`
@@ -138,7 +140,7 @@ export const Property = (prop, override = {}, stack = null, level = 0) => {
             {name}
         </td>
         <td>{p.required ? <span class="required">* required</span> : <span class="optional">optional</span>}</td>
-        <td class="type">{type || "-"} {!!p.format && <>({p.format})</>}
+        <td class="type">{type || "-"} {!!p.format && !isFile && <>({p.format})</>}
         </td>
         <td class="constraints">
             <div>

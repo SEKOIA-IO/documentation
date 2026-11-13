@@ -5,7 +5,8 @@
   "scripts": {
     "start": "vue-cli-service serve --host 127.0.0.1",
     "build": "vue-cli-service build && cp -f dist/javascript/openapi-viewer.min.js ../../docs/javascript/openapi-viewer.min.js",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "test": "node --test \"src/**/*.test.mjs\""
   },
   "dependencies": {
     "@babel/core": "^7.19.3",
