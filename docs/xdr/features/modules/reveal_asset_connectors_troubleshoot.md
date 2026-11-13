@@ -55,7 +55,7 @@ The connector resumes synchronization with the updated configuration.
 ## Related links
 
 - [Create an asset connector](/xdr/features/modules/reveal_asset_connectors_create.md) — How to configure a new asset connector from the integration catalog.
-- [Custom asset connectors: good practices](/xdr/features/modules/reveal_asset_connectors_limits.md) — How to build a custom asset connector, the errors a push can receive, and how much a custom asset connector can store.
+- [Custom asset connectors](/xdr/features/modules/reveal_asset_connectors_limits.md) — How to build a custom asset connector, the errors a push can receive, and how much a custom asset connector can store.
 - [Reveal feature enablement matrix](/xdr/features/modules/reveal_feature_enablement.md) — Which data sources are required for each Reveal capability.
 - [Security controls](/xdr/features/modules/reveal_security_controls.md) — How to verify connector coverage and identify visibility gaps from the asset context panel.
 - [Troubleshoot Reveal](/xdr/features/modules/reveal_troubleshoot.md) — General Reveal troubleshooting for missing data across capabilities.

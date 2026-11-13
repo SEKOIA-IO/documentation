@@ -1,4 +1,4 @@
-# Custom asset connectors: good practices
+# Custom asset connectors
 
 _**[Reveal module](/xdr/features/modules/reveal_index.md)** — This feature requires the Reveal add-on module._ 
 
