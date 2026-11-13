@@ -2,162 +2,156 @@ uuid: c10307ea-5dd1-45c6-85aa-2a6a900df99b
 name: Winlogbeat
 type: intake
 
+# Winlogbeat
+
 ## Overview
 
-Winlogbeat is an open-source log collector that ships Windows Event Logs as JSON events to a Losgtash log concentrator before being sent to Sekoia.io.
+Winlogbeat is an open-source log collector from Elastic that reads Windows Event Logs and sends them as JSON events to a Logstash log concentrator. Logstash then forwards the events to Sekoia.io over HTTPS.
 
 - **Vendor**: Elastic
-- **Supported environment**: On Premise
+- **Supported environment**: On-premise
 - **Detection based on**: Telemetry
-- **Supported application or feature**: System Monitoring and Security
+- **Supported application or feature**: System monitoring and security
 
-## High-Level Architecture Diagram
+## High-level architecture diagram
 
-- **Type of integration**: Outbound (PUSH to Sekoia.io)
-- **Schema**
+- **Type of integration**: Outbound, with Winlogbeat sending events to Logstash and Logstash forwarding them to Sekoia.io
+- **Schema**: JSON
 
-![winlogbeat_architecture](/assets/integration/winlogbeat_architecture.png){: style="max-width:100%"}
+![Winlogbeat architecture](/assets/integration/winlogbeat_architecture.png){: style="max-width:100%"}
 
 ## Specification
 
 ### Prerequisites
 
-- **Resource**:
-    - Self-managed logstash server
-- **Network**:
-    - Outbound traffic allowed
-- **Permissions**:
-    - Administrator access to the Windows server
-    - Root access to the Linux server with the logstash
+- A self-managed Logstash server.
+- Outbound HTTPS traffic from the Logstash server to Sekoia.io.
+- Administrator access to the Windows server running Winlogbeat.
+- Root access to the Linux server running Logstash, if Logstash is hosted on Linux.
 
-### Transport Protocol/Method
+### Transport protocol and method
 
-- **Indirect HTTP**
+Winlogbeat sends events to Logstash through the Beats input. Logstash forwards the complete JSON events to Sekoia.io through the Sekoia.io HTTP intake endpoint.
 
-### Logs details
+### Log details
 
-- **Supported functionalities**: See section [Overview](#overview)
-- **Supported type(s) of structure**: JSON
-- **Supported verbosity level**: Informational
+- **Supported functionalities**: Windows application, system, security, forwarded events, and PowerShell event collection. See [Overview](#overview).
+- **Supported structure**: JSON.
+- **Supported verbosity level**: Informational.
 
-!!! Note
-    Log levels are based on the taxonomy of [RFC5424](https://datatracker.ietf.org/doc/html/rfc5424). Adapt according to the terminology used by the editor.
+!!! note "Log levels"
 
-## Step-by-Step Configuration Procedure
+    Log levels follow the taxonomy defined in [RFC 5424](https://datatracker.ietf.org/doc/html/rfc5424). Adapt this description if the source uses different terminology.
 
-### Instructions on the 3rd Party Solution
+## Configure Winlogbeat
 
-#### Install and Configure Winlogbeat
+### Install and configure Winlogbeat
 
-1. Download Winlogbeat zip from the Elastic.co [download page](https://www.elastic.co/downloads/beats/winlogbeat)
-2. Extract the archive into `C:\Program Files\winlogbeat`
-3. Open a PowerShell prompt as an Administrator and run the following commands to install the service
+1. Download the Winlogbeat archive from the [Elastic download page](https://www.elastic.co/downloads/beats/winlogbeat).
 
-```powershell
-PS C:\Users\Administrator> cd 'C:\Program Files\winlogbeat'
-PS C:\Program Files\winlogbeat> .\install-service-winlogbeat.ps1
-```
+2. Extract the archive to `C:\Program Files\winlogbeat`.
 
-4. Replace the configuration file `C:\Program Files\winlogbeat\winlogbeat.yml` by the following content:
+3. Open PowerShell as an administrator.
 
-```yaml
-winlogbeat.event_logs:
-  - name: Application
-    ignore_older: 72h
-  - name: System
-  - name: Security
-  - name: ForwardedEvents
-    tags: [forwarded]
-  - name: Windows PowerShell
-    event_id: 400, 403, 600, 800
-  - name: Microsoft-Windows-PowerShell/Operational
-    event_id: 4103, 4104, 4105, 4106
+4. Change to the Winlogbeat installation directory.
 
-# ====================== Elasticsearch template settings =======================
+    ````powershell
+    cd 'C:\Program Files\winlogbeat'
+    ````
 
-setup.template.settings:
-  index.number_of_shards: 1
-  #index.codec: best_compression
-  #_source.enabled: false
+5. Install the Winlogbeat service.
 
-# ================================== Outputs ===================================
+    ````powershell
+    .\install-service-winlogbeat.ps1
+    ````
 
-# Configure what output to use when sending the data collected by the beat.
+6. Replace `C:\Program Files\winlogbeat\winlogbeat.yml` with the following configuration:
 
-# ---------------------------- Elasticsearch Output ----------------------------
-output.elasticsearch:
-  enabled: false
+    ````yaml
+    winlogbeat.event_logs:
+      - name: Application
+        ignore_older: 72h
 
-# ------------------------------ Logstash Output -------------------------------
+      - name: System
 
-output.logstash:
-  # The Logstash hosts
-  hosts: ["logstash_concentrator:5044"]
+      - name: Security
 
-  # Optional SSL. By default is off.
-  # List of root certificates for HTTPS server verifications
-  #ssl.certificate_authorities: ["/etc/pki/root/ca.pem"]
+      - name: ForwardedEvents
+        tags: [forwarded]
 
-  # Certificate for SSL client authentication
-  #ssl.certificate: "/etc/pki/client/cert.pem"
+      - name: Windows PowerShell
+        event_id: 400, 403, 600, 800
 
-  # Client Certificate Key
-  #ssl.key: "/etc/pki/client/cert.key"
+      - name: Microsoft-Windows-PowerShell/Operational
+        event_id: 4103, 4104, 4105, 4106
 
-# ================================= Processors =================================
+    setup.template.settings:
+      index.number_of_shards: 1
 
-processors:
-  - add_host_metadata:
-      when.not.contains.tags: forwarded
-  - add_cloud_metadata: ~
+    output.elasticsearch:
+      enabled: false
 
-# ================================== Logging ===================================
+    output.logstash:
+      hosts: ["LOGSTASH_HOST:5044"]
 
-logging.level: info
-#logging.to_files: true
-#logging.files:
-  #path: C:\ProgramData\winlogbeat\Logs
-  #name: winlogbeat
-  #keepfiles: 7
-  #permissions: 0640
-```
+      # Uncomment these options when your Logstash Beats input uses TLS.
+      # ssl.certificate_authorities: ["C:\\path\\to\\ca.pem"]
+      # ssl.certificate: "C:\\path\\to\\client.crt"
+      # ssl.key: "C:\\path\\to\\client.key"
 
-!!! Warning
-    Don't forget to specify the location of your logstash server in this configuration
+    processors:
+      - add_host_metadata:
+          when.not.contains.tags: forwarded
+      - add_cloud_metadata: ~
 
-5. Save and validate the configuration with the command:
+    logging.level: info
+    ````
 
-```powershell
-PS C:\Program Files\Winlogbeat> .\winlogbeat.exe test config -c .\winlogbeat.yml -e
-```
+    Replace `LOGSTASH_HOST` with the hostname or IP address of your Logstash server. Keep the `:5044` port unless you configure the Logstash Beats input to use another port.
 
-6. Set up assets:
+    !!! warning "Use the correct Logstash address"
 
-```powershell
-PS C:\Program Files\Winlogbeat> .\winlogbeat.exe setup -e
-```
+        The value of `output.logstash.hosts` must resolve from the Windows server running Winlogbeat. If the Logstash server uses a different port, update the value to match the Beats input configuration.
 
-7. Start the Winlogbeat service:
+7. Validate the configuration.
 
-```powershell
-PS C:\Program Files\Winlogbeat> Start-Service winlogbeat
-```
+    ````powershell
+    .\winlogbeat.exe test config -c .\winlogbeat.yml -e
+    ````
 
-!!! Note
-    If you encounter any issues during the configuration specified in this section "Instructions on the 3rd Party Solution," please do not hesitate to contact your editor. We also welcome any suggestions for improving our documentation to better serve your needs.
+8. Start the Winlogbeat service.
 
-### Instruction on Sekoia
+    ````powershell
+    Start-Service winlogbeat
+    ````
+
+`winlogbeat setup` is not required for this configuration because events are sent to Logstash and the Elasticsearch output is disabled. Run that command only when you separately configure the Elasticsearch and Kibana assets required by Winlogbeat.
+
+### Configure your intake
 
 {!_shared_content/integration/intake_configuration.md!}
 
+## Forward logs to Sekoia.io
 
-### Forward logs to Sekoia.io
-
-Please consult our [guide](/integration/ingestion_methods/https/logstash.md) to configure logs forwarding from Logstash to Sekoia.io.
+Configure Logstash to accept Winlogbeat events and forward the complete JSON payload to Sekoia.io. Follow the [Logstash forwarding guide](/integration/ingestion_methods/logstash.md) and replace its intake key placeholder with the key from the Winlogbeat intake.
 
 {!_shared_content/operations_center/integrations/generated/c10307ea-5dd1-45c6-85aa-2a6a900df99b_sample.md!}
 
 ## Detection section
+
+The related built-in detection rule list is generated automatically from the fields declared by the intake format. The generated list can omit a compatible rule when the rule uses fields that the format does not declare, even when the parser produces those fields through a shortcut or post-processing step.
+
+!!! note "Windows Security detection coverage"
+
+    The **LSASS Access From Non System Account** rule detects access to the LSASS process from a non-system account in Windows Security events 4656 and 4663. It uses the following normalized fields:
+
+    - `action.properties.ObjectName`
+    - `action.properties.AccessMask`
+    - `action.properties.SubjectUserName`
+
+    Verify this rule in the [built-in detection rule catalog](/xdr/features/detect/rules_catalog.md). The rule should be included in the generated Winlogbeat detection list after these `action.properties.*` fields are declared in the Winlogbeat intake taxonomy.
+
+    Review other Windows Security rules that use the same field family when checking detection coverage. Do not create a custom rule when an applicable native rule already exists in the catalog.
 
 {!_shared_content/operations_center/integrations/generated/021e9def-5a55-4369-941e-af269b45bef1.md!}
 
@@ -167,6 +161,7 @@ Please consult our [guide](/integration/ingestion_methods/https/logstash.md) to 
 
 {!_shared_content/operations_center/integrations/generated/c10307ea-5dd1-45c6-85aa-2a6a900df99b.md!}
 
-## Further Readings
-- [Winlogbeat documentation](https://www.elastic.co/guide/en/beats/winlogbeat/current/_winlogbeat_overview.html)
-- [Winlogbeat configuration](https://github.com/elastic/beats/blob/main/winlogbeat/winlogbeat.yml)
+## Further readings
+
+- [Winlogbeat overview](https://www.elastic.co/guide/en/beats/winlogbeat/current/_winlogbeat-overview.html)
+- [Winlogbeat configuration reference](https://github.com/elastic/beats/blob/main/winlogbeat/winlogbeat.yml)
