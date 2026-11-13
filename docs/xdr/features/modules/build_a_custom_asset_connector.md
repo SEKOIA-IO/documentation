@@ -39,20 +39,20 @@ Sekoia validates each push against the same models.
 2. Keep each item under the item-size limit.
 3. Filter findings in the connector code before sending them, for instance by CVSS score, or by known exploitation when the source reports it.
 
-For example, to send only the findings with a CVSS base score of 7.0 or more:
+??? example "send only the findings with a CVSS base score of 7.0 or more"
 
-```python
-from sekoia_automation_models.ocsf.vulnerability import VulnerabilityOCSFModel
+    ```python
+    from sekoia_automation_models.ocsf.vulnerability import VulnerabilityOCSFModel
 
 
-def is_worth_sending(finding: VulnerabilityOCSFModel) -> bool:
+    def is_worth_sending(finding: VulnerabilityOCSFModel) -> bool:
     return any(
         cvss.base_score is not None and cvss.base_score >= 7.0
         for vulnerability in finding.vulnerabilities
         if vulnerability.cve
         for cvss in vulnerability.cve.cvss or []
     )
-```
+    ```
 
 Each configuration has a rate limit on pushes per minute and a 24-hour item quota. The values are in [Asset connector limits](/xdr/features/modules/reveal_asset_connectors_limits.md).
 
