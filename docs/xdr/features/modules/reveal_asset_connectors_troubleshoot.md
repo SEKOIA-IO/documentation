@@ -38,7 +38,7 @@ Review the log entries to identify the root cause. Common issues include:
 
 ### Diagnose push errors
 
-A push error appears in the connector logs with its response code and error code. Errors apply to built-in and custom asset connectors, unless the scope says otherwise.
+A push error appears in the connector logs with its response code and error code. A push accepted with rejected items is the exception: the connector logs it as a success, and only the push response lists the rejected items. Errors apply to built-in and custom asset connectors, unless the scope says otherwise.
 
 | Response | Error code | Cause | Action | Scope |
 |---|---|---|---|---|
