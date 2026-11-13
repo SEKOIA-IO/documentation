@@ -71,7 +71,7 @@ Connect and sync your GitHub or GitLab repository to import your integration onc
 Once you've connected your repository and initiated the import, the platform automatically performs a series of checks on your integration's code. If all pre-requisites and development steps are successfully accomplished, indicated by a "green check" status, your custom integration will be officially created within Sekoia.io. At this point, it will become accessible from the main Integrations Catalog listing and can be used just like any other pre-built integration.
 
 !!! note "Custom integrations with an asset connector"
-    A community can own a limited number of custom integrations that contain an asset connector, and custom asset connectors have limits on what they push. See [Asset connectors: good practices and limits](/xdr/features/modules/reveal_asset_connectors_limits.md).
+    A community can own a limited number of custom integrations that contain an asset connector, and what custom asset connectors can store follows your subscription. See [Custom asset connectors: good practices](/xdr/features/modules/reveal_asset_connectors_limits.md) to build one well.
 
 ### How to update your integration
 
