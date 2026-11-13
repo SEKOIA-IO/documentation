@@ -126,6 +126,8 @@ Anomalies are evaluated in real-time and can impact the user's credibility. Here
 !!! Note
     **Error Code 429**: Indicates rate limiting when too many requests are received in a short time.
 
+    A 429 on the push of an asset connector does not come from the WAF: it comes from the rate limits of asset connectors, or from the storage limits of custom asset connectors. See [Diagnose push errors](/xdr/features/modules/reveal_asset_connectors_troubleshoot.md#diagnose-push-errors).
+
 ### 4. Recommendations and Best Practices
 
 To avoid being blocked by our WAF, it is important to follow these best practices when interacting with our API and the product UI in general:

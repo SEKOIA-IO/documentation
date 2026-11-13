@@ -279,6 +279,8 @@ nav:
       - Create asset connectors: xdr/features/modules/reveal_asset_connectors_create.md
       - Check asset connector health: xdr/features/collect/asset_connector_health.md
       - Troubleshoot asset connectors: xdr/features/modules/reveal_asset_connectors_troubleshoot.md
+      - Build a custom asset connector: xdr/features/modules/build_a_custom_asset_connector.md
+      - Asset connector limits: xdr/features/modules/reveal_asset_connectors_limits.md
     - Investigate assets:
       - Explore assets context: xdr/features/modules/reveal_asset_context_panel.md
       - Asset risk scoring: xdr/features/modules/asset_risk_scoring.md
