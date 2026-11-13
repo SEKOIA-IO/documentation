@@ -233,7 +233,7 @@ nav:
       - Threat Landscape: xdr/features/report/threat_landscape.md
     - Automate:
       - Playbooks: xdr/features/automate/index.md
-      - Playbooks On-premises: xdr/features/automate/playbooks-on-premises.md
+      - Local runners: xdr/features/automate/playbooks-on-premises.md
       - Manage accounts: xdr/features/automate/manage-accounts.md
       - Navigate playbooks: xdr/features/automate/navigate_playbooks.md
       - Build playbooks: xdr/features/automate/build_playbooks.md

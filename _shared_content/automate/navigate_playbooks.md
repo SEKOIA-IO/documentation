@@ -12,7 +12,7 @@ The **Playbooks** page lists the playbooks available in your community, sorted b
 
 | Button | Action |
 | --- | --- |
-| **Local runners** | Manage the runners that execute playbook actions in your own infrastructure. See [Playbooks On-premises](/xdr/features/automate/playbooks-on-premises.md). |
+| **Local runners** | Manage the runners that execute playbook actions in your own infrastructure. See [Local runners](/xdr/features/automate/playbooks-on-premises.md). |
 | **Connected accounts** | Manage the accounts that playbooks use to connect to third-party services. See [Manage accounts](/xdr/features/automate/manage-accounts.md). |
 | **New playbook** | Create a playbook. See [Build playbooks](/xdr/features/automate/build_playbooks.md). |
 
