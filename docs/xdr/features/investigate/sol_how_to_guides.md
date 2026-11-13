@@ -204,7 +204,7 @@ Use the `render` operator to display query results as charts. Supported chart ty
 - `barchart` — Horizontal bar chart
 - `linechart` — Line chart
 - `sankey` — Flow chart
-- `geomap` — Geographic visualization
+- `geomap` — Geographic map with country shading or coordinate bubbles
 
 ### Basic chart
 
@@ -252,7 +252,7 @@ For the full operator reference, see [Render results in chart](sol_ref_operators
 
 ### Geographic visualization
 
-Use `geomap` to visualize event distribution by country or geographic coordinates. For a country-based map, provide a country column containing ISO 3166-1 alpha-2 codes or full English country names. For a coordinate-based map, provide latitude and longitude columns instead.
+Use `geomap` to visualize event distribution on a world map. For a country-based map, provide a country column containing ISO 3166-1 alpha-2 codes or full English country names. The map colors countries according to the `value` column. For a coordinate-based map, provide latitude and longitude columns instead. The map displays bubbles at those coordinates, with the `value` column determining the bubble size.
 
 === "By country"
 
