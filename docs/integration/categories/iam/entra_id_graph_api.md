@@ -90,7 +90,7 @@ The app registration must have the following permissions to successfully fetch E
 ```json
 {
     "permissions": [
-        "AuditLog.Read.All",
+        "AuditLog.Read.All"
     ]
 }
 ```
