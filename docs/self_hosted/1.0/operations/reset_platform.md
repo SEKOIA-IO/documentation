@@ -19,7 +19,7 @@ Before you run either command, confirm each of the following points:
 - You keep a copy, outside the cluster, of your `config.yml`, of the execution script, and of the values of the environment variables it reads, including the certificate, its private key, and the backup encryption keys.
 - You keep the license file provided by Sekoia and the `SEKOIA_INSTANCE_PUBLIC_KEY` value. After a reinstallation, you import the license again.
 - You keep the release archive of your version and, in air-gapped mode, the CTI archive.
-- If you configured backups, the last backup of each component completed. See [Check the backup status](/self_hosted/1.0.1/operations/backups.md#check-the-backup-status). To restore the platform data from these backups, contact Sekoia support: see [Restore from a backup](/self_hosted/1.0.1/operations/backups.md#restore-from-a-backup).
+- If you configured backups, the last backup of each component completed. See [Check the backup status](/self_hosted/1.0/operations/backups.md#check-the-backup-status). To restore the platform data from these backups, contact Sekoia support: see [Restore from a backup](/self_hosted/1.0/operations/backups.md#restore-from-a-backup).
 
 ## What the commands remove
 
@@ -53,7 +53,7 @@ The following table shows what each command keeps and what it removes. The SHC n
 | Kubernetes objects of the platform namespaces, including their secrets | etcd | Lost | Lost, with the whole etcd database |
 | Kubernetes cluster, Ceph storage operator, and CloudNativePG operator | Nodes | Kept | Lost |
 
-The events kept on S3 cannot be searched again: the index metadata that ExaLog needs to read them is stored in the PostgreSQL metastore, which is lost. To restore the platform data from your backups, contact Sekoia support. See [Restore from a backup](/self_hosted/1.0.1/operations/backups.md#restore-from-a-backup). In the manual storage mode, `PlatformDestroy` does not erase the Ceph devices: their content stays on the devices, unusable, until you clean them up.
+The events kept on S3 cannot be searched again: the index metadata that ExaLog needs to read them is stored in the PostgreSQL metastore, which is lost. To restore the platform data from your backups, contact Sekoia support. See [Restore from a backup](/self_hosted/1.0/operations/backups.md#restore-from-a-backup). In the manual storage mode, `PlatformDestroy` does not erase the Ceph devices: their content stays on the devices, unusable, until you clean them up.
 
 ## Delete the platform workloads
 
@@ -98,7 +98,7 @@ The command runs its four phases. In the last one, `WipeStorageDisks` selects th
 
 ### Result
 
-The nodes no longer run K3s, their Cilium networking is removed, their storage disks are blank, and their Rook host state is removed. To reinstall the platform, run `Install` again. The new platform starts empty: create your communities and import your license again. See [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md). If the new platform uses the same backup bucket, see [Ignore the backups of a previous installation](/self_hosted/1.0.1/operations/backups.md#ignore-the-backups-of-a-previous-installation).
+The nodes no longer run K3s, their Cilium networking is removed, their storage disks are blank, and their Rook host state is removed. To reinstall the platform, run `Install` again. The new platform starts empty: create your communities and import your license again. See [Deploy the platform](/self_hosted/1.0/deployment/deployment_guide.md). If the new platform uses the same backup bucket, see [Ignore the backups of a previous installation](/self_hosted/1.0/operations/backups.md#ignore-the-backups-of-a-previous-installation).
 
 ## Recover from a failure
 
@@ -126,7 +126,7 @@ The command first checks every node, and changes nothing until all nodes pass. I
 
 ## Related links
 
-- [Debug your deployment](/self_hosted/1.0.1/troubleshooting/debug_tool.md): Reference of the SHC commands, including `WipeStorageDisks` and `K3SUninstall`.
-- [The deployment process](/self_hosted/1.0.1/deployment/deployment_process.md): Lifecycle operations of the SHC.
-- [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md): Reinstall the platform after a reset.
-- [Network requirements](/self_hosted/1.0.1/deployment/network_requirements.md): Ports checked by `CheckNodePortReachability` before a reinstallation.
+- [Debug your deployment](/self_hosted/1.0/troubleshooting/debug_tool.md): Reference of the SHC commands, including `WipeStorageDisks` and `K3SUninstall`.
+- [The deployment process](/self_hosted/1.0/deployment/deployment_process.md): Lifecycle operations of the SHC.
+- [Deploy the platform](/self_hosted/1.0/deployment/deployment_guide.md): Reinstall the platform after a reset.
+- [Network requirements](/self_hosted/1.0/deployment/network_requirements.md): Ports checked by `CheckNodePortReachability` before a reinstallation.

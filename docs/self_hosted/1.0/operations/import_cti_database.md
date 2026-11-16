@@ -2,12 +2,12 @@
 
 The self-hosted-controller (SHC) imports the Sekoia CTI database into the ArangoDB database of your platform with the `ImportArangoCollection` command. It reads the latest CTI export from the Sekoia release bucket in online mode, or from the orchestration node in air-gapped mode, and loads the STIX objects and relationships it contains.
 
-The imported database feeds contextualized alerts and the `SEKOIA Intelligence Feed` detection rule. It does not contain the observables and their tags, so observable tags enrichment is not available. The Intelligence module is not available in Sekoia Self-Hosted 1.0.1.
+The imported database feeds contextualized alerts and the `SEKOIA Intelligence Feed` detection rule. It does not contain the observables and their tags, so observable tags enrichment is not available. The Intelligence module is not available in Sekoia Self-Hosted 1.0.
 
 ## Prerequisites
 
 - The platform is installed and the SHC can retrieve its kubeconfig.
-- In online mode, the `S3_ACCESS_KEY` and `S3_SECRET_KEY` environment variables hold the Sekoia release bucket credentials provided by Sekoia, and `global.version.fetch` points to the Sekoia release bucket, as described in [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md#release-download-and-security-content).
+- In online mode, the `S3_ACCESS_KEY` and `S3_SECRET_KEY` environment variables hold the Sekoia release bucket credentials provided by Sekoia, and `global.version.fetch` points to the Sekoia release bucket, as described in [Configure the deployment](/self_hosted/1.0/deployment/deployment_configuration.md#release-download-and-security-content).
 - In air-gapped mode, `global.version.fetch.offline` is `true` and the CTI archive is extracted on the orchestration node, as described in [Prepare the CTI export in air-gapped mode](#prepare-the-cti-export-in-air-gapped-mode).
 
 ## Prepare the CTI export in air-gapped mode
@@ -63,7 +63,7 @@ $SEKOIA_LOCAL_DIR/data/cti/
         └── part-<N>.jsonl.zst
 ```
 
-The SHC reads each collection from `<global.version.data.cti.path>/cti/<collection>/`. The [execution script](/self_hosted/1.0.1/deployment/deployment_guide.md#step-4-create-the-execution-script) mounts `$SEKOIA_LOCAL_DIR` on `/opt/sekoia`, which matches the default value of `global.version.data.cti.path` (`/opt/sekoia/data/`).
+The SHC reads each collection from `<global.version.data.cti.path>/cti/<collection>/`. The [execution script](/self_hosted/1.0/deployment/deployment_guide.md#step-4-create-the-execution-script) mounts `$SEKOIA_LOCAL_DIR` on `/opt/sekoia`, which matches the default value of `global.version.data.cti.path` (`/opt/sekoia/data/`).
 
 ## Import the CTI database
 
@@ -104,7 +104,7 @@ exec ImportArangoCollection --set modules.import_arango_collection.threads=4
 ```
 
 !!! warning "Truncation deletes existing data before the import succeeds"
-    With `truncate=true`, the SHC clears each target collection that has parts to import before loading its first part. A failure can leave that collection empty or only partly imported. There is no rollback. Each new invocation clears the collections again; automatic retries of a part do not. Use truncation only for a planned full replacement, with Sekoia support and a verified ArangoDB backup. See [Back up the platform](/self_hosted/1.0.1/operations/backups.md). Do not leave `truncate=true` in the configuration for routine imports.
+    With `truncate=true`, the SHC clears each target collection that has parts to import before loading its first part. A failure can leave that collection empty or only partly imported. There is no rollback. Each new invocation clears the collections again; automatic retries of a part do not. Use truncation only for a planned full replacement, with Sekoia support and a verified ArangoDB backup. See [Back up the platform](/self_hosted/1.0/operations/backups.md). Do not leave `truncate=true` in the configuration for routine imports.
 
 Imports are not atomic, even with truncation disabled. Successful writes remain when another part or collection fails. A retry re-reads the whole part and can encounter documents written by a previous attempt: `update` applies the imported fields again, while `error` can fail on those duplicates. A duplicate policy is not a rollback mechanism. Inspect the final per-part and per-collection errors before retrying; increasing the retry count does not repair invalid input documents.
 
@@ -140,6 +140,6 @@ If a collection fails, the command still imports the other ones, skips the delet
 
 ## Related links
 
-- [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md): Run SHC commands and runtime overrides.
-- [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md): Set the release bucket credentials and endpoint.
-- [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md): Download the release and prepare the SHC execution script.
+- [Use the SHC interface](/self_hosted/1.0/operations/controller_interface.md): Run SHC commands and runtime overrides.
+- [Configure the deployment](/self_hosted/1.0/deployment/deployment_configuration.md): Set the release bucket credentials and endpoint.
+- [Deploy the platform](/self_hosted/1.0/deployment/deployment_guide.md): Download the release and prepare the SHC execution script.
