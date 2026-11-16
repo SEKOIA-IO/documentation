@@ -309,7 +309,7 @@ nav:
         - Sekoia regions: getting_started/regions.md
 - Usecases:
   - Export large volumes of events: xdr/usecases/massive_export.md
-  - Implement a blocklist in Sekoia.io: xdr/usecases/playbook/implement_blocklist.md
+  - Implement a blocklist in Sekoia: xdr/usecases/playbook/implement_blocklist.md
   - Synchronize Alerts with an external tool: xdr/usecases/playbook/synchronize_alerts.md
   - Synchronize Assets with an Active Directory: xdr/usecases/playbook/synchronize_asset_with_ad.md
   - Send notifications to a Webhook using a playbook: xdr/usecases/playbook/notifications_using_playbooks.md
