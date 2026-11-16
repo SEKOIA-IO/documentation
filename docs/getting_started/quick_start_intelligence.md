@@ -1,7 +1,7 @@
 ---
 title: "Quick start: Intelligence"
-description: "A three-step guide to start using Sekoia Intelligence and Digital Risk Protection: explore the threat knowledge base, investigate and disseminate threat reports, and monitor external exposures."
-keywords: [quick start, intelligence, cti, threat intelligence, digital risk protection, drp, getting started, tutorial, reports, database, dissemination]
+description: "A three-step guide to start using Sekoia Intelligence and Sekoia Digital Risk: explore the threat knowledge base, investigate and disseminate threat reports, and monitor external exposures."
+keywords: [quick start, intelligence, cti, threat intelligence, digital risk, sekoia digital risk, dr, getting started, tutorial, reports, database, dissemination]
 audience: analyst
 module: intelligence
 type: tutorial
@@ -9,13 +9,13 @@ type: tutorial
 
 # Quick start: Intelligence
 
-Sekoia Intelligence is a continuously updated cyber threat intelligence (CTI) knowledge base maintained by Sekoia analysts. This quick start covers three complementary paths: exploring the intelligence database, investigating and disseminating threat reports, and monitoring external exposures with Digital Risk Protection (DRP). By the end of this guide, you will know where to start for both intelligence consumption and exposure monitoring.
+Sekoia Intelligence is a continuously updated cyber threat intelligence (CTI) knowledge base maintained by Sekoia analysts. This quick start covers three complementary paths: exploring the intelligence database, investigating and disseminating threat reports, and monitoring external exposures with Sekoia Digital Risk. By the end of this guide, you will know where to start for both intelligence consumption and exposure monitoring.
 
 The intelligence is produced by a team of over 25 analysts with backgrounds in military, national cyber agencies, and private industry, and is built on open standards such as STIX 2.1 and MITRE ATT&CK. Sekoia's team collaborates with organizations including Europol, NATO, and the FBI. Over half of the indicators of compromise in the database come from Sekoia's own research; the rest are curated from open-source intelligence (OSINT) and validated before publication. All threat objects are connected in a single knowledge graph, which is what the [threat context](/getting_started/intelligence_step1_explore_threat_database.md#use-the-threat-context) feature lets you explore.
 
 ## What Sekoia Intelligence is used for
 
-Sekoia Intelligence and Digital Risk Protection support the following use cases:
+Sekoia Intelligence and Sekoia Digital Risk support the following use cases:
 
 | Use case | What it means |
 |---|---|
@@ -35,11 +35,12 @@ After completing this guide, you will be able to:
 - Investigate a FLINT threat report and cross-reference it with your environment
 - Disseminate intelligence to your detection and response tools
 - Set up a feed and notification to stay informed about new relevant intelligence
-- Configure Digital Risk Protection monitoring and investigate an exposure event in Flare
+- Configure Digital Risk monitoring and investigate an exposure event in Flare
 
 ## Prerequisites
 
 - You have an active Sekoia Intelligence subscription.
+- For Step 3, your subscription includes Sekoia Digital Risk and Sekoia has provisioned your Flare tenant.
 - You have logged in and your account is active.
 
 ## The three paths
@@ -48,7 +49,7 @@ After completing this guide, you will be able to:
 |---|---|---|
 | [Step 1](/getting_started/intelligence_step1_explore_threat_database.md) | Explore the threat intelligence database | 15-20 min |
 | [Step 2](/getting_started/intelligence_step2_read_threat_reports.md) | Investigate and disseminate threat intelligence | 15-20 min |
-| [Step 3](/getting_started/quick_start_flare.md) | Monitor digital risk exposures with Flare | 20-30 min |
+| [Step 3](/getting_started/intelligence_step3_monitor_external_exposure.md) | Monitor external exposure with Flare | 20-30 min |
 
 ## What you will find in the Intelligence product
 
@@ -62,9 +63,9 @@ After completing this guide, you will be able to:
 | **IoC Collections** | Third-party indicators consolidated in Sekoia, for detection in Sekoia Defend or dissemination to a third-party detection tool |
 | **Graph Explorations** | Visual explorations built around threat objects, for example the threat actors active in a specific country |
 
-## What you will find in Digital Risk Protection
+## What you will find in Sekoia Digital Risk
 
-Digital Risk Protection helps you monitor external exposures that match identifiers configured in Flare. These events complement the broader threat knowledge available in Sekoia Intelligence.
+Sekoia Digital Risk helps you monitor external exposures that match identifiers configured in Flare. These events complement the broader threat knowledge available in Sekoia Intelligence.
 
 | Capability | What it contains |
 |---|---|
@@ -74,7 +75,7 @@ Digital Risk Protection helps you monitor external exposures that match identifi
 | **Sekoia events** | Normalized Flare events collected through the Flare Events intake |
 | **Sekoia alerts** | Alerts generated when activated detection rules match Flare events |
 
-## How Intelligence integrates with Defend and Digital Risk Protection
+## How Intelligence integrates with Defend and Digital Risk
 
 If your organization also uses Sekoia Defend, the products can work together across collection, detection, and investigation:
 
@@ -84,7 +85,7 @@ If your organization also uses Sekoia Defend, the products can work together acr
 - Flare events collected through the Flare Events intake become Sekoia events that you can search and evaluate with detection rules.
 - When a Flare event includes a source URL, use `event.url` to pivot from the Sekoia event to the corresponding event in Flare.
 
-Intelligence, Defend, and Digital Risk Protection are separate capabilities that you can use together when your subscription includes them.
+Intelligence, Defend, and Digital Risk are separate capabilities that you can use together when your subscription includes them.
 
 ## Prefer to learn with video?
 
@@ -94,6 +95,6 @@ Visit the [Sekoia Academy](https://academy.sekoia.io) for video tutorials on usi
 
 - [Step 1: Explore the threat intelligence database](/getting_started/intelligence_step1_explore_threat_database.md): Search for threat objects and understand the data model.
 - [Step 2: Investigate and disseminate threat intelligence](/getting_started/intelligence_step2_read_threat_reports.md): Read reports, disseminate intelligence, and set up feeds.
-- [Step 3: Monitor digital risk exposures](/getting_started/quick_start_flare.md): Configure Flare, collect exposure events, activate detections, and investigate alerts.
-- [Flare events in Sekoia Digital Risk](/cti/features/flare_events_overview.md): Overview of the Flare event flow, normalized fields, and investigation pivot.
+- [Step 3: Monitor external exposure](/getting_started/intelligence_step3_monitor_external_exposure.md): Configure Flare, collect exposure events, activate detections, and investigate alerts.
+- [Sekoia Digital Risk](/cti/features/digital_risk.md): Overview of the Flare event flow, normalized fields, and investigation pivot.
 - [Glossary](/getting_started/glossary.md): Definitions of CTI terms including indicator, observable, IOC, STIX, TLP, and FLINT.

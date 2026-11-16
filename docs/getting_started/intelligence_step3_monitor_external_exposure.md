@@ -1,4 +1,4 @@
-# Get started with Flare in Sekoia Digital Risk
+# Step 3: Monitor external exposure
 
 Use this quick start to configure Flare, send Flare events to Sekoia, activate detections, and investigate a Flare alert. The workflow is divided into four objectives so you can complete the setup progressively.
 
@@ -112,16 +112,14 @@ The default values are recommended for most environments. You can modify them wi
 | --- | --- | --- | --- |
 | `frequency` | Minimum `1` second, no documented maximum | `60` seconds | Time between two searches for new events. A higher value slows collection. |
 | `page_size` | `1` to `10` | `10` | Number of events retrieved per page. |
-| `lookback` | Minimum `1` hour, no documented maximum | `1` hour | Number of hours in the past from which the connector starts retrieving events. |
-| `throttle_seconds` | Minimum `0` | `0.25` seconds | Wait time between two pages. Lower values are faster. The API retries when it reaches its rate limit. |
+| `initial_hours_lookback` | Minimum `1` hour, no documented maximum | `1` hour | Number of hours in the past from which the connector starts retrieving events on its first run. |
+| `throttle_seconds` | Minimum `0` | `0.25` seconds | Wait time between two event requests. Lower values are faster. The API retries when it reaches its rate limit. |
 
 !!! note "Collection behavior"
 
     The supported limits prevent invalid values from breaking the intake. Larger intervals or smaller page sizes can increase the time needed to collect events.
 
-   
-    ![![Flare Events trigger configuration dialog with frequency set to 60 seconds, page size set to 10, throttle set to 0.25 seconds, and the lookback value set to 1 hour.](/assets/intelligence_center/flare_intake_parameters.png){: style="display: block; width: 100%; max-width: 100%; height: auto;"}]
-
+    ![Flare Events trigger configuration dialog with frequency set to 60 seconds, page size set to 10, throttle set to 0.25 seconds, and the lookback value set to 1 hour.](/assets/intelligence_center/flare_intake_parameters.png){: style="display: block; width: 100%; max-width: 100%; height: auto;"}
 
 ### Verify event reception
 
@@ -161,7 +159,7 @@ You have configured the Flare workflow in Sekoia Digital Risk. Flare monitors th
 
 ## Related articles
 
-[Flare events in Sekoia Digital Risk](/cti/features/flare_events_overview.md): Overview of how Flare events are collected, normalized, detected, and investigated in Sekoia.
+[Sekoia Digital Risk](/cti/features/digital_risk.md): Overview of how Flare events are collected, normalized, detected, and investigated in Sekoia.
 
 [Flare Events](/integration/categories/threat_intelligence/flare_events.md): Reference for the integration prerequisites, supported event types, raw samples, collection model, and detection coverage.
 

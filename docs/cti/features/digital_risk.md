@@ -1,10 +1,12 @@
-# Flare events in Sekoia Digital Risk
+# Sekoia Digital Risk
 
-Flare Events connects Flare exposure monitoring to Sekoia Digital Risk by collecting events that match identifiers configured in a Flare tenant. Sekoia normalizes these events for investigation and detection, then uses activated rules to generate Sekoia alerts.
+Sekoia Digital Risk monitors your organization's external exposure across clear, deep, and dark web sources, such as leaked credentials, exposed data, and lookalike domains. It brings these exposures into Sekoia so that you can detect, investigate, and respond to them alongside your other security events.
 
-## What the integration does
+## What the Flare integration does
 
-Flare monitors customer-defined identifiers across clear, deep, and dark web sources. Depending on the configured identifiers and data sources, Flare can report exposures from:
+Sekoia Digital Risk includes the Flare integration. It provides the Flare account settings and the **Fetch new events from Flare** connector, which retrieves events from your Flare tenant feed. The Flare Events intake then normalizes these events into the Elastic Common Schema (ECS) taxonomy that Sekoia uses for detection and investigation, and the detection rules that you activate generate Sekoia alerts from them.
+
+Flare monitors the identifiers that you define, such as domains, names, keywords, and IP addresses. Depending on the configured identifiers and data sources, Flare can report exposures from:
 
 - Chat channels and illicit networks.
 - Forums and marketplaces.
@@ -13,8 +15,6 @@ Flare monitors customer-defined identifiers across clear, deep, and dark web sou
 - Source-code repositories.
 - Lookalike and newly observed domains.
 - Public buckets and exposed services.
-
-The Flare Events integration retrieves the tenant event feed and forwards supported events to Sekoia. The intake normalizes the data into the Elastic Common Schema (ECS) taxonomy used by Sekoia for detection and investigation.
 
 ## Event flow
 
@@ -73,7 +73,7 @@ The integration consumes Flare's unified tenant feed. Supported event subtypes i
 - `document` from ransomware leak sources.
 - `google` monitoring results.
 - `service` and `social_media`.
-- Additional event types supported by the Flare tenant feed.
+- `experimental` events that Flare adds to the tenant feed.
 
 The [Flare Events integration reference](/integration/categories/threat_intelligence/flare_events.md) contains the current event catalog and raw and normalized event samples.
 
@@ -86,11 +86,11 @@ The Sekoia connector uses a scheduled pull model.
 - Later collections use the feed pagination and checkpoint information to retrieve new events.
 - The frequency controls the time between searches for new events.
 - The page size controls how many events the connector requests per page.
-- The throttle controls the wait time between pages.
+- The throttle controls the wait time between two event requests.
 
 The recommended connector values are bounded to prevent invalid configurations. You can change them when needed, but larger intervals or smaller page sizes can increase collection time.
 
-For the parameter limits and recommended defaults, see [Get started with Flare in Sekoia Digital Risk](/getting_started/quick_start_flare.md#review-the-connector-parameters).
+For the parameter limits and recommended defaults, see [Step 3: Monitor external exposure](/getting_started/intelligence_step3_monitor_external_exposure.md#review-the-connector-parameters).
 
 ## Investigation pivot
 
@@ -127,7 +127,7 @@ You need:
 
 ## Related articles
 
-[Get started with Flare in Sekoia Digital Risk](/getting_started/quick_start_flare.md): How to configure Flare, collect events, activate detections, and investigate a Flare alert.
+[Step 3: Monitor external exposure](/getting_started/intelligence_step3_monitor_external_exposure.md): How to configure Flare, collect events, activate detections, and investigate a Flare alert.
 
 [Flare Events](/integration/categories/threat_intelligence/flare_events.md): Reference for prerequisites, supported event types, collection details, raw samples, normalized fields, and detection coverage.
 
