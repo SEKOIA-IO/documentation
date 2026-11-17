@@ -256,7 +256,7 @@ This rule creates a new asset for every unseen `user.name`. It attaches the `use
 It creates no account:
 
 - from a failed authentication, or from a detection (`event.category` contains `intrusion_detection`), where the name may come from an attacker;
-- for the accounts Windows creates and drops on its own: Hyper-V virtual machines, services, IIS application pools, OpenSSH sessions, and the built-in accounts present on every host such as `DefaultAccount`, `WDAGUtilityAccount`, `IUSR` or `krbtgt`;
+- for accounts used by Windows itself rather than by a person: the ones Windows creates and drops on its own for Hyper-V virtual machines, services, IIS application pools and OpenSSH sessions, and built-in or special-purpose accounts such as `DefaultAccount`, `WDAGUtilityAccount`, `IUSR` (IIS) or `krbtgt` (Active Directory);
 - for a placeholder name such as `n/a`, `null` or `undefined`;
 - from a user field that lists several people at once, such as the collaborators of a shared document, since nothing tells which name goes with which email.
 
