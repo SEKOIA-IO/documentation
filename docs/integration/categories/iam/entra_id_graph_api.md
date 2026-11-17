@@ -90,15 +90,13 @@ The app registration must have the following permissions to successfully fetch E
 ```json
 {
     "permissions": [
-        "AuditLog.Read.All",
-        "Directory.Read.All"
+        "AuditLog.Read.All"
     ]
 }
 ```
 
 **Required Permissions:**
 - `AuditLog.Read.All`: Read the log endpoint
-- `Directory.Read.All`: Read directory data (optional, for advanced features)
 
 ### How to grant API permissions
 
@@ -116,7 +114,6 @@ To grant the required permissions to your app registration:
 
 4. Select **Application permissions** and search for the required permissions:
    - `AuditLog.Read.All`
-   - `Directory.Read.All`
 
     ![Application permissions selection](/assets/integration/cloud_and_saas/entra_id/entra_id_application_10.png)
 
