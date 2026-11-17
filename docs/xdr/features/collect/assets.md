@@ -247,9 +247,18 @@ Note that this rule only applies to assets of `Host` category and that a single 
 
 This rule creates a new asset for every unseen `host.name`. It also suggests the `ipv4` and `ipv6` stored in field `host.ip` of the event as detection properties of the newly created asset.
 
+It creates no host from a failed authentication (`event.outcome` is `failure`), since the client can send any device name before it is authenticated, nor from a placeholder name such as `unknown`, `n/a`, `null` or `localhost`.
+
 ##### Discover unique Accounts
 
 This rule creates a new asset for every unseen `user.name`. It attaches the `user.email` and `user.id` event field values as detection property of the newly created asset.
+
+It creates no account:
+
+- from a failed authentication, or from a detection (`event.category` contains `intrusion_detection`), where the name may come from an attacker;
+- for the accounts Windows creates and drops on its own: Hyper-V virtual machines, services, IIS application pools, OpenSSH sessions, and the built-in accounts present on every host such as `DefaultAccount`, `WDAGUtilityAccount`, `IUSR` or `krbtgt`;
+- for a placeholder name such as `n/a`, `null` or `undefined`;
+- from a user field that lists several people at once, such as the collaborators of a shared document, since nothing tells which name goes with which email.
 
 Questions? Please read our [FAQ](../../FAQ/Assets_qa.md).
 
