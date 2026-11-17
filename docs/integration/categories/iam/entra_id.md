@@ -62,6 +62,10 @@ Navigate to [Home > Microsoft Entra ID (Azure AD)  (e.g. `company-ad`) > Monitor
 2. To fill the form, use the table completed during the creation of the **Event Hub**.
 
 
+### Validate the collection end to end
+
+{!_shared_content/operations_center/integrations/event_hub_validation.md!}
+
 #### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 
 {!_shared_content/integration/detection_section.md!}

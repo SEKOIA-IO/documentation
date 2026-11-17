@@ -88,6 +88,10 @@ When you have an **Event Hub** follow this guide to send your events from **Micr
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Microsoft Defender XDR / Microsoft 365 Defender`
 2. To fill the form, use the table completed during the creation of the **Event Hub**.
 
+### Validate the collection end to end
+
+{!_shared_content/operations_center/integrations/event_hub_validation.md!}
+
 #### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 
 {!_shared_content/operations_center/integrations/generated/05e6f36d-cee0-4f06-b575-9e43af779f9f_sample.md!}
