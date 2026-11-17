@@ -251,6 +251,9 @@ This rule creates a new asset for every unseen `host.name`. It also suggests the
 
 This rule creates a new asset for every unseen `user.name`. It attaches the `user.email` and `user.id` event field values as detection property of the newly created asset.
 
+!!! note "Limit on the assets discovered each day"
+    Asset discovery creates at most 10,000 hosts and 20,000 accounts per community and per day (UTC). Over the limit, the new hosts or accounts found in the events are not created until the next day, and the assets already in the inventory keep being updated. A community whose first asset is less than 90 days old is not limited, so that the inventory of a new community can be built.
+
 Questions? Please read our [FAQ](../../FAQ/Assets_qa.md).
 
 #### Asset based detections
