@@ -285,6 +285,12 @@ The following Sekoia.io built-in rules match the intake **BeyondTrust PRA Team [
     
     - **Effort:** advanced
 
+??? abstract "Mass User And Computer Account Deleted"
+    
+    Detects when mutiple user and computer accounts are deleted in a short time.
+    
+    - **Effort:** master
+
 ??? abstract "Microsoft Defender Antivirus Disable SecurityHealth"
     
     The rule detects attempts to deactivate/disable Windows Defender SecurityHealth through command line, PowerShell scripts, and registry. To fully use this rule Windows Registry logging is recommended.

@@ -1,8 +1,12 @@
+uuid: 1e3f2e33-fb9c-4387-bcf7-8d7ece37f913
+name: Netskope
+type: playbook
+
 # Netskope
 
 ![Netskope](/assets/playbooks/library/netskope.png){ align=right width=150 }
 
-[Netskope](https://www.netskope.com/) is a cybersecurity company, providing solutions to protect data in cloud apps and network security applying zero trust principles.
+Netskope is a cybersecurity company, providing solutions to protect data in cloud apps and network security applying zero trust principles.
 
 ## Configuration
 
@@ -10,39 +14,61 @@
 | --------- | ------- | --------------------------- |
 | `base_url` | `string` | API base URL |
 
-## Triggers
+## Actions
 
-### Fetch new transaction events from Netskope
+### Append to Blocklist
 
-Connect to the Google Cloud Pub/Sub Lite topic and return Netskope events
-
-**Arguments**
-
-| Name      |  Type   |  Description  |
-| --------- | ------- | --------------------------- |
-| `credentials` | `object` | Credentials to use. You can find them in the credentials file |
-| `intake_key` | `string` | Intake key to use when sending events |
-| `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
-| `cloud_region` | `string` | Cloud Region |
-| `zone_id` | `string` | Zone ID |
-| `subscription_id` | `string` | Subscription ID |
-| `chunk_size` | `integer` | The size of chunks for the batch processing (max is 1000) |
-
-
-### Fetch new events from Netskope
-
-Get last events from the Netskope platform through the API v2
+Append IP addresses, domains, or URLs to an existing Netskope blocklist
 
 **Arguments**
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `api_token` | `string` | The API token |
-| `intake_server` | `string` | Server of the intake server (e.g. 'https://intake.sekoia.io') |
-| `intake_key` | `string` | Intake key to use when sending events |
-| `consumer_group` | `string` | A unique name to track event consumption (default empty for auto-generated one) |
+| `api_token` | `string` | API token for authentication |
+| `blocklist_id` | `string` | The ID of the blocklist |
+| `blocklist_type` | `string` | The type of the blocklist (exact, regex) |
+| `items` | `array` | List of items in the blocklist (IPs, domains, or URLs) |
+| `sort_items` | `boolean` | Sort items alphabetically |
+
+### Get Blocklist
+
+Retrieve an existing Netskope blocklist
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `api_token` | `string` | API token for authentication |
+| `blocklist_id` | `string` | The ID of the blocklist |
+
+### Remove From Blocklist
+
+Remove one or more items from an existing Netskope blocklist
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `api_token` | `string` | API token for authentication |
+| `blocklist_id` | `string` | The ID of the blocklist |
+| `items` | `array` | List of items in the blocklist (IPs, domains, or URLs) |
+| `sort_items` | `boolean` | Sort items alphabetically |
+
+### Replace Blocklist
+
+Replace an entire Netskope blocklist with new items
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `api_token` | `string` | API token for authentication |
+| `blocklist_id` | `string` | The ID of the blocklist |
+| `blocklist_type` | `string` | The type of the blocklist (exact, regex) |
+| `items` | `array` | List of items in the blocklist (IPs, domains, or URLs) |
+| `sort_items` | `boolean` | Sort items alphabetically |
 
 
 ## Extra
 
-Module **`Netskope` v1.10.5**
+Module **`Netskope` v1.16.1**

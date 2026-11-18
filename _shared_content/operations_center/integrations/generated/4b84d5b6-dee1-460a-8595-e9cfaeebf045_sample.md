@@ -12,6 +12,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_api_audit_2"
+
+    ```
+	INFO 2026-09-04 07:34:21,654Z clientType=External||userName=admin||NutanixApiVersion=2.0||httpMethod=GET||restEndpoint=/v2.0/cluster||entityUuid=||queryParams=||payload=
+    ```
+
+
+
 === "test_audit_1"
 
     ```
@@ -48,6 +56,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
     ```
 	INFO:2020/06/03 12:12:18  [00000000-0000-0000-0000-000000000000] dt_isolation [Update] SRC=192.0.2.10 DST=192.0.2.20 PROTO=TCP SPORT=22 DPORT=40726 ACTION=DROP ORIG: PKTS=9 BYTES=468 REPLY: PKTS=0 BYTES=0
+    ```
+
+
+
+=== "test_internal_glog_1"
+
+    ```
+	I20260904 07:33:32.892712Z 1366784 alert_notification_manager.cc:151] Adding alert with uuid 00000000-0000-0000-0000-000000000000 and uid A3034 to the received alerts queue. Notification queue size is 0
     ```
 
 

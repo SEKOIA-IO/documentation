@@ -86,3 +86,27 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_log_inspection_4625_unknown_user"
+
+    ```
+	CEF:0|Trend Micro|Deep Security Agent|20.0.1|3002795|Microsoft Windows Events|8|cn1=1 cn1Label=Host ID dvchost=host.example.com cs1Label=LI Description cs1=ATTACK T1110: Multiple Windows Logon Failures fname=Security src=192.0.2.10 duser=user1 shost=host.example.com msg=WinEvtLog: Security: AUDIT_FAILURE(4625): Microsoft-Windows-Security-Auditing: (no user): no domain: host.example.com: An account failed to log on. Subject: Security ID: S-1-0-0 Account Name: - Account Domain: - Logon ID: 0x0 Logon Type: 3 Account For Which Logon Failed: Security ID: S-1-0-0 Account Name: user1 Account Domain: Failure Information: Failure Reason: Unknown user name or bad password. Status: 0xC000006D Sub Status: 0xC0000064 Process Information: Caller Process ID: 0x0 Caller Process Name: - Network Information: Workstation Name: - Source Network Address: 203.0.113.5 Source Port: 0 Detailed Authentication Information: Logon Process: NtLmSsp Authentication Package: NTLM Transited Services: - Package Name (NTLM only): - Key Length: 0
+    ```
+
+
+
+=== "test_log_inspection_4771"
+
+    ```
+	CEF:0|Trend Micro|Deep Security Agent|20.0.1|3002795|Microsoft Windows Events|8|cn1=1 cn1Label=Host ID dvchost=host.example.com cs1Label=LI Description cs1=ATTACK T1110: Multiple Windows Logon Failures fname=Security src=192.0.2.10 duser=user1 shost=host.example.com msg=WinEvtLog: Security: AUDIT_FAILURE(4771): Microsoft-Windows-Security-Auditing: (no user): no domain: host.example.com: Kerberos pre-authentication failed. Account Information: Security ID: S-1-5-21-1111111111-2222222222-3333333333-1001 Account Name: user1 Service Information: Service Name: krbtgt/EXAMPLE Network Information: Client Address: ::ffff:203.0.113.5 Client Port: 51234 Additional Information: Ticket Options: 0x40810010 Failure Code: 0x18 Pre-Authentication Type: 2
+    ```
+
+
+
+=== "test_log_inspection_4776"
+
+    ```
+	CEF:0|Trend Micro|Deep Security Agent|20.0.1|3002795|Microsoft Windows Events|8|cn1=1 cn1Label=Host ID dvchost=host.example.com cs1Label=LI Description cs1=ATTACK T1110: Multiple Windows Logon Failures fname=Security src=192.0.2.10 duser=user1 shost=host.example.com msg=WinEvtLog: Security: AUDIT_FAILURE(4776): Microsoft-Windows-Security-Auditing: (no user): no domain: host.example.com: The computer attempted to validate the credentials for an account. Authentication Package: MICROSOFT_AUTHENTICATION_PACKAGE_V1_0 Logon Account: user1 Source Workstation: host.example.com Error Code: 0xC000006A
+    ```
+
+
+

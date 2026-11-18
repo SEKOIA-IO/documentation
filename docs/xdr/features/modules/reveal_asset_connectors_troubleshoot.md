@@ -4,7 +4,7 @@ This article applies to built-in and custom asset connectors. It explains how to
 
 ## Before you begin
 
-To access the asset connector list, navigate to **Configure > Assets > Asset connectors**.
+To access the asset connector list, go to **Configure > Assets > Asset connectors**.
 
 ## Step 1: Identify a defective connector
 
@@ -35,6 +35,17 @@ Review the log entries to identify the root cause. Common issues include:
 | No assets retrieved | The account cannot see any asset on the external system (wrong tenant or missing permissions) |
 | Timeout | Network connectivity issue or external system unavailable |
 | HTTP error on push | The push was refused or partly rejected: see [Diagnose push errors](#diagnose-push-errors) |
+
+!!! note "Connector running on a local runner"
+
+    If the connector runs on a local runner, confirm that the runner and connector belong to the same community.
+
+     1. Go to **Configure > Assets > Local runners**.
+     2. Confirm that the selected runner is **Up & running**.
+     3. Check the runner's last activity, hostname, and version. 
+     4. If the runner is offline or cannot reach Sekoia, check the host connectivity, proxy configuration, Docker service, and Endpoint Agent logs.
+
+    For runner configuration and connectivity checks, see [Local runners](/xdr/features/automate/playbooks-on-premises.md). For Endpoint Agent logs, see [Troubleshoot the Sekoia Endpoint Agent](/integration/categories/endpoint/troubleshoot_sekoia_endpoint_agent.md).
 
 ### Diagnose push errors
 
@@ -91,3 +102,5 @@ The connector resumes synchronization with the updated configuration.
 - [Reveal feature enablement matrix](/xdr/features/modules/reveal_feature_enablement.md): Which data sources are required for each Reveal capability.
 - [Security controls](/xdr/features/modules/reveal_security_controls.md): How to verify connector coverage and identify visibility gaps from the asset context panel.
 - [Troubleshoot Reveal](/xdr/features/modules/reveal_troubleshoot.md): General Reveal troubleshooting for missing data across capabilities.
+- [Local runners](/xdr/features/automate/playbooks-on-premises.md): How to check runner status and troubleshoot local execution.
+- [Troubleshoot the Sekoia Endpoint Agent](/integration/categories/endpoint/troubleshoot_sekoia_endpoint_agent.md): How to collect Endpoint Agent logs and diagnose connectivity issues.

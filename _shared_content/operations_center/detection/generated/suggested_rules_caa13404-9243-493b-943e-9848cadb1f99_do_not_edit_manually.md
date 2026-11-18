@@ -309,6 +309,12 @@ The following Sekoia.io built-in rules match the intake **Microsoft 365 / Office
     
     - **Effort:** intermediate
 
+??? abstract "Mass User And Computer Account Deleted"
+    
+    Detects when mutiple user and computer accounts are deleted in a short time.
+    
+    - **Effort:** master
+
 ??? abstract "Microsoft 365 (Office 365) Anti-Phishing Policy Deletion"
     
     Detects when the anti-phishing policy is removed from Microsoft 365 (Office 365). By default, Microsoft 365 (Office 365) includes built-in features that help protect users from phishing attacks. This policy specifies the phishing protections to enable or disable, and the actions to apply options.

@@ -109,7 +109,32 @@ Search in AD
 | `search_result` | `array` |  |
 | `output_path` | `object` | Path to the file with the content |
 
+### Synchronize AD assets with Sekoia.io
+
+Run one fetch cycle of the Microsoft Active Directory user asset connector as an action. Reads users from Active Directory and pushes them as assets to the matching asset connector configuration in Sekoia.io. Designed to run on an on-premise runner so Active Directory is never exposed to Sekoia.io.
+
+**Arguments**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `asset_connector_uuid` | `string` | UUID of the asset connector configuration to push the assets to, and that owns the checkpoint and the logs |
+| `connector_configuration_token` | `string` | Token used to send the connector logs to Sekoia.io |
+| `basedn` | `string` | The base distinguished name (DN) to use for LDAP queries (e.g DC=example-domain,DC=com) |
+| `sekoia_base_url` | `string` | Base URL of the Sekoia.io API of your region |
+| `sekoia_api_key` | `string` | API key allowed to push assets to the asset connector |
+| `batch_size` | `integer` | Number of assets to send in each batch to Sekoia.io |
+
+
+**Outputs**
+
+| Name      |  Type   |  Description  |
+| --------- | ------- | --------------------------- |
+| `fetched` | `integer` | Number of assets fetched from Active Directory during the cycle |
+| `pushed_batches` | `integer` | Number of asset batches successfully pushed to Sekoia.io |
+| `failed_batches` | `integer` | Number of asset batches that could not be pushed to Sekoia.io. The cycle stops at the first failure, the run ends in error and the next scheduled run restarts from the previous checkpoint |
+| `has_more` | `boolean` | Whether the cycle was interrupted before its end and the action should run again to resume |
+
 
 ## Extra
 
-Module **`Microsoft Active Directory` v1.5.1**
+Module **`Microsoft Active Directory` v1.6.5**

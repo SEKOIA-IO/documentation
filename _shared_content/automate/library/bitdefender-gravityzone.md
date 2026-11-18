@@ -8,8 +8,6 @@ type: playbook
 
 Bitdefender is a global cybersecurity company renowned for its advanced antivirus software, providing comprehensive security solutions and threat intelligence for individuals and enterprises, safeguarding against evolving cyber threats.
 
-[![Bitdefender & Sekoia solution brief](/assets/integration/sekoia-cta-bitdefender-hero.png){: style="display: block; width: 100%; max-width: 100%; height: auto;"}](https://www.sekoia.com/bitdefender-solution-brief){: style="width: 100%; max-width: 100%"}
-
 ## Configuration
 
 | Name      |  Type   |  Description  |
@@ -266,4 +264,4 @@ Update the status of an incident
 
 ## Extra
 
-Module **`Bitdefender GravityZone` v1.0.6**
+Module **`Bitdefender GravityZone` v1.0.7**

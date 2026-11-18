@@ -1324,14 +1324,14 @@ let <variable name> = <string | integer>;
 Use `//` to add comments in the query.
 
 !!! example
-``` shell
-// Comment the filtering condition
+    ``` shell
+    // Comment the filtering condition
 
-<table name>
-//| where <column name> = <variable name>
-| limit 100
+    <table name>
+    //| where <column name> = <variable name>
+    | limit 100
 
-```
+    ```
 
 ## Related articles
 

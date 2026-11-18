@@ -27,4 +27,4 @@ Get the list of private domains
 
 ## Extra
 
-Module **`Public Suffix` v1.21.0**
+Module **`Public Suffix` v1.22.1**

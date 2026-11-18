@@ -213,6 +213,12 @@ The following Sekoia.io built-in rules match the intake **Trellix ePO (on-prem)*
     
     - **Effort:** intermediate
 
+??? abstract "Mass User And Computer Account Deleted"
+    
+    Detects when mutiple user and computer accounts are deleted in a short time.
+    
+    - **Effort:** master
+
 ??? abstract "Microsoft Defender Antivirus History Deleted"
     
     Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.
