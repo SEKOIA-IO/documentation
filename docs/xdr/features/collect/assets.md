@@ -229,6 +229,9 @@ The following table lists the atom types and their related event fields that are
 
 #### Asset Discovery Rules
 
+!!! note "Limit on the assets discovered each day"
+    Asset discovery creates at most 10,000 hosts and 20,000 accounts per community and per day (UTC). Over the limit, the new hosts or accounts found in the events are dropped: they are created on a later day only if events name them again. The assets already in the inventory keep being updated. A community whose first asset is less than 90 days old is not limited, so that the inventory of a new community can be built.
+
 ##### Attach Operating System (OS) to Host
 
 **Set the Contextual Property `os` to Host**
