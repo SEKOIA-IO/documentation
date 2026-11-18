@@ -733,6 +733,7 @@ nav:
       - Triage: integration/action_library/triage.md
       - VirusTotal: integration/action_library/virustotal.md
       - Whois: integration/action_library/whois.md
+      - urlscan.io: integration/action_library/urlscan-io.md
   - List of Asset Connectors:
     - Overview: integration/assets_categories/overview.md
     - Vulnerability:
