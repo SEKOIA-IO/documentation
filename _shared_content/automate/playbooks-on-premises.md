@@ -4,8 +4,6 @@ Local runners are hosts in your environment where the Sekoia Endpoint Agent exec
 
 Local runners were previously called **Playbook runners**. The name changed in the interface, but existing runners keep their identifiers and configuration, appear on the **Local runners** page, and do not need to be reinstalled. The installation command still uses the `--playbook-runner` option.
 
-!!! note "Early Access"
-    This feature is currently in Early Access and is only available for Beta testers. Sekoia plans to roll out this functionality to all environments soon.
     
 ## Prerequisites
 
@@ -140,6 +138,9 @@ The action runs on the host where the selected local runner is installed.
 ![Playbook action configuration with On-premise execution selected and a local runner chosen](img/playbook_action_on_premise.png)
 
 ## Execute asset connector jobs with a local runner
+
+!!! note "Early Access"
+    This feature is currently in Early Access and is only available for Beta testers. Sekoia plans to roll out this functionality to all environments soon.
 
 Local runners can execute jobs for eligible asset connectors from inside your environment. This allows the connector to reach internal systems without requiring inbound access from Sekoia Cloud.
 
