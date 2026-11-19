@@ -113,6 +113,36 @@ You can target the rule at three levels of granularity:
     }
     ```
 
+### Filter on the presence of a field
+
+Use the `exists` and `not exists` operators to match events that carry a field, or that lack it, whatever its value. These operators take no `value`. Use `not in` to drop the events whose field matches none of the listed values.
+
+```json
+{
+  "format_uuid": "250e4095-fa08-4101-bb02-e72f870fcbd1",
+  "community_uuid": "YOUR_COMMUNITY_UUID",
+  "description": "Drop the creation of files without an extension",
+  "action": 1,
+  "enabled": true,
+  "filters": [
+    {
+      "field": "action.name",
+      "operator": "==",
+      "value": "file-created"
+    },
+    {
+      "field": "file.extension",
+      "operator": "not exists"
+    }
+  ]
+}
+```
+
+A field that is missing from the event matches no other operator: a `!=` or `not in` filter does not drop the events that lack the field.
+
+!!! note "Agent version"
+    The agent applies `in`, `not in`, `exists` and `not exists` from version 1.13.0. An older agent ignores a rule that uses them, and Sekoia still applies it when the event is parsed. A rule scoped to a single agent (`agent_id`) cannot use these operators yet.
+
 ### Filter multiple conditions
 
 All filters in the `filters` array are combined with AND logic. An event is dropped only if it matches every condition.

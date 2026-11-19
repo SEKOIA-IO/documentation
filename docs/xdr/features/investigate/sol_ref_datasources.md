@@ -343,10 +343,13 @@ Applications reported by the Sekoia agent are refreshed at each inventory. When 
 | install_date      | Date the application was installed                                                                |
 | install_path      | Installation path on the asset                                                                    |
 | last_execution    | Last time the application was executed                                                            |
+| last_used_file_name | Name of the last executable of the application that ran, reported by the Sekoia Endpoint Agent    |
 | last_user_name    | Last user who ran the application                                                                 |
 | signed            | Whether the binary is digitally signed                                                            |
 | signer_cn         | Common name of the signer                                                                         |
-| hash              | File hash                                                                                         |
+| hash              | SHA-256 of the application file, or of its last executable that ran                               |
+| md5               | MD5 of the last executable of the application that ran                                            |
+| sha1              | SHA-1 of the last executable of the application that ran                                          |
 | os                | Operating system the application runs on                                                          |
 | cpe               | CPE identifier, used for vulnerability matching                                                   |
 | purl              | Package URL (PURL) identifier for the application                                                 |
