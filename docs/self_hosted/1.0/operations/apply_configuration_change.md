@@ -15,7 +15,7 @@ This page describes the general procedure, for example for a new SMTP server, a 
 - The platform is installed and healthy: `exec Diagnostic` reports `OK` for every check. Fix the current issues first, so that a failure of the run has one cause.
 - You run the SHC from the orchestration node, with the execution script and the environment variables described in [Deploy the platform](/self_hosted/1.0/deployment/deployment_guide.md#step-4-create-the-execution-script).
 - For a run of `Install`, the release files and the security content bundles are still extracted in `$SEKOIA_LOCAL_DIR`, or the online mode credentials are set. `Install` validates the release files again. It also publishes the images, the charts, and the bundles again.
-- `global.version.platform.version` keeps its current value. The SHC does not yet upgrade or roll back the platform automatically.
+- `global.version.platform.version` keeps its current value. To apply a patch release, follow [Apply a patch release](/self_hosted/1.0/operations/apply_patch_release.md).
 - No other SHC session is installing or updating the platform. See [Interrupted Helm operations](/self_hosted/1.0/deployment/deployment_process.md#interrupted-helm-operations).
 
 ## Change worker replica counts
@@ -117,7 +117,7 @@ The SHC rejects the following changes, or does not apply them with a run of `Ins
 | Backup encryption keys in use | `PlatformInstallation` stops when `BACKUP_ARANGO_CRYPT_KEY` or `BACKUP_CLICKHOUSE_CRYPT_KEY` differs from the key in use. | Keep the keys unchanged. See [Back up the platform](/self_hosted/1.0/operations/backups.md#prepare-the-encryption-keys). |
 | Smaller database storage size | CloudNativePG cannot shrink a volume. | Set a value equal to or larger than the current size. See [Database storage](/self_hosted/1.0/deployment/deployment_configuration.md#database-storage). |
 | Playbook library bundle | The bundle is downloaded in online mode. It is not published or applied after the installation. | None in 1.0. See [Update the security content](/self_hosted/1.0/operations/update_security_content.md). |
-| Platform release | The SHC does not yet upgrade or roll back the platform automatically. | Keep `global.version.platform.version` unchanged. |
+| Platform release | A new release also needs its release files and its SHC image. The SHC does not roll back the platform to an earlier release. | For a patch release, follow [Apply a patch release](/self_hosted/1.0/operations/apply_patch_release.md). |
 
 ## Related links
 

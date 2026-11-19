@@ -23,6 +23,6 @@ The current version is the one shown in the navigation menu. Superseded versions
 
 Sekoia Self-Hosted 1.0.1 is the first generally available release: you deploy it with a fresh installation. Sekoia Self-Hosted 1.0.2 is a patch release of 1.0: see [Patch releases](/self_hosted/1.0/release_notes.md#patch-releases).
 
-<!-- TODO: upgrade path from 1.0.1 to 1.0.2. -->
+To move an installed platform to a later patch release of the same minor version, for example from 1.0.1 to 1.0.2, see [Apply a patch release](/self_hosted/1.0/operations/apply_patch_release.md).
 
 A fresh installation deploys a release on servers that do not run the platform. An upgrade moves a running deployment to a later release and keeps its data. The release notes of each later version describe its upgrade path and the breaking changes to handle before you upgrade.
