@@ -34,12 +34,7 @@ def mkdocs_url(docs_rel):
 
 def gitbook_url(current, site):
     """URL GitBook d'un fichier docs/<section>/... ; None si hors section."""
-    rel = current[len("docs/"):]
-    sec = SL.section_of(rel)
-    if not sec or "/" not in rel:
-        return None
-    inner = re.sub(r"(^|/)(README|index)$", "", rel.split("/", 1)[1][:-3])
-    return f"{site}/{sec['url']}/{inner}".rstrip("/")
+    return SL.url_of(current[len("docs/"):])
 
 
 def main():
@@ -47,28 +42,36 @@ def main():
     rows, missing = {}, []
 
     # 1. Toutes les pages d'avant la migration
-    #    (pages de origin/main = site en ligne ; les liens symboliques y sont dépliés d'après
-    #    migration/materialized.tsv, sinon les pages des dossiers partagés n'auraient pas de redirection)
-    def ls(ref, path):
-        return subprocess.run(["git", "ls-tree", "-r", "--name-only", ref, "--", path],
-                              capture_output=True, text=True, check=True).stdout.splitlines()
-    before = set(ls("origin/main", "docs"))
-    manifest = Path("migration/materialized.tsv")
-    for line in (manifest.read_text(encoding="utf-8").splitlines() if manifest.exists() else []):
-        if line.strip():
-            link, target = line.split("\t")
-            before |= {link + f[len(target):] for f in ls("origin/main", target)
-                       if f == target or f.startswith(target + "/")}
-    before = sorted(before)
+    before = subprocess.run(["git", "ls-tree", "-r", "--name-only", "pre-migration", "docs"],
+                            capture_output=True, text=True, check=True).stdout.split()
     excluded = set()
     cfg_mk = yaml.load(SL.mkdocs_text(), Loader=Loader)
     for line in str(cfg_mk.get("exclude_docs") or "").splitlines():
         if line.strip():
             excluded.add("docs/" + line.strip())
+    # Pages créées sur main depuis la préparation (reportées par la synchro)
+    after = subprocess.run(["git", "ls-tree", "-r", "--name-only", "origin/main", "docs"],
+                           capture_output=True, text=True).stdout.split()
+    before += [f for f in after if f not in set(before)]
+    # Pages servies par MkDocs à travers un lien symbolique (dossiers matérialisés)
+    manifest = Path("migration/materialized.tsv")
+    if manifest.exists():
+        for line in manifest.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            dest_dir, src = line.split("\t")
+            src_files = [Path(src)] if Path(src).is_file() else sorted(Path(src).rglob("*.md"))
+            for sf in src_files:
+                before.append(dest_dir + sf.as_posix()[len(src):])
+    before = sorted(set(before))
+    dropped_file = Path("migration/dropped_copies.txt")
+    dropped = dropped_file.read_text(encoding="utf-8").split() if dropped_file.exists() else []
     for f in before:
         if not f.endswith(".md") or f in excluded or f.startswith("docs/integration/") \
                 or f.startswith("docs/developer/"):
             continue
+        if any(f == d or f.startswith(d + "/") for d in dropped):
+            continue   # supprimée volontairement : redirection fournie par redirects_dedup.csv
         cur = SL.map_path(f)
         url = gitbook_url(cur, site) if Path(cur).exists() else None
         if url:
@@ -86,7 +89,7 @@ def main():
             rows[mkdocs_url(old)] = new
             continue
         url = gitbook_url(SL.map_path("docs/" + new), site)
-        if url is None:  # destination dans une section non migrée (intégrations...) ou disparue
+        if url is None:  # destination hors de toute section connue
             url = f"{site}{mkdocs_url(new)}"
         rows[mkdocs_url(old)] = url
 

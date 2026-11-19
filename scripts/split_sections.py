@@ -217,14 +217,6 @@ def main():
     for rel in tracked_rel:
         if rel in new_of or rel in old_stubs or rel.startswith("assets/") or "/" not in rel:
             continue
-        hit = next(((s, o, n) for s in by_title.values() for o, n in (s.get("paths") or {}).items()
-                    if rel.startswith(o.strip("/") + "/")), None)
-        if hit:   # dossier hors nav déclaré dans sections.yaml (paths) : sous-dossier conservé
-            s, o, n = hit
-            sub = os.path.dirname(rel[len(o.strip("/")) + 1:])
-            section_of[rel] = s["title"]
-            new_of[rel] = place(f"{s['dir']}/{n.strip('/')}/{sub}".rstrip("/"), rel)
-            continue
         top = rel.split("/", 1)[0]
         keep = next((s for s in by_title.values() if keeps_paths(s) and s["dir"] == top), None)
         if keep:
@@ -235,7 +227,8 @@ def main():
             d = os.path.dirname(d)
         if d:
             (t, target_dir), _ = folder_votes[d].most_common(1)[0]
-            section_of[rel], new_of[rel] = t, place(target_dir, rel)
+            sub = os.path.dirname(rel)[len(d):].strip("/")   # ex. library/ sous automate/
+            section_of[rel], new_of[rel] = t, place(f"{target_dir}/{sub}".rstrip("/"), rel)
         elif rel.endswith(".md"):
             orphans.append(rel)
 
@@ -296,10 +289,8 @@ def main():
                 return m.group(0)
             if new_t.split("/")[0] != here_sec and new_t.endswith(".md"):
                 cross += 1
-                t = dir_sec.get(new_t.split("/")[0])
-                inner = new_t.split("/", 1)[1][:-3]
-                inner = re.sub(r"(^|/)(README|index)$", "", inner)
-                url = f"{site}/{by_title[t]['url']}/{inner}".rstrip("/")
+                import section_links as SL
+                url = SL.url_of(new_t)
                 return f"{m.group(1)}{url}{m.group(3)}{m.group(4)}"
             rel = os.path.relpath(new_t, os.path.dirname(new))
             return f"{m.group(1)}{rel}{m.group(3)}{m.group(4)}"

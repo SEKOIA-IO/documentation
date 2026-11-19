@@ -55,7 +55,7 @@ def is_stub(path):
 def rename_map():
     files = {}
     # --cached : compare à l'index, donc inclut aussi les déplacements pas encore commités
-    r = subprocess.run(["git", "-c", "diff.renameLimit=0", "diff", "-M", "--cached", "--name-status", BASELINE],
+    r = subprocess.run(["git", "diff", "-M", "-l0", "--cached", "--name-status", BASELINE],
                        capture_output=True, text=True)
     for line in r.stdout.splitlines():
         p = line.split("\t")
@@ -100,6 +100,43 @@ def map_path(path):
     return path
 
 
+@lru_cache(maxsize=None)
+def _layout(sec_dir):
+    """Structure cible d'une section gérée par une autre équipe (option layout_ref) :
+    fichiers présents sur sa branche et redirections de son .gitbook.yaml."""
+    sec = next(s for s in config()["sections"] if s["dir"] == sec_dir)
+    ref = sec.get("layout_ref")
+    if not ref:
+        return None
+    tree = subprocess.run(["git", "ls-tree", "-r", "--name-only", ref, f"docs/{sec_dir}"],
+                          capture_output=True, text=True).stdout.split()
+    if not tree:
+        print(f"  ! layout_ref {ref} introuvable : faites git fetch origin", flush=True)
+        return None
+    files = {f[len(f"docs/{sec_dir}/"):] for f in tree}
+    gb = subprocess.run(["git", "show", f"{ref}:docs/{sec_dir}/.gitbook.yaml"], capture_output=True, text=True)
+    redirects = (yaml.safe_load(gb.stdout) or {}).get("redirects", {}) if gb.returncode == 0 else {}
+    return files, {k.strip("/"): v for k, v in redirects.items()}, sec.get("fallback")
+
+
+def url_of(target_rel):
+    """URL publique GitBook d'une page (chemin relatif à docs/), ou None hors section."""
+    sec = section_of(target_rel)
+    if not sec or "/" not in target_rel:
+        return None
+    inner = target_rel.split("/", 1)[1]
+    layout = _layout(sec["dir"])
+    if layout:
+        files, redirects, fallback = layout
+        if inner not in files:
+            key = inner[:-3] if inner.endswith(".md") else inner
+            # chemin à plat -> catégorie (redirections de l'équipe), sinon page de repli
+            key_tail = key.split("/", 1)[1] if key.count("/") else key
+            inner = redirects.get(key) or redirects.get(f"{key.split('/')[0]}/{key_tail}") or fallback or inner
+    inner = re.sub(r"(^|/)(README|index)$", "", inner[:-3] if inner.endswith(".md") else inner)
+    return f"{config()['site_url'].rstrip('/')}/{sec['url']}/{inner}".rstrip("/")
+
+
 def link_for(target_rel, from_rel, docs_root, copy_from=None):
     """target_rel, from_rel : chemins relatifs à docs/ (emplacements actuels)."""
     here = section_of(from_rel)
@@ -114,6 +151,5 @@ def link_for(target_rel, from_rel, docs_root, copy_from=None):
         target_rel = dest
     there = section_of(target_rel)
     if here and there and there is not here and target_rel.endswith(".md"):
-        inner = re.sub(r"(^|/)(README|index)$", "", target_rel.split("/", 1)[1][:-3])
-        return f"{config()['site_url'].rstrip('/')}/{there['url']}/{inner}".rstrip("/")
+        return url_of(target_rel)
     return os.path.relpath(target_rel, os.path.dirname(from_rel)).replace(os.sep, "/")

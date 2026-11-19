@@ -95,15 +95,16 @@ def main():
         return path.split("/", 2)[2] in listed.get(sec, set())
 
     # 1. Doublons
+    replaced_by = {}
     copies = defaultdict(list)
-    for cur, (src, original) in sources_of_copies().items():
-        if Path(cur).exists():
-            copies[src].append((cur, original))
-    removed, redirects, unlisted_home, replaced_by = [], [], [], {}
-    keep_copies = ["docs/" + k.strip("/") + "/" for k in cfg.get("keep_copies") or []]
+    def under_symlink(path):
+        return any(p.is_symlink() for p in [Path(path), *Path(path).parents])
 
-    def protected(original):
-        return any(original.startswith(k) for k in keep_copies)
+    for cur, (src, original) in sources_of_copies().items():
+        # Une copie sous lien symbolique n'existe pas pour GitBook : jamais gardée à la place d'un vrai fichier
+        if Path(cur).exists() and not under_symlink(cur):
+            copies[src].append((cur, original))
+    removed, redirects, unlisted_home = [], [], []
     # Section « d'accueil » de chaque dossier source : celle où ses fichiers sont dans la nav
     home_votes = defaultdict(lambda: defaultdict(int))
     for src, cps in copies.items():
@@ -114,8 +115,6 @@ def main():
         if len(cps) < 2:
             continue
         keep = [c for c in cps if is_listed(c[0])]
-        if all(protected(o) or Path(c).is_symlink() for c, o in cps):
-            continue   # rien à supprimer (copies protégées par keep_copies, ou liens symboliques)
         if not keep:   # aucune copie dans la nav : on garde celle du dossier où vivent ses voisines
             votes = home_votes.get(os.path.dirname(src))
             if not votes:
@@ -126,16 +125,12 @@ def main():
                 continue
             unlisted_home.append(keep[0][0])
         kept = keep[0][0]
-        sec = SL.section_of(kept[len("docs/"):])
-        inner = re.sub(r"(^|/)(README|index)$", "", kept.split("/", 2)[2][:-3])
         for cur, original in cps:
-            if protected(original):
-                continue
             if is_listed(cur) or Path(cur).is_symlink() or any(Path(cur).parents[i].is_symlink() for i in range(3)):
                 continue
             removed.append(cur)
             replaced_by[cur] = kept
-            redirects.append((mkdocs_url(original), f"{site}/{sec['url']}/{inner}".rstrip("/")))
+            redirects.append((mkdocs_url(original), SL.url_of(kept[len("docs/"):])))
 
     # 2. Pages orphelines : rattachées sous la page qui les cite
     attach, unplaced = defaultdict(list), []
@@ -165,20 +160,38 @@ def main():
 
     # Décisions explicites (migration/sections.yaml > orphans), chemins MkDocs d'origine
     decisions = cfg.get("orphans") or {}
-    to_delete, to_keep = {}, {}
+    to_delete, to_keep, dropped_dirs = {}, {}, set()
     for orig, target in (decisions.get("delete") or {}).items():
+        if orig.endswith("/"):   # dossier entier -> page de même nom dans le dossier cible
+            cur_dir = os.path.dirname(SL.map_path("docs/" + orig + "__probe__.md"))
+            dropped_dirs.add("docs/" + orig.rstrip("/"))
+            for f in sorted(Path(cur_dir).glob("*.md")) if Path(cur_dir).is_dir() else []:
+                name = f.name
+                dest = f"{target.rstrip('/')}/{name}" if target and not str(target).startswith("http") else target
+                to_delete[f.as_posix()] = (orig + name, dest)
+                replaced_by[f.as_posix()] = "docs/" + dest if dest and not str(dest).startswith("http") else None
+            continue
         cur = SL.map_path("docs/" + orig)
         if Path(cur).exists():
             to_delete[cur] = (orig, target)
+    keep_under = {}   # dossier entier rattaché sous une page : {dossier actuel: page parente actuelle}
     for orig, opts in (decisions.get("keep") or {}).items():
+        opts = opts or {}
+        if orig.endswith("/"):
+            cur_dir = os.path.dirname(SL.map_path("docs/" + orig + "__probe__.md"))
+            if cur_dir and Path(cur_dir).is_dir() and opts.get("under"):
+                keep_under[cur_dir] = SL.map_path("docs/" + opts["under"])
+            continue
         cur = SL.map_path("docs/" + orig)
-        after = SL.map_path("docs/" + opts["after"]) if opts and opts.get("after") else None
+        after = SL.map_path("docs/" + opts["after"]) if opts.get("after") else None
         if Path(cur).exists():
             to_keep[cur] = after
-    unplaced = [u for u in unplaced if u not in to_delete and u not in to_keep]
-    for sec_items in attach.values():
+    in_kept_dir = lambda u: any(u.startswith(d + "/") for d in keep_under)  # noqa: E731
+    unplaced = [u for u in unplaced if u not in to_delete and u not in to_keep and not in_kept_dir(u)]
+    for sec_dir_, sec_items in attach.items():
         sec_items[:] = [(p, pg) for p, pg in sec_items
-                        if not any(k.endswith("/" + pg) for k in list(to_delete) + list(to_keep))]
+                        if not any(k.endswith("/" + pg) for k in list(to_delete) + list(to_keep))
+                        and not in_kept_dir(f"docs/{sec_dir_}/{pg}")]
 
     print(f"{len(removed)} doublon(s) à supprimer (copies hors navigation), avec redirection")
     for r in removed[:5]:
@@ -197,6 +210,9 @@ def main():
         print(f"  x {cur} : supprimée (décision), redirection -> {target}")
     for cur, after in to_keep.items():
         print(f"  + {cur} : gardée (décision), placée après {after}")
+    for d, parent in keep_under.items():
+        n = len(list(Path(d).glob("*.md")))
+        print(f"  + {d}/ : {n} page(s) gardées (décision), rattachées sous {parent}")
     for u in unplaced:
         print(f"  ! {u} : citée par aucune page de la section, à placer à la main ou supprimer")
     if not args.write:
@@ -206,10 +222,7 @@ def main():
     for cur, (orig, target) in to_delete.items():
         if target:
             if not str(target).startswith("http"):
-                t_cur = SL.map_path("docs/" + target)[len("docs/"):]
-                sec = SL.section_of(t_cur)
-                inner = re.sub(r"(^|/)(README|index)$", "", t_cur.split("/", 1)[1][:-3])
-                target = f"{site}/{sec['url']}/{inner}".rstrip("/") if sec else target
+                target = SL.url_of(SL.map_path("docs/" + target)[len("docs/"):]) or target
             redirects.append((mkdocs_url("docs/" + orig), target))
         removed.append(cur)
     for cur, after in to_keep.items():
@@ -228,6 +241,28 @@ def main():
                       if l.startswith("# ")), Path(cur).stem)
         lines.insert(k + 1, " " * indent + f"* [{title}]({rel})")
         sp.write_text("\n".join(lines), encoding="utf-8")
+    for d, parent in keep_under.items():
+        sec_dir = d.split("/")[1]
+        sp = DOCS / sec_dir / "SUMMARY.md"
+        lines = sp.read_text(encoding="utf-8").split("\n")
+        k = next((i for i, l in enumerate(lines) if f"]({parent.split('/', 2)[2]})" in l), None)
+        if k is None:
+            print(f"  ! {d}/ : page parente {parent} introuvable dans {sp}")
+            continue
+        indent = len(lines[k]) - len(lines[k].lstrip()) + 2
+        pos = k + 1
+        while pos < len(lines) and lines[pos].strip() and len(lines[pos]) - len(lines[pos].lstrip()) >= indent:
+            pos += 1
+        entries = []
+        for f in sorted(Path(d).glob("*.md"), key=lambda f: f.name.lower()):
+            rel = f.as_posix().split("/", 2)[2]
+            if any(f"]({rel})" in l for l in lines):
+                continue
+            title = next((l[2:].strip() for l in f.read_text(encoding="utf-8").splitlines()
+                          if l.startswith("# ")), f.stem)
+            entries.append(" " * indent + f"* [{title}]({rel})")
+        lines[pos:pos] = entries
+        sp.write_text("\n".join(lines), encoding="utf-8")
     for r in removed:
         subprocess.run(["git", "rm", "-q", "-f", r], check=True)
     # Dossiers d'origine dont la copie a été supprimée : la synchro ne doit pas les recréer
@@ -235,11 +270,11 @@ def main():
         dropped = Path("migration/dropped_copies.txt")
         old = set(dropped.read_text(encoding="utf-8").split()) if dropped.exists() else set()
         originals = {os.path.dirname(o) for src, cps in copies.items() for cur, o in cps if cur in removed}
-        originals |= {"docs/" + orig for orig, _ in to_delete.values()}
+        originals |= {"docs/" + orig for orig, _ in to_delete.values()} | dropped_dirs
         dropped.write_text("\n".join(sorted(old | originals)) + "\n", encoding="utf-8")
     # Liens qui visaient une copie supprimée -> copie gardée (URL absolue si autre section)
     fixed = 0
-    rel_removed = {k[len("docs/"):]: v[len("docs/"):] for k, v in replaced_by.items()}
+    rel_removed = {k[len("docs/"):]: v[len("docs/"):] for k, v in replaced_by.items() if v}
     for f in DOCS.glob("*/**/*.md"):
         if f.is_symlink() or any(p.is_symlink() for p in f.parents):
             continue
@@ -267,17 +302,17 @@ def main():
     for sec, items in attach.items():
         sp = DOCS / sec / "SUMMARY.md"
         lines = sp.read_text(encoding="utf-8").split("\n")
-        done = defaultdict(int)   # pages déjà rattachées sous chaque parent : on garde l'ordre
         for parent, page in items:
             k = next((i for i, l in enumerate(lines) if f"]({parent})" in l), None)
             if k is None:
                 continue
-            indent = len(lines[k]) - len(lines[k].lstrip()) + 2   # d'après la ligne du parent
-            k += done[parent]
-            done[parent] += 1
+            indent = len(lines[k]) - len(lines[k].lstrip()) + 2
             title = next((l[2:].strip() for l in (DOCS / sec / page).read_text(encoding="utf-8").splitlines()
                           if l.startswith("# ")), Path(page).stem.replace("_", " ").capitalize())
-            lines.insert(k + 1, " " * indent + f"* [{title}]({page})")
+            pos = k + 1   # après les enfants déjà présents : l'ordre est conservé
+            while pos < len(lines) and lines[pos].strip() and len(lines[pos]) - len(lines[pos].lstrip()) >= indent:
+                pos += 1
+            lines.insert(pos, " " * indent + f"* [{title}]({page})")
         sp.write_text("\n".join(lines), encoding="utf-8")
 
 

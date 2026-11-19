@@ -6,7 +6,6 @@
 #             Les pages plus profondes sont mises à plat dans le dossier le plus proche.
 #   skip    : section non touchée (ni déplacement, ni SUMMARY), connue pour les liens
 #   new     : section nouvelle, créée vide
-#   paths   : dossier hors nav (chemin MkDocs) -> sous-dossier de la section, gardé tel quel
 site_url: https://docs.sekoia.com
 sections:
 - title: Getting started
@@ -57,28 +56,30 @@ sections:
 # Non touchées : générées par l'équipe Intégrations et par OpenAPI
 - title: Integrations
   dir: integration
-  url: integrations
+  url: integrations            # à caler avec le chemin réel de leur section sur le site
   skip: true
+  layout_ref: origin/gitbook-poc            # branche où l'équipe prépare son espace (git fetch origin)
+  fallback: action_library/overview.md      # pour les pages qu'ils ont abandonnées
 
 - title: API Documentation
   dir: developer
   url: api-documentation
   skip: true
 
-# Copies de _shared_content à ne jamais dédoublonner (dossiers MkDocs d'origine, sous docs/).
-# La bibliothèque de playbooks n'y figure pas : comme sur MkDocs, elle vit dans Integrations
-# (integration/action_library) ; la copie de Defend est supprimée et redirigée.
-keep_copies: []
-
 # Pages hors navigation : décisions (chemins MkDocs d'origine, sous docs/)
 orphans:
   keep:
+    # page des raccourcis du canevas de playbooks : hors nav, placée sous Automate (décision du 19/11)
     xdr/features/investigate/keyboard_shortcuts_playbook.md:
       after: xdr/features/automate/navigate_playbooks.md
     # exclue de la publication MkDocs (exclude_docs) : deviendra visible dans GitBook
     xdr/features/modules/elevate_investigate_case.md:
       after: xdr/features/modules/elevate_investigate_alert.md
   delete:   # page -> destination de la redirection (page MkDocs ou URL complète)
+    # bibliothèque de playbooks : elle vit dans l'espace Intégrations (leur générateur).
+    # Chaque page est redirigée vers la page de même nom côté Intégrations, ou vers la page de
+    # repli (fallback) si l'équipe l'a abandonnée.
+    xdr/features/automate/library/: integration/action_library/
     xdr/features/collect/filter_logs_with_rsyslog_or_syslog_ng.md: xdr/usecases/playbook/log_volume_reduction_strategies.md
     xdr/FAQ/subscriptions/allocate_trial_subscription.md: getting_started/assign_a_subscription.md
     xdr/usecases/playbook/Add_UserAgent_in_comment.md: https://docs.sekoia.com/usecases
