@@ -4,6 +4,7 @@ import argparse
 import json
 import os
 import re
+import sys
 from pathlib import Path
 from typing import Dict, List, Tuple
 
@@ -40,8 +41,9 @@ def get_asset_type(connector_config: Dict) -> str | None:
     return CAPABILITY_TO_ASSET_TYPE.get(connector_config.get("capability"))
 
 
-def load_asset_connectors(automation_module_repository: str) -> List[Dict]:
+def load_asset_connectors(automation_module_repository: str) -> Tuple[List[Dict], List[str]]:
     asset_connectors: List[Dict] = []
+    duplicates: List[str] = []
     seen_output_names = set()
 
     for module_path in sorted(Path(automation_module_repository).iterdir()):
@@ -82,7 +84,9 @@ def load_asset_connectors(automation_module_repository: str) -> List[Dict]:
 
             output_name = f"{module_slug}_{asset_type}.md"
             if output_name in seen_output_names:
-                raise ValueError(f"Duplicate asset connector documentation: {output_name} ({config_file})")
+                print(f"  - Skipping config {config_file.name}: duplicate {output_name}")
+                duplicates.append(f"{output_name} ({config_file.name})")
+                continue
             seen_output_names.add(output_name)
 
             asset_connectors.append(
@@ -96,7 +100,7 @@ def load_asset_connectors(automation_module_repository: str) -> List[Dict]:
             )
             print(f"  - Found: {module_slug} ({asset_type})")
 
-    return asset_connectors
+    return asset_connectors, duplicates
 
 
 def escape_table_cell(value) -> str:
@@ -175,12 +179,13 @@ def rewrite_page_includes(section_path: Path, includes_path: Path) -> Tuple[List
 
 def update_asset_doc(
     connectors_repository: str, documentation_repository: str, section_root: str = DEFAULT_SECTION_ROOT
-) -> None:
+) -> List[str]:
+    """Write the blocks, rewrite the pages and return the problems found; the caller fails on any."""
     section_path = Path(documentation_repository) / section_root
     if not section_path.is_dir():
         raise FileNotFoundError(f"GitBook section root not found: {section_path}")
 
-    connectors = load_asset_connectors(connectors_repository)
+    connectors, duplicates = load_asset_connectors(connectors_repository)
     if not connectors:
         raise ValueError(f"No asset connectors found in {connectors_repository}")
 
@@ -191,8 +196,15 @@ def update_asset_doc(
     location = includes_path.relative_to(documentation_repository)
     print(f"Generated {len(written)} includes in {location} ({len(removed)} stale removed)")
     print(f"Rewrote includes in {len(pages)} pages")
+
+    problems: List[str] = []
+    if duplicates:
+        problems.append(f"duplicate asset connectors skipped: {', '.join(duplicates)}")
     if missing:
-        print(f"Warning: pages reference missing includes: {', '.join(missing)}")
+        problems.append(f"pages reference missing includes: {', '.join(missing)}")
+    for problem in problems:
+        print(f"Error: {problem}")
+    return problems
 
 
 if __name__ == "__main__":
@@ -206,8 +218,10 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args()
-    update_asset_doc(
+    problems = update_asset_doc(
         connectors_repository=args.connectors_repository,
         documentation_repository=args.documentation_repository,
         section_root=args.section_root,
     )
+    if problems:
+        sys.exit(1)

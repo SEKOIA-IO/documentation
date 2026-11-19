@@ -52,7 +52,7 @@ class LoadAssetConnectorsTests(unittest.TestCase):
         self.addCleanup(directory.cleanup)
         self.repository = Path(directory.name)
 
-    def load(self) -> list:
+    def load(self) -> tuple:
         with redirect_stdout(io.StringIO()):
             return generator.load_asset_connectors(str(self.repository))
 
@@ -78,7 +78,8 @@ class LoadAssetConnectorsTests(unittest.TestCase):
             },
             {"device": MAPPING, "software": MAPPING},
         )
-        connectors = self.load()
+        connectors, duplicates = self.load()
+        self.assertEqual(duplicates, [])
         self.assertEqual([c["output_name"] for c in connectors], ["harfanglab_device.md", "harfanglab_software.md"])
         self.assertEqual([c["asset_type"] for c in connectors], ["device", "software"])
 
@@ -91,7 +92,7 @@ class LoadAssetConnectorsTests(unittest.TestCase):
             {"user": MAPPING},
             asset_dir="asset_connectors",
         )
-        [connector] = self.load()
+        [connector], _ = self.load()
         self.assertEqual(
             connector,
             {
@@ -108,16 +109,16 @@ class LoadAssetConnectorsTests(unittest.TestCase):
             self.repository, "Okta", "okta",
             {"connector_okta_user_assets.json": connector_config("Okta Users", "unknown")}, {"user": MAPPING},
         )
-        self.assertEqual(self.load(), [])
+        self.assertEqual(self.load(), ([], []))
 
     def test_missing_mapping_is_skipped(self):
         write_module(
             self.repository, "Okta", "okta",
             {"connector_okta_user_assets.json": connector_config("Okta Users", "account_detection")}, {"device": MAPPING},
         )
-        self.assertEqual(self.load(), [])
+        self.assertEqual(self.load(), ([], []))
 
-    def test_duplicate_output_name_raises(self):
+    def test_duplicate_output_name_is_skipped_and_reported(self):
         write_module(
             self.repository, "Okta", "okta",
             {
@@ -126,8 +127,9 @@ class LoadAssetConnectorsTests(unittest.TestCase):
             },
             {"device": MAPPING},
         )
-        with self.assertRaisesRegex(ValueError, "okta_device.md"):
-            self.load()
+        connectors, duplicates = self.load()
+        self.assertEqual([c["config"]["name"] for c in connectors], ["Okta Devices"])
+        self.assertEqual(duplicates, ["okta_device.md (connector_okta_hosts_assets.json)"])
 
     def test_empty_mapping_file_gives_empty_mapping(self):
         module = write_module(
@@ -135,7 +137,7 @@ class LoadAssetConnectorsTests(unittest.TestCase):
             {"connector_okta_user_assets.json": connector_config("Okta Users", "account_detection")}, {"user": MAPPING},
         )
         (module / "okta" / "asset_connector" / "user_mapping.yml").write_text("")
-        [connector] = self.load()
+        [connector], _ = self.load()
         self.assertEqual(connector["mapping"], {})
 
 
@@ -414,19 +416,21 @@ class UpdateAssetDocTests(unittest.TestCase):
         self.page.parent.mkdir(parents=True)
         self.page.write_text(f"# Okta\n\n{PLAIN}\n")
 
-    def run_generator(self, *args: str) -> str:
+    def run_generator(self, *args: str) -> tuple:
         output = io.StringIO()
         with redirect_stdout(output):
-            generator.update_asset_doc(str(self.library), str(self.documentation), *args)
-        return output.getvalue()
+            problems = generator.update_asset_doc(str(self.library), str(self.documentation), *args)
+        return output.getvalue(), problems
 
     def test_default_section_root_is_docs(self):
         self.assertEqual(generator.DEFAULT_SECTION_ROOT, "docs")
-        output = self.run_generator()
+        output, problems = self.run_generator()
+        self.assertEqual(problems, [])
         self.assertTrue((self.documentation / "docs" / generator.INCLUDES_SUBDIR / "okta_user.md").is_file())
         self.assertEqual(self.page.read_text(), f"# Okta\n\n{OKTA_INCLUDE}\n")
         self.assertIn("Generated 1 includes in docs/.gitbook/includes/asset_connectors (0 stale removed)", output)
         self.assertIn("Rewrote includes in 1 pages", output)
+        self.assertNotIn("Error", output)
 
     def test_custom_section_root(self):
         poc_page = self.documentation / "docs" / "integration" / "assets_categories" / "device" / "okta_device.md"
@@ -455,22 +459,45 @@ class UpdateAssetDocTests(unittest.TestCase):
     def test_second_run_is_a_no_op(self):
         self.run_generator()
         first = snapshot(self.documentation)
-        output = self.run_generator()
+        output, _ = self.run_generator()
         self.assertEqual(snapshot(self.documentation), first)
         self.assertIn("Rewrote includes in 0 pages", output)
 
-    def test_missing_block_warning(self):
+    def test_missing_block_is_reported_as_a_problem(self):
         self.page.write_text(PLAIN.replace("okta_user", "ghost_device"))
-        output = self.run_generator()
-        self.assertIn("Warning: pages reference missing includes: ghost_device.md", output)
+        output, problems = self.run_generator()
+        self.assertEqual(problems, ["pages reference missing includes: ghost_device.md"])
+        self.assertIn("Error: pages reference missing includes: ghost_device.md", output)
+        self.assertTrue((self.documentation / "docs" / generator.INCLUDES_SUBDIR / "okta_user.md").is_file())
 
-    def test_cli_runs_from_any_working_directory(self):
-        result = subprocess.run(
+    def test_duplicate_is_reported_and_the_other_connectors_are_written(self):
+        duplicate = connector_config("Okta Users bis", "account_detection")
+        (self.library / "Okta" / "connector_okta_users_bis_assets.json").write_text(json.dumps(duplicate))
+        output, problems = self.run_generator()
+        self.assertEqual(
+            problems, ["duplicate asset connectors skipped: okta_user.md (connector_okta_users_bis_assets.json)"]
+        )
+        self.assertIn("Error: duplicate asset connectors skipped: okta_user.md", output)
+        block = (self.documentation / "docs" / generator.INCLUDES_SUBDIR / "okta_user.md").read_text(encoding="utf-8")
+        self.assertIn("## OCSF Mapping for Okta Users\n", block)
+        self.assertEqual(self.page.read_text(), f"# Okta\n\n{OKTA_INCLUDE}\n")
+
+    def run_cli(self) -> subprocess.CompletedProcess:
+        return subprocess.run(
             [sys.executable, str(SCRIPT), str(self.library), str(self.documentation)],
             cwd=self.root, capture_output=True, text=True,
         )
+
+    def test_cli_runs_from_any_working_directory(self):
+        result = self.run_cli()
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn("Rewrote includes in 1 pages", result.stdout)
+
+    def test_cli_exits_non_zero_on_problems(self):
+        self.page.write_text(PLAIN.replace("okta_user", "ghost_device"))
+        result = self.run_cli()
+        self.assertEqual(result.returncode, 1, result.stderr)
+        self.assertIn("Error: pages reference missing includes: ghost_device.md", result.stdout)
 
 
 if __name__ == "__main__":
