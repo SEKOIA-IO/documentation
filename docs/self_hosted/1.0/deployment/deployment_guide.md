@@ -16,13 +16,21 @@ This guide walks you through the full installation of Sekoia Self-Hosted, from d
 
 Sekoia provides access to a dedicated object storage bucket containing the release archive and its SHA-256 checksum. You receive the bucket credentials (endpoint, access key, and secret key) from Sekoia after contract validation.
 
-The checksum detects a corrupted or incomplete download: the archive itself is not signed. The container images and the security content bundles it contains are signed with cosign, and the public key `cosign.pub` ships in `platform/v1.0.2/`. The SHC does not verify these signatures.
+The checksum detects a corrupted or incomplete download: the archive itself is not signed. The container images and the security content bundles it contains are signed with cosign, and the public key `cosign.pub` ships in the `platform/<VERSION>/` directory of the archive, for example `platform/v1.0.2/`. The SHC does not verify these signatures.
 
 !!! warning "Verify before you extract"
     Always verify the checksum before extracting the archive. A mismatch indicates a corrupted or incomplete download. Do not proceed if verification fails. Download the archive again before retrying.
 
 !!! tip "Keep the credentials out of the shell history"
     Do not type the access key and the secret key on the command line, where they stay in the shell history. Write their `export` lines in a file that only your user can read, for example `~/sekoia-delivery.env` protected with `chmod 600 ~/sekoia-delivery.env`, and load it with `source` as the examples do. The examples remove the credentials from the shell with `unset` once the download completes.
+
+Set the release to download. For 1.0, use its latest patch release, `v1.0.2`:
+
+```bash
+export SH_VERSION="v1.0.2"
+```
+
+The commands of this guide use `SH_VERSION`. Set it again in any new shell, and on the orchestration node if you download the archive on a separate machine.
 
 Download the archive and its checksum file, then verify integrity.
 
@@ -32,8 +40,8 @@ Download the archive and its checksum file, then verify integrity.
     export AWS_DEFAULT_REGION="fr-par-2"
     export ENDPOINT="https://self-hosted.delivery.sekoia.io"
     export BUCKET="self-hosted"
-    export KEY="platform/v1.0.2/archives/v1.0.2.tar.gz"
-    export OUT="sekoia-self-hosted-v1.0.2.tar.gz"
+    export KEY="platform/$SH_VERSION/archives/$SH_VERSION.tar.gz"
+    export OUT="sekoia-self-hosted-$SH_VERSION.tar.gz"
     export AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED
     export AWS_RESPONSE_CHECKSUM_VALIDATION=WHEN_REQUIRED
 
@@ -55,24 +63,24 @@ Download the archive and its checksum file, then verify integrity.
     export RCLONE_CONFIG_SEKOIA_ENDPOINT="https://self-hosted.delivery.sekoia.io"
     export RCLONE_CONFIG_SEKOIA_REGION="fr-par-2"
 
-    rclone copyto sekoia:self-hosted/platform/v1.0.2/archives/v1.0.2.tar.gz ./sekoia-self-hosted-v1.0.2.tar.gz
-    rclone copyto sekoia:self-hosted/platform/v1.0.2/archives/v1.0.2.tar.gz.sha256 ./sekoia-self-hosted-v1.0.2.tar.gz.sha256
+    rclone copyto "sekoia:self-hosted/platform/$SH_VERSION/archives/$SH_VERSION.tar.gz" "./sekoia-self-hosted-$SH_VERSION.tar.gz"
+    rclone copyto "sekoia:self-hosted/platform/$SH_VERSION/archives/$SH_VERSION.tar.gz.sha256" "./sekoia-self-hosted-$SH_VERSION.tar.gz.sha256"
     unset RCLONE_CONFIG_SEKOIA_ACCESS_KEY_ID RCLONE_CONFIG_SEKOIA_SECRET_ACCESS_KEY
 
-    echo "$(cut -d' ' -f1 sekoia-self-hosted-v1.0.2.tar.gz.sha256)  sekoia-self-hosted-v1.0.2.tar.gz" | sha256sum -c -
+    echo "$(cut -d' ' -f1 "sekoia-self-hosted-$SH_VERSION.tar.gz.sha256")  sekoia-self-hosted-$SH_VERSION.tar.gz" | sha256sum -c -
     ```
 
-Expected output: `sekoia-self-hosted-v1.0.2.tar.gz: OK`
+Expected output: the archive name followed by `: OK`.
 
 ### Step 2: Transfer and extract the archive
 
 To transfer the archive and its checksum file to the orchestration node if you downloaded them on a separate machine, run:
 
 ```bash
-scp sekoia-self-hosted-v1.0.2.tar.gz sekoia-self-hosted-v1.0.2.tar.gz.sha256 user@<ORCHESTRATION_NODE>:<SEKOIA_LOCAL_DIR>/
+scp sekoia-self-hosted-$SH_VERSION.tar.gz sekoia-self-hosted-$SH_VERSION.tar.gz.sha256 user@<ORCHESTRATION_NODE>:<SEKOIA_LOCAL_DIR>/
 ```
 
-Replace `<SEKOIA_LOCAL_DIR>` with the absolute path of the release directory on the orchestration node. To check that the transfer did not alter the archive, run `echo "$(cut -d' ' -f1 sekoia-self-hosted-v1.0.2.tar.gz.sha256)  sekoia-self-hosted-v1.0.2.tar.gz" | sha256sum -c -` again in this directory on the orchestration node.
+Replace `<SEKOIA_LOCAL_DIR>` with the absolute path of the release directory on the orchestration node. To check that the transfer did not alter the archive, run `echo "$(cut -d' ' -f1 "sekoia-self-hosted-$SH_VERSION.tar.gz.sha256")  sekoia-self-hosted-$SH_VERSION.tar.gz" | sha256sum -c -` again in this directory on the orchestration node.
 
 !!! note "Disk space"
     The extracted files take about as much space as the archive, about 110 GB for 1.0. Before you extract it, make sure the orchestration node has this free space in addition to the archive: about 220 GB in total. You can delete the archive and its checksum file once it is extracted. See [Orchestration node requirements](/self_hosted/1.0/deployment/deployment_prerequisites.md#orchestration-node-requirements).
@@ -80,14 +88,14 @@ Replace `<SEKOIA_LOCAL_DIR>` with the absolute path of the release directory on 
 To extract the archive on the orchestration node, run:
 
 ```bash
-tar -xvf sekoia-self-hosted-v1.0.2.tar.gz -C $SEKOIA_LOCAL_DIR
+tar -xvf sekoia-self-hosted-$SH_VERSION.tar.gz -C $SEKOIA_LOCAL_DIR
 ```
 
 The archive contains the platform release and the latest security content bundles:
 
 | Directory | Content |
 | :--- | :--- |
-| `$SEKOIA_LOCAL_DIR/platform/v1.0.2/` | Release manifest, the cosign public key `cosign.pub`, Docker images, Helm charts, ArgoCD stacks, and the third-party license notices in `licenses/THIRD-PARTY-NOTICES.md`. |
+| `$SEKOIA_LOCAL_DIR/platform/$SH_VERSION/` | Release manifest, the cosign public key `cosign.pub`, Docker images, Helm charts, ArgoCD stacks, and the third-party license notices in `licenses/THIRD-PARTY-NOTICES.md`. |
 | `$SEKOIA_LOCAL_DIR/data/<TYPE>/` | One security content bundle per type (`detection-rules`, `intake-formats`, and `playbook-library`), with a `latest` file that names the bundle to use. |
 
 The archive does not include the Sekoia CTI database. In air-gapped mode, download its separate archive once the platform is installed. See [Import the CTI database](/self_hosted/1.0/operations/import_cti_database.md#prepare-the-cti-export-in-air-gapped-mode).
@@ -102,18 +110,19 @@ The execution script mounts `$SEKOIA_LOCAL_DIR` on `/opt/sekoia` in the SHC cont
 The SHC image ships in the release archive, in online mode as in air-gapped mode. To load it on the orchestration node, run:
 
 ```bash
-docker load -i $SEKOIA_LOCAL_DIR/platform/v1.0.2/images/registry.sekoia.io_sekoialab_self-hosted-controller-cli-2.20261027-40526598025-01c5f7786cea2516605ec317c83b1f24bcee8b12.tar.gz
+SHC_IMAGE=$(docker load -i $SEKOIA_LOCAL_DIR/platform/$SH_VERSION/images/registry.sekoia.io_sekoialab_self-hosted-controller-cli-*.tar.gz | sed -n 's/^Loaded image: //p')
+echo "$SHC_IMAGE"
 ```
 
-The command prints the reference of the loaded image: `registry.sekoia.io/sekoialab/self-hosted-controller-cli:2.20261027-40526598025-01c5f7786cea2516605ec317c83b1f24bcee8b12`.
+The command prints the reference of the loaded image, `registry.sekoia.io/sekoialab/self-hosted-controller-cli:<BUILD>`.
 
 To give the image the reference that the execution script runs, run:
 
 ```bash
-docker tag registry.sekoia.io/sekoialab/self-hosted-controller-cli:2.20261027-40526598025-01c5f7786cea2516605ec317c83b1f24bcee8b12 sekoialab/self-hosted-controller-cli:v1.0.2
+docker tag "$SHC_IMAGE" sekoialab/self-hosted-controller-cli:v1.0
 ```
 
-To confirm, run `docker images sekoialab/self-hosted-controller-cli`. Expected output: one image with the `v1.0.2` tag.
+To confirm, run `docker images sekoialab/self-hosted-controller-cli`. Expected output: one image with the `v1.0` tag. This tag is the same for every patch release of 1.0.
 
 ### Step 4: Create the execution script
 
@@ -123,7 +132,7 @@ Create a file named `run-shc.sh` with the following content:
 
 ```bash
 #!/bin/bash
-DOCKER_IMAGE="${DOCKER_IMAGE:-sekoialab/self-hosted-controller-cli:v1.0.2}"
+DOCKER_IMAGE="${DOCKER_IMAGE:-sekoialab/self-hosted-controller-cli:v1.0}"
 
 # Allocate a TTY when the script runs in a terminal, so the interactive
 # interface can render. Skipped in non-interactive contexts such as CI.
@@ -174,7 +183,7 @@ Set the following environment variables on the orchestration node before running
 | `GIT_HTTP_USERNAME` | Yes | Username for your local code repository. |
 | `GIT_HTTP_PASSWORD` | Yes | Password or token for your local code repository. |
 | `SERVERS_SUDO_PASSWORD` | No | Sudo password for target nodes, if `sudo` asks for one. The SHC also uses it when the SSH server asks for a password. |
-| `DOCKER_IMAGE` | No | Override the self-hosted-controller (SHC) Docker image reference. Default: `sekoialab/self-hosted-controller-cli:v1.0.2`, the tag that you set in [Step 3](#step-3-load-the-self-hosted-controller-shc-docker-image). |
+| `DOCKER_IMAGE` | No | Override the self-hosted-controller (SHC) Docker image reference. Default: `sekoialab/self-hosted-controller-cli:v1.0`, the tag that you set in [Step 3](#step-3-load-the-self-hosted-controller-shc-docker-image). |
 | `SEKOIA_INSTANCE_PUBLIC_KEY` | Yes | Public key for the Sekoia instance. |
 | `TRAEFIK_PUBKEY` | Yes | Platform certificate chain in PEM format. See [TLS certificate](/self_hosted/1.0/deployment/deployment_configuration.md#tls-certificate). |
 | `TRAEFIK_PRIVKEY` | Yes | Private key of the platform certificate in PEM format. |
