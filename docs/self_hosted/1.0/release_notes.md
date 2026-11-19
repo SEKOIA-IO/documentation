@@ -174,7 +174,7 @@ Patch releases fix issues in 1.0. They add no feature, configuration key, or CLI
 
 | Version | Release date | Changes | Updated components |
 | :--- | :--- | :--- | :--- |
-| 1.0.2 | <!-- TODO: release date --> | Fixes the onboarding in air-gapped mode. | `communityapi`, `front` |
+| 1.0.2 | <!-- TODO: release date --> | Fixes the onboarding in air-gapped mode. Ships an SHC that accepts the 1.0.2 release. | `communityapi`, `front`, `self-hosted-controller-cli` |
 | 1.0.1 | 2026-10-27 | First generally available release. | None |
 
 <!-- TODO: how a running 1.0.1 deployment moves to 1.0.2 (the SHC does not upgrade the platform automatically). -->
