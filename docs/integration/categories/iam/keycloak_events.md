@@ -151,7 +151,7 @@ volumes:
 
 {!_shared_content/operations_center/integrations/generated/cc1b212e-80c2-4dde-8446-2e194c6d4e80.md!}
 
-## Further reading
+## Related articles
 
 - [Configuring auditing to track events](https://www.keycloak.org/docs/latest/server_admin/index.html#configuring-auditing-to-track-events)
 - [Configuring logging](https://www.keycloak.org/server/logging)

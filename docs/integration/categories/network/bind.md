@@ -123,6 +123,6 @@ For more information on [how to configure your BIND instance on its official web
 {!_shared_content/operations_center/detection/generated/suggested_rules_a199fbde-508e-4cb9-ae37-842703494be0_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/a199fbde-508e-4cb9-ae37-842703494be0.md!}
-## Further readings
+## Related articles
 
 - [BIND documentation](https://kb.isc.org/docs/aa-01526)

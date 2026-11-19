@@ -46,7 +46,7 @@ Find more information in official [Documentation](https://techdocs.broadcom.com/
 
 {!_shared_content/operations_center/integrations/generated/d626fec3-473a-44b3-9e3d-587fdd99a421.md!}
 
-## Further readings
+## Related articles
 
 - [Create API credentials](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/cloud-swg/help/cloudswg-api-reference/api-keys.html)
 - [Use the Cloud SWG Sync API to Get Near-Real-Time Log Data](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/cloud-swg/help/cloudswg-api-reference/report-sync-about.html)

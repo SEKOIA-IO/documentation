@@ -76,6 +76,6 @@ This setup guide will show you how to provide an integration between Cisco Email
 
 {!_shared_content/operations_center/integrations/generated/2ee6048e-8322-4575-8e47-1574946412b6.md!}
 
-## Further readings
+## Related articles
 
 - [Single Log Line (SLL)](https://docs.ces.cisco.com/docs/single-log-line-sll)

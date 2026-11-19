@@ -67,6 +67,6 @@ This integration allows you to ingest BeyondTrust Privileged Remote Access sessi
 
 {!_shared_content/operations_center/integrations/generated/f6cfddb4-543a-41fe-9802-c66b7c90366d.md!}
 
-## Further readings
+## Related articles
 
 - [BeyondTrust Integrations](https://docs.beyondtrust.com/bt-docs/docs/integrations)

@@ -86,6 +86,6 @@ There are two ways to configure syslog on Radware DefensePro: through the Web UI
 
 {!_shared_content/operations_center/integrations/generated/47c9021d-4add-435a-a9db-68e8dc053b6b.md!}
 
-## Further readings
+## Related articles
 
 - [Radware Syslog configuration](https://support.radware.com/app/answers/answer_view/a_id/19907/related/1)

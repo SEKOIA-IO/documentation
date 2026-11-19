@@ -87,7 +87,7 @@ Go to the [events page](https://app.sekoia.io/operations/events) to watch your i
 {!_shared_content/operations_center/detection/generated/suggested_rules_80b8382e-0667-4469-bbc9-74be1e0ca1c1_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/80b8382e-0667-4469-bbc9-74be1e0ca1c1.md!}
 
-## Further Readings
+## Related articles
 - [NXLog Community Edition Reference Manual](https://nxlog.co/docs/nxlog-ce/nxlog-reference-manual.html)
 - [Microsoft NPS Installation](https://learn.microsoft.com/en-us/windows-server/networking/technologies/nps/nps-accounting-configure#configure-nps-log-file-properties)
 - [Microsoft NPS logging](https://learn.microsoft.com/en-us/windows-server/networking/technologies/nps/nps-accounting-configure)

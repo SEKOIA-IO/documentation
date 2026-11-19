@@ -42,5 +42,5 @@ Once created:
 
 {!_shared_content/operations_center/integrations/generated/90179796-f949-490c-8729-8cbc9c65be55.md!}
 
-## Further Readings
+## Related articles
 - [CISCO Umbrella User Guide - Manage your logs](https://docs.umbrella.com/deployment-umbrella/docs/setting-up-an-amazon-s3-bucket)

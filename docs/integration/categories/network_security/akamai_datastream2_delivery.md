@@ -68,7 +68,7 @@ This integration allows you to ingest Akamai DataStream 2 delivery telemetry int
 
 #### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 
-### Further readings
+### Related articles
 
 - [Create a stream](https://techdocs.akamai.com/datastream2/docs/create-stream)
 - [Stream logs to a custom HTTPS endpoint](https://techdocs.akamai.com/datastream2/docs/stream-custom-https)

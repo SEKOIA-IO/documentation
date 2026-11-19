@@ -96,6 +96,6 @@ This setup guide will show you how to forward your FortiMail logs to Sekoia.io b
 
 {!_shared_content/operations_center/integrations/generated/60af2bd6-7ef0-48a7-a6db-90fcdd7236f1.md!}
 
-## Further readings
+## Related articles
 
 - [Configure FortiMail Log Forwarding](https://docs.fortinet.com/document/fortimail/6.2.0/administration-guide/332364/configuring-logging#logging_2063907032_1949484)

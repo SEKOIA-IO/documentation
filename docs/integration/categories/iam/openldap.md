@@ -48,7 +48,7 @@ Please consult the [Rsyslog Transport](/integration/ingestion_methods/syslog/ove
 {!_shared_content/operations_center/detection/generated/suggested_rules_35855de3-0728-4a83-ae19-e38e167432a1_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/35855de3-0728-4a83-ae19-e38e167432a1.md!}
 
-## Further Readings
+## Related articles
 
 - [OpenLDAP Official Website](https://www.openldap.com)
 - [OpenLDAP Quickstart Guide](https://www.openldap.com/doc/admin26/quickstart.html)

@@ -218,6 +218,6 @@ In the Zscaler ZIA console:
 {!_shared_content/operations_center/detection/generated/suggested_rules_dc0f339f-5dbe-4e68-9fa0-c63661820941_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/dc0f339f-5dbe-4e68-9fa0-c63661820941.md!}
 
-## Further Readings
+## Related articles
 
 - [Zscaler - Nanolog Streaming Service](https://help.zscaler.com/zia/nanolog-streaming-service)

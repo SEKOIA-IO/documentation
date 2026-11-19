@@ -47,5 +47,5 @@ Please consult the [Rsyslog Transport](/integration/ingestion_methods/syslog/ove
 {!_shared_content/operations_center/detection/generated/suggested_rules_d719e8b5-85a1-4dad-bf71-46155af56570_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/d719e8b5-85a1-4dad-bf71-46155af56570.md!}
 
-## Further Readings
+## Related articles
 - [Watchguard Firebox Rsyslog Integration Overview](https://www.watchguard.com/help/docs/help-center/en-US/Content/Integration-Guides/General/ubuntu_rsyslog.html)

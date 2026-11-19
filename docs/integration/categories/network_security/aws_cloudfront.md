@@ -59,5 +59,5 @@ To turn on standard logging for a CloudFront distribution, follow these steps:
 
 {!_shared_content/operations_center/integrations/generated/fc99c983-3e6c-448c-97e6-7e0948e12415.md!}
 
-## Further Readings
+## Related articles
 - [AWS CloudFront configuration doc](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html)

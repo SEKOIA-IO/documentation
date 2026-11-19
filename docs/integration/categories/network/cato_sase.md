@@ -55,5 +55,5 @@ In addition to the API key, Cato `account ID` is also required for the Account c
 
 {!_shared_content/operations_center/integrations/generated/469bd3ae-61c9-4c39-9703-7452882e70da.md!}
 
-## Further readings
+## Related articles
 - [Cato Networks - Generating API Keys for the Cato API](https://support.catonetworks.com/hc/en-us/articles/4413280536081-Generating-API-Keys-for-the-Cato-API)

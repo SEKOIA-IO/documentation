@@ -100,7 +100,7 @@ If no events arrive, or events stop arriving:
 - If the intake key was rotated or replaced, send the new key to Control D Support through the agreed secure method, then confirm that delivery resumes with a fresh DNS query.
 - If the stream still produces no events, contact Control D Support.
 
-## Further readings
+## Related articles
 
 - [Control D Support](https://controld.com/contact)
 - [Control D SIEM streaming overview](https://docs.controld.com/docs/siem-streaming)

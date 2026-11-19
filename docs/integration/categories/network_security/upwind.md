@@ -65,7 +65,7 @@ When configuring the connector, provide the following information:
 
 {!_shared_content/operations_center/integrations/generated/1a3734fa-0919-4c38-877c-e8320eb3ec6b.md!}
 
-### Further Readings
+### Related articles
 
 - [Upwind REST API documentation](https://docs.upwind.io/restapi/v1/introduction)
 - [Upwind Credentials documentation](https://docs.upwind.io/settings/credentials)

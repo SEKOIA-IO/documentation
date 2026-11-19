@@ -91,7 +91,7 @@ This setup guide will show you how to provide an integration between Broadcom Ed
 
 {!_shared_content/operations_center/integrations/generated/2886cd2d-f686-4e7d-9976-250cba2eaf5b.md!}
 
-## Further readings
+## Related articles
 
 - [Configure an Access Log](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/edge-swg/7-3/getting-started/page-help-administration/page-help-logging/page-help-access-logging-log.html)
 - [Configure an Access Log Format](https://techdocs.broadcom.com/us/en/symantec-security-software/web-and-network-security/edge-swg/7-3/getting-started/page-help-administration/page-help-logging/log-formats/page-help-access-logging-format.html)

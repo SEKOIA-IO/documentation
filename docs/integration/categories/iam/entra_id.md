@@ -69,6 +69,6 @@ Navigate to [Home > Microsoft Entra ID (Azure AD)  (e.g. `company-ad`) > Monitor
 {!_shared_content/operations_center/detection/generated/suggested_rules_19cd2ed6-f90c-47f7-a46b-974354a107bb_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/19cd2ed6-f90c-47f7-a46b-974354a107bb.md!}
 
-#### Further Readings
+#### Related articles
 
 - [Microsoft Github diagnostic Active Directory documentation](https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/support/windows-server/active-directory/configure-ad-and-lds-event-logging.md)

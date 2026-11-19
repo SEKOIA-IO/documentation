@@ -35,5 +35,5 @@ This setup guide will show you how to forward logs produced by your Vectra Appli
 {!_shared_content/operations_center/integrations/generated/48146ba4-4c79-4aa9-8eb3-660e984bda95.md!}
 
 
-## Further Readings
+## Related articles
 - [Vectra Platform API Quick Start Tutorial](https://support.vectra.ai/vectra/article/KB-VS-1572)

@@ -72,6 +72,6 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 {!_shared_content/operations_center/integrations/generated/94d4ef59-638c-4230-b38d-e4a1381db8ed.md!}
 
-## Further Readings
+## Related articles
 
 - [One Identity Safeguard for Privileged Sessions - Forwarding data to third-party systems](https://support.oneidentity.com/fr-fr/technical-documents/one-identity-safeguard-for-privileged-sessions/7.4/administration-guide/30#TOPIC-2065507)

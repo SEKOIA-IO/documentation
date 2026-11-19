@@ -85,7 +85,7 @@ Exchange, SharePoint and General audit events are part of the **M365 Unified Aud
 !!! note "Multiple clients"
     For each client, create a dedicated Event Hub (or separate Event Hubs within the same namespace), a dedicated Sekoia intake, and a dedicated playbook. This ensures log isolation between tenants.
 
-## Further Readings
+## Related articles
 - [Microsoft: Stream Azure monitoring data to an event hub](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/stream-monitoring-data-event-hubs)
 - [Microsoft: Audit log streaming in Microsoft Purview](https://learn.microsoft.com/en-us/purview/audit-streaming)
 - [Microsoft: Turn auditing on or off](https://docs.microsoft.com/en-us/microsoft-365/compliance/turn-audit-log-search-on-or-off)

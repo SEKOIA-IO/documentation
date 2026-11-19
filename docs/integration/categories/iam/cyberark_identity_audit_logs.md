@@ -125,7 +125,7 @@ type: intake
 
 {!_shared_content/operations_center/integrations/generated/e129243d-0eeb-4b4c-a0f6-f15051b04a7e.md!}
 
-## Further readings
+## Related articles
 
 - [Integrate Audit with third-party SIEM applications](https://docs.cyberark.com/audit/latest/en/content/audit/isp_siem-integration.htm)
 - [Add Service Users](https://docs.cyberark.com/identity-administration/latest/en/content/ispss/ispss-add-service-user.htm)

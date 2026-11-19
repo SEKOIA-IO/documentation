@@ -79,6 +79,6 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 {!_shared_content/operations_center/integrations/generated/99a97295-dad0-4deb-af50-521c76cad45d.md!}
 
-## Further Readings
+## Related articles
 - [Azure Network Watcher overview](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-monitoring-overview)
 - [Create, change, enable, disable, or delete virtual network flow logs](https://learn.microsoft.com/en-us/azure/network-watcher/vnet-flow-logs-manage?tabs=portal)

@@ -58,6 +58,6 @@ Please follow [this guide](https://docs.aws.amazon.com/vpc/latest/userguide/flow
 
 {!_shared_content/operations_center/integrations/generated/07c0cac8-f68f-11ea-adc1-0242ac120002.md!}
 
-## Further Readings
+## Related articles
 - [AWS VPC Overview](https://aws.amazon.com/vpc/)
 - [AWS Flow Logs Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html)

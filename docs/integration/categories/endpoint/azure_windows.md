@@ -209,6 +209,6 @@ Finally, please send to Sekoia.io the following information:
 
 {!_shared_content/operations_center/integrations/generated/2815eaab-2425-4eff-8038-3f7d5a3b8b11.md!}
 
-## Further Readings
+## Related articles
 
 - [Microsoft Github windows diagnostic extension documentation](https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/azure-monitor/platform/diagnostics-extension-stream-event-hubs.md)

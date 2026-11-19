@@ -81,6 +81,6 @@ This setup guide will show you how to forward your Pulse Connect Secure logs to 
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_7a12aa3b-ec73-4ebb-8fb3-f7c543fd84a5_do_not_edit_manually.md!}
 
-## Further readings
+## Related articles
 
 - [Pulse Secure Documentation](https://www.pulsesecure.net/techpubs/)

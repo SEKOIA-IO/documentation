@@ -56,7 +56,7 @@ Start the playbook and enjoy your events.
 
 {!_shared_content/operations_center/integrations/generated/d3a813ac-f9b5-451c-a602-a5994544d9ed.md!}
 
-## Further Readings
+## Related articles
 
 - [AWS CloudTrail Overview](https://aws.amazon.com/cloudtrail/)
 - [AWS CloudTrail Documentation](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html)

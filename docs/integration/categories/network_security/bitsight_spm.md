@@ -45,5 +45,5 @@ To collect the events from the Cato Networks platform, an API token is required:
 {!_shared_content/operations_center/detection/generated/suggested_rules_57eda191-2f93-4fd9-99a2-fd8ffbcdff50_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/57eda191-2f93-4fd9-99a2-fd8ffbcdff50.md!}
 
-## Further readings
+## Related articles
 - [Bitsight API Token Management](https://help.bitsighttech.com/hc/en-us/articles/115014888388-API-Token-Management)

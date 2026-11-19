@@ -111,7 +111,7 @@ This setup guide will show you how to forward logs produced by your SpamAssassin
 
 {!_shared_content/operations_center/integrations/generated/7954ae6f-eafa-404d-8e15-4b99a12b754c.md!}
 
-## Further readings
+## Related articles
 
 - The code of the Intake format is available [here](https://github.com/SEKOIA-IO/intake-formats/tree/main/SpamAssassin).
 - [SpamAssassin documentation](https://spamassassin.apache.org/)

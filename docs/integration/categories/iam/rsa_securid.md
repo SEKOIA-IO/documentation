@@ -46,7 +46,7 @@ Please consult the [Sekoia Forwarder](/integration/ingestion_methods/syslog/seko
 {!_shared_content/operations_center/detection/generated/suggested_rules_20876735-c423-4bbc-9d19-67edc91fb063_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/20876735-c423-4bbc-9d19-67edc91fb063.md!}
 
-## Further Readings
+## Related articles
 
 - [How to configure RSA Authentication Manager to send log messages to a local file for an audit trail](https://community.rsa.com/t5/securid-knowledge-base/how-to-configure-rsa-authentication-manager-to-send-log-messages/ta-p/6449)
 - [How to configure RSA Authentication Manager 8.1, 8.2, 8.3 to send data to multiple remote syslog servers](https://community.rsa.com/t5/securid-knowledge-base/how-to-configure-rsa-authentication-manager-8-1-8-2-8-3-to-send/ta-p/2525)

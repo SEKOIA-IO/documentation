@@ -46,7 +46,7 @@ You have to:
 
 {!_shared_content/operations_center/integrations/generated/3e060900-4004-4754-a597-d2944a601930.md!}
 
-## Further Readings
+## Related articles
 - [AWS GuardDuty Overview](https://aws.amazon.com/guardduty/)
 - [AWS GuardDuty Documentation](https://docs.aws.amazon.com/guardduty/)
 - [AWS GuardDuty - Exporting findings](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_exportfindings.html)
