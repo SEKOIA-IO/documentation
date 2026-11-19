@@ -10,7 +10,7 @@ An asset connector collects devices, users, applications and vulnerability findi
 A good asset connector:
 
 - reports each machine and each account as a single asset, with the same identifiers at every run;
-- sends only what changed since its previous run;
+- sends what changed since its previous run, and everything once a week;
 - closes the findings the product reports fixed;
 - gives each finding a CVSS score.
 
@@ -202,13 +202,17 @@ def to_device_item(machine: dict) -> DeviceOCSFModel | None:  # (1)!
     )
 
 
+REFRESH_INTERVAL = 7 * 24 * 3600  # (2)!
+
+
 class MachinesAssetConnector(AssetConnector):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.context = PersistentJSON("context.json", self.data_path)
         self._last_updated_at: str | None = None
+        self._ids_at_last_updated_at: list[str] = []
 
-    def fetch_machines(self, updated_since: str | None) -> Generator[dict, None, None]:  # (2)!
+    def fetch_machines(self, updated_since: str | None) -> Generator[dict, None, None]:  # (3)!
         response = requests.get(
             f"{self.module.configuration['base_url']}/machines",
             headers={"Authorization": f"Bearer {self.module.configuration['api_key']}"},
@@ -220,10 +224,21 @@ class MachinesAssetConnector(AssetConnector):
 
     def get_assets(self) -> Generator[AssetItem, None, None]:
         with self.context as context:
+            if time.time() - context.get("refreshed_at", 0) >= REFRESH_INTERVAL:
+                context["refreshed_at"] = time.time()
+                context.pop("last_updated_at", None)
+                context.pop("ids_at_last_updated_at", None)
             since = context.get("last_updated_at")
+            self._last_updated_at = since
+            self._ids_at_last_updated_at = list(context.get("ids_at_last_updated_at", []))
 
         for machine in self.fetch_machines(updated_since=since):
-            self._last_updated_at = machine["updated_at"]
+            if machine["updated_at"] == since and machine["id"] in self._ids_at_last_updated_at:
+                continue  # (4)!
+            if machine["updated_at"] != self._last_updated_at:
+                self._last_updated_at = machine["updated_at"]
+                self._ids_at_last_updated_at = []
+            self._ids_at_last_updated_at.append(machine["id"])
             if item := to_device_item(machine):
                 yield item
 
@@ -231,17 +246,21 @@ class MachinesAssetConnector(AssetConnector):
         if self._last_updated_at:
             with self.context as context:
                 context["last_updated_at"] = self._last_updated_at
+                context["ids_at_last_updated_at"] = list(self._ids_at_last_updated_at)
 
     def reset_checkpoint(self) -> None:
         with self.context as context:
             context.pop("last_updated_at", None)
+            context.pop("ids_at_last_updated_at", None)
 
     def get_mapped_fields(self) -> dict[str, str]:
         return {"name": "device.hostname", "os": "device.os.name"}
 ```
 
 1. Returns `None` for a machine without a usable hostname. See [Report each machine and account once](#report-each-machine-and-account-once).
-2. A call to the API of your product, here an imaginary one. It reads the product URL and credentials from the module configuration, and returns the machines sorted by update time, oldest first.
+2. Once a week, the connector sends every machine again. See [Send only what changed](#send-only-what-changed).
+3. A call to the API of your product, here an imaginary one. It reads the product URL and credentials from the module configuration, and returns the machines updated at or after `updated_since`, sorted by update time, oldest first.
+4. Several machines can share an update time. The checkpoint keeps the IDs already pushed at its update time, so that the next cycle sends the others, and only them.
 
 When `update_checkpoint()` runs, `get_assets()` is paused on the last item of the pushed batch, so `_last_updated_at` is the position of that item.
 
@@ -306,6 +325,14 @@ A connector that sends its whole inventory at every cycle sends it again at once
 1. Fetch only what changed in the product since the checkpoint.
 2. Yield nothing when nothing changed, so that the connector waits for `frequency`.
 3. Let the SDK group the items into batches, rather than pushing them one by one.
+4. Send every item again at least once a week, as `REFRESH_INTERVAL` does in [Write the asset connector](#write-the-asset-connector).
+
+The weekly refresh does two things:
+
+- **It keeps your vulnerabilities in the risk score.** A vulnerability counts in the risk score of its asset only while a connector confirmed it in the last 30 days. A connector that sends only what changed would let unchanged vulnerabilities drop out of the score.
+- **It recovers the items of a refused push.** After a push refused with an error other than 429, the SDK goes on with the next batch, and a later accepted push saves the checkpoint past the refused items. The refresh sends them again.
+
+A refresh counts in the 24-hour item quota like any other push.
 
 !!! info "Safeguard: rate limits"
     Each configuration has a rate limit on pushes per minute and a quota of items per 24 hours. A connector that loops on its whole inventory reaches them and receives a 429 `ASSET_CONNECTOR_RATE_LIMIT_EXCEEDED`, rather than pushing the same items over and over. The connector then pauses for one hour by default, and resumes from its last checkpoint. The values are in [Asset connector limits](/xdr/features/modules/reveal_asset_connectors_limits.md).
@@ -352,9 +379,11 @@ Filter the findings in the connector code before pushing them, for instance by C
 A bug can make a connector create a new asset at every run, or never close its findings. Storage limits stop such a connector before it fills your inventory with duplicate and stale data.
 
 !!! info "Safeguard: storage limits"
-    Each configuration and each community can store a limited number of active assets, active applications and open findings, in proportion to the number of assets your community subscribed. When one is reached, every push of the configuration receives a 429 `ASSET_CONNECTOR_LIMIT_REACHED`, and `details.limits` names the reached limit. The connector pauses, and pushes again once usage is back under the limit. See [Storage limits for custom asset connectors](/xdr/features/modules/reveal_asset_connectors_limits.md#storage-limits-for-custom-asset-connectors).
+    Each configuration and each community can store a limited number of active assets, active applications and open findings, in proportion to the number of assets your community subscribed. The community also has lifetime limits on everything it ever stored. When a limit is reached, every push of the configuration receives a 429 `ASSET_CONNECTOR_LIMIT_REACHED`, and `details.limits` names the reached limit. The connector pauses, and pushes again once usage is back under the limit. See [Storage limits for custom asset connectors](/xdr/features/modules/reveal_asset_connectors_limits.md#storage-limits-for-custom-asset-connectors).
 
-A connector that follows [Report each machine and account once](#report-each-machine-and-account-once) and [Keep findings up to date](#keep-findings-up-to-date) stays far from these limits.
+A connector that follows [Report each machine and account once](#report-each-machine-and-account-once) and [Keep findings up to date](#keep-findings-up-to-date) stays far from the active and open-finding limits.
+
+Lifetime limits are different: they count every asset, application and finding your community ever stored, including closed findings and the data of deleted configurations, and they never decrease. Before you collect a product whose assets come and go, such as short-lived cloud instances, check that its volume over time fits these limits.
 
 ### Keep the SDK up to date
 
