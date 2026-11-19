@@ -7,7 +7,7 @@ Please check the [dedicated FAQ page](../../FAQ/intelligence/Detection_qa.md) re
 For Windows-related rules, Sekoia.io automatically produces [this regularly updated list](built_in_detection_rules_eventids.md) of the needed EventIDs by rule but also globally as some statistics are provided.
 
 <!-- include:_shared_content/operations_center/detection/generated/built_in_rules_do_not_edit_manually.md -->
-Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-11-09_](rules_changelog.md)).
+Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-11-10_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -4057,8 +4057,12 @@ Detects suspicious FromBase64String expressions in command line arguments.
 
 - **Effort:** master
 
+- **Changelog:**
+
+    - 10/11/2026 - minor - Update condition syntax following Sigma update
+
 </details>
-    
+            
 <details>
 <summary>Gatewatcher AionIQ V103 Shellcode Detect High</summary>
 
@@ -17308,8 +17312,12 @@ Adversaries may look for folders and drives shared on remote systems as a means 
 
 - **Effort:** master
 
+- **Changelog:**
+
+    - 10/11/2026 - minor - Update condition syntax following Sigma update
+
 </details>
-    
+            
 <details>
 <summary>PowerView commandlets 1</summary>
 
@@ -17953,6 +17961,7 @@ Detects attempt to export an AWS EC2 instance. A VM Export might indicate an att
 
 - **Changelog:**
 
+    - 10/11/2026 - minor - Update condition syntax following Sigma update
     - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
 
 </details>
@@ -18593,8 +18602,12 @@ Detects suspicious DNS queries known from Cobalt Strike beacons. The threshold i
 
 - **Effort:** advanced
 
+- **Changelog:**
+
+    - 10/11/2026 - minor - Update condition syntax following Sigma update
+
 </details>
-    
+            
 <details>
 <summary>Cobalt Strike HTTP Default GET beaconing</summary>
 
@@ -19990,6 +20003,7 @@ Detects attempt to export an AWS EC2 instance. A VM Export might indicate an att
 
 - **Changelog:**
 
+    - 10/11/2026 - minor - Update condition syntax following Sigma update
     - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
 
 </details>

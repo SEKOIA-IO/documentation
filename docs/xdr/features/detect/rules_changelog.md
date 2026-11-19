@@ -5,10 +5,23 @@ Sekoia.io provides built-in detection rules to illuminate intrusions, adversaria
 This page relates the changes that Sekoia.io made to these rules over time.
 
 <!-- include:_shared_content/operations_center/detection/generated/built_in_rules_changelog_do_not_edit_manually.md -->
-Changelog _last update on 2026-11-09_
+Changelog _last update on 2026-11-10_
 
 ## Changelog
 
+### AWS CloudTrail EC2 VM Export Failure
+  - 10/11/2026 - minor - Update condition syntax following Sigma update
+  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
+    
+### Network Share Discovery
+  - 10/11/2026 - minor - Update condition syntax following Sigma update
+    
+### FromBase64String Command Line
+  - 10/11/2026 - minor - Update condition syntax following Sigma update
+    
+### Cobalt Strike DNS Beaconing
+  - 10/11/2026 - minor - Update condition syntax following Sigma update
+    
 ### Microsoft Entra ID (Azure AD) Impossible Travel
   - 29/10/2026 - minor - Rule riskEventType updated following Microsoft changes, the rule is now properly working again.
   - 09/09/2026 - minor - Update rule type to integration
@@ -787,9 +800,6 @@ Changelog _last update on 2026-11-09_
   - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
     
 ### AWS CloudTrail EC2 CreateVPC
-  - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
-    
-### AWS CloudTrail EC2 VM Export Failure
   - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
     
 ### AWS CloudTrail EC2 CreateKeyPair
