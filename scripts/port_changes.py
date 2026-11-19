@@ -97,7 +97,8 @@ def main():
                 # Miroir brut (pour les inclusions), puis report dans la copie éventuelle
                 if args.write and st[0] != "D":
                     Path(new_src).parent.mkdir(parents=True, exist_ok=True)
-                    Path(new_src).write_text(show(src_ref, new_src) or "", encoding="utf-8")
+                    Path(new_src).write_bytes(subprocess.run(["git", "show", f"{src_ref}:{new_src}"],
+                                                             capture_output=True).stdout)
                 report["copié brut"].append(new_src)
                 docs_path = next((d + new_src[len(s):] for d, s in manifest
                                   if new_src == s or new_src.startswith(s + "/")), None)
