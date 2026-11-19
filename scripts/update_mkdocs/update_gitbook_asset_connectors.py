@@ -41,12 +41,12 @@ def get_asset_type(connector_config: Dict) -> str | None:
     return CAPABILITY_TO_ASSET_TYPE.get(connector_config.get("capability"))
 
 
-def load_asset_connectors(automation_module_repository: str) -> Tuple[List[Dict], List[str]]:
+def load_asset_connectors(automation_library_repository: str) -> Tuple[List[Dict], List[str]]:
     asset_connectors: List[Dict] = []
     duplicates: List[str] = []
     seen_output_names = set()
 
-    for module_path in sorted(Path(automation_module_repository).iterdir()):
+    for module_path in sorted(Path(automation_library_repository).iterdir()):
         if not module_path.is_dir() or module_path.name.startswith((".", "_")):
             continue
 
@@ -132,16 +132,20 @@ def json_code_block(data) -> str:
     return f"{fence}json\n{text}\n{fence}"
 
 
+TEMPLATE_ENVIRONMENT = Environment(loader=FileSystemLoader(SCRIPT_DIR / "templates"), trim_blocks=True, lstrip_blocks=True)
+TEMPLATE_ENVIRONMENT.filters.update(
+    table_cell=escape_table_cell,
+    markdown_text=escape_markdown_text,
+    inline_code=inline_code,
+    json_code_block=json_code_block,
+)
+
+
 def generate_connector_doc(connector: Dict) -> str:
     config = connector["config"]
     module_slug = connector["module_slug"]
 
-    env = Environment(loader=FileSystemLoader(SCRIPT_DIR / "templates"), trim_blocks=True, lstrip_blocks=True)
-    env.filters["table_cell"] = escape_table_cell
-    env.filters["markdown_text"] = escape_markdown_text
-    env.filters["inline_code"] = inline_code
-    env.filters["json_code_block"] = json_code_block
-    body = env.get_template("asset_connector_gitbook.md.jinja").render(
+    body = TEMPLATE_ENVIRONMENT.get_template("asset_connector_gitbook.md.jinja").render(
         config=config,
         mapping=connector["mapping"],
         module_slug=module_slug,
