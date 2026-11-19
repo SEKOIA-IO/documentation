@@ -24,7 +24,7 @@ git commit -qam "GitBook : conversion de la syntaxe MkDocs" || true
 
 echo "== 3/4 Navigation (SUMMARY.md) depuis mkdocs.yml"
 python3 "$HERE/build_summary.py" --docs "$ROOT" --exclude-section Integrations --create-stubs | grep -v '^  +' || true
-python3 "$HERE/export_redirects.py"
+# redirections : scripts/export_redirects.py, après le découpage en sections
 
 echo "== 4/4 Configuration Git Sync"
 cat > .gitbook.yaml << YAML

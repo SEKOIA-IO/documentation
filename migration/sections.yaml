@@ -1,0 +1,80 @@
+# Une entrée par onglet GitBook (= un espace = un dossier docs/<dir>/).
+#   title   : titre de premier niveau dans la nav de mkdocs.yml
+#   dir     : dossier sous docs/ (= Project directory de l'espace : ./docs/<dir>)
+#   url     : chemin de la section sur le site GitBook (sert aux liens entre sections)
+#   folders : sous-section de nav (titres séparés par " > ") -> sous-dossier.
+#             Les pages plus profondes sont mises à plat dans le dossier le plus proche.
+#   skip    : section non touchée (ni déplacement, ni SUMMARY), connue pour les liens
+#   new     : section nouvelle, créée vide
+site_url: https://docs.sekoia.com
+sections:
+- title: Getting started
+  dir: getting-started
+  url: getting-started
+  folders: {}
+
+- title: Sekoia Solutions
+  dir: sekoia-solutions
+  url: sekoia-solutions
+  folders:
+    Threat Context (Intelligence): cti
+    Threat Context (Intelligence) > Consume: cti/consume
+    Threat Context (Intelligence) > Monitor: cti/monitor
+    Threat Context (Intelligence) > External Integrations: cti/external-integrations
+    Detect, Hunt and Respond (Defend): defend
+    Detect, Hunt and Respond (Defend) > Collect: defend/collect
+    Detect, Hunt and Respond (Defend) > Detect: defend/detect
+    Detect, Hunt and Respond (Defend) > Investigate: defend/investigate
+    Detect, Hunt and Respond (Defend) > Report: defend/report
+    Detect, Hunt and Respond (Defend) > Automate: defend/automate
+    Detect, Hunt and Respond (Defend) > External integrations: defend/external-integrations
+    AI Agents (Elevate): elevate
+    Asset Intelligence (Reveal): reveal
+    Settings: settings
+
+- title: Usecases
+  dir: usecases
+  url: usecases
+  folders: {}
+
+- title: FAQ and troubleshooting
+  dir: faq-and-troubleshooting
+  url: faq-and-troubleshooting
+  folders: {}
+
+- title: Self-hosted deployment
+  dir: self-hosted
+  url: self-hosted
+  folders:
+    v1.0.1: 1.0.1
+
+- title: Changelog
+  dir: changelog
+  url: changelog
+  new: true
+
+# Non touchées : générées par l'équipe Intégrations et par OpenAPI
+- title: Integrations
+  dir: integration
+  url: integrations
+  skip: true
+
+- title: API Documentation
+  dir: developer
+  url: api-documentation
+  skip: true
+
+# Pages hors navigation : décisions (chemins MkDocs d'origine, sous docs/)
+orphans:
+  keep:
+    # exclue de la publication MkDocs (exclude_docs) : deviendra visible dans GitBook
+    xdr/features/modules/elevate_investigate_case.md:
+      after: xdr/features/modules/elevate_investigate_alert.md
+  delete:   # page -> destination de la redirection (page MkDocs ou URL complète)
+    xdr/features/collect/filter_logs_with_rsyslog_or_syslog_ng.md: xdr/usecases/playbook/log_volume_reduction_strategies.md
+    xdr/FAQ/subscriptions/allocate_trial_subscription.md: getting_started/assign_a_subscription.md
+    xdr/usecases/playbook/Add_UserAgent_in_comment.md: https://docs.sekoia.com/usecases
+    xdr/usecases/playbook/ExtractIP_from_Url_country.md: https://docs.sekoia.com/usecases
+    xdr/usecases/playbook/Get_events_information_from_alert.md: https://docs.sekoia.com/usecases
+    xdr/usecases/playbook/Shodan_and_VirusTotal_configuration.md: https://docs.sekoia.com/usecases
+    xdr/usecases/playbook/whoIs.md: https://docs.sekoia.com/usecases

@@ -23,10 +23,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 import convert_mkdocs as cm  # noqa: E402
+import section_links as SL  # noqa: E402
 
 BASELINE = "gitbook-baseline"   # fin de la préparation : point de départ des renommages GitBook
 MANIFEST = Path("migration/materialized.tsv")
-LINK_RE = re.compile(r'(\]\()([^)\s#:]+\.md)(#[^)\s]*)?(\))')
+LINK_RE = re.compile(r'(\]\(|src=")([^)"\s#:?]+)(#[^)"\s]*)?(\)|")')
 
 
 def git(*a, check=True):
@@ -43,26 +44,11 @@ def sync_tag(source):
 
 
 def build_rename_map():
-    files, dirs = {}, {}
-    for line in git("diff", "-M", "--name-status", BASELINE, "HEAD").splitlines():
-        p = line.split("\t")
-        if p[0].startswith("R"):
-            files[p[1]] = p[2]
-            a, b = p[1].split("/"), p[2].split("/")
-            while a and b and a[-1] == b[-1]:
-                a.pop(), b.pop()
-            if a and b:
-                dirs["/".join(a)] = "/".join(b)
-    return files, dirs
+    return SL.rename_map()
 
 
-def map_path(path, files, dirs):
-    if path in files:
-        return files[path]
-    for old in sorted(dirs, key=len, reverse=True):
-        if path.startswith(old + "/"):
-            return dirs[old] + path[len(old):]
-    return path
+def map_path(path, files=None, dirs=None):
+    return SL.map_path(path)
 
 
 def main():
@@ -78,15 +64,19 @@ def main():
         or git("merge-base", args.source, "pre-migration").strip()
     src_ref = git("rev-parse", args.source).strip()
     Path(".git/port_source_ref").unlink(missing_ok=True)
+    Path(".git/port_new_pages.tsv").unlink(missing_ok=True)
     if base_ref == src_ref:
         print("Rien de nouveau.")
         return
     files_map, dirs_map = build_rename_map()
+    dropped_file = Path("migration/dropped_copies.txt")
+    dropped = dropped_file.read_text(encoding="utf-8").split() if dropped_file.exists() else []
     manifest = [l.split("\t") for l in MANIFEST.read_text().splitlines() if l.strip()] if MANIFEST.exists() else []
 
     # Arbre de la source pour résoudre liens et inclusions comme MkDocs le ferait
     wt = Path(tempfile.mkdtemp(prefix="port-src-"))
     git("worktree", "add", "--detach", "-f", str(wt), src_ref)
+    new_pages = []
     report = {"appliqué": [], "conflit": [], "nouveau": [], "supprimé côté source": [], "copié brut": []}
     try:
         diff = git("diff", "-M", "--name-status", base_ref, src_ref, "--", args.docs, "_shared_content")
@@ -104,12 +94,22 @@ def main():
                                   if new_src == s or new_src.startswith(s + "/")), None)
                 if not docs_path:
                     continue
+                if any(docs_path == d or docs_path.startswith(d + "/") for d in dropped):
+                    continue   # copie supprimée au découpage (doublon) : ne pas la recréer
             else:
                 docs_path = new_src
+            if any(docs_path == d or docs_path.startswith(d + "/") for d in dropped):
+                continue   # page supprimée volontairement de la version GitBook
             if st[0] == "D":
                 report["supprimé côté source"].append(map_path(docs_path, files_map, dirs_map))
                 continue
             if not new_src.endswith(".md"):
+                if docs_path.startswith(args.docs + "/assets/") and args.write:
+                    rest = docs_path[len(args.docs) + 1:]
+                    for copy in Path(args.docs).glob(f"*/{rest}"):
+                        copy.write_bytes(subprocess.run(["git", "show", f"{src_ref}:{new_src}"],
+                                                        capture_output=True).stdout)
+                        report["appliqué"].append(str(copy))
                 dest = map_path(docs_path, files_map, dirs_map)
                 if args.write:
                     Path(dest).parent.mkdir(parents=True, exist_ok=True)
@@ -134,6 +134,7 @@ def main():
             if ours is None or base_txt is None:
                 result, conflicts = src_txt, 0
                 report["nouveau"].append(dest)
+                new_pages.append((docs_path, dest))
             else:
                 with tempfile.TemporaryDirectory() as td:
                     o, b, s = (Path(td) / n for n in ("ours", "base", "src"))
@@ -146,11 +147,18 @@ def main():
 
             # Liens écrits vers d'anciens emplacements : on suit les renommages GitBook
             def fix(m):
-                tgt = os.path.normpath(os.path.join(os.path.dirname(docs_path), m.group(2)))
-                if Path(os.path.normpath(os.path.join(os.path.dirname(dest), m.group(2)))).exists():
+                link = m.group(2)
+                if link.startswith(("/", "http")) or Path(os.path.normpath(
+                        os.path.join(os.path.dirname(dest), link))).exists() and not link.startswith("../"):
                     return m.group(0)
-                new_t = map_path(tgt, files_map, dirs_map)
-                return f"{m.group(1)}{os.path.relpath(new_t, os.path.dirname(dest))}{m.group(3) or ''}{m.group(4)}"
+                tgt = os.path.normpath(os.path.join(os.path.dirname(docs_path), link))
+                if not tgt.startswith(args.docs + "/"):
+                    return m.group(0)
+                tgt_rel = tgt[len(args.docs) + 1:]
+                if not tgt_rel.startswith("assets/"):
+                    tgt_rel = map_path(tgt)[len(args.docs) + 1:]
+                new = SL.link_for(tgt_rel, dest[len(args.docs) + 1:], Path(args.docs), wt / args.docs)
+                return f"{m.group(1)}{new}{m.group(3) or ''}{m.group(4)}"
             result = LINK_RE.sub(fix, result)
 
             if args.write:
@@ -167,6 +175,7 @@ def main():
                 print(f"    {'!' if k in ('conflit', 'supprimé côté source') else '-'} {p}")
     if args.write:
         Path(".git/port_source_ref").write_text(src_ref)
+        Path(".git/port_new_pages.tsv").write_text("".join(f"{a}\t{b}\n" for a, b in new_pages))
     sys.exit(2 if report["conflit"] else 0)
 
 
