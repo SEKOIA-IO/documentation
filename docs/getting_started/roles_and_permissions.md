@@ -49,6 +49,8 @@ To create a custom role, navigate to **Settings > Workspace > Roles** and click 
 
 You can discover all available permissions from the same page. Permissions are grouped by feature area (Alerts, Rules, Playbooks, Users, etc.).
 
+Custom roles are available with Defend Advanced and Defend Prime. See the [Defend plan comparison](/getting_started/understand_your_subscription.md#defend-plan-comparison).
+
 ## Restricted roles
 
 Restricted roles limit a user's access to events from specific intakes. They are useful for organizations that need to keep certain data streams visible only to authorized users.
