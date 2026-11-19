@@ -2,15 +2,15 @@
 ## OCSF Mapping for {{ config.name | default('Connector') }}
 
 {% if mapping.ocsf_class %}
-**OCSF Class:** `{{ mapping.ocsf_class }}`
+**OCSF Class:** {{ mapping.ocsf_class | inline_code }}
 
 {% endif %}
 {% if mapping.class_uid %}
-**Class UID:** `{{ mapping.class_uid }}`
+**Class UID:** {{ mapping.class_uid | inline_code }}
 
 {% endif %}
 {% if ocsf_version %}
-**OCSF Version:** `{{ ocsf_version }}`
+**OCSF Version:** {{ ocsf_version | inline_code }}
 
 {% endif %}
 ## Information Collected
@@ -21,14 +21,12 @@ The {{ config.name | default('Connector') }} fetches comprehensive information a
 ### API Response Examples
 {% for sample in mapping.samples %}
 
-#### {{ sample.name }}
-{% if sample.description | trim %}
+#### {{ sample.name or '-' }}
+{% if (sample.description or '') | trim %}
 {{ sample.description | trim | markdown_text }}
 {% endif %}
 
-```json
-{{ sample.data | trim }}
-```
+{{ sample.data | json_code_block }}
 {% endfor %}
 {% endif %}
 {% if mapping.fields %}
@@ -40,7 +38,7 @@ The following table shows how source data is mapped to OCSF model fields:
 | Source Field | OCSF Field Path | Description | Data Type | Logic |
 |--------------|-----------------|-------------|-----------|-------|
 {% for field in mapping.fields %}
-| `{{ field.source | default('-', true) | table_cell }}` | `{{ field.target | default('-', true) | table_cell }}` | {{ field.description | default('-', true) | markdown_text | table_cell }} | `{{ field.type | default('-', true) | table_cell }}` | {{ field.logic | default('-', true) | markdown_text | table_cell }} |
+| {{ field.source | default('-', true) | table_cell | inline_code }} | {{ field.target | default('-', true) | table_cell | inline_code }} | {{ field.description | default('-', true) | markdown_text | table_cell }} | {{ field.type | default('-', true) | table_cell | inline_code }} | {{ field.logic | default('-', true) | markdown_text | table_cell }} |
 {% endfor %}
 {% endif %}
 {% if mapping.ocsf_samples %}
@@ -48,13 +46,11 @@ The following table shows how source data is mapped to OCSF model fields:
 ### OCSF Model Structure
 {% for sample in mapping.ocsf_samples %}
 
-#### {{ sample.name }}
-{% if sample.description | trim %}
+#### {{ sample.name or '-' }}
+{% if (sample.description or '') | trim %}
 {{ sample.description | trim | markdown_text }}
 {% endif %}
 
-```json
-{{ sample.data | trim }}
-```
+{{ sample.data | json_code_block }}
 {% endfor %}
 {% endif %}

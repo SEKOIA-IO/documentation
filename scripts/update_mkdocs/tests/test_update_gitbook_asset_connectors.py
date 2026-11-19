@@ -252,6 +252,43 @@ class GenerateConnectorDocTests(unittest.TestCase):
         self.assertIn("#### Blank\n\n```json\n{}\n```\n", content)
         self.assertNotIn("\n\n\n", content)
 
+    def test_empty_sample_name_and_description_do_not_render_none(self):
+        mapping = {
+            **MAPPING["mapping"],
+            "samples": [{"name": None, "description": None, "data": "{}"}],
+            "ocsf_samples": [{"description": None, "data": "{}"}],
+        }
+        content = self.render(mapping)
+        self.assertEqual(content.count("#### -\n\n```json\n{}\n```\n"), 2)
+        self.assertNotIn("None", content)
+
+    def test_non_string_sample_data_is_rendered_as_json(self):
+        mapping = {**MAPPING["mapping"], "samples": [{"name": "Object", "data": {"a": 1, "b": "é"}}]}
+        self.assertIn('#### Object\n\n```json\n{\n  "a": 1,\n  "b": "é"\n}\n```\n', self.render(mapping))
+
+    def test_backticks_in_sample_data_get_a_longer_fence(self):
+        mapping = {**MAPPING["mapping"], "samples": [{"name": "Fence", "data": '{"text": "a ``` b"}'}]}
+        self.assertIn('#### Fence\n\n````json\n{"text": "a ``` b"}\n````\n', self.render(mapping))
+
+    def test_backticks_in_inline_code_values_get_a_longer_delimiter(self):
+        fields = [{"source": "a`b", "target": "`x`", "description": "-", "type": "string", "logic": "-"}]
+        content = self.render({**MAPPING["mapping"], "ocsf_class": "A``B", "fields": fields})
+        self.assertIn("| ``a`b`` | `` `x` `` | - | `string` | - |", content)
+        self.assertIn("**OCSF Class:** ```A``B```", content)
+
+    def test_gitbook_tags_in_text_are_escaped(self):
+        fields = [
+            {"source": "id", "target": "user.uid", "description": "Use {% hint %}", "type": "string", "logic": "{{ var }}"}
+        ]
+        mapping = {
+            **MAPPING["mapping"],
+            "samples": [{"name": "Tags", "description": "See {{ x }} and {% y %}", "data": "{}"}],
+            "fields": fields,
+        }
+        content = self.render(mapping)
+        self.assertIn("| `id` | `user.uid` | Use \\{% hint %} | `string` | \\{\\{ var }} |", content)
+        self.assertIn("#### Tags\nSee \\{\\{ x }} and \\{% y %}\n", content)
+
     def test_no_mkdocs_syntax_and_no_blank_line_runs(self):
         content = self.render()
         for marker in ("{!", "!!!", '=== "'):

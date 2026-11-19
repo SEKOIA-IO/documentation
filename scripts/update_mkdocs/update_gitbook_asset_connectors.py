@@ -108,7 +108,28 @@ def escape_table_cell(value) -> str:
 
 
 def escape_markdown_text(value) -> str:
-    return str(value).replace("<", "\\<")
+    """Escape what GitBook would interpret in free text: HTML tags and its {% %} / {{ }} syntax."""
+    return str(value).replace("<", "\\<").replace("{{", "\\{\\{").replace("{%", "\\{%")
+
+
+def longest_backtick_run(text: str) -> int:
+    return max((len(run) for run in re.findall(r"`+", text)), default=0)
+
+
+def inline_code(value) -> str:
+    """Wrap a value in a code span whose delimiter is longer than any backtick run in the value."""
+    text = str(value)
+    delimiter = "`" * (longest_backtick_run(text) + 1)
+    if text.startswith("`") or text.endswith("`"):
+        text = f" {text} "
+    return f"{delimiter}{text}{delimiter}"
+
+
+def json_code_block(data) -> str:
+    """Render sample data as a fenced JSON block whose fence is longer than any backtick run in the data."""
+    text = data.strip() if isinstance(data, str) else json.dumps(data, indent=2, ensure_ascii=False)
+    fence = "`" * max(3, longest_backtick_run(text) + 1)
+    return f"{fence}json\n{text}\n{fence}"
 
 
 def generate_connector_doc(connector: Dict) -> str:
@@ -118,6 +139,8 @@ def generate_connector_doc(connector: Dict) -> str:
     env = Environment(loader=FileSystemLoader(SCRIPT_DIR / "templates"), trim_blocks=True, lstrip_blocks=True)
     env.filters["table_cell"] = escape_table_cell
     env.filters["markdown_text"] = escape_markdown_text
+    env.filters["inline_code"] = inline_code
+    env.filters["json_code_block"] = json_code_block
     body = env.get_template("asset_connector_gitbook.md.jinja").render(
         config=config,
         mapping=connector["mapping"],
