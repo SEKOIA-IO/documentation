@@ -17,12 +17,15 @@ extend-ignore-identifiers-re = [
 [default.extend-words]
 # "HashiCorp" is split into "Hashi" + "Corp"
 Hashi = "Hashi"
-# Product names and acronyms flagged in integration pages
-# "SecurID" (RSA) is split into "Secur" + "ID"
-Secur = "Secur"
+
+[default.extend-identifiers]
+# Exact, case-sensitive identifiers from integration pages (lowercase typos such as "ot" stay flagged)
+# "SecurID" (RSA) would otherwise be split into "Secur" + "ID"
+SecurID = "SecurID"
+# "SIEMs" would otherwise be split into "SIE" + "Ms"
+SIEMs = "SIEMs"
 # "OT" stands for operational technology
 OT = "OT"
-# "VAS" is part of the SecurityScorecard VAS format name
+# SecurityScorecard VAS format name, and its page file name
 VAS = "VAS"
-# "SIEMs" is split into "SIE" + "Ms"
-SIE = "SIE"
+securityscorecard_vas = "securityscorecard_vas"
