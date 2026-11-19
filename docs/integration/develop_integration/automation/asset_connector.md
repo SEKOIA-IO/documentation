@@ -149,11 +149,57 @@ A subclass of `AssetConnector` implements four methods:
 | `get_mapped_fields()` | Returns how product fields map to OCSF fields. When the mapping changes from one version of the connector to the next, the SDK calls `reset_checkpoint()` and the next cycle sends every item again with the new mapping. Return `{}` to turn this off. |
 
 ```python
+import time
 from collections.abc import Generator
 
+import requests
 from sekoia_automation.asset_connector import AssetConnector
 from sekoia_automation.storage import PersistentJSON
 from sekoia_automation_models.connector import AssetItem
+from sekoia_automation_models.hostname import split_hostname
+from sekoia_automation_models.ocsf.base import Metadata, Product
+from sekoia_automation_models.ocsf.device import (
+    Device,
+    DeviceOCSFModel,
+    DeviceTypeId,
+    DeviceTypeStr,
+    OperatingSystem,
+)
+
+METADATA = Metadata(product=Product(name="My Product", vendor_name="My Vendor"), version="1.5.0")
+
+
+def to_device(machine: dict) -> Device | None:
+    hostname, domain = split_hostname(machine["name"])
+    if hostname is None:
+        return None  # Not a usable hostname: skip the machine
+    return Device(
+        type_id=DeviceTypeId.SERVER,
+        type=DeviceTypeStr.SERVER,
+        uid=machine["id"],
+        hostname=hostname,
+        domain=domain,
+        os=OperatingSystem(name=machine["os"]) if machine.get("os") else None,
+    )
+
+
+def to_device_item(machine: dict) -> DeviceOCSFModel | None:  # (1)!
+    device = to_device(machine)
+    if device is None:
+        return None
+    return DeviceOCSFModel(
+        activity_id=2,
+        activity_name="Collect",
+        category_name="Discovery",
+        category_uid=5,
+        class_name="Device Inventory Info",
+        class_uid=5001,
+        type_name="Device Inventory Info: Collect",
+        type_uid=500102,
+        time=time.time(),
+        metadata=METADATA,
+        device=device,
+    )
 
 
 class MachinesAssetConnector(AssetConnector):
@@ -162,13 +208,23 @@ class MachinesAssetConnector(AssetConnector):
         self.context = PersistentJSON("context.json", self.data_path)
         self._last_updated_at: str | None = None
 
+    def fetch_machines(self, updated_since: str | None) -> Generator[dict, None, None]:  # (2)!
+        response = requests.get(
+            f"{self.module.configuration['base_url']}/machines",
+            headers={"Authorization": f"Bearer {self.module.configuration['api_key']}"},
+            params={"updated_since": updated_since, "sort": "updated_at"},
+            timeout=30,
+        )
+        response.raise_for_status()
+        yield from response.json()["machines"]
+
     def get_assets(self) -> Generator[AssetItem, None, None]:
         with self.context as context:
             since = context.get("last_updated_at")
 
-        for machine in fetch_machines(updated_since=since):  # (1)!
+        for machine in self.fetch_machines(updated_since=since):
             self._last_updated_at = machine["updated_at"]
-            if item := to_device_item(machine):  # (2)!
+            if item := to_device_item(machine):
                 yield item
 
     def update_checkpoint(self) -> None:
@@ -184,8 +240,8 @@ class MachinesAssetConnector(AssetConnector):
         return {"name": "device.hostname", "os": "device.os.name"}
 ```
 
-1. Your call to the product API, sorted by update time, oldest first.
-2. Builds a `DeviceOCSFModel`, or returns `None` for a machine without a usable hostname. See [Report each machine and account once](#report-each-machine-and-account-once).
+1. Returns `None` for a machine without a usable hostname. See [Report each machine and account once](#report-each-machine-and-account-once).
+2. A call to the API of your product, here an imaginary one. It reads the product URL and credentials from the module configuration, and returns the machines sorted by update time, oldest first.
 
 When `update_checkpoint()` runs, `get_assets()` is paused on the last item of the pushed batch, so `_last_updated_at` is the position of that item.
 
@@ -216,21 +272,13 @@ An analyst trusts an inventory where each machine is one asset. Two assets for t
 
 ```python
 from sekoia_automation_models.hostname import split_hostname
-from sekoia_automation_models.ocsf.device import Device, DeviceTypeId, DeviceTypeStr
 
-
-def to_device(machine: dict) -> Device | None:
-    hostname, domain = split_hostname(machine["name"])
-    if hostname is None:
-        return None  # Not a usable hostname: skip the machine
-    return Device(
-        type_id=DeviceTypeId.SERVER,
-        type=DeviceTypeStr.SERVER,
-        uid=machine["id"],
-        hostname=hostname,
-        domain=domain,
-    )
+split_hostname("SRV01.corp.example.com")  # ("srv01", "corp.example.com")
+split_hostname("srv01")  # ("srv01", None)
+split_hostname("10.0.0.10")  # (None, None): skip the machine
 ```
+
+`to_device()` in [Write the asset connector](#write-the-asset-connector) uses it to build a device.
 
 !!! info "Safeguard: hostname validation"
     Sekoia rejects an item whose `device.hostname` is a fully qualified name or not a usable hostname. The other items of the push are accepted. Without this check, a machine reported as `srv01.corp.example.com` by your connector and as `srv01` by an agent would become two assets.
