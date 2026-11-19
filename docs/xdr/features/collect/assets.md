@@ -235,6 +235,12 @@ The following table lists the atom types and their related event fields that are
 
 #### Asset Discovery Rules
 
+{% hint style="info" %}
+**Limit on the assets discovered each day**
+
+Asset discovery creates at most 10,000 hosts and 20,000 accounts per community and per day (UTC). Over the limit, the new hosts or accounts found in the events are dropped: they are created on a later day only if events name them again. The assets already in the inventory keep being updated. A community whose first asset is less than 90 days old is not limited, so that the inventory of a new community can be built.
+{% endhint %}
+
 ##### Attach Operating System (OS) to Host
 
 **Set the Contextual Property `os` to Host**
@@ -253,9 +259,18 @@ Note that this rule only applies to assets of `Host` category and that a single 
 
 This rule creates a new asset for every unseen `host.name`. It also suggests the `ipv4` and `ipv6` stored in field `host.ip` of the event as detection properties of the newly created asset.
 
+It ignores an event whose `event.outcome` or `action.outcome` is `failure`, such as a failed authentication, since the client can send any device name before it is authenticated: such an event neither creates a host nor updates an existing one. It also creates no host from a placeholder name such as `unknown`, `n/a`, `null` or `localhost`.
+
 ##### Discover unique Accounts
 
 This rule creates a new asset for every unseen `user.name`. It attaches the `user.email` and `user.id` event field values as detection property of the newly created asset.
+
+It creates no account:
+
+- from an event with an `event.outcome` or `action.outcome` other than `success`, such as a failed authentication, or from an intrusion detection event (`event.category` contains `intrusion_detection`), where the name may come from an attacker;
+- for accounts used by Windows itself rather than by a person: the ones Windows creates and drops on its own for Hyper-V virtual machines, services, IIS application pools and OpenSSH sessions, and built-in or special-purpose accounts such as `DefaultAccount`, `WDAGUtilityAccount`, `IUSR` (IIS) or `krbtgt` (Active Directory);
+- for a placeholder name such as `n/a`, `null` or `undefined`, or a generic name such as `root`, `admin`, `administrator`, `guest` or `test`;
+- from a user field that lists several people at once, such as the collaborators of a shared document, since nothing tells which name goes with which email.
 
 Questions? Please read our [FAQ](../../FAQ/Assets_qa.md).
 
@@ -399,3 +414,4 @@ This feature allows users to dive deeper into the specifics of each authenticati
 ### Going further
 
 * [Assets FAQ](../../FAQ/Assets_qa.md): Answers to frequently asked questions about assets.
+* [Local runners](../automate/playbooks-on-premises.md): How to run eligible asset connector jobs from inside your environment

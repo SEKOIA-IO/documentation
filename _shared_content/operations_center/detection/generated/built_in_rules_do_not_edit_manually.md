@@ -1,4 +1,4 @@
-Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-11-09_](rules_changelog.md)).
+Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-11-10_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -2734,6 +2734,10 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/11/2026 - minor - Update condition syntax following Sigma update
+            
 ??? abstract "Gatewatcher AionIQ V103 Shellcode Detect High"
     
     Detects when a suspicious shellcode is used with a high severity.
@@ -11861,6 +11865,10 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 10/11/2026 - minor - Update condition syntax following Sigma update
+            
 ??? abstract "PowerView commandlets 1"
     
     Detects PowerView commandlets which perform network and Windows domain enumeration and exploitation. It provides replaces for almost all Windows net commands, letting you query users, machines, domain controllers, user descriptions, share, sessions, and more.
@@ -12310,6 +12318,7 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/11/2026 - minor - Update condition syntax following Sigma update
         - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
             
 ??? abstract "Flare Events Stealer Log Malware Infection"
@@ -12738,6 +12747,10 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** advanced
     
+    - **Changelog:**
+    
+        - 10/11/2026 - minor - Update condition syntax following Sigma update
+            
 ??? abstract "Cobalt Strike HTTP Default GET beaconing"
     
     Detects GET HTTP queries from known Cobalt Strike beacons (source code 4.3)
@@ -13667,6 +13680,7 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
     - **Changelog:**
     
+        - 10/11/2026 - minor - Update condition syntax following Sigma update
         - 14/08/2025 - minor - Similarity strategy modified to group alerts by user ID and instance ID
             
 ??? abstract "Google Cloud Audit Logs Drive Ownership Transferred"

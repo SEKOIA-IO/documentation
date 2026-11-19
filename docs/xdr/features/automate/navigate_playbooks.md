@@ -12,7 +12,7 @@ The **Playbooks** page lists the playbooks available in your community, sorted b
 
 | Button | Action |
 | --- | --- |
-| **Local runners** | Manage the runners that execute playbook actions in your own infrastructure. See [Playbooks On-premises](playbooks-on-premises.md). |
+| **Local runners** | Manage the runners that execute playbook actions in your own infrastructure. See [Local runners](playbooks-on-premises.md). |
 | **Connected accounts** | Manage the accounts that playbooks use to connect to third-party services. See [Manage accounts](manage-accounts.md). |
 | **New playbook** | Create a playbook. See [Build playbooks](build_playbooks.md). |
 

@@ -141,6 +141,12 @@ The following Sekoia.io built-in rules match the intake **Azure Application Gate
     
     - **Effort:** intermediate
 
+??? abstract "Correlation Potential DNS Tunnel"
+    
+    Detects domain name which is longer than 62 characters and requested at least 50 times in a 10 minutes range time. Long domain names are distinctive of DNS tunnels.
+    
+    - **Effort:** advanced
+
 ??? abstract "Covenant Default HTTP Beaconing"
     
     Detects potential Covenant communications through the user-agent and specific urls
@@ -164,6 +170,12 @@ The following Sekoia.io built-in rules match the intake **Azure Application Gate
     Discord is a messaging application. It allows users to create their own communities to share messages and attachments. Those attachments have little to no overview and can be downloaded by almost anyone, which has been abused by attackers to host malicious payloads.
     
     - **Effort:** advanced
+
+??? abstract "Download Files From Non-Legitimate TLDs"
+    
+    Detects file downloads from non-legitimate TLDs. Additional legitimates TLDs should be filtered according to the business habits.
+    
+    - **Effort:** master
 
 ??? abstract "Download Files From Suspicious TLDs"
     
@@ -201,6 +213,18 @@ The following Sekoia.io built-in rules match the intake **Azure Application Gate
     
     - **Effort:** intermediate
 
+??? abstract "Internet Scanner"
+    
+    Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP. This could be a very noisy rule, so be careful to check your detection perimeter before activation.
+    
+    - **Effort:** master
+
+??? abstract "Internet Scanner Target"
+    
+    Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP and group by target address. This could be a very noisy rule, so be careful to check your detection perimeter before activation.
+    
+    - **Effort:** master
+
 ??? abstract "Koadic MSHTML Command"
     
     Detects Koadic payload using MSHTML module
@@ -236,6 +260,12 @@ The following Sekoia.io built-in rules match the intake **Azure Application Gate
     Detects potential Bazar loader communications through the user-agent
     
     - **Effort:** elementary
+
+??? abstract "Potential DNS Tunnel"
+    
+    Detects domain name which is longer than 62 characters. Long domain names are distinctive of DNS tunnels.
+    
+    - **Effort:** advanced
 
 ??? abstract "Potential Lemon Duck User-Agent"
     
@@ -276,6 +306,12 @@ The following Sekoia.io built-in rules match the intake **Azure Application Gate
 ??? abstract "Remote Monitoring and Management Software - AnyDesk"
     
     Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool AnyDesk.
+    
+    - **Effort:** master
+
+??? abstract "Remote Monitoring and Management Software - Atera"
+    
+    Detect artifacts related to the installation or execution of the Remote Monitoring and Management tool Atera.
     
     - **Effort:** master
 
@@ -321,14 +357,38 @@ The following Sekoia.io built-in rules match the intake **Azure Application Gate
     
     - **Effort:** intermediate
 
+??? abstract "TOR Usage"
+    
+    Detects TOR usage, based on the IP address and the destination port (filtered on NTP). TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
+    
+    - **Effort:** master
+
 ??? abstract "TOR Usage Generic Rule"
     
     Detects TOR usage globally, whether the IP is a destination or source. TOR is short for The Onion Router, and it gets its name from how it works. TOR intercepts the network traffic from one or more apps on user’s computer, usually the user web browser, and shuffles it through a number of randomly-chosen computers before passing it on to its destination. This disguises user location, and makes it harder for servers to pick him/her out on repeat visits, or to tie together separate visits to different sites, this making tracking and surveillance more difficult. Before a network packet starts its journey, user’s computer chooses a random list of relays and repeatedly encrypts the data in multiple layers, like an onion. Each relay knows only enough to strip off the outermost layer of encryption, before passing what’s left on to the next relay in the list.
     
     - **Effort:** master
 
+??? abstract "Telegram Bot API Request"
+    
+    Detects suspicious DNS queries to api.telegram.org used by Telegram Bots of any kind
+    
+    - **Effort:** advanced
+
 ??? abstract "TrevorC2 HTTP Communication"
     
     Detects TrevorC2 HTTP communication based on the HTTP request URI and the user-agent. 
     
     - **Effort:** elementary
+
+??? abstract "WAF Block Rule"
+    
+    Detects when one of WAF rule blocked an HTTP request. This rule often needs fine tuning according to the environment.
+    
+    - **Effort:** master
+
+??? abstract "WAF Correlation Block actions"
+    
+    Detection of multiple block actions (more than 30) triggered by the same source by WAF detection rules
+    
+    - **Effort:** master
