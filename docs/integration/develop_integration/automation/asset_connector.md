@@ -64,14 +64,34 @@ my-assets-module/
         "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
         "properties": {
-            "sekoia_base_url": {"description": "Sekoia base URL", "type": "string"},
-            "sekoia_api_key": {"description": "API key to use from sekoia.io", "type": "string"},
-            "frequency": {"description": "Seconds between two cycles", "type": "integer", "minimum": 3600},
-            "batch_size": {"description": "Number of items to push in one batch", "type": "integer", "minimum": 1, "default": 100}
+            "sekoia_base_url": {
+                "description": "Sekoia base URL",
+                "type": "string"
+            },
+            "sekoia_api_key": {
+                "description": "API key to use from sekoia.io",
+                "type": "string"
+            },
+            "frequency": {
+                "description": "Seconds between two cycles",
+                "type": "integer",
+                "minimum": 3600
+            },
+            "batch_size": {
+                "description": "Number of items to push in one batch",
+                "type": "integer",
+                "minimum": 1,
+                "default": 100
+            }
         },
         "required": ["sekoia_api_key"],
         "secrets": ["sekoia_api_key"],
-        "internal": ["sekoia_base_url", "sekoia_api_key", "frequency", "batch_size"]  // (5)!
+        "internal": [  // (5)!
+            "sekoia_base_url",
+            "sekoia_api_key",
+            "frequency",
+            "batch_size"
+        ]
     }
 }
 ```
