@@ -100,6 +100,10 @@ def main():
         if Path(cur).exists():
             copies[src].append((cur, original))
     removed, redirects, unlisted_home, replaced_by = [], [], [], {}
+    keep_copies = ["docs/" + k.strip("/") + "/" for k in cfg.get("keep_copies") or []]
+
+    def protected(original):
+        return any(original.startswith(k) for k in keep_copies)
     # Section « d'accueil » de chaque dossier source : celle où ses fichiers sont dans la nav
     home_votes = defaultdict(lambda: defaultdict(int))
     for src, cps in copies.items():
@@ -110,6 +114,8 @@ def main():
         if len(cps) < 2:
             continue
         keep = [c for c in cps if is_listed(c[0])]
+        if all(protected(o) or Path(c).is_symlink() for c, o in cps):
+            continue   # rien à supprimer (copies protégées par keep_copies, ou liens symboliques)
         if not keep:   # aucune copie dans la nav : on garde celle du dossier où vivent ses voisines
             votes = home_votes.get(os.path.dirname(src))
             if not votes:
@@ -123,6 +129,8 @@ def main():
         sec = SL.section_of(kept[len("docs/"):])
         inner = re.sub(r"(^|/)(README|index)$", "", kept.split("/", 2)[2][:-3])
         for cur, original in cps:
+            if protected(original):
+                continue
             if is_listed(cur) or Path(cur).is_symlink() or any(Path(cur).parents[i].is_symlink() for i in range(3)):
                 continue
             removed.append(cur)
@@ -259,11 +267,14 @@ def main():
     for sec, items in attach.items():
         sp = DOCS / sec / "SUMMARY.md"
         lines = sp.read_text(encoding="utf-8").split("\n")
+        done = defaultdict(int)   # pages déjà rattachées sous chaque parent : on garde l'ordre
         for parent, page in items:
             k = next((i for i, l in enumerate(lines) if f"]({parent})" in l), None)
             if k is None:
                 continue
-            indent = len(lines[k]) - len(lines[k].lstrip()) + 2
+            indent = len(lines[k]) - len(lines[k].lstrip()) + 2   # d'après la ligne du parent
+            k += done[parent]
+            done[parent] += 1
             title = next((l[2:].strip() for l in (DOCS / sec / page).read_text(encoding="utf-8").splitlines()
                           if l.startswith("# ")), Path(page).stem.replace("_", " ").capitalize())
             lines.insert(k + 1, " " * indent + f"* [{title}]({page})")

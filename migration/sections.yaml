@@ -6,6 +6,7 @@
 #             Les pages plus profondes sont mises à plat dans le dossier le plus proche.
 #   skip    : section non touchée (ni déplacement, ni SUMMARY), connue pour les liens
 #   new     : section nouvelle, créée vide
+#   paths   : dossier hors nav (chemin MkDocs) -> sous-dossier de la section, gardé tel quel
 site_url: https://docs.sekoia.com
 sections:
 - title: Getting started
@@ -31,6 +32,8 @@ sections:
     AI Agents (Elevate): elevate
     Asset Intelligence (Reveal): reveal
     Settings: settings
+  paths:   # dossiers hors nav : dossier MkDocs d'origine -> sous-dossier de la section (non mis à plat)
+    xdr/features/automate/library: defend/automate/library
 
 - title: Usecases
   dir: usecases
@@ -64,9 +67,16 @@ sections:
   url: api-documentation
   skip: true
 
+# Copies de _shared_content à ne jamais dédoublonner (dossiers MkDocs d'origine, sous docs/) :
+# la bibliothèque de playbooks reste dans Defend > Automate (générée par l'équipe Intégrations)
+keep_copies:
+  - xdr/features/automate/library
+
 # Pages hors navigation : décisions (chemins MkDocs d'origine, sous docs/)
 orphans:
   keep:
+    xdr/features/investigate/keyboard_shortcuts_playbook.md:
+      after: xdr/features/automate/navigate_playbooks.md
     # exclue de la publication MkDocs (exclude_docs) : deviendra visible dans GitBook
     xdr/features/modules/elevate_investigate_case.md:
       after: xdr/features/modules/elevate_investigate_alert.md

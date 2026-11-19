@@ -217,6 +217,14 @@ def main():
     for rel in tracked_rel:
         if rel in new_of or rel in old_stubs or rel.startswith("assets/") or "/" not in rel:
             continue
+        hit = next(((s, o, n) for s in by_title.values() for o, n in (s.get("paths") or {}).items()
+                    if rel.startswith(o.strip("/") + "/")), None)
+        if hit:   # dossier hors nav déclaré dans sections.yaml (paths) : sous-dossier conservé
+            s, o, n = hit
+            sub = os.path.dirname(rel[len(o.strip("/")) + 1:])
+            section_of[rel] = s["title"]
+            new_of[rel] = place(f"{s['dir']}/{n.strip('/')}/{sub}".rstrip("/"), rel)
+            continue
         top = rel.split("/", 1)[0]
         keep = next((s for s in by_title.values() if keeps_paths(s) and s["dir"] == top), None)
         if keep:
