@@ -32,8 +32,6 @@ sections:
     AI Agents (Elevate): elevate
     Asset Intelligence (Reveal): reveal
     Settings: settings
-  paths:   # dossiers hors nav : dossier MkDocs d'origine -> sous-dossier de la section (non mis à plat)
-    xdr/features/automate/library: defend/automate/library
 
 - title: Usecases
   dir: usecases
@@ -67,10 +65,10 @@ sections:
   url: api-documentation
   skip: true
 
-# Copies de _shared_content à ne jamais dédoublonner (dossiers MkDocs d'origine, sous docs/) :
-# la bibliothèque de playbooks reste dans Defend > Automate (générée par l'équipe Intégrations)
-keep_copies:
-  - xdr/features/automate/library
+# Copies de _shared_content à ne jamais dédoublonner (dossiers MkDocs d'origine, sous docs/).
+# La bibliothèque de playbooks n'y figure pas : comme sur MkDocs, elle vit dans Integrations
+# (integration/action_library) ; la copie de Defend est supprimée et redirigée.
+keep_copies: []
 
 # Pages hors navigation : décisions (chemins MkDocs d'origine, sous docs/)
 orphans:

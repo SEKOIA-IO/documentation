@@ -36,7 +36,8 @@ une résolution. Règle par défaut : structure et emplacement = version `gitboo
 
 - `docs/integration/` (intakes, depuis SEKOIA-IO/intake-formats)
 - Connecteurs d'actifs (depuis SEKOIA-IO/automation-module)
-- `<defend|xdr>/features/automate/library/` (bibliothèque de playbooks, ~100 pages)
+- `integration/action_library/` (bibliothèque de playbooks, ~100 pages : vit dans Integrations,
+  la copie de Defend a été supprimée au découpage et ses URL redirigées)
 - Le bloc inclus dans `built_in_detection_rules.md` (règles de détection)
 Toute modification de ces pages doit passer par les générateurs de l'équipe Intégrations.
 
