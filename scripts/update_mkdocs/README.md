@@ -9,7 +9,9 @@ uv run --project scripts/update_mkdocs python -m unittest discover -s scripts/up
 
 The generator writes one GitBook reusable content block per asset connector to
 `docs/.gitbook/includes/asset_connectors/<slug>_<type>.md` and removes the blocks
-of connectors that no longer exist. `docs/` is the root of the GitBook space
+of connectors that no longer exist. The generator owns this folder: any other
+Markdown file in it is deleted, so keep hand-written reusable content elsewhere
+in `.gitbook/includes/`. `docs/` is the root of the GitBook space
 (see `.gitbook.yaml` on the `gitbook` branch). Use `--section-root` to select another root, for example
 `--section-root docs/integration` for a space rooted at `docs/integration`.
 
@@ -17,6 +19,10 @@ It also rewrites the legacy MkDocs includes in the pages of that space
 (`{!_shared_content/.../generated_assets_documentation/<slug>_<type>.md!}`,
 including the form escaped by GitBook) to
 `{% include "<relative path>/.gitbook/includes/asset_connectors/<slug>_<type>.md" %}`.
+
+The script exits with code 1 when a module has two connectors with the same
+`<slug>_<type>` (the second one is skipped) or when a page references a block
+that does not exist. The other blocks and pages are still written.
 
 Generated blocks are overwritten on every run: edit the mapping files in
 automation-library or `templates/asset_connector_gitbook.md.jinja`, not the blocks
