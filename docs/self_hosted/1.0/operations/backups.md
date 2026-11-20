@@ -49,7 +49,7 @@ When a component is enabled, `PlatformConfigurationFile` stops if its key is mis
 
     `openssl rand -hex 32` returns 64 hexadecimal characters, which matches the format of every key. Copy the three keys to a secret store outside the platform.
 
-2. To pass the keys to the SHC container, add the following options to the `docker run` command of the [execution script](/self_hosted/1.0.1/deployment/deployment_guide.md#step-4-create-the-execution-script), next to the other `-e` options:
+2. To pass the keys to the SHC container, add the following options to the `docker run` command of the [execution script](/self_hosted/1.0/deployment/deployment_guide.md#step-4-create-the-execution-script), next to the other `-e` options:
 
     ```bash
       -e BACKUP_VAULT_CRYPT_KEY="$BACKUP_VAULT_CRYPT_KEY" \
@@ -235,7 +235,7 @@ The restore needs the encryption keys of the Vault, ArangoDB, and ClickHouse bac
 
 ## Related links
 
-- [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md#backups): Enable the backups and set the encryption keys at installation time.
-- [Rotate the certificate and credentials](/self_hosted/1.0.1/operations/rotate_certificate_and_credentials.md): Change the backup S3 credentials, and the keys that cannot change.
-- [Reset or destroy the platform](/self_hosted/1.0.1/operations/reset_platform.md): Data kept in S3 after a reset.
-- [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md): Run SHC commands from the interactive interface.
+- [Configure the deployment](/self_hosted/1.0/deployment/deployment_configuration.md#backups): Enable the backups and set the encryption keys at installation time.
+- [Rotate the certificate and credentials](/self_hosted/1.0/operations/rotate_certificate_and_credentials.md): Change the backup S3 credentials, and the keys that cannot change.
+- [Reset or destroy the platform](/self_hosted/1.0/operations/reset_platform.md): Data kept in S3 after a reset.
+- [Use the SHC interface](/self_hosted/1.0/operations/controller_interface.md): Run SHC commands from the interactive interface.

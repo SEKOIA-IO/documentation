@@ -3,12 +3,12 @@
 This guide walks you through the full installation of Sekoia Self-Hosted, from downloading the release archive to validating a healthy platform state. Follow the steps in order.
 
 ## Prerequisites
-- All nodes meet the requirements listed in [Technical requirements](/self_hosted/1.0.1/deployment/deployment_prerequisites.md).
-- The operating system and the packages listed in [Technical requirements](/self_hosted/1.0.1/deployment/deployment_prerequisites.md) are installed on every node. The SHC does not install or harden the operating system. It only applies the changes listed in [Changes applied by the SHC to the nodes](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#changes-applied-by-the-shc-to-the-nodes).
-- Firewall rules allow the flows listed in [Network requirements](/self_hosted/1.0.1/deployment/network_requirements.md).
-- Your `config.yml` manifest is ready. See [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md).
+- All nodes meet the requirements listed in [Technical requirements](/self_hosted/1.0/deployment/deployment_prerequisites.md).
+- The operating system and the packages listed in [Technical requirements](/self_hosted/1.0/deployment/deployment_prerequisites.md) are installed on every node. The SHC does not install or harden the operating system. It only applies the changes listed in [Changes applied by the SHC to the nodes](/self_hosted/1.0/deployment/deployment_prerequisites.md#changes-applied-by-the-shc-to-the-nodes).
+- Firewall rules allow the flows listed in [Network requirements](/self_hosted/1.0/deployment/network_requirements.md).
+- Your `config.yml` manifest is ready. See [Configure the deployment](/self_hosted/1.0/deployment/deployment_configuration.md).
 - Docker is installed on the orchestration node.
-- The platform certificate and its private key are available in PEM format. See [TLS certificate](/self_hosted/1.0.1/deployment/deployment_configuration.md#tls-certificate).
+- The platform certificate and its private key are available in PEM format. See [TLS certificate](/self_hosted/1.0/deployment/deployment_configuration.md#tls-certificate).
 
 ## Preparation
 
@@ -16,13 +16,21 @@ This guide walks you through the full installation of Sekoia Self-Hosted, from d
 
 Sekoia provides access to a dedicated object storage bucket containing the release archive and its SHA-256 checksum. You receive the bucket credentials (endpoint, access key, and secret key) from Sekoia after contract validation.
 
-The checksum detects a corrupted or incomplete download: the archive itself is not signed. The container images and the security content bundles it contains are signed with cosign, and the public key `cosign.pub` ships in `platform/v1.0.1/`. The SHC does not verify these signatures.
+The checksum detects a corrupted or incomplete download: the archive itself is not signed. The container images and the security content bundles it contains are signed with cosign, and the public key `cosign.pub` ships in the `platform/<VERSION>/` directory of the archive, for example `platform/v1.0.2/`. The SHC does not verify these signatures.
 
 !!! warning "Verify before you extract"
     Always verify the checksum before extracting the archive. A mismatch indicates a corrupted or incomplete download. Do not proceed if verification fails. Download the archive again before retrying.
 
 !!! tip "Keep the credentials out of the shell history"
     Do not type the access key and the secret key on the command line, where they stay in the shell history. Write their `export` lines in a file that only your user can read, for example `~/sekoia-delivery.env` protected with `chmod 600 ~/sekoia-delivery.env`, and load it with `source` as the examples do. The examples remove the credentials from the shell with `unset` once the download completes.
+
+Set the release to download. For 1.0, use its latest patch release, `v1.0.2`:
+
+```bash
+export SH_VERSION="v1.0.2"
+```
+
+The commands of this guide use `SH_VERSION`. Set it again in any new shell, and on the orchestration node if you download the archive on a separate machine.
 
 Download the archive and its checksum file, then verify integrity.
 
@@ -32,8 +40,8 @@ Download the archive and its checksum file, then verify integrity.
     export AWS_DEFAULT_REGION="fr-par-2"
     export ENDPOINT="https://self-hosted.delivery.sekoia.io"
     export BUCKET="self-hosted"
-    export KEY="platform/v1.0.1/archives/v1.0.1.tar.gz"
-    export OUT="sekoia-self-hosted-v1.0.1.tar.gz"
+    export KEY="platform/$SH_VERSION/archives/$SH_VERSION.tar.gz"
+    export OUT="sekoia-self-hosted-$SH_VERSION.tar.gz"
     export AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED
     export AWS_RESPONSE_CHECKSUM_VALIDATION=WHEN_REQUIRED
 
@@ -55,65 +63,66 @@ Download the archive and its checksum file, then verify integrity.
     export RCLONE_CONFIG_SEKOIA_ENDPOINT="https://self-hosted.delivery.sekoia.io"
     export RCLONE_CONFIG_SEKOIA_REGION="fr-par-2"
 
-    rclone copyto sekoia:self-hosted/platform/v1.0.1/archives/v1.0.1.tar.gz ./sekoia-self-hosted-v1.0.1.tar.gz
-    rclone copyto sekoia:self-hosted/platform/v1.0.1/archives/v1.0.1.tar.gz.sha256 ./sekoia-self-hosted-v1.0.1.tar.gz.sha256
+    rclone copyto "sekoia:self-hosted/platform/$SH_VERSION/archives/$SH_VERSION.tar.gz" "./sekoia-self-hosted-$SH_VERSION.tar.gz"
+    rclone copyto "sekoia:self-hosted/platform/$SH_VERSION/archives/$SH_VERSION.tar.gz.sha256" "./sekoia-self-hosted-$SH_VERSION.tar.gz.sha256"
     unset RCLONE_CONFIG_SEKOIA_ACCESS_KEY_ID RCLONE_CONFIG_SEKOIA_SECRET_ACCESS_KEY
 
-    echo "$(cut -d' ' -f1 sekoia-self-hosted-v1.0.1.tar.gz.sha256)  sekoia-self-hosted-v1.0.1.tar.gz" | sha256sum -c -
+    echo "$(cut -d' ' -f1 "sekoia-self-hosted-$SH_VERSION.tar.gz.sha256")  sekoia-self-hosted-$SH_VERSION.tar.gz" | sha256sum -c -
     ```
 
-Expected output: `sekoia-self-hosted-v1.0.1.tar.gz: OK`
+Expected output: the archive name followed by `: OK`.
 
 ### Step 2: Transfer and extract the archive
 
 To transfer the archive and its checksum file to the orchestration node if you downloaded them on a separate machine, run:
 
 ```bash
-scp sekoia-self-hosted-v1.0.1.tar.gz sekoia-self-hosted-v1.0.1.tar.gz.sha256 user@<ORCHESTRATION_NODE>:<SEKOIA_LOCAL_DIR>/
+scp sekoia-self-hosted-$SH_VERSION.tar.gz sekoia-self-hosted-$SH_VERSION.tar.gz.sha256 user@<ORCHESTRATION_NODE>:<SEKOIA_LOCAL_DIR>/
 ```
 
-Replace `<SEKOIA_LOCAL_DIR>` with the absolute path of the release directory on the orchestration node. To check that the transfer did not alter the archive, run `echo "$(cut -d' ' -f1 sekoia-self-hosted-v1.0.1.tar.gz.sha256)  sekoia-self-hosted-v1.0.1.tar.gz" | sha256sum -c -` again in this directory on the orchestration node.
+Replace `<SEKOIA_LOCAL_DIR>` with the absolute path of the release directory on the orchestration node. To check that the transfer did not alter the archive, run `echo "$(cut -d' ' -f1 "sekoia-self-hosted-$SH_VERSION.tar.gz.sha256")  sekoia-self-hosted-$SH_VERSION.tar.gz" | sha256sum -c -` again in this directory on the orchestration node.
 
 !!! note "Disk space"
-    The extracted files take about as much space as the archive, about 110 GB for 1.0.1. Before you extract it, make sure the orchestration node has this free space in addition to the archive: about 220 GB in total. You can delete the archive and its checksum file once it is extracted. See [Orchestration node requirements](/self_hosted/1.0.1/deployment/deployment_prerequisites.md#orchestration-node-requirements).
+    The extracted files take about as much space as the archive, about 110 GB for 1.0. Before you extract it, make sure the orchestration node has this free space in addition to the archive: about 220 GB in total. You can delete the archive and its checksum file once it is extracted. See [Orchestration node requirements](/self_hosted/1.0/deployment/deployment_prerequisites.md#orchestration-node-requirements).
 
 To extract the archive on the orchestration node, run:
 
 ```bash
-tar -xvf sekoia-self-hosted-v1.0.1.tar.gz -C $SEKOIA_LOCAL_DIR
+tar -xvf sekoia-self-hosted-$SH_VERSION.tar.gz -C $SEKOIA_LOCAL_DIR
 ```
 
 The archive contains the platform release and the latest security content bundles:
 
 | Directory | Content |
 | :--- | :--- |
-| `$SEKOIA_LOCAL_DIR/platform/v1.0.1/` | Release manifest, the cosign public key `cosign.pub`, Docker images, Helm charts, ArgoCD stacks, and the third-party license notices in `licenses/THIRD-PARTY-NOTICES.md`. |
+| `$SEKOIA_LOCAL_DIR/platform/$SH_VERSION/` | Release manifest, the cosign public key `cosign.pub`, Docker images, Helm charts, ArgoCD stacks, and the third-party license notices in `licenses/THIRD-PARTY-NOTICES.md`. |
 | `$SEKOIA_LOCAL_DIR/data/<TYPE>/` | One security content bundle per type (`detection-rules`, `intake-formats`, and `playbook-library`), with a `latest` file that names the bundle to use. |
 
-The archive does not include the Sekoia CTI database. In air-gapped mode, download its separate archive once the platform is installed. See [Import the CTI database](/self_hosted/1.0.1/operations/import_cti_database.md#prepare-the-cti-export-in-air-gapped-mode).
+The archive does not include the Sekoia CTI database. In air-gapped mode, download its separate archive once the platform is installed. See [Import the CTI database](/self_hosted/1.0/operations/import_cti_database.md#prepare-the-cti-export-in-air-gapped-mode).
 
 The execution script mounts `$SEKOIA_LOCAL_DIR` on `/opt/sekoia` in the SHC container, which matches the default values of `global.version.platform.path` (`/opt/sekoia/platform/`) and `global.version.data.<TYPE>.path` (`/opt/sekoia/data/`). Keep this layout unless you also change these paths.
 
 !!! warning "Air-gapped deployments"
-    Set `global.version.fetch.offline` to `true` in your `config.yml`. With this setting, `DownloadReleaseFiles` and `DownloadDataFiles` use the extracted files and make no request to the Sekoia S3 bucket. Without it, they try to download the release again and fail without internet access. See [Release download and security content](/self_hosted/1.0.1/deployment/deployment_configuration.md#release-download-and-security-content).
+    Set `global.version.fetch.offline` to `true` in your `config.yml`. With this setting, `DownloadReleaseFiles` and `DownloadDataFiles` use the extracted files and make no request to the Sekoia S3 bucket. Without it, they try to download the release again and fail without internet access. See [Release download and security content](/self_hosted/1.0/deployment/deployment_configuration.md#release-download-and-security-content).
 
 ### Step 3: Load the self-hosted-controller (SHC) Docker image
 
-The SHC image ships in the release archive, in online mode as in air-gapped mode. To load it on the orchestration node, run:
+The SHC image ships in the release archive, in online mode as in air-gapped mode. Like every image of the release, it is a signed OCI archive without an image name: `docker load` loads the SHC image and its cosign signature, and prints one `Loaded image ID: sha256:<ID>` line for each.
+
+To load the archive on the orchestration node and give the SHC image the reference that the execution script runs, run:
 
 ```bash
-docker load -i $SEKOIA_LOCAL_DIR/platform/v1.0.1/images/registry.sekoia.io_sekoialab_self-hosted-controller-cli-2.20261027-40526598025-01c5f7786cea2516605ec317c83b1f24bcee8b12.tar.gz
+SHC_IMAGE_ID=$(docker load -i $SEKOIA_LOCAL_DIR/platform/$SH_VERSION/images/registry.sekoia.io_sekoialab_self-hosted-controller-cli-*.tar.gz \
+  | grep -o 'sha256:[0-9a-f]*' \
+  | while read id; do docker image inspect --format '{{.Os}} {{.Id}}' "$id"; done \
+  | awk '$1=="linux"{print $2; exit}')
+echo "$SHC_IMAGE_ID"
+docker tag "$SHC_IMAGE_ID" sekoialab/self-hosted-controller-cli:v1.0
 ```
 
-The command prints the reference of the loaded image: `registry.sekoia.io/sekoialab/self-hosted-controller-cli:2.20261027-40526598025-01c5f7786cea2516605ec317c83b1f24bcee8b12`.
+The command keeps the loaded image whose operating system is Linux: the cosign signature is not one. `echo` prints the ID of the SHC image. If it prints an empty line, the tag fails: run the `docker load` command alone and check its output.
 
-To give the image the reference that the execution script runs, run:
-
-```bash
-docker tag registry.sekoia.io/sekoialab/self-hosted-controller-cli:2.20261027-40526598025-01c5f7786cea2516605ec317c83b1f24bcee8b12 sekoialab/self-hosted-controller-cli:v1.0.1
-```
-
-To confirm, run `docker images sekoialab/self-hosted-controller-cli`. Expected output: one image with the `v1.0.1` tag.
+To confirm, run `docker images sekoialab/self-hosted-controller-cli`. Expected output: one image with the `v1.0` tag. This tag is the same for every patch release of 1.0.
 
 ### Step 4: Create the execution script
 
@@ -123,7 +132,7 @@ Create a file named `run-shc.sh` with the following content:
 
 ```bash
 #!/bin/bash
-DOCKER_IMAGE="${DOCKER_IMAGE:-sekoialab/self-hosted-controller-cli:v1.0.1}"
+DOCKER_IMAGE="${DOCKER_IMAGE:-sekoialab/self-hosted-controller-cli:v1.0}"
 
 # Allocate a TTY when the script runs in a terminal, so the interactive
 # interface can render. Skipped in non-interactive contexts such as CI.
@@ -156,7 +165,7 @@ docker run --rm $TTY_FLAGS \
 ```
 
 !!! note "Container user"
-    The SHC container runs as the `shc` user, with UID 1000. This user must be able to read `$SEKOIA_CONFIG_FILE`. It must also be able to write to `$SEKOIA_LOCAL_DIR`, where the SHC stores the per-run log file and, in online mode, the downloaded release files. Give UID 1000 write access to this directory in every mode, for example with `sudo chown -R 1000 $SEKOIA_LOCAL_DIR`. Without it, the SHC starts without file logging. See [SHC log file](/self_hosted/1.0.1/deployment/deployment_configuration.md#shc-log-file).
+    The SHC container runs as the `shc` user, with UID 1000. This user must be able to read `$SEKOIA_CONFIG_FILE`. It must also be able to write to `$SEKOIA_LOCAL_DIR`, where the SHC stores the per-run log file and, in online mode, the downloaded release files. Give UID 1000 write access to this directory in every mode, for example with `sudo chown -R 1000 $SEKOIA_LOCAL_DIR`. Without it, the SHC starts without file logging. See [SHC log file](/self_hosted/1.0/deployment/deployment_configuration.md#shc-log-file).
 
 Set the following environment variables on the orchestration node before running the script:
 
@@ -174,13 +183,13 @@ Set the following environment variables on the orchestration node before running
 | `GIT_HTTP_USERNAME` | Yes | Username for your local code repository. |
 | `GIT_HTTP_PASSWORD` | Yes | Password or token for your local code repository. |
 | `SERVERS_SUDO_PASSWORD` | No | Sudo password for target nodes, if `sudo` asks for one. The SHC also uses it when the SSH server asks for a password. |
-| `DOCKER_IMAGE` | No | Override the self-hosted-controller (SHC) Docker image reference. Default: `sekoialab/self-hosted-controller-cli:v1.0.1`, the tag that you set in [Step 3](#step-3-load-the-self-hosted-controller-shc-docker-image). |
+| `DOCKER_IMAGE` | No | Override the self-hosted-controller (SHC) Docker image reference. Default: `sekoialab/self-hosted-controller-cli:v1.0`, the tag that you set in [Step 3](#step-3-load-the-self-hosted-controller-shc-docker-image). |
 | `SEKOIA_INSTANCE_PUBLIC_KEY` | Yes | Public key for the Sekoia instance. |
-| `TRAEFIK_PUBKEY` | Yes | Platform certificate chain in PEM format. See [TLS certificate](/self_hosted/1.0.1/deployment/deployment_configuration.md#tls-certificate). |
+| `TRAEFIK_PUBKEY` | Yes | Platform certificate chain in PEM format. See [TLS certificate](/self_hosted/1.0/deployment/deployment_configuration.md#tls-certificate). |
 | `TRAEFIK_PRIVKEY` | Yes | Private key of the platform certificate in PEM format. |
 | `S3_ACCESS_KEY` | Online mode only | Access key for the Sekoia release bucket, provided by Sekoia. |
 | `S3_SECRET_KEY` | Online mode only | Secret key for the Sekoia release bucket, provided by Sekoia. |
-| `BACKUP_VAULT_CRYPT_KEY` | Only when backups are enabled | Encryption key of the Vault snapshots, at least 16 characters. Keep a copy outside the platform. See [Back up the platform](/self_hosted/1.0.1/operations/backups.md). |
+| `BACKUP_VAULT_CRYPT_KEY` | Only when backups are enabled | Encryption key of the Vault snapshots, at least 16 characters. Keep a copy outside the platform. See [Back up the platform](/self_hosted/1.0/operations/backups.md). |
 | `BACKUP_ARANGO_CRYPT_KEY` | Only when backups are enabled | Passphrase of the ArangoDB backups, at least 16 characters. Keep a copy outside the platform. |
 | `BACKUP_CLICKHOUSE_CRYPT_KEY` | Only when backups are enabled | Encryption key of the ClickHouse backups, exactly 64 hexadecimal characters, for example generated with `openssl rand -hex 32`. Keep a copy outside the platform. |
 
@@ -200,7 +209,7 @@ A successful run displays the full list of available SHC commands.
     Commands elsewhere in this documentation omit the `./run-shc.sh` prefix. Enter them as shown in the TUI, or prefix them with `./run-shc.sh` to run them in one-shot CLI mode.
 
 !!! note "Interactive interface"
-    Running `./run-shc.sh` with no command opens the interactive interface of the SHC instead of returning a one-shot result. See [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md).
+    Running `./run-shc.sh` with no command opens the interactive interface of the SHC instead of returning a one-shot result. See [Use the SHC interface](/self_hosted/1.0/operations/controller_interface.md).
 
 ## Deployment
 
@@ -221,11 +230,11 @@ The platform installation is normally the longest stage. Leave the command runni
 !!! note "Warning messages during installation"
     Warning-level log messages can be normal during the installation. Do not interrupt an installation only because a warning appears while the workflow continues to make progress. The installation has completed when the terminal `Install.start terminated` message reports `success=True` and the [post-deployment validation](#post-deployment-validation) passes. Investigate a terminal `success=False` result, exhausted retries, or a workflow that stops making progress.
 
-If the installation fails, fix the cause reported in the log, then resume it. See [Resume after a failure](/self_hosted/1.0.1/deployment/deployment_process.md#resume-after-a-failure).
+If the installation fails, fix the cause reported in the log, then resume it. See [Resume after a failure](/self_hosted/1.0/deployment/deployment_process.md#resume-after-a-failure).
 
 ### Option 2: Step-by-step deployment
 
-Use this option when your environment requires manual validation or approval between stages. The steps run the modules of the `Install` stages, in the same order. See [The installation execution plan](/self_hosted/1.0.1/deployment/deployment_process.md#the-installation-execution-plan).
+Use this option when your environment requires manual validation or approval between stages. The steps run the modules of the `Install` stages, in the same order. See [The installation execution plan](/self_hosted/1.0/deployment/deployment_process.md#the-installation-execution-plan).
 
 **Step 1: Run preflight checks.**
 
@@ -250,9 +259,9 @@ In online mode, `DownloadReleaseFiles` downloads the release files that `CheckLo
 
 `DownloadReleaseFiles` downloads the release files from the Sekoia S3 bucket in online mode, and uses the files extracted from the archive in air-gapped mode. Run it before `CheckLocalReleaseFiles`: in online mode, the release directory does not exist until the download completes.
 
-`CheckServerSpec` fails the installation when a manager or worker node has fewer than 44 logical CPUs or less than 120 GiB of RAM, does not run Debian 12 or later, has an active swap device, shares its hostname with another node, or has no synchronized clock. Before K3s is installed, it also fails when a required port is already in use on the node or, in the default `auto` storage mode, when the node has no unused block device of at least 200 GB. See [CheckServerSpec](/self_hosted/1.0.1/troubleshooting/debug_tool.md#checkserverspec) for each failure message and its remediation.
+`CheckServerSpec` fails the installation when a manager or worker node has fewer than 44 logical CPUs or less than 120 GiB of RAM, does not run Debian 12 or later, has an active swap device, shares its hostname with another node, or has no synchronized clock. Before K3s is installed, it also fails when a required port is already in use on the node or, in the default `auto` storage mode, when the node has no unused block device of at least 200 GB. See [CheckServerSpec](/self_hosted/1.0/troubleshooting/debug_tool.md#checkserverspec) for each failure message and its remediation.
 
-`CheckNodePortReachability` fails when a node cannot reach another node on one of the cluster ports. See [CheckNodePortReachability](/self_hosted/1.0.1/troubleshooting/debug_tool.md#checknodeportreachability).
+`CheckNodePortReachability` fails when a node cannot reach another node on one of the cluster ports. See [CheckNodePortReachability](/self_hosted/1.0/troubleshooting/debug_tool.md#checknodeportreachability).
 
 **Step 2: Push the images and the security content.**
 
@@ -264,7 +273,7 @@ exec PushImages
 exec PushDataBundles
 ```
 
-`PushImages` runs `DownloadReleaseFiles` as an automatic prerequisite, and `PushDataBundles` runs `DownloadDataFiles`. In online mode, they download the release artifacts and the content bundles; in air-gapped mode, they use the files extracted from the archive. A missing bundle is reported as a warning and skipped, and a bundle that still fails after three push attempts is reported as an error and skipped. In both cases, the platform keeps the content version shipped with the release. By default, repeated runs push every image again. See [Automatic prerequisites and repeated modules](/self_hosted/1.0.1/deployment/deployment_process.md#automatic-prerequisites-and-repeated-modules). The Helm charts and the ArgoCD stacks are published in step 4, once the cluster exists.
+`PushImages` runs `DownloadReleaseFiles` as an automatic prerequisite, and `PushDataBundles` runs `DownloadDataFiles`. In online mode, they download the release artifacts and the content bundles; in air-gapped mode, they use the files extracted from the archive. A missing bundle is reported as a warning and skipped, and a bundle that still fails after three push attempts is reported as an error and skipped. In both cases, the platform keeps the content version shipped with the release. By default, repeated runs push every image again. See [Automatic prerequisites and repeated modules](/self_hosted/1.0/deployment/deployment_process.md#automatic-prerequisites-and-repeated-modules). The Helm charts and the ArgoCD stacks are published in step 4, once the cluster exists.
 
 **Step 3: Install the Kubernetes stack.**
 
@@ -303,7 +312,7 @@ exec InstanceBootstrap
 exec ScaleServices
 ```
 
-Run these two modules in this order. Until `InstanceBootstrap` completes, ExaLog has no index and cannot write events to your S3-compatible storage. See [Post-installation bootstrap](/self_hosted/1.0.1/deployment/deployment_process.md#post-installation-bootstrap) for what each module provisions.
+Run these two modules in this order. Until `InstanceBootstrap` completes, ExaLog has no index and cannot write events to your S3-compatible storage. See [Post-installation bootstrap](/self_hosted/1.0/deployment/deployment_process.md#post-installation-bootstrap) for what each module provisions.
 
 !!! note "Repeated prerequisite modules"
     The SHC automatically retrieves a current kubeconfig before cluster and platform operations. `PlatformInstallation` and `PlatformAccess` also regenerate the platform configuration before running. Repeated `GetKubeconfig` and `PlatformConfigurationFile` entries in the log are expected and allow each module to run independently.
@@ -335,7 +344,7 @@ To inspect every ArgoCD application, run:
 exec DebugArgoCD
 ```
 
-Every application must show `Sync: Synced` and `Health: Healthy`. `Progressing` is normal for a few minutes immediately after deployment. `Degraded` or `OutOfSync` requires investigation. See [Debug your deployment](/self_hosted/1.0.1/troubleshooting/debug_tool.md).
+Every application must show `Sync: Synced` and `Health: Healthy`. `Progressing` is normal for a few minutes immediately after deployment. `Degraded` or `OutOfSync` requires investigation. See [Debug your deployment](/self_hosted/1.0/troubleshooting/debug_tool.md).
 
 **Step 3: Verify database availability.**
 
@@ -355,20 +364,20 @@ To run every bundled diagnostic target against the platform's Prometheus metrics
 exec Diagnostic
 ```
 
-Every check must report `OK`. A `CRIT` or `WARN` result names the affected service, its likely causes, and the remediation actions. See [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md).
+Every check must report `OK`. A `CRIT` or `WARN` result names the affected service, its likely causes, and the remediation actions. See [Run platform diagnostics](/self_hosted/1.0/monitoring/run_diagnostics.md).
 
 **Step 5: Access the platform.**
 
 To open the Sekoia interface, navigate to the URL set in `global.host` of your `config.yml` (for example, `https://app.sekoia.local`).
 
 !!! note "First login"
-    `PlatformAccess` displays the generated instance-administrator credentials during the installation, before `InstanceBootstrap` and `ScaleServices` run. Scroll back in the output, or run `exec PlatformAccess` to display them again. Store them securely, then use them to create your first operational community. See [Set up the first administrator account](/self_hosted/1.0.1/operations/first_login.md). In the TUI, they are also written to the run log file, so remove them from that file before you share it.
+    `PlatformAccess` displays the generated instance-administrator credentials during the installation, before `InstanceBootstrap` and `ScaleServices` run. Scroll back in the output, or run `exec PlatformAccess` to display them again. Store them securely, then use them to create your first operational community. See [Set up the first administrator account](/self_hosted/1.0/operations/first_login.md). In the TUI, they are also written to the run log file, so remove them from that file before you share it.
 
 ## Related links
 
-- [Technical requirements](/self_hosted/1.0.1/deployment/deployment_prerequisites.md): Hardware and network prerequisites.
-- [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md): Starter configuration and required-field reference.
-- [Debug your deployment](/self_hosted/1.0.1/troubleshooting/debug_tool.md): Troubleshooting commands and remediation steps.
-- [Set up the first administrator account](/self_hosted/1.0.1/operations/first_login.md): Post-installation user provisioning.
-- [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md): Follow the installation and inspect the cluster from the interactive interface.
-- [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md): Targeted Prometheus health checks per platform area.
+- [Technical requirements](/self_hosted/1.0/deployment/deployment_prerequisites.md): Hardware and network prerequisites.
+- [Configure the deployment](/self_hosted/1.0/deployment/deployment_configuration.md): Starter configuration and required-field reference.
+- [Debug your deployment](/self_hosted/1.0/troubleshooting/debug_tool.md): Troubleshooting commands and remediation steps.
+- [Set up the first administrator account](/self_hosted/1.0/operations/first_login.md): Post-installation user provisioning.
+- [Use the SHC interface](/self_hosted/1.0/operations/controller_interface.md): Follow the installation and inspect the cluster from the interactive interface.
+- [Run platform diagnostics](/self_hosted/1.0/monitoring/run_diagnostics.md): Targeted Prometheus health checks per platform area.

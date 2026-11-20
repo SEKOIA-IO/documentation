@@ -4,7 +4,7 @@ During the installation, the self-hosted-controller (SHC) displays the platform 
 
 ## Before you begin
 
-- You completed the post-deployment validation steps in [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md).
+- You completed the post-deployment validation steps in [Deploy the platform](/self_hosted/1.0/deployment/deployment_guide.md).
 - You have the platform URL configured in `global.host` (for example, `https://app.sekoia.local`).
 - You have the license file provided by Sekoia for your subscription.
 
@@ -15,7 +15,7 @@ During the installation, the `PlatformAccess` module displays the access credent
 The platform installer generates these credentials at installation time and stores them in Vault. `PlatformAccess` reads them from Vault each time it runs, so you can display them again with the same command.
 
 !!! warning "The output contains credentials in clear"
-    The output holds the administrator passwords of the Sekoia platform, ArgoCD, and Grafana, and the API key of the instance administrator. Run the command only when you need them, on a terminal that nobody else can see, and never paste its output in a ticket, a chat, or a screenshot. In the TUI, the output is also written to the run log file. See [Use the SHC interface](/self_hosted/1.0.1/operations/controller_interface.md#navigate-the-interface).
+    The output holds the administrator passwords of the Sekoia platform, ArgoCD, and Grafana, and the API key of the instance administrator. Run the command only when you need them, on a terminal that nobody else can see, and never paste its output in a ticket, a chat, or a screenshot. In the TUI, the output is also written to the run log file. See [Use the SHC interface](/self_hosted/1.0/operations/controller_interface.md#navigate-the-interface).
 
 ??? example "Example output"
     ```text
@@ -93,7 +93,7 @@ You are now logged in to the **Administration Community**. This community is ded
 
 ## Create your community
 
-![The Communities page of the Administration Community, listing the two built-in communities, with the Create button in the top right corner.](/assets/self_hosted/1.0.1/first_login/communities.png)
+![The Communities page of the Administration Community, listing the two built-in communities, with the Create button in the top right corner.](/assets/self_hosted/1.0/first_login/communities.png)
 
 1. In the left navigation panel, select **Communities**.
 2. In the top right corner, select **+ Create**.
@@ -108,7 +108,7 @@ Your new community appears in the list alongside the two built-in communities.
 
 Your community has no active subscription until you import the license file provided by Sekoia.
 
-![The Subscriptions tab of a new community with no active subscription, and the Allocate a subscription button.](/assets/self_hosted/1.0.1/first_login/allocate.png)
+![The Subscriptions tab of a new community with no active subscription, and the Allocate a subscription button.](/assets/self_hosted/1.0/first_login/allocate.png)
 
 1. In the communities list, select your community.
 2. Select the **Subscriptions** tab.
@@ -119,7 +119,7 @@ Your community has no active subscription until you import the license file prov
 
 Your subscription appears in the **Subscriptions** tab with its tier name, validity period, asset limit, and storage option.
 
-![The Subscriptions tab of a community showing the imported subscription with its tier, validity period, region, asset limit, and storage options.](/assets/self_hosted/1.0.1/first_login/subscription.png)
+![The Subscriptions tab of a community showing the imported subscription with its tier, validity period, region, asset limit, and storage options.](/assets/self_hosted/1.0/first_login/subscription.png)
 
 ## Connect to your community
 
@@ -193,6 +193,6 @@ For the full OpenID Connect configuration, see [Configure SSO with OpenID Connec
 
 ## Related links
 
-- [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md): Deployment steps and post-deployment validation.
-- [Monitor your platform](/self_hosted/1.0.1/monitoring/monitoring_guide.md): How to set up alerts and dashboards for daily operations.
-- [Release notes v1.0.1](/self_hosted/1.0.1/release_notes.md): Feature scope and functional constraints.
+- [Deploy the platform](/self_hosted/1.0/deployment/deployment_guide.md): Deployment steps and post-deployment validation.
+- [Monitor your platform](/self_hosted/1.0/monitoring/monitoring_guide.md): How to set up alerts and dashboards for daily operations.
+- [Release notes v1.0](/self_hosted/1.0/release_notes.md): Feature scope and functional constraints.

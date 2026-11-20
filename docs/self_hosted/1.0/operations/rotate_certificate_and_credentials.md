@@ -8,14 +8,14 @@ You renew the platform certificate and rotate the credentials of your services b
 ## Prerequisites
 
 - The platform is installed and the SHC can retrieve its kubeconfig.
-- The environment variables of the SHC are in a protected file that you load before each run, as described in [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md).
+- The environment variables of the SHC are in a protected file that you load before each run, as described in [Configure the deployment](/self_hosted/1.0/deployment/deployment_configuration.md).
 
 !!! note "Restart the SHC after changing a value"
     The SHC reads `config.yml` and resolves its `${env.VARIABLE}` references once, when it starts. An open interactive interface keeps the previous values. After a change, quit the interface, load the updated environment variables in the shell that starts the SHC, then open the interface again before running the commands below. If you store the variables in a protected file, load that file again before restarting the SHC. In one-shot CLI mode, each `./run-shc.sh <command>` starts a new SHC with the current configuration and the environment of the launching shell.
 
 ## Renew the platform certificate
 
-Traefik serves one certificate on HTTPS (port 443) and on the syslog (port 10514) and RELP (port 11514) intake ports. The SHC reads this certificate and its private key from the `TRAEFIK_PUBKEY` and `TRAEFIK_PRIVKEY` environment variables. The new certificate must meet the conditions described in [TLS certificate](/self_hosted/1.0.1/deployment/deployment_configuration.md#tls-certificate).
+Traefik serves one certificate on HTTPS (port 443) and on the syslog (port 10514) and RELP (port 11514) intake ports. The SHC reads this certificate and its private key from the `TRAEFIK_PUBKEY` and `TRAEFIK_PRIVKEY` environment variables. The new certificate must meet the conditions described in [TLS certificate](/self_hosted/1.0/deployment/deployment_configuration.md#tls-certificate).
 
 1. In the shell that starts the SHC, load the new certificate and its private key:
 
@@ -105,7 +105,7 @@ The command fails, and lists the affected workloads, when a workload has a pause
 The registry credentials are used in two places. The nodes pull the container images with the credentials of the `/etc/rancher/k3s/registries.yaml` file, which `K3SInstall` renders on every node. ArgoCD reads the Helm charts from your registry, and the ArgoCD stacks from your Git repository, with the credentials registered for each repository. Each run of `PlatformInstallation` writes the credentials of your configuration to Vault, compares them with the credentials registered in ArgoCD, and registers the repositories again when they differ.
 
 !!! tip "Apply everything in one run"
-    `exec Install` runs `K3SInstall`, `PlatformConfigurationFile`, and `PlatformInstallation` in one run, with the K3s restarts described in [Apply a configuration change](/self_hosted/1.0.1/operations/apply_configuration_change.md).
+    `exec Install` runs `K3SInstall`, `PlatformConfigurationFile`, and `PlatformInstallation` in one run, with the K3s restarts described in [Apply a configuration change](/self_hosted/1.0/operations/apply_configuration_change.md).
 
 1. Create the new credential, and keep the previous one valid. A registry credential needs push, pull, and delete permissions on the registry project.
 2. Update `REGISTRY_USERNAME` and `REGISTRY_PASSWORD`, or `GIT_HTTP_USERNAME` and `GIT_HTTP_PASSWORD`. Quit any open SHC interface, load the updated environment variables in the shell that starts the SHC, then open the interface again before the next step.
@@ -133,12 +133,12 @@ The registry credentials are used in two places. The nodes pull the container im
 
 | Credential | Behavior | What to do |
 | :--- | :--- | :--- |
-| Backup encryption keys in use | `PlatformInstallation` stops, and writes no secret, when `BACKUP_ARANGO_CRYPT_KEY` or `BACKUP_CLICKHOUSE_CRYPT_KEY` differs from the key in use. The error reads `cannot replace an established Arango backup encryption key` or `cannot replace an established ClickHouse backup encryption key`. It does not check `BACKUP_VAULT_CRYPT_KEY`. | Keep the three keys unchanged. See [Back up the platform](/self_hosted/1.0.1/operations/backups.md#prepare-the-encryption-keys). |
+| Backup encryption keys in use | `PlatformInstallation` stops, and writes no secret, when `BACKUP_ARANGO_CRYPT_KEY` or `BACKUP_CLICKHOUSE_CRYPT_KEY` differs from the key in use. The error reads `cannot replace an established Arango backup encryption key` or `cannot replace an established ClickHouse backup encryption key`. It does not check `BACKUP_VAULT_CRYPT_KEY`. | Keep the three keys unchanged. See [Back up the platform](/self_hosted/1.0/operations/backups.md#prepare-the-encryption-keys). |
 | Sekoia release bucket credentials | Sekoia issues `S3_ACCESS_KEY` and `S3_SECRET_KEY`. Only the SHC uses them, to download the release, the content bundles, and the CTI database. | To change them, contact Sekoia. When Sekoia provides new ones, update the two variables. |
 
 ## Related links
 
-- [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md#tls-certificate): Certificate conditions and environment variables of the SHC.
-- [Back up the platform](/self_hosted/1.0.1/operations/backups.md): Backup S3 credentials and encryption keys.
-- [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md): Check the certificate and the platform services after a rotation.
-- [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md#step-4-create-the-execution-script): Pass the environment variables to the SHC container.
+- [Configure the deployment](/self_hosted/1.0/deployment/deployment_configuration.md#tls-certificate): Certificate conditions and environment variables of the SHC.
+- [Back up the platform](/self_hosted/1.0/operations/backups.md): Backup S3 credentials and encryption keys.
+- [Run platform diagnostics](/self_hosted/1.0/monitoring/run_diagnostics.md): Check the certificate and the platform services after a rotation.
+- [Deploy the platform](/self_hosted/1.0/deployment/deployment_guide.md#step-4-create-the-execution-script): Pass the environment variables to the SHC container.
