@@ -128,7 +128,7 @@ This setup guide will show you how to forward both your access and error logs to
 
 {!_shared_content/operations_center/integrations/generated/6c2a44e3-a86a-4d98-97a6-d575ffcb29f7.md!}
 
-## Further readings
+## Related articles
 
 - The code of the Intake format is available [here](https://github.com/SEKOIA-IO/intake-formats/tree/main/Apache).
 - [Apache documentation](http://httpd.apache.org/docs/).

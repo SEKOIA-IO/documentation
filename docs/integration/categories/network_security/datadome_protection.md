@@ -50,6 +50,6 @@ This setup guide will show you how to forward your Datadome Protection logs to S
 {!_shared_content/operations_center/detection/generated/suggested_rules_acd3374a-9738-4650-9d20-bd0a22daac40_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/acd3374a-9738-4650-9d20-bd0a22daac40.md!}
 
-## Further readings
+## Related articles
 
 - [Configure a Custom Integration in the DataDome Dashboard](https://docs.datadome.co/docs/custom)

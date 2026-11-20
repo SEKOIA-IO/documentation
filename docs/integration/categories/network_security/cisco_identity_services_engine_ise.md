@@ -72,6 +72,6 @@ This setup guide will show you how to provide an integration between Cisco Ident
 
 {!_shared_content/operations_center/integrations/generated/8a9894f8-d7bc-4c06-b96a-8808b3c6cade.md!}
 
-## Further readings
+## Related articles
 
 - [Cisco Identity Services Engine (ISE) documentation](https://www.cisco.com/c/en/us/support/security/identity-services-engine/series.html#~tab-documents)

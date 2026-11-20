@@ -65,6 +65,6 @@ For more information on forwarding logs to Sekoia.io using the Sekoia Forwarder,
 
 {!_shared_content/operations_center/integrations/generated/c3621017-d090-44c8-af7a-9408332a15d0.md!}
 
-## Further Readings
+## Related articles
 
 - [Zscaler - Log Streaming Service](https://help.zscaler.com/zpa/log-streaming-service)

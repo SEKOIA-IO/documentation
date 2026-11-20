@@ -55,7 +55,7 @@ Before configuring the integration, ensure that you have:
 
 {!_shared_content/operations_center/integrations/generated/bb71a257-e2cc-419c-b210-ab23cf731b3a.md!}
 
-## Further readings
+## Related articles
 
 - [USTA API](https://usta-backend.prodaft.com/threat-stream-docs)
 - [USTA User Manual](https://usta-backend.prodaft.com/s/manuals/USER-MANUAL-EN.pdf)

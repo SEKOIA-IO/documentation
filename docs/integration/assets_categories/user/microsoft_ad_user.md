@@ -106,6 +106,6 @@ To start getting your Microsoft Active Directory users into Sekoia.io, you need 
 
 {!_shared_content/operations_center/integrations/generated_assets_documentation/microsoft-ad_user.md!}
 
-## Further Reading
+## Related articles
 - [Microsoft: What is Active Directory](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview)
 - [LDAP Query Basics](https://learn.microsoft.com/en-us/previous-versions/windows/desktop/ldap/lightweight-directory-access-protocol-ldap-api)

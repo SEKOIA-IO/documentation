@@ -61,7 +61,7 @@ To start getting your Nozomi Networks assets into Sekoia.io, you need to create 
 
 {!_shared_content/operations_center/integrations/generated_assets_documentation/nozomi_device.md!}
 
-## Further Reading
+## Related articles
 
 - [Nozomi Networks technical documentation](https://technicaldocs.nozominetworks.com/)
 - [Nozomi Vantage intake](/integration/categories/network_security/nozomi_vantage.md)

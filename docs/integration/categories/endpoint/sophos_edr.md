@@ -52,6 +52,6 @@ In the Sophos Central Admin console:
 
 {!_shared_content/operations_center/integrations/generated/3f330d19-fdea-48ac-96bd-91a447bb26bd.md!}
 
-## Further Readings
+## Related articles
 
 - [Sophos Central APIs: Send alert and event data to your SIEM](https://support.sophos.com/support/s/article/KB-000036372?language=en_US)

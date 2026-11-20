@@ -128,7 +128,7 @@ See [documentation](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configur
 
 {!_shared_content/operations_center/integrations/generated/5cac7207-1711-4654-9932-929fe619f6ea.md!}
 
-## Further readings
+## Related articles
 
 - [Cisco - Traffic Flow Monitoring](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/policies/ios-xe-17/policies-book-xe/traffic-flow-monitor.html)
 - [YouTube - Configure SNMP and Netflow on Cisco SD-WAN](https://www.youtube.com/watch?v=a1Tw1xANgsU)

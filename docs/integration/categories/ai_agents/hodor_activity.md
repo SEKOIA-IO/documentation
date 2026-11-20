@@ -107,7 +107,7 @@ The following samples use synthetic data. They show the Hodor envelope received 
 
 {!_shared_content/operations_center/integrations/generated/7e14d2c2-56cf-43a9-b5d8-703f2640dee7.md!}
 
-## Further reading
+## Related articles
 
 - [Send events using HTTPS](/integration/ingestion_methods/https/overview.md)
 - [Sekoia regions](/getting_started/regions.md)

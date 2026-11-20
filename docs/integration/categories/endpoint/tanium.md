@@ -58,6 +58,6 @@ This setup guide will show you how to forward your Tanium logs to Sekoia.io by m
 
 {!_shared_content/operations_center/integrations/generated/59991ced-c2a0-4fb0-91f3-49e3993c16f5.md!}
 
-## Further readings
+## Related articles
 
 - [Configuring TanOS to send Syslog Events](https://help.tanium.com/bundle/ug_appliance_onprem/page/appliance/syslog.html)

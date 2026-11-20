@@ -205,7 +205,7 @@ To start getting your AWS IAM users into Sekoia.io, you need to create an asset 
 
 {!_shared_content/operations_center/integrations/generated_assets_documentation/aws_user.md!}
 
-## Further Reading
+## Related articles
 - [AWS IAM Documentation](https://docs.aws.amazon.com/iam/)
 - [AWS IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/)
 - [AWS IAM API Reference](https://docs.aws.amazon.com/IAM/latest/APIReference/)

@@ -57,7 +57,7 @@ Select or create an account with the [AWS Access Key](https://docs.aws.amazon.co
 
 {!_shared_content/operations_center/integrations/generated/a9c959ac-78ec-47a4-924e-8156a77cebf5.md!}
 
-## Further Readings
+## Related articles
 
 - [AWS Security Lake Overview](https://aws.amazon.com/security-lake/)
 - [AWS Security Lake Documentation](https://docs.aws.amazon.com/security-lake/latest/userguide/what-is-security-lake.html)

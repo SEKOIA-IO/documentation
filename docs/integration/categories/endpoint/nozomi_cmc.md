@@ -83,7 +83,7 @@ To Enable the CEF forwarding:
 {!_shared_content/operations_center/detection/generated/suggested_rules_baf03007-4fbc-427e-a966-fa50cbe77856_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/baf03007-4fbc-427e-a966-fa50cbe77856.md!}
 
-## Further Readings
+## Related articles
 
 - [Data integration overview](https://technicaldocs.nozominetworks.com/products/n2os/topics/administration/settings/data-integration/c_n2os_admin_settings_data-integration_overview_cmc.html)
 - [Data integration](https://technicaldocs.nozominetworks.com/products/n2os/topics/administration/settings/data-integration/c_n2os_admin_settings_data-integration-1.html)

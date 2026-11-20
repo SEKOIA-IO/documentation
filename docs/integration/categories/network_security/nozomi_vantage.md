@@ -42,5 +42,5 @@ Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a n
 
 {!_shared_content/operations_center/integrations/generated/b21d2080-03e4-4d8c-a175-83691c1e071c.md!}
 
-### Further Readings
+### Related articles
 - [Generate an API key](https://technicaldocs.nozominetworks.com/products/vantage/topics/administration/teams/t_vantage_admin_teams_api-keys_generate-1.html)

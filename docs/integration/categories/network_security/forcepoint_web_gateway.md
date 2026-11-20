@@ -85,6 +85,6 @@ In this guide, you will configure the gateway to forward events to syslog. This 
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_f0f95532-9928-4cde-a399-ddd992d48472_do_not_edit_manually.md!}
 
-## Further readings
+## Related articles
 
 - [Configuring a remote Syslog server for Forcepoint Secure Web Gateway](https://support.forcepoint.com/)

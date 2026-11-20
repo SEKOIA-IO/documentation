@@ -84,6 +84,6 @@ This setup guide will show you how to forward your Cyberwatch logs to Sekoia.io 
 
 {!_shared_content/operations_center/integrations/generated/c6a43439-7b9d-4678-804b-ebda6756db60.md!}
 
-## Further readings
+## Related articles
 
 - [Configure a remote Syslog server](https://docs.cyberwatch.fr/help/en/administration/remote_syslog_configuration/)

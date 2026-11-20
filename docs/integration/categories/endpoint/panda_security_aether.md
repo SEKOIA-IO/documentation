@@ -52,7 +52,7 @@ Start the playbook and enjoy your events.
 {!_shared_content/operations_center/detection/generated/suggested_rules_ee6364a1-9e3c-4363-9cb6-2f574bd4ce51_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/ee6364a1-9e3c-4363-9cb6-2f574bd4ce51.md!}
 
-## Further Readings
+## Related articles
 
 - [Get started with WatchGuard APIs](https://www.watchguard.com/help/docs/api/Content/en-US/api_get_started/get_started.html)
 - [WatchGuard APIs](https://www.watchguard.com/help/docs/api/Content/en-US/home.html)

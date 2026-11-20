@@ -68,7 +68,7 @@ Please follow [this guide](https://docs.aws.amazon.com/vpc/latest/userguide/flow
 
 {!_shared_content/operations_center/integrations/generated/b031d3d0-bafa-4f4c-8f05-4fb67639b2d8.md!}
 
-## Further Readings
+## Related articles
 - [AWS VPC Overview](https://aws.amazon.com/vpc/)
 - [AWS Flow Logs Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html)
 - [Flow log files in Apache Parquet format](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-s3.html#flow-logs-s3-path)

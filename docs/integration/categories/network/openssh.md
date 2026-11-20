@@ -29,7 +29,7 @@ Please refer to the documentation of OpenSSH to forward events to your rsyslog s
 {!_shared_content/operations_center/detection/generated/suggested_rules_b28db14b-e3a7-463e-8659-9bf0e577944f_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/b28db14b-e3a7-463e-8659-9bf0e577944f.md!}
 
-## Further Readings
+## Related articles
 
 - [OpenSSH Manuals](https://www.openssh.com/manual.html)
 - [OpenSSH Logging and Troubleshooting](https://en.wikibooks.org/wiki/OpenSSH/Logging_and_Troubleshooting)

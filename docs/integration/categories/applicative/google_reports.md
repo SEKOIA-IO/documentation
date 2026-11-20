@@ -158,7 +158,7 @@ Find more information on the [official google documentation](https://cloud.googl
 ### Enjoy your events on the [Events page](https://app.sekoia.io/operations/events)
 
 
-## Further readings
+## Related articles
 
 - [Choose Reports API scopes](https://developers.google.com/admin-sdk/reports/auth)
 - [Create a service account](https://support.google.com/a/answer/7378726?hl=en)

@@ -107,6 +107,6 @@ This setup guide will show you how to forward both your access and error logs to
 
 {!_shared_content/operations_center/integrations/generated/9f47aa9f-52d7-4849-9462-cf7fc8bcd51a.md!}
 
-## Further readings
+## Related articles
 
 - [About Claroty Syslog](https://help.claroty.com/hc/en-us/articles/10703054977053-About-Claroty-Syslog)

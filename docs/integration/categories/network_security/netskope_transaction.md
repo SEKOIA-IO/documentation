@@ -86,7 +86,7 @@ Example of Subscription Endpoint: `projects/1023456728636/locations/europe-west3
 {!_shared_content/operations_center/detection/generated/suggested_rules_a0716ffd-5f9e-4b97-add4-30f1870e3d03_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/a0716ffd-5f9e-4b97-add4-30f1870e3d03.md!}
 
-## Further readings
+## Related articles
 
 - [Configuring Netskope Transaction Events](https://docs.netskope.com/en/netskope-help/data-security/transaction-events/netskope-transaction-events/)
 - [Create a service account](https://support.google.com/a/answer/7378726?hl=en)

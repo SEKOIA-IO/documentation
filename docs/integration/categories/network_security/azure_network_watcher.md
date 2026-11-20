@@ -50,6 +50,6 @@ A possible solution consists of sharing:
 
 {!_shared_content/operations_center/integrations/generated/340e3bc7-2b76-48e4-9833-e971451b2979.md!}
 
-## Further Readings
+## Related articles
 - [Azure Network Watcher overview](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-monitoring-overview)
 - [Azure Network Watcher NSG flow logging overview](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-overview)

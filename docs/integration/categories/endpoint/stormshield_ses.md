@@ -60,6 +60,6 @@ On the SES Agent handler machines:
 {!_shared_content/operations_center/detection/generated/suggested_rules_f5e6cf5e-bd9f-4caf-9098-fe4a9e0aeaa0_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/f5e6cf5e-bd9f-4caf-9098-fe4a9e0aeaa0.md!}
 
-## Further Readings
+## Related articles
 
 You can read all documentation [here](https://documentation.stormshield.eu/SES/v7.2/en/Content/PDF/ses-en-administration_guide-v7.2.pdf)

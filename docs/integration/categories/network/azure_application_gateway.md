@@ -49,6 +49,6 @@ These instructions are illustrated and more detailed [here](https://learn.micros
 {!_shared_content/operations_center/integrations/generated/6967b0ca-f27e-480a-b124-fa4ab0b9d889.md!}
 
 
-## Further Readings
+## Related articles
 - [Diagnostic logs for Application Gateway](https://learn.microsoft.com/en-us/azure/application-gateway/application-gateway-diagnostics)
 - [Send Azure Monitor activity log data](https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/activity-log?tabs=powershell#send-to-azure-storage)

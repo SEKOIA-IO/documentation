@@ -34,6 +34,6 @@ Jumpcloud Directory Insights provides activity records related to your organizat
 {!_shared_content/operations_center/detection/generated/suggested_rules_a1dbed03-cd69-4a51-8ae5-aa67d2f29fcb_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/a1dbed03-cd69-4a51-8ae5-aa67d2f29fcb.md!}
 
-## Further Readings
+## Related articles
 
 - [Jumpcloud Directory Insights API documentation](https://docs.jumpcloud.com/api/insights/directory/1.0/index.html)

@@ -65,7 +65,7 @@ Go to the Sekoia.io [playbook page](https://app.sekoia.io/operations/playbooks),
 {!_shared_content/operations_center/integrations/generated/40bac399-2d8e-40e3-af3b-f73a622c9687.md!}
 
 
-## Further readings
+## Related articles
 
 - [Skyhigh Secure Web Gateway (Cloud) Documentation](https://success.skyhighsecurity.com/Skyhigh_Secure_Web_Gateway_(Cloud))
 - [Region prefixes](https://success.skyhighsecurity.com/Skyhigh_Secure_Web_Gateway_(Cloud)/Using_the_Forensics_API_for_Reporting/Create_a_Report_with_the_Forensics_API)

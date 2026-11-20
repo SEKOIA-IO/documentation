@@ -102,7 +102,7 @@ sudo systemctl start nftables && sudo systemctl enable nftables
 
 
 
-## Further Reading
+## Related articles
 - [netfilter/iptables project homepage](https://www.netfilter.org/)
 
 {!_shared_content/operations_center/integrations/generated/c3888137-b34e-4526-ab61-836b2d45a742_sample.md!}

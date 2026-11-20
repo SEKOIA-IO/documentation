@@ -83,6 +83,6 @@ Once configured, the connector polls the scan report as CSV from `<report_url>/<
 
 {!_shared_content/operations_center/integrations/generated/62e667fa-f143-42ef-bc52-3f2e86f0013c.md!}
 
-## Further Readings
+## Related articles
 
 - [LocateRisk website](https://www.locaterisk.com)

@@ -100,7 +100,7 @@ You can further refine your configuration:
 
 {!_shared_content/operations_center/integrations/generated/a14b1141-2d61-414b-bf79-da99b487b1af.md!}
 
-## Further readings
+## Related articles
 
 - [Configuring the BIG-IP system to log to a remote syslog server](https://my.f5.com/manage/s/article/K13080)
 - [Logging Application Security Events](https://techdocs.f5.com/en-us/bigip-15-0-0/big-ip-asm-implementations/logging-application-security-events.html#GUID-E0742D0B-9829-4210-AD70-EAFFD58B9767)

@@ -33,7 +33,7 @@ Sign in your Okta organization with administrator role and follow [this guide](h
 {!_shared_content/operations_center/detection/generated/suggested_rules_e6bb2404-8fc8-4124-a785-c1276277b5d7_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/e6bb2404-8fc8-4124-a785-c1276277b5d7.md!}
 
-## Further Readings
+## Related articles
 
 - [Okta documentation - create an API token](https://developer.okta.com/docs/guides/create-an-api-token/main/)
 - [Okta documentation - System Log](https://developer.okta.com/docs/reference/api/system-log/)

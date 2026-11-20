@@ -77,7 +77,7 @@ Download the generated API key file and open it in an editor to view and use the
 {!_shared_content/operations_center/detection/generated/suggested_rules_5803f97d-b324-4452-b861-0253b15de650_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/5803f97d-b324-4452-b861-0253b15de650.md!}
 
-## Further Readings
+## Related articles
 
 - [Lacework credentials documentation](https://docs.lacework.net/api/api-access-keys-and-tokens)
 - [Lacework API documentation](https://docs.lacework.net/api/v2/docs)

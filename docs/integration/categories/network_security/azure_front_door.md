@@ -38,6 +38,6 @@ Configure Azure Front door to stream its logs to the EventHub with [this guide](
 
 {!_shared_content/operations_center/integrations/generated/69b52166-b804-4f47-860f-2d3fd0b46987.md!}
 
-## Further Readings
+## Related articles
 
 - [Azure Front Door logs](https://docs.microsoft.com/en-us/azure/frontdoor/standard-premium/how-to-logs)

@@ -91,7 +91,7 @@ To start getting your Okta devices into Sekoia.io, you need to create an asset c
 
 {!_shared_content/operations_center/integrations/generated_assets_documentation/okta_device.md!}
 
-## Further Reading
+## Related articles
 - [Okta Documentation](https://developer.okta.com/docs/)
 - [Okta Device Management API](https://developer.okta.com/docs/reference/api/devices/)
 - [Okta Device Trust API](https://developer.okta.com/docs/reference/api/device-trust/)

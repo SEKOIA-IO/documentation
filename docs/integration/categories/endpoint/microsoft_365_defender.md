@@ -81,7 +81,7 @@ When you have an **Event Hub** follow this guide to send your events from **Micr
 9. Choose the events you want to stream and click Save.
 
 !!! Disclaimer
-    Be sure to size your eventhub resources accordingly to the number of EPS you have (number of eventhubs, throughput, partitions...) See the Further readings section in order to estimate the number of event per second **Microsoft Defender xDR** can be on your instance.
+    Be sure to size your eventhub resources accordingly to the number of EPS you have (number of eventhubs, throughput, partitions...) See the Related articles section in order to estimate the number of event per second **Microsoft Defender xDR** can be on your instance.
 
 ### Create your intake
 
@@ -98,6 +98,6 @@ When you have an **Event Hub** follow this guide to send your events from **Micr
 {!_shared_content/operations_center/detection/generated/suggested_rules_05e6f36d-cee0-4f06-b575-9e43af779f9f_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/05e6f36d-cee0-4f06-b575-9e43af779f9f.md!}
 
-#### Further Readings
+#### Related articles
 - [Estimating initial Event Hub capacity](https://learn.microsoft.com/en-us/microsoft-365/security/defender/streaming-api-event-hub?view=o365-worldwide#estimating-initial-event-hub-capacity)
 - [Configure Microsoft Defender XDR to stream Advanced Hunting events to your Azure Event Hub](https://docs.microsoft.com/en-us/microsoft-365/security/defender/streaming-api-event-hub)
