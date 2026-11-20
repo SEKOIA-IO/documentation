@@ -63,8 +63,15 @@ After creating the app registration, you need to generate a client secret for au
 
 ### Required API permissions
 
-The app registration must have the following application permissions:
+The app registration must have the following **application** permissions. They belong to two different APIs: adding only Microsoft Graph permissions is not enough.
 
+| API | Permission | Type | Used for |
+|-----|------------|------|----------|
+| WindowsDefenderATP | `Machine.Read.All` | Application | Read all machine information from Microsoft Defender for Endpoint |
+| Microsoft Graph | `DeviceManagementManagedDevices.Read.All` | Application | Read Microsoft Intune managed device data |
+
+!!! warning
+    `Machine.Read.All` is a **WindowsDefenderATP** permission, not a Microsoft Graph permission. Microsoft Graph permissions with similar names, such as `Device.Read.All`, do not give access to the Microsoft Defender for Endpoint API and cannot replace it.
 
 ### How to grant API permissions
 
@@ -82,16 +89,7 @@ To grant the required permissions to your app registration:
 
 5. Click **Add a permission** again, select **Microsoft Graph**, then select **Application permissions** and check **DeviceManagementManagedDevices.Read.All**, then click **Add permissions**.
 
-6. Click **Grant admin consent** to grant the permissions (requires admin privileges).
-
-### Required API permissions
-
-The App Registration must have the following application permissions:
-
-| API | Permission | Description |
-|-----|------------|-------------|
-| WindowsDefenderATP | `Machine.Read.All` | Read all machine information from Microsoft Defender for Endpoint |
-| Microsoft Graph | `DeviceManagementManagedDevices.Read.All` | Read Microsoft Intune managed device data |
+6. Click **Grant admin consent** to grant the permissions (requires admin privileges). The **Status** column must show **Granted** for each permission.
 
 ### Create your asset
 
@@ -105,20 +103,31 @@ To start getting your Microsoft Defender for Endpoint devices into Sekoia.io, yo
 
     ![New connector button highlighted](/assets/operation_center/asset_connectors/device/common/create_asset_connector_1.png)
 
-3. Choose **Microsoft Defender Device**, give it a name, and fill the required fields:
-
-4. Enter the following information:
+3. Choose **Microsoft Defender Device**, give it a name, and fill in the required fields:
 
     - **Tenant ID**: Your Azure Directory (tenant) ID
     - **App ID**: The Application (client) ID of your App Registration
     - **App Secret**: The client secret value you created
     - **Base URL**: The Microsoft Defender for Endpoint API base URL (default: `https://api.securitycenter.microsoft.com`)
 
-5. Test the connection by clicking the **Test connector** button.
+4. Test the connection by clicking the **Test connector** button.
 
-6. Click the **Create asset connector** button.
+5. Click the **Create asset connector** button.
+
 
 {!_shared_content/operations_center/integrations/generated_assets_documentation/microsoft-defender_device.md!}
+
+### Troubleshooting
+
+#### The connection test fails with an HTTP 403 error
+
+A `403` error returned by the Microsoft Defender for Endpoint API (for instance on `/api/machines`) means that the app registration authenticated successfully but is not allowed to read the requested data. Check the following points in **API permissions**:
+
+1. `Machine.Read.All` is listed under **WindowsDefenderATP**, not under Microsoft Graph.
+2. Its type is **Application**, not **Delegated**.
+3. Admin consent has been granted: the **Status** column shows **Granted**.
+
+After changing permissions, wait a few minutes before testing the connector again: Microsoft may take some time to apply the new permissions.
 
 ## Further Reading
 
