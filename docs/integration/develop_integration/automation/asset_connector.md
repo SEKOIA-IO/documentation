@@ -7,23 +7,25 @@ An asset connector collects devices, users, applications and vulnerability findi
 
 ## What a good asset connector does
 
-A good asset connector:
+Sekoia gives each asset a [risk score](/xdr/features/modules/asset_risk_scoring.md), which tells analysts which assets need attention first. Its vulnerabilities weigh in that score. A good asset connector keeps both the inventory and the score right:
 
-- reports each machine and each account as a single asset, with the same identifiers at every run;
-- sends what changed since its previous run, and everything once a week;
-- closes the findings the product reports fixed;
-- gives each finding a CVSS score.
+- **One asset per machine and per account.** It reports each machine and each account with the same identifiers at every run. Otherwise, their vulnerabilities and alerts are split between several assets.
+- **The changes, and everything once a week.** Sending only the changes keeps each run light. Sending everything once a week keeps the vulnerabilities that did not change in the risk score, and fills the gaps a failed push left.
+- **Fixed findings closed.** Sekoia only knows that a vulnerability is fixed when the connector says so. Otherwise, fixed vulnerabilities stay open in the inventory and keep raising the risk score of their asset.
+- **A CVSS score on each finding.** Without one, Sekoia cannot tell how serious a vulnerability is: it shows no severity, and the vulnerability does not count in the risk score.
 
 Sekoia backs each of these practices with a safeguard. When a connector misses one, the safeguard stops the bad data before it reaches your inventory, and the connector receives an error that says why. The safeguards are listed in [Read the push response](#read-the-push-response).
 
 ## How an asset connector runs
 
-An asset connector is a Python class based on `AssetConnector` from [sekoia-automation-sdk](https://github.com/SEKOIA-IO/sekoia-automation-sdk). It runs in cycles:
+An asset connector is a Python class based on [`AssetConnector`](https://github.com/SEKOIA-IO/sekoia-automation-sdk/blob/main/sekoia_automation/asset_connector/connector.py) from [sekoia-automation-sdk](https://github.com/SEKOIA-IO/sekoia-automation-sdk). It runs in cycles:
 
 1. The SDK calls `get_assets()`, which yields items.
 2. The SDK groups the items into batches of `batch_size` items and pushes each batch to Sekoia.
 3. After each accepted push, the SDK calls `update_checkpoint()`.
 4. When the cycle yielded no item, the connector waits until `frequency` seconds have passed since the start of the cycle. When it yielded items, the next cycle starts at once.
+
+The checkpoint is where the connector stopped last time, such as the update time of the last machine it sent, so that the next cycle starts from there.
 
 Because a cycle that yields items is followed at once by another one, `get_assets()` must yield only what changed since the checkpoint. See [Send only what changed](#send-only-what-changed).
 
@@ -60,39 +62,7 @@ my-assets-module/
     "docker_parameters": "machines_assets",  // (2)!
     "type": "asset",  // (3)!
     "capability": "host_detection",  // (4)!
-    "arguments": {
-        "$schema": "http://json-schema.org/draft-07/schema#",
-        "type": "object",
-        "properties": {
-            "sekoia_base_url": {
-                "description": "Sekoia base URL",
-                "type": "string"
-            },
-            "sekoia_api_key": {
-                "description": "API key to use from sekoia.io",
-                "type": "string"
-            },
-            "frequency": {
-                "description": "Seconds between two cycles",
-                "type": "integer",
-                "minimum": 3600
-            },
-            "batch_size": {
-                "description": "Number of items to push in one batch",
-                "type": "integer",
-                "minimum": 1,
-                "default": 100
-            }
-        },
-        "required": ["sekoia_api_key"],
-        "secrets": ["sekoia_api_key"],
-        "internal": [  // (5)!
-            "sekoia_base_url",
-            "sekoia_api_key",
-            "frequency",
-            "batch_size"
-        ]
-    }
+    "arguments": { … }  // (5)!
 }
 ```
 
@@ -100,7 +70,7 @@ my-assets-module/
 2. The value that `main.py` registers the asset connector with.
 3. `"type": "asset"` marks the file as an asset connector manifest. A file named `connector_*_assets.json` is one even without it.
 4. Required. See [Choose the capability](#choose-the-capability).
-5. Sekoia fills in `sekoia_api_key` and `sekoia_base_url` when a user creates the configuration. `frequency` and `batch_size` keep the defaults of the SDK: 3 hours and 100 items.
+5. Copy `arguments` as is from a manifest of automation-library, such as [Okta Devices](https://github.com/SEKOIA-IO/automation-library/blob/develop/Okta/connector_okta_device_assets.json). It declares `sekoia_base_url`, `sekoia_api_key`, `frequency` and `batch_size` as internal arguments, which users do not see. Do not fill them in: Sekoia sets the API key and the base URL when a user creates the configuration, and `frequency` and `batch_size` keep the defaults of the SDK, 3 hours and 100 items.
 
 Custom asset connectors run in the cloud. The import of the module fails at the **Validating integration** step if the manifest declares the `on_premise` execution mode or an `on_premise_action`.
 
@@ -134,12 +104,12 @@ if __name__ == "__main__":
 
 ### Dependencies
 
-- `sekoia-automation-sdk` 1.27.3 or later. From this version, the connector logs the error code of every refused push.
-- `sekoia-automation-models` 1.5.0 or later, for `split_hostname()`. The SDK installs this package; require 1.5.0 explicitly.
+- [sekoia-automation-sdk](https://pypi.org/project/sekoia-automation-sdk/) 1.27.3 or later. From this version, the connector logs the error code of every refused push.
+- [sekoia-automation-models 1.5.0](https://github.com/SEKOIA-IO/sekoia-automation-models/releases/tag/v1.5.0) or later, for [`split_hostname()`](https://github.com/SEKOIA-IO/sekoia-automation-models/blob/v1.5.0/sekoia_automation_models/hostname.py). The SDK installs this package; require 1.5.0 explicitly.
 
 ## Write the asset connector
 
-A subclass of `AssetConnector` implements four methods:
+A subclass of [`AssetConnector`](https://github.com/SEKOIA-IO/sekoia-automation-sdk/blob/main/sekoia_automation/asset_connector/connector.py) implements four methods:
 
 | Method | What it does |
 |---|---|
@@ -148,119 +118,124 @@ A subclass of `AssetConnector` implements four methods:
 | `reset_checkpoint()` | Clears the checkpoint, so that the next cycle fetches everything again. |
 | `get_mapped_fields()` | Returns how product fields map to OCSF fields. When the mapping changes from one version of the connector to the next, the SDK calls `reset_checkpoint()` and the next cycle sends every item again with the new mapping. Return `{}` to turn this off. |
 
-```python
-import time
-from collections.abc import Generator
+The connector below collects the machines of an imaginary product. For a connector in production, see the [Okta device connector](https://github.com/SEKOIA-IO/automation-library/blob/develop/Okta/okta_modules/asset_connector/device_assets.py) of automation-library, built on `AsyncAssetConnector`, the asynchronous variant of `AssetConnector`.
 
-import requests
-from sekoia_automation.asset_connector import AssetConnector
-from sekoia_automation.storage import PersistentJSON
-from sekoia_automation_models.connector import AssetItem
-from sekoia_automation_models.hostname import split_hostname
-from sekoia_automation_models.ocsf.base import Metadata, Product
-from sekoia_automation_models.ocsf.device import (
-    Device,
-    DeviceOCSFModel,
-    DeviceTypeId,
-    DeviceTypeStr,
-    OperatingSystem,
-)
+??? example "A complete asset connector"
 
-METADATA = Metadata(product=Product(name="My Product", vendor_name="My Vendor"), version="1.5.0")
+    ```python
+    import time
+    from collections.abc import Generator
 
-
-def to_device(machine: dict) -> Device | None:
-    hostname, domain = split_hostname(machine["name"])
-    if hostname is None:
-        return None  # Not a usable hostname: skip the machine
-    return Device(
-        type_id=DeviceTypeId.SERVER,
-        type=DeviceTypeStr.SERVER,
-        uid=machine["id"],
-        hostname=hostname,
-        domain=domain,
-        os=OperatingSystem(name=machine["os"]) if machine.get("os") else None,
+    import requests
+    from sekoia_automation.asset_connector import AssetConnector
+    from sekoia_automation.storage import PersistentJSON
+    from sekoia_automation_models.connector import AssetItem
+    from sekoia_automation_models.hostname import split_hostname
+    from sekoia_automation_models.ocsf.base import Metadata, Product
+    from sekoia_automation_models.ocsf.device import (
+        Device,
+        DeviceOCSFModel,
+        DeviceTypeId,
+        DeviceTypeStr,
+        OperatingSystem,
     )
 
-
-def to_device_item(machine: dict) -> DeviceOCSFModel | None:  # (1)!
-    device = to_device(machine)
-    if device is None:
-        return None
-    return DeviceOCSFModel(
-        activity_id=2,
-        activity_name="Collect",
-        category_name="Discovery",
-        category_uid=5,
-        class_name="Device Inventory Info",
-        class_uid=5001,
-        type_name="Device Inventory Info: Collect",
-        type_uid=500102,
-        time=time.time(),
-        metadata=METADATA,
-        device=device,
-    )
+    METADATA = Metadata(product=Product(name="My Product", vendor_name="My Vendor"), version="1.5.0")
 
 
-REFRESH_INTERVAL = 7 * 24 * 3600  # (2)!
-
-
-class MachinesAssetConnector(AssetConnector):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.context = PersistentJSON("context.json", self.data_path)
-        self._last_updated_at: str | None = None
-        self._ids_at_last_updated_at: list[str] = []
-
-    def fetch_machines(self, updated_since: str | None) -> Generator[dict, None, None]:  # (3)!
-        response = requests.get(
-            f"{self.module.configuration['base_url']}/machines",
-            headers={"Authorization": f"Bearer {self.module.configuration['api_key']}"},
-            params={"updated_since": updated_since, "sort": "updated_at"},
-            timeout=30,
+    def to_device(machine: dict) -> Device | None:
+        hostname, domain = split_hostname(machine["name"])
+        if hostname is None:
+            return None  # Not a usable hostname: skip the machine
+        return Device(
+            type_id=DeviceTypeId.SERVER,
+            type=DeviceTypeStr.SERVER,
+            uid=machine["id"],
+            hostname=hostname,
+            domain=domain,
+            os=OperatingSystem(name=machine["os"]) if machine.get("os") else None,
         )
-        response.raise_for_status()
-        yield from response.json()["machines"]
 
-    def get_assets(self) -> Generator[AssetItem, None, None]:
-        with self.context as context:
-            if time.time() - context.get("refreshed_at", 0) >= REFRESH_INTERVAL:
-                context["refreshed_at"] = time.time()
+
+    def to_device_item(machine: dict) -> DeviceOCSFModel | None:  # (1)!
+        device = to_device(machine)
+        if device is None:
+            return None
+        return DeviceOCSFModel(
+            activity_id=2,
+            activity_name="Collect",
+            category_name="Discovery",
+            category_uid=5,
+            class_name="Device Inventory Info",
+            class_uid=5001,
+            type_name="Device Inventory Info: Collect",
+            type_uid=500102,
+            time=time.time(),
+            metadata=METADATA,
+            device=device,
+        )
+
+
+    REFRESH_INTERVAL = 7 * 24 * 3600  # (2)!
+
+
+    class MachinesAssetConnector(AssetConnector):
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.context = PersistentJSON("context.json", self.data_path)
+            self._last_updated_at: str | None = None
+            self._ids_at_last_updated_at: list[str] = []
+
+        def fetch_machines(self, updated_since: str | None) -> Generator[dict, None, None]:  # (3)!
+            response = requests.get(
+                f"{self.module.configuration['base_url']}/machines",
+                headers={"Authorization": f"Bearer {self.module.configuration['api_key']}"},
+                params={"updated_since": updated_since, "sort": "updated_at"},
+                timeout=30,
+            )
+            response.raise_for_status()
+            yield from response.json()["machines"]
+
+        def get_assets(self) -> Generator[AssetItem, None, None]:
+            with self.context as context:
+                if time.time() - context.get("refreshed_at", 0) >= REFRESH_INTERVAL:
+                    context["refreshed_at"] = time.time()
+                    context.pop("last_updated_at", None)
+                    context.pop("ids_at_last_updated_at", None)
+                since = context.get("last_updated_at")
+                self._last_updated_at = since
+                self._ids_at_last_updated_at = list(context.get("ids_at_last_updated_at", []))
+            pushed_at_since = set(self._ids_at_last_updated_at)
+
+            for machine in self.fetch_machines(updated_since=since):
+                if machine["updated_at"] == since and machine["id"] in pushed_at_since:
+                    continue  # (4)!
+                if machine["updated_at"] != self._last_updated_at:
+                    self._last_updated_at = machine["updated_at"]
+                    self._ids_at_last_updated_at = []
+                self._ids_at_last_updated_at.append(machine["id"])
+                if item := to_device_item(machine):
+                    yield item
+
+        def update_checkpoint(self) -> None:
+            if self._last_updated_at:
+                with self.context as context:
+                    context["last_updated_at"] = self._last_updated_at
+                    context["ids_at_last_updated_at"] = list(self._ids_at_last_updated_at)
+
+        def reset_checkpoint(self) -> None:
+            with self.context as context:
                 context.pop("last_updated_at", None)
                 context.pop("ids_at_last_updated_at", None)
-            since = context.get("last_updated_at")
-            self._last_updated_at = since
-            self._ids_at_last_updated_at = list(context.get("ids_at_last_updated_at", []))
 
-        for machine in self.fetch_machines(updated_since=since):
-            if machine["updated_at"] == since and machine["id"] in self._ids_at_last_updated_at:
-                continue  # (4)!
-            if machine["updated_at"] != self._last_updated_at:
-                self._last_updated_at = machine["updated_at"]
-                self._ids_at_last_updated_at = []
-            self._ids_at_last_updated_at.append(machine["id"])
-            if item := to_device_item(machine):
-                yield item
+        def get_mapped_fields(self) -> dict[str, str]:
+            return {"name": "device.hostname", "os": "device.os.name"}
+    ```
 
-    def update_checkpoint(self) -> None:
-        if self._last_updated_at:
-            with self.context as context:
-                context["last_updated_at"] = self._last_updated_at
-                context["ids_at_last_updated_at"] = list(self._ids_at_last_updated_at)
-
-    def reset_checkpoint(self) -> None:
-        with self.context as context:
-            context.pop("last_updated_at", None)
-            context.pop("ids_at_last_updated_at", None)
-
-    def get_mapped_fields(self) -> dict[str, str]:
-        return {"name": "device.hostname", "os": "device.os.name"}
-```
-
-1. Returns `None` for a machine without a usable hostname. See [Report each machine and account once](#report-each-machine-and-account-once).
-2. Once a week, the connector sends every machine again. See [Send only what changed](#send-only-what-changed).
-3. A call to the API of your product, here an imaginary one. It reads the product URL and credentials from the module configuration, and returns the machines updated at or after `updated_since`, sorted by update time, oldest first.
-4. Several machines can share an update time. The checkpoint keeps the IDs already pushed at its update time, so that the next cycle sends the others, and only them.
+    1. Returns `None` for a machine without a usable hostname. See [Report each machine and account once](#report-each-machine-and-account-once).
+    2. Once a week, the connector sends every machine again. See [Send only what changed](#send-only-what-changed).
+    3. A call to the API of your product, here an imaginary one. It reads the product URL and credentials from the module configuration, and returns the machines updated at or after `updated_since`, sorted by update time, oldest first.
+    4. Several machines can share an update time. The checkpoint keeps the IDs already pushed at its update time, so that the next cycle sends the others, and only them.
 
 When `update_checkpoint()` runs, `get_assets()` is paused on the last item of the pushed batch, so `_last_updated_at` is the position of that item.
 
@@ -270,10 +245,10 @@ Build every item with a model of [sekoia-automation-models](https://github.com/S
 
 | Item | Model | `class_uid` | `category_uid` | `activity_id` | `type_uid` |
 |---|---|---|---|---|---|
-| Device | `DeviceOCSFModel` | 5001, Device Inventory Info | 5, Discovery | 2, Collect | 500102 |
-| User | `UserOCSFModel` | 5003, User Inventory Info | 5, Discovery | 2, Collect | 500302 |
-| Software | `SoftwareOCSFModel` | 5020, Software Inventory Info | 5, Discovery | 2, Collect | 502002 |
-| Vulnerability finding | `VulnerabilityOCSFModel` | 2002, Vulnerability Finding | 2, Findings | 1, Create, or 3, Close | 200201 or 200203 |
+| Device | [`DeviceOCSFModel`](https://github.com/SEKOIA-IO/sekoia-automation-models/blob/v1.5.0/sekoia_automation_models/ocsf/device.py) | 5001, [Device Inventory Info](https://schema.ocsf.io/classes/inventory_info) | 5, Discovery | 2, Collect | 500102 |
+| User | [`UserOCSFModel`](https://github.com/SEKOIA-IO/sekoia-automation-models/blob/v1.5.0/sekoia_automation_models/ocsf/user.py) | 5003, [User Inventory Info](https://schema.ocsf.io/classes/user_inventory) | 5, Discovery | 2, Collect | 500302 |
+| Software | [`SoftwareOCSFModel`](https://github.com/SEKOIA-IO/sekoia-automation-models/blob/v1.5.0/sekoia_automation_models/ocsf/software.py) | 5020, [Software Inventory Info](https://schema.ocsf.io/classes/software_info) | 5, Discovery | 2, Collect | 502002 |
+| Vulnerability finding | [`VulnerabilityOCSFModel`](https://github.com/SEKOIA-IO/sekoia-automation-models/blob/v1.5.0/sekoia_automation_models/ocsf/vulnerability.py) | 2002, [Vulnerability Finding](https://schema.ocsf.io/classes/vulnerability_finding) | 2, Findings | 1, Create, or 3, Close | 200201 or 200203 |
 
 `type_uid` is `class_uid` × 100 + `activity_id`, and `type_name` is the class name and the activity name, for instance `Device Inventory Info: Collect`.
 
@@ -285,7 +260,7 @@ To see which OCSF fields Sekoia reads for each category, see the [Asset categori
 
 An analyst trusts an inventory where each machine is one asset. Two assets for the same machine split its vulnerabilities, its alerts and its risk score in two.
 
-1. Build `hostname` and `domain` with `split_hostname()`. It turns `SRV01.corp.example.com` into `srv01` and `corp.example.com`, the way Sekoia stores a hostname.
+1. Build `hostname` and `domain` with [`split_hostname()`](https://github.com/SEKOIA-IO/sekoia-automation-models/blob/v1.5.0/sekoia_automation_models/hostname.py). It turns `SRV01.corp.example.com` into `srv01` and `corp.example.com`, the way Sekoia stores a hostname.
 2. Skip the machine when `split_hostname()` returns no hostname.
 3. Report each machine with the same hostname, and each account with the same username or email, at every run.
 
@@ -297,7 +272,7 @@ split_hostname("srv01")  # ("srv01", None)
 split_hostname("10.0.0.10")  # (None, None): skip the machine
 ```
 
-`to_device()` in [Write the asset connector](#write-the-asset-connector) uses it to build a device.
+`to_device()`, in the complete asset connector of [Write the asset connector](#write-the-asset-connector), uses it to build a device.
 
 !!! info "Safeguard: hostname validation"
     Sekoia rejects an item whose `device.hostname` is a fully qualified name or not a usable hostname. The other items of the push are accepted. Without this check, a machine reported as `srv01.corp.example.com` by your connector and as `srv01` by an agent would become two assets.
