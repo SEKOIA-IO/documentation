@@ -51,6 +51,8 @@ Review the log entries to identify the root cause. Common issues include:
 
 A push error appears in the connector logs with its response code and error code. A push accepted with rejected items is the exception: the connector logs it as a success, and only the push response lists the rejected items. Errors apply to built-in and custom asset connectors, unless the scope says otherwise.
 
+A 200 means that Sekoia accepted the push, not that every item was processed. From version 1.25.0 of `sekoia-automation-sdk`, the connector follows the processing of each push. When it fails, the connector logs `Asset push task <id> ended with the status <status>` as an error.
+
 | Response | Error code | Cause | Action | Scope |
 |---|---|---|---|---|
 | 200 with `rejected` | - | Some items have an invalid or fully-qualified `device.hostname`. The other items are accepted. `rejected` lists up to 50 rejected items with the reason. | Send the short hostname in `hostname` and the rest in `domain`. | Built-in and custom |
