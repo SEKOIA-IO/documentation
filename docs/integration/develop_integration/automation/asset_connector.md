@@ -134,7 +134,7 @@ if __name__ == "__main__":
 
 ### Dependencies
 
-- `sekoia-automation-sdk` TBD or later. From this version, the connector logs the error code of every refused push.
+- `sekoia-automation-sdk` 1.27.3 or later. From this version, the connector logs the error code of every refused push.
 - `sekoia-automation-models` 1.5.0 or later, for `split_hostname()`. The SDK installs this package; require 1.5.0 explicitly.
 
 ## Write the asset connector
@@ -266,7 +266,7 @@ When `update_checkpoint()` runs, `get_assets()` is paused on the last item of th
 
 ### Build items with the OCSF models
 
-Build every item with a model of [sekoia-automation-models](https://github.com/SEKOIA-IO/sekoia-automation-models), from `sekoia_automation_models.ocsf`. Sekoia validates each push against the same models. The SDK also exposes them under `sekoia_automation.asset_connector.models.ocsf`.
+Build every item with a model of [sekoia-automation-models](https://github.com/SEKOIA-IO/sekoia-automation-models/tree/v1.5.0/sekoia_automation_models/ocsf), from `sekoia_automation_models.ocsf`. Sekoia validates each push against the same models. The SDK also exposes them under `sekoia_automation.asset_connector.models.ocsf`.
 
 | Item | Model | `class_uid` | `category_uid` | `activity_id` | `type_uid` |
 |---|---|---|---|---|---|
@@ -310,13 +310,10 @@ A custom asset connector updates the assets your community already has, whatever
 |---|---|---|
 | Device | The host asset with the same hostname, regardless of case. Revoked assets are excluded. | A new host asset is created. |
 | User | The account asset with the same email when the username is an email address, or the same username otherwise. | A new account asset is created. |
-| Vulnerability finding | The finding of the same asset whose CVEs include all the CVEs it carries, or with the same `finding_info.uid` when it has no CVE. | A new finding is created. |
+| Software | The application with the same name and version, on the host asset with the same hostname as the device the item carries. A software without a name is ignored. | A new application is created. A new version creates a new application. |
+| Vulnerability finding | The finding whose CVEs include all the CVEs it carries, or with the same `finding_info.uid` when it has no CVE, on the host asset with the same hostname as the device the finding carries. | A new finding is created. |
 
-When an item matches an asset:
-
-- Each property the item carries overwrites the stored value.
-- Empty core properties of a device, such as OS, IP address or MAC address, clear the stored value.
-- Interfaces, groups, partitions and accounts the item carries replace the stored ones. When the item carries none, the stored ones are kept.
+Give each software and each finding the device it belongs to, with the same hostname as the device item of that machine. [How a push updates an existing asset](/xdr/features/collect/assets.md#how-a-push-updates-an-existing-asset) says which properties a push overwrites, clears or keeps.
 
 ### Send only what changed
 
@@ -324,7 +321,7 @@ A connector that sends its whole inventory at every cycle sends it again at once
 
 1. Fetch only what changed in the product since the checkpoint.
 2. Yield nothing when nothing changed, so that the connector waits for `frequency`.
-3. Let the SDK group the items into batches, rather than pushing them one by one.
+3. Let the SDK group the items into batches of at most 200 items, rather than pushing them one by one. A push keeps only its first 200 items, and drops the others without an error.
 4. Send every item again at least once a week, as `REFRESH_INTERVAL` does in [Write the asset connector](#write-the-asset-connector).
 
 The weekly refresh does two things:
@@ -339,7 +336,7 @@ A refresh counts in the 24-hour item quota like any other push.
 
 ### Keep items small
 
-Send only the interfaces, groups and accounts that describe the asset.
+Send only the interfaces, groups and accounts that describe the asset. Sekoia keeps the first 10 network interfaces of a device, 20 groups of a user, 20 hashes of a software and 20 references of a vulnerability, and cuts text fields after 1,024 characters. It drops the rest without an error. The values are in [Asset connector limits](/xdr/features/modules/reveal_asset_connectors_limits.md).
 
 !!! info "Safeguard: item size"
     An item over the item-size limit is refused with a 413 `ASSET_CONNECTOR_PUSH_TOO_LARGE`. The connector logs the error and goes on with the next batch.
@@ -379,11 +376,11 @@ Filter the findings in the connector code before pushing them, for instance by C
 A bug can make a connector create a new asset at every run, or never close its findings. Storage limits stop such a connector before it fills your inventory with duplicate and stale data.
 
 !!! info "Safeguard: storage limits"
-    Each configuration and each community can store a limited number of active assets, active applications and open findings, in proportion to the number of assets your community subscribed. The community also has lifetime limits on everything it ever stored. When a limit is reached, every push of the configuration receives a 429 `ASSET_CONNECTOR_LIMIT_REACHED`, and `details.limits` names the reached limit. The connector pauses, and pushes again once usage is back under the limit. See [Storage limits for custom asset connectors](/xdr/features/modules/reveal_asset_connectors_limits.md#storage-limits-for-custom-asset-connectors).
+    Each configuration and each community can store a limited number of active assets, active applications and open findings, in proportion to the number of assets included in the community subscription. The community also has lifetime limits on everything it ever stored. When a limit is reached, every push of the configuration receives a 429 `ASSET_CONNECTOR_LIMIT_REACHED`, and `detail.limits` names the reached limit. The connector pauses, and pushes again once usage is back under the limit. See [Storage limits for custom asset connectors](/xdr/features/modules/reveal_asset_connectors_limits.md#storage-limits-for-custom-asset-connectors).
 
 A connector that follows [Report each machine and account once](#report-each-machine-and-account-once) and [Keep findings up to date](#keep-findings-up-to-date) stays far from the active and open-finding limits.
 
-Lifetime limits are different: they count every asset, application and finding your community ever stored, including closed findings and the data of deleted configurations, and they never decrease. Before you collect a product whose assets come and go, such as short-lived cloud instances, check that its volume over time fits these limits.
+Lifetime limits are different: they count every asset, application and finding your community ever stored, including closed findings and the data of deleted configurations. They decrease only when assets are revoked: a revoked asset, its applications and its findings are no longer counted. Before you collect a product whose assets come and go, such as short-lived cloud instances, check that its volume over time fits these limits.
 
 ### Keep the SDK up to date
 
@@ -394,7 +391,7 @@ The SDK sets the version of the push format. Update `sekoia-automation-sdk` when
 
 ## Read the push response
 
-From `sekoia-automation-sdk` TBD, every refused push appears in the connector logs with its response code and error code. Find the logs in the asset connectors panel: see [Troubleshoot asset connectors](/xdr/features/modules/reveal_asset_connectors_troubleshoot.md#diagnose-push-errors).
+From `sekoia-automation-sdk` 1.27.3, every refused push appears in the connector logs with its response code and error code. A 200 means that Sekoia accepted the push, not that it processed every item: when the processing fails, the connector logs `Asset push task <id> ended with the status <status>` as an error. Find the logs in the asset connectors panel: see [Troubleshoot asset connectors](/xdr/features/modules/reveal_asset_connectors_troubleshoot.md#diagnose-push-errors).
 
 | Response | Safeguard | Fix in the connector |
 |---|---|---|

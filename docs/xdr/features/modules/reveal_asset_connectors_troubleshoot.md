@@ -51,6 +51,8 @@ Review the log entries to identify the root cause. Common issues include:
 
 A push error appears in the connector logs with its response code and error code. A push accepted with rejected items is the exception: the connector logs it as a success, and only the push response lists the rejected items. Errors apply to built-in and custom asset connectors, unless the scope says otherwise.
 
+A 200 means that Sekoia accepted the push, not that every item was processed. From version 1.25.0 of `sekoia-automation-sdk`, the connector follows the processing of each push. When it fails, the connector logs `Asset push task <id> ended with the status <status>` as an error.
+
 | Response | Error code | Cause | Action | Scope |
 |---|---|---|---|---|
 | 200 with `rejected` | - | Some items have an invalid or fully-qualified `device.hostname`. The other items are accepted. `rejected` lists up to 50 rejected items with the reason. | Send the short hostname in `hostname` and the rest in `domain`. | Built-in and custom |
@@ -58,8 +60,8 @@ A push error appears in the connector logs with its response code and error code
 | 403 | `INSUFFICIENT_PERMISSIONS` | The API key cannot push assets to the community of the configuration. | Use an API key of that community with the permission to push assets. | Built-in and custom |
 | 404 | `ASSET_CONNECTOR_NOT_FOUND` | The asset connector configuration was deleted or does not exist. | Check the configuration the connector runs for. | Built-in and custom |
 | 413 | `ASSET_CONNECTOR_PUSH_TOO_LARGE` | An item is larger than the item-size limit. | Send fewer interfaces, groups or accounts in the item. | Built-in and custom |
-| 429 | `ASSET_CONNECTOR_RATE_LIMIT_EXCEEDED` | The configuration reached the push rate limit. `details.limit` is `items per day` for the 24-hour item quota. | Per minute: send larger batches less often. Per 24 hours: send fewer items, or wait for the quota to reset 24 hours after the first counted push. | Built-in and custom |
-| 429 | `ASSET_CONNECTOR_LIMIT_REACHED` | The configuration or its community reached a storage limit. `details.limits` lists the reached limits. | See [Storage limits for custom asset connectors](/xdr/features/modules/reveal_asset_connectors_limits.md#storage-limits-for-custom-asset-connectors). | Custom only |
+| 429 | `ASSET_CONNECTOR_RATE_LIMIT_EXCEEDED` | The configuration reached the push rate limit. `detail.limit` is `items per day` for the 24-hour item quota. | Per minute: send larger batches less often. Per 24 hours: send fewer items, or wait for the quota to reset 24 hours after the first counted push. | Built-in and custom |
+| 429 | `ASSET_CONNECTOR_LIMIT_REACHED` | The configuration or its community reached a storage limit. `detail.limits` lists the reached limits. | See [Storage limits for custom asset connectors](/xdr/features/modules/reveal_asset_connectors_limits.md#storage-limits-for-custom-asset-connectors). | Custom only |
 | 503 | `ASSET_CONNECTOR_PUSH_UNAVAILABLE` | Sekoia could not confirm the delivery. Some items may have been accepted. | The connector does not retry the batch. See the note below. | Built-in and custom |
 
 After a 429, the connector waits for one hour by default before retrying from its last checkpoint. This pause does not reset the 24-hour item quota.
@@ -74,7 +76,7 @@ If a 503 persists, contact Sekoia support. A 403 or 404 persists until the confi
 !!! note "Replaying an item"
     Replaying an item can update the existing asset when its matching identifiers remain unchanged. Devices match on `hostname`, users match on email or username, and vulnerability findings match on their CVEs or, when no CVE is present, `finding_info.uid`.
 
-The logs show the error code of a 429 from version TBD of `sekoia-automation-sdk`.
+The logs show the error code of a 429 from version 1.27.3 of `sekoia-automation-sdk`.
 
 The values of the limits are in [Asset connector limits](/xdr/features/modules/reveal_asset_connectors_limits.md).
 
