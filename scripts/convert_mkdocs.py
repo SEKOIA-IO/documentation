@@ -23,8 +23,12 @@ import re
 import subprocess
 import sys
 from urllib.parse import quote, unquote
+
 from collections import Counter
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+import section_links as SL  # noqa: E402
 
 HINT_STYLE = {
     "note": "info", "info": "info", "abstract": "info", "summary": "info", "example": "info",
@@ -37,7 +41,7 @@ ADMON_RE = re.compile(r'^(?P<ind>[ \t]*)(?P<mark>!!!|\?\?\?\+?)\s*(?P<type>[\w-]
 TAB_RE = re.compile(r'^(?P<ind>[ \t]*)===\+?\s+"(?P<title>[^"]*)"\s*$')
 FENCE_RE = re.compile(r'^\s*(`{3,}|~{3,})')
 ATTR_RE = re.compile(r'(\]\([^)]*\))\{[^}\n]*\}')
-LINK_RE = re.compile(r'(\]\()(/[^)\s#]*)(#[^)\s]*)?(\))')
+LINK_RE = re.compile(r'(\]\(<?)(/[^)\s#>]*(?: [^)#>]*)?)(#[^)\s>]*)?(>?\))')
 INCLUDE_RE = re.compile(r'\{!\s*([^!\s]+)\s*!\}')
 # Les contenus inclus sont encadrés de balises pour pouvoir être rafraîchis
 # quand le fichier source de _shared_content change (contenus générés notamment).
@@ -143,25 +147,64 @@ def convert_inline(text, path, docs_root):
         return m.group(1)
     text = ATTR_RE.sub(attr, text)
 
+    sectioned = SL.config() and docs_root == Path("docs").absolute()
+
     def link(m):
         target = unquote(m.group(2))
         abs_target = docs_root / target.lstrip("/")
         if not abs_target.exists() and not Path(target).suffix:
             abs_target = docs_root / (target.strip("/") + ".md")
+        if not abs_target.exists() and sectioned:   # ancien chemin : suivre les déplacements
+            moved = SL.map_path("docs/" + abs_target.relative_to(docs_root).as_posix())
+            abs_target = Path(moved).absolute()
         if not abs_target.exists():
             stats["liens absolus vers une cible introuvable (laissés tels quels)"] += 1
             print(f"  ! lien introuvable : {path}: {target}", file=sys.stderr)
             return m.group(0)
-        rel = quote(os.path.relpath(abs_target, path.parent).replace(os.sep, "/"))
+        if sectioned:
+            rel = quote(SL.link_for(abs_target.relative_to(docs_root).as_posix(),
+                                    path.relative_to(docs_root).as_posix(), docs_root), safe="/:#")
+        else:
+            rel = quote(os.path.relpath(abs_target, path.parent).replace(os.sep, "/"))
         stats["liens absolus -> relatifs"] += 1
         return f"{m.group(1)}{rel}{m.group(3) or ''}{m.group(4)}"
     return LINK_RE.sub(link, text)
 
 
+REL_RE = re.compile(r'(\]\(<?|src=")([^/<)"\s#:?][^)"\s#?>]*)((?:#[^)"\s>]*)?>?[)"])')
+
+
+def rebase_included(content):
+    """Après le découpage, un contenu inclus réinséré dans une page déplacée garde des liens
+    relatifs écrits pour l'ancien emplacement de la page : on les recalcule (règles de section)."""
+    cur = CURRENT[0]
+    docs_root = Path("docs").absolute()
+    if not (SL.config() and cur and (docs_root / cur).exists()):
+        return content
+    inverse = {v: k for k, v in SL.rename_map()[0].items()}
+    orig = inverse.get("docs/" + cur, "docs/" + cur)[len("docs/"):]
+    if orig == cur:
+        return content
+
+    def fix(m):
+        t = unquote(m.group(2))
+        old_target = os.path.normpath(os.path.join(os.path.dirname(orig), t))
+        if old_target.startswith("assets/"):
+            new_rel = old_target
+        else:
+            moved = SL.map_path("docs/" + old_target)
+            if not Path(moved).exists():
+                return m.group(0)
+            new_rel = moved[len("docs/"):]
+        return m.group(1) + SL.link_for(new_rel, cur, docs_root) + m.group(3)
+    return REL_RE.sub(fix, content)
+
+
 def inline_includes(text, repo_root, depth=0):
     def raw(rel):
         content = (repo_root / rel).read_text(encoding="utf-8").rstrip("\n")
-        return inline_includes(content, repo_root, depth + 1) if depth < 5 else content
+        content = inline_includes(content, repo_root, depth + 1) if depth < 5 else content
+        return rebase_included(content) if depth == 0 else content
 
     def repl(m):
         rel = m.group(1)
@@ -195,7 +238,7 @@ def convert(text, path, docs_root, repo_root, do_includes):
 def changed_files(ref, root):
     top = Path(subprocess.run(["git", "rev-parse", "--show-toplevel"], capture_output=True,
                               text=True, check=True).stdout.strip())
-    out = subprocess.run(["git", "diff", "--name-only", "-M", "--diff-filter=ACMR", ref, "HEAD", "--", str(root)],
+    out = subprocess.run(["git", "diff", "--name-only", "-M", "-l0", "--diff-filter=ACMR", ref, "HEAD", "--", str(root)],
                          capture_output=True, text=True, check=True).stdout
     return [(top / f).absolute() for f in out.splitlines() if f.endswith(".md") and (top / f).exists()]
 

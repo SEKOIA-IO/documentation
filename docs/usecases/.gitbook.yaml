@@ -1,5 +1,5 @@
 root: ./
 
 structure:
-  readme: massive_export.md
+  readme: use_cases_index.md
   summary: SUMMARY.md

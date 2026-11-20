@@ -1,5 +1,6 @@
 # Table of contents
 
+* [Use cases](use_cases_index.md)
 * [Export large volumes of events](massive_export.md)
 * [Implement a blocklist in Sekoia](implement_blocklist.md)
 * [Synchronize Alerts with an external tool](synchronize_alerts.md)

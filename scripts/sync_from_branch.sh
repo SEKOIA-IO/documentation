@@ -18,9 +18,23 @@ finish() {
   python3 scripts/convert_mkdocs.py "$ROOT" --since "$TAG" "${EXARGS[@]}" --inline-includes --write | grep -v '^ ' || true
   git add -A "$ROOT" && git commit -qm "Sync depuis $SRC : contenus inclus" || true
 
-  echo "== Nouveaux fichiers absents de SUMMARY.md"
+  echo "== Ajout des nouvelles pages dans SUMMARY.md"
+  python3 scripts/add_to_summary.py --source "origin/$SRC" --docs "$ROOT" || true
+  git add -A "$ROOT" && git commit -qm "Sync depuis $SRC : navigation" || true
+
+  echo "== Pages encore absentes de SUMMARY.md (à placer dans GitBook)"
   git diff --name-only --diff-filter=A "$TAG" HEAD -- "$ROOT" | grep '\.md$' | grep -v "^$ROOT/integration/" \
-    | while read -r f; do grep -qF "(${f#"$ROOT"/}" "$ROOT/SUMMARY.md" || echo "  ! ${f#"$ROOT"/}"; done || true
+    | python3 -c '
+import sys
+from pathlib import Path
+for f in map(str.strip, sys.stdin):
+    if Path(f).name == "SUMMARY.md" or not Path(f).exists():
+        continue
+    s = next((p / "SUMMARY.md" for p in Path(f).parents if (p / "SUMMARY.md").exists()), None)
+    rel = Path(f).relative_to(s.parent).as_posix() if s else f
+    if s is None or "](" + rel + ")" not in s.read_text(encoding="utf-8"):
+        print("  !", f)
+' || true
 
   git tag -f "$SYNC_TAG" "$(cat .git/port_source_ref)" >/dev/null
   git tag -f "$TAG" >/dev/null
