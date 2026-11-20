@@ -29,11 +29,11 @@ Every asset has a **type**: host, account or network. An asset can also have a *
 | --- | --- | --- |
 | Host | `host` | A machine: workstation, server, phone, virtual machine or network appliance. |
 | Account | `account` | An identity that signs in: a person, a service or a machine. |
-| Network | `network` | A network. A network asset has no category, and the asset form does not create network assets. |
+| Network | `network` | A network. The asset form offers no category for a network asset. |
 
-The tables below list the categories of each type. The **Set by** column tells which sources give that category: you in the asset form, [automatic asset discovery](#automatic-asset-discovery), or an [asset connector](#asset-collection-via-asset-connectors). The value is the one the API and SOL queries return.
+The tables below list the categories of each type. The **Set by** column tells which sources give that category: you in the [asset form](#manual-asset-creation), [automatic asset discovery](#automatic-asset-discovery), or an [asset connector](#asset-collection-via-asset-connectors). The value is the one the API and SOL queries return.
 
-**Host categories**
+#### Host categories
 
 | Category | Value | Set by |
 | --- | --- | --- |
@@ -47,7 +47,7 @@ The tables below list the categories of each type. The **Set by** column tells w
 | Unknown | `unknown` | Asset form |
 | Other | `other` | Asset form |
 
-**Account categories**
+#### Account categories
 
 | Category | Value | Set by |
 | --- | --- | --- |
@@ -55,12 +55,12 @@ The tables below list the categories of each type. The **Set by** column tells w
 | Admin | `admin` | Asset form |
 | Service Account | `service_account` | Asset form, asset connector |
 | Machine Account | `machine_account` | Asset form |
-| System Account | `system_account` | Asset connector |
+| System account | `system_account` | Asset connector |
 | System | `system` | Asset form |
 | Unknown | `unknown` | Asset form |
 
 !!! note
-    System Account (`system_account`), set by asset connectors, and System (`system`), set in the asset form, are two different values.
+    The asset list shows the System account category as `system_account`. It is a different value from System (`system`), which you set in the asset form.
 
 ### How an asset gets its category
 
@@ -70,12 +70,12 @@ Three sources can give an asset its category. This section tells which one set t
 | --- | --- | --- |
 | [Asset discovery](#automatic-asset-discovery) | `server` when the `host.type` field of the event is `server`. Otherwise, no category. | `user` |
 | [Asset connector](#asset-collection-via-asset-connectors) | The category of the device type it pushes. See [Device type to category](#device-type-to-category). | The category of the user type it pushes. See [User type to category](#user-type-to-category). |
-| You, in the asset form | Any host category. | Any account category. |
+| You, in the asset form | A host category the form offers. | An account category the form offers. |
 
-The first source that gives a category wins:
+The first source that gives a category wins, until you change it:
 
 - Asset discovery gives a category only to the assets it creates.
-- An asset connector gives a category to the assets it creates, and to an existing account that has none.
+- An asset connector gives a category to the hosts and accounts it creates, and to an existing account that has none. A host it creates from a software item gets no category.
 - Asset discovery and asset connectors never replace a category, whoever set it.
 - You can change the category in the asset form at any time. Asset discovery and asset connectors keep the category you set.
 
@@ -83,7 +83,7 @@ A host that already exists without a category keeps none when an asset connector
 
 #### Device type to category
 
-An asset connector reads the category of a host from the OCSF `device.type` field it pushes.
+An asset connector reads the category of a host from the OCSF [`device.type`](https://schema.ocsf.io/1.5.0/objects/device) field it pushes.
 
 | `device.type` | Category |
 | --- | --- |
@@ -93,23 +93,23 @@ An asset connector reads the category of a host from the OCSF `device.type` fiel
 | Virtual | `virtual` |
 | Firewall | `firewall` |
 | Switch | `switch` |
-| Unknown, Other, or no type | No category |
+| Unknown or Other | No category |
 
 #### User type to category
 
-An asset connector reads the category of an account from the OCSF `user.type` field it pushes.
+An asset connector reads the category of an account from the OCSF [`user.type`](https://schema.ocsf.io/1.5.0/objects/user) field it pushes.
 
 | `user.type` | Category |
 | --- | --- |
 | User | `user` |
-| Admin | `user`, with the `is_admin` property set to `true` |
+| Admin | `user`, with the `is_admin` property set to `True` |
 | Service | `service_account` |
 | System | `system_account` |
 | Unknown, or no type | No category |
 
 An Admin account gets the `user` category because Admin is a right the account holds in one source, not a kind of account. The [`is_admin` property](#account-properties-set-by-asset-connectors) keeps this right.
 
-The OCSF `user.account.type` field, such as LDAP Account or Windows Account, does not change the category. It tells which system the account comes from, and is stored in the [`user_type` property](#account-properties-set-by-asset-connectors).
+The OCSF [`user.account.type`](https://schema.ocsf.io/1.5.0/objects/account) field, such as LDAP Account or Windows Account, does not change the category. It tells which system the account comes from, and is stored in the [`user_type` property](#account-properties-set-by-asset-connectors).
 
 ### Criticality
 
@@ -171,11 +171,11 @@ Our asset management system comes with a default set of contextual properties ta
 
 #### Account properties set by asset connectors
 
-An asset connector that pushes an account sets these two contextual properties on it.
+Among the contextual properties an asset connector sets on an account, two relate to its category.
 
 | Property | Value |
 | --- | --- |
-| `is_admin` | `true` when the account is pushed with the OCSF user type Admin, `false` otherwise. |
+| `is_admin` | `True` when the account is pushed with the OCSF user type Admin, `False` otherwise. |
 | `user_type` | The OCSF `user.account.type` field: the system the account comes from, such as LDAP Account, Windows Account or Azure AD Account. It does not change the [category](#user-type-to-category). |
 
 #### Best practices for your custom Contextual Properties
@@ -410,9 +410,9 @@ By using custom tags, you can precisely control which assets are included in or 
 To create an asset from our UI, you have to:
 
 1. Click on `Assets` in the principal menu on the left
-2. Click on the `+ New Asset` button and select the type of the asset you want to create,
+2. Click **+ New Asset** and select the type of the asset you want to create,
 3. Give it a name and mark it as reviewed if you believe your new asset is qualified
-4. Select its [category](#types-and-categories)
+4. For a host or an account, select its [category](#types-and-categories). The category is optional.
 5. Define a set of optional tags you want to attach to your asset
 6. Give it a description along with all the `Contextual Properties` you want
 7. Don't forget to define its criticality
