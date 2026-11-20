@@ -21,19 +21,92 @@ In alert investigations, assets serve as valuable reference points, allowing SOC
 
 ## Classification of Assets
 
-### Categories and sub-categories
+### Types and categories
 
-![Assets-types](/assets/operation_center/assets_v2/assets-types.png){align="center", style="max-width:100%"}
+Every asset has a **type**: host, account or network. An asset can also have a **category**, which tells what kind of host or account it is. The type never changes after the asset is created; the category is optional and can change.
 
-Sekoia.io supports three types of assets: **Accounts**, **hosts** and **networks**.
+| Type | Value | What it represents |
+| --- | --- | --- |
+| Host | `host` | A machine: workstation, server, phone, virtual machine or network appliance. |
+| Account | `account` | An identity that signs in: a person, a service or a machine. |
+| Network | `network` | A network. A network asset has no category, and the asset form does not create network assets. |
 
-For each category, there are additional sub-categories to add an optional additional level of categorization:
+The tables below list the categories of each type. The **Set by** column tells which sources give that category: you in the asset form, [automatic asset discovery](#automatic-asset-discovery), or an [asset connector](#asset-collection-via-asset-connectors). The value is the one the API and SOL queries return.
 
-| Category | Sub-category |
+**Host categories**
+
+| Category | Value | Set by |
+| --- | --- | --- |
+| Desktop | `desktop` | Asset form, asset connector |
+| Server | `server` | Asset form, asset connector, asset discovery |
+| Mobile | `mobile` | Asset form, asset connector |
+| Phone | `phone` | Asset form |
+| Virtual | `virtual` | Asset form, asset connector |
+| Firewall | `firewall` | Asset form, asset connector |
+| Switch | `switch` | Asset form, asset connector |
+| Unknown | `unknown` | Asset form |
+| Other | `other` | Asset form |
+
+**Account categories**
+
+| Category | Value | Set by |
+| --- | --- | --- |
+| User | `user` | Asset form, asset connector, asset discovery |
+| Admin | `admin` | Asset form |
+| Service Account | `service_account` | Asset form, asset connector |
+| Machine Account | `machine_account` | Asset form |
+| System Account | `system_account` | Asset connector |
+| System | `system` | Asset form |
+| Unknown | `unknown` | Asset form |
+
+!!! note
+    System Account (`system_account`), set by asset connectors, and System (`system`), set in the asset form, are two different values.
+
+### How an asset gets its category
+
+Three sources can give an asset its category. This section tells which one set the category of an asset, and why another source did not change it.
+
+| Source | Host | Account |
+| --- | --- | --- |
+| [Asset discovery](#automatic-asset-discovery) | `server` when the `host.type` field of the event is `server`. Otherwise, no category. | `user` |
+| [Asset connector](#asset-collection-via-asset-connectors) | The category of the device type it pushes. See [Device type to category](#device-type-to-category). | The category of the user type it pushes. See [User type to category](#user-type-to-category). |
+| You, in the asset form | Any host category. | Any account category. |
+
+The first source that gives a category wins:
+
+- Asset discovery and asset connectors only give a category to an asset that has none. They never replace a category, whoever set it.
+- You can change the category in the asset form at any time. Asset discovery and asset connectors keep the category you set.
+- An asset connector gives a host its category only when it creates the host. A host that asset discovery created without a category keeps no category when an asset connector pushes it later. Set its category in the asset form.
+
+#### Device type to category
+
+An asset connector reads the category of a host from the OCSF `device.type` field it pushes.
+
+| `device.type` | Category |
 | --- | --- |
-| Account | User account, service account, machine account |
-| Host | Desktop, server, mobile |
-| Network | IPv4, IPv6 |
+| Desktop | `desktop` |
+| Server | `server` |
+| Mobile | `mobile` |
+| Virtual | `virtual` |
+| Firewall | `firewall` |
+| Switch | `switch` |
+| Unknown, Other, or no type | No category |
+
+#### User type to category
+
+An asset connector reads the category of an account from the OCSF `user.type` field it pushes.
+
+| `user.type` | Category |
+| --- | --- |
+| User | `user` |
+| Admin | `user`, with the `is_admin` property set to `true` |
+| Service | `service_account` |
+| System | `system_account` |
+| Unknown, or no type | No category |
+
+An Admin account gets the `user` category because Admin is a right the account holds in one source, not a kind of account. The [`is_admin` property](#account-properties-set-by-asset-connectors) keeps this right.
+
+The OCSF `user.account.type` field, such as LDAP Account or Windows Account, does not change the category. It tells which system the account comes from, and is stored in the [`user_type` property](#account-properties-set-by-asset-connectors).
 
 ### Criticality
 
@@ -92,6 +165,15 @@ A contextual property is an additional attribute that can be assigned to an asse
 
 Our asset management system comes with a default set of contextual properties tailored for each type of asset. Additionally, users have the flexibility to create custom contextual properties, allowing for the inclusion of specific details relevant to their organization's unique needs.
 
+
+#### Account properties set by asset connectors
+
+An asset connector that pushes an account sets these two contextual properties on it.
+
+| Property | Value |
+| --- | --- |
+| `is_admin` | `true` when the account is pushed with the OCSF user type Admin, `false` otherwise. |
+| `user_type` | The OCSF `user.account.type` field: the system the account comes from, such as LDAP Account, Windows Account or Azure AD Account. It does not change the [category](#user-type-to-category). |
 
 #### Best practices for your custom Contextual Properties
 
@@ -236,7 +318,7 @@ The following table lists the atom types and their related event fields that are
 
 **Set the Contextual Property `os` to Host**
 
-This rule enriches an existing asset with an `os` contextual property. This property is extracted from the value of all the `os` related fields of an event where its `host.name` field matches the `hostname` detection property of the asset. In addition, this rule categorizes the asset as a Server if the `host.type` contains `server`.
+This rule enriches an existing asset with an `os` contextual property. This property is extracted from the value of all the `os` related fields of an event where its `host.name` field matches the `hostname` detection property of the asset. In addition, this rule gives the asset the Server category if the `host.type` field is `server` and the asset has no category yet.
 
 ##### Attach EDR agent IDs to Host
 
@@ -325,9 +407,9 @@ By using custom tags, you can precisely control which assets are included in or 
 To create an asset from our UI, you have to:
 
 1. Click on `Assets` in the principal menu on the left
-2. Click on the `+ New Asset` button and selects the category of the asset you want to create,
+2. Click on the `+ New Asset` button and select the type of the asset you want to create,
 3. Give it a name and mark it as reviewed if you believe your new asset is qualified
-4. Determine its sub-category
+4. Select its [category](#types-and-categories)
 5. Define a set of optional tags you want to attach to your asset
 6. Give it a description along with all the `Contextual Properties` you want
 7. Don't forget to define its criticality
