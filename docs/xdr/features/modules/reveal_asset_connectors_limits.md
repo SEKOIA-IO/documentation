@@ -5,7 +5,7 @@ _**[Reveal module](/xdr/features/modules/reveal_index.md)** — This feature req
 This article lists the limits that apply to asset connectors and what happens when a connector reaches one. Use it to check which limits apply to your connector.
 
 !!! note "Scope"
-    Rate limits, item-size limits and vulnerability caps apply to built-in and custom asset connectors. Active and lifetime storage limits apply only to custom asset connectors.
+    Rate limits and caps apply to built-in and custom asset connectors. Active and lifetime storage limits apply only to custom asset connectors.
 
 Rate limits and vulnerability caps use the current platform defaults. Custom storage limits depend on the number of assets included in the community subscription. These values may change.
 
@@ -16,9 +16,16 @@ Rate limits and vulnerability caps use the current platform defaults. Custom sto
 | Pushes | 60 per minute | Asset connector configuration | 429 `ASSET_CONNECTOR_RATE_LIMIT_EXCEEDED` |
 | 24-hour item quota | 200,000 items per 24 hours, counted before validation | Asset connector configuration | 429 `ASSET_CONNECTOR_RATE_LIMIT_EXCEEDED`, with `details.limit` set to `items per day` |
 | Item size | 900 KB | Item | 413 `ASSET_CONNECTOR_PUSH_TOO_LARGE` |
+| Items per push | 200 | Push | Nothing is returned. Items after the 200th are dropped. |
 | Vulnerabilities per application | 1,000 | Application | Nothing is returned. Extra vulnerabilities are not stored. |
 | Vulnerabilities per asset | 20,000 | Asset | Nothing is returned. New vulnerabilities are not stored. |
+| Groups per user | 20 | User | Nothing is returned. Extra groups are dropped. |
+| Network interfaces per device | 10 | Device | Nothing is returned. Extra interfaces are dropped. |
+| Hashes per software | 20 | Software | Nothing is returned. Extra hashes are dropped. |
+| References per vulnerability | 20, of up to 512 characters each | Vulnerability | Nothing is returned. Extra references are dropped, and longer ones are cut. |
+| String length | 1,024 characters. Identifiers are not cut. | Any text field of an item | Nothing is returned. Longer strings are cut. |
 
+- The 24-hour item quota counts every item of a push, including the items after the 200th that are dropped.
 - The 24-hour item quota is not a rolling window and does not reset at a fixed time. It resets 24 hours after the first counted push.
 - After a 429, the connector waits for one hour by default before retrying from its last checkpoint. This pause does not reset the 24-hour item quota.
 - The vulnerabilities-per-application cap applies only to CVEs that Sekoia matches from the NVD. It keeps known exploited CVEs first, then the highest CVSS scores.

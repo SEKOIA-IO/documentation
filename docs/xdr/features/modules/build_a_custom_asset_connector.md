@@ -21,22 +21,22 @@ A community can own up to 10 custom integrations that contain an asset connector
 
 ## Step 2: Build valid connector items
 
-1. Build every item with an OCSF model of `sekoia-automation-models`: `DeviceOCSFModel`, `UserOCSFModel`, `SoftwareOCSFModel` or `VulnerabilityOCSFModel`.
+1. Build every item with an OCSF model of [`sekoia-automation-models`](https://github.com/SEKOIA-IO/sekoia-automation-models/tree/v1.5.0/sekoia_automation_models/ocsf): `DeviceOCSFModel`, `UserOCSFModel`, `SoftwareOCSFModel` or `VulnerabilityOCSFModel`.
 2. Send the items in an `AssetList`.
 
 Sekoia validates each push against the same models.
 
 ## Step 3: Normalize hostnames
 
-1. Build `hostname` and `domain` with `split_hostname()`.
+1. Build `hostname` and `domain` with [`split_hostname()`](https://github.com/SEKOIA-IO/sekoia-automation-models/blob/v1.5.0/sekoia_automation_models/hostname.py), from `sekoia_automation_models.hostname`. For instance, `SRV01.corp.example.com` gives `srv01` and `corp.example.com`.
 2. Skip a device when `split_hostname()` returns no hostname.
 
 `split_hostname()` applies the hostname rule of Sekoia. A device without a usable hostname would be rejected.
 
 ## Step 4: Send items in batches
 
-1. Group items into batches instead of sending them one by one.
-2. Keep each item under the item-size limit.
+1. Group items into batches of at most 200 items instead of sending them one by one. Sekoia drops the items after the 200th of a push, without an error.
+2. Keep each item under the [item-size limit](/xdr/features/modules/reveal_asset_connectors_limits.md#rate-limits-and-caps-for-every-asset-connector) of 900 KB.
 3. Filter findings in the connector code before sending them, for instance by CVSS score, or by known exploitation when the source reports it.
 
 ??? example "send only the findings with a CVSS base score of 7.0 or more"
@@ -78,7 +78,8 @@ A custom asset connector updates the assets your community already has, whatever
 |---|---|---|
 | Device | The host asset with the same `hostname` [detection property](/xdr/features/collect/assets.md#detection-properties), regardless of case. Revoked assets are excluded. | A new host asset is created. |
 | User | The account asset with the same email when the username is an email address, or the same username otherwise. | A new account asset is created. |
-| Vulnerability finding | The finding of the same asset whose CVEs include all the CVEs it carries, or with the same `finding_info.uid` when it has no CVE. | A new finding is created. |
+| Software | The application of the host asset with the same name and version. The host asset is the one with the same `hostname` as the device the item carries. | A new application is created. |
+| Vulnerability finding | The finding of the same asset whose CVEs include all the CVEs it carries, or with the same `finding_info.uid` when it has no CVE. The asset is the one with the same `hostname` as the device the finding carries. | A new finding is created. |
 
 When an item matches an asset:
 
