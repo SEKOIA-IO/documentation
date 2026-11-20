@@ -76,7 +76,6 @@ The first source that gives a category wins:
 
 - Asset discovery and asset connectors only give a category to an asset that has none. They never replace a category, whoever set it.
 - You can change the category in the asset form at any time. Asset discovery and asset connectors keep the category you set.
-- An asset connector gives a host its category only when it creates the host. A host that asset discovery created without a category keeps no category when an asset connector pushes it later. Set its category in the asset form.
 
 #### Device type to category
 
