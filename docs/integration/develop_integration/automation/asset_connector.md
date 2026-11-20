@@ -70,7 +70,45 @@ my-assets-module/
 2. The value that `main.py` registers the asset connector with.
 3. `"type": "asset"` marks the file as an asset connector manifest. A file named `connector_*_assets.json` is one even without it.
 4. Required. See [Choose the capability](#choose-the-capability).
-5. Copy `arguments` as is from a manifest of automation-library, such as [Okta Devices](https://github.com/SEKOIA-IO/automation-library/blob/develop/Okta/connector_okta_device_assets.json). It declares `sekoia_base_url`, `sekoia_api_key`, `frequency` and `batch_size` as internal arguments, which users do not see. Do not fill them in: Sekoia sets the API key and the base URL when a user creates the configuration, and `frequency` and `batch_size` keep the defaults of the SDK, 3 hours and 100 items.
+5. Copy `arguments` as is from the block below. It declares `sekoia_base_url`, `sekoia_api_key`, `frequency` and `batch_size` as internal arguments, which users do not see. Do not fill them in: Sekoia sets the API key and the base URL when a user creates the configuration, and `frequency` and `batch_size` keep the defaults of the SDK, 3 hours and 100 items.
+
+??? example "The `arguments` of an asset connector manifest"
+
+    ```json
+    "arguments": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+            "sekoia_base_url": {
+                "description": "Sekoia base URL",
+                "type": "string"
+            },
+            "sekoia_api_key": {
+                "description": "API key to use from sekoia.io",
+                "type": "string"
+            },
+            "frequency": {
+                "description": "Seconds between two cycles",
+                "type": "integer",
+                "minimum": 3600
+            },
+            "batch_size": {
+                "description": "Number of items to push in one batch",
+                "type": "integer",
+                "minimum": 1,
+                "default": 100
+            }
+        },
+        "required": ["sekoia_api_key"],
+        "secrets": ["sekoia_api_key"],
+        "internal": [
+            "sekoia_base_url",
+            "sekoia_api_key",
+            "frequency",
+            "batch_size"
+        ]
+    }
+    ```
 
 Custom asset connectors run in the cloud. The import of the module fails at the **Validating integration** step if the manifest declares the `on_premise` execution mode or an `on_premise_action`.
 
@@ -359,10 +397,10 @@ Lifetime limits are different: they count every asset, application and finding y
 
 ### Keep the SDK up to date
 
-The SDK sets the version of the push format. Update `sekoia-automation-sdk` when a new release comes out.
+The SDK sets the version of the push format, the same for every push of the connector. Update `sekoia-automation-sdk` as soon as a new release comes out.
 
 !!! info "Safeguard: push format version"
-    Sekoia refuses a push in a format version it does not support with a 400 `ASSET_CONNECTOR_UNSUPPORTED_VERSION`, instead of accepting it and dropping its data. The connector does not save its checkpoint, so nothing is lost: update the SDK and the next run sends the items again.
+    Sekoia refuses a push in a format version it does not support with a 400 `ASSET_CONNECTOR_UNSUPPORTED_VERSION`, instead of accepting it and dropping its data. Since every push of the connector carries the same version, every push is refused and the checkpoint does not move: nothing is lost. Update the SDK, and the next cycle sends the items again from the checkpoint.
 
 ## Read the push response
 
