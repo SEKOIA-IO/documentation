@@ -11,11 +11,21 @@ Conversions :
   ![img](x){: style=...}   -> ![img](x)                (attributs MkDocs supprimés)
   ](/xdr/page.md)          -> ](../../xdr/page.md)     (liens absolus -> relatifs)
   {!_shared_content/x.md!} -> contenu du fichier inclus (option --inline-includes)
+  ++ctrl+c++               -> `Ctrl+C`
+  code  # (1)              -> code                     (marqueurs d'annotation retirés, la liste reste)
+
+Les fins de ligne (LF ou CRLF) de chaque fichier sont conservées.
+
+Ce qui reste à reprendre à la main (HTML avec style, <br>, <table>, <iframe>/<video>,
+attributs hors liens) est signalé dans le rapport, fichier par fichier, sans être modifié.
 
 Usage :
   python scripts/convert_mkdocs.py docs/ --exclude integration            # simulation
   python scripts/convert_mkdocs.py docs/ --exclude integration --write
   python scripts/convert_mkdocs.py docs/ --since gitbook-last-sync --write  # fichiers modifiés seulement
+
+  # Équipe Intégrations (docs/integration, hors contenu généré, sans copier les inclusions) :
+  python scripts/convert_mkdocs.py docs/ --only integration --exclude integration/action_library
 """
 import argparse
 import os
@@ -30,7 +40,9 @@ HINT_STYLE = {
     "note": "info", "info": "info", "abstract": "info", "summary": "info", "example": "info",
     "quote": "info", "question": "info", "alternative": "info",
     "tip": "success", "tips": "success", "success": "success", "check": "success", "done": "success",
+    "information": "info", "prerequisites": "info",
     "warning": "warning", "important": "warning", "caution": "warning", "attention": "warning",
+    "warn": "warning", "disclaimer": "warning",
     "danger": "danger", "error": "danger", "failure": "danger", "bug": "danger",
 }
 ADMON_RE = re.compile(r'^(?P<ind>[ \t]*)(?P<mark>!!!|\?\?\?\+?)\s*(?P<type>[\w-]+)?\s*(?:"(?P<title>[^"]*)")?\s*$')
@@ -42,9 +54,22 @@ INCLUDE_RE = re.compile(r'\{!\s*([^!\s]+)\s*!\}')
 # Les contenus inclus sont encadrés de balises pour pouvoir être rafraîchis
 # quand le fichier source de _shared_content change (contenus générés notamment).
 MARKED_RE = re.compile(r'<!-- include:(?P<p>[^ ]+) -->\n.*?\n<!-- endinclude:(?P=p) -->', re.S)
+# Raccourcis clavier pymdownx.keys : ++ctrl+alt+del++
+KEYS_RE = re.compile(r'\+\+([A-Za-z0-9]+(?:\+[A-Za-z0-9]+)*)\+\+')
+# Annotations de code (content.code.annotate) : marqueur « # (1) » ou « // (1)! » en fin de ligne
+ANNOT_RE = re.compile(r'\s*(?:#|//)\s*\(\d+\)!?\s*$')
+# Syntaxe non convertie automatiquement, signalée pour reprise à la main (hors blocs de code)
+TO_REVIEW = {
+    "HTML avec style": re.compile(r'<(?:span|div|p|font)\b[^>]*\bstyle=', re.I),
+    "balises <br>": re.compile(r'<br\s*/?>', re.I),
+    "tableaux HTML": re.compile(r'<table\b', re.I),
+    "<iframe>/<video>": re.compile(r'<(?:iframe|video)\b', re.I),
+    "attributs {: ...} / {#...} hors liens": re.compile(r'\{:[^}\n]*\}|\{\s*[#.][\w-][^}\n%]*\}\s*$'),
+}
 
 stats = Counter()
 CURRENT = [""]  # fichier en cours, pour les messages
+ANNOTATED = set()  # fichiers déjà signalés pour les annotations de code
 
 
 def indent_width(s):
@@ -80,13 +105,14 @@ def convert_blocks(lines):
             mk = m_f.group(1)
             if fence is None:
                 fence = (mk[0], len(mk))
+                line = re.sub(r'\s*\{\s*\.annotate\s*\}', '', line)
             elif mk[0] == fence[0] and len(mk) >= fence[1]:
                 fence = None
             out.append(line)
             i += 1
             continue
         if fence:
-            out.append(line)
+            out.append(strip_annotation(line))
             i += 1
             continue
 
@@ -132,9 +158,47 @@ def convert_blocks(lines):
             out.append(f"{ind}{{% endtabs %}}")
             continue
 
-        out.append(line)
+        out.append(convert_keys(line))
         i += 1
     return out
+
+
+def strip_annotation(line):
+    """Retire un marqueur d'annotation de code ; la liste d'annotations sous le bloc est conservée."""
+    new = ANNOT_RE.sub("", line)
+    if new != line:
+        stats["annotations de code retirées (liste sous le bloc à relire)"] += 1
+        if CURRENT[0] not in ANNOTATED:
+            ANNOTATED.add(CURRENT[0])
+            print(f"  ! {CURRENT[0]}: annotations de code retirées, relire la liste sous le bloc", file=sys.stderr)
+    return new
+
+
+def convert_keys(line):
+    def keys(m):
+        stats["raccourcis ++touches++"] += 1
+        return "`" + "+".join(k.capitalize() for k in m.group(1).split("+")) + "`"
+    return KEYS_RE.sub(keys, line)
+
+
+def report_to_review(text):
+    """Signale (sans modifier) la syntaxe que le script ne sait pas convertir, hors blocs de code."""
+    fence = None
+    for n, line in enumerate(text.split("\n"), 1):
+        m_f = FENCE_RE.match(line)
+        if m_f:
+            mk = m_f.group(1)
+            if fence is None:
+                fence = (mk[0], len(mk))
+            elif mk[0] == fence[0] and len(mk) >= fence[1]:
+                fence = None
+            continue
+        if fence:
+            continue
+        for label, rx in TO_REVIEW.items():
+            if rx.search(line):
+                stats[f"à reprendre à la main : {label}"] += 1
+                print(f"  ! {CURRENT[0]}:{n}: à reprendre à la main ({label}) : {line.strip()[:100]}", file=sys.stderr)
 
 
 def convert_inline(text, path, docs_root):
@@ -200,7 +264,13 @@ def changed_files(ref, root):
     return [(top / f).absolute() for f in out.splitlines() if f.endswith(".md") and (top / f).exists()]
 
 
-def main():
+def in_scope(rel, prefix):
+    """Un dossier (et tout son contenu) ou un fichier précis."""
+    prefix = prefix.strip("/")
+    return rel == prefix or rel.startswith(prefix + "/")
+
+
+def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("docs_root", type=Path)
     ap.add_argument("--write", action="store_true")
@@ -210,7 +280,9 @@ def main():
     ap.add_argument("--only", action="append", default=[], help="ne traiter que ce sous-dossier (répétable)")
     ap.add_argument("--inline-includes", action="store_true", help="remplacer {!...!} par le contenu inclus")
     ap.add_argument("--repo-root", type=Path, default=Path("."), help="base des chemins {!...!} (défaut : .)")
-    args = ap.parse_args()
+    ap.add_argument("--report", action="store_true",
+                    help="signaler, fichier par fichier, la syntaxe à reprendre à la main (HTML, embeds...)")
+    args = ap.parse_args(argv)
 
     docs_root = args.docs_root.absolute()
     files = changed_files(args.since, args.docs_root) if args.since else sorted(docs_root.rglob("*.md"))
@@ -227,21 +299,27 @@ def main():
     for path in files:
         path = path.absolute()
         rel = path.relative_to(docs_root).as_posix()
-        if any(rel.startswith(e.strip("/") + "/") for e in args.exclude):
+        if any(in_scope(rel, e) for e in args.exclude):
             continue
-        if args.only and not any(rel.startswith(o.strip("/") + "/") for o in args.only):
+        if args.only and not any(in_scope(rel, o) for o in args.only):
             continue
         if path.is_symlink():
             stats["liens symboliques (à remplacer par de vrais fichiers, non suivis)"] += 1
             print(f"  ! lien symbolique : {rel} -> {os.readlink(path)}", file=sys.stderr)
             continue
         CURRENT[0] = rel
-        original = path.read_text(encoding="utf-8")
-        new = convert(original, path, docs_root, args.repo_root.resolve(), args.inline_includes)
+        # Lecture sans normalisation des fins de ligne, pour conserver le CRLF des fichiers qui en ont
+        original = path.read_bytes().decode("utf-8")
+        crlf = "\r\n" in original
+        new = convert(original.replace("\r\n", "\n"), path, docs_root, args.repo_root.resolve(), args.inline_includes)
+        if args.report:
+            report_to_review(new)
+        if crlf:
+            new = new.replace("\n", "\r\n")
         if new != original:
             changed.append(rel)
             if args.write:
-                path.write_text(new, encoding="utf-8")
+                path.write_bytes(new.encode("utf-8"))
 
     print(f"{len(changed)} fichier(s) {'convertis' if args.write else 'à convertir'}")
     for k, v in sorted(stats.items()):
