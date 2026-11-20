@@ -74,8 +74,12 @@ Three sources can give an asset its category. This section tells which one set t
 
 The first source that gives a category wins:
 
-- Asset discovery and asset connectors only give a category to an asset that has none. They never replace a category, whoever set it.
+- Asset discovery gives a category only to the assets it creates.
+- An asset connector gives a category to the assets it creates, and to an existing account that has none.
+- Asset discovery and asset connectors never replace a category, whoever set it.
 - You can change the category in the asset form at any time. Asset discovery and asset connectors keep the category you set.
+
+A host that already exists without a category keeps none when an asset connector pushes it. Set its category in the asset form.
 
 #### Device type to category
 
@@ -317,7 +321,7 @@ The following table lists the atom types and their related event fields that are
 
 **Set the Contextual Property `os` to Host**
 
-This rule enriches an existing asset with an `os` contextual property. This property is extracted from the value of all the `os` related fields of an event where its `host.name` field matches the `hostname` detection property of the asset. In addition, this rule gives the asset the Server category if the `host.type` field is `server` and the asset has no category yet.
+This rule enriches an existing asset with an `os` contextual property. This property is extracted from the value of all the `os` related fields of an event where its `host.name` field matches the `hostname` detection property of the asset. In addition, a host created from an event whose `host.type` field is `server` gets the Server category.
 
 ##### Attach EDR agent IDs to Host
 
