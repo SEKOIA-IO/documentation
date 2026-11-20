@@ -50,7 +50,7 @@ A community can own up to 10 custom integrations that contain an asset connector
 
 ### How storage limits are calculated
 
-Each storage limit is the number of assets your community subscribed, multiplied by a ratio. A community with no known number of assets counts as 1,000 assets.
+Each storage limit is the number of assets included in the community subscription, multiplied by a ratio. A community with no known number of assets counts as 1,000 assets.
 
 - Active limits cap what the asset connector configurations reported in the last 30 days.
 - Lifetime limits cap everything the custom asset connectors of the community ever created, deleted configurations included.

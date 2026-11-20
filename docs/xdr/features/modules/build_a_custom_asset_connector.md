@@ -89,7 +89,7 @@ A finding updates the finding of the same asset whose CVEs include all the CVEs 
 1. Close fixed findings, so that open findings stay under their limit.
 2. Keep the hostnames and usernames of Steps 4 and 5 stable, so that each machine and account updates a single asset.
 
-Each configuration and each community can store a limited number of active assets, active applications and open findings. The limits follow the number of assets your community subscribed. When a configuration reaches a storage limit, every push of the configuration receives a 429 `ASSET_CONNECTOR_LIMIT_REACHED`. See [Storage limits for custom asset connectors](/xdr/features/modules/reveal_asset_connectors_limits.md#storage-limits-for-custom-asset-connectors).
+Each configuration and each community can store a limited number of active assets, active applications and open findings. The limits follow the number of assets included in the community subscription. When a configuration reaches a storage limit, every push of the configuration receives a 429 `ASSET_CONNECTOR_LIMIT_REACHED`. See [Storage limits for custom asset connectors](/xdr/features/modules/reveal_asset_connectors_limits.md#storage-limits-for-custom-asset-connectors).
 
 ## Related articles
 
