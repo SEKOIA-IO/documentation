@@ -173,7 +173,10 @@ Each asset connector frequently syncs assets into your unified inventory:
 
 ##### How a push updates an existing asset
 
-When an item an asset connector pushes matches an existing asset, the push updates the asset as follows. A push does not overwrite a value a user locked.
+When an item an asset connector pushes matches an existing asset, the push updates the asset as follows.
+
+!!! note "Locked properties"
+    When automatic asset discovery changes a property of an asset more than 5 times in an hour, Sekoia locks the property. A push neither overwrites nor clears a locked property. The property stays locked until a user edits it.
 
 | Item | Properties | When the push carries a value | When the push leaves it empty |
 |---|---|---|---|
