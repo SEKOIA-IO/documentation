@@ -1,0 +1,56 @@
+{% set ocsf_version = mapping.ocsf_version or mapping.version %}
+## OCSF Mapping for {{ config.name | default('Connector') }}
+
+{% if mapping.ocsf_class %}
+**OCSF Class:** {{ mapping.ocsf_class | inline_code }}
+
+{% endif %}
+{% if mapping.class_uid %}
+**Class UID:** {{ mapping.class_uid | inline_code }}
+
+{% endif %}
+{% if ocsf_version %}
+**OCSF Version:** {{ ocsf_version | inline_code }}
+
+{% endif %}
+## Information Collected
+
+The {{ config.name | default('Connector') }} fetches comprehensive information and transforms it into the OCSF (Open Cybersecurity Schema Framework) format for standardized security monitoring and asset management.
+{% if mapping.samples %}
+
+### API Response Examples
+{% for sample in mapping.samples %}
+
+#### {{ sample.name or '-' }}
+{% if (sample.description or '') | trim %}
+{{ sample.description | trim | markdown_text }}
+{% endif %}
+
+{{ sample.data | json_code_block }}
+{% endfor %}
+{% endif %}
+{% if mapping.fields %}
+
+### Data Mapping Table
+
+The following table shows how source data is mapped to OCSF model fields:
+
+| Source Field | OCSF Field Path | Description | Data Type | Logic |
+|--------------|-----------------|-------------|-----------|-------|
+{% for field in mapping.fields %}
+| {{ field.source | default('-', true) | table_cell | inline_code }} | {{ field.target | default('-', true) | table_cell | inline_code }} | {{ field.description | default('-', true) | markdown_text | table_cell }} | {{ field.type | default('-', true) | table_cell | inline_code }} | {{ field.logic | default('-', true) | markdown_text | table_cell }} |
+{% endfor %}
+{% endif %}
+{% if mapping.ocsf_samples %}
+
+### OCSF Model Structure
+{% for sample in mapping.ocsf_samples %}
+
+#### {{ sample.name or '-' }}
+{% if (sample.description or '') | trim %}
+{{ sample.description | trim | markdown_text }}
+{% endif %}
+
+{{ sample.data | json_code_block }}
+{% endfor %}
+{% endif %}
