@@ -14,7 +14,7 @@ Rate limits and vulnerability caps use the current platform defaults. Custom sto
 | Limit | Value | Applies to | When reached |
 |---|---|---|---|
 | Pushes | 60 per minute | Asset connector configuration | 429 `ASSET_CONNECTOR_RATE_LIMIT_EXCEEDED` |
-| 24-hour item quota | 200,000 items per 24 hours, counted before validation | Asset connector configuration | 429 `ASSET_CONNECTOR_RATE_LIMIT_EXCEEDED`, with `details.limit` set to `items per day` |
+| 24-hour item quota | 200,000 items per 24 hours, counted before validation | Asset connector configuration | 429 `ASSET_CONNECTOR_RATE_LIMIT_EXCEEDED`, with `detail.limit` set to `items per day` |
 | Item size | 900 KB | Item | 413 `ASSET_CONNECTOR_PUSH_TOO_LARGE` |
 | Items per push | 200 | Push | Nothing is returned. Items after the 200th are dropped. |
 | Vulnerabilities per application | 1,000 | Application | Nothing is returned. Extra vulnerabilities are not stored. |
@@ -52,6 +52,10 @@ A community can own up to 10 custom integrations that contain an asset connector
 
 Each storage limit is the number of assets your community subscribed, multiplied by a ratio. A community with no known number of assets counts as 1,000 assets.
 
+- Active limits cap what the asset connector configurations reported in the last 30 days.
+- Lifetime limits cap everything the custom asset connectors of the community ever created, deleted configurations included.
+- Applications are the software items a connector pushes.
+
 | Limit | Counts | Per configuration | Per community |
 |---|---|---|---|
 | Active assets | Assets reported in the last 30 days | 5 × subscribed assets | 10 × subscribed assets |
@@ -66,10 +70,24 @@ For example, a community subscribed to 2,000 assets can have 10,000 active asset
 ### When a storage limit is reached
 
 - Usage is computed every 15 minutes. A push accepted before the next computation is processed in full.
-- While a configuration or its community has reached a limit, every push of the configuration receives a 429 `ASSET_CONNECTOR_LIMIT_REACHED`. Closures are refused too.
+- While a configuration or its community has reached a limit, every push of the configuration receives a 429 `ASSET_CONNECTOR_LIMIT_REACHED`, including the pushes that close findings.
 - When the community reaches a limit, every custom asset connector configuration of the community is blocked, not only the one that sent the most data. All of them push again once the community is back under the limit.
-- `details.limits` lists each reached limit by `figure` and `scope` (`configuration` or `community`). It gives no usage or remaining count.
-- The connector pauses for an hour by default, then fetches again from its last checkpoint. Data the source deleted in the meantime is not recovered.
+- The body of the 429 lists each reached limit in `detail.limits`, by `figure` and `scope` (`configuration` or `community`). It gives no usage or remaining count.
+- The connector pauses for an hour by default, then fetches again from its last checkpoint: the point up to which it last saved its progress. Data the source deleted in the meantime is not recovered.
+
+`figure` is one of `active_assets`, `active_applications`, `open_vulnerability_findings`, `lifetime_assets`, `lifetime_applications` or `lifetime_vulnerability_findings`. For example:
+
+```json
+{
+  "detail": {
+    "code": "ASSET_CONNECTOR_LIMIT_REACHED",
+    "message": "Asset connector limit reached",
+    "limits": [
+      {"figure": "active_assets", "scope": "configuration"}
+    ]
+  }
+}
+```
 
 ### Which usage decreases
 
@@ -77,7 +95,9 @@ For example, a community subscribed to 2,000 assets can have 10,000 active asset
 |---|---|
 | Active assets, active applications | By itself. While blocked, the configurations report nothing, so their assets and applications leave the 30-day window. |
 | Open vulnerability findings | Only when users change finding statuses to remediated, accepted risk or false positive. The blocked connector cannot close findings. |
-| Lifetime limits | Never. |
+| Lifetime limits | Only when assets are revoked: a revoked asset, its applications and its findings are no longer counted. |
+
+Revoking an asset lowers every usage, active and lifetime.
 
 ## Related articles
 
