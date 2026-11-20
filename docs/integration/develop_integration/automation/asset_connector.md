@@ -328,6 +328,8 @@ A custom asset connector updates the assets your community already has, whatever
 
 Give each software and each finding the device it belongs to, with the same hostname as the device item of that machine. [How a push updates an existing asset](/xdr/features/collect/assets.md#how-a-push-updates-an-existing-asset) says which properties a push overwrites, clears or keeps.
 
+Set `device.type` and `user.type` when the source knows them: Sekoia derives the category of a host or an account from them, so analysts can filter on servers or service accounts. [How an asset gets its category](/xdr/features/collect/assets.md#how-an-asset-gets-its-category) gives the type to category tables, and says when a push leaves the category unchanged.
+
 ### Send only what changed
 
 A connector that sends its whole inventory at every cycle sends it again at once, since a cycle that yields items is followed by another one.
@@ -645,3 +647,4 @@ The CVEs of the example (`CVE-2099-*`) are reserved, and its applications are un
 - [Troubleshoot asset connectors](/xdr/features/modules/reveal_asset_connectors_troubleshoot.md#diagnose-push-errors): Push errors and the action for each.
 - [Create asset connectors](/xdr/features/modules/reveal_asset_connectors_create.md): How a user configures an asset connector.
 - [Asset categories overview](/integration/assets_categories/overview.md): The OCSF fields Sekoia reads for each category.
+- [How an asset gets its category](/xdr/features/collect/assets.md#how-an-asset-gets-its-category): The category a device type or a user type gives an asset.
