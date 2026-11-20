@@ -867,6 +867,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** advanced
 
+??? abstract "LSASS Access From Non System Account"
+    
+    Detects LSASS Access from Non System Account (e.g. Mimikatz)
+    
+    - **Effort:** master
+
 ??? abstract "LanManServer Registry Modify"
     
     Detects when the LanManServer registry sub-key MaxMpxCt is modified. An attacker can modified this value to increase the maximum number of outstanding client requests supported. 
@@ -1779,6 +1785,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     
     - **Effort:** elementary
 
+??? abstract "Registry Checked For Lanmanserver DisableCompression Parameter"
+    
+    Detects registry access for Lanmanserver\Parameters. The check of the value DisableCompression could be a sign of an attack trying to exploit SMBGhost vulnerability (CVE-2020-0796).
+    
+    - **Effort:** master
+
 ??? abstract "Registry Persistence Using 'Image File Execution' And 'SilentProcessExit' Keys"
     
     Detects persistence registry keys. Logging for Registry events is needed, it can be done in the Sysmon configuration (events 12 and 13).
@@ -1898,6 +1910,12 @@ The following Sekoia.io built-in rules match the intake **Elastic Winlogbeat**. 
     Detects if the Search Protocol Host process was executed by a non-legitimate parent process. Search Protocol Host is part of the Windows Indexing Service, a service indexing files on the local drive making them easier to search.
     
     - **Effort:** master
+
+??? abstract "Secure Deletion With SDelete"
+    
+    Detects renaming of file while deletion with SDelete tool. SDelete is a tool that permits to securely delete files by overwriting them (no recovery possible). Few threat actors are using it to delete traces of their malware.
+    
+    - **Effort:** intermediate
 
 ??? abstract "Security Support Provider (SSP) Added to LSA Configuration"
     
