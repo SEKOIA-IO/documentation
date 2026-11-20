@@ -107,20 +107,20 @@ The execution script mounts `$SEKOIA_LOCAL_DIR` on `/opt/sekoia` in the SHC cont
 
 ### Step 3: Load the self-hosted-controller (SHC) Docker image
 
-The SHC image ships in the release archive, in online mode as in air-gapped mode. To load it on the orchestration node, run:
+The SHC image ships in the release archive, in online mode as in air-gapped mode. Like every image of the release, it is a signed OCI archive without an image name: `docker load` loads the SHC image and its cosign signature, and prints one `Loaded image ID: sha256:<ID>` line for each.
+
+To load the archive on the orchestration node and give the SHC image the reference that the execution script runs, run:
 
 ```bash
-SHC_IMAGE=$(docker load -i $SEKOIA_LOCAL_DIR/platform/$SH_VERSION/images/registry.sekoia.io_sekoialab_self-hosted-controller-cli-*.tar.gz | sed -n 's/^Loaded image: //p')
-echo "$SHC_IMAGE"
+SHC_IMAGE_ID=$(docker load -i $SEKOIA_LOCAL_DIR/platform/$SH_VERSION/images/registry.sekoia.io_sekoialab_self-hosted-controller-cli-*.tar.gz \
+  | grep -o 'sha256:[0-9a-f]*' \
+  | while read id; do docker image inspect --format '{{.Os}} {{.Id}}' "$id"; done \
+  | awk '$1=="linux"{print $2; exit}')
+echo "$SHC_IMAGE_ID"
+docker tag "$SHC_IMAGE_ID" sekoialab/self-hosted-controller-cli:v1.0
 ```
 
-The command prints the reference of the loaded image, `registry.sekoia.io/sekoialab/self-hosted-controller-cli:<BUILD>`.
-
-To give the image the reference that the execution script runs, run:
-
-```bash
-docker tag "$SHC_IMAGE" sekoialab/self-hosted-controller-cli:v1.0
-```
+The command keeps the loaded image whose operating system is Linux: the cosign signature is not one. `echo` prints the ID of the SHC image. If it prints an empty line, the tag fails: run the `docker load` command alone and check its output.
 
 To confirm, run `docker images sekoialab/self-hosted-controller-cli`. Expected output: one image with the `v1.0` tag. This tag is the same for every patch release of 1.0.
 
