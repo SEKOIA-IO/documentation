@@ -1,0 +1,67 @@
+# Configure SSO with OpenID Connect
+
+To make it easier for employees to access Sekoia.io, you can enable SSO in your Sekoia.io community.
+
+<!-- include:_shared_content/sso_multiple_business.md -->
+## Important Note on SSO Configuration for Multiple Business Entities
+
+When configuring Single Sign-On (SSO) for organizations that have multiple business entities with the same email domain, it's essential to ensure that users from one entity do not have access to the other’s Sekoia communities. Here are specific recommendations to achieve this:
+
+- **Disable Automatic User Creation**: While configuring SSO for both entities, ensure that the "automatically create user if missing" option is **NOT** enabled. This setting will prevent unintended account creation across different communities. Only manually created account in a community will have the possibility to login to it.
+- **Allow Same Domain**: SSO can be configured to support the same email domain across two distinct communities without issues. This means entities can use the same domain for authentication while keeping their communities isolated.
+- **Utilize Distinct Providers**: It’s advisable to set up unique providers for each business entity, which involves **creating separate policies**. This configuration will help restrict access to specific users and reduce the possibility of misconfiguration on Sekoia.io.
+<!-- endinclude:_shared_content/sso_multiple_business.md -->
+
+## Prerequisites for OpenID Connect
+
+- Your Identity Provider (IdP) must support the OpenID Connect standard
+- Only admin user with the `COMMUNITY_WRITE_ROLE` permission can configure the SSO.
+
+## Verify your domains
+
+Sekoia.io requires your domains to be verified in order to be used for authentication.
+
+To do so:
+
+1. Go to Settings > Workspace Security > Verify your domains > `+ Domain`
+2. Input your domain and validate using the `Send for verification` button
+3. Your domain will have the status "Waiting for verification"
+4. Once it has been validated by our team, this status will become "Verified"
+
+
+## Configure SSO on Sekoia.io
+
+To set up SSO, follow these instructions:
+
+1. Go to Settings > Workspace Security > Configure single Sign-on (SSO) > `Configure`
+2. Fill in identity provider details
+3. Save the configuration
+
+Once SSO is set up and your IdP is configured to accept requests, users can log in via the Single Sign-on URL available on this page.
+
+From there, you can share it with your users.
+
+
+## "Just-in-time" (JIT) Account Provisioning
+
+You can choose to enable the automatic creation of users' accounts in your community.
+
+By using this feature, when a user logs-in for the first time, their account will be automatically created. You can set the default role for newly created users, and you can choose the default role among all the roles available in your community.
+
+If you don't enable "just-in-time" account creation, you will have to manually create user accounts. You can learn more about how to create user accounts in the article: [Invite users](https://docs.sekoia.com/getting-started/invite_users).
+
+
+## Login method
+
+Once you have completed your configuration of OpenID Connect SSO, users will be able to log in via SSO.
+
+Users who created their account via SSO can only log in via this method.
+
+Only users who create their account via invitation and set up username/password can use both methods to log-in: SSO and username/password.
+
+When the "two-factor authentication" (MFA) is enabled or enforced for your account, you won’t be asked for it when authenticating via your SSO provider.
+
+
+## Disable Account
+
+To prevent a user from retrieving your organization's data, you can easily deactivate the user from your workspace and your identity provider.

@@ -1,0 +1,5 @@
+root: ./
+
+structure:
+  readme: massive_export.md
+  summary: SUMMARY.md

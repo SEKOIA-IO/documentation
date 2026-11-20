@@ -1,0 +1,5 @@
+root: ./
+
+structure:
+  readme: FAQ.md
+  summary: SUMMARY.md

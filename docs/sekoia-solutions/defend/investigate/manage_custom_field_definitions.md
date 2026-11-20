@@ -1,0 +1,79 @@
+# Manage custom field definitions
+
+Custom field definitions determine which structured metadata fields are available across alerts, cases, and **playbooks** in your workspace. This article explains how to create, edit, and delete those definitions from the workspace settings.
+
+{% hint style="info" %}
+**Definitions are shared between alerts, cases and playbooks**
+
+A definition you create here can be attached to alerts, to cases, or to both. Playbooks use the same definitions. You do not need to create the same field twice.
+{% endhint %}
+
+## Prerequisites
+
+By default, users with the **Admin** or **Analyst** role can manage custom field definitions. Contact your administrator if you need access to this section.
+
+## Access custom field settings
+
+To open the custom field management page, navigate to **Settings > Custom fields**.
+
+![Custom Fields Settings](../../assets/operation_center/cases/custom-fields-settings.png)
+
+## Create a custom field
+
+{% hint style="success" %}
+**Naming custom fields**
+
+Use descriptive names that clearly indicate what data the field should capture. For example, "Number of impacted users" is clearer than "User count".
+{% endhint %}
+
+To create a new custom field definition:
+
+1. Navigate to **Settings > Custom fields**.
+2. Click **+ Add**.
+3. Enter a **Name** for the field.
+4. Enter an optional **Description** to help users understand the field's purpose.
+5. Select a **Type** from the dropdown menu.
+6. Choose a **Color** for visual identification.
+7. Enable **Auto-add to new alerts** to add this field automatically to every new alert.
+8. Enable **Auto-add to new cases** to add this field automatically to every new case.
+9. For **Single select** and **Multi select** types, define the available options.
+10. Click **Save**.
+
+The two auto-add options are independent. Leave both disabled if you want analysts to add the field manually when they need it.
+
+## Edit a custom field
+
+{% hint style="info" %}
+**Type cannot be changed**
+
+The **Type** of a custom field cannot be changed after creation. To use a different type, delete the existing field and create a new one.
+{% endhint %}
+
+To modify an existing custom field definition:
+
+1. Navigate to **Settings > Custom fields**.
+2. Click the field you want to edit.
+3. Update the desired properties.
+4. Click **Save**.
+
+## Delete a custom field
+
+{% hint style="warning" %}
+**Permanent data loss**
+
+Deleting a custom field definition removes the field and all its values from every alert, case, and **playbook** in your workspace. This action cannot be undone.
+{% endhint %}
+
+To remove a custom field definition:
+
+1. Navigate to **Settings > Custom fields**.
+2. Click the field you want to delete.
+3. Click **Delete**.
+4. Confirm the deletion.
+
+## Related articles
+
+* [Custom fields](custom_fields.md): Overview of custom field types, shared definitions, multi-tenancy behavior, and workspace limits.
+* [Use custom fields](use_custom_fields.md): How to add and edit custom field values on individual alerts and cases.
+* [Query custom fields](query_custom_fields.md): SOL syntax and examples for filtering and aggregating alerts and cases by custom field values.
+* [Case details](case_details.md): Reference for every tab and field available on the case details page.

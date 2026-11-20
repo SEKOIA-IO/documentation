@@ -1,0 +1,31 @@
+# Table of contents
+
+* [Introduction](index.md)
+* [Documentation versions](versions.md)
+
+## v1.0.1
+
+* [Overview](1.0.1/index.md)
+* [Architecture](1.0.1/architecture.md)
+* [Deployment](1.0.1/deployment.md)
+  * [Technical requirements](1.0.1/deployment_prerequisites.md)
+  * [Network requirements](1.0.1/network_requirements.md)
+  * [The deployment process](1.0.1/deployment_process.md)
+  * [Configure the deployment](1.0.1/deployment_configuration.md)
+  * [Deploy the platform](1.0.1/deployment_guide.md)
+* [Operations](1.0.1/operations.md)
+  * [Set up the first administrator account](1.0.1/first_login.md)
+  * [Use the SHC interface](1.0.1/controller_interface.md)
+  * [Import the CTI database](1.0.1/import_cti_database.md)
+  * [Back up the platform](1.0.1/backups.md)
+  * [Update the security content](1.0.1/update_security_content.md)
+  * [Apply a configuration change](1.0.1/apply_configuration_change.md)
+  * [Rotate the certificate and credentials](1.0.1/rotate_certificate_and_credentials.md)
+  * [Patch and restart the nodes](1.0.1/node_maintenance.md)
+  * [Reset or destroy the platform](1.0.1/reset_platform.md)
+* [Monitoring and troubleshooting](1.0.1/monitoring-and-troubleshooting.md)
+  * [Monitor your platform](1.0.1/monitoring_guide.md)
+  * [Run platform diagnostics](1.0.1/run_diagnostics.md)
+  * [Platform alerts reference](1.0.1/platform_alerts.md)
+  * [Debug your deployment](1.0.1/debug_tool.md)
+* [Release notes](1.0.1/release_notes.md)
