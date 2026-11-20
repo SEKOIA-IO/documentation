@@ -227,6 +227,8 @@ The following table lists the atom types and their related event fields that are
 
 ⚠ To be considered valid, a hostname must have at least one letter, only contain letters, numbers, hyphens and underscores, and not be a valid domain. If the Hostname is not valid, it will not be detected as an Asset.
 
+⚠ A `sid` detection property is only taken from a Windows security identifier (`S-1-...`). Other values of these fields, such as GUIDs, claims or application identifiers, are ignored, as are the well-known SIDs shared by every Windows host.
+
 #### Asset Discovery Rules
 
 !!! note "Limit on the assets discovered each day"
