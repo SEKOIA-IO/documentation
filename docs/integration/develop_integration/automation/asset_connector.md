@@ -328,7 +328,7 @@ A custom asset connector updates the assets your community already has, whatever
 
 Give each software and each finding the device it belongs to, with the same hostname as the device item of that machine. [How a push updates an existing asset](/xdr/features/collect/assets.md#how-a-push-updates-an-existing-asset) says which properties a push overwrites, clears or keeps.
 
-Set `device.type` and `user.type` when the source knows them: Sekoia derives the category of a host or an account from them, so analysts can filter on servers or service accounts. [How an asset gets its category](/xdr/features/collect/assets.md#how-an-asset-gets-its-category) gives the type to category tables, and says when a push leaves the category unchanged.
+Set a precise `device.type` rather than Unknown or Other, and set `user.type` when the source knows it: Sekoia derives the category of a host or an account from them, and analysts filter on that category in SOL queries. [How an asset gets its category](/xdr/features/collect/assets.md#how-an-asset-gets-its-category) gives the type to category tables, and says when a push leaves the category unchanged.
 
 ### Send only what changed
 
