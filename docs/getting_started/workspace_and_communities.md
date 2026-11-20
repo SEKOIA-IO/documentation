@@ -40,6 +40,8 @@ Most day-to-day security operations in Sekoia happen at the community level. Whe
 
 ## Single-tenant vs multi-tenant mode
 
+Multi-tenancy is included in Defend Prime. See the [Defend plan comparison](/getting_started/understand_your_subscription.md#defend-plan-comparison).
+
 The way you use communities depends on your organization's structure.
 
 | Mode | Structure | Typical use case |

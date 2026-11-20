@@ -9,6 +9,10 @@ Local runners were previously called **Playbook runners**. The name changed in t
     
 ## Prerequisites
 
+### Playbook action requirements
+
+Running eligible playbook actions on-premises with a local runner requires a Defend Advanced or Defend Prime subscription. This feature is not included in Defend Core. See the [Defend plan comparison](/getting_started/understand_your_subscription.md#defend-plan-comparison).
+
 ### Asset connector requirements
 
 - To execute an asset connector job, the local runner and the asset connector must belong to the same community, and that community must have a Reveal subscription.

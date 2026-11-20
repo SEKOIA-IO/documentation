@@ -11,6 +11,8 @@
 ## Overview
 AI Cases is an intelligent case management feature that automatically creates and manages security incidents by correlating related alerts. This feature streamlines the incident response process by providing SOC analysts with automated case creation, alert correlation, and contextual information.
 
+AI Cases is included in Defend Prime. See the [Defend plan comparison](/getting_started/understand_your_subscription.md#defend-plan-comparison).
+
 ![ai_case](/assets/operation_center/ai-case.gif){: style="max-width:100%"}
 
 ## Feature Benefits
