@@ -67,7 +67,7 @@ Once the intake is created, copy the `Intake key` displayed in the intake detail
 BlackNoise now reports two results instead of one: the `API URL`, whose form is validated without sending any request, and the `Intake connection`, which is validated by ingesting one test event into your intake.
 
 !!! note
-    The intake exposes no dry-run endpoint, so that test event is a real event in your tenant. It carries no campaign, simulation or target, and is filtered out with `blacknoise.execution_id:"connector-healthcheck"` or found with `rule.name:"BlackNoise connector healthcheck"`.
+    The intake exposes no dry-run endpoint, so that test event is a real event in your tenant. It carries no campaign, simulation or target, and is filtered out with `blacknoise.aev.execution_id:"connector-healthcheck"` or found with `rule.name:"BlackNoise connector healthcheck"`.
 
 ### Run a campaign with the connector
 
@@ -87,9 +87,10 @@ Useful filters:
 
 | To see | Filter |
 | --- | --- |
-| Everything sent by BlackNoise | `event.dataset:blacknoise.simulation` |
+| Everything sent by BlackNoise | `event.module:blacknoise` |
 | Adversarial actions only | `event.action:simulation_event` |
-| One campaign | `blacknoise.campaign_id:"<campaign id>"` |
+| Indicators of compromise only | `event.action:ioc` |
+| One campaign | `blacknoise.aev.campaign_id:"<campaign id>"` |
 | One adversarial action | `trace.id:"<execution id>"` |
 | One target | `host.ip:"<target ip>"` |
 | One MITRE ATT&CK technique | `threat.technique.id:"<technique>"` |
