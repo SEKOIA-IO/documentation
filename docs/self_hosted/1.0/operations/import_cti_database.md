@@ -26,7 +26,6 @@ On a machine with internet access, open Bash in an empty directory. Use the AWS 
         mkdir -p "$dir"
         aws s3 cp "s3://self-hosted/$dir/latest.json" "$dir/latest.json"
         run=$(jq -er '.run_id' "$dir/latest.json")
-        [[ $run =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}$ ]]
         aws s3 cp --recursive "s3://self-hosted/$dir/$run/" "$dir/$run/"
         test -s "$dir/$run/checkpoint.json"
     done
