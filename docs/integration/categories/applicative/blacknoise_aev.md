@@ -15,12 +15,12 @@ Once the connector is configured, BlackNoise forwards every adversarial action i
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Application logs
 
-The intake carries two kinds of record, published on the same intake and told apart by `event.action`:
+The format describes two kinds of record, told apart by `event.action`. The BlackNoise connector currently sends adversarial actions; the format is ready for indicators of compromise.
 
 | `event.action` | Record | Description |
 | --- | --- | --- |
 | `simulation_event` | Adversarial action | One attack technique executed against a target, with its outcome and the detections it triggered |
-| `ioc` | Indicator of compromise | One indicator produced by an action, tied back to it through `trace.id` |
+| `ioc` | Indicator of compromise | One indicator produced by an action, tied back to it through `trace.id`. Not sent by the connector yet |
 
 ## Step-by-Step Configuration Procedure
 
@@ -89,7 +89,6 @@ Useful filters:
 | --- | --- |
 | Everything sent by BlackNoise | `event.module:blacknoise` |
 | Adversarial actions only | `event.action:simulation_event` |
-| Indicators of compromise only | `event.action:ioc` |
 | One campaign | `blacknoise.aev.campaign_id:"<campaign id>"` |
 | One adversarial action | `trace.id:"<execution id>"` |
 | One target | `host.ip:"<target ip>"` |
