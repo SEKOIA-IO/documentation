@@ -18,7 +18,7 @@ Before you run either command, confirm each of the following points:
 - The cluster is dedicated to the Sekoia platform. `PlatformScaleDown` deletes every namespace except the preserved ones listed below, including the namespaces that you created.
 - You keep a copy, outside the cluster, of your `config.yml`, of the execution script, and of the values of the environment variables it reads, including the certificate, its private key, and the backup encryption keys.
 - You keep the license file provided by Sekoia and the `SEKOIA_INSTANCE_PUBLIC_KEY` value. After a reinstallation, you import the license again.
-- You keep the release archive of your version and, in air-gapped mode, the CTI archive.
+- You keep the release archive of your version and, in air-gapped mode, the `data/cti/` directory with both collections and their `latest.json` files.
 - If you configured backups, the last backup of each component completed. See [Check the backup status](/self_hosted/1.0/operations/backups.md#check-the-backup-status). To restore the platform data from these backups, contact Sekoia support: see [Restore from a backup](/self_hosted/1.0/operations/backups.md#restore-from-a-backup).
 
 ## What the commands remove
