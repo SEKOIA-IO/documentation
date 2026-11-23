@@ -17,6 +17,8 @@ On a machine with internet access, open Bash in an empty directory. Use the AWS 
 ```bash
 (
     set -e
+    export AWS_ACCESS_KEY_ID=""
+    export AWS_SECRET_ACCESS_KEY=""
     export AWS_DEFAULT_REGION=fr-par-2
     export AWS_ENDPOINT_URL_S3=https://self-hosted.delivery.sekoia.io
     export AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED AWS_RESPONSE_CHECKSUM_VALIDATION=WHEN_REQUIRED
