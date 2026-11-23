@@ -12,6 +12,35 @@ The imported database feeds contextualized alerts and the `SEKOIA Intelligence F
 
 ## Prepare the CTI export in air-gapped mode
 
+### Quick download of the latest CTI
+
+On a machine with internet access, download the latest packaged export and its checksum into an empty directory. Fill in your Sekoia delivery credentials before running the commands.
+
+```bash
+(
+    set -e
+    export AWS_ACCESS_KEY_ID=""
+    export AWS_SECRET_ACCESS_KEY=""
+    export AWS_DEFAULT_REGION=fr-par-2
+    export AWS_ENDPOINT_URL_S3=https://self-hosted.delivery.sekoia.io
+    export AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED AWS_RESPONSE_CHECKSUM_VALIDATION=WHEN_REQUIRED
+
+    aws s3 cp s3://self-hosted/data/cti/archives/cti-latest.tar cti-latest.tar
+    aws s3 cp s3://self-hosted/data/cti/archives/cti-latest.tar.sha256 cti-latest.tar.sha256
+    sha256sum -c cti-latest.tar.sha256
+)
+```
+
+If either file is unavailable or verification fails, use the [manual way](#manual-way). Once the check prints `cti-latest.tar: OK`, transfer the archive to `$SEKOIA_LOCAL_DIR/` on the orchestration node. Allow space for both the archive and its extracted contents. On that node, run:
+
+```bash
+tar -xf "$SEKOIA_LOCAL_DIR/cti-latest.tar" -C "$SEKOIA_LOCAL_DIR"
+```
+
+This places both collections and their pointers under `$SEKOIA_LOCAL_DIR/data/cti/`. You can now run the import.
+
+### Manual way
+
 On a machine with internet access, open Bash in an empty directory. Use the AWS CLI with your Sekoia delivery credentials and install `jq` if needed. Each collection has its own `latest.json`. Read it once, then download the dated folder it names.
 
 ```bash
@@ -115,7 +144,7 @@ In air-gapped mode, `latest` uses the two `latest.json` files you transferred. T
 
 ## Update the CTI database
 
-The import is a snapshot: the CTI database of your platform does not update on its own. To refresh it, run the import again. In air-gapped mode, repeat the download and transfer steps for both collections first.
+The import is a snapshot: the CTI database of your platform does not update on its own. To refresh it, run the import again. In air-gapped mode, prepare a fresh export on the orchestration node using either download method first.
 
 ## Result
 

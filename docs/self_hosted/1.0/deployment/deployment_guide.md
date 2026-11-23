@@ -98,7 +98,7 @@ The archive contains the platform release and the latest security content bundle
 | `$SEKOIA_LOCAL_DIR/platform/$SH_VERSION/` | Release manifest, the cosign public key `cosign.pub`, Docker images, Helm charts, ArgoCD stacks, and the third-party license notices in `licenses/THIRD-PARTY-NOTICES.md`. |
 | `$SEKOIA_LOCAL_DIR/data/<TYPE>/` | One security content bundle per type (`detection-rules`, `intake-formats`, and `playbook-library`), with a `latest` file that names the bundle to use. |
 
-In air-gapped mode, download the two CTI collections separately and transfer them to the orchestration node before importing the CTI database. See [Import the CTI database](/self_hosted/1.0/operations/import_cti_database.md#prepare-the-cti-export-in-air-gapped-mode).
+In air-gapped mode, download the CTI archive or the individual collections and transfer the export to the orchestration node before importing the CTI database. See [Import the CTI database](/self_hosted/1.0/operations/import_cti_database.md#prepare-the-cti-export-in-air-gapped-mode).
 
 The execution script mounts `$SEKOIA_LOCAL_DIR` on `/opt/sekoia` in the SHC container, which matches the default values of `global.version.platform.path` (`/opt/sekoia/platform/`) and `global.version.data.<TYPE>.path` (`/opt/sekoia/data/`). Keep this layout unless you also change these paths.
 
