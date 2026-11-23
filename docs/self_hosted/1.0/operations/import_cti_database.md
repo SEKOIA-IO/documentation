@@ -31,7 +31,7 @@ On a machine with internet access, download the latest packaged export and its c
 )
 ```
 
-If either file is unavailable or verification fails, use the [manual way](#manual-way). Once the check prints `cti-latest.tar: OK`, transfer the archive to `$SEKOIA_LOCAL_DIR/` on the orchestration node. Allow space for both the archive and its extracted contents. On that node, run:
+If either file is unavailable or verification fails, [download the collections individually](#manual-download). Once the check prints `cti-latest.tar: OK`, transfer the archive to `$SEKOIA_LOCAL_DIR/` on the orchestration node. Allow space for both the archive and its extracted contents. On that node, run:
 
 ```bash
 tar -xf "$SEKOIA_LOCAL_DIR/cti-latest.tar" -C "$SEKOIA_LOCAL_DIR"
@@ -39,7 +39,7 @@ tar -xf "$SEKOIA_LOCAL_DIR/cti-latest.tar" -C "$SEKOIA_LOCAL_DIR"
 
 This places both collections and their pointers under `$SEKOIA_LOCAL_DIR/data/cti/`. You can now run the import.
 
-### Manual way
+### Manual download
 
 On a machine with internet access, open Bash in an empty directory. Use the AWS CLI with your Sekoia delivery credentials and install `jq` if needed. Each collection has its own `latest.json`. Read it once, then download the dated folder it names.
 
