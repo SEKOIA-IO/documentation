@@ -16,7 +16,7 @@ Bitwarden Event Logs provide an audit trail of authentication, vault usage, orga
 
 ### Create the intake in Sekoia.io
 
-1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Bitwarden Event Logs`.
+1. Log in to the Sekoia.io workspace of your [region](/getting_started/regions.md), go to **Intakes** (for FRA1: [intake page](https://app.sekoia.io/operations/intakes)), and create a new intake from the format `Bitwarden Event Logs`.
 2. Copy the **intake key** displayed in the intake details.
 
     ![Intake key in the intake details](/assets/integration/iam/bitwarden_event_logs/intake_key.png){: style="max-width:100%"}
