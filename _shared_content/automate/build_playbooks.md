@@ -82,6 +82,8 @@ To build a playbook from scratch:
 3. Add operators and actions from the module menu, then connect the blocks.
 4. Configure each block in the configuration panel.
 
+To duplicate, rename, replace, or delete a block, use its [block menu](/xdr/features/automate/navigate_playbooks.md#block-menu).
+
 A playbook combines the following building blocks:
 
 1. [Triggers](/xdr/features/automate/triggers.md): Alert-related, manual, and Cron triggers.
