@@ -26,7 +26,10 @@ When defining the "value" in a filter, you must match the data type of the field
 
 * Integer fields: Use raw numbers without quotes (e.g., 4624).
 * String fields: Use double quotes (e.g., "failed").
-* Collections: Use arrays for "==", "in" or "not in" operators (e.g., ["rfc1918", "rfc5735"]
+* Collections: Use arrays for "==", "in" or "not in" operators (e.g., `{"field": "action.name", "operator": "in", "value": ["accept", "reject"]}`).
+
+!!! note
+    Filters only see fields set by the parser. Fields added during enrichment, such as `sekoiaio.tags.*`, never match. See [Optimization rules overview](/xdr/features/collect/optimization_rules_overview.md).
 
 ## Action bitmask values
 
