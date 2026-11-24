@@ -17,15 +17,9 @@ Bitwarden Event Logs provide an audit trail of authentication, vault usage, orga
 ### Create the intake in Sekoia.io
 
 1. Log in to the Sekoia.io workspace of your [region](/getting_started/regions.md), go to **Intakes** (for FRA1: [intake page](https://app.sekoia.io/operations/intakes)), and create a new intake from the format `Bitwarden Event Logs`.
-2. Copy the **intake key** displayed in the intake details.
+2. Copy the **intake key** displayed in the intake details (for example, `ExAmPlEiNtAkEkEy0123456789abcdef`), not the intake page URL or the UUID it contains.
 
     ![Intake key in the intake details](/assets/integration/iam/bitwarden_event_logs/intake_key.png){: style="max-width:100%"}
-
-    !!! warning
-        The intake key is not the URL of the intake page (`https://app.sekoia.io/intakes/<uuid>`), nor the UUID in that URL.
-
-        - Intake page URL (wrong): `https://app.sekoia.io/intakes/00000000-1111-2222-3333-444444444444`
-        - Intake key (right): `ExAmPlEiNtAkEkEy0123456789abcdef`
 
 ### Connect Generic HEC in Bitwarden
 
@@ -48,9 +42,8 @@ Bitwarden Event Logs provide an audit trail of authentication, vault usage, orga
     ![Generic HEC connection filled in for FRA1](/assets/integration/iam/bitwarden_event_logs/generic_hec_connect.png){: style="max-width:100%"}
 
     !!! warning
-        - The intake key must be in the URL. Bitwarden sends the token in an `Authorization: Splunk <token>` header, which Sekoia.io does not read. The token field is mandatory in Bitwarden but not used by Sekoia.io.
-        - The `/jsons` path is required. `https://intake.sekoia.io` alone does not work.
-        - For regions other than FRA1, use `https://intake.<region>.sekoia.io/api/v1/intake-http/jsons?intake_key=<YOUR_INTAKE_KEY>` (for example, `intake.usa1.sekoia.io`). See [Regions](/getting_started/regions.md).
+        - The intake key must be in the URL: Bitwarden sends the token in an `Authorization: Splunk <token>` header, which Sekoia.io does not read. The token field is mandatory in Bitwarden but not used by Sekoia.io.
+        - For regions other than FRA1, use `https://intake.<region>.sekoia.io/api/v1/intake-http/jsons?intake_key=<YOUR_INTAKE_KEY>`. See [Regions](/getting_started/regions.md).
 
 4. Select **Save**.
 
