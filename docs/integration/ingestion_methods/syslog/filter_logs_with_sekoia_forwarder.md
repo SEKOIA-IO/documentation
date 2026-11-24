@@ -96,10 +96,10 @@ Any `.conf` file you place in this directory is loaded by Rsyslog when the conta
 4. Restart the Forwarder to apply the new configuration:
 
     ````bash
-    docker restart <forwarder_container_name>
+    docker compose up -d
     ````
 
-    Replace `<forwarder_container_name>` with the name of your Forwarder container (run `docker ps` to find it). `docker compose restart` is not enough to load the new configuration.
+    Run this command from the directory that holds your Forwarder `docker-compose.yml`. `docker compose restart` is not enough to load the new configuration.
 
 5. Check the Forwarder logs to confirm the configuration loaded without errors:
 
