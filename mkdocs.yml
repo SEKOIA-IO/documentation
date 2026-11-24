@@ -819,6 +819,7 @@ nav:
       - Run platform diagnostics: self_hosted/1.0/monitoring/run_diagnostics.md
       - Platform alerts reference: self_hosted/1.0/monitoring/platform_alerts.md
       - Debug your deployment: self_hosted/1.0/troubleshooting/debug_tool.md
+      - Common issues: self_hosted/1.0/troubleshooting/common_issues.md
     - Release notes: self_hosted/1.0/release_notes.md
 - API Documentation:
   - API Reference: developer/api.md
