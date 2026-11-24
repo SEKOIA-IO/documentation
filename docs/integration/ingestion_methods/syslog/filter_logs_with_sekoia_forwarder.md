@@ -99,8 +99,6 @@ Any `.conf` file you place in this directory is loaded by Rsyslog when the conta
     docker compose up -d
     ````
 
-    Run this command from the directory that holds your Forwarder `docker-compose.yml`. `docker compose restart` is not enough to load the new configuration.
-
 5. Check the Forwarder logs to confirm the configuration loaded without errors:
 
     ````bash
