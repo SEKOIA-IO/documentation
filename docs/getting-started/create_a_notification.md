@@ -1,10 +1,22 @@
 ---
-title: "Create a notification"
-description: "Set up a notification rule in Sekoia to receive alerts through your preferred channel when a specific event occurs."
-keywords: [notification, create, rule, trigger, condition, email, slack, teams, webhook, alert]
+title: Create a notification
+keywords:
+  - notification
+  - create
+  - rule
+  - trigger
+  - condition
+  - email
+  - slack
+  - teams
+  - webhook
+  - alert
 audience: all
 module: all
 type: task
+description: >-
+  Set up a notification rule in Sekoia to receive alerts through your preferred
+  channel when a specific event occurs.
 ---
 
 # Create a notification
@@ -13,8 +25,8 @@ Notification rules let you receive alerts through your preferred channel when a 
 
 ## Before you begin
 
-- You must be logged in to Sekoia with any role (Guest, Analyst, or Admin).
-- If you plan to deliver notifications to Slack, Teams, or Mattermost, have your incoming webhook URL ready before starting.
+* You must be logged in to Sekoia with any role (Guest, Analyst, or Admin).
+* If you plan to deliver notifications to Slack, Teams, or Mattermost, have your incoming webhook URL ready before starting.
 
 ## Create a notification rule
 
@@ -30,44 +42,35 @@ If you have no existing rules, the listing page appears empty with a **+ Notific
 
 4. Enter a descriptive name in the **Notification name** field (for example, `High-urgency alerts on production assets`).
 5. Select the event type from the **Trigger** dropdown. See [Notification system overview](notification_system_overview.md) for the full list of available triggers.
-6. In the **it concerns** field, select which communities the rule monitors: **All communities**, or a specific one.
+6.  In the **it concerns** field, select which communities the rule monitors: **All communities**, or a specific one.
 
-    {% hint style="info" %}
-    **Exception: intake monitoring**
+    <div data-gb-custom-block data-tag="hint" data-style="info" class="hint hint-info"><p><strong>Exception: intake monitoring</strong></p><p>If you selected the <strong>No events are received</strong> trigger, you must select one specific community, since this trigger requires choosing an intake to monitor and an intake always belongs to a single community.</p></div>
 
-    If you selected the **No events are received** trigger, you must select one specific community, since this trigger requires choosing an intake to monitor and an intake always belongs to a single community.
-    {% endhint %}
-    
-    {% hint style="info" %}
-    ****No events are received** trigger**
-
-    If you use the trigger **No events are received** it will start working from the moment a first event is received.
-    {% endhint %}
-
+    <div data-gb-custom-block data-tag="hint" data-style="info" class="hint hint-info"><p><strong>No events are received trigger</strong></p><p>If you use the trigger <strong>No events are received</strong> it will start working from the moment a first event is received.</p></div>
 7. In the **Conditions** section, define filters to narrow down which events qualify. Conditions are optional but strongly recommended to avoid noise.
 8. In the **Action to perform** section, select your delivery method:
-    - **In-app notification**: Displays in the Sekoia notification panel.
-    - **Email**: Enter the recipient email address. Enable **Enrich email with contextual info** to include event details in the message body.
-    - **Slack**, **Teams**, or **Mattermost**: Paste your incoming webhook URL.
-    - **Webhook**: Enter the URL of your HTTP endpoint to receive a JSON payload.
+   * **In-app notification**: Displays in the Sekoia notification panel.
+   * **Email**: Enter the recipient email address. Enable **Enrich email with contextual info** to include event details in the message body.
+   * **Slack**, **Teams**, or **Mattermost**: Paste your incoming webhook URL.
+   * **Webhook**: Enter the URL of your HTTP endpoint to receive a JSON payload.
 9. Click **Save**.
 
-Your rule is now active and appears in your personal notification list.
-![Notification creation form with trigger, conditions, and email delivery options configured](assets/getting_started/notification_form.png)
-
+Your rule is now active and appears in your personal notification list. ![Notification creation form with trigger, conditions, and email delivery options configured](.gitbook/assets/notification_form.png)
 
 ## Example: High-urgency alert on a production asset
 
 This example shows how to set up a notification that fires when a critical asset is involved in a high-urgency alert.
 
 <details>
+
 <summary>High-urgency alert notification</summary>
 
 **Trigger:** A new alert is raised
 
 **Conditions:**
-- Urgency is greater than 80
-- Asset name contains `Production`
+
+* Urgency is greater than 80
+* Asset name contains `Production`
 
 **Action:** Send an email and a Slack message
 
@@ -77,6 +80,6 @@ This example shows how to set up a notification that fires when a critical asset
 
 ## Related links
 
-- [Notification system overview](notification_system_overview.md): Full list of available triggers and delivery channels.
-- [Manage notifications](manage_notifications.md): How to edit, disable, or delete an existing notification rule.
-- [Notification examples](notification_examples.md): Ready-to-use templates for intake monitoring, alerts, playbooks, and reports.
+* [Notification system overview](notification_system_overview.md): Full list of available triggers and delivery channels.
+* [Manage notifications](manage_notifications.md): How to edit, disable, or delete an existing notification rule.
+* [Notification examples](notification_examples.md): Ready-to-use templates for intake monitoring, alerts, playbooks, and reports.

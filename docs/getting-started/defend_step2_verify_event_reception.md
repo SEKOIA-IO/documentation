@@ -1,10 +1,21 @@
 ---
-title: "Step 2: Verify event reception"
-description: "Confirm that your Sekoia Defend intake is receiving logs correctly by reviewing the events graph and checking for parsing issues."
-keywords: [events, intake, verify, event reception, valid events, warning, invalid, graph, monitoring]
+title: 'Step 2: Verify event reception'
+keywords:
+  - events
+  - intake
+  - verify
+  - event reception
+  - valid events
+  - warning
+  - invalid
+  - graph
+  - monitoring
 audience: analyst
 module: defend
 type: task
+description: >-
+  Confirm that your Sekoia Defend intake is receiving logs correctly by
+  reviewing the events graph and checking for parsing issues.
 ---
 
 # Step 2: Verify event reception
@@ -13,9 +24,9 @@ After creating an intake and deploying the intake key or starting a pull connect
 
 ## Before you begin
 
-- You have completed [Step 1: Connect a data source](defend_step1_connect_data_source.md).
-- For push intakes: your data source has been configured to forward logs to the Sekoia intake endpoint using the intake key.
-- For pull intakes: you have toggled the intake to **On**.
+* You have completed [Step 1: Connect a data source](defend_step1_connect_data_source.md).
+* For push intakes: your data source has been configured to forward logs to the Sekoia intake endpoint using the intake key.
+* For pull intakes: you have toggled the intake to **On**.
 
 ## Check the intakes listing
 
@@ -24,11 +35,11 @@ After creating an intake and deploying the intake key or starting a pull connect
 
 Each intake card shows three event counters for the selected time period:
 
-| Counter | What it means |
-|---|---|
-| **Valid events** | Events successfully received and parsed |
+| Counter               | What it means                                                                                           |
+| --------------------- | ------------------------------------------------------------------------------------------------------- |
+| **Valid events**      | Events successfully received and parsed                                                                 |
 | **Events in warning** | Events received but only partially parsed, or where some field values did not match the expected format |
-| **Invalid events** | Events received but not parseable at all, usually due to a format mismatch |
+| **Invalid events**    | Events received but not parseable at all, usually due to a format mismatch                              |
 
 {% hint style="success" %}
 **Change the time range**
@@ -36,8 +47,7 @@ Each intake card shows three event counters for the selected time period:
 Use the date range selector on the intakes page to view event counts for the last 24 hours, 7 days, or 30 days. For a new intake, start with the 24-hour view.
 {% endhint %}
 
-![ntake card displaying event reception metrics including valid, warning, and invalid event counts](assets/getting_started/intake_card.png)
-
+![ntake card displaying event reception metrics including valid, warning, and invalid event counts](.gitbook/assets/intake_card.png)
 
 ## Inspect the intake detail page
 
@@ -51,9 +61,9 @@ To see more detail about your intake's health:
 
 The **event delivery** metric shows the average time between when an event was created at the source and when Sekoia received it. A high or negative value can indicate:
 
-- A timezone misconfiguration on the data source
-- Network latency or bandwidth issues
-- An abnormal burst of events causing ingestion delay
+* A timezone misconfiguration on the data source
+* Network latency or bandwidth issues
+* An abnormal burst of events causing ingestion delay
 
 For a healthy intake, event delivery lag should be close to zero.
 
@@ -61,10 +71,10 @@ For a healthy intake, event delivery lag should be close to zero.
 
 If your intake shows zero valid events after 30 minutes:
 
-| Intake type | Check |
-|---|---|
-| **Push** | Confirm the intake key is deployed correctly on your data source. Verify that firewall or network rules allow outbound connections to the Sekoia intake endpoint. |
-| **Pull** | Open the **Connector log** tab on the intake detail page. Look for error messages that indicate an authentication failure or a connectivity issue with the source API. |
+| Intake type | Check                                                                                                                                                                  |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Push**    | Confirm the intake key is deployed correctly on your data source. Verify that firewall or network rules allow outbound connections to the Sekoia intake endpoint.      |
+| **Pull**    | Open the **Connector log** tab on the intake detail page. Look for error messages that indicate an authentication failure or a connectivity issue with the source API. |
 
 For region-specific intake endpoint URLs, refer to [Log in for the first time](log_in_for_the_first_time.md).
 
@@ -83,8 +93,8 @@ See: [Create a notification](create_a_notification.md) for the full procedure.
 
 ## Acceptable thresholds
 
-| Metric | Target |
-|---|---|
+| Metric         | Target                                  |
+| -------------- | --------------------------------------- |
 | Warning events | Less than 3% of total events per intake |
 | Invalid events | Less than 1% of total events per intake |
 
@@ -92,6 +102,6 @@ If warning or invalid rates exceed these thresholds, review the technology-speci
 
 ## Related links
 
-- [Step 3: Activate detection rules](defend_step3_activate_detection_rules.md): Start enabling rules once your events are flowing correctly.
-- [Create a notification](create_a_notification.md): Set up alerts for intake monitoring and other triggers.
-- [Troubleshooting common issues](troubleshooting_common_issues.md): Solutions for connectivity and ingestion problems.
+* [Step 3: Activate detection rules](defend_step3_activate_detection_rules.md): Start enabling rules once your events are flowing correctly.
+* [Create a notification](create_a_notification.md): Set up alerts for intake monitoring and other triggers.
+* [Troubleshooting common issues](troubleshooting_common_issues.md): Solutions for connectivity and ingestion problems.

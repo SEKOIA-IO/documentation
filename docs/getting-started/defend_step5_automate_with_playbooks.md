@@ -1,10 +1,20 @@
 ---
-title: "Step 5: Automate with playbooks"
-description: "Activate a playbook template in Sekoia Defend to automate alert enrichment or response actions."
-keywords: [playbook, automation, template, trigger, response, alert, automate, workflow]
+title: 'Step 5: Automate with playbooks'
+keywords:
+  - playbook
+  - automation
+  - template
+  - trigger
+  - response
+  - alert
+  - automate
+  - workflow
 audience: analyst
 module: defend
 type: task
+description: >-
+  Activate a playbook template in Sekoia Defend to automate alert enrichment or
+  response actions.
 ---
 
 # Step 5: Automate with playbooks
@@ -13,19 +23,19 @@ Playbooks are automated workflows that execute a sequence of actions when a trig
 
 ## Before you begin
 
-- You have completed [Step 4: Triage your first alert](defend_step4_triage_first_alert.md).
-- You have the **Analyst** or **Admin** role.
+* You have completed [Step 4: Triage your first alert](defend_step4_triage_first_alert.md).
+* You have the **Analyst** or **Admin** role.
 
 ## Understand playbook triggers
 
 Every playbook starts with a trigger that defines when it runs.
 
-| Trigger type | When it fires |
-|---|---|
-| **Alert created** | Fires automatically each time a new alert is raised |
-| **Alert updated** | Fires when an alert's status or properties change |
-| **Manual** | Fires on demand when an analyst clicks **Run playbook** from an alert |
-| **Scheduled** | Fires at a defined time interval |
+| Trigger type      | When it fires                                                         |
+| ----------------- | --------------------------------------------------------------------- |
+| **Alert created** | Fires automatically each time a new alert is raised                   |
+| **Alert updated** | Fires when an alert's status or properties change                     |
+| **Manual**        | Fires on demand when an analyst clicks **Run playbook** from an alert |
+| **Scheduled**     | Fires at a defined time interval                                      |
 
 For your first playbook, use the **Alert created** trigger with a condition to limit it to specific alert types or urgency levels.
 
@@ -46,8 +56,7 @@ Sekoia provides a library of ready-made playbook templates for common use cases.
 11. Click **Save**.
 12. Toggle the playbook to **Active**.
 
-![Playbook template library with available automation templates listed as cards](assets/getting_started/playbook_template_catalog.png)
-
+![Playbook template library with available automation templates listed as cards](.gitbook/assets/playbook_template_catalog.png)
 
 ## Verify a playbook run
 
@@ -70,14 +79,14 @@ Set up a notification to alert you when a playbook encounters an error. Navigate
 
 As your library of playbooks grows, keep these principles in mind:
 
-- Each playbook should have a single, clear objective.
-- Use a trigger condition to avoid running a playbook on every alert, even irrelevant ones.
-- Aim for playbooks that complete in under one minute.
-- Limit each playbook to fewer than 15 modules (trigger + operators + actions).
+* Each playbook should have a single, clear objective.
+* Use a trigger condition to avoid running a playbook on every alert, even irrelevant ones.
+* Aim for playbooks that complete in under one minute.
+* Limit each playbook to fewer than 15 modules (trigger + operators + actions).
 
 For detailed guidance on designing and optimizing your playbook library, see the [best practices guide](best_practices.md).
 
 ## Related links
 
-- [Quick start: Defend](quick_start_defend.md): Return to the overview of all five steps.
-- [Notification system overview](notification_system_overview.md): Configure alerts for playbook errors and other operational events.
+* [Quick start: Defend](quick_start_defend.md): Return to the overview of all five steps.
+* [Notification system overview](notification_system_overview.md): Configure alerts for playbook errors and other operational events.

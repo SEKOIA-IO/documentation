@@ -1,10 +1,22 @@
 ---
-title: "Step 4: Triage your first alert"
-description: "Learn how to read, investigate, and close a security alert in Sekoia Defend using the alert detail page."
-keywords: [alert, triage, urgency, status, investigate, alert filter, false positive, events, close, reject]
+title: 'Step 4: Triage your first alert'
+keywords:
+  - alert
+  - triage
+  - urgency
+  - status
+  - investigate
+  - alert filter
+  - false positive
+  - events
+  - close
+  - reject
 audience: analyst
 module: defend
 type: task
+description: >-
+  Learn how to read, investigate, and close a security alert in Sekoia Defend
+  using the alert detail page.
 ---
 
 # Step 4: Triage your first alert
@@ -13,8 +25,8 @@ An alert is raised when an incoming event matches an active detection rule. Tria
 
 ## Before you begin
 
-- You have completed [Step 3: Activate detection rules](defend_step3_activate_detection_rules.md) and rules are active.
-- At least one alert has been raised in your community.
+* You have completed [Step 3: Activate detection rules](defend_step3_activate_detection_rules.md) and rules are active.
+* At least one alert has been raised in your community.
 
 {% hint style="info" %}
 **No alerts yet?**
@@ -28,22 +40,22 @@ In the navigation menu, select **Investigate > Alerts**.
 
 The alerts page displays all alerts raised in your community, ordered by most recent by default. Each row shows:
 
-- The alert creation date and last update
-- The urgency score (0-100)
-- The status (Pending, Acknowledged, Ongoing, Closed, or Rejected)
-- The entity and asset involved
-- The rule that triggered the alert
-- The associated threat
+* The alert creation date and last update
+* The urgency score (0-100)
+* The status (Pending, Acknowledged, Ongoing, Closed, or Rejected)
+* The entity and asset involved
+* The rule that triggered the alert
+* The associated threat
 
 ## Understand alert urgency
 
 Urgency measures the risk level of an alert on a scale from 0 to 100.
 
-| Urgency range | Display | What it means |
-|---|---|---|
-| 75-100 | High | Requires immediate attention |
-| 50-74 | Medium | Investigate when capacity allows |
-| 0-49 | Low | Review during regular operations |
+| Urgency range | Display | What it means                    |
+| ------------- | ------- | -------------------------------- |
+| 75-100        | High    | Requires immediate attention     |
+| 50-74         | Medium  | Investigate when capacity allows |
+| 0-49          | Low     | Review during regular operations |
 
 Urgency is calculated from the **severity of the detection rule** and the **criticality of the affected asset**. An Elementary rule triggered on a critical server produces a higher urgency than the same rule triggered on an unclassified endpoint.
 
@@ -59,10 +71,10 @@ The alert detail page is organized into tabs.
 
 The Details tab shows:
 
-- The urgency score and rule that triggered the alert
-- The affected assets and entity
-- Related threat intelligence from the Sekoia Intelligence database
-- The alert timeline (status changes, comments, and events)
+* The urgency score and rule that triggered the alert
+* The affected assets and entity
+* Related threat intelligence from the Sekoia Intelligence database
+* The alert timeline (status changes, comments, and events)
 
 ### Events tab
 
@@ -70,12 +82,10 @@ The Events tab lists the raw events that triggered the alert. Use it to understa
 
 You can interact with individual field values to:
 
-- Filter for or filter out that value within the alert's events
-- Search across all events in the platform for that value
+* Filter for or filter out that value within the alert's events
+* Search across all events in the platform for that value
 
-![Alert detail page with urgency score, asset information, and event timeline](assets/getting_started/alert_detail.png)
-
-
+![Alert detail page with urgency score, asset information, and event timeline](.gitbook/assets/alert_detail.png)
 
 ## Change the alert status
 
@@ -90,12 +100,12 @@ After reviewing the alert, update its status to reflect your analysis.
 Alert statuses can be customized. The following statuses are the default ones.
 {% endhint %}
 
-| Status | When to use it |
-|---|---|
-| **Acknowledged** | You have started analysis but have not yet determined the outcome |
-| **Ongoing** | The alert is confirmed as a true positive and a response is in progress |
-| **Closed** | The alert has been fully investigated and all necessary actions have been taken |
-| **Rejected** | The alert is a false positive |
+| Status           | When to use it                                                                  |
+| ---------------- | ------------------------------------------------------------------------------- |
+| **Acknowledged** | You have started analysis but have not yet determined the outcome               |
+| **Ongoing**      | The alert is confirmed as a true positive and a response is in progress         |
+| **Closed**       | The alert has been fully investigated and all necessary actions have been taken |
+| **Rejected**     | The alert is a false positive                                                   |
 
 {% hint style="success" %}
 **Leave a comment**
@@ -118,5 +128,5 @@ By default, the current alert is also rejected when the filter is created. The f
 
 ## Related links
 
-- [Step 5: Automate with playbooks](defend_step5_automate_with_playbooks.md): Set up automated enrichment and response workflows for your alerts.
-- [Notification system overview](notification_system_overview.md): Receive an email or Slack message when a high-urgency alert is raised.
+* [Step 5: Automate with playbooks](defend_step5_automate_with_playbooks.md): Set up automated enrichment and response workflows for your alerts.
+* [Notification system overview](notification_system_overview.md): Receive an email or Slack message when a high-urgency alert is raised.

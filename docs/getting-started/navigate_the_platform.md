@@ -1,10 +1,21 @@
 ---
-title: "Navigate the platform"
-description: "Learn how to use the Sekoia interface: the main navigation menu, workspace and community switching, filters, and menu personalization."
-keywords: [navigation, interface, menu, filters, workspace, community, personalize, favorites, keyboard shortcut]
+title: Navigate the platform
+keywords:
+  - navigation
+  - interface
+  - menu
+  - filters
+  - workspace
+  - community
+  - personalize
+  - favorites
+  - keyboard shortcut
 audience: all
 module: all
 type: task
+description: >-
+  Learn how to use the Sekoia interface: the main navigation menu, workspace and
+  community switching, filters, and menu personalization.
 ---
 
 # Navigate the platform
@@ -17,58 +28,58 @@ The left-hand menu is organized into three collapsible sections, plus fixed item
 
 **Top area**
 
-| Item | What it does |
-|---|---|
-| **Community name** | Shows your active community. Click to switch communities (multi-tenant only). |
-| **Search for IOCs** | Search the Intelligence database for observables and indicators. |
-| **Ask Roy** | Open the Roy AI assistant panel. |
-| **Notifications** | Access your personal notification history. |
-| **Homepage** | The platform home page with summary widgets. |
-| **Tasks** | Your assigned investigation tasks. |
-| **Dashboards** | Preconfigured and custom security dashboards. |
-| **Threat Landscape** | Overview of the threat landscape relevant to your organization. |
+| Item                 | What it does                                                                  |
+| -------------------- | ----------------------------------------------------------------------------- |
+| **Community name**   | Shows your active community. Click to switch communities (multi-tenant only). |
+| **Search for IOCs**  | Search the Intelligence database for observables and indicators.              |
+| **Ask Roy**          | Open the Roy AI assistant panel.                                              |
+| **Notifications**    | Access your personal notification history.                                    |
+| **Homepage**         | The platform home page with summary widgets.                                  |
+| **Tasks**            | Your assigned investigation tasks.                                            |
+| **Dashboards**       | Preconfigured and custom security dashboards.                                 |
+| **Threat Landscape** | Overview of the threat landscape relevant to your organization.               |
 
 **Investigate section**
 
-| Item | What you find there |
-|---|---|
-| **Cases** | Security cases grouping related alerts and investigations |
-| **Events** | Full event history from all connected data sources |
-| **Notebooks** | Collaborative investigation notebooks |
-| **Alerts** | Active security alerts raised by detection rules |
-| **Queries** | Saved and ad-hoc event queries |
+| Item          | What you find there                                       |
+| ------------- | --------------------------------------------------------- |
+| **Cases**     | Security cases grouping related alerts and investigations |
+| **Events**    | Full event history from all connected data sources        |
+| **Notebooks** | Collaborative investigation notebooks                     |
+| **Alerts**    | Active security alerts raised by detection rules          |
+| **Queries**   | Saved and ad-hoc event queries                            |
 
 **Observe section**
 
-| Item | What you find there |
-|---|---|
-| **Intelligence** | Threat intelligence database (threat actors, malware, campaigns, indicators) |
-| **Feeds** | Custom CTI feeds filtered by sector, geography, or threat type |
-| **Reports** | FLINT threat reports and analytical content |
-| **IoC Collections** | Curated indicator collections for detection |
-| **Graph Explorations** | Visual relationship maps between threat objects |
+| Item                   | What you find there                                                          |
+| ---------------------- | ---------------------------------------------------------------------------- |
+| **Intelligence**       | Threat intelligence database (threat actors, malware, campaigns, indicators) |
+| **Feeds**              | Custom CTI feeds filtered by sector, geography, or threat type               |
+| **Reports**            | FLINT threat reports and analytical content                                  |
+| **IoC Collections**    | Curated indicator collections for detection                                  |
+| **Graph Explorations** | Visual relationship maps between threat objects                              |
 
 **Configure section**
 
-| Item | What you find there |
-|---|---|
-| **Rules Catalog** | Detection rules mapped to the MITRE ATT&CK framework |
-| **Intakes** | Data source connectors for log ingestion |
-| **Entities** | Logical groupings of assets for scoping detection |
-| **Assets** | Inventory of discovered assets in your environment |
-| **Playbooks** | Automation workflows for alert enrichment and response |
-| **Integrations** | Installed integration connectors and their status |
+| Item              | What you find there                                    |
+| ----------------- | ------------------------------------------------------ |
+| **Rules Catalog** | Detection rules mapped to the MITRE ATT\&CK framework  |
+| **Intakes**       | Data source connectors for log ingestion               |
+| **Entities**      | Logical groupings of assets for scoping detection      |
+| **Assets**        | Inventory of discovered assets in your environment     |
+| **Playbooks**     | Automation workflows for alert enrichment and response |
+| **Integrations**  | Installed integration connectors and their status      |
 
 **Bottom area**
 
-| Item | What it does |
-|---|---|
-| **Your name** | Access your profile, security settings, and display preferences. |
-| **Settings** | Workspace and community configuration (admin). |
-| **Early features** | Preview features not yet in general availability. |
-| **Help & support** | Documentation, Academy, and support portal. |
+| Item               | What it does                                                     |
+| ------------------ | ---------------------------------------------------------------- |
+| **Your name**      | Access your profile, security settings, and display preferences. |
+| **Settings**       | Workspace and community configuration (admin).                   |
+| **Early features** | Preview features not yet in general availability.                |
+| **Help & support** | Documentation, Academy, and support portal.                      |
 
-![Sekoia left-hand navigation menu with collapsible sections Investigate, Observe, and Configure, plus fixed items at the top and bottom](assets/getting_started/menu.gif)
+![Sekoia left-hand navigation menu with collapsible sections Investigate, Observe, and Configure, plus fixed items at the top and bottom](.gitbook/assets/menu.gif)
 
 ## Switch between workspaces and communities
 
@@ -98,16 +109,16 @@ Most data pages, including **Alerts**, **Rules Catalog**, **Intakes**, **Playboo
 
 To open the filter panel:
 
-- Click the **Filters** button on the page, or
-- Press **F** on your keyboard from any of these pages.
+* Click the **Filters** button on the page, or
+* Press **F** on your keyboard from any of these pages.
 
 Once the filter panel is open:
 
-- Select a filter category and choose one or more values.
-- Apply multiple filters at the same time. The default operator between filters is AND.
-- Change the operator (is / is not / is any of) by clicking on it in the active filter tag.
-- Remove a single filter by clicking the cross next to its tag.
-- Remove all filters by clicking **Clear filters**.
+* Select a filter category and choose one or more values.
+* Apply multiple filters at the same time. The default operator between filters is AND.
+* Change the operator (is / is not / is any of) by clicking on it in the active filter tag.
+* Remove a single filter by clicking the cross next to its tag.
+* Remove all filters by clicking **Clear filters**.
 
 {% hint style="success" %}
 **Keyboard navigation in filters**
@@ -123,5 +134,5 @@ See [Customize your interface](customize_your_interface.md) for the step-by-step
 
 ## Related links
 
-- [Workspace and communities](workspace_and_communities.md): Explanation of the workspace and community structure and what each level controls.
-- [Customize your interface](customize_your_interface.md): Add pages to favorites, reorder menu sections, and configure table columns.
+* [Workspace and communities](workspace_and_communities.md): Explanation of the workspace and community structure and what each level controls.
+* [Customize your interface](customize_your_interface.md): Add pages to favorites, reorder menu sections, and configure table columns.

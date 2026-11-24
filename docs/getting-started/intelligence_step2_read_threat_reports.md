@@ -1,10 +1,26 @@
 ---
-title: "Step 2: Investigate and disseminate threat intelligence"
-description: "Find and interpret FLINT threat reports in Sekoia Intelligence, and disseminate intelligence to your detection and response tools through native connectors, TAXII, or the API."
-keywords: [flint, threat report, report, feed, notification, intelligence, cti, indicators, dissemination, taxii, connector, api, firewall]
+title: 'Step 2: Investigate and disseminate threat intelligence'
+keywords:
+  - flint
+  - threat report
+  - report
+  - feed
+  - notification
+  - intelligence
+  - cti
+  - indicators
+  - dissemination
+  - taxii
+  - connector
+  - api
+  - firewall
 audience: analyst
 module: intelligence
 type: task
+description: >-
+  Find and interpret FLINT threat reports in Sekoia Intelligence, and
+  disseminate intelligence to your detection and response tools through native
+  connectors, TAXII, or the API.
 ---
 
 # Step 2: Investigate and disseminate threat intelligence
@@ -13,7 +29,7 @@ The Sekoia CTI team verifies, consolidates, and enriches thousands of reports in
 
 ## Before you begin
 
-- You have completed [Step 1: Explore the threat intelligence database](intelligence_step1_explore_threat_database.md).
+* You have completed [Step 1: Explore the threat intelligence database](intelligence_step1_explore_threat_database.md).
 
 ## Find threat reports
 
@@ -44,17 +60,15 @@ FLINT (Flash Intelligence) reports are rapid-response publications released when
 
 A FLINT report typically contains:
 
-| Section | What it provides |
-|---|---|
-| **Executive summary** | A plain-language overview of the threat for non-technical stakeholders |
-| **Technical analysis** | Detailed breakdown of the attack chain, tools, and techniques |
-| **MITRE ATT&CK mapping** | The tactics and techniques used by the threat actor |
-| **Indicators of compromise** | File hashes, IP addresses, domains, and other artifacts for detection |
-| **Recommended actions** | Steps to detect, contain, or remediate the threat |
+| Section                      | What it provides                                                       |
+| ---------------------------- | ---------------------------------------------------------------------- |
+| **Executive summary**        | A plain-language overview of the threat for non-technical stakeholders |
+| **Technical analysis**       | Detailed breakdown of the attack chain, tools, and techniques          |
+| **MITRE ATT\&CK mapping**    | The tactics and techniques used by the threat actor                    |
+| **Indicators of compromise** | File hashes, IP addresses, domains, and other artifacts for detection  |
+| **Recommended actions**      | Steps to detect, contain, or remediate the threat                      |
 
-
-![FLINT report page with executive summary, MITRE mapping, and IOC list](assets/getting_started/flint.gif)
-
+![FLINT report page with executive summary, MITRE mapping, and IOC list](.gitbook/assets/flint.gif)
 
 ## Act on report indicators
 
@@ -73,11 +87,11 @@ To check whether any indicator from a report has already appeared in your enviro
 
 Beyond Sekoia Defend, you can operationalize Sekoia Intelligence in your own detection and response stack. There are three main ways to do this.
 
-| Method | When to use it |
-|---|---|
-| **Native connector** | For technologies with a dedicated Sekoia connector (SIEM, SOAR, firewall). Always prefer this option when available: native connectors support dynamic updates and revocation, and follow Sekoia's STIX taxonomy correctly. |
-| **TAXII 2.1 connector** | For technologies that natively support ingesting STIX 2.1 data through the TAXII 2.1 protocol. |
-| **API** | For custom consumption needs, with the ability to run precise, segmented queries against the database. See the [Intelligence API reference](https://docs.sekoia.com/developer/api/#/intelligence). To consume the full feed reliably over time, including revoked objects, build your integration following the [API consumption guide](https://docs.sekoia.com/sekoia-solutions/cti/external-integrations/api). |
+| Method                  | When to use it                                                                                                                                                                                                                                                                                                                                                                                                   |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Native connector**    | For technologies with a dedicated Sekoia connector (SIEM, SOAR, firewall). Always prefer this option when available: native connectors support dynamic updates and revocation, and follow Sekoia's STIX taxonomy correctly.                                                                                                                                                                                      |
+| **TAXII 2.1 connector** | For technologies that natively support ingesting STIX 2.1 data through the TAXII 2.1 protocol.                                                                                                                                                                                                                                                                                                                   |
+| **API**                 | For custom consumption needs, with the ability to run precise, segmented queries against the database. See the [Intelligence API reference](https://docs.sekoia.com/developer/api/#/intelligence). To consume the full feed reliably over time, including revoked objects, build your integration following the [API consumption guide](https://docs.sekoia.com/sekoia-solutions/cti/external-integrations/api). |
 
 {% hint style="info" %}
 **Model Context Protocol (MCP)**
@@ -125,7 +139,7 @@ See: [Create a notification](create_a_notification.md) for the full procedure.
 
 ## Related links
 
-- [Quick start: Intelligence](quick_start_intelligence.md): Return to the overview of the Intelligence quick start.
-- [Data model](https://docs.sekoia.com/sekoia-solutions/cti/data_model): Full reference on STIX objects, observables, confidence, and reliability.
-- [Create a notification](create_a_notification.md): Full procedure for setting up notification rules.
-- [Glossary](glossary.md): Definitions of FLINT, IOC, TLP, indicator, and feed.
+* [Quick start: Intelligence](quick_start_intelligence.md): Return to the overview of the Intelligence quick start.
+* [Data model](https://docs.sekoia.com/sekoia-solutions/cti/data_model): Full reference on STIX objects, observables, confidence, and reliability.
+* [Create a notification](create_a_notification.md): Full procedure for setting up notification rules.
+* [Glossary](glossary.md): Definitions of FLINT, IOC, TLP, indicator, and feed.

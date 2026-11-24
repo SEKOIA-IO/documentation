@@ -1,10 +1,21 @@
 ---
-title: "Step 1: Connect a data source"
-description: "Create your first intake in Sekoia Defend to start collecting logs from a data source in your environment."
-keywords: [intake, data source, connect, log collection, integration catalog, intake key, entity, push, pull]
+title: 'Step 1: Connect a data source'
+keywords:
+  - intake
+  - data source
+  - connect
+  - log collection
+  - integration catalog
+  - intake key
+  - entity
+  - push
+  - pull
 audience: analyst
 module: defend
 type: task
+description: >-
+  Create your first intake in Sekoia Defend to start collecting logs from a data
+  source in your environment.
 ---
 
 # Step 1: Connect a data source
@@ -13,8 +24,8 @@ An intake is the connection between one of your data sources (a firewall, an EDR
 
 ## Before you begin
 
-- You need the **Admin** role or a custom role with intake management permissions to create an intake.
-- Identify at least one data source you want to connect. If you are unsure where to start, refer to the [best practices for intake configuration](best_practices.md) for recommendations on which sources to prioritize.
+* You need the **Admin** role or a custom role with intake management permissions to create an intake.
+* Identify at least one data source you want to connect. If you are unsure where to start, refer to the [best practices for intake configuration](best_practices.md) for recommendations on which sources to prioritize.
 
 {% hint style="info" %}
 **No admin access?**
@@ -26,10 +37,10 @@ If you do not have permission to create intakes, share this article with your ad
 
 Sekoia supports two types of intakes:
 
-| Type | How it works | Example sources |
-|---|---|---|
+| Type     | How it works                                                                  | Example sources                               |
+| -------- | ----------------------------------------------------------------------------- | --------------------------------------------- |
 | **Push** | You configure your data source to forward logs to Sekoia using the intake key | Firewall via Syslog, Windows Event Forwarding |
-| **Pull** | Sekoia connects to a source API and retrieves logs automatically | Microsoft 365, Okta, CrowdStrike |
+| **Pull** | Sekoia connects to a source API and retrieves logs automatically              | Microsoft 365, Okta, CrowdStrike              |
 
 For pull intakes, you start and stop collection using an On/Off toggle. For push intakes, you configure forwarding on your source side using the intake key.
 
@@ -45,8 +56,7 @@ For pull intakes, you start and stop collection using an On/Off toggle. For push
 
 For pull intakes, an additional configuration step appears. Enter the credentials or API parameters required to connect to the source.
 
-![Intake creation modal with fields for name and entity selection](assets/getting_started/intake_creation_modal.png)
-
+![Intake creation modal with fields for name and entity selection](.gitbook/assets/intake_creation_modal.png)
 
 ## Copy and deploy the intake key
 
@@ -73,6 +83,6 @@ For **pull intakes**, the intake is inactive by default. To start data collectio
 
 ## Related links
 
-- [Step 2: Verify event reception](defend_step2_verify_event_reception.md): Confirm that logs are arriving and being parsed correctly.
-- [Integration catalog](https://docs.sekoia.com/integrations/categories): Technology-specific setup guides for each supported data source.
-- [Notification system overview](notification_system_overview.md): How to set up alerts when an intake stops receiving data.
+* [Step 2: Verify event reception](defend_step2_verify_event_reception.md): Confirm that logs are arriving and being parsed correctly.
+* [Integration catalog](https://docs.sekoia.com/integrations/categories): Technology-specific setup guides for each supported data source.
+* [Notification system overview](notification_system_overview.md): How to set up alerts when an intake stops receiving data.

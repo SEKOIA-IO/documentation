@@ -1,10 +1,20 @@
 ---
-title: "Customize your interface"
-description: "Adjust the Sekoia navigation menu and display settings to match your daily workflow."
-keywords: [customize, interface, favorites, menu, personalize, display, navigation, preferences]
+title: Customize your interface
+keywords:
+  - customize
+  - interface
+  - favorites
+  - menu
+  - personalize
+  - display
+  - navigation
+  - preferences
 audience: analyst
 module: all
 type: task
+description: >-
+  Adjust the Sekoia navigation menu and display settings to match your daily
+  workflow.
 ---
 
 # Customize your interface
@@ -30,15 +40,15 @@ You can customize the appearance of the Sekoia interface from your profile setti
 
 1. Navigate to **Settings > Account > Profile**.
 2. In the **Appearance** section, select a **Theme**:
-    - **Light**
-    - **Dark**
-    - **System**, to follow your operating system preference
+   * **Light**
+   * **Dark**
+   * **System**, to follow your operating system preference
 3. Select an **Accent color** to choose the main color used across the interface.
 4. Optionally enable **Contrast** to increase the contrast of the interface.
 
 Your appearance preferences are saved to your account and apply across your Sekoia sessions.
 
-![!Profile appearance settings showing theme, accent color, and contrast options](assets/getting_started/settings_profile.png)
+![!Profile appearance settings showing theme, accent color, and contrast options](.gitbook/assets/settings_profile.png)
 
 ## Reorder menu sections
 
@@ -50,7 +60,7 @@ To reorder a section:
 2. Drag it to the desired position in the menu.
 3. Release to place it in the new position.
 
-![!Navigation menu showing a section being moved by drag and drop](assets/getting_started/reorder_menu_gif.gif)
+![!Navigation menu showing a section being moved by drag and drop](.gitbook/assets/reorder_menu_gif.gif)
 
 ## Customize table columns
 
@@ -85,5 +95,5 @@ To set up or change your authentication configuration, see [Secure your account]
 
 ## Related links
 
-- [Navigate the platform](navigate_the_platform.md): How the navigation menu is structured and how to use filters.
-- [Secure your account](secure_your_account.md): Enable two-factor authentication and manage your authentication settings.
+* [Navigate the platform](navigate_the_platform.md): How the navigation menu is structured and how to use filters.
+* [Secure your account](secure_your_account.md): Enable two-factor authentication and manage your authentication settings.
