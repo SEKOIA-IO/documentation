@@ -24,7 +24,9 @@ A community can own up to 10 custom integrations that contain an asset connector
 1. Build every item with an OCSF model of [`sekoia-automation-models`](https://github.com/SEKOIA-IO/sekoia-automation-models/tree/v1.5.0/sekoia_automation_models/ocsf): `DeviceOCSFModel`, `UserOCSFModel`, `SoftwareOCSFModel` or `VulnerabilityOCSFModel`.
 2. Send the items in an `AssetList`.
 
-Sekoia validates each push against the same models. An item updates the asset your community already has for it, whatever source created that asset. Steps 4 to 7 say how each type of item is matched. [How a push updates an existing asset](/xdr/features/collect/assets.md#how-a-push-updates-an-existing-asset) says which properties a push overwrites, clears or keeps.
+Sekoia validates each push against the same models. An item updates the asset your community already has for it, whatever source created that asset. Step 4 says how each type of item is matched. [How a push updates an existing asset](/xdr/features/collect/assets.md#how-a-push-updates-an-existing-asset) says which properties a push overwrites, clears or keeps.
+
+For complete code, see the asset connectors of Sekoia integrations in `automation-library`: [devices from Nozomi](https://github.com/SEKOIA-IO/automation-library/blob/ea81654547acc868f9cc7b10f945b99c79fb90df/Nozomi/nozomi_networks/asset_connector/device_assets.py), [users from Google Workspace](https://github.com/SEKOIA-IO/automation-library/blob/ea81654547acc868f9cc7b10f945b99c79fb90df/Google/google_module/asset_connector/user_assets.py) and [vulnerability findings from Holm Security](https://github.com/SEKOIA-IO/automation-library/blob/ea81654547acc868f9cc7b10f945b99c79fb90df/HolmSecurity/holm_security/asset_connector/vulnerability_assets.py).
 
 ## Step 3: Send items in batches
 
@@ -33,7 +35,11 @@ Sekoia validates each push against the same models. An item updates the asset yo
 
 Each configuration has a rate limit on pushes per minute and a 24-hour item quota. The values are in [Asset connector limits](/xdr/features/modules/reveal_asset_connectors_limits.md).
 
-## Step 4: Send devices
+## Step 4: Send assets
+
+Each type of item follows its own rules, so that it updates the right asset.
+
+### Devices
 
 1. Build `hostname` and `domain` with [`split_hostname()`](https://github.com/SEKOIA-IO/sekoia-automation-models/blob/v1.5.0/sekoia_automation_models/hostname.py), from `sekoia_automation_models.hostname`. For instance, `SRV01.corp.example.com` gives `srv01` and `corp.example.com`.
 2. Skip a device when `split_hostname()` returns no hostname.
@@ -43,24 +49,24 @@ Each configuration has a rate limit on pushes per minute and a 24-hour item quot
 
 A device updates the host asset with the same `hostname` [detection property](/xdr/features/collect/assets.md#detection-properties), regardless of case. Revoked assets are excluded. When none matches, a new host asset is created.
 
-## Step 5: Send users
+### Users
 
 1. Send each account with the same username at every run.
 
 A user updates the account asset with the same email when its username is an email address, or with the same username otherwise. When none matches, a new account asset is created.
 
-## Step 6: Send software
+### Software
 
 1. Give each software a name. A software without a name is ignored.
-2. Give it the device it runs on, with the same hostname as in Step 4.
+2. Give it the device it runs on, with the same hostname as the device item.
 
 A software updates the application of the host asset with the same name and version. The host asset is the one with the same `hostname` as the device the item carries. A new version creates a new application.
 
-## Step 7: Send vulnerability findings
+### Vulnerability findings
 
 A vulnerability finding is a vulnerability that the source reports on one asset.
 
-1. Give each finding the device it affects, with the same hostname as in Step 4.
+1. Give each finding the device it affects, with the same hostname as the device item.
 2. Filter findings in the connector code before sending them, for instance by CVSS score, or by known exploitation when the source reports it.
 3. Send a finding with the Close activity when the source reports it fixed. Its status becomes remediated.
 4. Send the finding again without Close if the source reports it again. Its status becomes open.
@@ -84,10 +90,10 @@ A push never changes a status a user set, such as accepted risk or false positiv
 
 A finding updates the finding of the same asset whose CVEs include all the CVEs it carries, or with the same `finding_info.uid` when it has no CVE. The asset is the one with the same `hostname` as the device the finding carries. When none matches, a new finding is created.
 
-## Step 8: Plan for storage limits
+## Step 5: Plan for storage limits
 
 1. Close fixed findings, so that open findings stay under their limit.
-2. Keep the hostnames and usernames of Steps 4 and 5 stable, so that each machine and account updates a single asset.
+2. Keep the hostnames and usernames of Step 4 stable, so that each machine and account updates a single asset.
 
 Each configuration and each community can store a limited number of active assets, active applications and open findings. The limits follow the number of assets included in the community subscription. When a configuration reaches a storage limit, every push of the configuration receives a 429 `ASSET_CONNECTOR_LIMIT_REACHED`. See [Storage limits for custom asset connectors](/xdr/features/modules/reveal_asset_connectors_limits.md#storage-limits-for-custom-asset-connectors).
 
