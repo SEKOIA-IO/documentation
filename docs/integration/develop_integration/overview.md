@@ -11,6 +11,7 @@
 - **You want to ingest data from a product not supported by Sekoia, go to this [section](#usecase-1-you-want-to-ingest-data-from-a-product-not-supported-by-sekoia)**
 - **You want to modify an existing intake, go to this [section](#usecase-2-you-want-to-modify-an-existing-intake)**
 - **You want to create a new automation, go to this [section](#usecase-3-you-want-to-create-a-new-automation)**
+- **You want to collect assets from a product not supported by Sekoia, go to this [section](#usecase-4-you-want-to-collect-assets-from-a-product-not-supported-by-sekoia)**
 
 ## List of development usecases
 
@@ -50,9 +51,9 @@ Once you are done, you will create a custom intake based using this custom forma
 
 You have now successfully ingested data from a new product. If you would like to share your custom format to the cybersecurity community or let Sekoia handle the maintenance of this custom format, proceed to the next step.
 
-#### Step 3. Create your custom connector (optional)
+#### Step 3. Create your custom event connector (optional)
 
-If there are no compatible methods in Sekoia to collect events from your product, you can create a custom connector that will handle the collection process.
+If there are no compatible methods in Sekoia to collect events from your product, you can create a custom event connector that will handle the collection process.
 Sekoia will trigger this connector on a recurring basis to connect to your product and collect new events.
 
 !!! Prerequisites
@@ -112,3 +113,22 @@ Once you have acquired a basic understanding of automations:
 The last step is to homologate your automation in order to make it available in the automation library.
 
 - Follow these [instructions](automation/create_a_module.md#homologation-request) to homologate your automation
+
+### Usecase 4. You want to collect assets from a product not supported by Sekoia
+
+!!! Prerequisites
+    Asset connectors require the [Reveal add-on module](/xdr/features/modules/reveal_index.md) and Python development skills.
+
+#### Step 1. Understand the general concepts
+
+Read [Connectors](automation/connectors.md) to understand how an asset connector differs from an event connector, and the rules it must follow to keep the asset inventory free of duplicates.
+
+#### Step 2. Create your custom asset connector
+
+1. Click on `+ New Integration` in the **Integrations** page, then click on `Get Started` and follow the steps given to set up your development environment
+2. Follow the **Asset connector** tab of [Create a module](automation/create_a_module.md#create-your-component) to develop your module with an asset connector
+3. Once your code is finalized, click on `Import my custom integration`, then follow the steps given to import your code from your Github or Gitlab repository
+
+#### Step 3. Configure your asset connector
+
+Configure the asset connector from the integration catalog. See [Create an asset connector](/xdr/features/modules/reveal_asset_connectors_create.md).
