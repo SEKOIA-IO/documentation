@@ -156,7 +156,7 @@ A subclass of [`AssetConnector`](https://github.com/SEKOIA-IO/sekoia-automation-
 | `reset_checkpoint()` | Clears the checkpoint, so that the next cycle fetches everything again. |
 | `get_mapped_fields()` | Returns how product fields map to OCSF fields. When the mapping changes from one version of the connector to the next, the SDK calls `reset_checkpoint()` and the next cycle sends every item again with the new mapping. Return `{}` to turn this off. |
 
-The connector below collects the machines of an imaginary product. For a connector in production, see the [Okta device connector](https://github.com/SEKOIA-IO/automation-library/blob/develop/Okta/okta_modules/asset_connector/device_assets.py) of automation-library, built on `AsyncAssetConnector`, the asynchronous variant of `AssetConnector`.
+The connector below collects the machines of an imaginary product. For connectors in production, see the asset connectors of Sekoia integrations in `automation-library`: [devices from Nozomi](https://github.com/SEKOIA-IO/automation-library/blob/ea81654547acc868f9cc7b10f945b99c79fb90df/Nozomi/nozomi_networks/asset_connector/device_assets.py), [users from Google Workspace](https://github.com/SEKOIA-IO/automation-library/blob/ea81654547acc868f9cc7b10f945b99c79fb90df/Google/google_module/asset_connector/user_assets.py) and [vulnerability findings from Holm Security](https://github.com/SEKOIA-IO/automation-library/blob/ea81654547acc868f9cc7b10f945b99c79fb90df/HolmSecurity/holm_security/asset_connector/vulnerability_assets.py).
 
 ??? example "A complete asset connector"
 
