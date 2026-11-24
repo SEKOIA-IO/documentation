@@ -31,14 +31,14 @@ Every asset has a **type**: host, account or network. An asset can also have a *
 | Account | `account` | An identity that signs in: a person, a service or a machine. |
 | Network | `network` | A network. The asset form offers no category for a network asset. |
 
-The tables below list the categories of each type. The **Set by** column tells which sources give that category: you in the [asset form](#manual-asset-creation), [automatic asset discovery](#automatic-asset-discovery), or an [asset connector](#asset-collection-via-asset-connectors). The value is the one the API and SOL queries return.
+The tables below list the categories of each type. The **Set by** column tells which sources give that category: you in the [asset form](#manual-asset-creation) or an [asset connector](#asset-collection-via-asset-connectors). The value is the one the API and SOL queries return.
 
 #### Host categories
 
 | Category | Value | Set by |
 | --- | --- | --- |
 | Desktop | `desktop` | Asset form, asset connector |
-| Server | `server` | Asset form, asset connector, asset discovery |
+| Server | `server` | Asset form, asset connector |
 | Mobile | `mobile` | Asset form, asset connector |
 | Phone | `phone` | Asset form |
 | Virtual | `virtual` | Asset form, asset connector |
@@ -51,7 +51,7 @@ The tables below list the categories of each type. The **Set by** column tells w
 
 | Category | Value | Set by |
 | --- | --- | --- |
-| User | `user` | Asset form, asset connector, asset discovery |
+| User | `user` | Asset form, asset connector |
 | Admin | `admin` | Asset form |
 | Service Account | `service_account` | Asset form, asset connector |
 | Machine Account | `machine_account` | Asset form |
@@ -62,24 +62,16 @@ The tables below list the categories of each type. The **Set by** column tells w
 !!! note
     The asset list shows the System account category as `system_account`. It is a different value from System (`system`), which you set in the asset form.
 
-### How an asset gets its category
+### How an asset connector sets the category
 
-Three sources can give an asset its category. This section tells which one set the category of an asset, and why another source did not change it.
+An asset connector reads the category of a host from the OCSF device type it pushes, and the category of an account from the OCSF user type it pushes. The two tables below map each type to its category.
 
-| Source | Host | Account |
-| --- | --- | --- |
-| [Asset discovery](#automatic-asset-discovery) | `server` when the `host.type` field of the event is `server`. Otherwise, no category. | `user` |
-| [Asset connector](#asset-collection-via-asset-connectors) | The category of the device type it pushes. See [Device type to category](#device-type-to-category). | The category of the user type it pushes. See [User type to category](#user-type-to-category). |
-| You, in the asset form | A host category the form offers. | An account category the form offers. |
+It sets this category:
 
-The first source that gives a category wins, until you change it:
+- on the hosts and accounts it creates. A host it creates from a software item gets no category.
+- on an existing account that has none. An existing host without a category keeps none: set it in the asset form.
 
-- Asset discovery gives a category only to the assets it creates.
-- An asset connector gives a category to the hosts and accounts it creates, and to an existing account that has none. A host it creates from a software item gets no category.
-- Asset discovery and asset connectors never replace a category, whoever set it.
-- You can change the category in the asset form at any time. Asset discovery and asset connectors keep the category you set.
-
-A host that already exists without a category keeps none when an asset connector pushes it. Set its category in the asset form.
+An asset connector never replaces a category already set, including one you set in the asset form.
 
 #### Device type to category
 
@@ -321,7 +313,7 @@ The following table lists the atom types and their related event fields that are
 
 **Set the Contextual Property `os` to Host**
 
-This rule enriches an existing asset with an `os` contextual property. This property is extracted from the value of all the `os` related fields of an event where its `host.name` field matches the `hostname` detection property of the asset. In addition, a host created from an event whose `host.type` field is `server` gets the Server category.
+This rule enriches an existing asset with an `os` contextual property. This property is extracted from the value of all the `os` related fields of an event where its `host.name` field matches the `hostname` detection property of the asset.
 
 ##### Attach EDR agent IDs to Host
 
