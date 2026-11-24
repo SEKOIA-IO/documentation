@@ -60,8 +60,13 @@ def main():
     args = ap.parse_args()
 
     tag = sync_tag(args.source)
-    base_ref = git("rev-parse", "-q", "--verify", f"refs/tags/{tag}", check=False).strip() \
-        or git("merge-base", args.source, "pre-migration").strip()
+    # Branche jamais synchronisée (ex. une PR restée ouverte) : on part du dernier point de
+    # main déjà reporté, pour ne pas repasser des modifications de main déjà présentes.
+    base_ref = git("rev-parse", "-q", "--verify", f"refs/tags/{tag}", check=False).strip()
+    if not base_ref:
+        anchor = "sync/main" if git("rev-parse", "-q", "--verify", "refs/tags/sync/main", check=False).strip() \
+            else "pre-migration"
+        base_ref = git("merge-base", args.source, anchor).strip()
     src_ref = git("rev-parse", args.source).strip()
     Path(".git/port_source_ref").unlink(missing_ok=True)
     Path(".git/port_new_pages.tsv").unlink(missing_ok=True)
@@ -79,7 +84,7 @@ def main():
     new_pages = []
     report = {"appliqué": [], "conflit": [], "nouveau": [], "supprimé côté source": [], "copié brut": []}
     try:
-        diff = git("diff", "-M", "--name-status", base_ref, src_ref, "--", args.docs, "_shared_content")
+        diff = git("diff", "-M", "-l0", "--name-status", base_ref, src_ref, "--", args.docs, "_shared_content")
         for line in diff.splitlines():
             st, *paths = line.split("\t")
             old_src, new_src = (paths[0], paths[-1])
@@ -88,7 +93,7 @@ def main():
                 if args.write and st[0] != "D":
                     Path(new_src).parent.mkdir(parents=True, exist_ok=True)
                     Path(new_src).write_bytes(subprocess.run(["git", "show", f"{src_ref}:{new_src}"],
-                                                             capture_output=True).stdout)
+                                                             capture_output=True).stdout)   # images : binaire
                 report["copié brut"].append(new_src)
                 docs_path = next((d + new_src[len(s):] for d, s in manifest
                                   if new_src == s or new_src.startswith(s + "/")), None)
