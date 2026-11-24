@@ -1,4 +1,4 @@
-# Write an asset connector
+# Build an asset connector
 
 An asset connector collects devices, users, applications and vulnerability findings from a product, and keeps them up to date in the asset inventory of Sekoia. This page explains how to write an asset connector your analysts can trust, and how the safeguards of Sekoia catch the mistakes a connector can make.
 

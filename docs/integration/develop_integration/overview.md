@@ -121,7 +121,7 @@ The last step is to homologate your automation in order to make it available in 
 
 #### Step 1. Write your asset connector
 
-Follow [Write an asset connector](automation/asset_connector.md). It explains how to declare the asset connector in a module, how to write it, and the practices that keep your asset inventory reliable.
+Follow [Build an asset connector](automation/asset_connector.md). It explains how to declare the asset connector in a module, how to write it, and the practices that keep your asset inventory reliable.
 
 #### Step 2. Import and configure it
 

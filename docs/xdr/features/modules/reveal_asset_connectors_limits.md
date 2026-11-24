@@ -101,5 +101,5 @@ Revoking an asset lowers every usage, active and lifetime.
 
 ## Related articles
 
-- [Write an asset connector](/integration/develop_integration/automation/asset_connector.md): How to send valid data and avoid duplicate assets.
+- [Build an asset connector](/integration/develop_integration/automation/asset_connector.md): How to send valid data and avoid duplicate assets.
 - [Troubleshoot asset connectors](/xdr/features/modules/reveal_asset_connectors_troubleshoot.md#diagnose-push-errors): Push errors and the action for each.
