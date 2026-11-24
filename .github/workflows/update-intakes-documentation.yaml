@@ -25,7 +25,7 @@ jobs:
         path: intakes
 
     - name: Install uv
-      uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+      uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2 # v10.3.3
       with:
         enable-cache: true
 
@@ -42,7 +42,7 @@ jobs:
       working-directory: ./main/scripts/update_mkdocs
 
     - name: Create Pull Request
-      uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+      uses: peter-evans/create-pull-request@15733dbdfeedb4f7fdb73d13c6f5ac83b710fab8 # v8.1.2
       with:
         commit-message: Refresh intakes documentation
         delete-branch: true
