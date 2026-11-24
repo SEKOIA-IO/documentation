@@ -75,57 +75,165 @@ The following Sekoia.io built-in rules match the intake **Gatewatcher AionIQ V10
     
     - **Effort:** master
 
-??? abstract "Gatewatcher AionIQ V103 Active CTI"
+??? abstract "Gatewatcher AionIQ V103 Active CTI High"
     
-    Detects whan an event related to CTI is raised by Gatewatcher V103. An attacker may be gathering information with this event.
-    
-    - **Effort:** master
-
-??? abstract "Gatewatcher AionIQ V103 Beacon Detect"
-    
-    Detects a suspicious beacon.
+    Detects whan an event related to CTI is raised by Gatewatcher V103 with a high severity. An attacker may be gathering information with this event.
     
     - **Effort:** master
 
-??? abstract "Gatewatcher AionIQ V103 Dga Detect"
+??? abstract "Gatewatcher AionIQ V103 Active CTI Low"
     
-    Detects when an event related to dga is raised by gatewatcher. An attacker can use this to generate a new domain for C2.
-    
-    - **Effort:** master
-
-??? abstract "Gatewatcher AionIQ V103 Malcore"
-    
-    Detects a malcore alert by Gatewatcher AionIQ V103 related to documents with passwords.
+    Detects when an event related to CTI is raised by Gatewatcher V103 with a low severity. An attacker may be gathering information with this event.
     
     - **Effort:** master
 
-??? abstract "Gatewatcher AionIQ V103 Malicious Powershell Detect"
+??? abstract "Gatewatcher AionIQ V103 Active CTI Medium"
     
-    Detects malicious powershell by Gatewatcher V103.
-    
-    - **Effort:** master
-
-??? abstract "Gatewatcher AionIQ V103 Network Behavior Analytics"
-    
-    Detects when network behavior analytics were requested.
+    Detects when an event related to CTI is raised by Gatewatcher V103 with a medium severity. An attacker may be gathering information with this event.
     
     - **Effort:** master
 
-??? abstract "Gatewatcher AionIQ V103 Ransomware Detect"
+??? abstract "Gatewatcher AionIQ V103 Beacon Detect High"
     
-    Detects when a ransomware is detected by gatewatcherV103.
-    
-    - **Effort:** master
-
-??? abstract "Gatewatcher AionIQ V103 Retrohunt"
-    
-    Detects when a retrohunt event is raised by GatewatcherV103.
+    Detects a suspicious beacon with a high severity.
     
     - **Effort:** master
 
-??? abstract "Gatewatcher AionIQ V103 Shellcode Detect"
+??? abstract "Gatewatcher AionIQ V103 Beacon Detect Low"
     
-    Detects when a suspicious shellcode is used.
+    Detects a suspicious beacon with a low severity.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Beacon Detect Medium"
+    
+    Detects a suspicious beacon with a medium severity.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Dga Detect High"
+    
+    Detects when an event related to dga is raised by gatewatcher with a high severity. An attacker can use this to generate a new domain for C2.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Dga Detect Low"
+    
+    Detects when an event related to dga is raised by gatewatcher with a low severity. An attacker can use this to generate a new domain for C2.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Dga Detect Medium"
+    
+    Detects when an event related to dga is raised by gatewatcher with a medium severity. An attacker can use this to generate a new domain for C2.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Malcore High"
+    
+    Detects a malcore alert by Gatewatcher AionIQ V103 with a high severity related to documents with passwords.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Malcore Low"
+    
+    Detects a malcore alert by Gatewatcher AionIQ V103 with a low severity related to documents with passwords.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Malcore Medium"
+    
+    Detects a malcore alert by Gatewatcher AionIQ V103 with a medium severity related to documents with passwords.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Malicious Powershell Detect High"
+    
+    Detects malicious powershell by Gatewatcher V103 with a high severity.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Malicious Powershell Detect Low"
+    
+    Detects malicious powershell by Gatewatcher V103 with a low severity.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Malicious Powershell Detect Medium"
+    
+    Detects malicious powershell by Gatewatcher V103 with a medium severity.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Network Behavior Analytics High"
+    
+    Detects when network behavior analytics were requested with a high severity.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Network Behavior Analytics Low"
+    
+    Detects when network behavior analytics were requested with a low severity.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Network Behavior Analytics Medium"
+    
+    Detects when network behavior analytics were requested with a medium severity.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Ransomware Detect High"
+    
+    Detects when a ransomware is detected by gatewatcherV103 with a high severity.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Ransomware Detect Low"
+    
+    Detects when a ransomware is detected by gatewatcherV103 with a low severity.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Ransomware Detect Medium"
+    
+    Detects when a ransomware is detected by gatewatcherV103 with a medium severity.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Retrohunt High"
+    
+    Detects when a retrohunt event is raised by GatewatcherV103 with a high severity.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Retrohunt Low"
+    
+    Detects when a retrohunt event with a low severity is raised by GatewatcherV103.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Retrohunt Medium"
+    
+    Detects when a retrohunt event with a medium severity is raised by GatewatcherV103.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Shellcode Detect High"
+    
+    Detects when a suspicious shellcode is used with a high severity.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Shellcode Detect Low"
+    
+    Detects when a suspicious shellcode is used with a low severity.
+    
+    - **Effort:** master
+
+??? abstract "Gatewatcher AionIQ V103 Shellcode Detect Medium"
+    
+    Detects when a suspicious shellcode is used with a medium severity.
     
     - **Effort:** master
 

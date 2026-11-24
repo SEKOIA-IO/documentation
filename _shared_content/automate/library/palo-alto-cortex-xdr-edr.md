@@ -147,4 +147,4 @@ Cortex XDR is the detection and response app that natively integrates network, e
 
 ## Extra
 
-Module **`Palo Alto Cortex XDR (EDR)` v1.3.11**
+Module **`Palo Alto Cortex XDR (EDR)` v1.3.12**

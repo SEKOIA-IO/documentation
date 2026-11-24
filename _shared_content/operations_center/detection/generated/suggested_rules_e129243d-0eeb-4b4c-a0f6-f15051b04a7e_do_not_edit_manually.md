@@ -123,6 +123,12 @@ The following Sekoia.io built-in rules match the intake **CyberArk Audit Logs**.
     
     - **Effort:** intermediate
 
+??? abstract "Mass User And Computer Account Deleted"
+    
+    Detects when mutiple user and computer accounts are deleted in a short time.
+    
+    - **Effort:** master
+
 ??? abstract "Microsoft Defender Antivirus History Deleted"
     
     Windows Defender history has been deleted. Could be an attempt by an attacker to remove its traces.
@@ -218,12 +224,6 @@ The following Sekoia.io built-in rules match the intake **CyberArk Audit Logs**.
     The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision.
     
     - **Effort:** advanced
-
-??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
-    
-    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
-    
-    - **Effort:** master
 
 ??? abstract "Sekoia.io EICAR Detection"
     

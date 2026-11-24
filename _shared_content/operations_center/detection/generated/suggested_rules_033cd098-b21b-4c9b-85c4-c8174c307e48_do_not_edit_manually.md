@@ -759,6 +759,12 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     
     - **Effort:** intermediate
 
+??? abstract "Mass User And Computer Account Deleted"
+    
+    Detects when mutiple user and computer accounts are deleted in a short time.
+    
+    - **Effort:** master
+
 ??? abstract "MavInject Process Injection"
     
     Detects process injection using the signed Windows tool Mavinject32.exe (which is a LOLBAS)
@@ -1370,12 +1376,6 @@ The following Sekoia.io built-in rules match the intake **WithSecure Elements**.
     Detection of scheduled task with high privileges used by attacker for persistence.
     
     - **Effort:** elementary
-
-??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
-    
-    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
-    
-    - **Effort:** master
 
 ??? abstract "Sekoia.io EICAR Detection"
     

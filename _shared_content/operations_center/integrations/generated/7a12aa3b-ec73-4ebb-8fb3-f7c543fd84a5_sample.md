@@ -1,5 +1,5 @@
 
-### Raw Events Samples
+### Raw Events Samples { data-search-exclude }
 
 In this section, you will find examples of raw logs as generated natively by the source. These examples are provided to help integrators understand the data format before ingestion into Sekoia.io. It is crucial for setting up the correct parsing stages and ensuring that all relevant information is captured.
 
@@ -53,6 +53,14 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_event_aut24327"
+
+    ```
+	id=firewall time="2026-11-08 09:12:31" pri=6 fw=192.0.2.22 vpn=VPN01 ivs=Default Network user=jdoe realm="example.com" roles="" proto=auth src=198.51.100.77 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="" duration= msg="AUT24327: Primary authentication failed for jdoe/example.com from 198.51.100.77"
+    ```
+
+
+
 === "test_event_aut24414"
 
     ```
@@ -67,6 +75,22 @@ In this section, you will find examples of raw logs as generated natively by the
 	id=firewall time="2023-10-17 10:21:14" pri=4 fw=3.4.5.6 vpn=EX023-V6 user=System realm="" roles="" type=mgmt proto= src=1.2.3.4 dst= dstname= sent= rcvd= msg="AUT24604: SSL negotiation failed while client at source IP '1.2.3.4' was trying to connect to '5.6.7.8'. Reason: 'sslv3 alert bad certificate'"
 
 
+    ```
+
+
+
+=== "test_event_aut30836"
+
+    ```
+	id=firewall time="2026-11-08 09:12:31" pri=6 fw=192.0.2.22 vpn=VPN01 ivs=Default Network user=jdoe realm="example.com" roles="" proto=auth src=198.51.100.77 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="" duration= msg="AUT30836: Authentication failure for AD server 'AD_EXAMPLE': specified account does not exist"#015
+    ```
+
+
+
+=== "test_event_aut31985"
+
+    ```
+	id=firewall time="2026-11-08 09:12:31" pri=6 fw=192.0.2.22 vpn=VPN01 ivs=Default Network user=jdoe realm="example.com" roles="" proto=auth src=198.51.100.77 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="" duration= msg="AUT31985: Login failed for 'Primary' authentication using auth server 'AD_EXAMPLE' ('Active Directory').  Reason: 'Invalid Credentials'"
     ```
 
 
@@ -96,7 +120,7 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
-=== "test_event_nwc23464"
+=== "test_event_nwc23464_001"
 
     ```
 	id=firewall time="2025-09-29 07:44:12" pri=6 fw=1.2.3.4 vpn=VPN-NAME ivs=Default Network user=john.doe@company.fr realm="host.example.com" roles="Role_Test-integration" sessionID="1111111111" proto= src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="NWC23464: VPN Tunneling: Session started for user  (session:User1) with IPv4 address 5.6.7.8, hostname HOSTNAME"
@@ -104,7 +128,7 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
-=== "test_event_nwc23464_harmonized_mapping"
+=== "test_event_nwc23464_002"
 
     ```
 	id=firewall time="2026-09-22 07:38:14" pri=6 fw=203.0.113.26 vpn=ISA8000V-CID ivs=Default Network user=test.user@example.org realm="host.example.com" roles="Role_TEST_Integration" sessionID="4b8c853c05" proto= src=198.51.100.111 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 11) Pulse/22.8.1.31437" duration= msg="NWC23464: VPN Tunneling: Session started for user  (session:User1) with IPv4 address 192.0.2.40, hostname host.example.com"
@@ -112,7 +136,23 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
-=== "test_event_nwc23508"
+=== "test_event_nwc23464_003"
+
+    ```
+	id=firewall time="2026-09-22 07:38:14" pri=6 fw=203.0.113.26 vpn=ISA8000V-CID ivs=Default Network user=test.user@example.org realm="host.example.com" roles="Role_NET_Admin" sessionID="4b8c853c05" proto= src=198.51.100.111 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 11) Pulse/22.8.1.31437 NEUX" duration= msg="NWC23464: VPN Tunneling: Session started for user (session: User1) with IPv4 address 192.0.2.161, hostname host-01.example.org"
+    ```
+
+
+
+=== "test_event_nwc23464_004"
+
+    ```
+	id=firewall time="2026-09-22 07:38:14" pri=6 fw=203.0.113.26 vpn=ISA8000V-CID ivs=Default Network user=clara.morin@example.org realm="host.example.com" roles="Role_NET_Admin" sessionID="4b8c853c05" proto= src=198.51.100.111 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 11) Pulse/22.8.1.31437 NEUX" duration= msg="NWC23464: VPN Tunneling: Session started for user (session:User1) with IPv4 address 192.0.2.161, hostname host-01.example.org"
+    ```
+
+
+
+=== "test_event_nwc23508_001"
 
     ```
 	id=firewall time="2025-09-29 09:20:20" pri=6 fw=10.20.30.40 vpn=VPN-TEST-INTEGRATION ivs=Default Network user=john.doe@company.fr realm="host.example.com" roles="Role_Test_integration" sessionID="1111111111" proto= src=1.2.3.4 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="NWC23508: Key Exchange number 7 occurred for user with NCIP 1.2.3.4 "
@@ -120,10 +160,18 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
-=== "test_event_nwc23508_2"
+=== "test_event_nwc23508_002"
 
     ```
 	id=firewall time="2025-09-29 08:00:19" pri=6 fw=1.2.3.4 vpn=VPN-TEST ivs=Default Network user=john.doe@company.fr realm="host.example.com" roles="Role_Test_integration" sessionID="1111111111" proto= src=5.6.7.8 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 10) Pulse/22.8.1.31437" duration= msg="NWC23508: Key Exchange number 2 occurred for user with NCIP 10.20.30.40 "
+    ```
+
+
+
+=== "test_event_nwc23508_003"
+
+    ```
+	id=firewall time="2026-09-22 08:00:21" pri=6 fw=203.0.113.26 vpn=ISA8000V-CID ivs=Default Network user=marie.dupont@example.org realm="host.example.com" roles="Role_NET" sessionID="00736f17ac" proto= src=198.51.100.142 dst= dstname= type=vpn op= arg="" result= sent= rcvd= agent="Pulse-Secure/22.8.1.31437 (Windows 11) Pulse/22.8.1.31437" duration= msg="NWC23508: Key Exchange number 4 occurred for user with NCIP 192.0.2.209 "
     ```
 
 

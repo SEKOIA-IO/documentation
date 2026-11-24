@@ -41,6 +41,32 @@ The asset criticality value is a numerical indicator that represents the level o
 
 This value contributes to the [urgency score of alerts](/xdr/features/investigate/alerts.md). Hence it plays a key role in computing and prioritizing alerts related to assets, ensuring that your SOC team focuses on addressing the most critical security incidents promptly.
 
+
+### Asset risk score
+_This feature is part of the Reveal plan._
+
+The asset risk score indicates the current level of security risk associated with an asset. It combines persistent exposure and recent activity, then adjusts the result according to the asset's criticality.
+
+Criticality describes the importance of an asset to the organization. The risk score describes the current security risk affecting that asset. Criticality is one of the factors used to adjust the score.
+
+The score is adjusted by a criticality factor. A criticality value of 0 has no effect on the score.
+
+The risk bands are:
+
+| Band | Score range |
+| --- | --- |
+| Low | 0 to 24 |
+| Moderate | 25 to 49 |
+| High | 50 to 74 |
+| Critical | 75 to 100 |
+
+Use the `asset_risk_scores` SOL data source to query the current score. Use `asset_risk_score_history` to analyze the events that affected the score and its trajectory.
+
+See also:
+
+- [SOL technical reference: data sources](/xdr/features/investigate/sol_ref_datasources.md#asset_risk_scores)
+- [Asset risk score query examples](/xdr/features/investigate/sol_query_examples.md#asset-risk-score-query-examples)
+
 ### Detection Properties
 
 ![detection properties](/assets/operation_center/assets_v2/detection-properties.png){align="right", style="max-width:40%"}
@@ -50,6 +76,11 @@ Asset matching and detection properties are fundamental features that enhance ou
 Your SOC team can effectively correlate these events with specific assets through **asset matching**, enabling them to grasp the context and comprehend the potential impact on critical systems.
 !!! note
     Detection properties are case-insensitive; they will match events fields regardless of letter casing.
+
+!!! note "Limits on detection properties"
+    An asset holds at most 50 detection properties of one type, for instance 50 IPv4 addresses or 50 SIDs. Once an asset reaches this limit, the new detection properties of that type found by asset discovery or pushed by an asset connector are ignored, and the ones already on the asset are kept. A detection property you add yourself is always accepted: if the asset is at the limit, it takes the place of the oldest detection property of that type that was added automatically.
+
+    An asset with more than 1,000 detection properties in total receives no new automatic ones.
 
 ### Contextual Properties
 
@@ -196,7 +227,12 @@ The following table lists the atom types and their related event fields that are
 
 ⚠ To be considered valid, a hostname must have at least one letter, only contain letters, numbers, hyphens and underscores, and not be a valid domain. If the Hostname is not valid, it will not be detected as an Asset.
 
+⚠ A `sid` detection property is only taken from a Windows security identifier (`S-1-...`). Other values of these fields, such as GUIDs, claims or application identifiers, are ignored, as are the well-known SIDs shared by every Windows host.
+
 #### Asset Discovery Rules
+
+!!! note "Limit on the assets discovered each day"
+    Asset discovery creates at most 10,000 hosts and 20,000 accounts per community and per day (UTC). Over the limit, the new hosts or accounts found in the events are dropped: they are created on a later day only if events name them again. The assets already in the inventory keep being updated. A community whose first asset is less than 90 days old is not limited, so that the inventory of a new community can be built.
 
 ##### Attach Operating System (OS) to Host
 
@@ -216,9 +252,18 @@ Note that this rule only applies to assets of `Host` category and that a single 
 
 This rule creates a new asset for every unseen `host.name`. It also suggests the `ipv4` and `ipv6` stored in field `host.ip` of the event as detection properties of the newly created asset.
 
+It ignores an event whose `event.outcome` or `action.outcome` is `failure`, such as a failed authentication, since the client can send any device name before it is authenticated: such an event neither creates a host nor updates an existing one. It also creates no host from a placeholder name such as `unknown`, `n/a`, `null` or `localhost`.
+
 ##### Discover unique Accounts
 
 This rule creates a new asset for every unseen `user.name`. It attaches the `user.email` and `user.id` event field values as detection property of the newly created asset.
+
+It creates no account:
+
+- from an event with an `event.outcome` or `action.outcome` other than `success`, such as a failed authentication, or from an intrusion detection event (`event.category` contains `intrusion_detection`), where the name may come from an attacker;
+- for accounts used by Windows itself rather than by a person: the ones Windows creates and drops on its own for Hyper-V virtual machines, services, IIS application pools and OpenSSH sessions, and built-in or special-purpose accounts such as `DefaultAccount`, `WDAGUtilityAccount`, `IUSR` (IIS) or `krbtgt` (Active Directory);
+- for a placeholder name such as `n/a`, `null` or `undefined`, or a generic name such as `root`, `admin`, `administrator`, `guest` or `test`;
+- from a user field that lists several people at once, such as the collaborators of a shared document, since nothing tells which name goes with which email.
 
 Questions? Please read our [FAQ](../../FAQ/Assets_qa.md).
 
@@ -239,7 +284,7 @@ The following table lists the available fields for defining asset-based detectio
 | `sekoiaio.any_asset.criticality_value`   | Set of Integers    | `{80, 0}`                              |
 
 !!! Warning
-    Some of the fields listed above are removed from the events before indexing them, but they can be used in detection and filtering patterns. Indexed events will thus only contain `sekoiaio.assets.*.uuid`, `sekoiaio.assets.*.name`, `sekoiaio.assets.*.criticality_value`, `sekoiaio.any_asset.uuid`, `sekoiaio.any_asset.name` and `sekoiaio.any_asset.criticality_value`.
+    Some of the fields listed above are removed from the events before indexing them, but they can be used in detection and filtering patterns. Indexed events only contain `sekoiaio.any_asset.uuid`, `sekoiaio.any_asset.name`, `sekoiaio.any_asset.criticality_value` and `sekoiaio.assets.*.uuid`. In particular, `sekoiaio.any_asset.tags` cannot be used in the event search: to work on tagged assets, use a detection rule, an alert filter or a [SOL query](/xdr/features/investigate/sol_query_examples.md#search-the-events-of-assets-with-a-specific-tag) that reads the tags from the `assets` table.
 
 ##### Use Case Example
 
@@ -343,3 +388,21 @@ This feature allows users to dive deeper into the specifics of each authenticati
   - The account's interaction history.
   - Any security incidents or breaches involving the account.
   - The account's access permissions and any recent changes.
+
+## Related articles
+
+### Asset risk and prioritization
+
+* [Alerts](/xdr/features/investigate/alerts.md): Understand how asset criticality contributes to the urgency score of alerts.
+* [Points of interest](/xdr/features/detect/points_of_interest.md): Discover the notable activity and UEBA signals that feed the asset risk score.
+
+### SOL data sources and queries
+
+* [SOL technical reference: Datasources](/xdr/features/investigate/sol_ref_datasources.md): Reference for the `asset_risk_scores` and `asset_risk_score_history` data sources, along with all other asset data sources.
+* [Asset risk score query examples](/xdr/features/investigate/sol_query_examples.md#asset-risk-score-query-examples): Ready-to-use SOL queries to report on asset risk scores and score-driving events.
+* [SOL Query Examples](/xdr/features/investigate/sol_query_examples.md): More SOL query examples, including asset management queries.
+
+### Going further
+
+* [Assets FAQ](/xdr/FAQ/Assets_qa.md): Answers to frequently asked questions about assets.
+* [Local runners](/xdr/features/automate/playbooks-on-premises.md): How to run eligible asset connector jobs from inside your environment

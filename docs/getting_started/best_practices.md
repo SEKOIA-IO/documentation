@@ -81,12 +81,12 @@ Playbooks complement operational optimization by automating various types of man
         9. [Edit Alert](/xdr/features/automate/library/sekoia-io.md#edit-alert)
         10. [VirusTotal Scan Hash](/xdr/features/automate/library/virustotal.md#scan-hash)
 
-For instance, the following [playbook template](/xdr/features/automate/build-playbooks.md#templates) composed of 9 modules (1 Trigger, 1 Operator, 7 Actions) answers the need of adding a domain in a blocklist (IOC Collection).
+For instance, the following [playbook template](/xdr/features/automate/build_playbooks.md#templates) composed of 9 modules (1 Trigger, 1 Operator, 7 Actions) answers the need of adding a domain in a blocklist (IOC Collection).
 
 ![playbook_example](/assets/getting_started/playbook_example.png){: style="max-width:100%"}
 
 - **Ensure the duration of each Action** within playbooks is less than 10 seconds to reduce the chance of a timeout with most third-party tools you interact with.
-- **Track the overall [duration of playbook executions](/xdr/features/automate/navigate-playbooks.md)** for each playbook to complete its execution in less than 1 minute.
+- **Track the overall [duration of playbook executions](/xdr/features/automate/navigate_playbooks.md)** for each playbook to complete its execution in less than 1 minute.
 - **Ensure no playbook is having an issue** that is visible with the status "Trigger crashed" and "Configuration issues".
 - **Keep a low number of "Ready to start" playbooks**, for instance less than 2, to avoid activation issue after a long period of configuration due to conflict with recent evolutions of your community.
 

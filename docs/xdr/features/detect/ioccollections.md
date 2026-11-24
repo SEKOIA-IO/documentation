@@ -1,3 +1,6 @@
+!!! note "Defend plan availability"
+    IOC collections are available with Defend Advanced and Defend Prime. See the [Defend plan comparison](/getting_started/understand_your_subscription.md#defend-plan-comparison) for the limits.
+
 {!_shared_content/ioccollections.md!}
 
 ## Telemetry Reports

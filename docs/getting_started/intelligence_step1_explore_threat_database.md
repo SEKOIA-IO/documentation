@@ -13,7 +13,7 @@ The Sekoia Intelligence database contains hundreds of thousands of threat object
 
 ## Before you begin
 
-- You have an active Sekoia Intelligence subscription.
+- You have access to the Intelligence database through a Sekoia Intelligence subscription or an eligible Defend Prime subscription. See the [Defend plan comparison](/getting_started/understand_your_subscription.md#defend-plan-comparison) for the Defend eligibility threshold.
 - Familiarize yourself with the key terms: see [Glossary](/getting_started/glossary.md) for definitions of indicator, observable, IOC, STIX, and TLP.
 
 ## Understand the data model

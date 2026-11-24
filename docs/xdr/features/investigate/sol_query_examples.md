@@ -352,6 +352,37 @@
     | b1ee47a2-dae2-4a6a-b4fa-ed8a56382f94 | 904df422-adf9-4be8-b2b6-d027c0d68184 | User network  | [{"tag":"Backup"}] |
 
 
+### Search the events of assets with a specific tag
+
+Asset tags are not stored in the events. This query reads them from the `assets` table when it runs, so it uses the current tags, including on the events received before a tag was added.
+
+=== "Query"
+
+    ``` shell
+    let tagged_assets = assets
+    | where tags.tag in ["Admin"]
+    | select uuid;
+
+    events
+    | where timestamp > ago(7d)
+    | where sekoiaio.any_asset.uuid in get_column_values("uuid", tagged_assets)
+    | select timestamp, sekoiaio.any_asset.name, event.action
+    | limit 100
+    ```
+
+=== "Results"
+
+    | timestamp                | sekoiaio.any_asset.name         | event.action |
+    | ------------------------ | ------------------------------- | ------------ |
+    | 2026-03-25T15:17:20.357Z | ["Maurice Moss","User network"] | opened-file  |
+    | 2026-03-25T15:16:52.104Z | ["Maurice Moss","User network"] | deleted      |
+    | 2026-03-25T15:15:43.981Z | ["Roy Trenneman"]               | opened-file  |
+
+`sekoiaio.any_asset.name` lists every asset of the event, not only the tagged ones.
+
+!!! note
+    The tag must be assigned to fewer than 10,000 assets. Beyond that, the query returns partial results with a warning.
+
 ### Find hosts that no asset connector reports
 
 Hosts seen by Sekoia Asset Discovery and by no configured asset connector, such as an EDR or a CMDB, are candidates for Shadow IT.
@@ -470,6 +501,118 @@ To keep only the hosts that Sekoia Asset Discovery did see:
     | b1ee47a2-dae2-4a6a-b4fa-ed8a56382f94 | 904df422-adf9-4be8-b2b6-d027c0d68184 | User network  | []                                                       |
 
 
+
+
+## Asset risk score query examples
+
+!!! note
+    `asset_risk_scores` and `asset_risk_score_history` are already scoped to the communities available to the user. To filter results for a specific community, use a lookup on `assets` and filter on `community_uuid`. Filter the `assets` data source before the lookup to avoid the 10,000-row limit on the right side of a lookup.
+
+### Top 20 assets with a critical risk score in a specific community
+
+=== "Query"
+
+    ``` shell
+    asset_risk_scores
+    | lookup (assets | where community_uuid == "<community_uuid>") on asset_uuid == uuid
+    | top 20 by final_score
+    ```
+
+This query returns the 20 assets with the highest current risk score in the specified community.
+
+### Count assets with a critical risk score
+
+=== "Query"
+
+    ``` shell
+    asset_risk_scores
+    | where final_score >= 75
+    | aggregate count_distinct(asset_uuid)
+    ```
+
+This query counts the assets in the Critical risk band.
+
+### Top 20 assets by risk score
+
+=== "Query"
+
+    ``` shell
+    asset_risk_scores
+    | top 20 by final_score
+    ```
+
+This query returns the 20 assets with the highest current risk score.
+
+### Count assets whose score is mostly driven by recent activity
+
+=== "Query"
+
+    ``` shell
+    asset_risk_scores
+    | where recent_activity_score > exposure_score
+    | aggregate count_distinct(asset_uuid)
+    ```
+
+This query counts assets for which recent alerts, cases and points of interest contribute more than persistent exposure factors.
+
+### Count assets with a configured criticality and a score above 50
+
+=== "Query"
+
+    ``` shell
+    asset_risk_scores
+    | where criticality_value > 0 and final_score > 50
+    | aggregate count_distinct(asset_uuid)
+    ```
+
+This query counts assets with a configured criticality and a risk score above 50.
+
+### Count score-affecting events by type
+
+=== "Query"
+
+    ``` shell
+    asset_risk_score_history
+    | where event_date > ago(7d)
+    | aggregate event_count = count() by type
+    | order by event_count desc
+    ```
+
+This query counts the events that affected asset risk scores during the last seven days, grouped by event type.
+
+### Top 20 assets by alerts and cases
+
+=== "Query"
+
+    ``` shell
+    asset_risk_score_history
+    | where event_date > ago(30d) and type in ["alert", "case"]
+    | aggregate event_count = count_distinct(event_uuid) by asset_uuid
+    | top 20 by event_count
+    ```
+
+This query returns the 20 assets with the highest number of distinct alerts and cases contributing to their risk history during the last 30 days. The history can contain several entries for the same alert or case as its contribution decays over time, so `count_distinct(event_uuid)` counts source alerts and cases rather than history entries.
+
+### List criticality changes
+
+=== "Query"
+
+    ``` shell
+    asset_risk_score_history
+    | where type == "criticality" and event_date > ago(30d)
+    | order by event_date desc
+    ```
+
+This query lists criticality changes recorded during the last 30 days, starting with the most recent event.
+
+!!! note
+    `asset_risk_scores` contains the current score only. Use `asset_risk_score_history` to analyze the events that affected the score or the risk trajectory.
+
+!!! note
+    Rows older than 90 days are deleted daily from `asset_risk_score_history`. For each asset and event type, the latest `hygiene` and `criticality` entry older than 90 days is retained for baseline reconstruction.
+
+!!! warning
+    `final_score` can be empty on newly created history rows until the next score recomputation.
 
 ## Events query examples
 
@@ -768,6 +911,89 @@ To keep only the hosts that Sekoia Asset Discovery did see:
     | 36.160241918 | Sekoia Agent |
     | 27.997688794 | Zscaler      |
     | 27.989695219 | Zscaler ZIA  |
+
+## Asset applications query examples
+
+!!! note
+    Removed applications stay in `asset_applications` with `deleted_at` set. Add `isnull(deleted_at)` to query installed applications only.
+
+### Count assets with unsigned applications
+
+=== "Query"
+
+    ``` shell
+    asset_applications
+    | where signed == false and isnull(deleted_at)
+    | aggregate count_distinct(asset_uuid)
+    ```
+
+This query counts the assets with at least one unsigned application installed.
+
+### Top 20 most widespread applications
+
+=== "Query"
+
+    ``` shell
+    asset_applications
+    | where isnull(deleted_at)
+    | aggregate asset_count = count_distinct(asset_uuid) by name, version
+    | top 20 by asset_count
+    ```
+
+This query returns the 20 applications and versions installed on the most assets.
+
+### Versions of an application across assets
+
+=== "Query"
+
+    ``` shell
+    asset_applications
+    | where name == "Google Chrome" and isnull(deleted_at)
+    | aggregate asset_count = count_distinct(asset_uuid) by version
+    | order by asset_count desc
+    ```
+
+This query shows how many assets run each version of an application, to spot outdated versions.
+
+### Top 20 publishers
+
+=== "Query"
+
+    ``` shell
+    asset_applications
+    | where isnull(deleted_at)
+    | aggregate asset_count = count_distinct(asset_uuid) by publisher
+    | top 20 by asset_count
+    ```
+
+This query returns the 20 publishers whose applications are installed on the most assets.
+
+### Applications recently seen for the first time
+
+=== "Query"
+
+    ``` shell
+    asset_applications
+    | where created_at > ago(7d) and isnull(deleted_at)
+    | aggregate asset_count = count_distinct(asset_uuid) by name, publisher
+    | top 20 by asset_count
+    ```
+
+This query returns the applications first recorded during the last seven days. `created_at` is the date Sekoia first saw the application, use `install_date` for the date reported by the asset.
+
+### Applications removed during the last 7 days
+
+=== "Query"
+
+    ``` shell
+    asset_applications
+    | where deleted_at > ago(7d)
+    | lookup assets on asset_uuid == uuid
+    | select asset.name, name, version, deleted_at
+    | order by deleted_at desc
+    ```
+
+This query lists the applications removed from assets during the last seven days, with the asset name.
 
 ## Related articles
 

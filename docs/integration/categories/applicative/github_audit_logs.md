@@ -46,7 +46,7 @@ To create an API key on [Github](https://github.com/):
 
 ### Create the Github PEM file
 
-1. On the top right corner, click on your profile picture then on `Your organizations`.
+1. On the top right corner, click on your profile picture then on `Organizations`.
 
     ![Users organizations](/assets/instructions/github_audit_logs/users_organizations.png)
 
@@ -65,17 +65,17 @@ To create an API key on [Github](https://github.com/):
     * Make sure you have all necessary rights (#1)
     * After that click on edit (#2)
 
-5. Go to `General` section:
+5. Go to `Credentials` section:
 
-    ![General](/assets/instructions/github_audit_logs/general_section.png)
+    ![Credentials](/assets/instructions/github_audit_logs/credentials_section.png)
 
-6. Scroll to `Private keys` section and click on `Generate a private key`:
+6. Select the `Key pairs` tab and click on `New key`:
 
     ![Private keys](/assets/instructions/github_audit_logs/generate_private_key.png)
 
 7. Follow all necessary instructions and save PEM file for the configuration of the connector.
 
-8. Scroll up and copy `App ID` for the configuration of the connector.
+8. Go to the `General` section and copy `App ID` for the configuration of the connector.
 
     ![App ID](/assets/instructions/github_audit_logs/app_id.png)
 

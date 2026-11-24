@@ -117,12 +117,6 @@ The following Sekoia.io built-in rules match the intake **Kaspersky Endpoint Sec
     
     - **Effort:** master
 
-??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
-    
-    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
-    
-    - **Effort:** master
-
 ??? abstract "Sigma Intelligence Pangolin8RAT Working Directory File Artifacts"
     
     Detects access to filesystem artifacts associated with Pangolin8RAT.

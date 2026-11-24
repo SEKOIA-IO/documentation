@@ -63,10 +63,10 @@ ago(<timespan>)
 Returns a datetime equal to the current UTC time minus the specified timespan.
 
 !!! example
-``` shell
-let time = ago(1h);
+    ``` shell
+    let time = ago(1h);
 
-```
+    ```
 
 ## Timestamp: bin()
 

@@ -6,7 +6,7 @@ This page details the constraints, formats, and API endpoints for the export sys
 | Metric | Limit |
 | :--- | :--- |
 | **Events per export** | Up to 100 million |
-| **Monthly Quota** | 10 GB (compressed) per community, resets on the 1st of each month|
+| **Monthly Quota** | 50 GB (compressed) per community, resets on the 1st of each month|
 | **Concurrency** | 1 active export at a time per community |
 | **Search job limit** | Max 10 exports per unique search job |
 | **Download window** | 24 hours |

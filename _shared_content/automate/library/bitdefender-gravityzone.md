@@ -264,4 +264,4 @@ Update the status of an incident
 
 ## Extra
 
-Module **`Bitdefender GravityZone` v1.0.6**
+Module **`Bitdefender GravityZone` v1.0.7**

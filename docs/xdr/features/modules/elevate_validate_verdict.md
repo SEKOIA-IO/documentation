@@ -15,7 +15,7 @@ There is no separate step to validate an Elevate verdict. If the verdict is corr
 
 To override the verdict, select a different verdict from the **Select a verdict** dropdown in the alert header.
 
-![Alert header with the verdict dropdown open showing the available verdicts grouped by category](/assets/elevate/alert-override-verdict.png){: style="max-width:100%"}
+![Alert header with the verdict dropdown open showing the available verdicts grouped by verdict stage](/assets/elevate/alert-override-verdict.png){: style="max-width:100%"}
 
 !!! note "Your verdict always takes precedence"
     Once you select a verdict, the sparkle icon disappears from the alert list. The alert reflects your analyst verdict, not the AI attribution. The AI verdict is not retained after you override it.

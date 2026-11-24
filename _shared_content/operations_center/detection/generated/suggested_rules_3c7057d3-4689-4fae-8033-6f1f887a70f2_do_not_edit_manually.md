@@ -1413,6 +1413,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** intermediate
 
+??? abstract "Mass User And Computer Account Deleted"
+    
+    Detects when mutiple user and computer accounts are deleted in a short time.
+    
+    - **Effort:** master
+
 ??? abstract "MavInject Process Injection"
     
     Detects process injection using the signed Windows tool Mavinject32.exe (which is a LOLBAS)
@@ -2373,12 +2379,6 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     
     - **Effort:** elementary
 
-??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
-    
-    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
-    
-    - **Effort:** master
-
 ??? abstract "Sekoia.io EICAR Detection"
     
     Detects observables in Sekoia.io CTI tagged as EICAR, which are fake samples meant to test detection.
@@ -2744,6 +2744,12 @@ The following Sekoia.io built-in rules match the intake **HarfangLab EDR**. This
     Detects suspicious scripting in WMI Event Consumers. The rule requires to log WMI Consumers, which can be done through Sysmon's Event IDs 20 and 21.
     
     - **Effort:** intermediate
+
+??? abstract "Suspicious TGS requests (Kerberoasting)"
+    
+    The rule aims at detecting the Kerberoasting technique, when an attacker requests TGS in order to crack them offline. Toease its task, the attacker requests tickets with weak encryption (such as RC4_HMAC_MD5). The rule therefore detects when an user is requesting 5 TGS for different users in 5 minutes.
+    
+    - **Effort:** advanced
 
 ??? abstract "Suspicious TOR Gateway"
     

@@ -5,7 +5,7 @@ type: intake
 ## Overview
 - **Vendor**: Veeam
 - **Supported environment**: On-premise
-- **Version compatibility**: 12 and newer
+- **Version compatibility**: 12 and 13
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Application Logs
 
@@ -17,6 +17,7 @@ This integration supports the following versions:
 
 - 12
 - 12.1
+- 13
 
 
 

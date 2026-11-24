@@ -111,6 +111,12 @@ The following Sekoia.io built-in rules match the intake **Windows Log Insight**.
     
     - **Effort:** advanced
 
+??? abstract "Mass User And Computer Account Deleted"
+    
+    Detects when mutiple user and computer accounts are deleted in a short time.
+    
+    - **Effort:** master
+
 ??? abstract "Network Scanning and Discovery"
     
     Tools and command lines used for network discovery from current system

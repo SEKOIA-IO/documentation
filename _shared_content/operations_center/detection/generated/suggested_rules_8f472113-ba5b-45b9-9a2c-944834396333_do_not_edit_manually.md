@@ -8,9 +8,3 @@ The following Sekoia.io built-in rules match the intake **SecurityScorecard Vuln
     Raises an alert when SecurityScorecard Vulnerability Assessment Scanner find new issues.
     
     - **Effort:** master
-
-??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
-    
-    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
-    
-    - **Effort:** master

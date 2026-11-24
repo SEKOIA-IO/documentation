@@ -1,7 +1,7 @@
 ---
 title: "Understand your subscription"
 description: "Learn what each Sekoia plan includes, how add-on modules work, and how to read your subscription page."
-keywords: [subscription, plan, defend core, defend prime, intelligence, reveal, elevate, trial, license, modules]
+keywords: [subscription, plan, defend core, defend advanced, defend prime, intelligence, reveal, elevate, trial, license, modules]
 audience: all
 module: all
 type: concept
@@ -17,12 +17,22 @@ Sekoia offers two core products, which are sold and licensed separately.
 
 ### Sekoia Defend
 
-Sekoia Defend is the XDR product for detection and response operations. It is available in two plans:
+Sekoia Defend is the XDR product for detection and response operations. It is available in three plans: Core, Advanced, and Prime. Core provides Collect, Detect, Investigate, and Automate capabilities with standard retention and asset limits. Prime offers extended retention, higher asset limits, and priority access to new features.
 
-| Plan | What it includes |
-|---|---|
-| **Defend Core** | Collect, Detect, Investigate, and Automate capabilities. Standard retention and asset limits. |
-| **Defend Prime** | All Defend Core capabilities, plus extended retention, higher asset limits, and priority access to new features. |
+#### Defend plan comparison
+
+The following features differ by plan. For the full comparison, see [Compare plans](#compare-plans).
+
+| Feature | Defend Core | Defend Advanced | Defend Prime |
+|---|---|---|---|
+| [Custom roles](/getting_started/roles_and_permissions.md#custom-roles) | Not included | Included | Included |
+| Segregated data access | Not included | Included | Included |
+| [IOC collections](/xdr/features/detect/ioccollections.md) | Not included | 500,000 IOCs | 5 million IOCs |
+| Custom apps | Not included | Included | Included |
+| [On-premises playbook actions](/xdr/features/automate/playbooks-on-premises.md#execute-a-playbook-action-with-a-local-runner) | Not included | Included | Included |
+| [Multi-tenancy](/getting_started/workspace_and_communities.md#single-tenant-vs-multi-tenant-mode) | Not included | Not included | Included |
+| [AI Cases](/xdr/features/investigate/ai_cases.md) | Not included | Not included | Unlimited |
+| Intelligence database access through Defend | Not included | Not included | Included with 3,000 or more defended assets |
 
 The key parameters that vary between plans and contracts include:
 
@@ -64,7 +74,7 @@ Before you configure data sources or activate detection rules, check the license
 
 Navigate to **Settings > Workspace > Subscriptions**. Check the following information:
 
-- **Product and plan**: Defend Core, Defend Prime, or Intelligence.
+- **Product and plan**: The product and the plan assigned to your community (Defend Core, Defend Prime, or Intelligence).
 - **Enabled modules**: Reveal or Elevate, when included in your subscription.
 - **Subscription period**: Start date, expiration date, and remaining time.
 - **Asset limit**: Number of defended assets covered by the license.

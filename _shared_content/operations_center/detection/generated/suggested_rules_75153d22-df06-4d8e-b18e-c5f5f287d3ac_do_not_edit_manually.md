@@ -45,6 +45,66 @@ The following Sekoia.io built-in rules match the intake **Flare Events**. This d
     
     - **Effort:** master
 
+??? abstract "Flare Events Critical Severity Threat Exposure"
+    
+    Detects a high critical Flare exposure event from clear, deep, or dark web monitoring. This indicates a critical-risk threat indicator that requires rapid triage.
+    
+    - **Effort:** master
+
+??? abstract "Flare Events High Severity Threat Exposure"
+    
+    Detects a high severity Flare exposure event from clear, deep, or dark web monitoring.
+    
+    - **Effort:** master
+
+??? abstract "Flare Events Informational Severity Threat Exposure"
+    
+    Detects a informational severity Flare exposure event from clear, deep, or dark web monitoring.
+    
+    - **Effort:** master
+
+??? abstract "Flare Events Leaked Credential With Password Exposure"
+    
+    Detects leaked credential events where a password is explicitly present in the exposure record, indicating elevated risk of account takeover.
+    
+    - **Effort:** master
+
+??? abstract "Flare Events Low Severity Threat Exposure"
+    
+    Detects a low severity Flare exposure event from clear, deep, or dark web monitoring.
+    
+    - **Effort:** master
+
+??? abstract "Flare Events Medium Severity Threat Exposure"
+    
+    Detects a medium severity Flare exposure event from clear, deep, or dark web monitoring.
+    
+    - **Effort:** master
+
+??? abstract "Flare Events Ransom Leaks Publication"
+    
+    Detects a Flare document event from a ransomware and/or extortion leak site, indicating a named victim organization has had data published as proof of compromise or extortion leverage.
+    
+    - **Effort:** master
+
+??? abstract "Flare Events Stealer Log Malware Infection"
+    
+    Detects a Flare stealer log event with an identified malware family, indicating credentials or host data were likely collected by infostealer malware.
+    
+    - **Effort:** master
+
+??? abstract "Flare Events Suspicious Forum Post"
+    
+    Detects a Flare forum post event, indicating credentials or host data were likely collected by infostealer malware.
+    
+    - **Effort:** master
+
+??? abstract "Flare Events Suspicious Phishing Dark Web Chatter"
+    
+    Detects a Flare chat message event flagged with a sensitive content classification, indicating threat actor chatter on illicit channels referencing phishing material tied to the monitored organization.
+    
+    - **Effort:** master
+
 ??? abstract "Koadic MSHTML Command"
     
     Detects Koadic payload using MSHTML module
@@ -80,12 +140,6 @@ The following Sekoia.io built-in rules match the intake **Flare Events**. This d
     Detect threats based on indicators of compromise (IOCs) collected by SEKOIA's Threat and Detection Research team.
     
     - **Effort:** elementary
-
-??? abstract "Sekoia.io Activity Logs Rule Deactivation Bulk"
-    
-    Detects a massive rule deactivation observed threw Sekoia.io activity logs.
-    
-    - **Effort:** master
 
 ??? abstract "Sekoia.io EICAR Detection"
     

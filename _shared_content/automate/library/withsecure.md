@@ -206,4 +206,4 @@ Update status on Incident.
 
 ## Extra
 
-Module **`WithSecure` v2.16.4**
+Module **`WithSecure` v2.17.1**

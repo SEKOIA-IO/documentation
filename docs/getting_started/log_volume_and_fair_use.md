@@ -68,6 +68,7 @@ A simple checklist to share with customers at onboarding:
 
 - [Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reduction_strategies.md): How to choose and apply the right filtering level for your situation.
 - [Investigate overusage](/xdr/usecases/playbook/investigate_overusage.md): How to identify which sources or event types are driving unexpected volume.
-- [Filter logs with Rsyslog or Syslog-ng](/xdr/features/collect/filter_logs_with_rsyslog_or_syslog_ng.md): How to drop unwanted events at the forwarder level before they reach Sekoia.
+- [Filter logs with Syslog-ng](/integration/ingestion_methods/syslog/filter_logs_with_syslog_ng.md): How to drop unwanted events at the forwarder level before they reach Sekoia with syslog-ng.
+- [Filter logs with Rsyslog](/integration/ingestion_methods/syslog/filter_logs_with_rsyslog.md): How to drop unwanted events at the forwarder level before they reach Sekoia with Rsyslog.
 - [Reduce event volume with the Sekoia Endpoint Agent](/integration/categories/endpoint/reduce_event_volume_endpoint_agent.md): How to configure agent-side optimization rules to filter events before transmission.
 - [Create an optimization rule](/xdr/features/collect/create_optimization_rule.md): How to create a platform-level optimization rule on an intake.

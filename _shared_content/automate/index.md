@@ -18,6 +18,8 @@ In this documentation, you will learn how to:
 - Learn more about the different types of triggers, operators and actions
 - Troubleshoot with playbook runs
 - Create a `Meta-playbook` that works across many communities
+- Organize your playbooks with custom fields and groups
+- Restore a previous version of a playbook
 
 ## Necessary role
 

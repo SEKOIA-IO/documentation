@@ -99,4 +99,4 @@ Consider deleting and recreating a configuration only if, after all of the above
 * [Create a module](/integration/develop_integration/automation/create_a_module.md): How to develop a module, version it, and push it to GitHub or GitLab.
 * [Module](/integration/develop_integration/automation/module.md): Reference for the module structure and its manifest, including the `version` field.
 * [Intakes](/xdr/features/collect/intakes.md): How pull intakes and their connectors are started, stopped and monitored.
-* [Navigate through playbooks](/xdr/features/automate/navigate-playbooks.md): How to activate and deactivate a playbook and read its status.
+* [Navigate through playbooks](/xdr/features/automate/navigate_playbooks.md): How to activate and deactivate a playbook and read its status.

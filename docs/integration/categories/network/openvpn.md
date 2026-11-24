@@ -1,17 +1,19 @@
 uuid: e8ca856f-8a58-490b-bea4-247b12b3d74b
-name: OpenVPN
+name: OpenVPN (Open source)
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Supported environment**:
+- **Vendor**: OpenVPN, Inc.
+- **Supported environment**: On-premises
 - **Version compatibility**:
 - **Detection based on**: Telemetry
 - **Supported application or feature**:
 
 OpenVPN is an open-source virtual private network (VPN) software, offering robust encryption, secure connectivity, flexible and reliable remote access to networks for individuals and businesses globally.
 
+!!! warning
 
+    This integration only ingest logs from OpenVPN Open source Community edition.
 
 ## Configure
 

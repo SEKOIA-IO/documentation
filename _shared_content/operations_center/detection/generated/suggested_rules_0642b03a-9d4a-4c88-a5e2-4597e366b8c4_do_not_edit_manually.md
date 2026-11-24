@@ -465,6 +465,12 @@ The following Sekoia.io built-in rules match the intake **VMware vCenter**. This
     
     - **Effort:** advanced
 
+??? abstract "Cron Files Alteration"
+    
+    Cron Files and Cron Directory alteration used by attacker for persistency or privilege escalation. To ensure full performance on this rule, `auditbeat` intake must be configure with the module `file_integrity` containing path mentionned in the pattern.
+    
+    - **Effort:** advanced
+
 ??? abstract "Cryptomining"
     
     Detection of domain names potentially related to cryptomining activities.
@@ -789,6 +795,12 @@ The following Sekoia.io built-in rules match the intake **VMware vCenter**. This
     
     - **Effort:** elementary
 
+??? abstract "Impacket Addcomputer"
+    
+    Detects suspicious computer account creation based on impacket default pattern
+    
+    - **Effort:** intermediate
+
 ??? abstract "Inhibit System Recovery Deleting Backups"
     
     Detects adversaries attempts to delete backups or inhibit system recovery. This rule relies on differents known techniques using Windows events logs from Sysmon (ID 1), and PowerShell (ID 4103, 4104).
@@ -914,6 +926,12 @@ The following Sekoia.io built-in rules match the intake **VMware vCenter**. This
     Detects command line being used by attackers to uninstall Malwarebytes.
     
     - **Effort:** intermediate
+
+??? abstract "Mass User And Computer Account Deleted"
+    
+    Detects when mutiple user and computer accounts are deleted in a short time.
+    
+    - **Effort:** master
 
 ??? abstract "MavInject Process Injection"
     
@@ -1190,6 +1208,12 @@ The following Sekoia.io built-in rules match the intake **VMware vCenter**. This
     Detection of accesses to Microsoft Outlook registry hive, which might contain sensitive information.
     
     - **Effort:** master
+
+??? abstract "Package Manager Alteration"
+    
+    Package manager (eg: apt, yum) can be altered to install malicious software. To ensure full performance on this rule, `auditbeat` intake must be configure with the module `file_integrity` containing path mentionned in the pattern.
+    
+    - **Effort:** advanced
 
 ??? abstract "Pandemic Windows Implant"
     
@@ -1514,6 +1538,12 @@ The following Sekoia.io built-in rules match the intake **VMware vCenter**. This
     Detects the usage of a SOCKS tunneling tool, often used by threat actors. These tools often use the socks5 commandline argument, however socks4 can sometimes be used as well. Unfortunately, socks alone (without any number) triggered too many false positives. 
     
     - **Effort:** intermediate
+
+??? abstract "SSH Authorized Key Alteration"
+    
+    The file authorized_keys is used by SSH server to identify SSH keys that are authorized to connect to the host, alteration of one of those files might indicate a user compromision.
+    
+    - **Effort:** advanced
 
 ??? abstract "SSH Reverse Socks"
     

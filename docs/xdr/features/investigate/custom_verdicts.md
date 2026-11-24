@@ -4,11 +4,11 @@ Custom verdicts let your SOC team classify the outcome of an investigation with 
 
 Teams rarely agree on what "true positive" means in practice, and the nuance matters when analysts hand work to each other or report to stakeholders. Custom verdicts capture that nuance, for example "True positive: confirmed malware", "False positive: misconfiguration" or "True positive: policy violation".
 
-## Verdict categories
+## Verdict stages
 
-Every custom verdict belongs to one of two categories.
+Every custom verdict belongs to one of two verdict stages.
 
-| Category | Meaning |
+| Verdict stage | Meaning |
 |---|---|
 | **True positive** | The alert or case represents a genuine security threat or incident. |
 | **False positive** | The alert or case was triggered incorrectly, or does not represent a real threat. |
@@ -16,7 +16,7 @@ Every custom verdict belongs to one of two categories.
 ## Create a custom verdict
 
 1. Navigate to **Settings > Custom Statuses**.
-2. Click `+` in the analyst verdict section, under the category the verdict belongs to.
+2. Click `+` in the analyst verdict section, under the verdict stage the verdict belongs to.
 3. Enter a **Name**, for example "Confirmed malware", "Benign activity" or "Policy violation".
 4. Enter a **Description** explaining when your team should use this verdict and what it signifies.
 5. Save your changes.

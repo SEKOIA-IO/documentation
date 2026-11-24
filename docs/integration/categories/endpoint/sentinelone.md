@@ -25,6 +25,7 @@ Depending on the context of the log, additional content could be available, such
 !!! Tip
     For advanced log collection, we suggest you use the SentinelOne Cloud Funnel 2.0 option, as described in the [SentinelOne Cloud Funnel 2.0 integration](/integration/categories/endpoint/sentinelone_cloudfunnel2.0.md).
 
+[![SentinelOne & Sekoia solution brief](/assets/integration/sekoia-cta-sentinelone-hero.png){: style="display: block; width: 100%; max-width: 100%; height: auto;"}](https://www.sekoia.com/sentinelone-solution-brief){: style="width: 100%; max-width: 100%"}
 
 ## Configure
 
