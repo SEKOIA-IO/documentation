@@ -64,7 +64,7 @@ The tables below list the categories of each type. The **Set by** column tells w
 
 ### How an asset connector sets the category
 
-An asset connector reads the category of a host from the OCSF device type it pushes, and the category of an account from the OCSF user type it pushes. The two tables below map each type to its category.
+An asset connector reads the category of a host from the [Open Cybersecurity Schema Framework](https://schema.ocsf.io/1.5.0/) (OCSF) device type it pushes, and the category of an account from the OCSF user type it pushes. The two tables below map each type to its category.
 
 It sets this category:
 
