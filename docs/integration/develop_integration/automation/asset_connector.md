@@ -16,6 +16,9 @@ Sekoia gives each asset a [risk score](/xdr/features/modules/asset_risk_scoring.
 
 Sekoia backs each of these practices with a safeguard. When a connector misses one, the safeguard stops the bad data before it reaches your inventory, and the connector receives an error that says why. The safeguards are listed in [Read the push response](#read-the-push-response).
 
+!!! note "Scope"
+    Rate limits, the item-size limit and caps apply to every asset connector, built-in or custom. Storage limits apply only to custom asset connectors.
+
 ## How an asset connector runs
 
 An asset connector is a Python class based on [`AssetConnector`](https://github.com/SEKOIA-IO/sekoia-automation-sdk/blob/main/sekoia_automation/asset_connector/connector.py) from [sekoia-automation-sdk](https://github.com/SEKOIA-IO/sekoia-automation-sdk). It runs in cycles:
@@ -388,7 +391,7 @@ Filter the findings in the connector code before pushing them, for instance by C
 
 ### Let storage limits catch a runaway connector
 
-A bug can make a connector create a new asset at every run, or never close its findings. Storage limits stop such a connector before it fills your inventory with duplicate and stale data.
+A bug can make a connector create a new asset at every run, or never close its findings. Storage limits stop such a connector before it fills your inventory with duplicate and stale data. They apply only to custom asset connectors.
 
 !!! info "Safeguard: storage limits"
     Each configuration and each community can store a limited number of active assets, active applications and open findings, in proportion to the number of assets included in the community subscription. The community also has lifetime limits on everything it ever stored. When a limit is reached, every push of the configuration receives a 429 `ASSET_CONNECTOR_LIMIT_REACHED`, and `detail.limits` names the reached limit. The connector pauses, and pushes again once usage is back under the limit. See [Storage limits for custom asset connectors](/xdr/features/modules/reveal_asset_connectors_limits.md#storage-limits-for-custom-asset-connectors).

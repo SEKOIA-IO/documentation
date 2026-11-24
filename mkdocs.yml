@@ -1079,6 +1079,7 @@ plugins:
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
       xdr/features/investigate/sekoia_operating_language.md: xdr/features/investigate/sol_overview.md
       xdr/features/investigate/use_custom_fields_in_cases.md: xdr/features/investigate/use_custom_fields.md
+      xdr/features/modules/build_a_custom_asset_connector.md: integration/develop_integration/automation/asset_connector.md
       xdr/sekoia_solutions.md: index.md
 - integration_by_uuid
 - sass
