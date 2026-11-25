@@ -66,7 +66,7 @@
     * [Built-in detection rules, EventIDs and EventProviders relations](defend/detect/built_in_detection_rules_eventids.md)
     * [Built-in detection rules changelog](defend/detect/rules_changelog.md)
   * [Built-in Geolocalisation](defend/detect/built_in_geolocalisation.md)
-  * [Sigma](defend/detect/sigma.md)
+  * [Sigma rules](defend/detect/sigma.md)
   * [Anomaly Detection](defend/detect/anomaly.md)
   * [IOCs Collections](defend/detect/ioccollections.md)
   * [SOL detection rules](defend/detect/sol-detection-rules.md)
