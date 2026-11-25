@@ -819,21 +819,18 @@ To publish a new automation in the Sekoia.io integration catalog, you must follo
 
 ### Compliance Validation
 
-This step will enable you to verify different components of the module and detect any errors. Before proceeding, ensure all test dependencies are installed by running the following command in the /_utils directory:
-``` shell
-uv sync
-```
-To check the correctness of the module the following command should be run:
+This step will enable you to verify different components of the module and detect any errors.
+From the root of your `SEKOIA-IO/automation-library` working copy, run the following command:
 
 ```shell
-uv run python3 compliance check --module modules\<module_name>
+uv --directory _utils run python compliance check --module modules/<module_name>
 ```
 
 ### Homologation request 
 
 Once you are done developing and testing your automation, the last step is to request an homologation to Sekoia. Once your automation is homologated, it will appear in the playbook library of **Sekoia SOC platform**:
 
-- Create a pull request
+- Create a pull request against [SEKOIA-IO/automation-library](https://github.com/SEKOIA-IO/automation-library) with `develop` as the base branch
 - Send an email to [homologation-request@sekoia.io](mailto:homologation-request@sekoia.io) with the pull request link
 - You will get an acknowledgement from Sekoia Integration team
 - In the following days (5 days max), you will receive feedbacks in your pull request that you must take into account
