@@ -1,31 +1,36 @@
-# Deploy and validate Sekoia Self-Hosted in a restricted environment
+# Deploy and validate Sekoia Self-Hosted in your environment
 
-Sekoia Self-Hosted lets you deploy and operate the platform inside infrastructure that you control, including restricted and air-gapped environments. This tutorial shows how to prepare the release, configure offline delivery, install the platform with the self-hosted-controller (SHC), and validate the resulting cluster and services.
+Sekoia Self-Hosted lets you deploy and operate the platform in infrastructure that you control, including connected private, cloud, restricted, and air-gapped environments. This tutorial shows how to prepare the release, configure the deployment mode, install the platform with the self-hosted-controller (SHC), and validate the resulting cluster and services.
 
-## When SaaS cannot cross the perimeter
+## When deployment constraints shape the architecture
 
-Your security team works inside a restricted network where sensitive telemetry cannot leave the organization's infrastructure. There is no assumption of continuous internet access, but the platform still has to be installed predictably, validated before analysts use it, and supported by evidence that every required service is healthy.
+Your security team needs a platform that runs in infrastructure you control. The environment may have access to the Sekoia delivery service, use private cloud resources, or block external connectivity completely. In every case, the deployment team must prove that the configuration, cluster, applications, databases, and platform services are ready before users access the platform.
 
-This tutorial uses the air-gapped execution mode of Sekoia Self-Hosted 1.0.1. The release is transferred into the restricted environment, the SHC installs the platform from local files, and the deployment team validates each layer before opening access to users.
+The procedure below focuses on air-gapped execution because it requires additional preparation. The same deployment workflow also applies to connected private or cloud environments, with the release files downloaded by the SHC instead of transferred into the environment.
 
 ## Do it in Sekoia
 
-Prepare the release, configure offline delivery, run the SHC preflight checks, install the platform, and validate the cluster and services. By the end, you will have a repeatable deployment path and a validation record for configuration, Kubernetes nodes, ArgoCD applications, databases, and platform diagnostics.
+Prepare the release, select the deployment mode, run the SHC preflight checks, install the platform, and validate the cluster and services. By the end, you will have a repeatable deployment path and a validation record for configuration, Kubernetes nodes, ArgoCD applications, databases, and platform diagnostics.
+
+| Deployment mode | Release files | `global.version.fetch.offline` |
+|---|---|---|
+| Connected private or cloud environment | Downloaded by the SHC from the Sekoia delivery service | `false` |
+| Restricted or air-gapped environment | Transferred and extracted on the orchestration node | `true` |
 
 ## Before you start
 
-- You have access to the Sekoia Self-Hosted 1.0.1 release archive and its SHA-256 checksum.
+- You have access to the Sekoia Self-Hosted 1.0 release archive and its SHA-256 checksum.
 - You have an orchestration node with Docker installed.
-- You have provisioned the nodes and external services listed in [Technical requirements](/self_hosted/1.0.1/deployment/deployment_prerequisites.md).
-- Your firewall rules allow the required node-to-node and platform flows described in [Network requirements](/self_hosted/1.0.1/deployment/network_requirements.md).
+- You have provisioned the nodes and external services listed in [Technical requirements](/self_hosted/1.0/deployment/deployment_prerequisites.md).
+- Your firewall rules allow the required node-to-node and platform flows described in [Network requirements](/self_hosted/1.0/deployment/network_requirements.md).
 - You have prepared local OCI and code registries for the restricted environment.
 - You have a platform certificate and private key in PEM format.
-- You have prepared a `config.yml` manifest using [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md).
+- You have prepared a `config.yml` manifest using [Configure the deployment](/self_hosted/1.0/deployment/deployment_configuration.md).
 - You have a secure method to transfer the release archive and checksum into the restricted environment.
 
-!!! warning "Check the release scope"
+!!! warning "Check the functional scope"
 
-    Sekoia Self-Hosted 1.0.1 does not include the AI features or the Intelligence module. The Elevate module, AI Cases, and the AI Assistant are not available in this release. Check the [release notes](/self_hosted/1.0.1/release_notes.md) before planning your deployment.
+    Sekoia Self-Hosted 1.0 does not include the AI features or the Intelligence module. The CTI database can be imported and used by Defend detections, but the Intelligence interface is not available. Elevate, AI Cases, and the AI Assistant are also unavailable. Check the [release notes](/self_hosted/1.0/release_notes.md) before planning your deployment.
 
 !!! note "Customer-operated platform"
 
@@ -47,7 +52,7 @@ The archive itself is checked with SHA-256. The release also contains signed con
 
     A checksum mismatch indicates a corrupted or incomplete download. Download the archive again and verify it before you transfer or extract it.
 
-For the supported download commands and credential-handling examples, see [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md#step-1-download-and-verify-the-release-archive).
+For the supported download commands and credential-handling examples, see [Deploy the platform](/self_hosted/1.0/deployment/deployment_guide.md#step-1-download-and-verify-the-release-archive).
 
 ## Transfer and extract the release
 
@@ -58,15 +63,15 @@ Move the archive and checksum into the restricted environment, then verify the c
 3. Confirm that the orchestration node has enough free space for both the archive and the extracted files.
 4. Extract the archive into the directory used by your deployment.
 
-For release 1.0.1, the extracted content includes the platform files and security content bundles. The CTI database is delivered separately and must be imported after installation when your deployment requires it.
+The extracted release content includes the platform files and security content bundles. In air-gapped mode, download the CTI archive or collections separately and transfer them to the orchestration node before importing the CTI database. See [Import the CTI database](/self_hosted/1.0/operations/import_cti_database.md#prepare-the-cti-export-in-air-gapped-mode).
 
 Use the following command after replacing the release directory with your own path:
 
 ```bash
-tar -xvf sekoia-self-hosted-v1.0.1.tar.gz -C "$SEKOIA_LOCAL_DIR"
+tar -xvf "sekoia-self-hosted-$SH_VERSION.tar.gz" -C "$SEKOIA_LOCAL_DIR"
 ```
 
-Keep the directory layout expected by the SHC unless you also change the corresponding paths in `config.yml`. See [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md#step-2-transfer-and-extract-the-archive) for the archive layout.
+Keep the directory layout expected by the SHC unless you also change the corresponding paths in `config.yml`. See [Deploy the platform](/self_hosted/1.0/deployment/deployment_guide.md#step-2-transfer-and-extract-the-archive) for the archive layout.
 
 ## Configure offline delivery
 
@@ -90,7 +95,7 @@ global:
 
 In air-gapped mode, release and security content download modules use the extracted files. Registry operations still point to the local registries that you define in the manifest.
 
-For the complete configuration reference, see [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md).
+For the complete configuration reference, see [Configure the deployment](/self_hosted/1.0/deployment/deployment_configuration.md).
 
 ## Load the SHC image
 
@@ -101,7 +106,7 @@ The SHC image is included in the release archive. Load it on the orchestration n
 3. Confirm that the image is available locally.
 4. Use the release execution script supplied with the archive.
 
-The exact image filename is release-specific. Use the filename and execution instructions in [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md#step-3-load-the-self-hosted-controller-shc-docker-image).
+The exact image filename is release-specific. Use the filename and execution instructions in [Deploy the platform](/self_hosted/1.0/deployment/deployment_guide.md#step-3-load-the-self-hosted-controller-shc-docker-image).
 
 ## Validate the environment before installation
 
@@ -122,7 +127,7 @@ From the orchestration node, run the checks that apply to your deployment:
 
 Correct every blocking error before you continue. `CheckLocalConfig` reports missing fields, invalid formats, and unsupported keys without displaying rejected secret values.
 
-For more detail about the execution plan and idempotent modules, see [The deployment process](/self_hosted/1.0.1/deployment/deployment_process.md).
+For more detail about the execution plan and idempotent modules, see [The deployment process](/self_hosted/1.0/deployment/deployment_process.md).
 
 ## Install the platform
 
@@ -182,7 +187,7 @@ Run the complete diagnostic set against the platform's Prometheus metrics.
 
 Every check must report `OK`. A `CRIT` or `WARN` result identifies the affected service or platform area and provides likely causes and remediation actions.
 
-For targeted health checks and result interpretation, see [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md).
+For targeted health checks and result interpretation, see [Run platform diagnostics](/self_hosted/1.0/monitoring/run_diagnostics.md).
 
 ## Access the platform
 
@@ -190,22 +195,22 @@ After the validation checks pass, retrieve the platform access information and c
 
 1. Run `PlatformAccess` from the orchestration node if you need to display the generated credentials again.
 2. Open the URL configured in `global.host`.
-3. Follow [Set up the first administrator account](/self_hosted/1.0.1/operations/first_login.md).
+3. Follow [Set up the first administrator account](/self_hosted/1.0/operations/first_login.md).
 4. Store generated credentials in an approved secrets store.
 5. Remove credentials from shared logs before you provide logs to another team.
 
 ## Result
 
-Sekoia Self-Hosted 1.0.1 is installed inside the restricted environment, with the release files delivered locally and the platform validated at the configuration, cluster, application, database, and service levels. The deployment team now has a repeatable record for future troubleshooting and operational reviews.
+Sekoia Self-Hosted is installed in your environment, with the deployment mode configured correctly and the platform validated at the configuration, cluster, application, database, and service levels. The deployment team now has a repeatable record for future troubleshooting and operational reviews.
 
 ## Related articles
 
 - [Sekoia Self-Hosted](/self_hosted/index.md): Overview of the deployment model and intended environments.
-- [Sekoia Self-Hosted 1.0.1](/self_hosted/1.0.1/index.md): Quick-start path and release-specific documentation.
-- [Technical requirements](/self_hosted/1.0.1/deployment/deployment_prerequisites.md): Reference for infrastructure, hardware, storage, and software requirements.
-- [Network requirements](/self_hosted/1.0.1/deployment/network_requirements.md): Reference for required network flows.
-- [Configure the deployment](/self_hosted/1.0.1/deployment/deployment_configuration.md): How to prepare `config.yml`.
-- [Deploy the platform](/self_hosted/1.0.1/deployment/deployment_guide.md): Complete installation procedure for Sekoia Self-Hosted 1.0.1.
-- [The deployment process](/self_hosted/1.0.1/deployment/deployment_process.md): Overview of SHC execution modes, modules, and installation stages.
-- [Run platform diagnostics](/self_hosted/1.0.1/monitoring/run_diagnostics.md): How to run and interpret platform health checks.
-- [Debug your deployment](/self_hosted/1.0.1/troubleshooting/debug_tool.md): Reference for configuration, cluster, database, and resource diagnostics.
+- [Sekoia Self-Hosted 1.0](/self_hosted/1.0/index.md): Quick-start path and release documentation.
+- [Technical requirements](/self_hosted/1.0/deployment/deployment_prerequisites.md): Reference for infrastructure, hardware, storage, and software requirements.
+- [Network requirements](/self_hosted/1.0/deployment/network_requirements.md): Reference for required network flows.
+- [Configure the deployment](/self_hosted/1.0/deployment/deployment_configuration.md): How to prepare `config.yml`.
+- [Deploy the platform](/self_hosted/1.0/deployment/deployment_guide.md): Complete installation procedure for Sekoia Self-Hosted 1.0.
+- [The deployment process](/self_hosted/1.0/deployment/deployment_process.md): Overview of SHC execution modes, modules, and installation stages.
+- [Run platform diagnostics](/self_hosted/1.0/monitoring/run_diagnostics.md): How to run and interpret platform health checks.
+- [Debug your deployment](/self_hosted/1.0/troubleshooting/debug_tool.md): Reference for configuration, cluster, database, and resource diagnostics.
