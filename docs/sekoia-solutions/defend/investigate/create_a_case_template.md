@@ -12,7 +12,7 @@ You need access to **Settings** to create and manage case templates. Contact you
 2. Under **Configuration**, select **Case Templates**.
 3. Select **New case template**.
 
-![Case templates list page with a "New case template" button](../../assets/operation_center/cases/case-templates.png)
+![Case templates list page with a "New case template" button](../../.gitbook/assets/case-templates.png)
 
 4. In the **Template name** field, enter a clear, descriptive name for the template (for example, `Standard phishing investigation`).
 5. In the **Description** field, enter a short explanation of when to use this template. A good description helps analysts choose the right template and allows AI to automatically match it with relevant cases.
@@ -28,18 +28,18 @@ The dropdown only lists custom fields that have already been created in **Settin
 8. Under **Notebook template**, select **Choose notebook templates** and pick the investigation notebook to attach.
 9. Select **Save** to create the template.
 
-![Create a case template](../../assets/operation_center/cases/create-case-template.png)
+![Create a case template](../../.gitbook/assets/create-case-template.png)
 
 ## Edit, duplicate, or delete a template
 
 On the **Case Templates** list page, select the **...** menu at the end of a template row to access the following options:
 
-- **Edit:** update the template's name, description, custom fields, tasks, or notebook template.
-- **Duplicate:** create a copy of the template to use as a starting point for a new one.
-- **Delete:** permanently remove the template. This does not affect cases that already have the template applied.
+* **Edit:** update the template's name, description, custom fields, tasks, or notebook template.
+* **Duplicate:** create a copy of the template to use as a starting point for a new one.
+* **Delete:** permanently remove the template. This does not affect cases that already have the template applied.
 
 ## Related articles
 
-- [Case templates](case_templates.md): Overview of what case templates are and how they work.
-- [Apply a case template to a case](apply_a_case_template.md): How to apply a template at case creation or on an existing case.
-- [Custom fields](custom_fields.md): Reference for the custom fields available to include in templates.
+* [Case templates](case_templates.md): Overview of what case templates are and how they work.
+* [Apply a case template to a case](apply_a_case_template.md): How to apply a template at case creation or on an existing case.
+* [Custom fields](custom_fields.md): Reference for the custom fields available to include in templates.

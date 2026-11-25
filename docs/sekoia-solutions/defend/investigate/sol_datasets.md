@@ -1,4 +1,4 @@
-# Import external data source with SOL Datasets
+# SOL Datasets
 
 SOL Datasets is a powerful CSV import feature that enables SOC analysts to enrich security investigations by importing external data sources directly into the SOL query environment. This capability transforms static data lookups into dynamic, queryable datasets that can be seamlessly integrated with security events, alerts, and other platform data.
 
@@ -6,9 +6,9 @@ SOL Datasets is a powerful CSV import feature that enables SOC analysts to enric
 
 SOL Datasets addresses critical challenges in security operations:
 
-- **Enhanced Investigation Context**: Import custom threat intelligence, critical security context, list of approved software and other contextual data.
-- **Eliminates Manual Lookups**: Replace time-consuming manual data correlation with automated joins.
-- **Flexible Data Integration**: Combine external data with events, alerts, and cases using SOL's powerful query language.
+* **Enhanced Investigation Context**: Import custom threat intelligence, critical security context, list of approved software and other contextual data.
+* **Eliminates Manual Lookups**: Replace time-consuming manual data correlation with automated joins.
+* **Flexible Data Integration**: Combine external data with events, alerts, and cases using SOL's powerful query language.
 
 ## Accessing SOL Datasets
 
@@ -18,30 +18,30 @@ SOL Datasets can be accessed from the Queries page in the SOL query builder inte
 2. Click the **SOL Datasets** button in the interface toolbar.
 3. The SOL Datasets panel opens laterally, displaying available datasets.
 
-![sol-list](../../assets/operation_center/events/sol-list.gif)
+![sol-list](../../.gitbook/assets/sol-list.gif)
 
 The datasets panel provides:
 
-- **Search functionality** for finding specific datasets by their name
-- **Dataset cards** displaying key metadata
-- **New dataset** creation button
-- **Management controls** for existing datasets
+* **Search functionality** for finding specific datasets by their name
+* **Dataset cards** displaying key metadata
+* **New dataset** creation button
+* **Management controls** for existing datasets
 
 ## Dataset management interface
 
 Each dataset is displayed as an information card containing:
 
-- **Dataset Name**: Table name used in SOL queries
-- **Upload Date**: When the dataset was imported (e.g., "09/30/2025 12:07:56")
-- **Author**: User who uploaded the dataset (e.g., "John Doe")
-- **File Size**: Dataset size in MB (e.g., "10MB")
-- **Actions**: Open the dataset to view its details and update its content, or delete it
+* **Dataset Name**: Table name used in SOL queries
+* **Upload Date**: When the dataset was imported (e.g., "09/30/2025 12:07:56")
+* **Author**: User who uploaded the dataset (e.g., "John Doe")
+* **File Size**: Dataset size in MB (e.g., "10MB")
+* **Actions**: Open the dataset to view its details and update its content, or delete it
 
 The interface supports:
 
-- **Sorting**: Datasets ordered by upload date (most recent first)
-- **Search**: Filter datasets by name using the search bar
-- **Pagination**: Navigate through large dataset collections
+* **Sorting**: Datasets ordered by upload date (most recent first)
+* **Search**: Filter datasets by name using the search bar
+* **Pagination**: Navigate through large dataset collections
 
 ## CSV import process
 
@@ -52,10 +52,10 @@ The interface supports:
 
 Before importing your CSV file, ensure it meets these requirements:
 
-- **Column names follow snake_case format** and are unique
-- **Column names are no longer than 128 characters**
-- **The file is encoded in UTF-8 or ASCII**
-- **The file size does not exceed 100 MB**
+* **Column names follow snake\_case format** and are unique
+* **Column names are no longer than 128 characters**
+* **The file is encoded in UTF-8 or ASCII**
+* **The file size does not exceed 100 MB**
 {% endhint %}
 
 ### Import workflow
@@ -71,7 +71,7 @@ Before importing your CSV file, ensure it meets these requirements:
 2. Browse and select your CSV file from the file system.
 3. The system validates file format and requirements.
 
-![sol-import](../../assets/operation_center/events/sol-import.png)
+![sol-import](../../.gitbook/assets/sol-import.png)
 
 **Step 3: File preview and validation**
 
@@ -79,7 +79,7 @@ Before importing your CSV file, ensure it meets these requirements:
 2. Preview shows first 100 rows of data for verification.
 3. Column names are automatically detected.
 
-![sol-preview](../../assets/operation_center/events/sol-preview.png)
+![sol-preview](../../.gitbook/assets/sol-preview.png)
 
 **Step 4: Dataset configuration**
 
@@ -102,7 +102,7 @@ You can replace the content of an existing SOL Dataset without changing its tabl
 1. In the SOL Datasets panel, click on the dataset you want to update.
 2. A modal opens, displaying the dataset's table name and a preview of its current data.
 
-![sol-update](../../assets/operation_center/events/sol-update.png)
+![sol-update](../../.gitbook/assets/sol-update.png)
 
 **Step 2: Replace the file**
 
@@ -113,7 +113,7 @@ You can replace the content of an existing SOL Dataset without changing its tabl
 {% hint style="warning" %}
 **CSV Import Requirements**
 
-The new file must meet the same [requirements](#file-requirements) as the original import (snake_case unique column names, UTF-8 or ASCII encoding, max 100 MB).
+The new file must meet the same [requirements](sol_datasets.md#file-requirements) as the original import (snake\_case unique column names, UTF-8 or ASCII encoding, max 100 MB).
 {% endhint %}
 
 **Step 3: Review and save**
@@ -127,21 +127,21 @@ SOL Datasets support multi-tenant environments with the following access pattern
 
 ### Shared access within community
 
-- All datasets uploaded to a community are **shared among all users** within that community
-- Any user can query any dataset within their community
-- Dataset visibility is automatically scoped to the user's community
+* All datasets uploaded to a community are **shared among all users** within that community
+* Any user can query any dataset within their community
+* Dataset visibility is automatically scoped to the user's community
 
 ### Sub-community limitations
 
-- **Sub-community users** can only access datasets uploaded within their specific sub-community
-- Sub-community users **cannot access parent datasets**
-- This ensures data isolation and security between different organizational units
+* **Sub-community users** can only access datasets uploaded within their specific sub-community
+* Sub-community users **cannot access parent datasets**
+* This ensures data isolation and security between different organizational units
 
 ### Parent community privileges
 
-- **Parent community users** have access to their own datasets
-- Parent tenant users can also access datasets from **all sub-communities** under their management
-- This enables centralized oversight and cross-tenant analysis
+* **Parent community users** have access to their own datasets
+* Parent tenant users can also access datasets from **all sub-communities** under their management
+* This enables centralized oversight and cross-tenant analysis
 
 ## Using datasets in SOL queries
 
@@ -161,19 +161,18 @@ Imported datasets can be used like any other SOL data source:
 
 {% tabs %}
 {% tab title="Query" %}
-
 ```shell
 authorized_domains
 | limit 100
 ```
 {% endtab %}
-{% tab title="Results" %}
 
-| url_domain                                    |
-| --------------------------------------------- |
-| clients2.google.com                           |
-| fef.amsub0202.manage.microsoft.com            |
-| incoming.telemetry.mozilla.org                |
+{% tab title="Results" %}
+| url\_domain                        |
+| ---------------------------------- |
+| clients2.google.com                |
+| fef.amsub0202.manage.microsoft.com |
+| incoming.telemetry.mozilla.org     |
 {% endtab %}
 {% endtabs %}
 
@@ -181,7 +180,6 @@ authorized_domains
 
 {% tabs %}
 {% tab title="Query" %}
-
 ```shell
 events
 | where timestamp > ago(24h) and url.domain != null
@@ -190,13 +188,13 @@ events
 | limit 100
 ```
 {% endtab %}
-{% tab title="Results" %}
 
-| timestamp                | source.ip    | url.domain                              |
-| ------------------------ | ------------ | --------------------------------------- |
-| 2026-03-26T15:35:14.738Z | 192.168.2.10 | 8po4ycsb.bazar                          |
-| 2026-03-26T15:35:03.740Z | 192.168.2.22 | bvnremfv.pro                            |
-| 2026-03-26T15:35:04.539Z | 192.168.2.10 | botequimdamarques.bytedelivery.com.br   |
+{% tab title="Results" %}
+| timestamp                | source.ip    | url.domain                            |
+| ------------------------ | ------------ | ------------------------------------- |
+| 2026-03-26T15:35:14.738Z | 192.168.2.10 | 8po4ycsb.bazar                        |
+| 2026-03-26T15:35:03.740Z | 192.168.2.22 | bvnremfv.pro                          |
+| 2026-03-26T15:35:04.539Z | 192.168.2.10 | botequimdamarques.bytedelivery.com.br |
 {% endtab %}
 {% endtabs %}
 
@@ -204,7 +202,6 @@ events
 
 {% tabs %}
 {% tab title="Query" %}
-
 ```shell
 events
 | where timestamp > ago(24h)
@@ -213,14 +210,14 @@ events
 | limit 100
 ```
 {% endtab %}
-{% tab title="Results" %}
 
-| user.full_name  | roles_list.role           |
-| --------------- | ------------------------- |
-| alice.moreau    | Product Manager           |
-| bob.dupont      | Product Designer          |
-| claire.martin   | Front-End Engineer        |
-| david.chen      | Back-End Engineer         |
+{% tab title="Results" %}
+| user.full\_name | roles\_list.role   |
+| --------------- | ------------------ |
+| alice.moreau    | Product Manager    |
+| bob.dupont      | Product Designer   |
+| claire.martin   | Front-End Engineer |
+| david.chen      | Back-End Engineer  |
 {% endtab %}
 {% endtabs %}
 
@@ -228,21 +225,20 @@ events
 
 **Performance optimization**
 
-- Use `lookup` instead of `join` when the imported dataset is small (< 10,000 rows).
-- Apply filters to main tables before joining with datasets.
-- Limit result sets using `limit` operator.
+* Use `lookup` instead of `join` when the imported dataset is small (< 10,000 rows).
+* Apply filters to main tables before joining with datasets.
+* Limit result sets using `limit` operator.
 
 **Data quality**
 
-- Validate data consistency before importing.
-- Use consistent naming conventions across datasets.
-- Handle null values appropriately in join conditions.
+* Validate data consistency before importing.
+* Use consistent naming conventions across datasets.
+* Handle null values appropriately in join conditions.
 
 **Query structure**
 
 {% tabs %}
 {% tab title="Query" %}
-
 ```shell
 // Filter main data source first
 events
@@ -256,12 +252,12 @@ events
 | limit 1000
 ```
 {% endtab %}
-{% tab title="Results" %}
 
+{% tab title="Results" %}
 | timestamp                | user.name     | dataset.role       | event.action |
 | ------------------------ | ------------- | ------------------ | ------------ |
 | 2026-03-26T14:22:03.120Z | alice.moreau  | Product Manager    | login        |
-| 2026-03-26T14:20:15.441Z | david.chen    | Back-End Engineer  | file_access  |
+| 2026-03-26T14:20:15.441Z | david.chen    | Back-End Engineer  | file\_access |
 | 2026-03-26T14:19:47.883Z | claire.martin | Front-End Engineer | login        |
 {% endtab %}
 {% endtabs %}
@@ -274,7 +270,6 @@ Instantly correlate your alerts with external threat intelligence feeds to disti
 
 {% tabs %}
 {% tab title="Query" %}
-
 ```shell
 alerts
 | where created_at > ago(24h)
@@ -283,12 +278,12 @@ alerts
 | select rule_name, source.ip, dataset.threat_type, dataset.confidence
 ```
 {% endtab %}
-{% tab title="Results" %}
 
-| rule_name                | source.ip      | dataset.threat_type | dataset.confidence |
-| ------------------------ | -------------- | ------------------- | ------------------ |
-| SEKOIA Intelligence Feed | 143.198.133.245 | malware_c2         | high               |
-| Suspicious DNS Query     | 185.220.101.47 | tor_exit_node       | medium             |
+{% tab title="Results" %}
+| rule\_name               | source.ip       | dataset.threat\_type | dataset.confidence |
+| ------------------------ | --------------- | -------------------- | ------------------ |
+| SEKOIA Intelligence Feed | 143.198.133.245 | malware\_c2          | high               |
+| Suspicious DNS Query     | 185.220.101.47  | tor\_exit\_node      | medium             |
 {% endtab %}
 {% endtabs %}
 
@@ -300,7 +295,6 @@ The `lookup` predicate uses `cidr_match()` and is not pushed down to the datasou
 
 {% tabs %}
 {% tab title="Query" %}
-
 ```shell
 let cidrs = known_scanner_ranges | select cidr;
 
@@ -314,13 +308,13 @@ events
 | limit 100
 ```
 {% endtab %}
-{% tab title="Results" %}
 
-| timestamp                | source.ip     | matched_range.cidr | matched_range.label |
-| ------------------------ | ------------- | ------------------ | ------------------- |
-| 2026-03-26T15:35:14.738Z | 80.94.95.12   | 80.94.95.0/24      | Internet scanner    |
-| 2026-03-26T15:35:03.740Z | 198.51.100.47 | 198.51.100.0/24    | Partner network     |
-| 2026-03-26T15:35:04.539Z | 80.94.95.201  | 80.94.95.0/24      | Internet scanner    |
+{% tab title="Results" %}
+| timestamp                | source.ip     | matched\_range.cidr | matched\_range.label |
+| ------------------------ | ------------- | ------------------- | -------------------- |
+| 2026-03-26T15:35:14.738Z | 80.94.95.12   | 80.94.95.0/24       | Internet scanner     |
+| 2026-03-26T15:35:03.740Z | 198.51.100.47 | 198.51.100.0/24     | Partner network      |
+| 2026-03-26T15:35:04.539Z | 80.94.95.201  | 80.94.95.0/24       | Internet scanner     |
 {% endtab %}
 {% endtabs %}
 
@@ -330,7 +324,6 @@ Transform raw security events into business-aware insights by correlating them w
 
 {% tabs %}
 {% tab title="Query" %}
-
 ```shell
 events
 | where timestamp > ago(1h)
@@ -339,13 +332,13 @@ events
 | order by event_count desc
 ```
 {% endtab %}
-{% tab title="Results" %}
 
-| dataset.department | dataset.criticality | event_count |
-| ------------------ | ------------------- | ----------- |
-| Engineering        | high                | 1204        |
-| Finance            | critical            | 876         |
-| HR                 | medium              | 342         |
+{% tab title="Results" %}
+| dataset.department | dataset.criticality | event\_count |
+| ------------------ | ------------------- | ------------ |
+| Engineering        | high                | 1204         |
+| Finance            | critical            | 876          |
+| HR                 | medium              | 342          |
 {% endtab %}
 {% endtabs %}
 
@@ -355,7 +348,6 @@ Monitor administrative activities by correlating authentication events with your
 
 {% tabs %}
 {% tab title="Query" %}
-
 ```shell
 events
 | where event.category == 'authentication' and action.outcome == 'success'
@@ -364,8 +356,8 @@ events
 | aggregate count() by user.name, host.name
 ```
 {% endtab %}
-{% tab title="Results" %}
 
+{% tab title="Results" %}
 | user.name    | host.name       | count |
 | ------------ | --------------- | ----- |
 | alice.moreau | laptop-chris    | 42    |
@@ -379,56 +371,59 @@ events
 
 File format errors
 
-- **Issue**: Column names contain spaces or special characters
-- **Solution**: Convert to snake_case format (e.g., "User Name" → "user_name")
+* **Issue**: Column names contain spaces or special characters
+* **Solution**: Convert to snake\_case format (e.g., "User Name" → "user\_name")
 
 Encoding problems
 
-- **Issue**: Special characters appear corrupted
-- **Solution**: Save CSV file with UTF-8 encoding
+* **Issue**: Special characters appear corrupted
+* **Solution**: Save CSV file with UTF-8 encoding
 
 Size limitations
 
-- **Issue**: File exceeds 100 MB limit
-- **Solution**: Split large files or filter to essential columns only
+* **Issue**: File exceeds 100 MB limit
+* **Solution**: Split large files or filter to essential columns only
 
 ### Query performance issues
 
 Slow join operations
 
-- **Issue**: Queries timeout or perform slowly
-- **Solution**: Use `lookup` instead of `join` for smaller datasets
+* **Issue**: Queries timeout or perform slowly
+* **Solution**: Use `lookup` instead of `join` for smaller datasets
 
 Memory limitations
 
-- **Issue**: Large dataset queries fail
-- **Solution**: Apply filters before joins, use `limit` operators
+* **Issue**: Large dataset queries fail
+* **Solution**: Apply filters before joins, use `limit` operators
 
 ### Data access problems
 
 Dataset not found
 
-- **Issue**: Dataset doesn't appear in autocomplete
-- **Solution**: Verify dataset import completed successfully
+* **Issue**: Dataset doesn't appear in autocomplete
+* **Solution**: Verify dataset import completed successfully
 
 Join mismatches
 
-- **Issue**: Join operations return no results
-- **Solution**: Check column names and data formats match exactly
+* **Issue**: Join operations return no results
+* **Solution**: Check column names and data formats match exactly
 
 ## Related articles
 
 ### Getting Started & Overview
+
 * [SOL Overview](sol_overview.md): Sekoia Operating Language overview.
 * [SOL Getting Started](sol_getting_started.md): This tutorial walks you through writing your first SOL queries. By the end, you'll be able to search events, filter results, and save queries for reuse.
 * [SOL Best Practices](sol_best_practices.md): Best practices to use SOL effectively.
 
 ### User Guides
+
 * [Create and Manage Queries](create_manage_queries.md): Create and manage queries using SOL.
 * [SOL How-to Guides](sol_how_to_guides.md): Learn how to use the main functions of SOL to reach your goals (aggregate data, join tables, use external data, build a query library...).
 * [SOL Query Examples](sol_query_examples.md): Get inspiration from our examples.
 
 ### Technical Reference
+
 * [SOL Data Sources Reference](sol_ref_datasources.md): Technical references to access security data within the Sekoia platform thanks to SOL.
 * [SOL Functions Reference](sol_ref_functions.md): Reference article regarding functions used in SOL.
 * [SOL Operators Reference](sol_ref_operators.md): Reference article regarding operators used in the SOL language.

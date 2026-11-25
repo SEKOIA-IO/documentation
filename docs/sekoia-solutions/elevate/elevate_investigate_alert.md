@@ -4,8 +4,8 @@ This article explains how to open an alert and read the Elevate investigation, i
 
 ## Prerequisites
 
-- Elevate is activated on your workspace or community. See [Activate Elevate on a workspace](elevate_activate.md).
-- The alert has been analyzed by the Elevate agent. Check the **Verdict** column in the alert list to confirm the analysis is complete. If the state is **In progress** or shows an error, see [Elevate analysis states](elevate_analysis_states.md).
+* Elevate is activated on your workspace or community. See [Activate Elevate on a workspace](elevate_activate.md).
+* The alert has been analyzed by the Elevate agent. Check the **Verdict** column in the alert list to confirm the analysis is complete. If the state is **In progress** or shows an error, see [Elevate analysis states](elevate_analysis_states.md).
 
 ## Open the alert
 
@@ -14,15 +14,15 @@ This article explains how to open an alert and read the Elevate investigation, i
 
 The alert details open with the Elevate investigation: a summary of the outcome and confidence at the top, followed by the findings and the reasoning questions.
 
-![Alert details showing the verdict and findings sections of an Elevate investigation](../assets/elevate/alert-verdict.png)
+![Alert details showing the verdict and findings sections of an Elevate investigation](../.gitbook/assets/alert-verdict.png)
 
 ## Read the verdict
 
 The **Verdict** section at the top of the alert details contains:
 
-- The **classification**: True Positive or False Positive
-- The **confidence score**: a percentage expressing the agent's certainty in its conclusion
-- A **plain-language explanation** summarizing the key evidence and reasoning behind the classification
+* The **classification**: True Positive or False Positive
+* The **confidence score**: a percentage expressing the agent's certainty in its conclusion
+* A **plain-language explanation** summarizing the key evidence and reasoning behind the classification
 
 ## Read the findings
 
@@ -35,13 +35,13 @@ To review the findings in the alert details:
 
 Consulting the query behind a finding lets you immediately understand and confirm the information. It is also a learning tool: analysts can draw on the way the agents carry out their triage.
 
-![Findings section showing expandable evidence cards](../assets/elevate/alert-timeline.png)
+![Findings section showing expandable evidence cards](../.gitbook/assets/alert-timeline.png)
 
 ### Switch to the Findings view
 
 For a quick summary of everything the agent found, switch to the **Findings** view in the alert details. It lists all the evidence items the agent collected in one place, which helps you quickly understand what is going on.
 
-![Findings view in the alert details showing a summary of AI-collected evidence items](../assets/elevate/alert-findings.png)
+![Findings view in the alert details showing a summary of AI-collected evidence items](../.gitbook/assets/alert-findings.png)
 
 ## Discover the reasoning questions
 
@@ -51,8 +51,8 @@ The agent analyzes each question and answers it using the data and tools availab
 
 ## Related articles
 
-- [The Elevate investigation method](elevate_investigation_method.md): How runbooks, reasoning questions, findings and verdicts work together.
-- [Override an Elevate verdict](elevate_validate_verdict.md): How to override the AI verdict once you have reviewed the investigation.
-- [Audit an Elevate investigation with Traces](elevate_traces.md): How to review the full timeline of actions the agent performed.
-- [Elevate analysis states](elevate_analysis_states.md): Reference table of all possible AI analysis states and their meaning.
-- [Trigger a manual Elevate analysis](elevate_manual_analysis.md): How to analyze an alert that was not processed automatically.
+* [The Elevate investigation method](elevate_investigation_method.md): How runbooks, reasoning questions, findings and verdicts work together.
+* [Override an Elevate verdict](elevate_validate_verdict.md): How to override the AI verdict once you have reviewed the investigation.
+* [Audit an Elevate investigation with Traces](elevate_traces.md): How to review the full timeline of actions the agent performed.
+* [Elevate analysis states](elevate_analysis_states.md): Reference table of all possible AI analysis states and their meaning.
+* [Trigger a manual Elevate analysis](elevate_manual_analysis.md): How to analyze an alert that was not processed automatically.

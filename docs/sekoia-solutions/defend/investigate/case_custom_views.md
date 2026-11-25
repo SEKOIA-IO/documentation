@@ -18,12 +18,12 @@ A custom view turns a filter combination into a permanent, named queue. Analysts
 
 A view stores four settings of the cases listing page:
 
-| Setting | Description |
-|---|---|
-| Filters | Any combination of the case filters, for example **Custom fields** is *Business Impact* and **Priority** is *Medium*. |
-| Columns | The columns displayed in the table and their order, configured in **Show/hide table columns**. |
-| Sort order | The order of the listing: **Last edition**, **Creation date** or **By highest priority**. |
-| Search | The text entered in the search bar, which narrows the list to the matching cases. |
+| Setting    | Description                                                                                                           |
+| ---------- | --------------------------------------------------------------------------------------------------------------------- |
+| Filters    | Any combination of the case filters, for example **Custom fields** is _Business Impact_ and **Priority** is _Medium_. |
+| Columns    | The columns displayed in the table and their order, configured in **Show/hide table columns**.                        |
+| Sort order | The order of the listing: **Last edition**, **Creation date** or **By highest priority**.                             |
+| Search     | The text entered in the search bar, which narrows the list to the matching cases.                                     |
 
 ## The views bar
 
@@ -31,15 +31,15 @@ Views appear as tabs in a bar above the cases list. The **All cases** tab shows 
 
 Selecting a view applies its filters, columns, sort order and search text immediately. When you change any of these settings on an open view, including the search text, **Reset** and a save button appear so you can discard or keep your changes. The save button reads **Save** on a private view and **Save for everyone** on a shared view.
 
-![Cases listing page with the views bar showing All cases, the private view My cases, the shared views Open and New Today, and the New view button](../../assets/operation_center/cases/case-custom-views-bar.png)
+![Cases listing page with the views bar showing All cases, the private view My cases, the shared views Open and New Today, and the New view button](../../.gitbook/assets/case-custom-views-bar.png)
 
 ## Visibility
 
 Each view has one of two visibility settings, chosen when you create it and editable later.
 
-| Visibility | Icon | Who sees the view |
-|---|---|---|
-| Private | Lock | Only you. |
+| Visibility             | Icon   | Who sees the view                                                          |
+| ---------------------- | ------ | -------------------------------------------------------------------------- |
+| Private                | Lock   | Only you.                                                                  |
 | Share to the community | People | Every user of the community with the permission to view case custom views. |
 
 {% hint style="warning" %}
@@ -50,10 +50,10 @@ Saving changes to a shared view updates it immediately for every user of the com
 
 ## Limits
 
-| View type | Limit |
-|---|---|
-| Shared views | 20 per community |
-| Private views | 10 per user |
+| View type     | Limit            |
+| ------------- | ---------------- |
+| Shared views  | 20 per community |
+| Private views | 10 per user      |
 
 ## Views in multi-tenant mode
 
@@ -63,9 +63,9 @@ In multi-tenant mode, views are scoped to the level where you create them. A vie
 
 Two permissions of the **Cases** group control access to custom views. Grant them through a custom role.
 
-| Permission | Description |
-|---|---|
-| View case custom views | List and view case custom views. |
+| Permission               | Description                                  |
+| ------------------------ | -------------------------------------------- |
+| View case custom views   | List and view case custom views.             |
 | Manage case custom views | Create, update and delete case custom views. |
 
 ## Use cases

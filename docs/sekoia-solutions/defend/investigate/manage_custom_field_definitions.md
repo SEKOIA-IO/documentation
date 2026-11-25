@@ -16,7 +16,7 @@ By default, users with the **Admin** or **Analyst** role can manage custom field
 
 To open the custom field management page, navigate to **Settings > Custom fields**.
 
-![Custom Fields Settings](../../assets/operation_center/cases/custom-fields-settings.png)
+![Custom Fields Settings](../../.gitbook/assets/custom-fields-settings.png)
 
 ## Create a custom field
 

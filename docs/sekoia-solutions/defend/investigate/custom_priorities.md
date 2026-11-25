@@ -2,16 +2,16 @@
 
 Custom priorities define how urgent a case is, using the levels and the vocabulary your team actually works with. You configure them in **Settings > Custom Statuses**, under the **Priority** section. Priorities apply to cases only, not to alerts.
 
-![Custom priorities configuration](../../assets/operation_center/alerts/custom-priorities.png)
+![Custom priorities configuration](../../.gitbook/assets/custom-priorities.png)
 
 ## Default priorities
 
-| Priority | Description |
-|---|---|
-| **Critical** | The case is critical |
-| **High** | The case priority is high. |
-| **Medium** | The case priority is medium. |
-| **Low** | The case priority is low. |
+| Priority     | Description                  |
+| ------------ | ---------------------------- |
+| **Critical** | The case is critical         |
+| **High**     | The case priority is high.   |
+| **Medium**   | The case priority is medium. |
+| **Low**      | The case priority is low.    |
 
 You can rename these levels, change their color and description, add your own, or work with a longer or shorter scale.
 
@@ -44,7 +44,7 @@ Editing happens inline on the priority row.
 2. Update the name, the description, the color, or all three.
 3. Click **Save**.
 
-![Editing a custom priority](../../assets/operation_center/alerts/custom-priority-edit.png)
+![Editing a custom priority](../../.gitbook/assets/custom-priority-edit.png)
 
 The color you pick is the one analysts see on the priority badge in the cases listing and on the case details page. Custom statuses do not offer this choice, they take their color from their stage.
 
@@ -57,12 +57,12 @@ A priority can be deleted only if no case currently carries it.
 
 ## Where priorities appear
 
-| Location | Usage |
-|---|---|
-| Case creation | You set the priority when you open a case. |
+| Location      | Usage                                                 |
+| ------------- | ----------------------------------------------------- |
+| Case creation | You set the priority when you open a case.            |
 | Cases listing | You filter by priority, and sort by highest priority. |
-| Case details | The priority is shown in the case header. |
-| Bulk actions | You change the priority of several cases at once. |
+| Case details  | The priority is shown in the case header.             |
+| Bulk actions  | You change the priority of several cases at once.     |
 
 ## Related articles
 

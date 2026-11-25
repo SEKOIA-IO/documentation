@@ -1,6 +1,6 @@
-# Create an asset connector
+# Create asset connectors
 
-_**[Reveal module](reveal_index.md)** — This feature requires the Reveal add-on module._ 
+[_**Reveal module**_](reveal_index.md) _— This feature requires the Reveal add-on module._
 
 Asset connectors link external systems to Sekoia so that asset records can be created, merged, and enriched with structured data from sources such as EDR tools, vulnerability scanners, identity providers, and CMDBs. This article explains how to create a new asset connector and verify that it is working.
 
@@ -8,13 +8,12 @@ Asset connectors link external systems to Sekoia so that asset records can be cr
 
 Confirm that the following conditions are met:
 
-- The Reveal add-on module is enabled for your community. For MSSP setups, it must be enabled on each community that should discover assets.
-- Some integrations require specific permissions or scopes on the external system. Refer to the integration's documentation to check what the account you use needs.
-- You have the credentials required by the integration you want to connect (API key, client ID, service account, or equivalent).
+* The Reveal add-on module is enabled for your community. For MSSP setups, it must be enabled on each community that should discover assets.
+* Some integrations require specific permissions or scopes on the external system. Refer to the integration's documentation to check what the account you use needs.
+* You have the credentials required by the integration you want to connect (API key, client ID, service account, or equivalent).
 
 {% hint style="info" %}
 **Run an asset connector with a local runner**
-
 
 Eligible asset connectors can run through a local runner from inside your environment. The local runner and asset connector must belong to the same community, and that community must have a Reveal subscription.
 
@@ -33,15 +32,14 @@ For local runner setup and connectivity configuration, see [Local runners](../de
 
 The asset connectors panel opens and lists your existing connectors.
 
-![!Asset connectors panel](../assets/asset_connector_panel.png)
-
+![!Asset connectors panel](../.gitbook/assets/asset_connector_panel.png)
 
 ### Step 2: Select an integration
 
 1. Select **New connector**.
 2. In the integration catalog, select the integration you want to configure.
 
-![!Integration catalog for asset connector](../assets/connector_choice.png)
+![!Integration catalog for asset connector](../.gitbook/assets/connector_choice.png)
 
 ### Step 3: Fill in the connector form
 
@@ -53,7 +51,7 @@ You can reuse an existing account. Any account created here is shared with the a
 
 Enter the required fields for the selected integration. The fields vary by integration type and typically include a connector name, and an Account to synchronize.
 
-![!Asset connectors configuration form](../assets/connector_config.png) 
+![!Asset connectors configuration form](../.gitbook/assets/connector_config.png)
 
 ### Step 4: Test the connector
 
@@ -81,12 +79,12 @@ All assets retrieved by connectors are available on the **Assets** page. You can
 
 From the asset connector list, you can perform the following actions on any connector tile:
 
-| Action | How to access |
-|---|---|
-| Enable or disable | Toggle on the connector tile |
-| Edit configuration | Select **...** then select **Edit** |
-| View logs | Select **...** then select **View logs** |
-| Delete | Select **...** then select **Delete** |
+| Action             | How to access                            |
+| ------------------ | ---------------------------------------- |
+| Enable or disable  | Toggle on the connector tile             |
+| Edit configuration | Select **...** then select **Edit**      |
+| View logs          | Select **...** then select **View logs** |
+| Delete             | Select **...** then select **Delete**    |
 
 {% hint style="info" %}
 **After deleting a connector**
@@ -96,9 +94,9 @@ The connector stops syncing within a few minutes. Assets it already discovered r
 
 ## Related articles
 
-- [Troubleshoot asset connectors](reveal_asset_connectors_troubleshoot.md): How to diagnose and resolve connector errors using error indicators and logs.
-- [Reveal feature enablement matrix](reveal_feature_enablement.md): Which data sources are required or optional for each Reveal capability.
-- [Getting started with Reveal](reveal_getting_started.md): Recommended setup order for all Reveal data sources.
-- [Integration — Asset categories](https://docs.sekoia.com/integrations/assets_categories/overview): Reference for available connector categories and integration setup.
-- [Security controls](reveal_security_controls.md): How to verify connector coverage from the asset context panel.
-- [Local runners](../defend/automate/playbooks-on-premises.md): How to run eligible asset connector jobs from inside your environment.
+* [Troubleshoot asset connectors](reveal_asset_connectors_troubleshoot.md): How to diagnose and resolve connector errors using error indicators and logs.
+* [Reveal feature enablement matrix](reveal_feature_enablement.md): Which data sources are required or optional for each Reveal capability.
+* [Getting started with Reveal](reveal_getting_started.md): Recommended setup order for all Reveal data sources.
+* [Integration — Asset categories](https://docs.sekoia.com/integrations/assets_categories/overview): Reference for available connector categories and integration setup.
+* [Security controls](reveal_security_controls.md): How to verify connector coverage from the asset context panel.
+* [Local runners](../defend/automate/playbooks-on-premises.md): How to run eligible asset connector jobs from inside your environment.

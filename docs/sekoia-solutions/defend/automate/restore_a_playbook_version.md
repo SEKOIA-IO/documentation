@@ -12,8 +12,8 @@ Sekoia.io keeps the last 30 versions of each playbook and deletes older versions
 
 ## Prerequisites
 
-- To view the version history, you need the permission to read playbooks.
-- To restore a version, you need the permission to edit playbooks.
+* To view the version history, you need the permission to read playbooks.
+* To restore a version, you need the permission to edit playbooks.
 
 ## Open the version history
 
@@ -35,7 +35,7 @@ To see the workflow of a saved version:
 
 The **Version preview** window shows the workflow of that version in read-only mode, with its save date. To see the configuration of a node, click the node.
 
-![Version history panel and Version preview window of a playbook](../../assets/operation_center/playbooks/playbook_version_history.png)
+![Version history panel and Version preview window of a playbook](../../.gitbook/assets/playbook_version_history.png)
 
 ## Compare a version with the current one
 

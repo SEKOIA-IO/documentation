@@ -1,4 +1,4 @@
-# Navigate the playbooks interface
+# Navigate playbooks
 
 The **Playbooks** page lets you create, organize, activate, and monitor playbooks. This article describes the playbooks list, playbook details, workflow editor, runs, trigger logs, and version history.
 
@@ -6,39 +6,39 @@ The **Playbooks** page lets you create, organize, activate, and monitor playbook
 
 The **Playbooks** page lists the playbooks available in your community, sorted by the last update. From this page, you can create playbooks, manage their connected accounts, and monitor their runs.
 
-![Playbooks list in table view](../../assets/operation_center/playbooks/playbook-listing.png)
+![Playbooks list in table view](../../.gitbook/assets/playbook-listing.png)
 
 ### Header actions
 
-| Button | Action |
-| --- | --- |
-| **Local runners** | Manage the runners that execute playbook actions in your own infrastructure. See [Local runners](playbooks-on-premises.md). |
-| **Connected accounts** | Manage the accounts that playbooks use to connect to third-party services. See [Manage accounts](manage-accounts.md). |
-| **New playbook** | Create a playbook. See [Build playbooks](build_playbooks.md). |
+| Button                 | Action                                                                                                                      |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| **Local runners**      | Manage the runners that execute playbook actions in your own infrastructure. See [Local runners](playbooks-on-premises.md). |
+| **Connected accounts** | Manage the accounts that playbooks use to connect to third-party services. See [Manage accounts](manage-accounts.md).       |
+| **New playbook**       | Create a playbook. See [Build playbooks](build_playbooks.md).                                                               |
 
 The **Playbooks** tab lists playbooks. The **Runs** tab lists the runs of all playbooks.
 
 ### Table columns
 
-| Column | Content |
-| --- | --- |
-| **Name** | Name of the playbook. Click the name to open the playbook. |
-| **Status** | Status badges for the playbook. Click a badge to open the corresponding tab. |
-| **Runs**, **In progress**, **Succeeded**, **Failed** | Counters for the playbook runs. |
-| **Custom fields** | Custom field values assigned to the playbook. See [Organize playbooks with custom fields](organize_playbooks_with_custom_fields.md). |
-| **Communities** | Communities where the playbook runs. |
-| **Author** | User who created the playbook. |
-| **Updated at** | Date of the last change to the playbook. |
-| **Activated** | Toggle to activate or deactivate the playbook. |
-| **Actions** | The **...** menu, with **Duplicate playbook** and **Delete**. |
+| Column                                               | Content                                                                                                                              |
+| ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| **Name**                                             | Name of the playbook. Click the name to open the playbook.                                                                           |
+| **Status**                                           | Status badges for the playbook. Click a badge to open the corresponding tab.                                                         |
+| **Runs**, **In progress**, **Succeeded**, **Failed** | Counters for the playbook runs.                                                                                                      |
+| **Custom fields**                                    | Custom field values assigned to the playbook. See [Organize playbooks with custom fields](organize_playbooks_with_custom_fields.md). |
+| **Communities**                                      | Communities where the playbook runs.                                                                                                 |
+| **Author**                                           | User who created the playbook.                                                                                                       |
+| **Updated at**                                       | Date of the last change to the playbook.                                                                                             |
+| **Activated**                                        | Toggle to activate or deactivate the playbook.                                                                                       |
+| **Actions**                                          | The **...** menu, with **Duplicate playbook** and **Delete**.                                                                        |
 
 The **Name** and **Status** columns are always displayed. The **Actions** column is always the last column. To choose and reorder the other columns, click **Show/Hide table columns**, select the columns, and drag them into the order you want. Sekoia.io saves your selection for the current community in your browser.
 
 ### Search, filter, and sort
 
-- To find a playbook by name, enter a name in the search bar.
-- To filter the list, click **Filters** and select **Activation**, **Integrations used**, **Trigger**, or **Updated at**. Active filters remain in the URL, so you can bookmark or share a filtered view.
-- To sort the list, click the **Name**, **Activated**, or **Updated at** column header.
+* To find a playbook by name, enter a name in the search bar.
+* To filter the list, click **Filters** and select **Activation**, **Integrations used**, **Trigger**, or **Updated at**. Active filters remain in the URL, so you can bookmark or share a filtered view.
+* To sort the list, click the **Name**, **Activated**, or **Updated at** column header.
 
 ### Group playbooks
 
@@ -54,9 +54,9 @@ These actions require permission to edit playbooks.
 Deactivating a playbook stops it in all its communities and ends its runs in progress.
 {% endhint %}
 
-- To activate or deactivate a playbook, click the toggle in the **Activated** column.
-- To duplicate a playbook, click **...** at the end of its row, then select **Duplicate playbook**.
-- To delete a playbook, deactivate it first. Then click **...** at the end of its row and select **Delete**.
+* To activate or deactivate a playbook, click the toggle in the **Activated** column.
+* To duplicate a playbook, click **...** at the end of its row, then select **Duplicate playbook**.
+* To delete a playbook, deactivate it first. Then click **...** at the end of its row and select **Delete**.
 
 ### Card view
 
@@ -72,32 +72,32 @@ You can save the playbook from any tab with **Save** in the playbook header.
 
 The following status badges indicate the state of a playbook:
 
-| Status | Description |
-| --- | --- |
-| **Configuration issues** | One or more communities have configuration issues. Click the badge to open the **Workflow** tab with the issue panel open. |
-| **Partially activated** | The playbook is running in some communities but not all of them. Click the badge to open the **Overview** tab. |
-| **Ready to start** | No community has configuration issues, and the playbook can be activated. |
-| **Failed runs** | One or more runs have failed. Click the badge to open the **Runs** tab with a **Failed** filter applied. |
-| **Trigger crashed** | A trigger configuration has a log with the **Critical** level. Click the badge to open the **Trigger logs** tab with a **Critical** filter applied. |
+| Status                   | Description                                                                                                                                         |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Configuration issues** | One or more communities have configuration issues. Click the badge to open the **Workflow** tab with the issue panel open.                          |
+| **Partially activated**  | The playbook is running in some communities but not all of them. Click the badge to open the **Overview** tab.                                      |
+| **Ready to start**       | No community has configuration issues, and the playbook can be activated.                                                                           |
+| **Failed runs**          | One or more runs have failed. Click the badge to open the **Runs** tab with a **Failed** filter applied.                                            |
+| **Trigger crashed**      | A trigger configuration has a log with the **Critical** level. Click the badge to open the **Trigger logs** tab with a **Critical** filter applied. |
 
-![Playbook details and workflow view](../../assets/operation_center/playbooks/playbook-editing.png)
+![Playbook details and workflow view](../../.gitbook/assets/playbook-editing.png)
 
 ### Overview
 
 The **Overview** tab contains the following information:
 
-- The community where the playbook was created.
-- The user who created the playbook.
-- The user who last updated the playbook.
-- The creation date.
-- The date of the last update.
-- The user who last activated the playbook.
-- The date of the last activation.
-- The description of the playbook.
-- Community details, including options to add or remove communities, activate or deactivate a community, and review the playbook status for each community.
-- Custom fields assigned to the playbook. See [Organize playbooks with custom fields](organize_playbooks_with_custom_fields.md).
+* The community where the playbook was created.
+* The user who created the playbook.
+* The user who last updated the playbook.
+* The creation date.
+* The date of the last update.
+* The user who last activated the playbook.
+* The date of the last activation.
+* The description of the playbook.
+* Community details, including options to add or remove communities, activate or deactivate a community, and review the playbook status for each community.
+* Custom fields assigned to the playbook. See [Organize playbooks with custom fields](organize_playbooks_with_custom_fields.md).
 
-![Overview tab of a playbook](../../assets/operation_center/playbooks/playbook_custom_fields.png)
+![Overview tab of a playbook](../../.gitbook/assets/playbook_custom_fields.png)
 
 ### Workflow
 
@@ -107,18 +107,18 @@ The workflow view contains the module menu, the graph area, and the configuratio
 
 The module menu provides the [triggers](triggers.md), [actions](actions.md), and [operators](operators.md) that you can add to a workflow. The menu contains **Triggers**, **Actions**, **Integrations**, and **Operators** buttons. Click a button to open its panel, then click it again to close the panel.
 
-| Panel | Content |
-| --- | --- |
-| **Triggers** | A search bar, built-in triggers such as Cron, and triggers grouped by integration. |
-| **Actions** | A search bar and actions grouped by integration. The panel displays the number of actions for each integration. |
-| **Integrations** | Integrations connected to Sekoia.io. Click an integration to view its triggers and actions. |
-| **Operators** | The Condition, Foreach, Store, All, and Any operators. |
+| Panel            | Content                                                                                                         |
+| ---------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Triggers**     | A search bar, built-in triggers such as Cron, and triggers grouped by integration.                              |
+| **Actions**      | A search bar and actions grouped by integration. The panel displays the number of actions for each integration. |
+| **Integrations** | Integrations connected to Sekoia.io. Click an integration to view its triggers and actions.                     |
+| **Operators**    | The Condition, Foreach, Store, All, and Any operators.                                                          |
 
 To add a module to the workflow, click it or drag it to the graph area. The module becomes a block.
 
 To insert a block between two existing blocks, click the **+** on the link between them. Then select **Add an action** or **Add an operator**.
 
-![Module menu with the Actions panel open on an empty playbook](../../assets/operation_center/playbooks/playbook_module_menu.png)
+![Module menu with the Actions panel open on an empty playbook](../../.gitbook/assets/playbook_module_menu.png)
 
 {% hint style="info" %}
 Configuration details for these blocks are available in the [Library section](https://docs.sekoia.com/integrations/action_library/cloud_providers/aws) of the documentation.
@@ -130,18 +130,18 @@ The graph area is where you add and connect blocks to build a playbook.
 
 Each block displays:
 
-- The logo of the application or service.
-- The name of the action.
-- The block type, such as **Action**, **Operator**, or **Trigger**.
-- The block status, such as **Valid** or **In error**.
-- Connectors.
+* The logo of the application or service.
+* The name of the action.
+* The block type, such as **Action**, **Operator**, or **Trigger**.
+* The block status, such as **Valid** or **In error**.
+* Connectors.
 
-| Control | Description |
-| --- | --- |
+| Control        | Description                                         |
+| -------------- | --------------------------------------------------- |
 | Zoom in or out | Zoom the graph with the mouse or the zoom controls. |
-| Fit diagram | Display all blocks in the graph area. |
-| Undo | Undo the last action. |
-| Redo | Redo an action. |
+| Fit diagram    | Display all blocks in the graph area.               |
+| Undo           | Undo the last action.                               |
+| Redo           | Redo an action.                                     |
 
 {% hint style="info" %}
 If a block has missing configuration, an alert showing the number of errors appears in the graph area.
@@ -149,77 +149,77 @@ If a block has missing configuration, an alert showing the number of errors appe
 
 During a playbook run, colors indicate the status of blocks and nodes:
 
-| Color | Meaning |
-| --- | --- |
-| Green | The playbook run completed successfully. |
-| Orange | The playbook run left this node. |
-| Red | The run ended with an error. |
+| Color  | Meaning                                  |
+| ------ | ---------------------------------------- |
+| Green  | The playbook run completed successfully. |
+| Orange | The playbook run left this node.         |
+| Red    | The run ended with an error.             |
 
 #### Configuration panel
 
 Click a block in the graph area to open its configuration panel. The panel content depends on the block type.
 
-##### Triggers
+**Triggers**
 
 You can edit the trigger name in the header.
 
-![Trigger name field](../../assets/operation_center/playbooks/playbook-trigger-name.png)
+![Trigger name field](../../.gitbook/assets/playbook-trigger-name.png)
 
-| Tab | Content |
-| --- | --- |
-| **Account** | Module configurations that you can create, edit, or delete. In a Managed Security Service Provider (MSSP) workspace, you see one account for each community. |
-| **Configuration** | Available trigger configurations that you can add, edit, or delete. |
-| **Variables** | Variables and their values. |
+| Tab               | Content                                                                                                                                                      |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Account**       | Module configurations that you can create, edit, or delete. In a Managed Security Service Provider (MSSP) workspace, you see one account for each community. |
+| **Configuration** | Available trigger configurations that you can add, edit, or delete.                                                                                          |
+| **Variables**     | Variables and their values.                                                                                                                                  |
 
 In an MSSP workspace, the **Account** and **Configuration** sections contain a section for each community included in the playbook.
 
-![MSSP account configuration](../../assets/operation_center/playbooks/playbooks-account-mssp.png)
+![MSSP account configuration](../../.gitbook/assets/playbooks-account-mssp.png)
 
 To add a community, click **+ Community**, then select one of your remaining communities.
 
-![Community selection for a playbook](../../assets/operation_center/playbooks/playbooks-account-community.png)
+![Community selection for a playbook](../../.gitbook/assets/playbooks-account-community.png)
 
 To remove a community, click **...** in the community section header, then select **Delete community**.
 
-![Delete a community from a playbook](../../assets/operation_center/playbooks/playbooks-account-delete.png)
+![Delete a community from a playbook](../../.gitbook/assets/playbooks-account-delete.png)
 
-##### Operators
+**Operators**
 
 **Condition**
 
-| Section | Content |
-| --- | --- |
-| **Name** | Name of the operator. You can edit this value. |
+| Section   | Content                                                            |
+| --------- | ------------------------------------------------------------------ |
+| **Name**  | Name of the operator. You can edit this value.                     |
 | **Cases** | Comparisons made with a variable or with values entered in a form. |
 
 **Foreach**
 
-| Section | Content |
-| --- | --- |
-| **Name** | Name of the operator. You can edit this value. |
-| **Items** | Data processed by the operator. |
+| Section       | Content                                                                                  |
+| ------------- | ---------------------------------------------------------------------------------------- |
+| **Name**      | Name of the operator. You can edit this value.                                           |
+| **Items**     | Data processed by the operator.                                                          |
 | **Variables** | Variables related to the action, including their names, descriptions, and a copy button. |
 
 **Store**
 
-| Section | Content |
-| --- | --- |
-| **Name** | Name of the operator. You can edit this value. |
-| **Modifications** | Modifications to apply. To add a modification, hover over the title and select **Use variable** or **Add one entry to array**. |
-| **Use a variable** | Field where you enter the value of a variable. |
-| **Add form** | Form with the **Key**, **Type**, and **Value** fields. See the [Store operator reference](operators.md#store). |
+| Section            | Content                                                                                                                        |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------ |
+| **Name**           | Name of the operator. You can edit this value.                                                                                 |
+| **Modifications**  | Modifications to apply. To add a modification, hover over the title and select **Use variable** or **Add one entry to array**. |
+| **Use a variable** | Field where you enter the value of a variable.                                                                                 |
+| **Add form**       | Form with the **Key**, **Type**, and **Value** fields. See the [Store operator reference](operators.md#store).                 |
 
-##### Actions
+**Actions**
 
 You can edit the action name in the header.
 
-![Action name field](../../assets/operation_center/playbooks/playbooks-action-name.png)
+![Action name field](../../.gitbook/assets/playbooks-action-name.png)
 
-| Tab | Content |
-| --- | --- |
-| **Account** | Existing configurations that can apply to the action. If no configuration is available, click **Create new configuration**. In an MSSP workspace, you see one account for each community. |
-| **Configuration** | Configuration steps for the selected action, including a search bar. You can extend the height of a field by dragging its lower-right corner. |
-| **Variables** | Variables related to the action, including their names, descriptions, and a copy button. |
+| Tab               | Content                                                                                                                                                                                   |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Account**       | Existing configurations that can apply to the action. If no configuration is available, click **Create new configuration**. In an MSSP workspace, you see one account for each community. |
+| **Configuration** | Configuration steps for the selected action, including a search bar. You can extend the height of a field by dragging its lower-right corner.                                             |
+| **Variables**     | Variables related to the action, including their names, descriptions, and a copy button.                                                                                                  |
 
 {% hint style="info" %}
 To resize the configuration panel, drag its left edge. Sekoia.io remembers the selected width for later configurations.
@@ -227,15 +227,15 @@ To resize the configuration panel, drag its left edge. Sekoia.io remembers the s
 
 In an MSSP workspace, the **Account** tab contains a section for each community included in the playbook.
 
-![MSSP action account configuration](../../assets/operation_center/playbooks/playbooks-action-mssp.png)
+![MSSP action account configuration](../../.gitbook/assets/playbooks-action-mssp.png)
 
-For information about adding or removing communities, see the [Triggers](#triggers) section.
+For information about adding or removing communities, see the [Triggers](navigate_playbooks.md#triggers) section.
 
 #### Issue panel
 
 In an MSSP workspace, the issue panel lists configuration issues for each community. Click **Go to issues** to open the relevant module and the **Account** or **Configuration** tab where you can resolve the issue.
 
-![Playbook issue panel](../../assets/operation_center/playbooks/playbooks-issue-panel.png)
+![Playbook issue panel](../../.gitbook/assets/playbooks-issue-panel.png)
 
 ### Code
 
@@ -270,11 +270,11 @@ The header displays the total number of runs, the number of runs in progress, th
 
 The table includes the following information:
 
-- The event that started the run.
-- The start time.
-- The run status.
-- The run duration.
-- A button to run the playbook again.
+* The event that started the run.
+* The start time.
+* The run status.
+* The run duration.
+* A button to run the playbook again.
 
 To open the details of a run, click the run. The graph view displays the status of each block.
 
@@ -288,10 +288,10 @@ You can open run results from the **Runs** tab in the playbook or from the run d
 
 The panel displays:
 
-- The run status.
-- The timeline, including the start time, duration, and end time.
-- Arguments.
-- Results, including logs and errors.
+* The run status.
+* The timeline, including the start time, duration, and end time.
+* Arguments.
+* Results, including logs and errors.
 
 To open the block settings, click **Edit** in the panel.
 

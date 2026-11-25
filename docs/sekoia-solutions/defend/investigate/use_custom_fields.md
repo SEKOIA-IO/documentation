@@ -16,7 +16,7 @@ Custom field definitions must exist in your workspace before you can use them. I
 
 The screenshot below shows the **Custom fields** section on a case. The section looks and behaves identically on the alert details page.
 
-![Custom fields section on a case](../../assets/operation_center/cases/case-custom-fields-section.png)
+![Custom fields section on a case](../../.gitbook/assets/case-custom-fields-section.png)
 
 {% hint style="info" %}
 **Auto-added fields**

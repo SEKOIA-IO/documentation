@@ -1,4 +1,4 @@
-# Case details
+# Investigate case details
 
 The case details page brings together all information related to a single investigation. This reference describes every section, tab, and field available on that page.
 
@@ -6,14 +6,14 @@ The case details page brings together all information related to a single invest
 
 The header is visible at the top of the case details page at all times. It displays the following information:
 
-| Element | Description |
-|---|---|
-| Case name | The title given to the case at creation. |
-| Creator | The analyst who opened the case. |
-| Last edition date | The date and time of the most recent change. |
-| Case ID | A unique identifier. Click it to copy the value to your clipboard. |
-| Priority | The current priority level (for example, High, Medium, Low). |
-| Status | The current lifecycle stage (for example, Open, In progress, Closed). |
+| Element           | Description                                                           |
+| ----------------- | --------------------------------------------------------------------- |
+| Case name         | The title given to the case at creation.                              |
+| Creator           | The analyst who opened the case.                                      |
+| Last edition date | The date and time of the most recent change.                          |
+| Case ID           | A unique identifier. Click it to copy the value to your clipboard.    |
+| Priority          | The current priority level (for example, High, Medium, Low).          |
+| Status            | The current lifecycle stage (for example, Open, In progress, Closed). |
 
 ## Tabs
 
@@ -46,7 +46,7 @@ The **Tasks** tab lets you create and manage tasks and subtasks associated with 
 
 The **Events** tab lists all events associated with the case, using the same display as the [Events page](events.md).
 
-![Events tab inside a case](../../assets/operation_center/cases/case-events-tab.png)
+![Events tab inside a case](../../.gitbook/assets/case-events-tab.png)
 
 Events appear in this tab when they:
 
@@ -55,11 +55,11 @@ Events appear in this tab when they:
 
 When you interact with individual values in the event list, the following options are available:
 
-| Action | Description |
-|---|---|
-| Filter for | Restricts the view to events matching that value within the case. |
-| Filter out | Excludes events matching that value within the case. |
-| Search events with this value | Runs a broader search across the case timeframe. |
+| Action                        | Description                                                       |
+| ----------------------------- | ----------------------------------------------------------------- |
+| Filter for                    | Restricts the view to events matching that value within the case. |
+| Filter out                    | Excludes events matching that value within the case.              |
+| Search events with this value | Runs a broader search across the case timeframe.                  |
 
 To work with multiple values simultaneously, click **Toggle value selection** at the top of the event list. You can then select multiple values and use them to:
 
@@ -79,7 +79,7 @@ To search events by value:
 
 A side panel opens with the search results so you can investigate without leaving the case page.
 
-![Search events in side panel](../../assets/operation_center/cases/case-side-panel.png)
+![Search events in side panel](../../.gitbook/assets/case-side-panel.png)
 
 ### Graph investigation tab
 

@@ -1,10 +1,10 @@
-# Add custom instructions for an Elevate agent
+# Add custom instructions
 
 Custom instructions give the Elevate agent environment-specific context it cannot infer from telemetry alone. This article explains how to provide contextual instructions at the workspace or community level so the agent produces more relevant verdicts.
 
 ## Prerequisites
 
-- Elevate is activated on your workspace or community. See [Activate Elevate on a workspace](elevate_activate.md).
+* Elevate is activated on your workspace or community. See [Activate Elevate on a workspace](elevate_activate.md).
 
 ## Add contextual instructions
 
@@ -25,13 +25,13 @@ To add instructions for a specific community:
 To apply instructions across all communities, select your workspace instead of a specific community in step 2.
 {% endhint %}
 
-![Instructions tab in the AI agent settings panel with a text input field](../assets/elevate/custom-instructions.png)
+![Instructions tab in the AI agent settings panel with a text input field](../.gitbook/assets/custom-instructions.png)
 
 To customize how the agent reasons for a specific detection rule rather than for your environment as a whole, edit the rule's runbook instead. See [Customize a detection rule's runbook](elevate_customize_runbook.md).
 
 ## Related articles
 
-- [Write effective instructions for Elevate](elevate_instructions_best_practices.md): Guidance and examples for writing instructions that improve investigation quality.
-- [Customize a detection rule's runbook](elevate_customize_runbook.md): How to edit the Detection Rational, legitimate scenarios and investigation questions of a runbook.
-- [Activate Elevate on a workspace](elevate_activate.md): How to enable the Elevate agent and configure auto-analysis.
-- [Elevate](elevate_overview.md): Concept overview of how Elevate works and its key concepts.
+* [Write effective instructions for Elevate](elevate_instructions_best_practices.md): Guidance and examples for writing instructions that improve investigation quality.
+* [Customize a detection rule's runbook](elevate_customize_runbook.md): How to edit the Detection Rational, legitimate scenarios and investigation questions of a runbook.
+* [Activate Elevate on a workspace](elevate_activate.md): How to enable the Elevate agent and configure auto-analysis.
+* [Elevate](elevate_overview.md): Concept overview of how Elevate works and its key concepts.

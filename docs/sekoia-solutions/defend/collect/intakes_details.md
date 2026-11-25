@@ -6,17 +6,17 @@ The intake details page is the central health dashboard for a single data source
 
 The details page is organized into three main sections:
 
-| Section | Description |
-| --- | --- |
-| Events graph | Visual overview of ingestion volume, event validity, and delivery lag for the selected period |
-| List of recent events | Latest events received, with parsing details and error filtering |
-| Connector log | Latest connector execution logs (Pull intakes only) |
+| Section               | Description                                                                                   |
+| --------------------- | --------------------------------------------------------------------------------------------- |
+| Events graph          | Visual overview of ingestion volume, event validity, and delivery lag for the selected period |
+| List of recent events | Latest events received, with parsing details and error filtering                              |
+| Connector log         | Latest connector execution logs (Pull intakes only)                                           |
 
-![Intake details page](../../assets/operation_center/intakes/intakes-details.png)
+![Intake details page](../../.gitbook/assets/intakes-details.png)
 
 ## Events graph
 
-![Events graph](../../assets/operation_center/intakes/intakes-graph.png)
+![Events graph](../../.gitbook/assets/intakes-graph.png)
 
 The events graph displays ingestion metrics for the selected period: 24 hours, 7 days, or 30 days.
 
@@ -28,13 +28,13 @@ Events are displayed using their reception date, not the source timestamp. This 
 
 ### Graph metrics
 
-| Metric | Description |
-| --- | --- |
-| **Events** | Total number of events ingested in the selected period |
-| **Events in warning** | Number of events that triggered a warning during parsing |
-| **Invalid events** | Number of events that failed parsing |
-| **Valid events** | Number of successfully parsed events |
-| **Event delivery** | Average time between the original event creation date at the source and its reception date at Sekoia |
+| Metric                | Description                                                                                          |
+| --------------------- | ---------------------------------------------------------------------------------------------------- |
+| **Events**            | Total number of events ingested in the selected period                                               |
+| **Events in warning** | Number of events that triggered a warning during parsing                                             |
+| **Invalid events**    | Number of events that failed parsing                                                                 |
+| **Valid events**      | Number of successfully parsed events                                                                 |
+| **Event delivery**    | Average time between the original event creation date at the source and its reception date at Sekoia |
 
 {% hint style="success" %}
 **View per-unit event counts**
@@ -42,7 +42,7 @@ Events are displayed using their reception date, not the source timestamp. This 
 Hover over the graph to view the number of events for each time unit.
 {% endhint %}
 
-![Events graph hover tooltip](../../assets/operation_center/intakes/intakes-graph-hover.png)
+![Events graph hover tooltip](../../.gitbook/assets/intakes-graph-hover.png)
 
 ## Event delivery
 
@@ -62,14 +62,14 @@ Because this is an average, a small number of heavily delayed events can signifi
 
 ### Abnormal value causes
 
-| Potential issue | Description |
-| --- | --- |
-| Event wrongly dated | Events with incorrect source timestamps cause a high or negative delivery value |
-| Data source timezone | An incorrect timezone configuration causes a high or negative delivery value |
-| Data source unavailable | If the source is offline for an extended period, buffered events create a spike in lag when they are eventually sent |
-| Network or bandwidth issues | Network congestion increases delivery time |
-| Events burst | An unusually high volume of events can overload ingestion and increase lag |
-| Upstream buffering | For pull intakes that route events through a partner relay (such as an Event Hub), events may accumulate upstream before reaching Sekoia. This typically occurs when an endpoint reconnects after being offline and sends all its buffered events at once |
+| Potential issue             | Description                                                                                                                                                                                                                                               |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Event wrongly dated         | Events with incorrect source timestamps cause a high or negative delivery value                                                                                                                                                                           |
+| Data source timezone        | An incorrect timezone configuration causes a high or negative delivery value                                                                                                                                                                              |
+| Data source unavailable     | If the source is offline for an extended period, buffered events create a spike in lag when they are eventually sent                                                                                                                                      |
+| Network or bandwidth issues | Network congestion increases delivery time                                                                                                                                                                                                                |
+| Events burst                | An unusually high volume of events can overload ingestion and increase lag                                                                                                                                                                                |
+| Upstream buffering          | For pull intakes that route events through a partner relay (such as an Event Hub), events may accumulate upstream before reaching Sekoia. This typically occurs when an endpoint reconnects after being offline and sends all its buffered events at once |
 
 ### Diagnose a high event delivery value
 
@@ -83,27 +83,27 @@ To identify the cause of a high event delivery value:
 
 The recent events list displays the latest events received for the intake. Events are ordered by reception date.
 
-| Element | Description |
-| --- | --- |
-| **Show more** button | Loads additional events beyond the default view |
-| Event type filter | Filters the list to show only invalid or warning events |
-| Event detail panel | Shows the raw log and parsing result for a selected event |
+| Element              | Description                                               |
+| -------------------- | --------------------------------------------------------- |
+| **Show more** button | Loads additional events beyond the default view           |
+| Event type filter    | Filters the list to show only invalid or warning events   |
+| Event detail panel   | Shows the raw log and parsing result for a selected event |
 
 ### Invalid and warning messages
 
-![Event type filter](../../assets/operation_center/intakes/intakes-event-filter.png)
+![Event type filter](../../.gitbook/assets/intakes-event-filter.png)
 
 Use the filter above the event list to display only invalid or warning messages. For each parsing issue, the list shows:
 
-| Field | Description |
-| --- | --- |
-| Message | The parsing error message |
-| Last seen | The last date the issue occurred |
+| Field       | Description                                      |
+| ----------- | ------------------------------------------------ |
+| Message     | The parsing error message                        |
+| Last seen   | The last date the issue occurred                 |
 | Occurrences | The total number of times the issue was detected |
 
 Select an entry to inspect the last occurrence of the event and troubleshoot the issue.
 
-![Invalid event detail panel](../../assets/operation_center/intakes/intakes-details-error.png)
+![Invalid event detail panel](../../.gitbook/assets/intakes-details-error.png)
 
 {% hint style="info" %}
 **Storage optimization**
@@ -115,41 +115,38 @@ To manage storage costs, Sekoia only stores the last occurrence of each invalid 
 
 The **Connector log** tab is only available for Pull intakes. It shows the latest execution logs of the connector.
 
-![Connector log tab](../../assets/operation_center/intakes/intakes-connector.png)
+![Connector log tab](../../.gitbook/assets/intakes-connector.png)
 
-| Log level | Purpose |
-| --- | --- |
-| **Info** | Confirms the connector is running as expected |
+| Log level | Purpose                                         |
+| --------- | ----------------------------------------------- |
+| **Info**  | Confirms the connector is running as expected   |
 | **Error** | Indicates a failure that requires investigation |
 
 Use the filter to display **Error** logs only.
 
-![Connector log filtered to Error level](../../assets/operation_center/intakes/intakes-log-error.png)
+![Connector log filtered to Error level](../../.gitbook/assets/intakes-log-error.png)
 
 ## Intake menu reference
 
 The intake menu is accessible from the intake details page. It exposes all management actions for the intake.
 
-| Action | Available for | Description |
-| --- | --- | --- |
-| **Edit entity** | All intakes | Change the entity associated with the intake |
-| **Configure** | Pull intakes only | Update connector parameters such as credentials or configuration values |
-| **Notifications** | All intakes | Set up inactivity alerts for the intake |
-| **Rename** | All intakes | Change the intake display name |
-| **Search events** | All intakes | Open the intake's events in the Events page |
-| **Documentation** | All intakes | Open the integration documentation for this intake format |
-| **Copy intake key** | All intakes | Copy the intake key to the clipboard |
-| **Copy intake UUID** | All intakes | Copy the intake UUID to the clipboard |
-| **Delete** | All intakes | Permanently delete the intake |
+| Action               | Available for     | Description                                                             |
+| -------------------- | ----------------- | ----------------------------------------------------------------------- |
+| **Edit entity**      | All intakes       | Change the entity associated with the intake                            |
+| **Configure**        | Pull intakes only | Update connector parameters such as credentials or configuration values |
+| **Notifications**    | All intakes       | Set up inactivity alerts for the intake                                 |
+| **Rename**           | All intakes       | Change the intake display name                                          |
+| **Search events**    | All intakes       | Open the intake's events in the Events page                             |
+| **Documentation**    | All intakes       | Open the integration documentation for this intake format               |
+| **Copy intake key**  | All intakes       | Copy the intake key to the clipboard                                    |
+| **Copy intake UUID** | All intakes       | Copy the intake UUID to the clipboard                                   |
+| **Delete**           | All intakes       | Permanently delete the intake                                           |
 
-![Intake menu](../../assets/operation_center/intakes/intakes-details-menu.png)
+![Intake menu](../../.gitbook/assets/intakes-details-menu.png)
 
 ## Related articles
 
-- [Intakes](intakes.md): Concept overview of what intakes are, how they connect to Sekoia, and what the different event types mean.
-
-- [Manage intakes](manage_intakes.md): Step-by-step procedures for creating, configuring, renaming, and deleting intakes.
-
-- [Turn on notifications](https://docs.sekoia.com/getting-started/create_a_notification): How to configure notification channels and triggers for intake inactivity alerts.
-
-- [Integrations](https://docs.sekoia.com/integrations/action_library/overview): Full catalog of supported data source integrations and their setup documentation.
+* [Intakes](intakes.md): Concept overview of what intakes are, how they connect to Sekoia, and what the different event types mean.
+* [Manage intakes](manage_intakes.md): Step-by-step procedures for creating, configuring, renaming, and deleting intakes.
+* [Turn on notifications](https://docs.sekoia.com/getting-started/create_a_notification): How to configure notification channels and triggers for intake inactivity alerts.
+* [Integrations](https://docs.sekoia.com/integrations/action_library/overview): Full catalog of supported data source integrations and their setup documentation.

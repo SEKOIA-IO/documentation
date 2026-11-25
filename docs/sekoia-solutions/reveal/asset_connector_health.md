@@ -1,6 +1,6 @@
-# Asset connector health status and logs
+# Check asset connector health
 
-_[Reveal module](reveal_index.md) — This feature requires the Reveal add-on module._
+[_Reveal module_](reveal_index.md) _— This feature requires the Reveal add-on module._
 
 The asset connectors panel provides visibility into whether a connector is experiencing errors and what happened during its recent activity. Use it to confirm successful synchronizations, identify issues preventing asset collection, and gather precise error details for troubleshooting or escalation.
 
@@ -14,7 +14,6 @@ From this panel, you can review connector error states and open detailed logs fo
 {% hint style="info" %}
 **Asset connector jobs running on a local runner**
 
-
 Some asset connectors run from a local runner inside your environment. The local runner and asset connector must belong to the same community, and that community must have a Reveal subscription.
 
 If a local connector job fails or stops retrieving assets, go to **Configure > Assets > Local runners** and confirm that the selected runner is **Up & running**. Review its last activity, hostname, and version. If the runner is offline, see [Local runners](../defend/automate/playbooks-on-premises.md) for proxy, Docker, and Endpoint Agent checks.
@@ -22,12 +21,12 @@ If a local connector job fails or stops retrieving assets, go to **Configure > A
 
 **Possible error states**
 
-| State | Condition | Description |
-|---|---|---|
-| Error during data collection | More than 5 error logs in the last 24 hours | The connector is still functional and running but has encountered repeated errors during data collection. |
-| Stopped by critical error | Critical errors have forced the connector to stop | The connector is no longer running and requires intervention. |
+| State                        | Condition                                         | Description                                                                                               |
+| ---------------------------- | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Error during data collection | More than 5 error logs in the last 24 hours       | The connector is still functional and running but has encountered repeated errors during data collection. |
+| Stopped by critical error    | Critical errors have forced the connector to stop | The connector is no longer running and requires intervention.                                             |
 
-![Asset connectors panel with a connector entry displaying an error state indicator](../assets/operation_center/connector_error.png)
+![Asset connectors panel with a connector entry displaying an error state indicator](../.gitbook/assets/connector_error.png)
 
 ## View connector logs
 
@@ -46,7 +45,7 @@ Connector logs help you understand what happened during a connector run. Use the
 Start by reviewing the most recent runs to determine whether the issue is ongoing or limited to a single execution.
 {% endhint %}
 
-![Asset connectors panel showing the options menu for a connector with the View logs item visible](../assets/operation_center/execution_details.png)
+![Asset connectors panel showing the options menu for a connector with the View logs item visible](../.gitbook/assets/execution_details.png)
 
 ### What the logs show
 
@@ -56,35 +55,34 @@ For each connector run, the logs can include the following information.
 
 A high-level indication of log severity, such as:
 
-| Status | Description |
-|---|---|
-| Info | Normal operational information |
-| Debug | Detailed diagnostic output |
-| Error | Issues encountered during the run |
+| Status | Description                       |
+| ------ | --------------------------------- |
+| Info   | Normal operational information    |
+| Debug  | Detailed diagnostic output        |
+| Error  | Issues encountered during the run |
 
 **Timestamps**
 
-| Field | Description |
-|---|---|
-| Start time | When the connector run began |
-| End time | When the connector run completed |
-| Duration | Total time elapsed for the run |
+| Field      | Description                      |
+| ---------- | -------------------------------- |
+| Start time | When the connector run began     |
+| End time   | When the connector run completed |
+| Duration   | Total time elapsed for the run   |
 
 **Execution details**
 
 Useful information about what happened during the run, including:
 
-- connection attempts made to the source system
-- authentication steps and outcomes
-- requests sent to the source system
-- objects or records processed
-- import, update, or skip actions applied to assets
-
+* connection attempts made to the source system
+* authentication steps and outcomes
+* requests sent to the source system
+* objects or records processed
+* import, update, or skip actions applied to assets
 
 ## Related articles
 
-- [Asset context panel](../defend/investigate/asset_context_panel.md): Full reference for the asset context panel, which displays data enriched by asset connectors including security controls, vulnerabilities, and hygiene information.
-- [Attack path visualization](attack_path_visualization.md): How attack path graph enrichment depends on asset connectors providing relationship and exposure data.
-- [Integration — Asset categories](https://docs.sekoia.com/integrations/assets_categories/overview): Reference documentation for asset connector categories and integration setup.
-- [Collect — Assets](../defend/collect/assets.md): How assets are configured and discovered in Sekoia, including the role of asset connectors in the collection pipeline.
-- [Local runners](../defend/automate/playbooks-on-premises.md): How to check the status and connectivity of runners used for local asset connector jobs.
+* [Asset context panel](../defend/investigate/asset_context_panel.md): Full reference for the asset context panel, which displays data enriched by asset connectors including security controls, vulnerabilities, and hygiene information.
+* [Attack path visualization](attack_path_visualization.md): How attack path graph enrichment depends on asset connectors providing relationship and exposure data.
+* [Integration — Asset categories](https://docs.sekoia.com/integrations/assets_categories/overview): Reference documentation for asset connector categories and integration setup.
+* [Collect — Assets](../defend/collect/assets.md): How assets are configured and discovered in Sekoia, including the role of asset connectors in the collection pipeline.
+* [Local runners](../defend/automate/playbooks-on-premises.md): How to check the status and connectivity of runners used for local asset connector jobs.

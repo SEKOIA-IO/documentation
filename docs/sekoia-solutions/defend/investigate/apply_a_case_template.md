@@ -1,4 +1,4 @@
-# Apply a case template to a case
+# Apply a case template
 
 Apply a case template to structure a case with predefined custom fields, tasks, and a notebook template. You can do this at the moment you create a case or at any point during an existing investigation.
 
@@ -25,15 +25,15 @@ Selecting a template at creation is optional. You can always apply one to the ca
 
 The case is updated with the template's custom fields, tasks, and notebook template.
 
-![Case detail page showing the "Case template" button](../../assets/operation_center/cases/case-details-template-button.png)
+![Case detail page showing the "Case template" button](../../.gitbook/assets/case-details-template-button.png)
 
 ## What happens when you apply multiple templates
 
 Templates are additive. Applying a second template to a case that already has one does not reset the existing structure:
 
-- **Custom fields:** fields from the new template are added. If a field is already on the case with a value, that value is kept. If the field is empty, the template's value fills it.
-- **Tasks:** tasks from the new template are appended to the existing list.
-- **Notebook template:** the new notebook is added alongside any existing one.
+* **Custom fields:** fields from the new template are added. If a field is already on the case with a value, that value is kept. If the field is empty, the template's value fills it.
+* **Tasks:** tasks from the new template are appended to the existing list.
+* **Notebook template:** the new notebook is added alongside any existing one.
 
 {% hint style="info" %}
 **Review tasks after applying multiple templates**
@@ -43,5 +43,5 @@ Because tasks accumulate with each template applied, check the task list afterwa
 
 ## Related articles
 
-- [Case templates](case_templates.md): Overview of what case templates are and how they work.
-- [Create a case template](create_a_case_template.md): How to build and configure a template in Settings.
+* [Case templates](case_templates.md): Overview of what case templates are and how they work.
+* [Create a case template](create_a_case_template.md): How to build and configure a template in Settings.

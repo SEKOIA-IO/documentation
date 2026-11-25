@@ -1,4 +1,4 @@
-# Create an Event Drop rule from an intake or asset
+# Create an Event Drop rule
 
 You can create an Event Drop detection rule directly from an intake or an asset, without starting from a blank rule in the catalog. The rule creation panel opens with the Event Drop pattern selected and the SOL pattern pre-filled with a condition on the source, so you only set the schedule and create the rule.
 
@@ -7,11 +7,11 @@ You can create an Event Drop detection rule directly from an intake or an asset,
 
 This feature is currently in Early Access and is only available for Beta testers. Sekoia.io plans to roll out this functionality to all environments soon.
 {% endhint %}
-    
+
 ## Prerequisites
 
-- You have permissions to create detection rules.
-- You are on the details page of the intake or asset you want to monitor for missing data.
+* You have permissions to create detection rules.
+* You are on the details page of the intake or asset you want to monitor for missing data.
 
 {% hint style="warning" %}
 **Hourly telemetry granularity**
@@ -33,7 +33,7 @@ The **Create new rule** panel opens with the **Event Drop** pattern selected. Th
 5. Set the schedule, 1 hour minimum, and complete any remaining fields.
 6. Click **Create**.
 
-![Intake actions menu with Create event drop alerting](../../assets/operation_center/rules_catalog/sol-intake-drop.png)
+![Intake actions menu with Create event drop alerting](../../.gitbook/assets/sol-intake-drop.png)
 
 ## Start from an asset
 
@@ -48,16 +48,16 @@ The **Create new rule** panel opens with the **Event Drop** pattern selected. Th
 4. Set the schedule, 1 hour minimum, and complete any remaining fields.
 5. Click **Create**.
 
-![Asset details with the Configure an event drop alert button](../../assets/operation_center/rules_catalog/sol-asset-drop.png)
+![Asset details with the Configure an event drop alert button](../../.gitbook/assets/sol-asset-drop.png)
 
 ## What gets pre-filled
 
 The entry point determines the rule name, the datasource and the field used in the condition:
 
-| Source | Entry point | Rule name | Datasource | Condition field |
-|---|---|---|---|---|
-| Intake | **Create event drop alerting** in the intake more options menu | `Event drop for intake "<name>"` | `event_telemetry` | `intake_uuid` |
-| Asset | **Configure an event drop alert** button on the asset page | `Event drop for asset "<name>"` | `asset_telemetry` | `asset_uuid` |
+| Source | Entry point                                                    | Rule name                        | Datasource        | Condition field |
+| ------ | -------------------------------------------------------------- | -------------------------------- | ----------------- | --------------- |
+| Intake | **Create event drop alerting** in the intake more options menu | `Event drop for intake "<name>"` | `event_telemetry` | `intake_uuid`   |
+| Asset  | **Configure an event drop alert** button on the asset page     | `Event drop for asset "<name>"`  | `asset_telemetry` | `asset_uuid`    |
 
 Both pre-filled patterns also bound the query with `?time.start` and `?time.end`, the time conditions required by every SOL rule.
 

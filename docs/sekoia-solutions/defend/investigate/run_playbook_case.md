@@ -4,7 +4,7 @@ You can trigger a playbook directly from a case, without leaving the investigati
 
 ## Before you begin
 
-The playbook you want to run must use the **Manual Trigger for Case** trigger and be active. Playbooks built on any other trigger do not appear in the case panel. See [Make a playbook available in cases](#make-a-playbook-available-in-cases) below.
+The playbook you want to run must use the **Manual Trigger for Case** trigger and be active. Playbooks built on any other trigger do not appear in the case panel. See [Make a playbook available in cases](run_playbook_case.md#make-a-playbook-available-in-cases) below.
 
 You need the **Analyst** or **Admin** built-in role. The **Guest** role is read-only and cannot trigger a playbook. See [Built-in roles](https://docs.sekoia.com/getting-started/roles_and_permissions) for what each role covers.
 
@@ -20,7 +20,7 @@ A playbook becomes available in cases as soon as its entry node is the **Manual 
 6. Set the playbook status to **On**.
 7. Click **Save**.
 
-![Playbook workflow starting with the Manual Trigger for Case trigger](../../assets/operation_center/cases/playboook-case-trigger.png)
+![Playbook workflow starting with the Manual Trigger for Case trigger](../../.gitbook/assets/playboook-case-trigger.png)
 
 {% hint style="info" %}
 **Scope of the trigger**
@@ -31,14 +31,13 @@ The trigger makes the playbook available on every case of the community it belon
 ## Run a playbook from a case
 
 1. Open the case you want to act on.
-2. In the case header, click the playbook icon to open the **Available playbooks for this case** panel.
+2.  In the case header, click the playbook icon to open the **Available playbooks for this case** panel.
 
-    ![Case details page with the Available playbooks for this case](../../assets/operation_center/cases/case-available-playbooks.png)
+    ![Case details page with the Available playbooks for this case](../../.gitbook/assets/case-available-playbooks.png)
 
     The panel lists every playbook built on the **Manual Trigger for Case** trigger.
-
 3. Locate the playbook you want to run.
-4. Click the run button next to the playbook name.
+4.  Click the run button next to the playbook name.
 
     The button turns into a loading indicator while the run is in progress, and the **View last runs performed** section appears under the playbook name.
 
@@ -49,19 +48,18 @@ The playbook runs against the case it was triggered from. You can keep working i
 When the run completes, its result appears in the panel.
 
 1. Click **View last runs performed** under the playbook name.
-2. Read the run card. It displays:
+2.  Read the run card. It displays:
 
-    - The status of the run.
-    - The time elapsed since the run was triggered, for example "less than a minute ago".
-    - The duration of the run, for example "Performed in less than a minute".
+    * The status of the run.
+    * The time elapsed since the run was triggered, for example "less than a minute ago".
+    * The duration of the run, for example "Performed in less than a minute".
 
-    ![Available playbooks panel showing a succeeded run](../../assets/operation_center/cases/case-playbook-run.png)
-
+    ![Available playbooks panel showing a succeeded run](../../.gitbook/assets/case-playbook-run.png)
 3. Click the run card to open the full result. Sekoia redirects you to the playbook details page on the **Runs** tab.
 
 The run is identified by its triggering case, `Sekoia Case: <case short ID>`, so you can tell case-triggered runs apart from runs started elsewhere. The graph displays the status of each node, and clicking a node opens its arguments, logs and errors. See [Navigate playbooks' interface](../automate/navigate_playbooks.md#runs) for the full description of the **Runs** tab.
 
-![Playbook Runs tab showing a run triggered by a case and the workflow graph with successful nodes](../../assets/operation_center/cases/playbook-runs-tab.png)
+![Playbook Runs tab showing a run triggered by a case and the workflow graph with successful nodes](../../.gitbook/assets/playbook-runs-tab.png)
 
 {% hint style="info" %}
 **Case activity feed**

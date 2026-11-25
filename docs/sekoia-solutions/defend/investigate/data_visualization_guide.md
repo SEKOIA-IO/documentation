@@ -10,7 +10,8 @@ The query builder offers eight visualization options, grouped into two categorie
 ## Total values
 
 ### Number
-The Number visualization prominently displays a single numeric value, making it perfect for showcasing key performance indicators (KPIs) or other important metrics. 
+
+The Number visualization prominently displays a single numeric value, making it perfect for showcasing key performance indicators (KPIs) or other important metrics.
 
 {% hint style="info" %}
 **Requirement**
@@ -19,49 +20,51 @@ To use the Number visualization, your query must result in only one numerical va
 {% endhint %}
 
 ### Table
+
 The Table view provides a comprehensive display of raw numerical values for each category across the entire date range. This format allows for direct comparison of total values across different categories.
 
 {% hint style="info" %}
 **Row Limit**
 
-
 Currently, the maximum number of rows that can be processed in the Table view is 10,000.
 {% endhint %}
 
 ### Pie Chart
-The Pie Chart visualization illustrates how a total amount is divided among distinct groups. 
+
+The Pie Chart visualization illustrates how a total amount is divided among distinct groups.
 
 {% hint style="warning" %}
 **Number of value allowed**
 
-
 To ensure clarity, the maximum number of values allowed in a pie chart is limited to 40.
 {% endhint %}
-    
+
 **Configuration**:
 
 * In the **Label** field, select the column to use for labeling each section.
-* In the **Value** field, select the column representing the numerical value.
+*   In the **Value** field, select the column representing the numerical value.
 
-  ![pie chart](../../assets/operation_center/events/qb-pie-chart.png)
+    ![pie chart](../../.gitbook/assets/qb-pie-chart.png)
 
 ### Bar Chart
-The Vertical Bar Chart allows you to compare values across different groups effectively. 
+
+The Vertical Bar Chart allows you to compare values across different groups effectively.
 
 {% hint style="info" %}
 **Number of value allowed**
 
-
 To ensure a clear display, the maximum number of values allowed is limited to 80.
 {% endhint %}
 
-**Configuration**: 
+**Configuration**:
+
 * In the **X-axis**, select the column to use for grouping (any data type).
 * In the **Y-axis**, select the column representing numeric values (numeric data only).
 
- ![bar chart](../../assets/operation_center/events/qb-bar-chart.png)
+![bar chart](../../.gitbook/assets/qb-bar-chart.png)
 
 ### Sankey Chart
+
 The Sankey Chart visualizes flows between entities, making it ideal for mapping relationships such as network traffic, user activity paths, or any directional data between two sets of values.
 
 **Configuration**:
@@ -72,7 +75,6 @@ The Sankey Chart visualizes flows between entities, making it ideal for mapping 
 
 {% hint style="success" %}
 **SOL syntax**
-
 
 Use `render sankey with (source=<column>, target=<column>, value=<column>)` to generate a Sankey chart directly from a SOL query.
 
@@ -86,6 +88,7 @@ events
 {% endhint %}
 
 ### Geo Map
+
 The Geo Map visualizes the geographic distribution of events. Use it to identify the countries from which activity originates, investigate geographic hotspots, or present the reach of an incident.
 
 The visualization supports two modes:
@@ -102,20 +105,18 @@ The visualization supports two modes:
 {% hint style="success" %}
 **SOL syntax**
 
-
 Use `render geomap` with either the `country` parameter or the `lat` and `lon` parameters.
 
 {% tabs %}
 {% tab title="Choropleth" %}
-
 ```shell
 events
 | aggregate count() by source.geo.country_iso_code
 | render geomap with (country=source.geo.country_iso_code, value=count)
 ```
 {% endtab %}
-{% tab title="Bubble map" %}
 
+{% tab title="Bubble map" %}
 ```shell
 events
 | aggregate count() by source.geo.location.lat, source.geo.location.lon
@@ -128,43 +129,43 @@ events
 ## Time series visualizations
 
 ### Column Chart
-The Column Chart provides a clear way to compare values across different categories. This visualization is particularly useful for displaying total values side by side. 
+
+The Column Chart provides a clear way to compare values across different categories. This visualization is particularly useful for displaying total values side by side.
 
 {% hint style="info" %}
 **Number of categories allowed**
 
-
 The maximum number of categories allowed is limited to 80.
 {% endhint %}
 
-**Configuration**: 
+**Configuration**:
 
 * In the **X-axis**, select the column for categories.
 * In the **Y-axis**, select the column containing numeric data.
 
 ### Line Chart
-The Line Chart is designed to visualize data points over a continuous range, making it ideal for displaying trends over time. 
+
+The Line Chart is designed to visualize data points over a continuous range, making it ideal for displaying trends over time.
 
 {% hint style="info" %}
 **Number of data points allowed**
-
 
 To ensure clarity, the maximum number of data points allowed is limited to 200.
 {% endhint %}
 
 **Configuration**:
 
-*  In the **X-axis**, select the column for the time or continuous variable.
-*  In the **Y-axis**, select the column containing numeric data.
-
+* In the **X-axis**, select the column for the time or continuous variable.
+* In the **Y-axis**, select the column containing numeric data.
 
 ## Advanced display options
 
 ### Breakdown by
-The **Breakdown By** feature allows you to analyze data in more depth across Bar Charts, Column Charts, and Line Charts. 
-When you include a **GROUP BY** clause in your query, you can use this feature to visualize how different categories or values contribute to the overall dataset.
+
+The **Breakdown By** feature allows you to analyze data in more depth across Bar Charts, Column Charts, and Line Charts. When you include a **GROUP BY** clause in your query, you can use this feature to visualize how different categories or values contribute to the overall dataset.
 
 ### Group mode
+
 The **Group Mode** feature is available for Bar Charts and Column Charts, offering two display options:
 
 * **Stacked Mode**: This mode stacks the values of each subgroup into a single bar, showing the total value and individual subgroup contributions.

@@ -1,12 +1,12 @@
-# The Query Builder
+# Query Builder
 
 Start exploring your data with the Query Builder. Hunt for threats, obtain analytics, and create insightful dashboards and reports. The Query Builder is a simple tool that allows you to build queries to explore your data effectively.
 
 ## Overview
 
-With this form, you can aggregate data to extract new insights, helping you make informed decisions. Additionally, the Query Builder enables the visualization of data through various types of charts, enriching your reporting capabilities. 
+With this form, you can aggregate data to extract new insights, helping you make informed decisions. Additionally, the Query Builder enables the visualization of data through various types of charts, enriching your reporting capabilities.
 
-![query builder](../../assets/operation_center/events/qb-run.gif)
+![query builder](../../.gitbook/assets/qb-run.gif)
 
 Currently, the following data sources are available:
 
@@ -30,7 +30,6 @@ The Query Builder provides two distinct ways to interact with your data:
 * **Operational reporting**: Power your dashboards with real-time queries to track SOC performance.
 
 {% hint style="warning" %}
-
 Due to the important amount of logs ingested, the Query Builder has **rate limits** to protect the platform's health.
 
 There are 3 **rate limits**:

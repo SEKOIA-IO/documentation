@@ -25,7 +25,7 @@ For the role setup, see [Roles and permissions](https://docs.sekoia.com/getting-
 
 The new view appears in the views bar and opens on all cases. You can now configure it.
 
-![Create new view window with the Name field and the Private and Share to the community visibility options](../../assets/operation_center/cases/case-custom-views-create.png)
+![Create new view window with the Name field and the Private and Share to the community visibility options](../../.gitbook/assets/case-custom-views-create.png)
 
 ## Configure a view
 
@@ -35,11 +35,11 @@ A view stores filters, columns, sort order and search text. Configure any of the
 
 1. Click **Filters**.
 2. Select a filter, for example **Custom fields**.
-3. Select the value, for example *Business Impact*.
+3. Select the value, for example _Business Impact_.
 
 The filter appears as a chip above the list. To add another filter, click `+` next to the existing chips. To remove one, click its `x`.
 
-![Filters menu open on the Business impact view, listing New Today, Open, Asset, Assigned to, Created by, Custom fields, Priority, Status, Tag, Verdict and Created at](../../assets/operation_center/cases/case-custom-views-filters.png)
+![Filters menu open on the Business impact view, listing New Today, Open, Asset, Assigned to, Created by, Custom fields, Priority, Status, Tag, Verdict and Created at](../../.gitbook/assets/case-custom-views-filters.png)
 
 ### Choose the columns
 
@@ -48,7 +48,7 @@ The filter appears as a chip above the list. To add another filter, click `+` ne
 3. To change the column order, drag a column by its handle.
 4. Close the window.
 
-![Show/hide table columns window with a checkbox and a drag handle for each column](../../assets/operation_center/cases/case-custom-views-columns.png)
+![Show/hide table columns window with a checkbox and a drag handle for each column](../../.gitbook/assets/case-custom-views-columns.png)
 
 ### Change the sort order
 
@@ -60,11 +60,11 @@ The filter appears as a chip above the list. To add another filter, click `+` ne
 1. Click the **Search** bar.
 2. Enter the text to match.
 
-The list narrows to the matching cases. As with a filter change, **Reset** and the save button appear so you can update the view, see [Save a view](#save-a-view).
+The list narrows to the matching cases. As with a filter change, **Reset** and the save button appear so you can update the view, see [Save a view](manage_case_custom_views.md#save-a-view).
 
 ## Save a view
 
-As soon as the view differs from its saved state, **Reset** and a save button appear above the list. To discard your changes instead, see [Discard changes to a view](#discard-changes-to-a-view).
+As soon as the view differs from its saved state, **Reset** and a save button appear above the list. To discard your changes instead, see [Discard changes to a view](manage_case_custom_views.md#discard-changes-to-a-view).
 
 {% hint style="warning" %}
 **Saving a shared view affects all users**
@@ -79,7 +79,7 @@ To save a shared view:
 1. Click **Save for everyone**.
 2. In the **Save for everyone** window, click **Confirm**.
 
-![Business impact view with a Custom fields filter chip, the Reset button and the Save for everyone button](../../assets/operation_center/cases/case-custom-views-save.png)
+![Business impact view with a Custom fields filter chip, the Reset button and the Save for everyone button](../../.gitbook/assets/case-custom-views-save.png)
 
 ### Save as a new view
 
@@ -93,19 +93,19 @@ To keep the original view unchanged and save your changes as a separate view, us
 
 The new view appears in the views bar with your current filters, columns, sort order and search text.
 
-![Save for everyone button with its menu open, showing Save as new view](../../assets/operation_center/cases/case-custom-views-save-as-new.png)
+![Save for everyone button with its menu open, showing Save as new view](../../.gitbook/assets/case-custom-views-save-as-new.png)
 
 ## Edit a view
 
 1. In the views bar, select the view you want to edit.
 2. Change the filters, the columns, the sort order or the search text.
-3. Save the view as described in [Save a view](#save-a-view).
+3. Save the view as described in [Save a view](manage_case_custom_views.md#save-a-view).
 
 ## Discard changes to a view
 
 When you modify a saved view, your changes apply to the list right away but the view keeps its saved settings until you save it. To cancel your modifications and return to the saved filters, columns, sort order and search text, click **Reset**.
 
-![My cases view with modified filters, the Reset button and the Save button](../../assets/operation_center/cases/case-custom-views-reset.png)
+![My cases view with modified filters, the Reset button and the Save button](../../.gitbook/assets/case-custom-views-reset.png)
 
 ## Change the properties of a view
 
@@ -117,9 +117,9 @@ The name and visibility of a view are its properties.
 4. Update the **Name**, the **Visibility**, or both.
 5. Click **Save**.
 
-![View menu listing Change property, Duplicate and Delete](../../assets/operation_center/cases/case-custom-views-menu.png)
+![View menu listing Change property, Duplicate and Delete](../../.gitbook/assets/case-custom-views-menu.png)
 
-![Change property window with the Name field set to Business impact and Share to the community selected](../../assets/operation_center/cases/case-custom-views-change-property.png)
+![Change property window with the Name field set to Business impact and Share to the community selected](../../.gitbook/assets/case-custom-views-change-property.png)
 
 ## Duplicate a view
 
@@ -129,9 +129,9 @@ Duplicating a view is useful to start from an existing shared queue and adapt it
 2. Click the arrow next to its name.
 3. Click **Duplicate**.
 
-The copy appears in the views bar with the same filters, columns, sort order, search text and visibility, and the suffix *(copy)* added to its name, for example **Business impact (copy)**. To rename it or change its visibility, see [Change the properties of a view](#change-the-properties-of-a-view).
+The copy appears in the views bar with the same filters, columns, sort order, search text and visibility, and the suffix _(copy)_ added to its name, for example **Business impact (copy)**. To rename it or change its visibility, see [Change the properties of a view](manage_case_custom_views.md#change-the-properties-of-a-view).
 
-![Views bar showing the Business impact view and its duplicate Business impact (copy)](../../assets/operation_center/cases/case-custom-views-duplicate.png)
+![Views bar showing the Business impact view and its duplicate Business impact (copy)](../../.gitbook/assets/case-custom-views-duplicate.png)
 
 ## Delete a view
 
@@ -146,7 +146,7 @@ Deleting a view cannot be undone. If the view is shared, it is removed for every
 3. Click **Delete**.
 4. In the **Delete view** window, click **Delete**.
 
-![Delete view confirmation window with the Cancel and Delete buttons](../../assets/operation_center/cases/case-custom-views-delete.png)
+![Delete view confirmation window with the Cancel and Delete buttons](../../.gitbook/assets/case-custom-views-delete.png)
 
 ## Reorder views
 

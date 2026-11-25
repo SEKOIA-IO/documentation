@@ -1,10 +1,11 @@
-# Playbooks format JSON Schema
+# Playbooks JSON Schema
 
 Sekoia.io playbooks are JSON documents, conforming to the following JSON schema.
 
 You can freely use this open specification to share and publish playbook templates that will be instantly usable in a Sekoia.io community.
 
-[sekoiaio_playbooks.schema.json](sekoiaio_playbooks.schema.json)
+[sekoiaio\_playbooks.schema.json](sekoiaio_playbooks.schema.json)
+
 ```javascript
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -105,19 +106,20 @@ You can freely use this open specification to share and publish playbook templat
 }
 ```
 
-1. Each Sekoia.io automation module is identified by a UUID, see, *e.g.*, [https://github.com/SEKOIA-IO/automation-library](https://github.com/SEKOIA-IO/automation-library) under `<the module>/manifest.json` to find your desired module's UUID
-2. Triggers are identified by a UUID, see, *e.g.*, [https://github.com/SEKOIA-IO/automation-library/blob/main/Sekoia.io/trigger_sekoiaio_alert_created.json#L90](https://github.com/SEKOIA-IO/automation-library/blob/main/Sekoia.io/trigger_sekoiaio_alert_created.json#L90)
-3. Actions are identified by a UUID, see, *e.g.*, [https://github.com/SEKOIA-IO/automation-library/blob/main/Sekoia.io/action_get_an_alert.json#L2](https://github.com/SEKOIA-IO/automation-library/blob/main/Sekoia.io/action_get_an_alert.json#L2)
-4. Each action/trigger/operator defines its own arguments and outputs JSON schema, see, *e.g.*, [https://github.com/SEKOIA-IO/automation-library/blob/main/Sekoia.io/action_get_an_alert.json#L7](https://github.com/SEKOIA-IO/automation-library/blob/main/Sekoia.io/action_get_an_alert.json#L7)
+1. Each Sekoia.io automation module is identified by a UUID, see, _e.g._, [https://github.com/SEKOIA-IO/automation-library](https://github.com/SEKOIA-IO/automation-library) under `<the module>/manifest.json` to find your desired module's UUID
+2. Triggers are identified by a UUID, see, _e.g._, [https://github.com/SEKOIA-IO/automation-library/blob/main/Sekoia.io/trigger\_sekoiaio\_alert\_created.json#L90](https://github.com/SEKOIA-IO/automation-library/blob/main/Sekoia.io/trigger_sekoiaio_alert_created.json#L90)
+3. Actions are identified by a UUID, see, _e.g._, [https://github.com/SEKOIA-IO/automation-library/blob/main/Sekoia.io/action\_get\_an\_alert.json#L2](https://github.com/SEKOIA-IO/automation-library/blob/main/Sekoia.io/action_get_an_alert.json#L2)
+4. Each action/trigger/operator defines its own arguments and outputs JSON schema, see, _e.g._, [https://github.com/SEKOIA-IO/automation-library/blob/main/Sekoia.io/action\_get\_an\_alert.json#L7](https://github.com/SEKOIA-IO/automation-library/blob/main/Sekoia.io/action_get_an_alert.json#L7)
 5. You can freely define any "workspace" that is meaningful to your SOC's playbook families, see [https://github.com/SEKOIA-IO/Community/tree/main/playbooks/templates](https://github.com/SEKOIA-IO/Community/tree/main/playbooks/templates) for inspiration.
 
 ### Upload a JSON playbook to your Sekoia.io community
 
 Active Sekoia.io Defend subscribers can upload a playbook to their community from any source via [a POST API endpoint](https://docs.sekoia.com/xdr/develop/rest_api/playbooks/#tag/Playbooks/operation/post_playbooks_resource) or via copy-paste in the Code tab:
 
-![](img/playbook_code.png)
+![](../../.gitbook/assets/playbook_code.png)
 
 Example python code:
+
 ```python
 import requests
 requests.post(
@@ -197,7 +199,7 @@ requests.post(
 ```
 
 1. Replace with your community UUID (your API key must have the permission to create playbooks on this community)
-2. This is the UUID of the trigger used by the node, see [https://github.com/SEKOIA-IO/automation-library/blob/6ca40519b71586a82a12792fd2636514708687d5/Sekoia.io/trigger_sekoiaio_alert_webhook.json#L24](https://github.com/SEKOIA-IO/automation-library/blob/6ca40519b71586a82a12792fd2636514708687d5/Sekoia.io/)
+2. This is the UUID of the trigger used by the node, see [https://github.com/SEKOIA-IO/automation-library/blob/6ca40519b71586a82a12792fd2636514708687d5/Sekoia.io/trigger\_sekoiaio\_alert\_webhook.json#L24](https://github.com/SEKOIA-IO/automation-library/blob/6ca40519b71586a82a12792fd2636514708687d5/Sekoia.io/)
 3. This is the UUID of the module where our trigger is defined, see [https://github.com/SEKOIA-IO/automation-library/blob/6ca40519b71586a82a12792fd2636514708687d5/Sekoia.io/manifest.json#L13](https://github.com/SEKOIA-IO/automation-library/blob/6ca40519b71586a82a12792fd2636514708687d5/Sekoia.io/manifest.json#L13)
-4. Nodes' `argument` property should conform to the trigger/operator/action's own JSON schema, see [https://github.com/SEKOIA-IO/automation-library/blob/6ca40519b71586a82a12792fd2636514708687d5/Sekoia.io/action_get_an_alert.json#L6](https://github.com/SEKOIA-IO/automation-library/blob/6ca40519b71586a82a12792fd2636514708687d5/Sekoia.io/action_get_an_alert.json#L6)
+4. Nodes' `argument` property should conform to the trigger/operator/action's own JSON schema, see [https://github.com/SEKOIA-IO/automation-library/blob/6ca40519b71586a82a12792fd2636514708687d5/Sekoia.io/action\_get\_an\_alert.json#L6](https://github.com/SEKOIA-IO/automation-library/blob/6ca40519b71586a82a12792fd2636514708687d5/Sekoia.io/action_get_an_alert.json#L6)
 5. You may use [JINJA 3](https://jinja.palletsprojects.com/en/3.0.x/) interpolation to reference other modules' outputs and variables

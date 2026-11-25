@@ -14,11 +14,11 @@ When asset criticality is set to 0 (N/A), the alert urgency equals the rule seve
 
 Urgency is displayed in two forms across the platform:
 
-| Label | Value range |
-| --- | --- |
-| Low | 0–49 |
-| Medium | 50–74 |
-| High | 75–100 |
+| Label  | Value range |
+| ------ | ----------- |
+| Low    | 0–49        |
+| Medium | 50–74       |
+| High   | 75–100      |
 
 ## Alert similarity
 
@@ -28,9 +28,9 @@ Alert similarity, shown as **Occurrence** in the alerts table, is the mechanism 
 
 Alerts are considered similar when a defined set of fields share identical values across events. Sekoia applies similarity strategies in the following order of priority:
 
-1. [Similarity by rule](#similarity-by-rule)
-2. [Similarity by event](#similarity-by-event)
-3. [Default similarity](#default-similarity)
+1. [Similarity by rule](alerts.md#similarity-by-rule)
+2. [Similarity by event](alerts.md#similarity-by-event)
+3. [Default similarity](alerts.md#default-similarity)
 
 {% hint style="info" %}
 The effective similarity strategy for an alert is displayed in the **Details** tab of that alert.
@@ -44,17 +44,17 @@ Rules in the Rules Catalog may define a custom similarity strategy, configured a
 
 When no rule-level strategy is defined, Sekoia applies a strategy based on the event's characteristics. This logic follows Sekoia's internal guidelines and cannot be edited by users.
 
-| Condition | Similarity strategy |
-| --- | --- |
-| `dns.question.name` exists | `sekoiaio.entity.uuid`, [`source.ip`, `destination.ip`], `dns.question.name` |
-| `event.dialect` is Windows and `user.name` exists | `sekoiaio.entity.uuid`, `user.name`, `user.id` |
-| `event.dialect` is Azure Windows and `process.name` exists | `sekoiaio.entity.uuid`, `process.name`, `process.command_line` |
+| Condition                                                                               | Similarity strategy                                                                            |
+| --------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `dns.question.name` exists                                                              | `sekoiaio.entity.uuid`, \[`source.ip`, `destination.ip`], `dns.question.name`                  |
+| `event.dialect` is Windows and `user.name` exists                                       | `sekoiaio.entity.uuid`, `user.name`, `user.id`                                                 |
+| `event.dialect` is Azure Windows and `process.name` exists                              | `sekoiaio.entity.uuid`, `process.name`, `process.command_line`                                 |
 | `event.dialect` is Azure Active Directory, `user.name` exists, and `action.name` exists | `sekoiaio.entity.uuid`, `user.name`, `user.id`, `action.name`, `action.type`, `action.outcome` |
-| `event.dialect` is Azure Active Directory and `action.name` exists | `sekoiaio.entity.uuid`, `action.name`, `action.type`, `action.outcome` |
-| `event.dialect` is postfix | `sekoiaio.entity.uuid`, `email.from.address` |
-| `file.hash.sha256` matches the rule | `sekoiaio.entity.uuid`, `file.hash.sha256` |
-| `file.hash.sha1` matches the rule | `sekoiaio.entity.uuid`, `file.hash.sha1` |
-| `file.hash.md5` matches the rule | `sekoiaio.entity.uuid`, `file.hash.md5` |
+| `event.dialect` is Azure Active Directory and `action.name` exists                      | `sekoiaio.entity.uuid`, `action.name`, `action.type`, `action.outcome`                         |
+| `event.dialect` is postfix                                                              | `sekoiaio.entity.uuid`, `email.from.address`                                                   |
+| `file.hash.sha256` matches the rule                                                     | `sekoiaio.entity.uuid`, `file.hash.sha256`                                                     |
+| `file.hash.sha1` matches the rule                                                       | `sekoiaio.entity.uuid`, `file.hash.sha1`                                                       |
+| `file.hash.md5` matches the rule                                                        | `sekoiaio.entity.uuid`, `file.hash.md5`                                                        |
 
 {% hint style="info" %}
 If event-based similarity does not meet your needs, contact your support team.
@@ -82,12 +82,12 @@ Sekoia adds at most 10 events to the same alert every 60 seconds. During a burst
 
 The alert type is determined by the rule that triggered the alert but can be overridden by the value associated with specific indicators in CTI rules. Alert types follow a custom taxonomy derived from the Reference Incident Classification Taxonomy of ENISA.
 
-![alert_categories](../../assets/operation_center/alerts/alert_categories.png)
+![alert\_categories](../../.gitbook/assets/alert_categories.png)
 
 ## Related links
 
-- [Alerts listing](alerts_listing.md): How to browse, filter, sort, and take bulk actions on alerts.
-- [Alert details](alert_details.md): How to investigate an individual alert across its details, events, and graph investigation tabs.
-- [Custom statuses](custom_statuses.md): What custom statuses are, the three stages, and how one status serves both alerts and cases.
-- [Custom verdicts](custom_verdicts.md): How to standardize the classification of alert and case outcomes.
-- [Rules catalog](../detect/rules_catalog.md): Reference for detection rules, including how to configure custom similarity strategies.
+* [Alerts listing](alerts_listing.md): How to browse, filter, sort, and take bulk actions on alerts.
+* [Alert details](alert_details.md): How to investigate an individual alert across its details, events, and graph investigation tabs.
+* [Custom statuses](custom_statuses.md): What custom statuses are, the three stages, and how one status serves both alerts and cases.
+* [Custom verdicts](custom_verdicts.md): How to standardize the classification of alert and case outcomes.
+* [Rules catalog](../detect/rules_catalog.md): Reference for detection rules, including how to configure custom similarity strategies.

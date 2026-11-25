@@ -1,22 +1,23 @@
-# External Integrations: Splunk
+# Splunk
 
 Sekoia is providing an application for Splunk to detect threats in your logs based on Sekoia.io CTI feed.
 
 ## Prerequisites
 
-- An operational Splunk instance with administrator privileges (**Enterprise** for OnPrem or **Cloud** for the SaaS version)
-- An active Sekoia.io license with access to the CTI
-- An access to Sekoia.io User Center with the role that contains the permission to [create an API key](https://docs.sekoia.com/getting-started/manage_api_keys) (e.g. Built-in [Analyst Role](https://docs.sekoia.com/getting-started/roles_and_permissions#built-in-roles)) or create a custom role with [custom role with the equivalent CTI permissions](https://docs.sekoia.com/getting-started/roles_and_permissions#custom-roles) <a name="api_key"></a>
+* An operational Splunk instance with administrator privileges (**Enterprise** for OnPrem or **Cloud** for the SaaS version)
+* An active Sekoia.io license with access to the CTI
+* An access to Sekoia.io User Center with the role that contains the permission to [create an API key](https://docs.sekoia.com/getting-started/manage_api_keys) (e.g. Built-in [Analyst Role](https://docs.sekoia.com/getting-started/roles_and_permissions#built-in-roles)) or create a custom role with [custom role with the equivalent CTI permissions](https://docs.sekoia.com/getting-started/roles_and_permissions#custom-roles)
 
 {% hint style="info" %}
 When creating an API key, only permissions are selectable, not [built-in roles](https://docs.sekoia.com/getting-started/roles_and_permissions#built-in-roles)
 
 Here are the selectable permissions corresponding to the `Analyst Role`:
-- `CTI > View feeds`
-- `CTI > View intelligence`
-- `CTI > View labels`
-- `CTI > View observables`
-- `CTI > View graph explorations`
+
+* `CTI > View feeds`
+* `CTI > View intelligence`
+* `CTI > View labels`
+* `CTI > View observables`
+* `CTI > View graph explorations`
 {% endhint %}
 
 {% hint style="info" %}
@@ -25,65 +26,55 @@ This following guide is for Splunk solutions (**Enterprise** (OnPrem) or Splunk 
 
 ## 1. Connect to Splunk Enterprise
 
-1. In a Web browser, type the following and replace `server_ip` and `port` by their values:
-   http://server_ip:port
+1.  In a Web browser, type the following and replace `server_ip` and `port` by their values: http://server\_ip:port
 
-    {% hint style="info" %}
-    For Cloud version, only the next step is required
-    {% endhint %}
+    <div data-gb-custom-block data-tag="hint" data-style="info" class="hint hint-info"><p>For Cloud version, only the next step is required</p></div>
+2. Enter your login and password for your Splunk Enterprise instance ![Splunk-Login](../../.gitbook/assets/Splunk-Login.png)
 
-2. Enter your login and password for your Splunk Enterprise instance
-![Splunk-Login](../../assets/intelligence_center/Splunk/Splunk-Login.png)
+## 2. Install and configure your Sekoia application for Splunk
 
-## 2.  Install and configure your Sekoia application for Splunk
-
-1. Go to Application Setup Page by clicking on `Apps` > `Find more Apps`
-![Splunk_Applications_access](../../assets/intelligence_center/Splunk/Splunk_Applications_access.png)
-
-2. Search for `Sekoia.io` application and install it
-![Splunk-Sekoia_in_App](../../assets/intelligence_center/Splunk/Splunk-Sekoia_in_App.png)
-
-3. Configure your Sekoia application for Splunk by completing fields
-![Splunk-Sekoia_API_key_in_Sekoia_application](../../assets/intelligence_center/Splunk/Splunk-Sekoia_API_key_in_Sekoia_application.png)
+1. Go to Application Setup Page by clicking on `Apps` > `Find more Apps` ![Splunk\_Applications\_access](../../.gitbook/assets/Splunk_Applications_access.png)
+2. Search for `Sekoia.io` application and install it ![Splunk-Sekoia\_in\_App](../../.gitbook/assets/Splunk-Sekoia_in_App.png)
+3. Configure your Sekoia application for Splunk by completing fields ![Splunk-Sekoia\_API\_key\_in\_Sekoia\_application](../../.gitbook/assets/Splunk-Sekoia_API_key_in_Sekoia_application.png)
 
 _Please find below the explanation of the fields to be configured_
 
 **Required**
 
-- `SEKOIA.IO API Key`: Sekoia API Key to be created as stated in the [Prerequisites](#api_key)
+* `SEKOIA.IO API Key`: Sekoia API Key to be created as stated in the [Prerequisites](splunk.md#api_key)
 
 {% hint style="warning" %}
-**[Deprecation Warning]** The API key field description on the Splunk Enterprise portal may mention that it must be configured at least with the `Intelligence Center - Read Only` role
+**\[Deprecation Warning]** The API key field description on the Splunk Enterprise portal may mention that it must be configured at least with the `Intelligence Center - Read Only` role
 
 This role is now deprecated and has been renamed `Analyst Role`
 
-The corresponding permissions selectable for the API key are listed above, in the [Prerequisites](#api_key) section
+The corresponding permissions selectable for the API key are listed above, in the [Prerequisites](splunk.md#api_key) section
 {% endhint %}
 
 **Optional**
 
-- `Sekoia API url`: the default url is https://api.sekoia.io
-- `Feed ID`: default feed is used by default. For custom feed, add the feed ID. Please find [more information on this documentation](https://docs.sekoia.com/cti/features/consume/feeds/#feeds-listing)
-- `Proxy URL` - Here are 2 ways to configure a proxy:
-    1. If you need the Sekoia application for Splunk to connect directly through a proxy, this field needs to be filled on the installation page (To connect, in a Web browser, type and replace `username`, `password`,`host` and `port` by their values: http://[username:password@]host:port)
-    2. If you don't want to distinguish the Sekoia application for Splunk network configuration from the configuration of your Splunk instance, the Sekoia application for Splunk takes into account the global Splunk proxy configuration provided by means of the `HTTP_PROXY` and `HTTPS_PROXY` environment variables.
+* `Sekoia API url`: the default url is https://api.sekoia.io
+* `Feed ID`: default feed is used by default. For custom feed, add the feed ID. Please find [more information on this documentation](https://docs.sekoia.com/cti/features/consume/feeds/#feeds-listing)
+* `Proxy URL` - Here are 2 ways to configure a proxy:
+  1. If you need the Sekoia application for Splunk to connect directly through a proxy, this field needs to be filled on the installation page (To connect, in a Web browser, type and replace `username`, `password`,`host` and `port` by their values: http://\[username:password@]host:port)
+  2. If you don't want to distinguish the Sekoia application for Splunk network configuration from the configuration of your Splunk instance, the Sekoia application for Splunk takes into account the global Splunk proxy configuration provided by means of the `HTTP_PROXY` and `HTTPS_PROXY` environment variables.
 
 {% hint style="info" %}
-After the launch of Sekoia application for Splunk, only valid IOCs of [these types](#sourcetype) will be downloaded and updated on Splunk from current date.
+After the launch of Sekoia application for Splunk, only valid IOCs of [these types](splunk.md#sourcetype) will be downloaded and updated on Splunk from current date.
 {% endhint %}
 
 ## 3. Sekoia Intelligence in Splunk
 
-In the following section, here are the Sekoia IOC types available in Splunk: <a name="sourcetype"></a>
+In the following section, here are the Sekoia IOC types available in Splunk:
 
-|IOC type|Meaning|
-|--|--|
-|domain| Domain name	|
-|url	|  Url website 		|
-|ipv4	| Internet Protocol version 4 (32-bit number e.g. `111.111.1.11` )		|
-|md5	| Cryptographic hash function that results in a 128-bit hash value	|
-|sha1	| Hash function which takes an input and produces a 160-bit (20-byte) 	|
-|sha256| Secure Hash Algorithm 256-bit	|
+| IOC type | Meaning                                                             |
+| -------- | ------------------------------------------------------------------- |
+| domain   | Domain name                                                         |
+| url      | Url website                                                         |
+| ipv4     | Internet Protocol version 4 (32-bit number e.g. `111.111.1.11` )    |
+| md5      | Cryptographic hash function that results in a 128-bit hash value    |
+| sha1     | Hash function which takes an input and produces a 160-bit (20-byte) |
+| sha256   | Secure Hash Algorithm 256-bit                                       |
 
 An IOC is an observable that represents a malicious activity. For more information, please consult [this page](../consume/observables.md).
 
@@ -100,7 +91,7 @@ Update is **scheduled every night** to ensure that valid IOCs are used to detect
 1. Go to Application Setup Page by clicking on `Apps` > `Sekoia.io`
 2. In the search tab, query on `| inputlookup sekoia_iocs_url | rename _key as indicator | convert ctime(valid_until)`
 
-![Splunk-Search_IOCs_validity](../../assets/intelligence_center/Splunk/Splunk-Search_IOCs_validity.png)
+![Splunk-Search\_IOCs\_validity](../../.gitbook/assets/Splunk-Search_IOCs_validity.png)
 
 ### Search and compare Sekoia IOCs with logs in Splunk
 
@@ -108,14 +99,12 @@ Update is **scheduled every night** to ensure that valid IOCs are used to detect
 Logs have to be collected in Splunk. Please consult [Splunk documentation](https://www.splunk.com/en_us/blog/learn/centralized-logging.html).
 {% endhint %}
 
-1. Setup a lookup table
+1.  Setup a lookup table
 
-    A typical query would be `index=* sourcetype=<YOUR_SOURCETYPE>` (`<YOUR_SOURCETYPE>` is to be replaced by the **Sekoia IOCs types** listed [above](#sourcetype)).
+    A typical query would be `index=* sourcetype=<YOUR_SOURCETYPE>` (`<YOUR_SOURCETYPE>` is to be replaced by the **Sekoia IOCs types** listed [above](splunk.md#sourcetype)).
 
     When installing Sekoia application for Splunk, a message will be displayed requesting to configure the lookup table.
-
-2. Sightings will be displayed on a section
-![Sekoia.io App for Splunk](../../assets/intelligence_center/splunk.png)
+2. Sightings will be displayed on a section ![Sekoia.io App for Splunk](../../.gitbook/assets/splunk.png)
 
 Please refer to [our documentation to search IOCs in Intelligence page](https://docs.sekoia.com/cti/features/consume/intelligence/#search-for-objects) for more information.
 
@@ -131,11 +120,11 @@ Search in the Internal logs for errors. Please consult [Splunk documentation](ht
 
 ## 6. Other resources
 
-- **Sekoia.io App for Splunk**
+* **Sekoia.io App for Splunk**
 
 [https://github.com/SEKOIA-IO/SEKOIA.IO-for-Splunk](https://github.com/SEKOIA-IO/SEKOIA.IO-for-Splunk)
 
-- **Splunk official documentation**
+* **Splunk official documentation**
 
 [https://splunkbase.splunk.com/app/6327](https://splunkbase.splunk.com/app/6327)
 

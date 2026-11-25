@@ -1,14 +1,13 @@
-# Events
+# Events page
 
-The events page provides a centralized view of your events and enables in depth investigation in the latest logs sent to Sekoia.io.
-With its query-based search bar, the possibility to easily add and remove filters and its new aggregation tool, this page lets you sort, filter, analyze and visualize logs in an efficient manner.
+The events page provides a centralized view of your events and enables in depth investigation in the latest logs sent to Sekoia.io. With its query-based search bar, the possibility to easily add and remove filters and its new aggregation tool, this page lets you sort, filter, analyze and visualize logs in an efficient manner.
 
 In this documentation, we will dive into the different parts that constitute the Events page:
 
-- The [Search bar](#search-bar) and its filtering and sharing options
-- The [list of events](#log-listing) and the detailed view of your parsed events
-- The mechanism behind [events enrichment](#events-enrichment) or how events are contextualized in Sekoia.io
-- The [aggregation](#aggregation) feature and how to create an [anomaly detection rule](#create-anomaly-detection-rule-from-the-aggregation-view) from your query
+* The [Search bar](events.md#search-bar) and its filtering and sharing options
+* The [list of events](events.md#log-listing) and the detailed view of your parsed events
+* The mechanism behind [events enrichment](events.md#events-enrichment) or how events are contextualized in Sekoia.io
+* The [aggregation](events.md#aggregation) feature and how to create an [anomaly detection rule](events.md#create-anomaly-detection-rule-from-the-aggregation-view) from your query
 
 {% hint style="info" %}
 To send your logs to Sekoia.io, please refer to this [section](https://docs.sekoia.com/integration/ingestion_methods/).
@@ -20,7 +19,7 @@ You can search among the list of events by using the dedicated query language. A
 
 Fields you can use to narrow down your events search are listed [here](https://docs.sekoia.com/xdr/features/investigate/querying_events/).
 
-![search-bar-events](../../assets/operation_center/events/events-search.png)
+![search-bar-events](../../.gitbook/assets/events-search.png)
 
 ### Filters
 
@@ -28,25 +27,24 @@ It is possible to further restrict the scope of your events search by using filt
 
 You can easily add filters by using the icon buttons provided when hovering over a value inside a `Smart Description` or an event's `Details`:
 
-- Use the `Filter for value` button to only see events with this value
-- Use the `Filter out value` button to only see events that DO NOT have this value
+* Use the `Filter for value` button to only see events with this value
+* Use the `Filter out value` button to only see events that DO NOT have this value
 
 You can also add filters manually by clicking on the "Add Filter" icon below the `Search Bar`. The following filter operators are available when creating filters manually:
 
-| Operator | Description |
-|----------|-------------|
-| `=` | The field must exactly match the value. |
-| `exists` | The field must exist. |
-| `starts with` | The field must start with the value. *Only for text fields* |
-| `ends with` | The field must end with the value. *Only for text fields* |
-| `contains` | The field must contain the value. *Only for text fields* |
-| `>` | The field must be greater than the specified number. *Only for numerical fields* |
-| `>=` | The field must be greater than or equal to the specified number. *Only for numerical fields* |
-| `<` | The field must be less than the specified number. *Only for numerical fields* |
-| `<=` | The field must be less than or equal to the specified number. *Only for numerical fields* |
+| Operator      | Description                                                                                  |
+| ------------- | -------------------------------------------------------------------------------------------- |
+| `=`           | The field must exactly match the value.                                                      |
+| `exists`      | The field must exist.                                                                        |
+| `starts with` | The field must start with the value. _Only for text fields_                                  |
+| `ends with`   | The field must end with the value. _Only for text fields_                                    |
+| `contains`    | The field must contain the value. _Only for text fields_                                     |
+| `>`           | The field must be greater than the specified number. _Only for numerical fields_             |
+| `>=`          | The field must be greater than or equal to the specified number. _Only for numerical fields_ |
+| `<`           | The field must be less than the specified number. _Only for numerical fields_                |
+| `<=`          | The field must be less than or equal to the specified number. _Only for numerical fields_    |
 
-
-![event-filter](../../assets/operation_center/events/events-filters.png)
+![event-filter](../../.gitbook/assets/events-filters.png)
 
 Each filter is added as a badge below the `Search Bar`. A filter can be removed by clicking on the `X` at the end of the badge. You can also click on a filter to access a menu that will allow you to:
 
@@ -60,41 +58,37 @@ To clear current filters, you can use the `Clear all` button at the end of the f
 
 It is possible to save a query by clicking the `Star icon` in the search bar. The selected period of time is not saved with it.
 
-![save_query](../../assets/operation_center/events/event-save-query.png)
+![save\_query](../../.gitbook/assets/event-save-query.png)
 
 To access your saved queries:
 
 1. Click on `Saved queries`(the star button in the top right of the page)
 2. Select a period of time
-3. Click on `Search` to see your saved query events
+3.  Click on `Search` to see your saved query events
 
-    {% hint style="info" %}
-    The saved queries are stored locally on the user's browser. Ensure that you do not have a task or setting that cleans your browser cookies, as this will result in the loss of your favorite queries.
-    {% endhint %}
+    <div data-gb-custom-block data-tag="hint" data-style="info" class="hint hint-info"><p>The saved queries are stored locally on the user's browser. Ensure that you do not have a task or setting that cleans your browser cookies, as this will result in the loss of your favorite queries.</p></div>
 
 ### Date
 
 It is possible to select the period of time to be taken into consideration when using a filter. You can use:
 
-- `Presets`: Recommended predefined dates
-- `Date relatives`: Select earliest and latest moments
-- `Date ranges`: Gap between two dates
+* `Presets`: Recommended predefined dates
+* `Date relatives`: Select earliest and latest moments
+* `Date ranges`: Gap between two dates
 
 Click on the `Apply` button to start your search based on these filters.
 
 ### Search history
 
-
 Each events search performed is listed in the `Search History` for 30 days. You can use the search history to easily access past search results.
 
 It is accessible by clicking on the following button (a panel will be displayed with the previous searches)
 
-![event-history-button](../../assets/operation_center/events/event-history-button.png)
-
+![event-history-button](../../.gitbook/assets/event-history-button.png)
 
 When you are creating a new search, results are available instantly for 30 minutes by default.
 
-![search-history](../../assets/operation_center/events/events-search-history.png)
+![search-history](../../.gitbook/assets/events-search-history.png)
 
 It is possible to configure the retention to reach up to one day (24 hours). After this retention period, you can still replay any events search available in the `Search History` by simply clicking on it. It will trigger a new search using exactly the same parameters (query, filters and date range).
 
@@ -113,21 +107,21 @@ To obtain the search URL, you can:
 
 Events histogram appears under the search bar when a query has been made and matches events in the list.
 
-![histogram](../../assets/operation_center/events/event-histogram.png)
+![histogram](../../.gitbook/assets/event-histogram.png)
 
 It gives a consolidated view of all matching events in a specific period of time and it highlights the number of events as well as events that are present in alerts.
 
-You can select a date range by clicking on the histogram and dragging the cursor over events you are interested in. This will automatically create a new search and display filtered results. If you want to come back to the previous range, you can use the [search history](#search-history)
+You can select a date range by clicking on the histogram and dragging the cursor over events you are interested in. This will automatically create a new search and display filtered results. If you want to come back to the previous range, you can use the [search history](events.md#search-history)
 
 ## Log listing
 
-![log-listing](../../assets/operation_center/events/log-listing.png)
+![log-listing](../../.gitbook/assets/log-listing.png)
 
 The columns by default are:
 
-- `Timestamp`: Event date
-- `Event.dialect`: Type of intake that sent the event
-- `Description`: Smart description with clickable links formatted by Sekoia.io to show the most important elements and make them easily accessible, such as IP address, type or entity
+* `Timestamp`: Event date
+* `Event.dialect`: Type of intake that sent the event
+* `Description`: Smart description with clickable links formatted by Sekoia.io to show the most important elements and make them easily accessible, such as IP address, type or entity
 
 {% hint style="info" %}
 At most 1 000 events can be displayed in the table. If this number is reached, the search has to be narrowed.
@@ -137,15 +131,14 @@ At most 1 000 events can be displayed in the table. If this number is reached, t
 
 It's possible to show or hide columns in your events table by clicking on the `Show fields & top values` button.
 
-![show-hide-column](../../assets/operation_center/events/show-hide-columns.png)
+![show-hide-column](../../.gitbook/assets/show-hide-columns.png)
 
 Once open, you can add fields that are listed under `available fields` by simply clicking on the "+" button next to them. This will automatically add the column to your table.
 
 If you need to remove a column, there are two ways to do so:
 
-- Hover on the column and a "-" will appear. Click on it and the column will be hidden
-
-- Click on `Show fields & top values` and hover your mouse on the `Selected fields` that you want to hide. Click the "-" that appears and they'll be hidden
+* Hover on the column and a "-" will appear. Click on it and the column will be hidden
+* Click on `Show fields & top values` and hover your mouse on the `Selected fields` that you want to hide. Click the "-" that appears and they'll be hidden
 
 You can always find these fields in the `Available fields` section.
 
@@ -157,12 +150,11 @@ You can also change the order of your columns by dragging them using the icon ne
 
 Each line of log can be unrolled to show:
 
-![line-details](../../assets/operation_center/events/log-details.png)
+![line-details](../../.gitbook/assets/log-details.png)
 
-
-- `STIX`: Event as a STIX bundle that will be used by detection engines
-- `Raw event`: Event as received by Sekoia.io
-- `Detail`: Detailed information retrieved from the log after parsing with elements from the event related to the intake and the community.
+* `STIX`: Event as a STIX bundle that will be used by detection engines
+* `Raw event`: Event as received by Sekoia.io
+* `Detail`: Detailed information retrieved from the log after parsing with elements from the event related to the intake and the community.
 
 This table explains the main actions that can be done for each of these fields:
 
@@ -180,15 +172,14 @@ When searching through your event logs, you will often find events valuable to y
 
 You can add several events to a case at once:
 
-1. Select the events you want to add using the checkboxes on the left of each event line. A counter shows how many events are selected.
-   You can also select every event on the current page by clicking the checkbox in the table header.
+1. Select the events you want to add using the checkboxes on the left of each event line. A counter shows how many events are selected. You can also select every event on the current page by clicking the checkbox in the table header.
 2. Click the `Add to case` button.
 3. In the modal that opens, you can:
-    - Select an existing case from the list
-    - Search for an existing case by name
-    - Create a new case
+   * Select an existing case from the list
+   * Search for an existing case by name
+   * Create a new case
 
-![add-events-to-case-modal](../../assets/operation_center/events/add-events-to-case-modal.png)
+![add-events-to-case-modal](../../.gitbook/assets/add-events-to-case-modal.png)
 
 {% hint style="info" %}
 A maximum of 1 000 events can be added to a case in a single operation.
@@ -198,11 +189,9 @@ A maximum of 1 000 events can be added to a case in a single operation.
 Events selected from different communities cannot be added together. In that case, the `Add to case` button is disabled and a tooltip explains the reason.
 {% endhint %}
 
-
 ### Export the results of a search
 
-You can easily export the results of a search in `CSV` or `JSON` format and choose the fields you want to export.
-![export-logs](../../assets/operation_center/events/export-logs.png)
+You can easily export the results of a search in `CSV` or `JSON` format and choose the fields you want to export. ![export-logs](../../.gitbook/assets/export-logs.png)
 
 To do so:
 
@@ -229,7 +218,7 @@ Go through your events and click on values of interest. All similar values will 
 
 Once you’ve selected these values, you can either perform a search on these values OR create a [Sigma Rule](https://docs.sekoia.com/xdr/features/detect/sigma/) with a pattern based on selected values.
 
-![toggle-value-selection](../../assets/operation_center/events/toggle-value.png)
+![toggle-value-selection](../../.gitbook/assets/toggle-value.png)
 
 ## Events enrichment
 
@@ -243,15 +232,13 @@ The second source of enrichment relies on a configuration management database (i
 
 For example, this enrichment allows you to identify the nature of the legitimate actions expected on an office workstation associated with a specific team in your community.
 
-You can enable or disable enrichment in logs by clicking on the `enable/disable enrichment` in the upper right of the logs table.
-Depending on your entities, assets and other data, you’ll be able to make sense of your events more efficiently.
+You can enable or disable enrichment in logs by clicking on the `enable/disable enrichment` in the upper right of the logs table. Depending on your entities, assets and other data, you’ll be able to make sense of your events more efficiently.
 
 To see the value of enriched values, click on the enriched field and you'll be provided with additional context.
 
 {% hint style="info" %}
 If the value exists in the Intelligence Center, tags associated with the value in question will be added as additional context.
 {% endhint %}
-
 
 ## Aggregation
 
@@ -275,21 +262,20 @@ To compute aggregations on a list of events, you’ll have to:
 Aggregation view feature does not support the field `alert_short_ids`.
 {% endhint %}
 
-
 ### Aggregation methods
 
-- `Average` (only for numerical data): aggregate average of field values per bucket
-- `Cardinality` (only for string data): count cardinality of values per bucket
-- `Count`: count events per bucket (for a specific filter or field set to a value)
-- `Min` (only for numerical data): aggregate min of field values per bucket
-- `Max` (only for numerical data): aggregate max of field values per bucket
-- `Sum` (only for numerical data): aggregate sum of field values per bucket
+* `Average` (only for numerical data): aggregate average of field values per bucket
+* `Cardinality` (only for string data): count cardinality of values per bucket
+* `Count`: count events per bucket (for a specific filter or field set to a value)
+* `Min` (only for numerical data): aggregate min of field values per bucket
+* `Max` (only for numerical data): aggregate max of field values per bucket
+* `Sum` (only for numerical data): aggregate sum of field values per bucket
 
 ### Aggregation graph
 
 Depending on which methods and fields have been selected, a line graph is presented with the event values on the y-axis and the date as defined by the date range on the x-axis.
 
-![aggregation-graph](../../assets/operation_center/events/aggregation-graph.png)
+![aggregation-graph](../../.gitbook/assets/aggregation-graph.png)
 
 For each aggregate the chart displays the first value, last value, minimum, and maximum sorted by timestamp and connects them by one line per variable.
 
@@ -297,7 +283,7 @@ You can hover on the line graph to see the actual value of each point as well as
 
 ### Create Anomaly Detection rule from the aggregation view
 
-![create-rule](../../assets/operation_center/events/create-rule.png)
+![create-rule](../../.gitbook/assets/create-rule.png)
 
 You can create anomaly detection rules directly from this view.
 

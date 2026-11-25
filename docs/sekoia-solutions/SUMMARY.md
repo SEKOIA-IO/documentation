@@ -167,7 +167,7 @@
   * [Activate Elevate](elevate/elevate_activate.md)
   * [Elevate analysis states](elevate/elevate_analysis_states.md)
 * [Investigate with Elevate](elevate/investigate-with-elevate.md)
-  * [Investigate an alert](elevate/elevate_investigate_alert.md)
+  * [Investigate an alert with Elevate](elevate/elevate_investigate_alert.md)
   * [Investigate a case with Elevate](elevate/elevate_investigate_case.md)
   * [Audit with Traces](elevate/elevate_traces.md)
   * [Override a verdict](elevate/elevate_validate_verdict.md)

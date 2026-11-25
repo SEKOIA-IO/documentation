@@ -25,11 +25,11 @@ Disable a status when your team no longer uses it in one context but still needs
 4. Select a replacement status in the **New status** list.
 5. Click **Save**.
 
-![Migrate statuses window](../../assets/operation_center/alerts/custom-status-migrate-modal.png)
+![Migrate statuses window](../../.gitbook/assets/custom-status-migrate-modal.png)
 
 Every alert or case in the context you disabled is reassigned to the replacement status. The status disappears from the status menus of that context, and remains selectable in the other one.
 
-![Selecting the replacement status](../../assets/operation_center/alerts/custom-status-migrate-select.png)
+![Selecting the replacement status](../../.gitbook/assets/custom-status-migrate-select.png)
 
 ## Delete a custom status
 
@@ -41,7 +41,7 @@ Delete a status when your team has stopped using it altogether.
 4. Select a replacement status in the **New status** list.
 5. Click **Save**.
 
-![Delete status window](../../assets/operation_center/alerts/custom-status-delete-modal.png)
+![Delete status window](../../.gitbook/assets/custom-status-delete-modal.png)
 
 All existing items are reassigned, alerts and cases alike, and the status is removed from your workspace.
 

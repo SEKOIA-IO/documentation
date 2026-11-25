@@ -1,11 +1,11 @@
-# Activate Sekoia Elevate on a workspace
+# Activate Elevate
 
 This article explains how to enable Elevate investigation agent on your workspace so it automatically analyzes all incoming alerts.
 
 ## Prerequisites
 
-- Your Sekoia plan includes Sekoia Elevate module. To verify, navigate to **Settings > Subscriptions** and confirm that an Elevate entry appears alongside your current plan.
-- You have administrator-level access to the workspace.
+* Your Sekoia plan includes Sekoia Elevate module. To verify, navigate to **Settings > Subscriptions** and confirm that an Elevate entry appears alongside your current plan.
+* You have administrator-level access to the workspace.
 
 ## Activate the agent
 
@@ -24,7 +24,7 @@ To activate the agent:
 3. Select the **Settings** tab.
 4. Toggle **Auto-analyze alerts** to enabled.
 
-![AI agent settings panel with the Auto-analyze alerts toggle enabled](../assets/elevate/auto-analyze-enabled.png)
+![AI agent settings panel with the Auto-analyze alerts toggle enabled](../.gitbook/assets/auto-analyze-enabled.png)
 
 Once enabled, the agent analyzes every new alert that arrives across all communities in the workspace.
 
@@ -40,7 +40,7 @@ New incoming alerts are automatically analyzed by the Elevate agent. The **Verdi
 
 ## Related articles
 
-- [Add custom instructions for an Elevate agent](elevate_custom_instructions.md): How to give the agent environment-specific context.
-- [Scope auto-analysis with filters](elevate_rule_filter.md): How to limit which alerts Elevate analyzes by rule, effort level, severity or urgency.
-- [Override Elevate settings for a community](elevate_community_override.md): How to enable or disable Elevate independently for a specific community.
-- [Manage your Elevate runs](elevate_quota.md): How to monitor and optimize your monthly run pack.
+* [Add custom instructions for an Elevate agent](elevate_custom_instructions.md): How to give the agent environment-specific context.
+* [Scope auto-analysis with filters](elevate_rule_filter.md): How to limit which alerts Elevate analyzes by rule, effort level, severity or urgency.
+* [Override Elevate settings for a community](elevate_community_override.md): How to enable or disable Elevate independently for a specific community.
+* [Manage your Elevate runs](elevate_quota.md): How to monitor and optimize your monthly run pack.

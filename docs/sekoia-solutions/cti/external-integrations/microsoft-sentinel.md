@@ -1,4 +1,4 @@
-# External Integrations: Microsoft Sentinel
+# Microsoft Sentinel
 
 Microsoft Sentinel is a cloud-native, security information and event management (SIEM) and security orchestration, automation, and response (SOAR) solution.
 
@@ -16,8 +16,8 @@ You should create a new API Key in Sekoia.io’s “User Center”:
 2. On the left menu, click on “Managed Communities”.
 3. Then click on the “API keys” tab title
 4. Create a new API key and give a title and a description.
-5. Finally, give the “Intelligence Center Read-Only” role to the API Key and click on the “Save” button.<br/>
-![](../../assets/intelligence_center/apikey_create.png)
+5. Finally, give the “Intelligence Center Read-Only” role to the API Key and click on the “Save” button.\
+   ![](../../.gitbook/assets/apikey_create.png)
 6. Copy the API Key (which is only displayed once).
 
 Please keep the resulting API Key carefully as it will be required later.
@@ -28,11 +28,11 @@ In order to bring Sekoia.io threat intelligence in Microsoft Sentinel, the first
 
 1. On Sekoia.io’s Intelligence Center, connect to the “Feeds” section
 2. Create a new CTI feed by clicking on the “+ Feed” button:
-3. Fill the feed creation form with the following information. Set an arbitrary title for you feed, choose to only export CTI “indicators” and choose the “JSON” format.<br/>
-![](../../assets/intelligence_center/create_feeds_form.png)
+3. Fill the feed creation form with the following information. Set an arbitrary title for you feed, choose to only export CTI “indicators” and choose the “JSON” format.\
+   ![](../../.gitbook/assets/create_feeds_form.png)
 4. Click on “Save”:
-5. After saving, the feed list is displayed. You can click next to the feed title to copy its unique identifier.<br/>
-![](../../assets/intelligence_center/create_feeds_copy-id.png)
+5. After saving, the feed list is displayed. You can click next to the feed title to copy its unique identifier.\
+   ![](../../.gitbook/assets/create_feeds_copy-id.png)
 
 Please keep the feed title unique identifier carefully as it will be used later.
 
@@ -45,15 +45,15 @@ Please keep the feed title unique identifier carefully as it will be used later.
 
 In the “Threat intelligence - TAXII” connector page, fill the form with the following information:
 
-- Friendly name (for server): `Sekoia.io`
-- API Root URL: `https://app.sekoia.io/api/v2/inthreat/taxii-server`
-- Collection ID: paste here your feed identifier.
-- Username: `username`
-- Password: paste here the API key that was created in the first step.
-- Import indicators: “All available”.
-- Polling Frequency: “Once an hour”.
+* Friendly name (for server): `Sekoia.io`
+* API Root URL: `https://app.sekoia.io/api/v2/inthreat/taxii-server`
+* Collection ID: paste here your feed identifier.
+* Username: `username`
+* Password: paste here the API key that was created in the first step.
+* Import indicators: “All available”.
+* Polling Frequency: “Once an hour”.
 
-![](../../assets/intelligence_center/sentinel-configure-cti-feed.png)
+![](../../.gitbook/assets/sentinel-configure-cti-feed.png)
 
 Finally, click on “Add”.
 

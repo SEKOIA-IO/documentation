@@ -4,7 +4,7 @@ Elevate investigates cases the same way it investigates alerts. This article exp
 
 ## Prerequisites
 
-- Elevate is activated on your workspace or community. See [Activate Sekoia Elevate on a workspace](elevate_activate.md).
+* Elevate is activated on your workspace or community. See [Activate Sekoia Elevate on a workspace](elevate_activate.md).
 
 ## Assign the case to Roy
 
@@ -15,7 +15,7 @@ Roy is the Elevate investigation agent. Assigning a case to Roy triggers an imme
 3. Select the **Assignee** field in the case header.
 4. Select **Roy**.
 
-![Case assignee dropdown with Roy as a selectable option to trigger an Elevate investigation](../assets/elevate/case-assign-roy.png)
+![Case assignee dropdown with Roy as a selectable option to trigger an Elevate investigation](../.gitbook/assets/case-assign-roy.png)
 
 ## Result
 
@@ -35,8 +35,8 @@ A case investigation consumes one run from your monthly run pack, the same as an
 
 ## Related articles
 
-- [Investigate an alert with Elevate](elevate_investigate_alert.md): How to read the verdict, findings and reasoning questions of an Elevate investigation.
-- [The Elevate investigation method](elevate_investigation_method.md): How runbooks, reasoning questions, findings and verdicts work together.
-- [Audit an Elevate investigation with Traces](elevate_traces.md): How to review the full timeline of actions the agent performed.
-- [Trigger a manual Elevate analysis](elevate_manual_analysis.md): How to investigate an alert that was not analyzed automatically.
-- [Manage your Elevate runs](elevate_quota.md): How to monitor and optimize your monthly run pack.
+* [Investigate an alert with Elevate](elevate_investigate_alert.md): How to read the verdict, findings and reasoning questions of an Elevate investigation.
+* [The Elevate investigation method](elevate_investigation_method.md): How runbooks, reasoning questions, findings and verdicts work together.
+* [Audit an Elevate investigation with Traces](elevate_traces.md): How to review the full timeline of actions the agent performed.
+* [Trigger a manual Elevate analysis](elevate_manual_analysis.md): How to investigate an alert that was not analyzed automatically.
+* [Manage your Elevate runs](elevate_quota.md): How to monitor and optimize your monthly run pack.

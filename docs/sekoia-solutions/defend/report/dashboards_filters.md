@@ -6,10 +6,6 @@ Dashboard filters are dynamic controls that allow you to modify query parameters
 Instead of hardcoding a specific username in a query, you use a filter variable. When you view the dashboard, you can enter any username, and all widgets referencing that filter will update instantly.
 {% endhint %}
 
-<center>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/9q6K7vwEYv8?si=5x24TPninNak550B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</center>
-
 ## Create filters
 
 To implement a filter, you must reference it in your query, using SOL Language, with the question mark syntax: `?filter_name`
@@ -22,10 +18,11 @@ All the filters appear automatically in the dashboard, allowing users to modify 
 
 ### Predefined vs. Custom filters
 
-* **Predefined filters**: Built-in variables like `?time.start` and `?time.end` that control the global time range of the dashboard.  
+* **Predefined filters**: Built-in variables like `?time.start` and `?time.end` that control the global time range of the dashboard.
 * **Custom filters**: User-defined variables (e.g., `?entity_uuid`, `?process_name`) that target specific attributes.
 
 <details>
+
 <summary>Query with Filters</summary>
 
 The following example demonstrates a query using both predefined time filters and custom logic filters.
@@ -46,8 +43,7 @@ In this example:
 
 ## Apply filters to all widgets in the dashboard to synchronize changes
 
-The primary benefit of filters is synchronization. When multiple widgets use the same filter name (e.g., ?process_name), they share the same input control.  You can pin a filter to a dashboard to make sure that changing the value in one location updates every widget listening for that specific variable.
-
+The primary benefit of filters is synchronization. When multiple widgets use the same filter name (e.g., ?process\_name), they share the same input control. You can pin a filter to a dashboard to make sure that changing the value in one location updates every widget listening for that specific variable.
 
 #### How to pin a filter
 
@@ -56,13 +52,11 @@ To pin a filter to a dashboard:
 1. Navigate to the dashboard you wish to modify.
 2. Select **Edit dashboard** to enter the edit mode.
 3. Locate the widget containing the filter you want to share.
-4. In the widget panel, select the Pin icon next to the specific filter name.
-   ![Clicking the Pin filter to dashboard button next to filter name.](../../assets/xdr/dashboards/pin_filter_button.png)
+4. In the widget panel, select the Pin icon next to the specific filter name. ![Clicking the Pin filter to dashboard button next to filter name.](../../.gitbook/assets/pin_filter_button.png)
 5. To exit edit mode, click **Save**.
 
 {% hint style="info" %}
-Once pinned, the filter appears at the top of the dashboard as a shared input control.
-You can unpin it at any time.
+Once pinned, the filter appears at the top of the dashboard as a shared input control. You can unpin it at any time.
 {% endhint %}
 
 #### Behavior of pinned filters

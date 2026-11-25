@@ -1,10 +1,9 @@
-# Application inventory
+# Discover installed Applications status
 
-_**[Reveal module](reveal_index.md)**. This feature requires the Reveal add-on module._
+[_**Reveal module**_](reveal_index.md)_. This feature requires the Reveal add-on module._
 
 {% hint style="info" %}
 **Beta**
-
 
 The **Applications** tab is currently in Beta. Its fields and behavior may change as the feature evolves.
 {% endhint %}
@@ -18,11 +17,13 @@ To collect application inventory data, you can use either the Sekoia Endpoint Ag
 ### Enable Software Collection on the Sekoia Endpoint Agent
 
 Enable the following role in your Sekoia Endpoint Agent configuration:
-- `software-collector`
+
+* `software-collector`
 
 In addition to the recommended roles:
-- `event-collector`
-- `compliance-collector`
+
+* `event-collector`
+* `compliance-collector`
 
 For installation instructions and host hygiene configuration, see [Install the Sekoia Endpoint Agent](https://docs.sekoia.com/integration/categories/endpoint/install_sekoia_endpoint_agent/#enable-host-hygiene-collection).
 
@@ -38,8 +39,6 @@ Use this interface path:
 
 The asset context panel displays the asset's Risk score header and its investigation tabs. The Applications tab can display a count of installed applications.
 
-
-
 ## How application inventory works
 
 Reveal collects application inventory from connected asset sources, such as endpoint and asset connectors. The source reports the application name, version, and available technical details.
@@ -49,7 +48,6 @@ When an application is associated with one or more known CVEs, the application i
 {% hint style="info" %}
 **Application coverage**
 
-
 The Applications tab does not necessarily contain every application running on the asset. Coverage depends on the source, operating system, application type, and latest synchronization.
 {% endhint %}
 
@@ -57,10 +55,10 @@ The Applications tab does not necessarily contain every application running on t
 
 The Applications tab can display:
 
-| Counter | Description |
-|---|---|
+| Counter                     | Description                                                      |
+| --------------------------- | ---------------------------------------------------------------- |
 | **Vulnerable Applications** | Number of applications with at least one associated CVE finding. |
-| **Installed Applications** | Number of applications associated with the asset. |
+| **Installed Applications**  | Number of applications associated with the asset.                |
 
 ## Search and filter applications
 
@@ -68,30 +66,30 @@ Use **Search applications** to search the application list.
 
 Use the quick views to switch between:
 
-- **All**, which lists all available applications.
-- **vulnerable**, which lists applications with associated CVE findings.
+* **All**, which lists all available applications.
+* **vulnerable**, which lists applications with associated CVE findings.
 
 Select **Filters** to filter by:
 
-- **Publisher**
-- **Application**
-- **Architecture**
-- **Signed**
+* **Publisher**
+* **Application**
+* **Architecture**
+* **Signed**
 
 The filter menu includes a search field for the selected filter.
 
 ## Application fields
 
-| Field | Description |
-|---|---|
-| Publisher | Publisher associated with the application. |
-| Application | Application or product name. |
-| CVE Count | Number of associated vulnerability findings, when available. |
-| Architecture | Application architecture, when available. |
-| Version | Version detected by the source. |
-| Signed | Indicates whether the application or executable is signed. |
-| Signed by | Publisher or subject from the signing certificate, when available. |
-| Filename | Executable or file name detected by the source, when available. |
+| Field        | Description                                                        |
+| ------------ | ------------------------------------------------------------------ |
+| Publisher    | Publisher associated with the application.                         |
+| Application  | Application or product name.                                       |
+| CVE Count    | Number of associated vulnerability findings, when available.       |
+| Architecture | Application architecture, when available.                          |
+| Version      | Version detected by the source.                                    |
+| Signed       | Indicates whether the application or executable is signed.         |
+| Signed by    | Publisher or subject from the signing certificate, when available. |
+| Filename     | Executable or file name detected by the source, when available.    |
 
 The **Publisher** and **Application** columns can be sorted when a sort control is displayed. A dash indicates that no value is available.
 
@@ -99,20 +97,20 @@ The **Publisher** and **Application** columns can be sorted when a sort control 
 
 Expand an application row to view additional details:
 
-- Install path.
-- Installation date.
-- First seen.
-- Last seen.
-- Last username.
-- Source.
-- SHA-256.
-- MD5.
-- CPE.
-- PURL.
+* Install path.
+* Installation date.
+* First seen.
+* Last seen.
+* Last username.
+* Source.
+* SHA-256.
+* MD5.
+* CPE.
+* PURL.
 
 A field can display `-` when the source does not provide the value.
 
-![!Applications tab showing vulnerable and installed application counters, quick views, filters, and the application list](../assets/asset_app_expanded.png)
+![!Applications tab showing vulnerable and installed application counters, quick views, filters, and the application list](../.gitbook/assets/asset_app_expanded.png)
 
 ## Open related vulnerabilities
 

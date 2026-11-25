@@ -1,19 +1,22 @@
 # AI Cases
 
 ## Table of Contents
-1. [Overview](#overview)
-2. [Feature Benefits](#feature-benefits)
-3. [How AI Cases Work](#how-ai-cases-work)
-4. [AI Case Creation and Alert Correlation](#ai-case-creation-and-alert-correlation)
-5. [AI Case Priority System](#ai-case-priority-system)
-6. [AI Case Updates](#ai-case-updates)
+
+1. [Overview](ai_cases.md#overview)
+2. [Feature Benefits](ai_cases.md#feature-benefits)
+3. [How AI Cases Work](ai_cases.md#how-ai-cases-work)
+4. [AI Case Creation and Alert Correlation](ai_cases.md#ai-case-creation-and-alert-correlation)
+5. [AI Case Priority System](ai_cases.md#ai-case-priority-system)
+6. [AI Case Updates](ai_cases.md#ai-case-updates)
 
 ## Overview
+
 AI Cases is an intelligent case management feature that automatically creates and manages security incidents by correlating related alerts. This feature streamlines the incident response process by providing SOC analysts with automated case creation, alert correlation, and contextual information.
 
-![ai_case](../../assets/operation_center/ai-case.gif)
+![ai\_case](../../.gitbook/assets/ai-case.gif)
 
 ## Feature Benefits
+
 * Automated case creation and alert correlation
 * Intelligent incident summarization
 * Dynamic case updates and priority management
@@ -23,6 +26,7 @@ AI Cases is an intelligent case management feature that automatically creates an
 * AI-generated descriptions for individual alerts
 
 ## How AI Cases Work
+
 AI Cases automatically processes security alerts and creates cases based on related incidents. Each case includes:
 
 * Auto-generated title summarizing the incident
@@ -33,7 +37,9 @@ AI Cases automatically processes security alerts and creates cases based on rela
 * Continuous updates over a 7-day period
 
 ## AI Case Creation and Alert Correlation
+
 ### Alert Correlation Criteria
+
 AI Cases correlates alerts based on two main criteria:
 
 **Asset-based Correlation:**
@@ -50,6 +56,7 @@ AI Cases correlates alerts based on two main criteria:
 * Same vulnerability
 
 ### AI Case Description Generation
+
 The case description is automatically generated using:
 
 * Sekoia Cyber Threat Intelligence (CTI)
@@ -58,16 +65,19 @@ The case description is automatically generated using:
 * Related alert context
 
 ## AI Case Priority System
+
 Cases are automatically assigned priority levels based on the highest alert urgency value in the case. The case priority is recalculated whenever a new alert is added:
 
 | Highest Alert Urgency | Case Priority |
-|------------------------|---------------|
-| 71-100                 | High          |
-| 36-70                  | Medium        |
-| 0-35                   | Low           |
+| --------------------- | ------------- |
+| 71-100                | High          |
+| 36-70                 | Medium        |
+| 0-35                  | Low           |
 
 ## AI Case Updates
+
 ### Content Updates
+
 * AI Cases remain active for 7 days from creation
 * New related alerts are automatically added to existing cases (up to 1000 alerts maximum)
 * Case descriptions are updated with new alert information
@@ -76,6 +86,7 @@ Cases are automatically assigned priority levels based on the highest alert urge
 * After 7 days, the case becomes inactive and no more alerts are added
 
 ### Update Frequency
+
 * Real-time alert correlation
 * Immediate case priority updates
 * Dynamic case description updates with new alerts

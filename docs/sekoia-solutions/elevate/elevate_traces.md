@@ -1,10 +1,10 @@
-# Audit an Elevate investigation with Traces
+# Audit with Traces
 
 Traces show the complete timeline of actions the Elevate agent performed during an investigation. Use them to audit exactly what the agent did, how long each step took, and which queries it ran.
 
 ## Prerequisites
 
-- The alert has been analyzed by Elevate. A verdict is present and the analysis is complete.
+* The alert has been analyzed by Elevate. A verdict is present and the analysis is complete.
 
 ## Open the Traces panel
 
@@ -13,7 +13,7 @@ Traces show the complete timeline of actions the Elevate agent performed during 
 
 The **Traces** side panel opens, showing the timeline of actions the agent performed during the investigation.
 
-![Verdict panel with the Traces button and the Traces side panel showing a timeline of agent actions](../assets/elevate/traces.png)
+![Verdict panel with the Traces button and the Traces side panel showing a timeline of agent actions](../.gitbook/assets/traces.png)
 
 ## What the Traces panel shows
 
@@ -23,7 +23,7 @@ Under each phase, the panel nests the individual actions the agent took, such as
 
 Traces capture the full set of actions behind the verdict, including the queries executed, event searches and CTI searches, so you can see the volume of actions the agent took and the time spent on each.
 
-![Traces timeline showing nested Search events actions with durations](../assets/elevate/traces-search.png)
+![Traces timeline showing nested Search events actions with durations](../.gitbook/assets/traces-search.png)
 
 {% hint style="info" %}
 **Trace retention**
@@ -49,5 +49,5 @@ As the agent gains new integrations and tools, their actions also appear in Trac
 
 ## Related articles
 
-- [Investigate an alert with Elevate](elevate_investigate_alert.md): How to read the verdict, findings and reasoning questions of an investigation.
-- [The Elevate investigation method](elevate_investigation_method.md): How runbooks, reasoning questions, findings and verdicts work together.
+* [Investigate an alert with Elevate](elevate_investigate_alert.md): How to read the verdict, findings and reasoning questions of an investigation.
+* [The Elevate investigation method](elevate_investigation_method.md): How runbooks, reasoning questions, findings and verdicts work together.

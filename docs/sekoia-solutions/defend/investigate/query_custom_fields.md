@@ -4,13 +4,13 @@ Custom fields are queryable through the Sekoia Operating Language (SOL), enablin
 
 ## Column naming convention
 
-Custom fields are accessible in SOL through the `custom_fields` prefix, on both the `alerts` and the `cases` datasources. The field name is automatically converted to snake_case to form the column name:
+Custom fields are accessible in SOL through the `custom_fields` prefix, on both the `alerts` and the `cases` datasources. The field name is automatically converted to snake\_case to form the column name:
 
-| Field name | SOL column |
-|---|---|
+| Field name               | SOL column                               |
+| ------------------------ | ---------------------------------------- |
 | Number of impacted users | `custom_fields.number_of_impacted_users` |
-| Impacted teams | `custom_fields.impacted_teams` |
-| Attack vector | `custom_fields.attack_vector` |
+| Impacted teams           | `custom_fields.impacted_teams`           |
+| Attack vector            | `custom_fields.attack_vector`            |
 
 {% hint style="success" %}
 **Autocomplete support**
@@ -18,7 +18,7 @@ Custom fields are accessible in SOL through the `custom_fields` prefix, on both 
 The SOL query editor provides autocomplete for custom field columns. Enter `custom_fields.` to see all available fields for your workspace.
 {% endhint %}
 
-![SOL autocomplete custom fields](../../assets/operation_center/cases/sol-autocomplete-custom-fields.png)
+![SOL autocomplete custom fields](../../.gitbook/assets/sol-autocomplete-custom-fields.png)
 
 ## Query examples
 
@@ -30,15 +30,14 @@ To retrieve alerts or cases where a numeric custom field exceeds a given value:
 
 {% tabs %}
 {% tab title="Alerts" %}
-
 ```
 alerts
 | where created_at > ago(90d) and custom_fields.number_of_impacted_users != null
 | where custom_fields.number_of_impacted_users > 2
 ```
 {% endtab %}
-{% tab title="Cases" %}
 
+{% tab title="Cases" %}
 ```
 cases
 | where created_at > ago(90d) and custom_fields.number_of_impacted_users != null
@@ -53,15 +52,14 @@ To retrieve alerts or cases where a multi select field contains specific values:
 
 {% tabs %}
 {% tab title="Alerts" %}
-
 ```
 alerts
 | where created_at > ago(90d)
 | where custom_fields.impacted_teams in ["HR", "Finance"]
 ```
 {% endtab %}
-{% tab title="Cases" %}
 
+{% tab title="Cases" %}
 ```
 cases
 | where created_at > ago(90d)
@@ -76,15 +74,14 @@ To count alerts or cases grouped by a custom field value:
 
 {% tabs %}
 {% tab title="Alerts" %}
-
 ```
 alerts
 | where created_at > ago(90d)
 | aggregate count() by custom_fields.impacted_teams
 ```
 {% endtab %}
-{% tab title="Cases" %}
 
+{% tab title="Cases" %}
 ```
 cases
 | where created_at > ago(90d)
@@ -93,7 +90,7 @@ cases
 {% endtab %}
 {% endtabs %}
 
-![SOL query results aggregated by custom field](../../assets/operation_center/cases/sol-query-result-custom-fields.png)
+![SOL query results aggregated by custom field](../../.gitbook/assets/sol-query-result-custom-fields.png)
 
 ## Use query results in dashboards
 

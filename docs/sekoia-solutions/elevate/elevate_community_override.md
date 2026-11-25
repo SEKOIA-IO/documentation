@@ -1,11 +1,11 @@
-# Override Elevate settings for a community
+# Override community settings
 
 When Elevate is activated at the workspace level, all communities inherit that configuration by default. This article explains how to override the agent settings for a specific community to enable or disable Elevate independently.
 
 ## Prerequisites
 
-- Elevate is activated on your workspace. See [Activate Elevate on a workspace](elevate_activate.md).
-- You have administrator-level access to the workspace.
+* Elevate is activated on your workspace. See [Activate Elevate on a workspace](elevate_activate.md).
+* You have administrator-level access to the workspace.
 
 ## Override the configuration for a community
 
@@ -16,7 +16,7 @@ When Elevate is activated at the workspace level, all communities inherit that c
 5. Select **Override**.
 6. Toggle **Auto-analyze alerts** to the desired state for this community.
 
-![Community-level AI agent settings with the Override option](../assets/elevate/settings-override.png)
+![Community-level AI agent settings with the Override option](../.gitbook/assets/settings-override.png)
 
 An indicator confirms that this community now uses its own settings and no longer inherits the workspace-level configuration.
 
@@ -34,6 +34,6 @@ To revert to the workspace configuration, return to the community's AI agent set
 
 ## Related articles
 
-- [Activate Elevate on a workspace](elevate_activate.md): How to enable the Elevate agent at the workspace level.
-- [Scope auto-analysis with filters](elevate_rule_filter.md): How to limit which alerts Elevate analyzes by rule, effort level, severity or urgency.
-- [Manage your Elevate runs](elevate_quota.md): How to monitor and optimize your monthly run pack.
+* [Activate Elevate on a workspace](elevate_activate.md): How to enable the Elevate agent at the workspace level.
+* [Scope auto-analysis with filters](elevate_rule_filter.md): How to limit which alerts Elevate analyzes by rule, effort level, severity or urgency.
+* [Manage your Elevate runs](elevate_quota.md): How to monitor and optimize your monthly run pack.

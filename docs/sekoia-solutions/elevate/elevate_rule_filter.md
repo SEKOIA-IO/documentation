@@ -4,8 +4,8 @@ By default, when auto-analysis is enabled, the Elevate agent analyzes every new 
 
 ## Prerequisites
 
-- Elevate is activated on your workspace. See [Activate Elevate on a workspace](elevate_activate.md).
-- You have administrator-level access to the workspace.
+* Elevate is activated on your workspace. See [Activate Elevate on a workspace](elevate_activate.md).
+* You have administrator-level access to the workspace.
 
 ## How filters work
 
@@ -21,13 +21,13 @@ Filters set on the workspace apply to every community, unless a community uses c
 
 ## Available filters
 
-| Filter | Values | Effect |
-|---|---|---|
-| **Rule effort level** | **Elementary**, **Intermediate**, **Advanced**, **Master** (one or more) | Analyzes only alerts raised by rules of the selected effort levels. |
-| **Alert severity** | **more than** or **less than**, and a score | Analyzes only alerts whose severity is at or above (**more than**) or at or below (**less than**) the score. |
-| **Alert urgency** | **more than** or **less than**, and a score from 1 to 100 | Analyzes only alerts whose urgency is at or above (**more than**) or at or below (**less than**) the score. See [Alert urgency](../defend/investigate/alerts.md#alert-urgency). |
-| **Include rules** | A list of detection rules | Analyzes only alerts raised by the selected rules. |
-| **Exclude rules** | A list of detection rules | Analyzes alerts from every rule except the selected ones, including rules published later. |
+| Filter                | Values                                                                   | Effect                                                                                                                                                                          |
+| --------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Rule effort level** | **Elementary**, **Intermediate**, **Advanced**, **Master** (one or more) | Analyzes only alerts raised by rules of the selected effort levels.                                                                                                             |
+| **Alert severity**    | **more than** or **less than**, and a score                              | Analyzes only alerts whose severity is at or above (**more than**) or at or below (**less than**) the score.                                                                    |
+| **Alert urgency**     | **more than** or **less than**, and a score from 1 to 100                | Analyzes only alerts whose urgency is at or above (**more than**) or at or below (**less than**) the score. See [Alert urgency](../defend/investigate/alerts.md#alert-urgency). |
+| **Include rules**     | A list of detection rules                                                | Analyzes only alerts raised by the selected rules.                                                                                                                              |
+| **Exclude rules**     | A list of detection rules                                                | Analyzes alerts from every rule except the selected ones, including rules published later.                                                                                      |
 
 {% hint style="success" %}
 **Choose between Include rules and Exclude rules**
@@ -46,7 +46,7 @@ Use **Include rules** when Elevate should focus on a short list of detections. U
 
 Each selected filter appears as a row below the **Filters** button.
 
-![Filters menu listing Rule effort level, Alert severity, Alert urgency, Include rules and Exclude rules](../assets/elevate/auto-analyze-filters-menu.png)
+![Filters menu listing Rule effort level, Alert severity, Alert urgency, Include rules and Exclude rules](../.gitbook/assets/auto-analyze-filters-menu.png)
 
 {% hint style="info" %}
 **Changes are saved automatically**
@@ -66,7 +66,7 @@ The row lists the selected levels, for example **Elementary, Intermediate**.
 1. In the **Alert severity** or **Alert urgency** row, select **more than** or **less than**.
 2. Enter the score.
 
-![Alert severity row with the more than and less than options](../assets/elevate/auto-analyze-filters-threshold.png)
+![Alert severity row with the more than and less than options](../.gitbook/assets/auto-analyze-filters-threshold.png)
 
 {% hint style="warning" %}
 **Less than excludes your most urgent alerts**
@@ -83,31 +83,32 @@ Selecting **less than** on **Alert urgency** stops auto-analysis of every alert 
 3. Select each rule.
 4. Click **Save**.
 
-![Select rules modal with a search field and a paginated list of detection rules](../assets/elevate/auto-analyze-filters-select-rules.png)
+![Select rules modal with a search field and a paginated list of detection rules](../.gitbook/assets/auto-analyze-filters-select-rules.png)
 
 The settings card lists every filter in force, one per row.
 
-![Auto-analyze alerts settings with five filters configured](../assets/elevate/auto-analyze-filters-configured.png)
+![Auto-analyze alerts settings with five filters configured](../.gitbook/assets/auto-analyze-filters-configured.png)
 
 ## Remove a filter
 
 To remove a filter, use either of these options:
 
-- Click **Filters**, then clear the checkbox of the filter.
-- On the row of the filter you want to remove, such as **Alert urgency**, click the delete icon.
+* Click **Filters**, then clear the checkbox of the filter.
+* On the row of the filter you want to remove, such as **Alert urgency**, click the delete icon.
 
 Once every filter is removed, the agent analyzes all new alerts again.
 
 <details>
+
 <summary>Analyze urgent alerts but skip rules handled by playbooks</summary>
 
 A SOC wants Elevate on high-risk alerts only, away from its noisiest detections and away from five rules a playbook already closes. The administrator sets these filters:
 
-| Filter | Setting |
-|---|---|
-| **Alert urgency** | **more than** 60 |
+| Filter                | Setting                                        |
+| --------------------- | ---------------------------------------------- |
+| **Alert urgency**     | **more than** 60                               |
 | **Rule effort level** | **Elementary**, **Intermediate**, **Advanced** |
-| **Exclude rules** | The five rules handled by the playbook |
+| **Exclude rules**     | The five rules handled by the playbook         |
 
 Elevate analyzes an alert only when its urgency is 60 or above, its rule is not a **Master** effort rule and its rule is not one of the five excluded. Rules published later are analyzed as long as they match the other filters.
 
@@ -119,7 +120,7 @@ The agent automatically analyzes only the alerts that match every filter you set
 
 ## Related articles
 
-- [Activate Elevate on a workspace](elevate_activate.md): How to enable the Elevate agent on your workspace.
-- [Override Elevate settings for a community](elevate_community_override.md): How to give a community its own Elevate settings, including its own filters.
-- [Trigger a manual Elevate analysis](elevate_manual_analysis.md): How to have Elevate analyze an alert that your filters exclude by assigning it to Roy.
-- [Manage your Elevate runs](elevate_quota.md): How to monitor and optimize your monthly run pack.
+* [Activate Elevate on a workspace](elevate_activate.md): How to enable the Elevate agent on your workspace.
+* [Override Elevate settings for a community](elevate_community_override.md): How to give a community its own Elevate settings, including its own filters.
+* [Trigger a manual Elevate analysis](elevate_manual_analysis.md): How to have Elevate analyze an alert that your filters exclude by assigning it to Roy.
+* [Manage your Elevate runs](elevate_quota.md): How to monitor and optimize your monthly run pack.

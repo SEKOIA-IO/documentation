@@ -1,5 +1,4 @@
-<!-- include:_shared_content/ioccollections.md -->
-# IOC Collections
+# IOCs Collections
 
 Indicators Of Compromise (IOCs) are commonly shared between CERT and SOC teams and by Cyber Threat Intelligence providers. They are an important part of detection.
 
@@ -11,11 +10,11 @@ You can then easily see telemetry on these collections and use them inside detec
 
 You can open the IOC Collection creation modal by clicking on `+ Collection`. You will then have to fill out the form:
 
-- Define the name of the collection
-- (Optional) Add a description to the collection
-- Choose if you want to automatically add IOCs from this collection into your detection by creating a dedicated detection rule. Note that you will be able to manually create a detection rule for this collection later if you want
+* Define the name of the collection
+* (Optional) Add a description to the collection
+* Choose if you want to automatically add IOCs from this collection into your detection by creating a dedicated detection rule. Note that you will be able to manually create a detection rule for this collection later if you want
 
-![ioc_creation](../../assets/operation_center/IOCscollections/ioc-create_updated.png)
+![ioc\_creation](../../.gitbook/assets/ioc-create_updated.png)
 
 {% hint style="info" %}
 Inside a MSSP community, you also have to choose the community in which the IOC Collection should be created. If you choose “All communities”, the collection will be readable by all subcommunities.
@@ -27,39 +26,38 @@ You can add indicators to a collection by clicking on the `Import` button. You w
 
 Each indicator inside the collection can have the following properties:
 
-| Field                 | Description                                                                                                          |
-|-----------------------|----------------------------------------------------------------------------------------------------------------------|
-| Observable <a id="observable-field"></a>           | This is the actual IOC value (can be an IP address (IPv4 or IPv6), a MAC address,  a domain name, a URL, a file hash (MD5, SHA-1, SHA-256, SHA-512) or an email address) |
-| Related Threats       | A list of threats that are related to this indicator. These threats have to exist inside the Intelligence Center        |
-| Valid From            | The date from which this indicator should be considered valid                                                       |
-| Valid Until           | The date from which this indicator should no longer be considered valid                                              |
-| Kill Chain Phases     | Steps of the attack this indicator belongs to                                                                        |
-| Description           | Any text that would add additional context. It is limited to **500 characters**                                      |
-
+| Field             | Description                                                                                                                                                             |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Observable        | This is the actual IOC value (can be an IP address (IPv4 or IPv6), a MAC address, a domain name, a URL, a file hash (MD5, SHA-1, SHA-256, SHA-512) or an email address) |
+| Related Threats   | A list of threats that are related to this indicator. These threats have to exist inside the Intelligence Center                                                        |
+| Valid From        | The date from which this indicator should be considered valid                                                                                                           |
+| Valid Until       | The date from which this indicator should no longer be considered valid                                                                                                 |
+| Kill Chain Phases | Steps of the attack this indicator belongs to                                                                                                                           |
+| Description       | Any text that would add additional context. It is limited to **500 characters**                                                                                         |
 
 {% hint style="warning" %}
 If you select the kill chain phase '**Command and Control**' when importing IP addresses in an IOC collection, our detection engines will only look into `destination.ip`. This is meant to reduce false positives, such as network scans.
 {% endhint %}
 
-### Limitations 
+### Limitations
 
-We allow a maximum **limit of 500,000 IOCs** entries that can be imported. This limit applies to the total IOC imports across all collections in a community. 
+We allow a maximum **limit of 500,000 IOCs** entries that can be imported. This limit applies to the total IOC imports across all collections in a community.
 
 ### Text Import
 
 Text Import can be used when you want to import a list of IOCs (typically one IOC per line) that all have the same properties.
 
-Add all your IOCs in the text field, then click on `Next`. 
+Add all your IOCs in the text field, then click on `Next`.
 
 {% hint style="info" %}
-You can only use IOC types listed into the [Observable description](#observable-field). 
+You can only use IOC types listed into the [Observable description](ioccollections.md#observable-field).
 {% endhint %}
 
-![collectiontypes](../../assets/operation_center/IOCscollections/ioc-types.png)
+![collectiontypes](../../.gitbook/assets/ioc-types.png)
 
 On the next screen, select the additional properties to add intelligence context to your indicators. All fields are optional here:
 
-![collectionform](../../assets/operation_center/IOCscollections/ioc_import.png)
+![collectionform](../../.gitbook/assets/ioc_import.png)
 
 Finally, click on `Import` to add indicators to your collection. Depending on the number of indicators your are importing at once, this can take some time.
 
@@ -68,17 +66,13 @@ Finally, click on `Import` to add indicators to your collection. Depending on th
 IOCs are commonly shared in tabular files where each indicator has its own row and additional context appears in different columns. File Import can be used with CSV, XLS and XLSX files to directly import indicators from these files.
 
 {% hint style="info" %}
-You can only use IOC types listed into the [Observable description](#observable-field).
+You can only use IOC types listed into the [Observable description](ioccollections.md#observable-field).
 {% endhint %}
 
 1. Upload the file you would like to process
-2. The application will display the first 10 lines of the file, which a suggestion on how each column should be mapped to an indicator’s properties
-    ![collectiontable](../../assets/operation_center/IOCscollections/ioc_table.png)
-
+2. The application will display the first 10 lines of the file, which a suggestion on how each column should be mapped to an indicator’s properties ![collectiontable](../../.gitbook/assets/ioc_table.png)
 3. Make sure the suggestions are correct and adjust if necessary by clicking on the chevron next to the column mapping. Use special value “Ignore” if the column should not be mapped to a property. In that case, the content of the column will be discarded.
-4. Click on `Next`. If some indicator properties are not mapped by any column, you will have the opportunity to define values that will apply to all indicators.
-    ![collectionthreats](../../assets/operation_center/IOCscollections/ioc_relatedthreats.png)
-
+4. Click on `Next`. If some indicator properties are not mapped by any column, you will have the opportunity to define values that will apply to all indicators. ![collectionthreats](../../.gitbook/assets/ioc_relatedthreats.png)
 5. Finally, click on `Import` and wait for indicators to be created. Depending on the numbers of indicators in your file, this can take some time.
 
 ## Indicator Actions
@@ -101,14 +95,14 @@ If you realize that an indicator is bad and produces false positive detections, 
 
 #### How to Request the Revocation of an IoC
 
-- Go to the **Intelligence** section in the left menu.
-- Search for and select the object you believe is a false positive.
-- Before reporting a false positive, make sure to carefully review the details associated with the object, including:
-    - The **pattern**
-    - The **source**
-    - The **threat context**
-    - Linked **observables**
-- Click the **Request revocation** button available at the top right.
+* Go to the **Intelligence** section in the left menu.
+* Search for and select the object you believe is a false positive.
+* Before reporting a false positive, make sure to carefully review the details associated with the object, including:
+  * The **pattern**
+  * The **source**
+  * The **threat context**
+  * Linked **observables**
+* Click the **Request revocation** button available at the top right.
 
 {% hint style="warning" %}
 Revoking an indicator cannot be undone.
@@ -122,14 +116,14 @@ Choose the [API base URL for your region](https://docs.sekoia.com/api-documentat
 
 Use the collection's Feed ID in the `/v2/inthreat/collections/{feed_id}/objects` path after this base URL and add both query parameters:
 
-| Parameter | Value |
-| --- | --- |
-| `format` | `custom` |
+| Parameter  | Value                                                    |
+| ---------- | -------------------------------------------------------- |
+| `format`   | `custom`                                                 |
 | `template` | A single-line template using supported `$variable` names |
 
 For example, `$observables # $description` exports the observable values followed by the indicator's description. URL-encode the template, including `$`, spaces, and `#`:
 
-```text
+```
 BASE_URL/v2/inthreat/collections/YOUR-IOC-COLLECTION-FEED-ID/objects?format=custom&template=%24observables%20%23%20%24description&limit=10000&skip_expired=true&include_revoked=false
 ```
 
@@ -137,29 +131,28 @@ Authenticate using an API key with the **View IOC collections** permission. See 
 
 Example response:
 
-```text
+```
 192.0.2.10 # Indicator added after investigating a phishing alert
 192.0.2.11 #
 ```
 
 ### Template behavior and limits
 
-- `$observables` contains the observable values extracted from the indicator's pattern. Use this variable, rather than `$value`.
-- `$description` contains the **indicator's description**, not the collection's description. If it is missing or empty, the variable produces an empty string. Line breaks in descriptions are replaced with spaces.
-- Other supported variables include `$id`, `$name`, `$type`, `$observable_types`, `$pattern`, `$confidence`, `$tlp`, `$created`, `$modified`, `$valid_from`, and `$valid_until`.
-- `${observables}` is equivalent to `$observables`. Use `$$` to output a literal dollar sign.
-- A template must contain at least one supported variable and must fit on a single line. Invalid syntax or unsupported variables return HTTP 400.
-- Each indicator produces one output line. When an indicator contains multiple observable values, such as several file hashes, `$observables` groups them on the same line, separated by commas. The standard `format=text` export emits these values on separate lines.
-- Custom IOC Collection exports support up to **10,000 indicators per request**. This is a per-request limit, not a limit on the collection's size. Use API pagination when retrieving larger collections; a single request does not return the entire collection beyond that limit.
+* `$observables` contains the observable values extracted from the indicator's pattern. Use this variable, rather than `$value`.
+* `$description` contains the **indicator's description**, not the collection's description. If it is missing or empty, the variable produces an empty string. Line breaks in descriptions are replaced with spaces.
+* Other supported variables include `$id`, `$name`, `$type`, `$observable_types`, `$pattern`, `$confidence`, `$tlp`, `$created`, `$modified`, `$valid_from`, and `$valid_until`.
+* `${observables}` is equivalent to `$observables`. Use `$$` to output a literal dollar sign.
+* A template must contain at least one supported variable and must fit on a single line. Invalid syntax or unsupported variables return HTTP 400.
+* Each indicator produces one output line. When an indicator contains multiple observable values, such as several file hashes, `$observables` groups them on the same line, separated by commas. The standard `format=text` export emits these values on separate lines.
+* Custom IOC Collection exports support up to **10,000 indicators per request**. This is a per-request limit, not a limit on the collection's size. Use API pagination when retrieving larger collections; a single request does not return the entire collection beyond that limit.
 
 Choose a template and observable types that your receiving tool accepts.
 
 ## Related articles
 
-- [Implement a blocklist](https://docs.sekoia.com/usecases/implement_blocklist): Connect an IOC Collection to a firewall or proxy and maintain its indicators.
-- [Manage feeds](../../cti/consume/manage_feeds.md): Consume CTI feeds and override their custom export templates for an API request.
-- [Manage API keys](https://docs.sekoia.com/getting-started/manage_api_keys): Create and manage the credentials used to access collections through the API.
-<!-- endinclude:_shared_content/ioccollections.md -->
+* [Implement a blocklist](https://docs.sekoia.com/usecases/implement_blocklist): Connect an IOC Collection to a firewall or proxy and maintain its indicators.
+* [Manage feeds](../../cti/consume/manage_feeds.md): Consume CTI feeds and override their custom export templates for an API request.
+* [Manage API keys](https://docs.sekoia.com/getting-started/manage_api_keys): Create and manage the credentials used to access collections through the API.
 
 ## Telemetry Reports
 
@@ -167,9 +160,9 @@ Telemetry Reports can be used to quickly determine if any indicator inside the c
 
 Telemetry Reports have the following properties:
 
-- Telemetry is only available for some observable types: IP addresses, domain names and file hashes. File Hashes are only supported from January 31st, 2023
-- Telemetry is checked for the past year, even if associated events are no longer available
-- When looking at the telemetry for an indicator, the `valid from` and `valid until` dates are ignored
+* Telemetry is only available for some observable types: IP addresses, domain names and file hashes. File Hashes are only supported from January 31st, 2023
+* Telemetry is checked for the past year, even if associated events are no longer available
+* When looking at the telemetry for an indicator, the `valid from` and `valid until` dates are ignored
 
 ### Generate a telemetry report
 
@@ -193,8 +186,8 @@ Telemetry reports list all indicators inside the collection that were seen in ev
 
 Any IOC Collection can be used inside a detection rule in the Operations Center. Creating a rule for an IOC Collection has the following benefits:
 
-- Any match of an indicator in future events will create an Alert
-- Any match of an indicator in past events will create an Alert (retrohunt)
+* Any match of an indicator in future events will create an Alert
+* Any match of an indicator in past events will create an Alert (retrohunt)
 
 {% hint style="info" %}
 Detection rules using IOC Collections are taking the validity period of an indicator when creating alerts.
@@ -202,5 +195,5 @@ Detection rules using IOC Collections are taking the validity period of an indic
 
 To create a detection rule based on an IOC Collection, you can:
 
-- Select the option inside the IOC Collection creation modal
-- Create a rule from the Rules Catalog. Choose `CTI` as rule type and `IOC Collections` as source
+* Select the option inside the IOC Collection creation modal
+* Create a rule from the Rules Catalog. Choose `CTI` as rule type and `IOC Collections` as source

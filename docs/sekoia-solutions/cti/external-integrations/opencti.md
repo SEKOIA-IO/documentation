@@ -1,9 +1,9 @@
-# External integration: OpenCTI
+# OpenCTI Import Connector
 
 The existing Sekoia connector for OpenCTI has been released in 2021 and is freely available on the OpenCTI Github repository. This connector is regularly updated and maintained by Filigran.
 
 ## Sekoia Connector Details
 
-The OpenCTI Github repository: [https://github.com/OpenCTI-Platform/connectors/tree/master/external-import/sekoia](https://github.com/OpenCTI-Platform/connectors/tree/master/external-import/sekoia) 
+The OpenCTI Github repository: [https://github.com/OpenCTI-Platform/connectors/tree/master/external-import/sekoia](https://github.com/OpenCTI-Platform/connectors/tree/master/external-import/sekoia)
 
-[![Filigran & Sekoia solution brief](../../assets/integration/sekoia-cta-filigran-hero.png)](https://www.sekoia.com/filigran-solution-brief)
+[![Filigran & Sekoia solution brief](../../.gitbook/assets/sekoia-cta-filigran-hero.png)](https://www.sekoia.com/filigran-solution-brief)

@@ -4,8 +4,8 @@ This article covers all procedures for creating and managing intakes in Sekoia, 
 
 ## Prerequisites
 
-- You must have the appropriate role in your Sekoia community to create or modify intakes.
-- For Pull intakes, you must have valid credentials for the data source you want to connect.
+* You must have the appropriate role in your Sekoia community to create or modify intakes.
+* For Pull intakes, you must have valid credentials for the data source you want to connect.
 
 ## Create an intake
 
@@ -18,7 +18,7 @@ To add a new data source to Sekoia:
 5. If the intake is a Pull intake, fill in the connector configuration fields (credentials and parameters).
 6. Click **Save**.
 
-![Intake creation modal](../../assets/operation_center/intakes/modal-intake-creation.png)
+![Intake creation modal](../../.gitbook/assets/modal-intake-creation.png)
 
 {% hint style="info" %}
 **Custom intake formats**
@@ -44,7 +44,7 @@ To configure an inactivity notification from the intakes listing:
 You can also configure this notification from the **Intake details** page via the intake menu, or from **User Center > Notifications** by selecting the **No events are received** trigger.
 {% endhint %}
 
-![Intake notification configuration panel](../../assets/operation_center/intakes/intakes-list-notification.png)
+![Intake notification configuration panel](../../.gitbook/assets/intakes-list-notification.png)
 
 ## Edit an intake entity
 
@@ -55,7 +55,7 @@ To move an intake to a different entity:
 3. Select the new entity from the list.
 4. Click **Save**.
 
-![Entity selection panel](../../assets/operation_center/intakes/intakes-details-entity.png)
+![Entity selection panel](../../.gitbook/assets/intakes-details-entity.png)
 
 ## Configure a pull intake
 
@@ -74,7 +74,7 @@ To update the connector configuration:
 3. Update the configuration fields as needed.
 4. Click **Save**.
 
-![Connector configuration panel](../../assets/operation_center/intakes/intakes-details-configure.png)
+![Connector configuration panel](../../.gitbook/assets/intakes-details-configure.png)
 
 {% hint style="info" %}
 **Changes apply immediately**
@@ -91,7 +91,7 @@ To change the display name of an intake:
 3. Enter the new name.
 4. Click **Save**.
 
-![Rename intake dialog](../../assets/operation_center/intakes/intakes-details-rename.png)
+![Rename intake dialog](../../.gitbook/assets/intakes-details-rename.png)
 
 ## Delete an intake
 
@@ -111,15 +111,12 @@ To delete an intake:
 
 Reach out to Sekoia support in the following situations:
 
-- The configuration recommendations in this article do not apply to your system and you need guidance on forwarding your events.
-- Your log format is not available in the intake catalog. New formats are added regularly, and support can notify you when yours becomes available.
+* The configuration recommendations in this article do not apply to your system and you need guidance on forwarding your events.
+* Your log format is not available in the intake catalog. New formats are added regularly, and support can notify you when yours becomes available.
 
 ## Related articles
 
-- [Intakes](intakes.md): Concept overview of what intakes are, how they connect to Sekoia, and what the different event types mean.
-
-- [Intake details page](intakes_details.md): Reference for all metrics, indicators, and menu options available on the intake details page, including a full explanation of the event delivery metric.
-
-- [Turn on notifications](https://docs.sekoia.com/getting-started/create_a_notification): How to configure notification channels and triggers for intake inactivity alerts.
-
-- [Create a format](https://docs.sekoia.com/integrations/develop_integration/formats/create_a_format): How to build a custom intake format for unsupported log sources.
+* [Intakes](intakes.md): Concept overview of what intakes are, how they connect to Sekoia, and what the different event types mean.
+* [Intake details page](intakes_details.md): Reference for all metrics, indicators, and menu options available on the intake details page, including a full explanation of the event delivery metric.
+* [Turn on notifications](https://docs.sekoia.com/getting-started/create_a_notification): How to configure notification channels and triggers for intake inactivity alerts.
+* [Create a format](https://docs.sekoia.com/integrations/develop_integration/formats/create_a_format): How to build a custom intake format for unsupported log sources.

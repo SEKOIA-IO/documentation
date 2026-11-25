@@ -12,7 +12,7 @@ Statuses are grouped by stage, and you create a status directly inside the stage
 4. Enter a **Description** explaining when your team should use this status.
 5. Save your changes.
 
-![Custom statuses configuration](../../assets/operation_center/alerts/custom-statuses-config.png)
+![Custom statuses configuration](../../.gitbook/assets/custom-statuses-config.png)
 
 {% hint style="success" %}
 **Choose the stage deliberately**
@@ -58,13 +58,13 @@ When an entity uses the `automatic` alert generation mode, its new alerts are cr
 
 The **Alert default status** section sits below the status table and is collapsed by default.
 
-![Alert default status section collapsed](../../assets/operation_center/alerts/alert-default-status-collapsed.png)
+![Alert default status section collapsed](../../.gitbook/assets/alert-default-status-collapsed.png)
 
 1. Navigate to **Settings > Custom Statuses**.
 2. Expand the **Alert default status** section.
 3. In **Default status**, select a status. Only statuses of the **In progress** stage enabled for alerts are proposed.
 
-![Alert default status section expanded](../../assets/operation_center/alerts/alert-default-status-expanded.png)
+![Alert default status section expanded](../../.gitbook/assets/alert-default-status-expanded.png)
 
 {% hint style="info" %}
 The generation mode is set per entity. See [Entities](../collect/entities.md#alert-generation-mode).

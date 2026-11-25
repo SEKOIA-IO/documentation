@@ -8,9 +8,9 @@ Teams rarely agree on what "true positive" means in practice, and the nuance mat
 
 Every custom verdict belongs to one of two verdict stages.
 
-| Verdict stage | Meaning |
-|---|---|
-| **True positive** | The alert or case represents a genuine security threat or incident. |
+| Verdict stage      | Meaning                                                                           |
+| ------------------ | --------------------------------------------------------------------------------- |
+| **True positive**  | The alert or case represents a genuine security threat or incident.               |
 | **False positive** | The alert or case was triggered incorrectly, or does not represent a real threat. |
 
 ## Create a custom verdict
@@ -33,7 +33,7 @@ A documented definition is what stops two analysts from classifying the same evi
 Custom statuses are the only type that can be retired while in use. Verdicts and priorities cannot: you have to clear the verdict from every alert and case before you can delete it. See [Migrate custom statuses](migrate_custom_statuses.md) for the status behavior.
 {% endhint %}
 
-![Custom verdicts configuration](../../assets/operation_center/alerts/custom-verdicts-config.png)
+![Custom verdicts configuration](../../.gitbook/assets/custom-verdicts-config.png)
 
 ## Edit a custom verdict
 

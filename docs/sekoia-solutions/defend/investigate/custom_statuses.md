@@ -2,17 +2,17 @@
 
 Custom statuses let your SOC team define the lifecycle that alerts and cases follow, instead of adopting a fixed workflow. You create, order and configure them in **Settings > Custom Statuses**, and the same status can serve both alerts and cases.
 
-![Custom statuses configuration page](../../assets/operation_center/alerts/custom-statuses-page.png)
+![Custom statuses configuration page](../../.gitbook/assets/custom-statuses-page.png)
 
 ## Status stages
 
 Every custom status belongs to one of three stages. The stage defines where the status sits in the lifecycle and drives platform behavior beyond the label itself.
 
-| Stage | Meaning |
-|---|---|
-| **Open** | Initial stage for new or unprocessed alerts and cases. |
+| Stage           | Meaning                                                              |
+| --------------- | -------------------------------------------------------------------- |
+| **Open**        | Initial stage for new or unprocessed alerts and cases.               |
 | **In progress** | Intermediate stage for items under investigation or awaiting action. |
-| **Closed** | Final stage for items that have been resolved or dismissed. |
+| **Closed**      | Final stage for items that have been resolved or dismissed.          |
 
 {% hint style="info" %}
 Stages are not cosmetic. They determine the overall state of an alert or a case, and features such as search filters, alert similarity and case editing rely on them. Alerts whose status is in the Open or In progress stage keep collecting similar occurrences, while a status in the Closed stage causes a new alert to be created instead. Cases in the Closed stage cannot be edited.
@@ -28,11 +28,11 @@ Enabling a status for both contexts gives your team a single vocabulary across t
 
 The **Settings > Custom Statuses** page configures three distinct concepts. They are often confused, so they are worth separating.
 
-| Concept | Answers | Applies to | Color |
-|---|---|---|---|
-| Status | Where is this item in the workflow? | Alerts and cases | Inherited from the stage |
-| Verdict | What was the conclusion of the investigation? | Alerts and cases | Inherited from the category |
-| Priority | How urgent is this item? | Cases | Chosen when you create or edit the priority |
+| Concept  | Answers                                       | Applies to       | Color                                       |
+| -------- | --------------------------------------------- | ---------------- | ------------------------------------------- |
+| Status   | Where is this item in the workflow?           | Alerts and cases | Inherited from the stage                    |
+| Verdict  | What was the conclusion of the investigation? | Alerts and cases | Inherited from the category                 |
+| Priority | How urgent is this item?                      | Cases            | Chosen when you create or edit the priority |
 
 Statuses are also the only one of the three that you can retire while it is still in use. See [Migrate custom statuses](migrate_custom_statuses.md).
 

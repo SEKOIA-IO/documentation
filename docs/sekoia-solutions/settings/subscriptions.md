@@ -6,18 +6,18 @@ The **Subscriptions** page gives you a centralized view of the subscriptions att
 
 You need access to the workspace and the permissions required to manage community subscriptions.
 
-| Role | View subscriptions | Assign subscriptions | Create subscriptions |
-| --- | --- | --- | --- |
-| Admin | ✅|✅ | Depends on partner enablement and permissions |
-| Analyst | ✅ | ❌ |❌ |
-| Guest | ✅ | ❌ | ❌ |
+| Role    | View subscriptions | Assign subscriptions | Create subscriptions                          |
+| ------- | ------------------ | -------------------- | --------------------------------------------- |
+| Admin   | ✅                  | ✅                    | Depends on partner enablement and permissions |
+| Analyst | ✅                  | ❌                    | ❌                                             |
+| Guest   | ✅                  | ❌                    | ❌                                             |
 
 The exact actions available to you depend on your role, permissions, workspace configuration, and the community state.
 
 You also need the following permissions to manage community subscriptions:
 
-- **Read community licenses** to view subscriptions.
-- **Manage community licenses** to assign subscriptions.
+* **Read community licenses** to view subscriptions.
+* **Manage community licenses** to assign subscriptions.
 
 Creating a subscription also requires Self-Service to be enabled for your workspace.
 
@@ -25,14 +25,14 @@ Creating a subscription also requires Self-Service to be enabled for your worksp
 
 The page displays active and inactive subscriptions for the selected community. Depending on the subscription, you can review the following information:
 
-- Module and plan.
-- Subscription period.
-- Region.
-- Number of assets or subscribed volume.
-- Hot storage or other retention options.
-- Remaining time on the subscription.
+* Module and plan.
+* Subscription period.
+* Region.
+* Number of assets or subscribed volume.
+* Hot storage or other retention options.
+* Remaining time on the subscription.
 
-![Subscriptions page displaying active subscriptions and available actions](../assets/self_service/06_create_subscription_terms.png)
+![Subscriptions page displaying active subscriptions and available actions](../.gitbook/assets/06_create_subscription_terms.png)
 
 Use **Compare plans** to review the available plans. Use **Contact us** when you need a subscription or plan that is not available in the interface.
 
@@ -40,14 +40,14 @@ Use **Compare plans** to review the available plans. Use **Contact us** when you
 
 Click **Add subscription** to open the subscription management options.
 
-![Add subscription modal with the assignment and creation options](../assets/self_service/02_add_subscription_modal.png)
+![Add subscription modal with the assignment and creation options](../.gitbook/assets/02_add_subscription_modal.png)
 
 The modal provides two separate workflows.
 
-| Workflow | Use it when |
-| --- | --- |
+| Workflow                  | Use it when                                                                                   |
+| ------------------------- | --------------------------------------------------------------------------------------------- |
 | **Assign a subscription** | A trial or purchased subscription is already available and must be attached to the community. |
-| **Create a subscription** | You need to configure a new subscription through the Self-Service wizard. |
+| **Create a subscription** | You need to configure a new subscription through the Self-Service wizard.                     |
 
 The previous **Allocate** terminology may still appear in older documentation. In the current workflow, use **Assign** for an existing subscription and **Create** for a new subscription.
 
@@ -71,5 +71,5 @@ For details about each action, see the task articles below.
 
 ## Related articles
 
-- [Create a subscription](create_a_subscription.md): How to configure and confirm a new subscription with the Self-Service wizard.
-- [Assign a subscription](assign_a_subscription.md): How to attach an existing trial or purchased subscription to a community.
+* [Create a subscription](create_a_subscription.md): How to configure and confirm a new subscription with the Self-Service wizard.
+* [Assign a subscription](assign_a_subscription.md): How to attach an existing trial or purchased subscription to a community.

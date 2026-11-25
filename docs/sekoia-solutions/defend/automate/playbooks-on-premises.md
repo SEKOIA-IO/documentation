@@ -9,31 +9,30 @@ Local runners were previously called **Playbook runners**. The name changed in t
 
 This feature is currently in Early Access and is only available for Beta testers. Sekoia plans to roll out this functionality to all environments soon.
 {% endhint %}
-    
+
 ## Prerequisites
 
 ### Asset connector requirements
 
-- To execute an asset connector job, the local runner and the asset connector must belong to the same community, and that community must have a Reveal subscription.
-
-- Asset connectors cannot be created in a workspace, which is the parent community an MSSP uses to manage customer communities. Assets are inventoried per customer community. To collect assets for a customer, create the asset connector and install the local runner in that customer's community.
+* To execute an asset connector job, the local runner and the asset connector must belong to the same community, and that community must have a Reveal subscription.
+* Asset connectors cannot be created in a workspace, which is the parent community an MSSP uses to manage customer communities. Assets are inventoried per customer community. To collect assets for a customer, create the asset connector and install the local runner in that customer's community.
 
 ### Host requirements
 
 Install the local runner on a host that meets these minimum requirements:
 
-- 16 GB RAM.
-- 150 GB of disk space.
-- 2 CPUs, with 4 CPUs recommended.
+* 16 GB RAM.
+* 150 GB of disk space.
+* 2 CPUs, with 4 CPUs recommended.
 
 ### Supported operating systems
 
 Local runners support Linux distributions based on kernel version 3.10 or later. The following distributions are supported:
 
-- Ubuntu 14.04 and later.
-- Debian 8 and later.
-- CentOS 7 and later.
-- Red Hat Enterprise Linux 7 and later.
+* Ubuntu 14.04 and later.
+* Debian 8 and later.
+* CentOS 7 and later.
+* Red Hat Enterprise Linux 7 and later.
 
 ### Docker
 
@@ -61,10 +60,10 @@ cd ~ && rm -rf /.local/share/containers/
 
 The local runner initiates connections to Sekoia Cloud and to the systems used by local actions and asset connectors. For installation and communication with Sekoia Cloud, the host must allow outbound HTTPS access to the domains required by your region.
 
- The host needs access to the following domains in the FRA1 region:
+The host needs access to the following domains in the FRA1 region:
 
-- `ghcr.io` and `githubusercontent.com` to download module images.
-- `sekoia.io`, `app.sekoia.io`, `api.sekoia.io`, and `minio-symphony.prod.sekoia.io` to send execution results and store files.
+* `ghcr.io` and `githubusercontent.com` to download module images.
+* `sekoia.io`, `app.sekoia.io`, `api.sekoia.io`, and `minio-symphony.prod.sekoia.io` to send execution results and store files.
 
 Other regions use region-specific endpoints. The local runner installation instructions display the required domains for the selected region.
 
@@ -98,41 +97,39 @@ For more information, see [Regions](../../settings/regions.md).
 3. In **Name**, enter a name.
 4. If the **Community** field is displayed, select the customer community where you will install the runner. This field is displayed only from a parent community used by an MSSP.
 5. Select **Continue**.
-6. Follow the installation instructions displayed by Sekoia.
+6.  Follow the installation instructions displayed by Sekoia.
 
-    ![Installation instructions for a new local runner](img/local_runner_setup.png)
+    ![Installation instructions for a new local runner](../../.gitbook/assets/local_runner_setup.png)
 
 After installation, return to **Local runners**. The new runner appears in the list with its community, last activity, hostname, and version.
 
-![Local runners page with the + Local runner button and a runner card](img/local_runners_list.png)
-
+![Local runners page with the + Local runner button and a runner card](../../.gitbook/assets/local_runners_list.png)
 
 ### Select the right community
 
 The community selected during local runner creation determines which capabilities are available.
 
-| Selected community | Available capability |
-| --- | --- |
-| A community with a Reveal subscription | Playbook actions and eligible asset connector jobs |
-| A community without a Reveal subscription | Playbook actions only |
+| Selected community                              | Available capability                                    |
+| ----------------------------------------------- | ------------------------------------------------------- |
+| A community with a Reveal subscription          | Playbook actions and eligible asset connector jobs      |
+| A community without a Reveal subscription       | Playbook actions only                                   |
 | A workspace or parent community used by an MSSP | Playbook actions only; asset inventory is not available |
 
 When the selected community cannot run asset connectors, the creation dialog displays the warning **Your local runner will only be able to execute playbooks.** with one of the following reasons:
 
-- **A Reveal subscription is needed to activate asset inventory capability.**
-- **A workspace cannot perform asset inventory.**
+* **A Reveal subscription is needed to activate asset inventory capability.**
+* **A workspace cannot perform asset inventory.**
 
 Until Reveal is enabled for the customer community, the local runner can already execute playbook actions. Once Reveal is enabled, the same runner can also execute asset connector jobs: you do not need to reinstall it.
 
 Playbooks and asset connectors share the same list of local runners. The **Local runners** page is the same whether you open it from **Playbooks** or from **Configure > Assets**.
 
-![Local runner creation dialog with a community selector and an asset inventory warning](img/local_runner_create_workspace_warning.png)
+![Local runner creation dialog with a community selector and an asset inventory warning](../../.gitbook/assets/local_runner_create_workspace_warning.png)
 
 ## Execute a playbook action with a local runner
 
 {% hint style="info" %}
 **Playbook execution**
-
 
 Local runners execute playbook actions, not playbook triggers. The action must support on-premises execution. The **On-premise** option is not available for custom integrations.
 {% endhint %}
@@ -146,16 +143,16 @@ Local runners execute playbook actions, not playbook triggers. The action must s
 
 The action runs on the host where the selected local runner is installed.
 
-![Playbook action configuration with On-premise execution selected and a local runner chosen](img/playbook_action_on_premise.png)
+![Playbook action configuration with On-premise execution selected and a local runner chosen](../../.gitbook/assets/playbook_action_on_premise.png)
 
 ## Execute asset connector jobs with a local runner
 
 Local runners can execute jobs for eligible asset connectors from inside your environment. This allows the connector to reach internal systems without requiring inbound access from Sekoia Cloud.
 
-- The asset connector supports local execution. Only some integrations support it, and custom integrations do not.
-- The community of the asset connector has a Reveal subscription.
-- The local runner belongs to the same community as the asset connector.
-- The local runner is installed in an environment that can reach the source system.
+* The asset connector supports local execution. Only some integrations support it, and custom integrations do not.
+* The community of the asset connector has a Reveal subscription.
+* The local runner belongs to the same community as the asset connector.
+* The local runner is installed in an environment that can reach the source system.
 
 ### Select a local runner for an asset connector
 
@@ -166,7 +163,7 @@ Select the local runner in the asset connector configuration when you create or 
 3. In **Using which local runner?**, select the local runner. The list contains the local runners of the connector's community.
 4. Complete the remaining configuration and save the connector.
 
-![Asset connector configuration dialog with On premise execution and a local runner chosen](img/asset_connector_on_premise.png)
+![Asset connector configuration dialog with On premise execution and a local runner chosen](../../.gitbook/assets/asset_connector_on_premise.png)
 
 The **Test connector** button is not available for connectors that run on-premises.
 
@@ -180,12 +177,12 @@ Connector logs work the same way whether the connector runs in the cloud or on a
 
 The **Local runners** page displays a card for each runner, with the following information:
 
-| Field | Description |
-| --- | --- |
-| Status | Whether the runner is online or offline |
-| Last activity | The last time the runner contacted Sekoia |
-| Hostname | The hostname of the host where the runner is installed |
-| Version | The version of the Sekoia Endpoint Agent |
+| Field         | Description                                            |
+| ------------- | ------------------------------------------------------ |
+| Status        | Whether the runner is online or offline                |
+| Last activity | The last time the runner contacted Sekoia              |
+| Hostname      | The hostname of the host where the runner is installed |
+| Version       | The version of the Sekoia Endpoint Agent               |
 
 A runner becomes **Offline** when it has not contacted Sekoia for one hour. The card then displays an **Offline** badge, and the runner details page displays **Your local runner is unable to reach us**. When the runner is online, the details page displays **Up & running**.
 
@@ -193,20 +190,19 @@ A runner usually becomes offline when the host is stopped, the Endpoint Agent se
 
 ### Troubleshoot a local runner
 
-1. Check that the Endpoint Agent service is running:
+1.  Check that the Endpoint Agent service is running:
 
     ```bash
     sudo systemctl status SEKOIAEndpointAgent.service
     ```
-
-2. Check that Docker is running and that the host can reach Sekoia with the test command in [Test the host](#test-the-host).
+2. Check that Docker is running and that the host can reach Sekoia with the test command in [Test the host](playbooks-on-premises.md#test-the-host).
 3. Review the Endpoint Agent logs in `/var/log/endpoint-agent/agent.log`.
 
 When you contact Support, provide the following information:
 
-- The Endpoint Agent logs, in `/var/log/endpoint-agent/`.
-- The configuration file `/etc/endpoint-agent/config.yaml`. Remove the `Token` value and any proxy password before you share it.
-- The output of `/opt/endpoint-agent/agent --version`, which displays the agent version and identifier.
+* The Endpoint Agent logs, in `/var/log/endpoint-agent/`.
+* The configuration file `/etc/endpoint-agent/config.yaml`. Remove the `Token` value and any proxy password before you share it.
+* The output of `/opt/endpoint-agent/agent --version`, which displays the agent version and identifier.
 
 For more diagnostic steps, see [Troubleshoot the Sekoia Endpoint Agent](https://docs.sekoia.com/integrations/action_library/overview).
 
@@ -214,11 +210,11 @@ For more diagnostic steps, see [Troubleshoot the Sekoia Endpoint Agent](https://
 
 Local runners belong to one community. From a parent community, an MSSP can create and list the local runners of its customer communities.
 
-| Action | Required permissions |
-| --- | --- |
-| View local runners | Read playbooks and read the list of playbook runners |
-| Create a local runner | Read playbooks and enroll new playbook runners |
-| Assign a local runner to an asset connector | Edit asset connectors |
+| Action                                      | Required permissions                                 |
+| ------------------------------------------- | ---------------------------------------------------- |
+| View local runners                          | Read playbooks and read the list of playbook runners |
+| Create a local runner                       | Read playbooks and enroll new playbook runners       |
+| Assign a local runner to an asset connector | Edit asset connectors                                |
 
 By default, only the **Admin** role can view and create local runners.
 
@@ -237,7 +233,7 @@ HTTPProxyURL: "<PROXY_URL>"
 
 Use the following format for the proxy URL:
 
-```text
+```
 http://user:pass@host:port
 ```
 
@@ -272,14 +268,14 @@ CABundlePath: "path/to/bundle/cacert.pem"
 
 The bundle is used by the Endpoint Agent and by every playbook action and asset connector job that the local runner executes. Inside these actions, the bundle replaces the default trusted certificates, so it must contain all the CA certificates they need:
 
-- The public CA certificates used by Sekoia and by the vendor APIs that the actions call. You can start from the CA bundle of your Linux distribution, for example `/etc/ssl/certs/ca-certificates.crt` on Debian and Ubuntu.
-- The CA certificate of your proxy, if it inspects TLS traffic.
-- The CA certificates of the internal systems that asset connectors connect to, for example a directory server that uses LDAPS with an internal certificate.
+* The public CA certificates used by Sekoia and by the vendor APIs that the actions call. You can start from the CA bundle of your Linux distribution, for example `/etc/ssl/certs/ca-certificates.crt` on Debian and Ubuntu.
+* The CA certificate of your proxy, if it inspects TLS traffic.
+* The CA certificates of the internal systems that asset connectors connect to, for example a directory server that uses LDAPS with an internal certificate.
 
 ## Related articles
 
-- [Assets](../collect/assets.md): Overview of asset inventory and asset discovery methods.
-- [Create an asset connector](../../reveal/reveal_asset_connectors_create.md): How to configure an asset connector from the integration catalog.
-- [Check asset connector health](../../reveal/asset_connector_health.md): How to review asset connector status and logs.
-- [Troubleshoot the Sekoia Endpoint Agent](https://docs.sekoia.com/integrations/action_library/overview): How to collect logs and diagnose Endpoint Agent issues.
-- [Regions](../../settings/regions.md): Reference for Sekoia regions and region-specific endpoints.
+* [Assets](../collect/assets.md): Overview of asset inventory and asset discovery methods.
+* [Create an asset connector](../../reveal/reveal_asset_connectors_create.md): How to configure an asset connector from the integration catalog.
+* [Check asset connector health](../../reveal/asset_connector_health.md): How to review asset connector status and logs.
+* [Troubleshoot the Sekoia Endpoint Agent](https://docs.sekoia.com/integrations/action_library/overview): How to collect logs and diagnose Endpoint Agent issues.
+* [Regions](../../settings/regions.md): Reference for Sekoia regions and region-specific endpoints.

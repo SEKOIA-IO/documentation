@@ -4,9 +4,9 @@ Custom fields let you attach your own metadata to playbooks, such as an owner te
 
 ## Prerequisites
 
-- Custom field definitions exist in **Settings > Custom fields**. Playbooks use the same definitions as alerts and cases. See [Manage custom field definitions](../investigate/manage_custom_field_definitions.md).
-- To see the custom fields of a playbook, you need the permission to read custom fields.
-- To add or edit custom fields on a playbook, you need the permission to edit playbooks.
+* Custom field definitions exist in **Settings > Custom fields**. Playbooks use the same definitions as alerts and cases. See [Manage custom field definitions](../investigate/manage_custom_field_definitions.md).
+* To see the custom fields of a playbook, you need the permission to read custom fields.
+* To add or edit custom fields on a playbook, you need the permission to edit playbooks.
 
 {% hint style="success" %}
 **Prepare a field for grouping**
@@ -18,7 +18,7 @@ You can group playbooks by a **Single select** field with at least one option, o
 
 The **Custom fields** section is in the **Overview** tab of the playbook. Until you add a field, it shows **No custom fields**.
 
-![Empty Custom fields section in the Overview tab of a playbook](../../assets/operation_center/playbooks/playbook_custom_fields.png)
+![Empty Custom fields section in the Overview tab of a playbook](../../.gitbook/assets/playbook_custom_fields.png)
 
 To add a custom field to a playbook:
 
@@ -31,7 +31,7 @@ To add a custom field to a playbook:
 
 The value is saved immediately, without clicking **Save**, and recorded in the [version history](restore_a_playbook_version.md) of the playbook.
 
-![Custom fields section with a boolean and a single select value](../../assets/operation_center/playbooks/playbook_select_custom_fields.png)
+![Custom fields section with a boolean and a single select value](../../.gitbook/assets/playbook_select_custom_fields.png)
 
 ## Show custom fields in the playbooks table
 
@@ -51,14 +51,14 @@ To group the playbooks list:
 2. Click **Group by**.
 3. Select a grouping option.
 
-![Playbooks table grouped by a single select custom field, with the Group by menu open](../../assets/operation_center/playbooks/playbook_group_by_custom_field.png)
+![Playbooks table grouped by a single select custom field, with the Group by menu open](../../.gitbook/assets/playbook_group_by_custom_field.png)
 
-| Option | Groups |
-|---|---|
-| **Ungrouped** | One list with every playbook. This is the default. |
-| **By activation** | **Activated** and **Deactivated**. Playbooks that are starting, stopping or in error are in **Deactivated**. |
-| **By community** | One group per community. Available in multi-tenant parent communities only. A meta-playbook appears in the group of each community it runs in. |
-| A custom field | One group per option of a single select field, or one group for true and one for false for a boolean field. Custom fields are listed under **Custom fields** in the menu. |
+| Option            | Groups                                                                                                                                                                    |
+| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Ungrouped**     | One list with every playbook. This is the default.                                                                                                                        |
+| **By activation** | **Activated** and **Deactivated**. Playbooks that are starting, stopping or in error are in **Deactivated**.                                                              |
+| **By community**  | One group per community. Available in multi-tenant parent communities only. A meta-playbook appears in the group of each community it runs in.                            |
+| A custom field    | One group per option of a single select field, or one group for true and one for false for a boolean field. Custom fields are listed under **Custom fields** in the menu. |
 
 {% hint style="info" %}
 **Playbooks without a value**

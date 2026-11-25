@@ -1,4 +1,4 @@
-# External Integrations: MISP Feed
+# MISP Feed
 
 The default feed is available as a MISP feed.
 
@@ -8,18 +8,17 @@ To fetch Sekoia.io’s MISP feed, you’ll have to generate an API key with the 
 
 The following field values are required for the feed to work properly:
 
--   Input Source: Network
--   URL: `https://api.sekoia.io/v1/misp-gateway/misp`
--   Source Format: MISP Feed
--   Headers: `Authorization: Bearer <APIKEY>` (please replace `<APIKEY>` with the secret API key)
--   Enabled: `True`
+* Input Source: Network
+* URL: `https://api.sekoia.io/v1/misp-gateway/misp`
+* Source Format: MISP Feed
+* Headers: `Authorization: Bearer <APIKEY>` (please replace `<APIKEY>` with the secret API key)
+* Enabled: `True`
 
-![!Configuring Sekoia.io’s MISP feed in MISP](../../assets/intelligence_center/misp_feed_configuration.png)
+![!Configuring Sekoia.io’s MISP feed in MISP](../../.gitbook/assets/misp_feed_configuration.png)
 
 You then need to make sure you have a scheduled task in place to regularly fetch the feed's content.
 
 {% hint style="info" %}
-
 MISP adds automatically the suffix `/manifest.json` to the feed URL. If you want to try the connection to the feed outside MISP or make a custom script, you need to use the following URL: `https://api.sekoia.io/v1/misp-gateway/misp/manifest.json`
 {% endhint %}
 

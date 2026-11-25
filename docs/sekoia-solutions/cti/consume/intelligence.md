@@ -5,19 +5,16 @@ Use the Intelligence page to search Sekoia’s database for objects and observab
 ## Open Intelligence
 
 1. From the application menu, select **Intelligence**.
-
-2. Enter a value in the search bar.
+2.  Enter a value in the search bar.
 
     You can search for an object name, report title, domain, IP address, hash, observable value, or other indexed content.
 
-![!Intelligence page with the search bar and results tabs.](../../assets/intelligence_center/intelligence_search.png)
+![!Intelligence page with the search bar and results tabs.](../../.gitbook/assets/intelligence_search.png)
 
 ## Run a search
 
 1. Enter one or more values in the search bar.
-
 2. Press **Enter** to run the search.
-
 3. To search for multiple values at once, press **Shift+Enter** to add a new line, then paste the values.
 
 The search can match names, descriptions, aliases, report content, external references, and Location country codes.
@@ -34,9 +31,9 @@ To open several results in new tabs, right-click an object or use **Option+click
 
 Depending on your query, the results can include:
 
-- **Objects**;
-- **Observables**;
-- **Unknown Observables**.
+* **Objects**;
+* **Observables**;
+* **Unknown Observables**.
 
 Each tab displays the number of matching results. Select a tab to review its results.
 
@@ -47,25 +44,22 @@ Use the **Known** and **Unknown** views to distinguish observables that are alre
 The same filter workflow applies to the results available in the selected tab.
 
 1. Select **Filters**.
-
-2. Select a filter category.
+2.  Select a filter category.
 
     Available categories can include:
 
-    - **Object types**;
-    - **IOC types**;
-    - **Sources**;
-    - **Created at**;
-    - **Confidence level**;
-    - **Feeds**;
-    - **Last update**;
-    - **TLP**.
-
-3. Select one or more values.
+    * **Object types**;
+    * **IOC types**;
+    * **Sources**;
+    * **Created at**;
+    * **Confidence level**;
+    * **Feeds**;
+    * **Last update**;
+    * **TLP**.
+3.  Select one or more values.
 
     Sekoia adds the active filter above the table as a filter chip.
-
-4. Refine or remove the filter.
+4.  Refine or remove the filter.
 
     Reopen the filter menu to change the selected values. Select **Clear filters** to remove all active filters, or remove one filter from its chip.
 
@@ -77,37 +71,37 @@ On the **Objects** tab, select **Locations** or **Sectors** to apply the corresp
 
 After you select a shortcut, the active filter appears above the table as a chip, for example:
 
-- `Object types is Location`;
-- `Object types is Sector`.
+* `Object types is Location`;
+* `Object types is Sector`.
 
 When you reopen the filter menu, the selected object type is already checked. Select **Clear filters** to remove the shortcut filter.
 
 The **Filters** menu lists the available filter categories:
 
-![!Filters menu listing the available filter categories.](../../assets/intelligence_center/cti_filters.png)
+![!Filters menu listing the available filter categories.](../../.gitbook/assets/cti_filters.png)
 
 The **Object types** filter with **Location** selected:
 
-![!Object types filter with Location checked and the Clear filters button displayed.](../../assets/intelligence_center/cti_object_types_filter.png)
+![!Object types filter with Location checked and the Clear filters button displayed.](../../.gitbook/assets/cti_object_types_filter.png)
 
 ## Review search results
 
 Search results appear in a table. The visible columns depend on the result type and workspace configuration. They can include:
 
-- **TLP**;
-- **Type**;
-- **Name**;
-- **Subtypes**;
-- **Conf.**;
-- **Sources**;
-- **Last Edited**;
-- **Created**;
-- global or workspace telemetry.
+* **TLP**;
+* **Type**;
+* **Name**;
+* **Subtypes**;
+* **Conf.**;
+* **Sources**;
+* **Last Edited**;
+* **Created**;
+* global or workspace telemetry.
 
 For Location objects:
 
-- a country Location displays its country flag in the **Type** column;
-- a region or other Location without a country displays the Location icon.
+* a country Location displays its country flag in the **Type** column;
+* a region or other Location without a country displays the Location icon.
 
 Use the sort selector to change the order. **Pertinence** is the default sort option in the delivered interface.
 
@@ -116,9 +110,7 @@ Use the column selector to show or hide columns. Use **Items per page** and the 
 ## Copy observables
 
 1. Open the **Observables** tab.
-
 2. Select the checkbox next to each observable you want to copy.
-
 3. Select **Copy**.
 
 Sekoia can identify some pasted values and leave others as unknown. Review both result views when you need to check the complete list.

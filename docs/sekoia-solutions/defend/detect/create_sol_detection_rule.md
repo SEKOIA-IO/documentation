@@ -4,9 +4,9 @@ SOL detection rules let you operationalize your SOL investigation queries as sta
 
 ## Prerequisites
 
-- You have an active Sekoia.io account with permissions to create detection rules.
-- You are familiar with SOL query syntax or have an existing query you want to reuse.
-- For Event Drop rules: you have identified the source to monitor (all incoming events, a specific intake, or a specific asset).
+* You have an active Sekoia.io account with permissions to create detection rules.
+* You are familiar with SOL query syntax or have an existing query you want to reuse.
+* For Event Drop rules: you have identified the source to monitor (all incoming events, a specific intake, or a specific asset).
 
 ## Create a SOL detection rule
 
@@ -18,7 +18,7 @@ Navigate to **Detection > Rules catalog**, then click **+ New rule**.
 
 In the **Specify your detection patterns** section, select the **SOL** tab. SOL sits alongside the Sigma, CTI, Anomaly and Event Drop patterns.
 
-![Detection pattern tabs with the SOL pattern selected](../../assets/operation_center/rules_catalog/sol-patterns.png)
+![Detection pattern tabs with the SOL pattern selected](../../.gitbook/assets/sol-patterns.png)
 
 ### Step 3: Write your SOL query
 
@@ -80,12 +80,12 @@ To widen the search window:
 2. To set how far back each run looks, drag the **Search window** slider to a value between 1 hour and 24 hours.
 3. To confirm the configuration, read the summary in the information banner. For example, with a 5-hour schedule and a 1-day search window, it reads: "Runs every **5 hours**, checking the last **1 day** of events each time. If an alert was already raised for an event, later runs won't raise a duplicate."
 
-![Query Run Scheduling section with the search window set to 1 day](../../assets/operation_center/rules_catalog/sol-search-window.png)
+![Query Run Scheduling section with the search window set to 1 day](../../.gitbook/assets/sol-search-window.png)
 
-| Search a wider window than the schedule | Events checked on each run | Duplicate alerts |
-|---|---|---|
-| Off | The events received since the last run | Not applicable, runs do not overlap beyond the 5-minute lag overlap |
-| On | The last 1 to 24 hours of events, as set with the **Search window** slider | Not raised: if an alert was already raised for an event, later runs do not raise it again |
+| Search a wider window than the schedule | Events checked on each run                                                 | Duplicate alerts                                                                          |
+| --------------------------------------- | -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Off                                     | The events received since the last run                                     | Not applicable, runs do not overlap beyond the 5-minute lag overlap                       |
+| On                                      | The last 1 to 24 hours of events, as set with the **Search window** slider | Not raised: if an alert was already raised for an event, later runs do not raise it again |
 
 {% hint style="warning" %}
 **Search window shorter than the schedule**
@@ -102,21 +102,21 @@ To split matches into separate alerts, configure a similarity strategy by select
 {% hint style="info" %}
 **Similarity for SOL rules**
 
-The fields available in the **Similarity strategy** selector depend on your query.  SOL detection rules apply no default similarity strategy based on the datasource, because a SOL rule can query any datasource. See [Alert similarity for SOL detection rules](sol_detection_similarity.md) to understand the default grouping and when to configure a strategy.
+The fields available in the **Similarity strategy** selector depend on your query. SOL detection rules apply no default similarity strategy based on the datasource, because a SOL rule can query any datasource. See [Alert similarity for SOL detection rules](sol_detection_similarity.md) to understand the default grouping and when to configure a strategy.
 {% endhint %}
 
 ### Step 7: Complete the rule metadata
 
 Fill in the remaining rule fields:
 
-| Field | Description |
-|---|---|
-| **Name** | A descriptive name for the rule |
-| **Severity** | The severity level assigned to generated alerts |
-| **Effort** | Estimated analyst effort to triage an alert from this rule |
-| **Threats** | Associated threat categories or techniques (MITRE ATT&CK) |
-| **Description** | A summary of what the rule detects and why |
-| **Tags** | Optional labels to help organize and filter rules |
+| Field           | Description                                                |
+| --------------- | ---------------------------------------------------------- |
+| **Name**        | A descriptive name for the rule                            |
+| **Severity**    | The severity level assigned to generated alerts            |
+| **Effort**      | Estimated analyst effort to triage an alert from this rule |
+| **Threats**     | Associated threat categories or techniques (MITRE ATT\&CK) |
+| **Description** | A summary of what the rule detects and why                 |
+| **Tags**        | Optional labels to help organize and filter rules          |
 
 ### Step 8: Save and activate the rule
 
@@ -126,9 +126,9 @@ Click **Create** and enable the rule to start executing on the defined schedule.
 
 Event Drop rules follow the same creation flow as SOL rules, with the following differences:
 
-- Select the **Event Drop** detection pattern at step 2.
-- In the **Query** field, enter the SOL pattern targeting the events, intake or asset you want to monitor for missing data. Like any SOL pattern, it must bound the query with `?time.start` and `?time.end`.
-- The **Threats** and security alert classification fields are not available for Event Drop rules, as they apply to threat detection rather than availability monitoring. The **Effort** field remains available.
+* Select the **Event Drop** detection pattern at step 2.
+* In the **Query** field, enter the SOL pattern targeting the events, intake or asset you want to monitor for missing data. Like any SOL pattern, it must bound the query with `?time.start` and `?time.end`.
+* The **Threats** and security alert classification fields are not available for Event Drop rules, as they apply to threat detection rather than availability monitoring. The **Effort** field remains available.
 
 {% hint style="success" %}
 **Create from an intake or asset**
@@ -140,7 +140,7 @@ You can start Event Drop rule creation directly from an intake or an asset, with
 
 Once saved, your rule begins executing immediately according to its schedule. When the query returns results, an alert is created. You can open any alert generated by a SOL or Event Drop rule to access the **Results** tab, which shows the raw query results for that execution.
 
-![SOL alert results tab](../../assets/operation_center/rules_catalog/sol-alert-results.png)
+![SOL alert results tab](../../.gitbook/assets/sol-alert-results.png)
 
 ## Related articles
 

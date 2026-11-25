@@ -2,8 +2,7 @@
 title: Sekoia documentation
 ---
 
-# Welcome to Sekoia's documentation
-
+# The Sekoia AI SOC Platform
 
 ## The Sekoia AI SOC Platform
 
@@ -13,7 +12,7 @@ With its Agentic SOC approach, Sekoia uses AI to handle repetitive investigation
 
 The result is faster detection, more efficient investigations, and lower operational overhead. Sekoia helps security teams reduce Mean Time to Detect (MTTD) and Mean Time to Respond (MTTR) while keeping their existing tools and data sources connected.
 
-![SEKOIA AI SOC Platform Overview](assets/sekoia_system.png)
+![SEKOIA AI SOC Platform Overview](.gitbook/assets/sekoia_system.png)
 
 ## Security operations platform architecture and modules
 
@@ -47,13 +46,6 @@ Sekoia Elevate adds AI assistance to the SOC. Its intelligent agents connect rel
 
 Analysts receive more context earlier in the investigation and can focus their time on decisions that require human judgment.
 
-<div>
-  <script async src="https://js.storylane.io/js/v2/storylane.js" data-verify-origin=""></script>
-  <div class="sl-embed" style="position:relative;padding-bottom:calc(51.95% + 25px);width:100%;height:0;transform:scale(1)">
-    <iframe loading="lazy" class="sl-demo" src="https://app.storylane.io/demo/nyxpygn2vyiw?embed=inline" name="sl-embed" allow="fullscreen" allowfullscreen style="position:absolute;top:0;left:0;width:100%!important;height:100%!important;border:1px solid rgba(63,95,172,0.35);box-shadow: 0px 0px 18px rgba(26, 19, 72, 0.15);border-radius:10px;box-sizing:border-box;"></iframe>
-  </div>
-</div>
-
 ## Open, cloud-native security operations architecture
 
 Sekoia builds its security operations platform around open integrations, portable detection logic, and cloud-native scalability. Security teams can connect the data sources they already use, apply detection rules across environments, and scale ingestion without maintaining traditional security infrastructure.
@@ -73,7 +65,6 @@ Sekoia runs on a multi-tenant, cloud-native architecture designed to process hig
 {% hint style="info" %}
 **Licensing architecture**
 
-
 While **Defend** and **Intelligence** function as independent products, **Reveal** and **Elevate** are integrated modules that require an active Sekoia Defend license to operate.
 {% endhint %}
 
@@ -81,8 +72,8 @@ While **Defend** and **Intelligence** function as independent products, **Reveal
 
 Explore the technical specifications and configuration guides for each component of the Sekoia ecosystem.
 
-- [Sekoia Defend Overview](defend/index.md)
-- [Sekoia Intelligence Overview](cti/index.md)
-- [Reveal: Asset Intelligence Overview](reveal/reveal_index.md)
-- [Integration Library: A comprehensive catalog of supported log sources, intake formats, and transport protocols (Syslog, HTTPS, Cloud-to-Cloud)](https://docs.sekoia.com/integrations/action_library/overview)
-- [Sekoia API Reference](https://docs.sekoia.com/api-documentation/quickstart)
+* [Sekoia Defend Overview](defend/index.md)
+* [Sekoia Intelligence Overview](cti/index.md)
+* [Reveal: Asset Intelligence Overview](reveal/reveal_index.md)
+* [Integration Library: A comprehensive catalog of supported log sources, intake formats, and transport protocols (Syslog, HTTPS, Cloud-to-Cloud)](https://docs.sekoia.com/integrations/action_library/overview)
+* [Sekoia API Reference](https://docs.sekoia.com/api-documentation/quickstart)

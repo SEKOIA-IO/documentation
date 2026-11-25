@@ -4,20 +4,20 @@ The cases listing page centralizes all cases across your community. This article
 
 ## Filter and sort cases
 
-![Case listing with filter](../../assets/operation_center/cases/cases-filter.png)
+![Case listing with filter](../../.gitbook/assets/cases-filter.png)
 
 You can filter cases by the following criteria:
 
-| Filter | Description |
-|---|---|
-| Asset | Shows cases linked to a specific asset. |
-| Assignee | Shows cases assigned to a specific analyst. |
-| Creator | Shows cases created by a specific user. |
-| Custom fields | Filters by any custom field defined in your community. |
-| Priority | Filters by priority level (for example, High, Medium, Low). |
-| Status | Filters by lifecycle stage (for example, Open, In progress, Closed). |
-| Tag | Filters by one or more tags. |
-| Verdict | Filters by case outcome (for example, True positive, False positive). |
+| Filter        | Description                                                           |
+| ------------- | --------------------------------------------------------------------- |
+| Asset         | Shows cases linked to a specific asset.                               |
+| Assignee      | Shows cases assigned to a specific analyst.                           |
+| Creator       | Shows cases created by a specific user.                               |
+| Custom fields | Filters by any custom field defined in your community.                |
+| Priority      | Filters by priority level (for example, High, Medium, Low).           |
+| Status        | Filters by lifecycle stage (for example, Open, In progress, Closed).  |
+| Tag           | Filters by one or more tags.                                          |
+| Verdict       | Filters by case outcome (for example, True positive, False positive). |
 
 You can sort the listing by:
 
@@ -31,7 +31,7 @@ To keep a filter, column and sort combination and share it with your team, save 
 
 You can act on multiple cases simultaneously from the listing page. This is useful for triaging large volumes of cases or reassigning incidents at scale.
 
-![Case listing with bulk actions](../../assets/operation_center/cases/cases-bulk-actions.png)
+![Case listing with bulk actions](../../.gitbook/assets/cases-bulk-actions.png)
 
 ### Select multiple cases
 
@@ -51,18 +51,18 @@ Mass selections are capped at 5,000 cases at a time to maintain platform perform
 
 Once you select at least one case, the bulk action toolbar replaces the **Filters** toolbar at the top of the list. The following actions are available:
 
-| Action | Description |
-|---|---|
-| Change priority | Updates the priority for all selected cases. |
-| Change status | Updates the status for all selected cases. Opens the **Close cases** modal when the new status is in the **Closed** stage. |
-| Change verdict | Updates the verdict for all selected cases. |
-| Change assignee | Reassigns all selected cases to a specific user. |
+| Action          | Description                                                                                                                |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Change priority | Updates the priority for all selected cases.                                                                               |
+| Change status   | Updates the status for all selected cases. Opens the **Close cases** modal when the new status is in the **Closed** stage. |
+| Change verdict  | Updates the verdict for all selected cases.                                                                                |
+| Change assignee | Reassigns all selected cases to a specific user.                                                                           |
 
 ### Close cases in bulk
 
 When you change the status of the selected cases to a status in the **Closed** stage, the **Close cases** modal opens. If the new status belongs to another stage, the status is applied directly and no modal appears.
 
-![Close cases modal](../../assets/operation_center/cases/cases-bulk-close-modal.png)
+![Close cases modal](../../.gitbook/assets/cases-bulk-close-modal.png)
 
 {% hint style="warning" %}
 Once closed, a case no longer receives alerts.
@@ -77,7 +77,7 @@ To close the selected cases:
 
 Each alert whose status changes receives a new comment in its timeline that records the change and the case it comes from, for example:
 
-> This alert was Closed following a status change in case ID [CA55URAvSYLG], with the following message: User comment
+> This alert was Closed following a status change in case ID \[CA55URAvSYLG], with the following message: User comment
 
 The status name, the case ID and the message reflect your selection and the comment you entered.
 
