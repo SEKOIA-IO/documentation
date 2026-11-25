@@ -17,12 +17,12 @@ A module can contain several components of the following types:
 
 If not already done, install the Sekoia's automation SDK. This SDK contains various command line utilities that will help us manage modules. Simply run the following command:
 ```shell
-pip install sekoia-automation-sdk
+pip install "sekoia-automation-sdk[cli]"
 ```
 
 If you previously installed Sekoia's automation SDK, please make sure you are running the latest version by using this command:
 ```shell
-pip install --upgrade sekoia-automation-sdk
+pip install --upgrade "sekoia-automation-sdk[cli]"
 ```
 
 ## Initialize the module
@@ -69,7 +69,7 @@ uv add requests
 !!! note
     If you are using an older project scaffolded with Poetry, you can use `poetry add requests` instead.
 
-As a result you should see the `requests` package added in the dependencies section of the `pyproject.toml` file. 
+As a result you should see the `requests` package added in the dependencies section of the `pyproject.toml` file.
 
 ### Add a .gitignore file to ignore temporary files
 
@@ -167,7 +167,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
         url: HttpUrl
         headers: dict | None = None
         method: Literal["get", "post", "put", "patch", "delete"]
-      
+
     class Response(BaseModel):  # (3)!
       status_code: int
       headers: dict
@@ -295,7 +295,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
     }
     ```
 
-    1.  Arguments is a JSON Schema that describes the expected arguments. 
+    1.  Arguments is a JSON Schema that describes the expected arguments.
         It was generated based on the `RequestArguments` class we defined
     2.  Required arguments have been specified in the schema
     3.  Results is a JSON Schema describing the output of the action.
@@ -430,7 +430,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
                 for item in data:
                     item["source"] = "testhttp"
                     batch_of_events.append(json.dumps(item))
-                
+
                 # Push events to Sekoia platform
                 if batch_of_events:
                     self.log(
@@ -491,7 +491,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
     }
     ```
 
-    1.  Arguments is a JSON Schema that describes the expected arguments. 
+    1.  Arguments is a JSON Schema that describes the expected arguments.
         It was generated based on the `TesthttpConnectorConfiguration` class we defined
     2.  Required arguments have been specified in the schema
 
@@ -560,7 +560,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
 
                     entries = response.json()
                     self.send_event(  # (5)!
-                        event_name=f"Pushing {len(entries)} new entries", 
+                        event_name=f"Pushing {len(entries)} new entries",
                         event=NewEntries(entries=entries),
                     )
                 except HTTPError:
@@ -576,7 +576,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
     3. Define the format of the results using the `Pydantic` lib
     4. The child triggers must define the `run` method that runs the trigger.
       This method must run forever
-      It must handle all the expected errors 
+      It must handle all the expected errors
     1. The base `Trigger` class provides a `send_event` method that allows to trigger a new event. For each playbook having this trigger a new run will be started with `event` as argument.
     2. The `log` method allows to log errors and information. Those logs are visible in the UI.
 
@@ -662,7 +662,7 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
     }
     ```
 
-    1. Arguments is a JSON Schema that describes the expected arguments. 
+    1. Arguments is a JSON Schema that describes the expected arguments.
         It was generated based on the `TriggerConfiguration` class we defined
     2. Required arguments have been specified in the schema
     3. Results is a JSON Schema describing the output of the trigger.
@@ -829,7 +829,7 @@ To check the correctness of the module the following command should be run:
 uv run python3 compliance check --module modules\<module_name>
 ```
 
-### Homologation request 
+### Homologation request
 
 Once you are done developing and testing your automation, the last step is to request an homologation to Sekoia. Once your automation is homologated, it will appear in the playbook library of **Sekoia SOC platform**:
 
