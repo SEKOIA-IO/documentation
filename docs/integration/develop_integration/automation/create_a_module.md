@@ -823,7 +823,7 @@ This step will enable you to verify different components of the module and detec
 From the root of your `SEKOIA-IO/automation-library` working copy, run the following command:
 
 ```shell
-uv --directory _utils run python compliance check --module modules/<module_name>
+uv --directory _utils run python compliance check --module "<module_name>"
 ```
 
 ### Homologation request 
