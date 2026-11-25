@@ -1,4 +1,4 @@
-# Integrations Catalog 
+# Integrations Catalog
 
 This page provides a centralized overview of all available integrations that connect your essential tools and services to Sekoia.io. Explore a range of integrations, including intake formats, event connectors, asset connectors (coming soon), and playbook triggers and actions, designed to streamline your operations and extend platform capabilities.
 
@@ -35,7 +35,7 @@ Each integration has its own detailed page, providing comprehensive information.
 
 - A description of the integration
 - Information on where it is used, allowing you to directly pivot to the playbooks intakes or asset connectors (coming soon) where the integration is active
-- An overview of its content (Event collection, asset collection, playbook actions and triggers) 
+- An overview of its content (Event collection, asset collection, playbook actions and triggers)
 - A changelog to track latest updates
 
 From this detailed listing, you can also create intakes or try playbook triggers and actions related to the integration.
@@ -53,7 +53,7 @@ To create a custom integration in Sekoia.io, you will need:
 
 ### Steps to create your custom integration
 
-1. **Install Sekoia.io Automation SDK**: Open your terminal or command prompt and run the following command `pip install sekoia-automation-sdk`
+1. **Install Sekoia.io Automation SDK**: Open your terminal or command prompt and run the following command `pip install "sekoia-automation-sdk[cli]"`
 2. **Initialize the integration**: Create an empty integration code folder using this command line. The `modules` path should be the directory where you want to store your integration: `sekoia-automation new-module modules`
 3. **Develop your integration**: From here, dive into our comprehensive developer documentation to build out the functionalities of your integration.
 
