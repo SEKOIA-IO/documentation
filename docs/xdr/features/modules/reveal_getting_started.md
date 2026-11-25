@@ -81,11 +81,12 @@ To get the most out of Reveal, combine all four data sources: telemetry for pass
 
 ## Related links
 
-- [Reveal](/xdr/features/modules/reveal_index.md) — Reveal overview and full list of capabilities.
-- [Reveal feature enablement matrix](/xdr/features/modules/reveal_feature_enablement.md) — Which data sources are required or optional for each Reveal capability.
-- [Create an asset connector](/xdr/features/modules/reveal_asset_connectors_create.md) — How to configure a connector from the integration catalog.
-- [Asset context panel](/xdr/features/investigate/asset_context_panel.md) — Core investigation surface for all clients.
-- [Points of Interest](/xdr/features/detect/points_of_interest.md) — How Reveal surfaces behavioral anomalies on assets.
-- [Endpoint Hygiene](/xdr/features/modules/reveal_hygiene.md) — How to read and interpret hygiene signals.
-- [Vulnerability enrichment](/xdr/features/modules/reveal_vulnerabilities.md) — How CVE exposure data is aggregated and scored.
-- [Attack Path Visualization](/xdr/features/investigate/attack_path_visualization.md) — How to navigate the attack path graph.
+- [Reveal](/xdr/features/modules/reveal_index.md): Reveal overview and full list of capabilities.
+- [Reveal feature enablement matrix](/xdr/features/modules/reveal_feature_enablement.md): Which data sources are required or optional for each Reveal capability.
+- [Create an asset connector](/xdr/features/modules/reveal_asset_connectors_create.md): How to configure a connector from the integration catalog.
+- [Understand passive asset discovery](/xdr/features/modules/reveal_asset_discovery.md): Overview of how Reveal creates and enriches assets from telemetry.
+- [Asset context panel](/xdr/features/investigate/asset_context_panel.md): Core investigation surface for all clients.
+- [Points of Interest](/xdr/features/detect/points_of_interest.md): How Reveal surfaces behavioral anomalies on assets.
+- [Endpoint Hygiene](/xdr/features/modules/reveal_hygiene.md): How to read and interpret hygiene signals.
+- [Vulnerability enrichment](/xdr/features/modules/reveal_vulnerabilities.md): How CVE exposure data is aggregated and scored.
+- [Attack Path Visualization](/xdr/features/investigate/attack_path_visualization.md): How to navigate the attack path graph.

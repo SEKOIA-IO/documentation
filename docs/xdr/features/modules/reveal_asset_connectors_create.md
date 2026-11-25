@@ -82,6 +82,7 @@ From the asset connector list, you can perform the following actions on any conn
 ## Related articles
 
 - [Troubleshoot asset connectors](/xdr/features/modules/reveal_asset_connectors_troubleshoot.md): How to diagnose and resolve connector errors using error indicators and logs.
+- [Map asset connector data to asset categories](/xdr/features/modules/reveal_asset_connector_category_mapping.md): Reference for the categories and properties assigned by asset connectors.
 - [Reveal feature enablement matrix](/xdr/features/modules/reveal_feature_enablement.md): Which data sources are required or optional for each Reveal capability.
 - [Getting started with Reveal](/xdr/features/modules/reveal_getting_started.md): Recommended setup order for all Reveal data sources.
 - [Integration — Asset categories](/integration/assets_categories/overview.md): Reference for available connector categories and integration setup.

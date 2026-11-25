@@ -128,5 +128,6 @@ To learn more, see [Asset context panel — Reveal capabilities](/xdr/features/m
 
 - [Asset context panel — Reveal capabilities](/xdr/features/modules/reveal_asset_context_panel.md): Vulnerability data, endpoint hygiene, security controls, points of interest, and attack path visualization.
 - [Getting started with Reveal](/xdr/features/modules/reveal_getting_started.md): How to enable Reveal and configure the required data sources.
-- [Collect — Assets](/xdr/features/collect/assets.md): How assets are configured, discovered, and managed in Sekoia.
+- [Assets](/xdr/features/collect/assets.md): Overview of the asset model shared by all Sekoia SOC platform users, including asset types, categories, criticality, and asset properties.
+- [Manage assets](/xdr/features/collect/manage_assets.md): How to review the asset inventory, apply bulk actions, and create assets manually.
 - [Points of Interest](/xdr/features/detect/points_of_interest.md): How Reveal surfaces behavioral anomalies on assets during triage and investigation.

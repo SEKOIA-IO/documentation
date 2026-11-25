@@ -142,7 +142,9 @@ nav:
       - Update a custom integration: xdr/features/collect/update_a_custom_integration.md
       - Intakes: xdr/features/collect/intakes.md
       - Entities: xdr/features/collect/entities.md
-      - Assets: xdr/features/collect/assets.md
+      - Assets:
+        - Assets overview: xdr/features/collect/assets.md
+        - Manage assets: xdr/features/collect/manage_assets.md
       - Optimization rules:
         - Optimization rules overview: xdr/features/collect/optimization_rules_overview.md
         - Create an optimization rule: xdr/features/collect/create_optimization_rule.md
@@ -202,6 +204,7 @@ nav:
         - Custom verdicts: xdr/features/investigate/custom_verdicts.md
         - Custom priorities: xdr/features/investigate/custom_priorities.md
       - Asset Context Panel: xdr/features/investigate/asset_context_panel.md
+      - Investigate assets: xdr/features/investigate/investigate_assets.md
       - Interpret asset risk scores: xdr/features/modules/interpret_asset_risk_scores.md
       - Events Query Language: xdr/features/investigate/events_query_language.md
       - Querying Events: xdr/features/investigate/querying_events.md
@@ -276,10 +279,12 @@ nav:
     - Get started with Reveal:
       - Reveal quick start guide: xdr/features/modules/reveal_getting_started.md
       - Reveal enablement matrix: xdr/features/modules/reveal_feature_enablement.md
+      - Understand passive asset discovery: xdr/features/modules/reveal_asset_discovery.md
     - Asset connectors:
       - Create asset connectors: xdr/features/modules/reveal_asset_connectors_create.md
       - Check asset connector health: xdr/features/collect/asset_connector_health.md
       - Troubleshoot asset connectors: xdr/features/modules/reveal_asset_connectors_troubleshoot.md
+      - Map asset connector data to asset categories: xdr/features/modules/reveal_asset_connector_category_mapping.md
     - Investigate assets:
       - Explore assets context: xdr/features/modules/reveal_asset_context_panel.md
       - Asset risk scoring: xdr/features/modules/asset_risk_scoring.md

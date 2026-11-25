@@ -48,8 +48,8 @@ To initiate or check the status of your workspace migration, contact your Custom
 
 ## Related articles
 
-- [Data storage and retention](/xdr/FAQ/data_storage_retention.md) — Overview of both storage models and region availability.
-- [Migrate your workspace to ExaLog](/xdr/FAQ/migrate_workspace_to_exalog.md) — Step-by-step guide to checking your current storage model and requesting a migration.
-- [Events page](/xdr/features/investigate/events.md) — How to search and filter events in the Sekoia.io investigation interface.
-- [Understand massive event export](/xdr/features/investigate/event_export.md) — How to export large volumes of events to an external S3-compatible storage.
-- [Retrohunt](/xdr/features/detect/rules_catalog.md) — How to run retrohunt queries across historical event data to identify past threats.
+- [Data storage and retention](/xdr/FAQ/data_storage_retention.md): Overview of both storage models and region availability.
+- [Migrate your workspace to ExaLog](/xdr/FAQ/migrate_workspace_to_exalog.md): Step-by-step guide to checking your current storage model and requesting a migration.
+- [Events page](/xdr/features/investigate/events.md): How to search and filter events in the Sekoia.io investigation interface.
+- [Understand massive event export](/xdr/features/investigate/event_export.md): How to export large volumes of events to an external S3-compatible storage.
+- [Retrohunt](/xdr/features/detect/rules_catalog.md): How to run retrohunt queries across historical event data to identify past threats.
