@@ -1,8 +1,7 @@
 import requests
-from requests.adapters import HTTPAdapter
-from urllib3.util import Retry
+from requests.adapters import HTTPAdapter, Retry
 
-from constants import API_URL, BULK_SIZE, PREFIXES, RETRIES, RETRY_STATUSES, TIMEOUT
+from constants import API_URL, BULK_SIZE, ERROR_TEXT_LENGTH, PREFIXES, RETRIES, RETRY_STATUSES, TIMEOUT
 
 
 class GitBookError(Exception):
@@ -32,8 +31,15 @@ class GitBookClient:
         except requests.RequestException as error:
             raise GitBookError(f"{method} {path} failed: {error}") from error
         if not response.ok:
-            raise GitBookError(f"{method} {path} failed ({response.status_code}): {response.text}")
-        return response.json() if response.content else {}
+            raise GitBookError(f"{method} {path} failed ({response.status_code}): {response.text[:ERROR_TEXT_LENGTH]}")
+        if not response.content:
+            return {}
+        try:
+            return response.json()
+        except ValueError as error:
+            raise GitBookError(
+                f"{method} {path} returned a non-JSON body: {response.text[:ERROR_TEXT_LENGTH]}"
+            ) from error
 
     def list_pages(self, space: str) -> dict[str, str]:
         """
@@ -65,7 +71,7 @@ class GitBookClient:
         while True:
             response = self.request("GET", f"/orgs/{org}/sites/{site}/redirects", params=params)
             for item in response.get("items", []):
-                if bool(item.get("draft")) == draft and item["source"].startswith(tuple(PREFIXES.values())):
+                if bool(item.get("draft")) == draft and item.get("source", "").startswith(tuple(PREFIXES.values())):
                     redirects[item["source"]] = item["destination"]
             next_page = (response.get("next") or {}).get("page")
             if not next_page:
@@ -76,8 +82,8 @@ class GitBookClient:
         """
         Push the operations as draft redirects, in batches, and return the failed items.
 
-        Batches are independent: a failing batch does not stop the next ones, its items are
-        reported as errors. The synchronization is idempotent, so a rerun applies what is left.
+        Batches are independent: a failing batch does not stop the next ones, it is reported
+        as a single error. The synchronization is idempotent, so a rerun applies what is left.
         """
         errors = []
         for i in range(0, len(operations), BULK_SIZE):
@@ -85,7 +91,7 @@ class GitBookClient:
             try:
                 response = self.request("PUT", f"/orgs/{org}/sites/{site}/redirects", body={"redirects": batch})
             except GitBookError as error:
-                errors += [{"source": operation["source"], "error": str(error)} for operation in batch]
+                errors.append({"source": f"batch {i // BULK_SIZE + 1} ({len(batch)} redirects)", "error": str(error)})
                 continue
             errors += [result for result in response.get("results", []) if result.get("status") == "error"]
         return errors

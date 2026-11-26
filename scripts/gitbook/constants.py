@@ -10,6 +10,7 @@ PREFIXES = {
 TIMEOUT = 30  # seconds
 RETRIES = 3
 RETRY_STATUSES = (429, 500, 502, 503, 504)
+ERROR_TEXT_LENGTH = 500  # characters of the response body kept in error messages
 
 # safety guards: above these shares, --apply is refused unless --force is given
 MAX_MISSING_PAGES_RATIO = 0.2  # share of uuids whose file has no GitBook page

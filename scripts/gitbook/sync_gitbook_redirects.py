@@ -21,7 +21,7 @@ LATE_UUID_RE = re.compile(rf"^\s*uuid:.*{UUID_RE.pattern}", re.MULTILINE)
 
 def read_metadata(path: Path) -> dict[str, str]:
     metadata: dict[str, str] = {}
-    with path.open() as f:
+    with path.open(encoding="utf-8") as f:
         for _, line in zip(range(METADATA_LINES), f):
             line = line.strip()
             if not re.match(r"(uuid|name|type):", line):
@@ -35,23 +35,27 @@ def has_late_uuid(path: Path) -> bool:
     """
     Return True when an `uuid:` line holding a uuid exists after the lines read by `read_metadata`
     """
-    with path.open() as f:
+    with path.open(encoding="utf-8", errors="replace") as f:
         lines = f.readlines()[METADATA_LINES:]
     return LATE_UUID_RE.search("".join(lines)) is not None
 
 
-def collect_uuids(docs_dir: Path) -> dict[str, tuple[str, str]]:
+def collect_uuids(docs_dir: Path, issues: list[str] | None = None) -> dict[str, tuple[str, str]]:
     """
     Return {source path: (repository file path, type)}
+
+    Pages whose uuid cannot be read (metadata after the first lines, malformed uuid) are
+    skipped and reported in `issues`, as they would otherwise lose their redirect silently.
     """
     redirects: dict[str, tuple[str, str]] = {}
+    issues = issues if issues is not None else []
 
     for path in sorted(docs_dir.rglob("*.md", recurse_symlinks=True)):
         metadata = read_metadata(path)
         git_path = path.relative_to(REPOSITORY).as_posix()
         if "uuid" not in metadata:
             if has_late_uuid(path):
-                print(f"! {git_path}: `uuid:` found after the first {METADATA_LINES} lines, ignored")
+                issues.append(f"{git_path}: `uuid:` found after the first {METADATA_LINES} lines")
             continue
 
         kind = metadata.get("type", "").lower().partition(" ")[0]
@@ -61,7 +65,12 @@ def collect_uuids(docs_dir: Path) -> dict[str, tuple[str, str]]:
         if kind not in PREFIXES:
             continue
 
-        for uuid in UUID_RE.findall(metadata["uuid"]):
+        uuids = UUID_RE.findall(metadata["uuid"])
+        if not uuids:
+            issues.append(f"{git_path}: no valid uuid in `uuid: {metadata['uuid']}`")
+            continue
+
+        for uuid in uuids:
             # keep the original case, as the mkdocs plugin did
             source = PREFIXES[kind] + uuid
             # several pages can share a format: as the mkdocs plugin, the last one wins
@@ -98,6 +107,9 @@ def main(org: str, site: str, space: str, site_space: str, apply: bool, no_delet
     It replaces the mkdocs plugin `plugins/integration_by_uuid.py`: every page holding an
     `uuid` metadata gets a redirect `/<prefix>/uuid/<uuid>` pointing to the GitBook page.
 
+    Pages are matched to GitBook pages by their path in the repository, so the script must
+    run from a checkout of the branch the space is Git-synced with.
+
     Redirects are only pushed as drafts: they have to be enabled from the GitBook UI
     (Site > Settings > Redirects > Draft). Live redirects are read to avoid duplicates,
     but never modified.
@@ -129,7 +141,8 @@ def sync(
     no_delete: bool,
     force: bool,
 ):
-    wanted = collect_uuids(DOCS_DIR)
+    issues: list[str] = []
+    wanted = collect_uuids(DOCS_DIR, issues)
     if not wanted:
         # protects the existing redirects from a wrong DOCS_DIR or an incomplete checkout
         raise click.ClickException(f"no uuid found in {DOCS_DIR}, refusing to synchronize")
@@ -169,6 +182,11 @@ def sync(
             print(f"- {source}")
             operations.append({"source": source, "destination": None})
 
+    if issues:
+        print(f"\n{len(issues)} page(s) with unreadable uuid (skipped):")
+        for line in issues:
+            print(f"  {line}")
+
     if missing_pages:
         print(f"\n{len(missing_pages)} uuid(s) without GitBook page (skipped):")
         for line in missing_pages:
@@ -184,7 +202,7 @@ def sync(
         f"\n{len(wanted)} uuids: {created} to create, {updated} to update, {deleted} to delete, {unchanged} unchanged"
     )
 
-    warnings = check_guards(wanted, pages, missing_pages, deleted, len(set(drafts) | set(live)))
+    warnings = check_guards(wanted, pages, missing_pages, deleted, issues)
     for warning in warnings:
         print(f"\n! {warning}")
 
@@ -213,12 +231,15 @@ def check_guards(
     pages: dict[str, str],
     missing_pages: list[str],
     deleted: int,
-    managed: int,
+    issues: list[str],
 ) -> list[str]:
     """
     Return the reasons to refuse pushing the changes
     """
     warnings = []
+
+    if issues:
+        warnings.append(f"{len(issues)} page(s) have an unreadable uuid: their redirects would be deleted.")
 
     if len(missing_pages) > MAX_MISSING_PAGES_RATIO * len(wanted):
         expected = next(iter(wanted.values()))[0]
@@ -226,11 +247,12 @@ def check_guards(
         warnings.append(
             f"{len(missing_pages)}/{len(wanted)} uuids have no GitBook page: the repository paths "
             f"(e.g. {expected}) probably do not match the GitBook git paths (e.g. {example}). "
-            "Check the Git Sync root of the space."
+            "Check that this checkout is the branch the space is synced with."
         )
 
-    if deleted > MAX_DELETE_RATIO * managed:
-        warnings.append(f"{deleted}/{managed} managed redirects would be deleted.")
+    # compared to the pages of this checkout: a partial checkout makes many drafts orphans
+    if deleted > MAX_DELETE_RATIO * len(wanted):
+        warnings.append(f"{deleted} draft redirect(s) would be deleted for {len(wanted)} uuids.")
 
     return warnings
 

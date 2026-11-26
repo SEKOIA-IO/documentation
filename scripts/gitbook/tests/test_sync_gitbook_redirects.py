@@ -106,11 +106,21 @@ class CollectUuidsTests(RepositoryTestCase):
 
     def test_late_uuid_is_reported(self):
         self.write("a.md", "\n" * 15 + f"uuid: {INTAKE_UUID}\ntype: intake\n")
+        issues: list[str] = []
 
-        with mock.patch("builtins.print") as printed:
-            self.assertEqual(collect_uuids(self.docs_dir), {})
+        self.assertEqual(collect_uuids(self.docs_dir, issues), {})
 
-        self.assertIn("after the first 10 lines", printed.call_args.args[0])
+        self.assertEqual(len(issues), 1)
+        self.assertIn("docs/integration/a.md: `uuid:` found after the first 10 lines", issues[0])
+
+    def test_malformed_uuid_is_reported(self):
+        self.write("a.md", f"uuid: {INTAKE_UUID[:-1]}\ntype: intake\n")
+        issues: list[str] = []
+
+        self.assertEqual(collect_uuids(self.docs_dir, issues), {})
+
+        self.assertEqual(len(issues), 1)
+        self.assertIn("docs/integration/a.md: no valid uuid", issues[0])
 
     def test_shared_uuid_keeps_the_last_page(self):
         self.write("categories/network/opnsense.md", f"uuid: {INTAKE_UUID}\ntype: intake\n")
@@ -166,6 +176,20 @@ class GitBookClientTests(unittest.TestCase):
         self.session_request.return_value = response(status=404)
         with self.assertRaises(GitBookError):
             self.client.request("GET", "/spaces/abc/content/pages")
+
+    def test_non_json_body_raises(self):
+        self.session_request.return_value = mock.Mock(
+            ok=True, status_code=200, content=b"<html>", text="<html>", json=mock.Mock(side_effect=ValueError)
+        )
+        with self.assertRaises(GitBookError) as context:
+            self.client.request("GET", "/spaces/abc/content/pages")
+        self.assertIn("non-JSON body", str(context.exception))
+
+    def test_error_text_is_truncated(self):
+        self.session_request.return_value = mock.Mock(ok=False, status_code=400, text="x" * 2000)
+        with self.assertRaises(GitBookError) as context:
+            self.client.request("GET", "/spaces/abc/content/pages")
+        self.assertLess(len(str(context.exception)), 700)
 
     def test_connection_error_raises(self):
         self.session_request.side_effect = requests.ConnectionError("timed out")
@@ -246,7 +270,9 @@ class GitBookClientTests(unittest.TestCase):
         errors = self.client.push_draft_redirects("org", "site", operations)
 
         self.assertEqual(self.session_request.call_count, 2)
-        self.assertEqual(len(errors), 500)
+        self.assertEqual(len(errors), 1)
+        self.assertEqual(errors[0]["source"], "batch 1 (500 redirects)")
+        self.assertIn("failed (500)", errors[0]["error"])
 
 
 class MainTests(RepositoryTestCase):
@@ -390,7 +416,7 @@ class MainTests(RepositoryTestCase):
         dry_run = self.run_main()
         self.assertEqual(dry_run.exit_code, 0, dry_run.output)
         self.assertIn("1/3 uuids have no GitBook page", dry_run.output)
-        self.assertIn("Check the Git Sync root", dry_run.output)
+        self.assertIn("Check that this checkout is the branch", dry_run.output)
 
         refused = self.run_main("--apply")
         self.assertEqual(refused.exit_code, 1)
@@ -406,10 +432,22 @@ class MainTests(RepositoryTestCase):
 
         refused = self.run_main("--apply")
         self.assertEqual(refused.exit_code, 1)
-        self.assertIn("1/2 managed redirects would be deleted", refused.output)
+        self.assertIn("1 draft redirect(s) would be deleted for 3 uuids", refused.output)
         self.client.push_draft_redirects.assert_not_called()
 
         self.assertEqual(self.run_main("--apply", "--no-delete").exit_code, 0)
+
+    def test_unreadable_uuid_guard(self):
+        self.write("late.md", "\n" * 15 + f"uuid: {PLAYBOOK_UUID}\ntype: intake\n")
+
+        dry_run = self.run_main()
+        self.assertEqual(dry_run.exit_code, 0, dry_run.output)
+        self.assertIn("1 page(s) with unreadable uuid", dry_run.output)
+
+        refused = self.run_main("--apply")
+        self.assertEqual(refused.exit_code, 1)
+        self.assertIn("safety guard triggered", refused.output)
+        self.client.push_draft_redirects.assert_not_called()
 
     def test_api_failure_is_reported(self):
         self.client.list_pages.side_effect = GitBookError("GET /spaces/space/content/pages failed (401): denied")
