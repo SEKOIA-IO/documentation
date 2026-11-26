@@ -187,6 +187,7 @@ def plan_page_includes(
     """Compute the page rewrites without writing; return the new contents and the broken includes."""
     changes: Dict[Path, str] = {}
     broken: List[str] = []
+    normalised_includes_path = Path(os.path.normpath(includes_path))
 
     for page in sorted(section_path.rglob("*.md")):
         if page.is_symlink():
@@ -207,7 +208,7 @@ def plan_page_includes(
 
         for match in GITBOOK_INCLUDE_PATTERN.finditer(new_content):
             target = Path(os.path.normpath(page.parent / match["path"]))
-            if target.parent != includes_path or target.name not in block_names:
+            if target.parent != normalised_includes_path or target.name not in block_names:
                 broken.append(f"{relative_page.as_posix()} -> {match['path']}")
 
     return changes, broken
@@ -233,9 +234,8 @@ def update_asset_doc(
         problems.append(f"duplicate asset connectors skipped: {', '.join(duplicates)}")
     if broken:
         problems.append(f"broken asset connector includes, nothing written: {', '.join(broken)}")
-    for problem in problems:
-        print(f"Error: {problem}")
-    if broken:
+        for problem in problems:
+            print(f"Error: {problem}")
         return problems
 
     written, removed = write_includes(connectors, includes_path)
@@ -246,6 +246,8 @@ def update_asset_doc(
     location = includes_path.relative_to(documentation_repository)
     print(f"Generated {len(written)} includes in {location} ({len(removed)} stale removed)")
     print(f"Rewrote includes in {len(changes)} pages")
+    for problem in problems:
+        print(f"Error: {problem}")
     return problems
 
 

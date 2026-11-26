@@ -142,13 +142,19 @@ class LoadAssetConnectorsTests(unittest.TestCase):
         self.assertEqual(connector["mapping"], {})
 
     def test_null_slug_falls_back_to_the_folder_name(self):
-        module = write_module(
-            self.repository, "Okta", "okta",
-            {"connector_okta_user_assets.json": connector_config("Okta Users", "account_detection")}, {"user": MAPPING},
-        )
-        (module / "manifest.json").write_text(json.dumps({"slug": None, "name": "Okta"}))
-        [connector], _ = self.load()
-        self.assertEqual((connector["module_slug"], connector["output_name"]), ("okta", "okta_user.md"))
+        for slug in (None, ""):
+            with self.subTest(slug=slug):
+                directory = tempfile.TemporaryDirectory()
+                self.addCleanup(directory.cleanup)
+                self.repository = Path(directory.name)
+                module = write_module(
+                    self.repository, "Okta", "okta",
+                    {"connector_okta_user_assets.json": connector_config("Okta Users", "account_detection")},
+                    {"user": MAPPING},
+                )
+                (module / "manifest.json").write_text(json.dumps({"slug": slug, "name": "Okta"}))
+                [connector], _ = self.load()
+                self.assertEqual((connector["module_slug"], connector["output_name"]), ("okta", "okta_user.md"))
 
 
 def make_connector(mapping: dict, name: str = "Okta Users") -> dict:
@@ -531,10 +537,19 @@ class UpdateAssetDocTests(unittest.TestCase):
         poc_page = self.documentation / "docs" / "integration" / "assets_categories" / "device" / "okta_device.md"
         poc_page.parent.mkdir(parents=True)
         poc_page.write_text(ESCAPED)
-        self.run_generator("docs/integration")
+        _, problems = self.run_generator("docs/integration")
+        self.assertEqual(problems, [])
         includes = self.documentation / "docs" / "integration" / generator.INCLUDES_SUBDIR
         self.assertTrue((includes / "okta_user.md").is_file())
         self.assertEqual(poc_page.read_text(), '{% include "../../.gitbook/includes/asset_connectors/okta_user.md" %}')
+
+    def test_documentation_path_with_dot_dot_is_accepted(self):
+        (self.root / "x").mkdir()
+        output = io.StringIO()
+        with redirect_stdout(output):
+            problems = generator.update_asset_doc(str(self.library), str(self.root / "x" / ".." / "documentation"))
+        self.assertEqual(problems, [])
+        self.assertEqual(self.page.read_text(), f"# Okta\n\n{OKTA_INCLUDE}\n")
 
     def test_missing_section_root_raises(self):
         with self.assertRaises(FileNotFoundError):
@@ -618,6 +633,7 @@ class UpdateAssetDocTests(unittest.TestCase):
             problems, ["duplicate asset connectors skipped: okta_user.md (connector_okta_users_bis_assets.json)"]
         )
         self.assertIn("Error: duplicate asset connectors skipped: okta_user.md", output)
+        self.assertTrue(output.rstrip().splitlines()[-1].startswith("Error: duplicate asset connectors skipped:"))
         block = (self.documentation / "docs" / generator.INCLUDES_SUBDIR / "okta_user.md").read_text(encoding="utf-8")
         self.assertIn("## OCSF Mapping for Okta Users\n", block)
         self.assertEqual(self.page.read_text(), f"# Okta\n\n{OKTA_INCLUDE}\n")
