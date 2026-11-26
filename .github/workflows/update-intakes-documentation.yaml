@@ -3,11 +3,15 @@ on:
   workflow_dispatch:
   repository_dispatch:
     types: [rebuild-intake-documentation]
+  pull_request:
+    paths:
+      - scripts/update_mkdocs/**
 
 permissions: {}
 
 jobs:
   build:
+    if: github.event_name != 'pull_request'
     permissions:
       contents: write  # for peter-evans/create-pull-request to create branch
       pull-requests: write  # for peter-evans/create-pull-request to create a PR
@@ -35,20 +39,49 @@ jobs:
       with:
         python-version: '3.14'
 
-    - name: Refresh intakes documentation
+    - name: Refresh GitBook intakes documentation
       run: |
-        rm -rf ../../_shared_content/operations_center/integrations/generated/*.md
-        uv run python update_mkdocs.py "$GITHUB_WORKSPACE/intakes" "$GITHUB_WORKSPACE/main"
+        uv run python update_gitbook.py "$GITHUB_WORKSPACE/intakes" "$GITHUB_WORKSPACE/main"
+      working-directory: ./main/scripts/update_mkdocs
+
+    - name: Run intake documentation tests
+      run: |
+        uv run python -m unittest discover -s tests -v
       working-directory: ./main/scripts/update_mkdocs
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
       with:
-        commit-message: Refresh intakes documentation
+        commit-message: Refresh intakes documentation (GitBook)
         delete-branch: true
-        title: Refresh intakes documentation
+        title: Refresh intakes documentation (GitBook)
         base: main
         path: ./main
         branch: update-intake-documentation
         body: |
-          Refresh intakes documentation
+          Refresh intakes documentation (GitBook)
+
+  tests:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout `documentation` repository under `main/`
+      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      with:
+        path: main
+
+    - name: Install uv
+      uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+      with:
+        enable-cache: true
+
+    - name: Setup Python
+      uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+      id: setup-python
+      with:
+        python-version: '3.14'
+
+    - name: Run intake documentation tests
+      run: |
+        uv run python -m unittest discover -s tests -v
+      working-directory: ./main/scripts/update_mkdocs

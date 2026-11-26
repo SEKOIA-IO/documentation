@@ -7,7 +7,7 @@ In this section, you will find examples of raw logs as generated natively by the
 
 {% for sample in samples %}
 === "{{sample['name']}}"
-{% if is_sample_json %}
+{% if sample['is_json'] %}
 
     ```json
 	{% filter indent(width=4) %}{{sample['content']}}{% endfilter %}
