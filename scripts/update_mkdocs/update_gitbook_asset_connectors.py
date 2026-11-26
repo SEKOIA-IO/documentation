@@ -60,7 +60,7 @@ def load_asset_connectors(automation_library_repository: str) -> Tuple[List[Dict
         with open(manifest_path, "r", encoding="utf-8") as fd:
             module_manifest = json.load(fd)
 
-        module_slug = module_manifest.get("slug", module_path.name.lower())
+        module_slug = module_manifest.get("slug") or module_path.name.lower()
 
         asset_connector_path = find_asset_connectors_folder(module_path)
         if not asset_connector_path:
@@ -147,16 +147,17 @@ TEMPLATE_ENVIRONMENT.filters.update(
 def generate_connector_doc(connector: Dict) -> str:
     config = connector["config"]
     module_slug = connector["module_slug"]
+    connector_name = config.get("name") or module_slug
 
     body = TEMPLATE_ENVIRONMENT.get_template("asset_connector_gitbook.md.jinja").render(
-        config=config,
+        connector_name=connector_name,
         mapping=connector["mapping"],
         module_slug=module_slug,
         asset_type=connector["asset_type"],
     )
 
     front_matter = yaml.safe_dump(
-        {"title": f"{config.get('name', module_slug)} OCSF mapping"}, sort_keys=False, allow_unicode=True, width=1000
+        {"title": f"{connector_name} OCSF mapping"}, sort_keys=False, allow_unicode=True, width=1000
     )
     return "---\n" + front_matter + "---\n\n" + body
 

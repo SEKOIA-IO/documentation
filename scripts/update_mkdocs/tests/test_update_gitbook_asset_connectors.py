@@ -141,6 +141,15 @@ class LoadAssetConnectorsTests(unittest.TestCase):
         [connector], _ = self.load()
         self.assertEqual(connector["mapping"], {})
 
+    def test_null_slug_falls_back_to_the_folder_name(self):
+        module = write_module(
+            self.repository, "Okta", "okta",
+            {"connector_okta_user_assets.json": connector_config("Okta Users", "account_detection")}, {"user": MAPPING},
+        )
+        (module / "manifest.json").write_text(json.dumps({"slug": None, "name": "Okta"}))
+        [connector], _ = self.load()
+        self.assertEqual((connector["module_slug"], connector["output_name"]), ("okta", "okta_user.md"))
+
 
 def make_connector(mapping: dict, name: str = "Okta Users") -> dict:
     return {
@@ -178,6 +187,27 @@ class GenerateConnectorDocTests(unittest.TestCase):
     def test_title_with_yaml_special_characters(self):
         content = self.render(name='Foo: "Bar" #1')
         self.assertEqual(front_matter(content)["title"], 'Foo: "Bar" #1 OCSF mapping')
+
+    def test_names_are_escaped(self):
+        mapping = {
+            **MAPPING["mapping"],
+            "samples": [{"name": "Sample {% x %} <b>", "data": "{}"}],
+            "ocsf_samples": [{"name": "OCSF {{ y }}", "data": "{}"}],
+        }
+        content = self.render(mapping, name="A {{x}} <b>")
+        self.assertIn("## OCSF Mapping for A \\{\\{x}} \\<b>\n", content)
+        self.assertIn("The A \\{\\{x}} \\<b> fetches", content)
+        self.assertIn("#### Sample \\{% x %} \\<b>\n", content)
+        self.assertIn("#### OCSF \\{\\{ y }}\n", content)
+
+    def test_missing_connector_name_falls_back_to_the_slug(self):
+        for config in ({"name": None}, {"name": ""}, {}):
+            with self.subTest(config=config):
+                content = generator.generate_connector_doc({**make_connector(MAPPING["mapping"]), "config": config})
+                self.assertEqual(front_matter(content), {"title": "okta OCSF mapping"})
+                self.assertIn("## OCSF Mapping for okta\n", content)
+                self.assertIn("The okta fetches", content)
+                self.assertNotIn("None", content)
 
     def test_ocsf_header(self):
         content = self.render()
