@@ -87,6 +87,51 @@ Restarting the single controller pod recovered the affected deployment. Apply th
 
     After ArgoCD refreshes the application health, the expected output is `Synced | Healthy`. A new synchronization is not required to restart the controller pod.
 
+## PostgreSQL replica creation blocks installation
+
+### Identify the issue
+
+During installation, the self-hosted-controller (SHC) module `PlatformInstallation` fails because the platform installer cannot complete the `CNPGClusters` step. The logs contain:
+
+```text
+[critical ] Provisioners failed: CNPGClusters; can't go further
+[error    ] Platform installer container failed; inspect the pod logs for the failing step
+```
+
+An affected PostgreSQL cluster stays in `Creating a new replica` with one ready primary. Its replica initialization job repeatedly reports `role "streaming_replica" does not exist`. The primary logs report `Unable to update PostgreSQL roles and permissions` with `permission denied to create role`.
+
+### Resolve the issue
+
+From a host with `kubectl` access, recreate the missing role and its `pg_rewind` permissions on the primary. This example targets `sic-pg-cluster` in `support`; adapt the cluster name and namespace if needed.
+
+```bash
+CNPG_PRIMARY=$(kubectl -n support get cluster sic-pg-cluster -o jsonpath='{.status.currentPrimary}')
+kubectl -n support exec -i "$CNPG_PRIMARY" -c postgres -- \
+  psql -X -v ON_ERROR_STOP=1 -U postgres -d postgres <<'SQL'
+BEGIN;
+CREATE ROLE streaming_replica WITH LOGIN REPLICATION;
+GRANT EXECUTE ON FUNCTION
+  pg_catalog.pg_ls_dir(text, boolean, boolean),
+  pg_catalog.pg_stat_file(text, boolean),
+  pg_catalog.pg_read_binary_file(text),
+  pg_catalog.pg_read_binary_file(text, bigint, bigint, boolean)
+TO streaming_replica;
+COMMIT;
+SQL
+```
+
+The replica initialization job retries automatically. No pod restart or volume deletion is needed. To verify recovery, run:
+
+```bash
+kubectl -n support wait cluster/sic-pg-cluster --for=condition=Ready --timeout=600s
+```
+
+Once the cluster is ready, run `exec Install` again in the SHC. If recovery times out, inspect the replica initialization job logs and contact Sekoia support.
+
+### Why it happens
+
+This issue was observed with CNPG 1.25.4. The likely cause is a shared monitoring connection retaining `SET ROLE pg_monitor`. When initialization reuses that connection, it lacks permission to create the replication role. CNPG logs the failure without retrying the permission setup during the same server run, leaving the primary operational and replica creation blocked.
+
 ## Related links
 
 - [Strimzi issue #12760](https://github.com/strimzi/strimzi-kafka-operator/issues/12760): Upstream report of a controller registration failure after startup.
