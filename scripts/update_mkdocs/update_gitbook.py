@@ -4,204 +4,125 @@ Usage: python3 update_gitbook.py /path/to/repository/intake-formats /path/to/rep
 """
 
 import argparse
-import json
-from collections import defaultdict
+import re
 from pathlib import Path
-from typing import Dict, List
+from typing import Optional
 
 import yaml
 from jinja2 import Environment, FileSystemLoader
 
+from intake_common import load_intakes
+
 SCRIPT_DIR = Path(__file__).resolve().parent
 
-with open(SCRIPT_DIR / "ecs_flat.yml", "r") as fd:
-    ECS = yaml.safe_load(fd)
+
+def _escape_markdown_table_cell(value: object) -> str:
+    return str(value).replace("|", "\\|").replace("\n", "<br/>")
 
 
-def is_valid_json(s):
-    try:
-        json.loads(s)
-        return True
-    except ValueError:
-        return False
+def _escape_gitbook_tokens(content: str) -> str:
+    return (
+        content.replace("{{", "&#123;&#123;")
+        .replace("{%", "&#123;%")
+        .replace("{#", "&#123;#")
+    )
 
 
-def analyze_parser(parser, custom_fields) -> Dict:
-    taxonomy = ECS.copy()
-    taxonomy.update(custom_fields or {})
-    # extract all the fields
-    fields = defaultdict(set)
-    kind_values = set()
-    category_values = set()
-    type_values = set()
-
-    for stage_name, stage_definition in parser["stages"].items():
-        for action in stage_definition.get("actions", []):
-            for field in action.get("set", {}):
-                if not isinstance(action["set"][field], list):
-                    field_values = [action["set"][field]]
-                else:
-                    field_values = action["set"][field]
-
-                fields[field].update(field_values)
-
-                if field in ("event.type", "event.category", "event.kind"):
-                    for field_value in field_values:
-                        if "{" in field_value:
-                            continue
-
-                        if field == "event.type":
-                            type_values.add(field_value)
-                        elif field == "event.kind":
-                            kind_values.add(field_value)
-                        elif field == "event.category":
-                            category_values.add(field_value)
-
-    return {
-        "fields": [
-            {
-                "name": field,
-                "type": taxonomy[field]["type"],
-                "short": taxonomy[field].get(
-                    "short", taxonomy[field].get("description", "-")
-                ),
-            }
-            for field in sorted(fields.keys())
-            if field in taxonomy
-        ],
-        "category": sorted(category_values),
-        "type": sorted(type_values),
-        "kind": sorted(kind_values),
-    }
+def _build_code_block(content: str, language: str) -> str:
+    longest_run = max((len(run) for run in re.findall(r"`+", content)), default=0)
+    fence = "`" * max(3, longest_run + 1)
+    escaped_content = _escape_gitbook_tokens(content)
+    return f"{fence}{language}\n{escaped_content}\n{fence}"
 
 
-def load_intakes(intake_repository: str) -> List[Dict]:
-    intakes: List[Dict] = []
-
-    for module_path in Path(intake_repository).iterdir():
-        if not module_path.is_dir() or module_path.name.startswith("."):
-            continue
-
-        for intake_path in module_path.iterdir():
-            if not module_path.is_dir() or module_path.name.startswith("_"):
-                continue
-
-            # load manifest
-            intake_manifest = intake_path / "_meta" / "manifest.yml"
-            if not intake_manifest.exists():
-                continue
-
-            intake = {"repo_path": f"{module_path.name}/{intake_path.name}"}
-            with open(intake_manifest, "r") as fd:
-                intake["manifest"] = yaml.safe_load(fd)
-
-            # load fields
-            intake_fields = intake_path / "_meta" / "fields.yml"
-            if intake_fields.exists():
-                with open(intake_fields, "r") as fd:
-                    intake["fields"] = yaml.safe_load(fd) or {}
-            else:
-                intake["fields"] = {}
-
-            # load parser
-            intake_parser = intake_path / "ingest" / "parser.yml"
-            if intake_parser.exists():
-                with open(intake_parser, "r") as fd:
-                    intake["parser"] = analyze_parser(
-                        yaml.safe_load(fd), intake["fields"]
-                    )
-            else:
-                intake["parser"] = {}
-
-            # load tests
-            intake_tests = intake_path / "tests"
-            intake["tests"] = []
-            intake["samples"] = []
-            intake["is_sample_json"] = False
-            if intake_tests.exists():
-                for intake_test in sorted(intake_tests.iterdir()):
-                    if not intake_test.name.endswith(".json"):
-                        continue
-
-                    with open(intake_test, "r") as fd:
-                        test = json.load(fd)
-                        intake["is_sample_json"] = is_valid_json(
-                            test["expected"]["message"]
-                        )
-                        content = (
-                            json.dumps(
-                                json.loads(test["expected"]["message"]), indent="    "
-                            )
-                            if intake["is_sample_json"]
-                            else test["expected"]["message"]
-                        )
-                        intake["samples"].append(
-                            {
-                                "name": intake_test.name.split(".")[0],
-                                "content": content,
-                                "is_json": intake["is_sample_json"],
-                            }
-                        )
-                        intake["tests"].append(
-                            {
-                                "name": intake_test.name,
-                                "content": json.dumps(test["expected"], indent="    "),
-                            }
-                        )
-
-            # load logo
-            logo_path = intake_path / "_meta" / "logo.png"
-            if logo_path.exists():
-                with open(logo_path, "rb") as fd:
-                    intake["logo"] = fd.read()
-
-            intakes.append(intake)
-
-    return intakes
+def _prepare_intake(intake: dict) -> dict:
+    prepared = dict(intake)
+    data_sources = intake["manifest"].get("data_sources", {})
+    if not isinstance(data_sources, dict):
+        data_sources = {}
+    prepared["data_sources"] = [
+        {"name": name, "description": _escape_markdown_table_cell(description)}
+        for name, description in data_sources.items()
+    ]
+    prepared["tests"] = [
+        {**test, "rendered_content": _build_code_block(test["content"], "json")}
+        for test in intake["tests"]
+    ]
+    prepared["samples"] = [
+        {
+            **sample,
+            "rendered_content": _build_code_block(
+                sample["content"], "json" if sample["is_json"] else "text"
+            ),
+        }
+        for sample in intake["samples"]
+    ]
+    return prepared
 
 
-def generate_intake_doc(intake: Dict) -> str:
+def generate_intake_doc(intake: dict) -> str:
     file_loader = FileSystemLoader(SCRIPT_DIR / "templates")
     env = Environment(loader=file_loader)
 
-    template = env.get_template("intake.md.jinja")
+    template = env.get_template("intake_gitbook.md.jinja")
     return template.render(
         manifest=intake["manifest"],
         fields=intake["fields"],
         parser=intake["parser"],
         tests=intake["tests"],
+        data_sources=intake["data_sources"],
         repo_path=intake["repo_path"],
     )
 
 # Samples doc generation
 
-def generate_sample_intake_doc(intake: Dict) -> str:
+def generate_sample_intake_doc(intake: dict) -> str:
     file_loader = FileSystemLoader(SCRIPT_DIR / "templates")
     env = Environment(loader=file_loader)
 
-    template = env.get_template("sample.md.jinja")
+    template = env.get_template("sample_gitbook.md.jinja")
     return template.render(
-        manifest=intake["manifest"],
-        fields=intake["fields"],
-        parser=intake["parser"],
-        is_sample_json=intake["is_sample_json"],
         samples=intake["samples"],
-        repo_path=intake["repo_path"],
     )
 
-def update_doc(intake_repository: str, documentation_repository: str, section_root: str = "docs"):
 
-    doc_path = Path(documentation_repository) / section_root
+def _resolve_section_root(
+    documentation_repository: str, section_root: Optional[str]
+) -> str:
+    if section_root:
+        return section_root
+
+    config_path = Path(documentation_repository) / ".gitbook.yaml"
+    if not config_path.exists():
+        return "docs"
+
+    with open(config_path, "r", encoding="utf-8") as fd:
+        config = yaml.safe_load(fd) or {}
+
+    root = config.get("root")
+    if not isinstance(root, str) or not root.strip():
+        raise ValueError(f"Missing or invalid 'root' in {config_path}")
+    return root
+
+
+def update_doc(
+    intake_repository: str, documentation_repository: str, section_root: Optional[str] = None
+):
+    resolved_section_root = _resolve_section_root(documentation_repository, section_root)
+    doc_path = Path(documentation_repository) / resolved_section_root
     output_path = doc_path / ".gitbook" / "includes" / "intakes"
 
     # load intakes
-    intakes = load_intakes(intake_repository)
+    intakes = load_intakes(intake_repository, SCRIPT_DIR)
     output_path.mkdir(parents=True, exist_ok=True)
+    for stale_file in output_path.glob("*.md"):
+        stale_file.unlink()
 
     # produce intake documentation
     for intake in intakes:
-        intake_content = generate_intake_doc(intake)
-        sample_content = generate_sample_intake_doc(intake)
+        prepared_intake = _prepare_intake(intake)
+        intake_content = generate_intake_doc(prepared_intake)
+        sample_content = generate_sample_intake_doc(prepared_intake)
 
         generated_intake_file_path = (
             output_path
@@ -213,9 +134,9 @@ def update_doc(intake_repository: str, documentation_repository: str, section_ro
             / f"{intake['manifest']['uuid']}_sample.md"
         )
         
-        with open(generated_intake_file_path, "w") as fd:
+        with open(generated_intake_file_path, "w", encoding="utf-8") as fd:
             fd.write(intake_content)
-        with open(generated_samples_file_path, "w") as fd:
+        with open(generated_samples_file_path, "w", encoding="utf-8") as fd:
             fd.write(sample_content)
 
 
@@ -230,7 +151,9 @@ if __name__ == "__main__":
         "documentation_repository", help="Path to the documentation repository"
     )
     parser.add_argument(
-        "--section-root", default="docs", help="GitBook section root relative to the documentation repository"
+        "--section-root",
+        default=None,
+        help="GitBook section root relative to the documentation repository",
     )
 
     args = parser.parse_args()

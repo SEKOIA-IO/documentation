@@ -1,0 +1,52 @@
+{#- mode: jinja -#}
+{% if data_sources or parser['kind'] or parser['category'] or parser['type'] %}
+### Event Categories
+
+{% if data_sources %}
+The following table lists the data source offered by this integration.
+
+| Data Source | Description |
+| --- | --- |
+{% for data_source in data_sources %}| `{{ data_source['name'] }}` | {{ data_source['description'] }} |
+{% endfor %}
+
+{% endif %}
+{% if parser['kind'] or parser['category'] or parser['type'] %}
+In details, the following table denotes the type of events produced by this integration.
+
+| Name | Values |
+| --- | --- |
+| Kind | `{{ parser['kind']|join('`, `') }}` |
+| Category | `{{ parser['category']|join('`, `') }}` |
+| Type | `{{ parser['type']|join('`, `') }}` |
+{% endif %}
+{% endif %}
+
+{% if tests %}
+### Transformed Events Samples after Ingestion
+
+{% raw %}{% hint style="info" %}{% endraw %}
+This section demonstrates how the raw logs are transformed by our parsers. It shows the extracted fields available for built-in detection rules and event investigation.
+{% raw %}{% endhint %}{% endraw %}
+
+{% raw %}{% tabs %}{% endraw %}
+{% for test in tests %}
+{% raw %}{% tab title="{% endraw %}{{ test['name'] }}{% raw %}" %}{% endraw %}
+{{ test['rendered_content'] }}
+{% raw %}{% endtab %}{% endraw %}
+{% endfor %}
+{% raw %}{% endtabs %}{% endraw %}
+{% endif %}
+
+{% if parser['fields'] %}
+### Extracted Fields
+
+The following table lists the fields extracted, normalized under ECS, and indexed by the parser.
+
+| Name | Type | Description |
+| --- | --- | --- |
+{% for field in parser['fields'] %}| `{{ field['name'] }}` | `{{ field['type'] }}` | {{ field['short'] }} |
+{% endfor %}
+{% endif %}
+
+For more information on the Intake Format, see the parser, smart descriptions, and supported events [on GitHub]({{ "https://github.com/SEKOIA-IO/intake-formats/tree/main/" ~ repo_path }}).
