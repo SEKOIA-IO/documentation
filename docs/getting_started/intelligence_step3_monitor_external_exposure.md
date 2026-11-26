@@ -1,6 +1,6 @@
 # Step 3: Monitor external exposure
 
-Use this quick start to configure Flare, send Flare events to Sekoia, activate detections, and investigate a Flare alert. The workflow is divided into four objectives so you can complete the setup progressively.
+Use this quick start to configure Flare, send Flare events to Sekoia, review available detections, and investigate a Flare alert. The workflow is divided into four objectives so you can complete the setup progressively.
 
 ## At a glance
 
@@ -8,7 +8,7 @@ Use this quick start to configure Flare, send Flare events to Sekoia, activate d
 | --- | --- | --- |
 | 1. Configure Flare | Add users, create identifiers, define policies, and create an API key. | Flare monitors the data that matters to your organization. |
 | 2. Send events to Sekoia | Create a Flare Events intake and configure the connector. | Flare events arrive in Sekoia as events. |
-| 3. Generate Sekoia alerts | Activate detection rules for Flare Events. | Matching Flare events generate Sekoia alerts. |
+| 3. Review detections | Review and activate the Flare detection rules that match your requirements. | Matching Flare events can generate Sekoia alerts. |
 | 4. Investigate an alert | Open the related Flare event from `event.url`. | You can review the source event in Flare. |
 
 This quick start covers the first configuration path. For the complete event catalog, raw event samples, and parser details, see [Flare Events](/integration/categories/threat_intelligence/flare_events.md).
@@ -17,14 +17,17 @@ This quick start covers the first configuration path. For the complete event cat
 
 Make sure that:
 
+- Your subscription includes Sekoia Digital Risk.
 - Sekoia has provisioned your Flare tenant.
 - You have received an invitation to create your Flare account.
 - You have permission to manage the required settings in Flare.
-- You have permission to create intakes and activate detection rules in Sekoia.
+- You have permission to create intakes and manage detection rules in Sekoia.
 
 !!! note "Flare tenant provisioning"
 
-    Sekoia creates the Flare tenant and adds the email address provided during onboarding. If you do not receive the invitation email, contact your Sekoia commercial contact.
+```
+Sekoia creates the Flare tenant and adds the email address provided during onboarding. If you do not receive the invitation email, contact Sekoia Customer Success at [cs@sekoia.io](mailto:cs@sekoia.io).
+```
 
 ## Objective 1: Configure Flare
 
@@ -36,10 +39,12 @@ Add the members of your organization who need access to Flare.
 
 !!! note "Required Flare permission"
 
-    Only Flare members with the Organization Administrator role can open the **Team** page and invite organization members.
+```
+Only Flare members with the Organization Administrator role can open the **Team** page and invite organization members.
+```
 
 1. Sign in to your Flare tenant.
-2. Go to **Settings > Team**.
+2. Go to **Settings &gt; Team**.
 3. Enter the user's first name, last name, and email address.
 4. Set the organization and tenant permissions for the user.
 5. Click **Create** to send the invitation.
@@ -73,7 +78,7 @@ For more information, see the [Flare documentation about policies](https://docs.
 
 Create an API key that Sekoia can use to retrieve events from your Flare tenant.
 
-1. In Flare, go to **Account > Profile**.
+1. In Flare, go to **Account &gt; Profile**.
 2. Scroll to **API keys**.
 3. Click **Generate key**.
 4. Enter a name for the API key.
@@ -84,13 +89,21 @@ Create an API key that Sekoia can use to retrieve events from your Flare tenant.
 
 !!! warning "Store the API key securely"
 
-    The secret is shown only when the key is created. Store it in a password manager or another protected location.
+```
+The secret is shown only when the key is created. Store it in a password manager or another protected location.
+```
 
 For more information, see the [Flare Profile documentation](https://docs.flare.io/profile).
 
 ## Objective 2: Send events to Sekoia
 
 Create a Flare Events intake to retrieve and normalize events from Flare.
+
+!!! warning "Create the intake promptly"
+
+```
+Flare starts matching an identifier's history as soon as you create the identifier. Create the Flare Events intake on the same day as the identifiers. If you create the intake more than 24 hours later, earlier exposures might not be collected.
+```
 
 ### Create the intake
 
@@ -111,15 +124,18 @@ The default values are recommended for most environments. You can modify them wi
 | Parameter | Limits | Recommended default | Description |
 | --- | --- | --- | --- |
 | `frequency` | Minimum `1` second, no documented maximum | `60` seconds | Time between two searches for new events. A higher value slows collection. |
-| `page_size` | `1` to `10` | `10` | Number of events retrieved per page. |
-| `initial_hours_lookback` | Minimum `1` hour, no documented maximum | `1` hour | Number of hours in the past from which the connector starts retrieving events on its first run. |
-| `throttle_seconds` | Minimum `0` | `0.25` seconds | Wait time between two event requests. Lower values are faster. The API retries when it reaches its rate limit. |
+| `page_size` | `1` to `10` | `10` | Number of events requested per page. |
+| `initial_hours_lookback` | Minimum `1` hour, no documented maximum | `24` hours | Lookback in hours for the first collection. |
+| `throttle_seconds` | Minimum `0` | `0` seconds | Delay between individual event requests. Lower values are faster. The API retries when it reaches its rate limit. |
+| `concurrency` | `1` to `10` | `8` | Number of event details requested at the same time. Requests remain paced by `throttle_seconds`. |
 
 !!! note "Collection behavior"
 
-    The supported limits prevent invalid values from breaking the intake. Larger intervals or smaller page sizes can increase the time needed to collect events.
+```
+The supported limits prevent invalid values from breaking the intake. Larger intervals or smaller page sizes can increase the time needed to collect events.
+```
 
-    ![Flare Events trigger configuration dialog with frequency set to 60 seconds, page size set to 10, throttle set to 0.25 seconds, and the lookback value set to 1 hour.](/assets/intelligence_center/flare_intake_parameters.png){: style="display: block; width: 100%; max-width: 100%; height: auto;"}
+![Flare Events trigger configuration with the recommended connector values.](/assets/intelligence_center/digital_risk_intake_config.png){: style="display: block; width: 100%; max-width: 100%; height: auto;"}
 
 ### Verify event reception
 
@@ -129,18 +145,18 @@ After the trigger starts, Flare events are available in Sekoia as events associa
 2. Filter the results by the Flare Events intake.
 3. Open an event and verify that it contains Flare data.
 
-> 📸 [SCREENSHOT SUGGESTION: Sekoia intake event details with the Flare event fields visible | ALT TEXT: Sekoia intake event details showing a valid Flare event and its event URL.]
+![Sekoia intake showing valid Flare events and parsed event details.](/assets/intelligence_center/digital_risk_valid_parsing.png){: style="display: block; width: 100%; max-width: 100%; height: auto;"}
 
-## Objective 3: Generate Sekoia alerts
+## Objective 3: Review detections
 
-Detection rules create Sekoia alerts from matching Flare events.
+Detection rules can create Sekoia alerts from matching Flare events.
 
 1. Open the [Rules catalog](/xdr/features/detect/rules_catalog.md).
 2. Filter the rules by the **Flare Events** intake format.
 3. Review the available rules.
 4. Activate the rules that match your monitoring and response requirements.
 
-The available rules can change as Sekoia adds or updates detections for Flare events. After you activate a rule, Sekoia generates an alert when an ingested Flare event matches its conditions.
+The available rules and their activation status can change as Sekoia adds or updates detections for Flare events. After you activate a rule, Sekoia generates an alert when an ingested Flare event matches its conditions.
 
 ## Objective 4: Investigate a Flare alert
 
