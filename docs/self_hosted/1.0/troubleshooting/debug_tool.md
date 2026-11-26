@@ -423,6 +423,38 @@ The output shows:
 - A **waste report** for all pods with a memory request, sorted by wasted RAM. Red rows indicate 80% or more waste.
 - A **list of pods without memory requests**, alongside their live usage. These pods present a scheduling risk.
 
+## Installation history
+
+The SHC stores one JSON file per run in the Git directory selected by `utils.git.history_dir` (default `installation-history`). Filenames include the UTC start time, target version, and run ID. Each status update changes the same run file. Use a dedicated directory for each site sharing a Git branch.
+
+Replace `utils.git.history_file` with `utils.git.history_dir` in existing configurations. The SHC reads an existing `<history_dir>.json` aggregate and converts it into per-run files on the next status write.
+
+### Recover an interrupted installation
+
+The SHC records `pending` while it runs pre-deployment checks. It records `in_progress` before it starts deployment and blocks other installations until the attempt ends. Use this procedure when the SHC stopped before it could record the outcome.
+
+!!! warning "Confirm the installation has stopped"
+    Before resetting the status, verify that the original SHC process has exited and that any platform installer job it started in the `sekoia-system` namespace has stopped. The reset updates the Git record only.
+
+1. Identify the interrupted attempt in the installation history.
+
+    ```bash
+    exec VersionsHistory --verbose
+    ```
+
+    The detailed history shows the latest status of each attempt. For failed attempts, it includes the failed step, the error, and up to 30 available log lines from that step. The SHC masks credentials it recognizes before saving these details to Git.
+
+2. In the site configuration, set `global.version.platform.version` to the interrupted version.
+3. Close the interrupted attempt.
+
+    ```bash
+    exec CheckVersion --reset
+    ```
+
+    The SHC appends a timestamped event to the attempt and commits it to the deployment Git repository. An attempt in `pending` becomes `check_failed`. An attempt in `in_progress` becomes `failed`. If neither status exists for the target version, the SHC reports that and leaves the history unchanged.
+
+4. Retry with the original command, `exec Install` or `exec PlatformInstallation`. The minimum allowed version is the highest target that reached deployment. An attempt that ended as `check_failed` leaves this minimum unchanged.
+
 ## Helm releases
 
 ### CleanupHelmReleases

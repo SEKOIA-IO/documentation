@@ -213,6 +213,11 @@ A successful run displays the full list of available SHC commands.
 
 ## Deployment
 
+!!! warning "One SHC instance per environment"
+    Run only one self-hosted-controller (SHC) instance at a time against the same environment. Before starting an installation or upgrade, confirm that the previous SHC process and any platform-installer job it started have stopped. Concurrent runs can interfere with Helm operations.
+
+For the first installation, set `modules.platform_configuration.platform_installer_command` to `install` in your site configuration. Keep this configuration as a record of the deployed version. For an existing deployment, follow [Upgrade the platform](/self_hosted/1.0/deployment/upgrade_guide.md).
+
 Choose one of the two deployment options below.
 
 ### Option 1: Bundle deployment
@@ -317,6 +322,8 @@ Run these two modules in this order. Until `InstanceBootstrap` completes, ExaLog
 !!! note "Repeated prerequisite modules"
     The SHC automatically retrieves a current kubeconfig before cluster and platform operations. `PlatformInstallation` and `PlatformAccess` also regenerate the platform configuration before running. Repeated `GetKubeconfig` and `PlatformConfigurationFile` entries in the log are expected and allow each module to run independently.
 
+If the SHC blocks a retry because an earlier attempt still shows `in_progress`, follow [Recover an interrupted installation](/self_hosted/1.0/troubleshooting/debug_tool.md#recover-an-interrupted-installation).
+
 ## Post-deployment validation
 
 After the installation completes, run the following checks to confirm the platform is healthy before directing users to it.
@@ -375,6 +382,7 @@ To open the Sekoia interface, navigate to the URL set in `global.host` of your `
 
 ## Related links
 
+- [Upgrade the platform](/self_hosted/1.0/deployment/upgrade_guide.md) describes target-version configuration, upgrade steps, and failure recovery.
 - [Technical requirements](/self_hosted/1.0/deployment/deployment_prerequisites.md): Hardware and network prerequisites.
 - [Configure the deployment](/self_hosted/1.0/deployment/deployment_configuration.md): Starter configuration and required-field reference.
 - [Debug your deployment](/self_hosted/1.0/troubleshooting/debug_tool.md): Troubleshooting commands and remediation steps.

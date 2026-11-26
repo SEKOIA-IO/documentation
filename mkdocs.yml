@@ -803,6 +803,7 @@ nav:
       - The deployment process: self_hosted/1.0/deployment/deployment_process.md
       - Configure the deployment: self_hosted/1.0/deployment/deployment_configuration.md
       - Deploy the platform: self_hosted/1.0/deployment/deployment_guide.md
+      - Upgrade the platform: self_hosted/1.0/deployment/upgrade_guide.md
     - Operations:
       - Set up the first administrator account: self_hosted/1.0/operations/first_login.md
       - Use the SHC interface: self_hosted/1.0/operations/controller_interface.md
