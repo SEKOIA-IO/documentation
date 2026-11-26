@@ -32,11 +32,6 @@ include = ["plugins"]
 [tool.hatch.build.targets.wheel]
 include = ["plugins"]
 
-[tool.uv.workspace]
-members = [
-    "scripts/gitbook",
-]
-
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
