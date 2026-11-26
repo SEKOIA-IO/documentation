@@ -15,7 +15,7 @@ page include paths accordingly.
 Integration pages use `{% include "../../../.gitbook/includes/intakes/<uuid>.md" %}`
 with paths relative to each page. `<uuid>_sample.md` contains raw examples.
 Edit the intake source or templates rather than the generated files.
-The intake workflow regenerates MkDocs and GitBook includes, runs tests, and
+The intake workflow regenerates GitBook includes, runs tests, and
 opens a pull request.
 
 Only generated intake fragments are migrated here. Other MkDocs-specific syntax
