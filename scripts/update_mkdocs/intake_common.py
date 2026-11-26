@@ -118,7 +118,7 @@ def _build_sample_name(base_name: str, existing_names: Dict[str, int]) -> str:
     return f"{base_name} ({existing_names[base_name]})"
 
 
-def _load_tests(intake_tests: Path) -> Dict[str, List[Dict]]:
+def _load_tests(intake_tests: Path, ensure_ascii: bool) -> Dict[str, List[Dict]]:
     tests: List[Dict] = []
     samples: List[Dict] = []
     sample_names: Dict[str, int] = {}
@@ -139,12 +139,12 @@ def _load_tests(intake_tests: Path) -> Dict[str, List[Dict]]:
             content = json.dumps(
                 json.loads(message),
                 indent=4,
-                ensure_ascii=False,
+                ensure_ascii=ensure_ascii,
             )
         elif isinstance(message, str):
             content = message
         else:
-            content = json.dumps(message, indent=4, ensure_ascii=False)
+            content = json.dumps(message, indent=4, ensure_ascii=ensure_ascii)
 
         sample_name = _build_sample_name(intake_test.stem, sample_names)
 
@@ -152,16 +152,23 @@ def _load_tests(intake_tests: Path) -> Dict[str, List[Dict]]:
         tests.append(
             {
                 "name": intake_test.name,
-                "content": json.dumps(test.get("expected"), indent=4, ensure_ascii=False),
+                "content": json.dumps(
+                    test.get("expected"),
+                    indent=4,
+                    ensure_ascii=ensure_ascii,
+                ),
             }
         )
 
     return {"tests": tests, "samples": samples}
 
 
-def load_intakes(intake_repository: str, script_dir: Path) -> List[Dict]:
+def load_intakes(
+    intake_repository: str, script_dir: Path, ensure_ascii: bool = True
+) -> List[Dict]:
     intakes: List[Dict] = []
     ecs = _load_ecs(script_dir)
+    errors: List[str] = []
 
     for module_path in Path(intake_repository).iterdir():
         if not module_path.is_dir() or module_path.name.startswith("."):
@@ -177,39 +184,55 @@ def load_intakes(intake_repository: str, script_dir: Path) -> List[Dict]:
 
             intake = {"repo_path": f"{module_path.name}/{intake_path.name}"}
 
-            with open(intake_manifest, "r", encoding="utf-8") as fd:
-                intake["manifest"] = _ensure_manifest(yaml.safe_load(fd), intake_manifest)
-
-            intake_fields = intake_path / "_meta" / "fields.yml"
-            if intake_fields.exists():
-                with open(intake_fields, "r", encoding="utf-8") as fd:
-                    loaded_fields = yaml.safe_load(fd) or {}
-                if not isinstance(loaded_fields, dict):
-                    raise IntakeLoadingError(
-                        f"Invalid fields format in {intake_fields}, expected object"
+            try:
+                with open(intake_manifest, "r", encoding="utf-8") as fd:
+                    intake["manifest"] = _ensure_manifest(
+                        yaml.safe_load(fd), intake_manifest
                     )
-                intake["fields"] = loaded_fields
-            else:
-                intake["fields"] = {}
 
-            intake_parser = intake_path / "ingest" / "parser.yml"
-            if intake_parser.exists():
-                with open(intake_parser, "r", encoding="utf-8") as fd:
-                    intake["parser"] = analyze_parser(
-                        yaml.safe_load(fd), intake["fields"], intake_path, ecs
-                    )
-            else:
-                intake["parser"] = {"fields": [], "kind": [], "category": [], "type": []}
+                intake_fields = intake_path / "_meta" / "fields.yml"
+                if intake_fields.exists():
+                    with open(intake_fields, "r", encoding="utf-8") as fd:
+                        loaded_fields = yaml.safe_load(fd) or {}
+                    if not isinstance(loaded_fields, dict):
+                        raise IntakeLoadingError(
+                            f"Invalid fields format in {intake_fields}, expected object"
+                        )
+                    intake["fields"] = loaded_fields
+                else:
+                    intake["fields"] = {}
 
-            intake_tests = _load_tests(intake_path / "tests")
-            intake["tests"] = intake_tests["tests"]
-            intake["samples"] = intake_tests["samples"]
+                intake_parser = intake_path / "ingest" / "parser.yml"
+                if intake_parser.exists():
+                    with open(intake_parser, "r", encoding="utf-8") as fd:
+                        intake["parser"] = analyze_parser(
+                            yaml.safe_load(fd), intake["fields"], intake_path, ecs
+                        )
+                else:
+                    intake["parser"] = {
+                        "fields": [],
+                        "kind": [],
+                        "category": [],
+                        "type": [],
+                    }
 
-            logo_path = intake_path / "_meta" / "logo.png"
-            if logo_path.exists():
-                with open(logo_path, "rb") as fd:
-                    intake["logo"] = fd.read()
+                intake_tests = _load_tests(intake_path / "tests", ensure_ascii)
+                intake["tests"] = intake_tests["tests"]
+                intake["samples"] = intake_tests["samples"]
 
-            intakes.append(intake)
+                logo_path = intake_path / "_meta" / "logo.png"
+                if logo_path.exists():
+                    with open(logo_path, "rb") as fd:
+                        intake["logo"] = fd.read()
+
+                intakes.append(intake)
+            except IntakeLoadingError as exc:
+                errors.append(str(exc))
+
+    if errors:
+        formatted_errors = "\n".join(f"- {error}" for error in errors)
+        raise IntakeLoadingError(
+            "One or more intakes are invalid:\n" f"{formatted_errors}"
+        )
 
     return intakes
