@@ -24,7 +24,7 @@ Usage :
   python scripts/convert_mkdocs.py docs/ --exclude integration --write
   python scripts/convert_mkdocs.py docs/ --since gitbook-last-sync --write  # fichiers modifiés seulement
 
-  # Équipe Intégrations (docs/integration, hors contenu généré, sans copier les inclusions) :
+  # Integration team usage :
   python scripts/convert_mkdocs.py docs/ --only integration --exclude integration/action_library
 """
 import argparse
@@ -56,11 +56,16 @@ INCLUDE_RE = re.compile(r'\{!\s*([^!\s]+)\s*!\}')
 MARKED_RE = re.compile(r'<!-- include:(?P<p>[^ ]+) -->\n.*?\n<!-- endinclude:(?P=p) -->', re.S)
 # Raccourcis clavier pymdownx.keys : ++ctrl+alt+del++
 KEYS_RE = re.compile(r'\+\+([A-Za-z0-9]+(?:\+[A-Za-z0-9]+)*)\+\+')
-# Annotations de code (content.code.annotate) : marqueur « # (1) » ou « // (1)! » en fin de ligne
+# Annotations de code (content.code.annotate) : marqueur « # (1) » ou « // (1)! » en fin de ligne,
+# retiré seulement si le bloc est suivi de sa liste d'annotations (« 1. ... »), pour ne pas
+# toucher du code ordinaire comme « count // (2) »
 ANNOT_RE = re.compile(r'\s*(?:#|//)\s*\(\d+\)!?\s*$')
+ANNOT_LIST_RE = re.compile(r'\s*1\.\s+\S')
+# Code en ligne `...` (ou ``...``), laissé tel quel par convert_keys
+CODE_SPAN_RE = re.compile(r'(`+).*?\1')
 # Syntaxe non convertie automatiquement, signalée pour reprise à la main (hors blocs de code)
 TO_REVIEW = {
-    "HTML avec style": re.compile(r'<(?:span|div|p|font)\b[^>]*\bstyle=', re.I),
+    "HTML avec style": re.compile(r'<[a-z][\w-]*\b[^>]*\bstyle=', re.I),
     "balises <br>": re.compile(r'<br\s*/?>', re.I),
     "tableaux HTML": re.compile(r'<table\b', re.I),
     "<iframe>/<video>": re.compile(r'<(?:iframe|video)\b', re.I),
@@ -105,6 +110,7 @@ def convert_blocks(lines):
             mk = m_f.group(1)
             if fence is None:
                 fence = (mk[0], len(mk))
+                annotated = has_annotation_list(lines, i, fence)
                 line = re.sub(r'\s*\{\s*\.annotate\s*\}', '', line)
             elif mk[0] == fence[0] and len(mk) >= fence[1]:
                 fence = None
@@ -112,7 +118,7 @@ def convert_blocks(lines):
             i += 1
             continue
         if fence:
-            out.append(strip_annotation(line))
+            out.append(strip_annotation(line) if annotated else line)
             i += 1
             continue
 
@@ -163,6 +169,24 @@ def convert_blocks(lines):
     return out
 
 
+def has_annotation_list(lines, opening_fence_index, fence):
+    fence_char, fence_len = fence
+
+    def closes_fence(line):
+        match = FENCE_RE.match(line)
+        return bool(match) and match.group(1)[0] == fence_char and len(match.group(1)) >= fence_len
+
+    closing_fence_index = opening_fence_index + 1
+    while closing_fence_index < len(lines) and not closes_fence(lines[closing_fence_index]):
+        closing_fence_index += 1
+
+    next_text_index = closing_fence_index + 1
+    while next_text_index < len(lines) and lines[next_text_index].strip() == "":
+        next_text_index += 1
+
+    return next_text_index < len(lines) and bool(ANNOT_LIST_RE.match(lines[next_text_index]))
+
+
 def strip_annotation(line):
     """Retire un marqueur d'annotation de code ; la liste d'annotations sous le bloc est conservée."""
     new = ANNOT_RE.sub("", line)
@@ -178,7 +202,12 @@ def convert_keys(line):
     def keys(m):
         stats["raccourcis ++touches++"] += 1
         return "`" + "+".join(k.capitalize() for k in m.group(1).split("+")) + "`"
-    return KEYS_RE.sub(keys, line)
+    parts, pos = [], 0
+    for m in CODE_SPAN_RE.finditer(line):
+        parts += [KEYS_RE.sub(keys, line[pos:m.start()]), m.group(0)]
+        pos = m.end()
+    parts.append(KEYS_RE.sub(keys, line[pos:]))
+    return "".join(parts)
 
 
 def report_to_review(text):

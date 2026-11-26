@@ -29,8 +29,6 @@ def blocks(text):
     return "\n".join(cm.convert_blocks(text.split("\n")))
 
 
-# --- Existing behaviour -------------------------------------------------------
-
 def test_admonition_with_title():
     assert blocks('!!! warning "Careful"\n    Body text.') == (
         '{% hint style="warning" %}\n**Careful**\n\nBody text.\n{% endhint %}'
@@ -73,8 +71,6 @@ def test_conversion_is_idempotent():
     assert blocks(once) == once
 
 
-# --- Additions for docs/integration -------------------------------------------
-
 @pytest.mark.parametrize("kind,style", [
     ("warn", "warning"), ("disclaimer", "warning"), ("information", "info"), ("prerequisites", "info"),
 ])
@@ -92,20 +88,36 @@ def test_keys_inside_admonition_but_not_in_code():
     assert blocks("```\nx = ++a++\n```") == "```\nx = ++a++\n```"
 
 
+def test_keys_are_kept_inside_inline_code():
+    text = "Type `++ctrl+c++` or ``x ++a++ y`` then ++ctrl+v++"
+    assert blocks(text) == "Type `++ctrl+c++` or ``x ++a++ y`` then `Ctrl+V`"
+
+
 def test_code_annotations_are_removed():
     text = "```python { .annotate }\nprint(x) # (1)\ny = 2  // (2)!\nz = f(1)  # keep (1) here\n```\n\n1. Prints x"
     assert blocks(text) == "```python\nprint(x)\ny = 2\nz = f(1)  # keep (1) here\n```\n\n1. Prints x"
     assert cm.stats["annotations de code retirées (liste sous le bloc à relire)"] == 2
 
 
+def test_annotation_markers_are_kept_without_annotation_list():
+    text = "```python\nhalf = count // (2)\nn = f(x)  # (1)\n```\n\nSome paragraph."
+    assert blocks(text) == text
+    assert not cm.stats
+
+
+def test_annotation_list_is_detected_after_blank_lines_and_in_admonition():
+    text = "!!! note\n    ```\n    a  # (1)\n    ```\n\n\n    1. Note A"
+    assert "a\n" in blocks(text) and "# (1)" not in blocks(text)
+
+
 def test_report_to_review(capsys):
     cm.report_to_review('a <span style="color:red">b</span><br/>\n```\n<br/>\n```\n<iframe src="x">')
     err = capsys.readouterr().err
     assert "HTML avec style" in err and "balises <br>" in err and "<iframe>/<video>" in err
+    cm.report_to_review('<img src="x" style="width:50%">\n<a href="y" style="color:red">z</a>')
+    assert cm.stats["à reprendre à la main : HTML avec style"] == 3
     assert cm.stats["à reprendre à la main : balises <br>"] == 1  # the one in the code block is ignored
 
-
-# --- main() -------------------------------------------------------------------
 
 def run(docs, *args):
     cm.main([str(docs), "--repo-root", str(docs.parent), *args])
