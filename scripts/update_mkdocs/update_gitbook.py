@@ -20,19 +20,14 @@ def _escape_markdown_table_cell(value: object) -> str:
     return str(value).replace("|", "\\|").replace("\n", "<br/>")
 
 
-def _escape_gitbook_tokens(content: str) -> str:
-    return (
-        content.replace("{{", "&#123;&#123;")
-        .replace("{%", "&#123;%")
-        .replace("{#", "&#123;#")
-    )
+def _escape_tab_title(value: object) -> str:
+    return str(value).replace("\\", "\\\\").replace('"', '\\"').replace("\n", " ")
 
 
 def _build_code_block(content: str, language: str) -> str:
     longest_run = max((len(run) for run in re.findall(r"`+", content)), default=0)
     fence = "`" * max(3, longest_run + 1)
-    escaped_content = _escape_gitbook_tokens(content)
-    return f"{fence}{language}\n{escaped_content}\n{fence}"
+    return f"{fence}{language}\n{content}\n{fence}"
 
 
 def _prepare_intake(intake: dict) -> dict:
@@ -41,16 +36,36 @@ def _prepare_intake(intake: dict) -> dict:
     if not isinstance(data_sources, dict):
         data_sources = {}
     prepared["data_sources"] = [
-        {"name": name, "description": _escape_markdown_table_cell(description)}
+        {
+            "name": _escape_markdown_table_cell(name),
+            "description": _escape_markdown_table_cell(description),
+        }
         for name, description in data_sources.items()
     ]
+    prepared["parser"] = {
+        **intake["parser"],
+        "fields": [
+            {
+                **field,
+                "name": _escape_markdown_table_cell(field["name"]),
+                "type": _escape_markdown_table_cell(field["type"]),
+                "short": _escape_markdown_table_cell(field["short"]),
+            }
+            for field in intake["parser"].get("fields", [])
+        ],
+    }
     prepared["tests"] = [
-        {**test, "rendered_content": _build_code_block(test["content"], "json")}
+        {
+            **test,
+            "tab_title": _escape_tab_title(test["name"]),
+            "rendered_content": _build_code_block(test["content"], "json"),
+        }
         for test in intake["tests"]
     ]
     prepared["samples"] = [
         {
             **sample,
+            "tab_title": _escape_tab_title(sample["name"]),
             "rendered_content": _build_code_block(
                 sample["content"], "json" if sample["is_json"] else "text"
             ),
@@ -113,7 +128,7 @@ def update_doc(
     output_path = doc_path / ".gitbook" / "includes" / "intakes"
 
     # load intakes
-    intakes = load_intakes(intake_repository, SCRIPT_DIR)
+    intakes = load_intakes(intake_repository, SCRIPT_DIR, ensure_ascii=False)
     output_path.mkdir(parents=True, exist_ok=True)
     for stale_file in output_path.glob("*.md"):
         stale_file.unlink()

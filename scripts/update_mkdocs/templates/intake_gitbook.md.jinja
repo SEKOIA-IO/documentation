@@ -31,7 +31,7 @@ This section demonstrates how the raw logs are transformed by our parsers. It sh
 
 {% raw %}{% tabs %}{% endraw %}
 {% for test in tests %}
-{% raw %}{% tab title="{% endraw %}{{ test['name'] }}{% raw %}" %}{% endraw %}
+{% raw %}{% tab title="{% endraw %}{{ test['tab_title'] }}{% raw %}" %}{% endraw %}
 {{ test['rendered_content'] }}
 {% raw %}{% endtab %}{% endraw %}
 {% endfor %}

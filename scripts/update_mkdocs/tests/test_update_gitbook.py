@@ -62,13 +62,13 @@ class GitBookGenerationTests(unittest.TestCase):
                 yaml.safe_dump(
                     {
                         "uuid": "example",
-                        "data_sources": {"source": "line 1 | line 2\nline 3"},
+                        "data_sources": {'source|name': "line 1 | line 2\nline 3"},
                     }
                 )
             )
             tests = intake / "tests"
             tests.mkdir()
-            (tests / "dangerous.log.json").write_text(
+            (tests / 'dangerous"a.log.json').write_text(
                 json.dumps(
                     {
                         "expected": {
@@ -84,10 +84,12 @@ class GitBookGenerationTests(unittest.TestCase):
             content = (includes / "example.md").read_text()
             samples = (includes / "example_sample.md").read_text()
 
+            self.assertIn("`source\\|name`", content)
             self.assertIn("line 1 \\| line 2<br/>line 3", content)
+            self.assertIn('{% tab title="dangerous\\"a.log.json" %}', content)
             self.assertIn("````text", samples)
-            self.assertIn("&#123;% dangerous %}", samples)
-            self.assertIn("&#123;&#123; value }}", samples)
+            self.assertIn("{% dangerous %}", samples)
+            self.assertIn("{{ value }}", samples)
 
     def test_remove_stale_includes(self):
         with tempfile.TemporaryDirectory() as directory:
