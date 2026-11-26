@@ -1,6 +1,6 @@
 # Table of contents
 
-* [The Sekoia AI SOC Platform](index.md)
+* [Sekoia documentation](index.md)
 
 ## Threat Context (Intelligence)
 

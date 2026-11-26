@@ -1,79 +1,84 @@
 ---
 title: Sekoia documentation
+description: >-
+  Guides, integrations and API reference for the Sekoia autonomous SOC platform.
+  Ask the assistant and get a sourced answer, or browse by what you need to do.
+cover: .gitbook/assets/GitBook cover — pattern only (1990×480)@1x.png
+coverY: 0
+layout:
+  width: wide
+  cover:
+    visible: true
+    size: background
+    mask: none
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: false
+  pagination:
+    visible: false
+  metadata:
+    visible: false
+  tags:
+    visible: true
+  actions:
+    visible: false
+  anchors:
+    visible: false
 ---
 
-# The Sekoia AI SOC Platform
+# Sekoia documentation
 
-## The Sekoia AI SOC Platform
+#### Turn questions into Clarity.
 
-The Sekoia SOC platform brings threat detection, investigation, and response into one open, cloud-native platform. It connects high-fidelity **Cyber Threat Intelligence (CTI)**, security telemetry, and **Asset Intelligence** to give analysts a clearer view of what's happening across their environment.
+<button type="button" class="button primary" data-action="ask" data-icon="gitbook-assistant">Ask a question…</button>
 
-With its Agentic SOC approach, Sekoia uses AI to handle repetitive investigation tasks, enrich alerts, and support threat hunting. Analysts spend less time sorting through noise and more time responding to threats that need expert judgment.
 
-The result is faster detection, more efficient investigations, and lower operational overhead. Sekoia helps security teams reduce Mean Time to Detect (MTTD) and Mean Time to Respond (MTTR) while keeping their existing tools and data sources connected.
 
-![SEKOIA AI SOC Platform Overview](.gitbook/assets/sekoia_system.png)
 
-## Security operations platform architecture and modules
 
-Sekoia's modular security operations platform lets teams start with the capabilities they need and expand over time. Each module uses a shared data schema and workflow, helping security teams connect detection, Cyber Threat Intelligence (CTI), asset context, and AI assistance in one environment.
 
-### Core platform modules
 
-#### [Sekoia Defend](defend/index.md)
+<a href="https://app.gitbook.com/s/xVYUvCypkCliFh3vy4dV/" class="button primary" data-icon="rocket-launch">Quick start</a><a href="https://www.youtube.com/watch?v=F8hrBpErA7E" class="button primary" data-icon="youtube">Product tour - 1 min</a>
 
-Sekoia Defend is the platform's detection and response engine and a practical alternative to a traditional Security Information and Event Management (SIEM) system. It collects, normalizes, and analyzes security logs from across the environment.
+***
 
-Defend also includes native Security Orchestration, Automation and Response (SOAR) capabilities. Teams can use playbooks to automate remediation steps, coordinate response actions, and reduce manual work during an investigation.
+## Pick your path
 
-#### [Sekoia Intelligence](cti/index.md)
+<table data-view="cards"><thead><tr><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td><h4>SOC analysts</h4></td><td><i class="fa-bell">:bell:</i>  <a href="elevate/investigate-with-elevate.md">Investigate alerts with Elevate (AI)</a></td><td><i class="fa-magnifying-glass">:magnifying-glass:</i>  <a href="defend/investigate/sol_overview.md">Query events with SOL</a></td><td><i class="fa-bolt">:bolt:</i>  <a href="defend/investigate/run_playbook_case.md">Run a playbook</a></td></tr><tr><td><h4>Detection engineers</h4></td><td><i class="fa-shield-check">:shield-check:</i> <a href="defend/detect/sigma.md">Write a Sigma rule</a></td><td><i class="fa-code">:code:</i> <a href="defend/detect/sol-detection-rules.md">Create a SOL detection rule</a></td><td><i class="fa-book-open">:book-open:</i> <a href="defend/detect/rules_catalog.md">Browse the rules catalog</a></td></tr><tr><td><h4>MSSPs</h4></td><td><i class="fa-network-wired">:network-wired:</i> <a href="https://app.gitbook.com/s/xVYUvCypkCliFh3vy4dV/understand-sekoia/workspace_and_communities">Workspaces and Communities</a></td><td><i class="fa-user-pen">:user-pen:</i> <a href="https://app.gitbook.com/s/xVYUvCypkCliFh3vy4dV/set-up-your-workspace-admin/workspace_setup_overview#step-4-create-communities-multi-tenant-only">Create a client community</a></td><td><i class="fa-chart-column">:chart-column:</i> <a href="https://app.gitbook.com/s/xVYUvCypkCliFh3vy4dV/understand-your-subscription-and-usage/monitor_your_usage#review-multi-tenant-consumption">Monitor multi-tenant consumption</a></td></tr></tbody></table>
 
-Sekoia Intelligence is a Cyber Threat Intelligence platform that provides context on attacker infrastructure, malware, campaigns, and emerging threat activity. Teams can use it as a standalone CTI source or connect it to Sekoia Defend.
+## Recipes from the field
 
-When integrated, Sekoia Intelligence helps correlate threat intelligence with security events and gives analysts additional context during detection and investigation.
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="image">Cover image</th></tr></thead><tbody><tr><td>Choosing the Right Endpoint Telemetry Strategy</td><td><a href=".gitbook/assets/Card 1 — Endpoint telemetry (1600×900)@1x.png">Card 1 — Endpoint telemetry (1600×900)@1x.png</a></td></tr><tr><td>Securing Microsoft Entra ID and Hybrid Identity</td><td><a href=".gitbook/assets/Card 2 — Entra ID &#x26; hybrid identity (1600×900)@1x.png">Card 2 — Entra ID &#x26; hybrid identity (1600×900)@1x.png</a></td></tr><tr><td>Reduce alert fatigue with Elevate</td><td><a href=".gitbook/assets/Card 3 — Alert fatigue with Elevate (1600×900)@1x.png">Card 3 — Alert fatigue with Elevate (1600×900)@1x.png</a></td></tr></tbody></table>
 
-### Expansion modules
 
-#### [Reveal for Asset Intelligence](reveal/reveal_index.md)
 
-Reveal adds Asset Intelligence to Sekoia Defend through continuous asset discovery and inventory. It maps alerts and suspicious activity to the systems, users, and cloud resources involved, giving analysts better context during an investigation.
+{% columns %}
+{% column %}
+## What's new
 
-Reveal also helps teams identify shadow IT and short-lived cloud assets that may not appear in standard inventories.
+<table data-header-hidden><thead><tr><th width="136.265625"></th><th width="302.66015625"></th></tr></thead><tbody><tr><td><i class="fa-burst-new">:burst-new:</i> <mark style="background-color:$secondary;">New</mark> </td><td><a href="elevate/elevate_rule_filter.md">Elevate Activation Settings</a></td></tr><tr><td><i class="fa-burst-new">:burst-new:</i> <mark style="background-color:$secondary;">New</mark> </td><td><a href="defend/investigate/sol_ref_datasources.md#playbooks">Playbooks in SOL</a></td></tr><tr><td><i class="fa-plug">:plug:</i> <mark style="background-color:$success;">Integration</mark> </td><td><a href="https://docs.sekoia.com/integration/action_library/urlscan-io/">urlscan.io playbook actions</a></td></tr></tbody></table>
+{% endcolumn %}
 
-#### [Sekoia Elevate for an Agentic SOC](elevate/elevate_overview.md)
+{% column %}
+{% hint style="info" icon="mcp" %}
+<mark style="color:$info;">FOR AGENTS AND IDES</mark>
 
-Sekoia Elevate adds AI assistance to the SOC. Its intelligent agents connect related incidents across data sources, enrich alerts with relevant CTI, and help prioritize threats for investigation.
+## Bring the docs to your tools
 
-Analysts receive more context earlier in the investigation and can focus their time on decisions that require human judgment.
+Connect our MCP server to Claude, Cursor or any MCP client.&#x20;
 
-## Open, cloud-native security operations architecture
+<a href="https://gitbook.com/docs/ai-for-your-readers/mcp-servers-for-published-docs#connect-an-ai-tool" class="button primary">//https://docs.sekoia.com/~gitbook/mcp</a>
 
-Sekoia builds its security operations platform around open integrations, portable detection logic, and cloud-native scalability. Security teams can connect the data sources they already use, apply detection rules across environments, and scale ingestion without maintaining traditional security infrastructure.
-
-### Integration-first architecture
-
-Sekoia provides hundreds of pre-built connectors and an API-first architecture for collecting security data from cloud services, SaaS applications, and on-premises systems. This gives teams a practical way to bring more telemetry into one security operations platform while keeping integration work manageable.
-
-### OCSF and Sigma support
-
-Sekoia supports the Open Cybersecurity Schema Framework (OCSF) for normalizing security data and Sigma for writing portable detection rules. Open standards help teams move data between tools, reduce dependence on proprietary formats, and adapt detection logic as their environment changes.
-
-### Cloud-native scalability
-
-Sekoia runs on a multi-tenant, cloud-native architecture designed to process high volumes of security telemetry. Teams can expand data ingestion without deploying and maintaining the infrastructure typically associated with on-premises security platforms.
-
-{% hint style="info" %}
-**Licensing architecture**
-
-While **Defend** and **Intelligence** function as independent products, **Reveal** and **Elevate** are integrated modules that require an active Sekoia Defend license to operate.
+<sub>LLMS.TXT  PAGES AS MARKDOWN</sub>
 {% endhint %}
+{% endcolumn %}
+{% endcolumns %}
 
-## Read more
 
-Explore the technical specifications and configuration guides for each component of the Sekoia ecosystem.
 
-* [Sekoia Defend Overview](defend/index.md)
-* [Sekoia Intelligence Overview](cti/index.md)
-* [Reveal: Asset Intelligence Overview](reveal/reveal_index.md)
-* [Integration Library: A comprehensive catalog of supported log sources, intake formats, and transport protocols (Syslog, HTTPS, Cloud-to-Cloud)](https://docs.sekoia.com/integrations/action_library/overview)
-* [Sekoia API Reference](https://docs.sekoia.com/api-documentation/quickstart)
+<table data-header-hidden><thead><tr><th width="449.3671875">Can't find what you need?</th><th></th></tr></thead><tbody><tr><td><h2>Can't find what your need?</h2><p>Our support team and community have your back. </p></td><td><a href="mailto:support@sekoia.io" class="button primary">CONTACT SUPPORT -> </a> <a href="https://github.com/SEKOIA-IO/Community" class="button secondary">COMMUNITY</a> <a href="https://status.sekoia.io/"><mark style="color:$info;">PLATFORM STATUS</mark> </a></td></tr></tbody></table>
