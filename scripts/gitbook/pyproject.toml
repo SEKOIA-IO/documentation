@@ -8,3 +8,19 @@ dependencies = [
     "click (>=8.1,<9.0)",
     "requests (>=2.32,<3.0)",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest (>=8.0,<10.0)",
+]
+
+[tool.pytest.ini_options]
+# the scripts use flat imports (`from constants import ...`)
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint.isort]
+known-first-party = ["constants", "helpers", "sync_gitbook_redirects"]

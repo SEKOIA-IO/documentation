@@ -5,3 +5,12 @@ PREFIXES = {
     "playbook": "/integration/action_library/uuid/",
     "asset": "/integration/asset_connectors/uuid/",
 }
+
+# HTTP settings
+TIMEOUT = 30  # seconds
+RETRIES = 3
+RETRY_STATUSES = (429, 500, 502, 503, 504)
+
+# safety guards: above these shares, --apply is refused unless --force is given
+MAX_MISSING_PAGES_RATIO = 0.2  # share of uuids whose file has no GitBook page
+MAX_DELETE_RATIO = 0.2  # share of the managed redirects to delete

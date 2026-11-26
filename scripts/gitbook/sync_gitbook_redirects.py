@@ -1,11 +1,12 @@
+import os
 import re
 import sys
 from pathlib import Path
 
 import click
 
-from constants import PREFIXES
-from helpers import GitBookClient
+from constants import MAX_DELETE_RATIO, MAX_MISSING_PAGES_RATIO, PREFIXES
+from helpers import GitBookClient, GitBookError
 
 REPOSITORY = Path(__file__).resolve().parents[2]
 DOCS_DIR = REPOSITORY / "docs" / "integration"
@@ -15,6 +16,7 @@ DOCS_DIR = REPOSITORY / "docs" / "integration"
 METADATA_LINES = 10
 METADATA_RE = re.compile(r"(uuid|name|type):\s*(.*?)(?=\s+(?:uuid|name|type):|$)")
 UUID_RE = re.compile(r"[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}")
+LATE_UUID_RE = re.compile(rf"^\s*uuid:.*{UUID_RE.pattern}", re.MULTILINE)
 
 
 def read_metadata(path: Path) -> dict[str, str]:
@@ -29,6 +31,15 @@ def read_metadata(path: Path) -> dict[str, str]:
     return metadata
 
 
+def has_late_uuid(path: Path) -> bool:
+    """
+    Return True when an `uuid:` line holding a uuid exists after the lines read by `read_metadata`
+    """
+    with path.open() as f:
+        lines = f.readlines()[METADATA_LINES:]
+    return LATE_UUID_RE.search("".join(lines)) is not None
+
+
 def collect_uuids(docs_dir: Path) -> dict[str, tuple[str, str]]:
     """
     Return {source path: (repository file path, type)}
@@ -37,7 +48,10 @@ def collect_uuids(docs_dir: Path) -> dict[str, tuple[str, str]]:
 
     for path in sorted(docs_dir.rglob("*.md", recurse_symlinks=True)):
         metadata = read_metadata(path)
+        git_path = path.relative_to(REPOSITORY).as_posix()
         if "uuid" not in metadata:
+            if has_late_uuid(path):
+                print(f"! {git_path}: `uuid:` found after the first {METADATA_LINES} lines, ignored")
             continue
 
         kind = metadata.get("type", "").lower().partition(" ")[0]
@@ -47,9 +61,9 @@ def collect_uuids(docs_dir: Path) -> dict[str, tuple[str, str]]:
         if kind not in PREFIXES:
             continue
 
-        git_path = path.relative_to(REPOSITORY).as_posix()
         for uuid in UUID_RE.findall(metadata["uuid"]):
-            source = PREFIXES[kind] + uuid.lower()
+            # keep the original case, as the mkdocs plugin did
+            source = PREFIXES[kind] + uuid
             # several pages can share a format: as the mkdocs plugin, the last one wins
             if source in redirects:
                 print(f"! {uuid} shared by {redirects[source][0]} and {git_path}, keeping the latter")
@@ -58,15 +72,26 @@ def collect_uuids(docs_dir: Path) -> dict[str, tuple[str, str]]:
     return redirects
 
 
+def same_destination(current: dict | None, destination: dict) -> bool:
+    return current is not None and all(current.get(key) == value for key, value in destination.items())
+
+
 @click.command()
-@click.option("--token", envvar="GITBOOK_TOKEN", required=True, help="GitBook personal access token")
 @click.option("--org", envvar="GITBOOK_ORG", required=True, help="organization id")
 @click.option("--site", envvar="GITBOOK_SITE", required=True, help="site id (site_...)")
-@click.option("--space", envvar="GITBOOK_SPACE", required=True, help="id of the space synchronized with docs/integration")
-@click.option("--site-space", envvar="GITBOOK_SITE_SPACE", required=True, help="id of this space in the site (sitesp_...)")
+@click.option(
+    "--space",
+    envvar="GITBOOK_SPACE",
+    required=True,
+    help="id of the space Git-synced with this repository",
+)
+@click.option(
+    "--site-space", envvar="GITBOOK_SITE_SPACE", required=True, help="id of this space in the site (sitesp_...)"
+)
 @click.option("--apply", is_flag=True, help="push the changes as draft redirects")
 @click.option("--no-delete", is_flag=True, help="keep the draft redirects not matching any page")
-def main(token: str, org: str, site: str, space: str, site_space: str, apply: bool, no_delete: bool):
+@click.option("--force", is_flag=True, help="apply even when the safety guards are triggered")
+def main(org: str, site: str, space: str, site_space: str, apply: bool, no_delete: bool, force: bool):
     """
     Synchronize GitBook site redirects from the `uuid` metadata of the documentation pages.
 
@@ -74,18 +99,44 @@ def main(token: str, org: str, site: str, space: str, site_space: str, apply: bo
     `uuid` metadata gets a redirect `/<prefix>/uuid/<uuid>` pointing to the GitBook page.
 
     Redirects are only pushed as drafts: they have to be enabled from the GitBook UI
-    (Site > Settings > Redirects > Draft).
+    (Site > Settings > Redirects > Draft). Live redirects are read to avoid duplicates,
+    but never modified.
+
+    The GitBook personal access token is read from the GITBOOK_TOKEN environment variable.
 
     \b
     Usage (from scripts/gitbook):
         uv run sync_gitbook_redirects.py            # dry-run, print the changes
         uv run sync_gitbook_redirects.py --apply    # push the changes as drafts
     """
-    gitbook = GitBookClient(token)
+    token = os.environ.get("GITBOOK_TOKEN")
+    if not token:
+        raise click.ClickException("the GITBOOK_TOKEN environment variable is not set")
 
+    try:
+        sync(GitBookClient(token), org, site, space, site_space, apply, no_delete, force)
+    except GitBookError as error:
+        raise click.ClickException(str(error)) from error
+
+
+def sync(
+    gitbook: GitBookClient,
+    org: str,
+    site: str,
+    space: str,
+    site_space: str,
+    apply: bool,
+    no_delete: bool,
+    force: bool,
+):
     wanted = collect_uuids(DOCS_DIR)
+    if not wanted:
+        # protects the existing redirects from a wrong DOCS_DIR or an incomplete checkout
+        raise click.ClickException(f"no uuid found in {DOCS_DIR}, refusing to synchronize")
+
     pages = gitbook.list_pages(space)
-    existing = gitbook.list_draft_redirects(org, site)
+    drafts = gitbook.list_redirects(org, site, draft=True)
+    live = gitbook.list_redirects(org, site, draft=False)
 
     operations: list[dict] = []
     missing_pages: list[str] = []
@@ -98,15 +149,12 @@ def main(token: str, org: str, site: str, space: str, site_space: str, apply: bo
             continue
 
         destination = {"kind": "site-page", "siteSpaceId": site_space, "pageId": page_id}
-        current = existing.get(source)
+        # a pending draft takes precedence over the live redirect it will replace
+        current = drafts.get(source, live.get(source))
         if current is None:
             created += 1
             print(f"+ {source} -> {git_path}")
-        elif (
-            current.get("kind") == "site-page"
-            and current.get("siteSpaceId") == site_space
-            and current.get("pageId") == page_id
-        ):
+        elif same_destination(current, destination):
             unchanged += 1
             continue
         else:
@@ -116,7 +164,7 @@ def main(token: str, org: str, site: str, space: str, site_space: str, apply: bo
 
     deleted = 0
     if not no_delete:
-        for source in sorted(set(existing) - set(wanted)):
+        for source in sorted(set(drafts) - set(wanted)):
             deleted += 1
             print(f"- {source}")
             operations.append({"source": source, "destination": None})
@@ -126,14 +174,26 @@ def main(token: str, org: str, site: str, space: str, site_space: str, apply: bo
         for line in missing_pages:
             print(f"  {line}")
 
+    live_orphans = sorted(set(live) - set(wanted))
+    if live_orphans:
+        print(f"\n{len(live_orphans)} live redirect(s) without page (to remove from the GitBook UI):")
+        for source in live_orphans:
+            print(f"  {source}")
+
     print(
-        f"\n{len(wanted)} uuids: {created} to create, {updated} to update, "
-        f"{deleted} to delete, {unchanged} unchanged"
+        f"\n{len(wanted)} uuids: {created} to create, {updated} to update, {deleted} to delete, {unchanged} unchanged"
     )
+
+    warnings = check_guards(wanted, pages, missing_pages, deleted, len(set(drafts) | set(live)))
+    for warning in warnings:
+        print(f"\n! {warning}")
 
     if not apply:
         print("Dry-run: nothing pushed (use --apply to push the drafts)")
         return
+
+    if warnings and not force:
+        raise click.ClickException("safety guard triggered, nothing pushed (use --force to bypass)")
 
     if not operations:
         return
@@ -146,6 +206,33 @@ def main(token: str, org: str, site: str, space: str, site_space: str, apply: bo
         sys.exit(1)
 
     print(f"{len(operations)} draft redirect(s) pushed")
+
+
+def check_guards(
+    wanted: dict[str, tuple[str, str]],
+    pages: dict[str, str],
+    missing_pages: list[str],
+    deleted: int,
+    managed: int,
+) -> list[str]:
+    """
+    Return the reasons to refuse pushing the changes
+    """
+    warnings = []
+
+    if len(missing_pages) > MAX_MISSING_PAGES_RATIO * len(wanted):
+        expected = next(iter(wanted.values()))[0]
+        example = next(iter(sorted(pages)), "no page with a git path")
+        warnings.append(
+            f"{len(missing_pages)}/{len(wanted)} uuids have no GitBook page: the repository paths "
+            f"(e.g. {expected}) probably do not match the GitBook git paths (e.g. {example}). "
+            "Check the Git Sync root of the space."
+        )
+
+    if deleted > MAX_DELETE_RATIO * managed:
+        warnings.append(f"{deleted}/{managed} managed redirects would be deleted.")
+
+    return warnings
 
 
 if __name__ == "__main__":
