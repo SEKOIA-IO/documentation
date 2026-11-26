@@ -1,6 +1,7 @@
 import io
 import json
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -346,6 +347,9 @@ ESCAPED = (
 )
 OKTA_PAGE = "integration/assets_categories/user/okta_user.md"
 OKTA_INCLUDE = '{% include "../../../.gitbook/includes/asset_connectors/okta_user.md" %}'
+BROKEN = "broken asset connector includes, nothing written:"
+OKTA_TARGET = "../../../.gitbook/includes/asset_connectors/okta_user.md"
+GHOST_TARGET = "../../../.gitbook/includes/asset_connectors/ghost_device.md"
 
 
 class RewritePageIncludesTests(unittest.TestCase):
@@ -363,9 +367,12 @@ class RewritePageIncludesTests(unittest.TestCase):
         page.write_text(content)
         return page
 
-    def rewrite(self):
-        with redirect_stdout(io.StringIO()):
-            return generator.rewrite_page_includes(self.section, self.includes)
+    def rewrite(self) -> tuple:
+        blocks = {path.name for path in self.includes.glob("*.md")}
+        changes, broken = generator.plan_page_includes(self.section, self.includes, blocks)
+        for page, content in changes.items():
+            page.write_text(content, encoding="utf-8")
+        return list(changes), broken
 
     def test_plain_include_is_rewritten(self):
         page = self.write_page(OKTA_PAGE, f"# Okta\n\nIntro\n\n{PLAIN}\n\n## Further Reading\n")
@@ -422,8 +429,29 @@ class RewritePageIncludesTests(unittest.TestCase):
 
     def test_missing_block_is_reported(self):
         page = self.write_page("ghost.md", PLAIN.replace("okta_user", "ghost_device"))
-        self.assertEqual(self.rewrite(), ([page], ["ghost_device.md"]))
+        self.assertEqual(self.rewrite(), ([page], ["ghost.md -> .gitbook/includes/asset_connectors/ghost_device.md"]))
         self.assertEqual(page.read_text(), '{% include ".gitbook/includes/asset_connectors/ghost_device.md" %}')
+
+    def test_dangling_gitbook_include_is_reported(self):
+        self.write_page(OKTA_PAGE, OKTA_INCLUDE.replace("okta_user", "ghost_device"))
+        self.assertEqual(self.rewrite(), ([], [f"{OKTA_PAGE} -> {GHOST_TARGET}"]))
+
+    def test_moved_page_with_a_stale_path_is_reported(self):
+        moved = "integration/assets_categories/user/archive/okta_user.md"
+        self.write_page(moved, OKTA_INCLUDE)
+        self.assertEqual(self.rewrite(), ([], [f"{moved} -> {OKTA_TARGET}"]))
+
+    def test_include_without_inner_spaces_is_checked(self):
+        self.write_page(OKTA_PAGE, f'{{%include "{GHOST_TARGET}"%}}')
+        self.assertEqual(self.rewrite(), ([], [f"{OKTA_PAGE} -> {GHOST_TARGET}"]))
+
+    def test_other_gitbook_includes_are_not_checked(self):
+        self.write_page(OKTA_PAGE, '{% include "../../../.gitbook/includes/restart-the-endpoint-agent.md" %}')
+        self.assertEqual(self.rewrite(), ([], []))
+
+    def test_dangling_tag_next_to_a_legacy_include_is_reported(self):
+        page = self.write_page(OKTA_PAGE, f"{OKTA_INCLUDE.replace('okta_user', 'ghost_device')}\n\n{PLAIN}\n")
+        self.assertEqual(self.rewrite(), ([page], [f"{OKTA_PAGE} -> {GHOST_TARGET}"]))
 
     def test_second_run_changes_nothing(self):
         self.write_page(OKTA_PAGE, ESCAPED)
@@ -500,12 +528,57 @@ class UpdateAssetDocTests(unittest.TestCase):
         self.assertEqual(snapshot(self.documentation), first)
         self.assertIn("Rewrote includes in 0 pages", output)
 
+    def add_aws(self) -> Path:
+        write_module(
+            self.library, "AWS", "aws",
+            {"connector_aws_device_assets.json": connector_config("AWS Devices", "host_detection")}, {"device": MAPPING},
+        )
+        page = self.documentation / "docs" / "integration" / "assets_categories" / "device" / "aws_device.md"
+        page.parent.mkdir(parents=True)
+        page.write_text(f"# AWS\n\n{PLAIN.replace('okta_user', 'aws_device')}\n")
+        return page
+
     def test_missing_block_is_reported_as_a_problem(self):
         self.page.write_text(PLAIN.replace("okta_user", "ghost_device"))
+        before = snapshot(self.documentation)
         output, problems = self.run_generator()
-        self.assertEqual(problems, ["pages reference missing includes: ghost_device.md"])
-        self.assertIn("Error: pages reference missing includes: ghost_device.md", output)
-        self.assertTrue((self.documentation / "docs" / generator.INCLUDES_SUBDIR / "okta_user.md").is_file())
+        self.assertEqual(problems, [f"{BROKEN} {OKTA_PAGE} -> {GHOST_TARGET}"])
+        self.assertIn(f"Error: {BROKEN} {OKTA_PAGE} -> {GHOST_TARGET}", output)
+        self.assertEqual(snapshot(self.documentation), before)
+
+    def test_block_removed_after_the_rewrite_fails_and_changes_nothing(self):
+        self.add_aws()
+        self.assertEqual(self.run_generator()[1], [])
+        shutil.rmtree(self.library / "Okta")
+        before = snapshot(self.documentation)
+        result = self.run_cli()
+        self.assertEqual(result.returncode, 1, result.stderr)
+        self.assertIn(f"Error: {BROKEN} {OKTA_PAGE} -> {OKTA_TARGET}", result.stdout)
+        self.assertEqual(snapshot(self.documentation), before)
+
+    def test_partial_checkout_on_the_first_run_writes_nothing(self):
+        aws_page = self.add_aws()
+        shutil.rmtree(self.library / "Okta")
+        before = snapshot(self.documentation)
+        _, problems = self.run_generator()
+        self.assertEqual(problems, [f"{BROKEN} {OKTA_PAGE} -> {OKTA_TARGET}"])
+        self.assertEqual(snapshot(self.documentation), before)
+        self.assertIn(PLAIN.replace("okta_user", "aws_device"), aws_page.read_text())
+
+    def test_duplicate_and_broken_include_are_both_reported_and_nothing_is_written(self):
+        duplicate = connector_config("Okta Users bis", "account_detection")
+        (self.library / "Okta" / "connector_okta_users_bis_assets.json").write_text(json.dumps(duplicate))
+        self.page.write_text(PLAIN.replace("okta_user", "ghost_device"))
+        before = snapshot(self.documentation)
+        _, problems = self.run_generator()
+        self.assertEqual(
+            problems,
+            [
+                "duplicate asset connectors skipped: okta_user.md (connector_okta_users_bis_assets.json)",
+                f"{BROKEN} {OKTA_PAGE} -> {GHOST_TARGET}",
+            ],
+        )
+        self.assertEqual(snapshot(self.documentation), before)
 
     def test_duplicate_is_reported_and_the_other_connectors_are_written(self):
         duplicate = connector_config("Okta Users bis", "account_detection")
@@ -534,7 +607,7 @@ class UpdateAssetDocTests(unittest.TestCase):
         self.page.write_text(PLAIN.replace("okta_user", "ghost_device"))
         result = self.run_cli()
         self.assertEqual(result.returncode, 1, result.stderr)
-        self.assertIn("Error: pages reference missing includes: ghost_device.md", result.stdout)
+        self.assertIn(f"Error: {BROKEN} {OKTA_PAGE} -> {GHOST_TARGET}", result.stdout)
 
 
 if __name__ == "__main__":

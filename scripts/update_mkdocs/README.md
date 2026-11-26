@@ -21,8 +21,10 @@ including the form escaped by GitBook) to
 `{% include "<relative path>/.gitbook/includes/asset_connectors/<slug>_<type>.md" %}`.
 
 The script exits with code 1 when a module has two connectors with the same
-`<slug>_<type>` (the second one is skipped) or when a page references a block
-that does not exist. The other blocks and pages are still written.
+`<slug>_<type>` (the second one is skipped, the rest is still written), or when
+a page would include a block under `asset_connectors/` that this run does not
+produce, for example after a connector was removed or a page was moved. In that
+case nothing is written, so the tree stays as it was.
 
 Generated blocks are overwritten on every run: edit the mapping files in
 automation-library or `templates/asset_connector_gitbook.md.jinja`, not the blocks

@@ -6,7 +6,7 @@ import os
 import re
 import sys
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List, Set, Tuple
 
 import yaml
 from jinja2 import Environment, FileSystemLoader
@@ -23,6 +23,9 @@ CAPABILITY_TO_ASSET_TYPE = {
 }
 
 LEGACY_INCLUDE_PATTERN = re.compile(r"\{!(?:[^!\n]*/)?generated\\?_assets\\?_documentation/(?P<name>[^!/\n]+\.md)!\}")
+GITBOOK_INCLUDE_PATTERN = re.compile(
+    r'\{%\s*include\s+"(?P<path>[^"\n]*\.gitbook/includes/asset_connectors/[^"\n]+)"\s*%\}'
+)
 
 
 def find_asset_connectors_folder(module_path: Path) -> Path | None:
@@ -177,37 +180,42 @@ def write_includes(connectors: List[Dict], includes_path: Path) -> Tuple[List[st
     return written, removed
 
 
-def rewrite_page_includes(section_path: Path, includes_path: Path) -> Tuple[List[Path], List[str]]:
-    rewritten: List[Path] = []
-    missing = set()
+def plan_page_includes(
+    section_path: Path, includes_path: Path, block_names: Set[str]
+) -> Tuple[Dict[Path, str], List[str]]:
+    """Compute the page rewrites without writing; return the new contents and the broken includes."""
+    changes: Dict[Path, str] = {}
+    broken: List[str] = []
 
     for page in sorted(section_path.rglob("*.md")):
         if page.is_symlink():
             continue
-        if ".gitbook" in page.relative_to(section_path).parts:
+        relative_page = page.relative_to(section_path)
+        if ".gitbook" in relative_page.parts:
             continue
 
         def replace_include(match: re.Match) -> str:
             name = match["name"].replace("\\_", "_")
-            if not (includes_path / name).exists():
-                missing.add(name)
             path = Path(os.path.relpath(includes_path / name, page.parent)).as_posix()
             return f'{{% include "{path}" %}}'
 
         content = page.read_text(encoding="utf-8")
         new_content = LEGACY_INCLUDE_PATTERN.sub(replace_include, content)
         if new_content != content:
-            page.write_text(new_content, encoding="utf-8")
-            rewritten.append(page)
-            print(f"Rewrote includes in {page.relative_to(section_path).as_posix()}")
+            changes[page] = new_content
 
-    return rewritten, sorted(missing)
+        for match in GITBOOK_INCLUDE_PATTERN.finditer(new_content):
+            target = Path(os.path.normpath(page.parent / match["path"]))
+            if target.parent != includes_path or target.name not in block_names:
+                broken.append(f"{relative_page.as_posix()} -> {match['path']}")
+
+    return changes, broken
 
 
 def update_asset_doc(
     connectors_repository: str, documentation_repository: str, section_root: str = DEFAULT_SECTION_ROOT
 ) -> List[str]:
-    """Write the blocks, rewrite the pages and return the problems found; the caller fails on any."""
+    """Check every include, then write the blocks and pages; return the problems, the caller fails on any."""
     section_path = Path(documentation_repository) / section_root
     if not section_path.is_dir():
         raise FileNotFoundError(f"GitBook section root not found: {section_path}")
@@ -217,20 +225,26 @@ def update_asset_doc(
         raise ValueError(f"No asset connectors found in {connectors_repository}")
 
     includes_path = section_path / INCLUDES_SUBDIR
-    written, removed = write_includes(connectors, includes_path)
-    pages, missing = rewrite_page_includes(section_path, includes_path)
-
-    location = includes_path.relative_to(documentation_repository)
-    print(f"Generated {len(written)} includes in {location} ({len(removed)} stale removed)")
-    print(f"Rewrote includes in {len(pages)} pages")
+    changes, broken = plan_page_includes(section_path, includes_path, {c["output_name"] for c in connectors})
 
     problems: List[str] = []
     if duplicates:
         problems.append(f"duplicate asset connectors skipped: {', '.join(duplicates)}")
-    if missing:
-        problems.append(f"pages reference missing includes: {', '.join(missing)}")
+    if broken:
+        problems.append(f"broken asset connector includes, nothing written: {', '.join(broken)}")
     for problem in problems:
         print(f"Error: {problem}")
+    if broken:
+        return problems
+
+    written, removed = write_includes(connectors, includes_path)
+    for page, content in changes.items():
+        page.write_text(content, encoding="utf-8")
+        print(f"Rewrote includes in {page.relative_to(section_path).as_posix()}")
+
+    location = includes_path.relative_to(documentation_repository)
+    print(f"Generated {len(written)} includes in {location} ({len(removed)} stale removed)")
+    print(f"Rewrote includes in {len(changes)} pages")
     return problems
 
 
