@@ -1,0 +1,271 @@
+"""Usage: python3 update_gitbook_asset_connectors.py /path/to/automation-library /path/to/documentation [--section-root docs]"""
+
+import argparse
+import json
+import os
+import re
+import sys
+from pathlib import Path
+from typing import Dict, List, Set, Tuple
+
+import yaml
+from jinja2 import Environment, FileSystemLoader
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+DEFAULT_SECTION_ROOT = "docs"
+INCLUDES_SUBDIR = Path(".gitbook") / "includes" / "asset_connectors"
+
+CAPABILITY_TO_ASSET_TYPE = {
+    "host_detection": "device",
+    "account_detection": "user",
+    "software_enrichment": "software",
+    "vulnerability_enrichment": "vulnerability",
+}
+
+LEGACY_INCLUDE_PATTERN = re.compile(r"\{!(?:[^!\n]*/)?generated\\?_assets\\?_documentation/(?P<name>[^!/\n]+\.md)!\}")
+GITBOOK_INCLUDE_PATTERN = re.compile(
+    r'\{%\s*include\s+"(?P<path>[^"\n]*\.gitbook/includes/asset_connectors/[^"\n]+)"\s*%\}'
+)
+
+
+def find_asset_connectors_folder(module_path: Path) -> Path | None:
+    excluded_dirs = {".venv", "venv", "tests", "__pycache__", ".git", "node_modules", ".mypy_cache", ".github"}
+
+    for folder_name in ["asset_connector", "asset_connectors"]:
+        for path in module_path.rglob(folder_name):
+            if path.is_dir():
+                parts = path.relative_to(module_path).parts
+                if not any(part in excluded_dirs for part in parts):
+                    return path
+    return None
+
+
+def get_asset_type(connector_config: Dict) -> str | None:
+    return CAPABILITY_TO_ASSET_TYPE.get(connector_config.get("capability"))
+
+
+def load_asset_connectors(automation_library_repository: str) -> Tuple[List[Dict], List[str]]:
+    asset_connectors: List[Dict] = []
+    duplicates: List[str] = []
+    seen_output_names = set()
+
+    for module_path in sorted(Path(automation_library_repository).iterdir()):
+        if not module_path.is_dir() or module_path.name.startswith((".", "_")):
+            continue
+
+        manifest_path = module_path / "manifest.json"
+        if not manifest_path.exists():
+            continue
+
+        with open(manifest_path, "r", encoding="utf-8") as fd:
+            module_manifest = json.load(fd)
+
+        module_slug = module_manifest.get("slug") or module_path.name.lower()
+
+        asset_connector_path = find_asset_connectors_folder(module_path)
+        if not asset_connector_path:
+            continue
+
+        print(f"Module {module_slug}: found asset_connectors at {asset_connector_path.relative_to(module_path)}")
+
+        for config_file in sorted(module_path.glob("*_assets.json")):
+            with open(config_file, "r", encoding="utf-8") as fd:
+                connector_config = json.load(fd)
+
+            asset_type = get_asset_type(connector_config)
+            if not asset_type:
+                print(f"  - Skipping config {config_file.name}: unknown capability {connector_config.get('capability')!r}")
+                continue
+
+            mapping_file = asset_connector_path / f"{asset_type}_mapping.yml"
+            if not mapping_file.exists():
+                print(f"  - Skipping {module_slug}/{asset_type}: no mapping file")
+                continue
+
+            with open(mapping_file, "r", encoding="utf-8") as fd:
+                mapping = (yaml.safe_load(fd) or {}).get("mapping") or {}
+
+            output_name = f"{module_slug}_{asset_type}.md"
+            if output_name in seen_output_names:
+                print(f"  - Skipping config {config_file.name}: duplicate {output_name}")
+                duplicates.append(f"{output_name} ({config_file.name})")
+                continue
+            seen_output_names.add(output_name)
+
+            asset_connectors.append(
+                {
+                    "module_slug": module_slug,
+                    "asset_type": asset_type,
+                    "config": connector_config,
+                    "mapping": mapping,
+                    "output_name": output_name,
+                }
+            )
+            print(f"  - Found: {module_slug} ({asset_type})")
+
+    return asset_connectors, duplicates
+
+
+def escape_table_cell(value) -> str:
+    return str(value).strip().replace("|", "\\|").replace("\n", "<br/>")
+
+
+def escape_markdown_text(value) -> str:
+    """Escape what GitBook would interpret in free text: HTML tags and its {% %} / {{ }} syntax."""
+    return str(value).replace("<", "\\<").replace("{{", "\\{\\{").replace("{%", "\\{%")
+
+
+def longest_backtick_run(text: str) -> int:
+    return max((len(run) for run in re.findall(r"`+", text)), default=0)
+
+
+def inline_code(value) -> str:
+    """Wrap a value in a code span whose delimiter is longer than any backtick run in the value."""
+    text = str(value)
+    delimiter = "`" * (longest_backtick_run(text) + 1)
+    if text.startswith("`") or text.endswith("`"):
+        text = f" {text} "
+    return f"{delimiter}{text}{delimiter}"
+
+
+def json_code_block(data) -> str:
+    """Render sample data as a fenced JSON block whose fence is longer than any backtick run in the data."""
+    text = data.strip() if isinstance(data, str) else json.dumps(data, indent=2, ensure_ascii=False)
+    fence = "`" * max(3, longest_backtick_run(text) + 1)
+    return f"{fence}json\n{text}\n{fence}"
+
+
+TEMPLATE_ENVIRONMENT = Environment(loader=FileSystemLoader(SCRIPT_DIR / "templates"), trim_blocks=True, lstrip_blocks=True)
+TEMPLATE_ENVIRONMENT.filters.update(
+    table_cell=escape_table_cell,
+    markdown_text=escape_markdown_text,
+    inline_code=inline_code,
+    json_code_block=json_code_block,
+)
+
+
+def generate_connector_doc(connector: Dict) -> str:
+    config = connector["config"]
+    module_slug = connector["module_slug"]
+    connector_name = config.get("name") or module_slug
+
+    body = TEMPLATE_ENVIRONMENT.get_template("asset_connector_gitbook.md.jinja").render(
+        connector_name=connector_name,
+        mapping=connector["mapping"],
+        module_slug=module_slug,
+        asset_type=connector["asset_type"],
+    )
+
+    front_matter = yaml.safe_dump(
+        {"title": f"{connector_name} OCSF mapping"}, sort_keys=False, allow_unicode=True, width=1000
+    )
+    return "---\n" + front_matter + "---\n\n" + body
+
+
+def write_includes(connectors: List[Dict], includes_path: Path) -> Tuple[List[str], List[str]]:
+    includes_path.mkdir(parents=True, exist_ok=True)
+
+    written: List[str] = []
+    for connector in connectors:
+        (includes_path / connector["output_name"]).write_text(generate_connector_doc(connector), encoding="utf-8")
+        written.append(connector["output_name"])
+        print(f"Generated {connector['output_name']}")
+
+    removed: List[str] = []
+    for stale_file in sorted(includes_path.glob("*.md")):
+        if stale_file.name not in written:
+            stale_file.unlink()
+            removed.append(stale_file.name)
+            print(f"Removed stale {stale_file.name}")
+
+    return written, removed
+
+
+def plan_page_includes(
+    section_path: Path, includes_path: Path, block_names: Set[str]
+) -> Tuple[Dict[Path, str], List[str]]:
+    """Compute the page rewrites without writing; return the new contents and the broken includes."""
+    changes: Dict[Path, str] = {}
+    broken: List[str] = []
+    normalised_includes_path = Path(os.path.normpath(includes_path))
+
+    for page in sorted(section_path.rglob("*.md")):
+        if page.is_symlink():
+            continue
+        relative_page = page.relative_to(section_path)
+        if ".gitbook" in relative_page.parts:
+            continue
+
+        def replace_include(match: re.Match) -> str:
+            name = match["name"].replace("\\_", "_")
+            path = Path(os.path.relpath(includes_path / name, page.parent)).as_posix()
+            return f'{{% include "{path}" %}}'
+
+        content = page.read_text(encoding="utf-8")
+        new_content = LEGACY_INCLUDE_PATTERN.sub(replace_include, content)
+        if new_content != content:
+            changes[page] = new_content
+
+        for match in GITBOOK_INCLUDE_PATTERN.finditer(new_content):
+            target = Path(os.path.normpath(page.parent / match["path"]))
+            if target.parent != normalised_includes_path or target.name not in block_names:
+                broken.append(f"{relative_page.as_posix()} -> {match['path']}")
+
+    return changes, broken
+
+
+def update_asset_doc(
+    connectors_repository: str, documentation_repository: str, section_root: str = DEFAULT_SECTION_ROOT
+) -> List[str]:
+    """Check every include, then write the blocks and pages; return the problems, the caller fails on any."""
+    section_path = Path(documentation_repository) / section_root
+    if not section_path.is_dir():
+        raise FileNotFoundError(f"GitBook section root not found: {section_path}")
+
+    connectors, duplicates = load_asset_connectors(connectors_repository)
+    if not connectors:
+        raise ValueError(f"No asset connectors found in {connectors_repository}")
+
+    includes_path = section_path / INCLUDES_SUBDIR
+    changes, broken = plan_page_includes(section_path, includes_path, {c["output_name"] for c in connectors})
+
+    problems: List[str] = []
+    if duplicates:
+        problems.append(f"duplicate asset connectors skipped: {', '.join(duplicates)}")
+    if broken:
+        problems.append(f"broken asset connector includes, nothing written: {', '.join(broken)}")
+        for problem in problems:
+            print(f"Error: {problem}")
+        return problems
+
+    written, removed = write_includes(connectors, includes_path)
+    for page, content in changes.items():
+        page.write_text(content, encoding="utf-8")
+        print(f"Rewrote includes in {page.relative_to(section_path).as_posix()}")
+
+    location = includes_path.relative_to(documentation_repository)
+    print(f"Generated {len(written)} includes in {location} ({len(removed)} stale removed)")
+    print(f"Rewrote includes in {len(changes)} pages")
+    for problem in problems:
+        print(f"Error: {problem}")
+    return problems
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Update GitBook reusable content for asset connectors")
+    parser.add_argument("connectors_repository", help="Path to the automation-library repository")
+    parser.add_argument("documentation_repository", help="Path to the documentation repository")
+    parser.add_argument(
+        "--section-root",
+        default=DEFAULT_SECTION_ROOT,
+        help="GitBook space root relative to the documentation repository",
+    )
+
+    args = parser.parse_args()
+    problems = update_asset_doc(
+        connectors_repository=args.connectors_repository,
+        documentation_repository=args.documentation_repository,
+        section_root=args.section_root,
+    )
+    if problems:
+        sys.exit(1)
