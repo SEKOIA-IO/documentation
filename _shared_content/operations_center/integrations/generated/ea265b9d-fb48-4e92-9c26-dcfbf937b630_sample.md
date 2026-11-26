@@ -690,6 +690,124 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
 
+=== "test_globalprotect_json_auth_failure"
+
+
+    ```json
+	{
+        "TimeReceived": "2024-07-08T09:01:14.000000Z",
+        "DeviceSN": "00795700000000",
+        "LogType": "GLOBALPROTECT",
+        "Subtype": "globalprotect",
+        "LogSubtype": "globalprotect",
+        "ConfigVersion": "10.2",
+        "TimeGenerated": "2024-07-08T09:01:14.000000Z",
+        "VirtualSystem": "vsys1",
+        "EventIDValue": "gateway-auth",
+        "Stage": "login",
+        "AuthMethod": "saml",
+        "TunnelType": null,
+        "SourceUserName": "testuser",
+        "SourceRegion": "1.0.0.0-1.255.255.255",
+        "EndpointDeviceName": "host.example.com",
+        "PublicIPv4": "198.51.100.109",
+        "PublicIPv6": "",
+        "PrivateIPv4": "",
+        "PrivateIPv6": "",
+        "HostID": null,
+        "EndpointSN": null,
+        "GlobalProtectClientVersion": "0.0.-1",
+        "EndpointOSType": null,
+        "EndpointOSVersion": "windows-64",
+        "RepeatCount": 1,
+        "CountOfRepeats": 1,
+        "QuarantineReason": null,
+        "ConnectionError": "Authentication failed: Invalid username or password",
+        "Description": "Login to: 203.0.113.10",
+        "EventStatus": "failure",
+        "GlobalProtectGatewayLocation": null,
+        "LoginDuration": 0,
+        "ConnectionMethod": null,
+        "ConnectionErrorID": 18,
+        "Portal": "GlobalProtect_External_Gateway",
+        "SequenceNo": 7359635570821640000,
+        "TimeGeneratedHighResolution": "2024-07-08T09:01:14.449000Z",
+        "GatewaySelectionType": "",
+        "SSLResponseTime": -1,
+        "GatewayPriority": null,
+        "AttemptedGateways": null,
+        "Gateway": null,
+        "DGHierarchyLevel1": 556,
+        "DGHierarchyLevel2": 0,
+        "DGHierarchyLevel3": 0,
+        "DGHierarchyLevel4": 0,
+        "VirtualSystemName": "",
+        "DeviceName": "DG-test",
+        "VirtualSystemID": 1
+    }
+    ```
+
+
+
+=== "test_globalprotect_json_prelogin"
+
+
+    ```json
+	{
+        "TimeReceived": "2024-07-08T09:01:14.000000Z",
+        "DeviceSN": "00795700000000",
+        "LogType": "GLOBALPROTECT",
+        "Subtype": "globalprotect",
+        "LogSubtype": "globalprotect",
+        "ConfigVersion": "10.2",
+        "TimeGenerated": "2024-07-08T09:01:14.000000Z",
+        "VirtualSystem": "vsys1",
+        "EventIDValue": "gateway-prelogin",
+        "Stage": "before-login",
+        "AuthMethod": "saml",
+        "TunnelType": null,
+        "SourceUserName": null,
+        "SourceRegion": "1.0.0.0-1.255.255.255",
+        "EndpointDeviceName": null,
+        "PublicIPv4": "198.51.100.109",
+        "PublicIPv6": "",
+        "PrivateIPv4": "",
+        "PrivateIPv6": "",
+        "HostID": null,
+        "EndpointSN": null,
+        "GlobalProtectClientVersion": "0.0.-1",
+        "EndpointOSType": null,
+        "EndpointOSVersion": null,
+        "RepeatCount": 1,
+        "CountOfRepeats": 1,
+        "QuarantineReason": null,
+        "ConnectionError": null,
+        "Description": "Login to: 203.0.113.10, SAML request sent",
+        "EventStatus": "success",
+        "GlobalProtectGatewayLocation": null,
+        "LoginDuration": 0,
+        "ConnectionMethod": null,
+        "ConnectionErrorID": 0,
+        "Portal": "GlobalProtect_External_Gateway",
+        "SequenceNo": 7359635570821640000,
+        "TimeGeneratedHighResolution": "2024-07-08T09:01:14.449000Z",
+        "GatewaySelectionType": "",
+        "SSLResponseTime": -1,
+        "GatewayPriority": null,
+        "AttemptedGateways": null,
+        "Gateway": null,
+        "DGHierarchyLevel1": 556,
+        "DGHierarchyLevel2": 0,
+        "DGHierarchyLevel3": 0,
+        "DGHierarchyLevel4": 0,
+        "VirtualSystemName": "",
+        "DeviceName": "DG-test",
+        "VirtualSystemID": 1
+    }
+    ```
+
+
+
 === "test_hipmatch_csv"
 
 
@@ -1627,7 +1745,7 @@ In this section, you will find examples of raw logs as generated natively by the
 
 
     ```json
-	1,2024/01/12 11:21:15,016201000000,THREAT,url,2562,2024/01/12 11:21:15,1.2.3.4,5.6.7.8,198.51.100.6,0.0.0.0,SAAS vers log,,,ssl,vsys1,Outside,test-Externe,a11.30,a11.25,Panorama,2024/01/12 11:21:15,111111,1,58444,2222,58444,2222,0x50b444,tcp,alert,"test.fr:9999/",(9999),test,informational,client-to-server,55555555555555555555,0x8000000000000000,US,France,,,0,,,0,,,,,,,,0,0,0,0,0,,TEST-01,,,,,0,,0,,N/A,N/A,AppThreat-0-0,0x0,0,4294967295,,"test,low-risk",96eeeef8-bd9c-4145,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,2024-01-12T11:21:15.190+01:00,,,,encrypted-tunnel,networking,browser-based,4,"used-by-malware,able-to-transfer-file,has-known-vulnerability,tunnel-other-application,pervasive-use",,ssl,no,no,
+	1,2024/01/12 11:21:15,016201000000,THREAT,url,2562,2024/01/12 11:21:15,1.2.3.4,5.6.7.8,198.51.100.6,0.0.0.0,SAAS vers log,,,ssl,vsys1,Outside,test-Externe,a11.30,a11.25,Panorama,2024/01/12 11:21:15,111111,1,58444,2222,58444,2222,0x50b444,tcp,alert,"example.com:9999/",(9999),test,informational,client-to-server,55555555555555555555,0x8000000000000000,US,France,,,0,,,0,,,,,,,,0,0,0,0,0,,TEST-01,,,,,0,,0,,N/A,N/A,AppThreat-0-0,0x0,0,4294967295,,"test,low-risk",96eeeef8-bd9c-4145,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,2024-01-12T11:21:15.190+01:00,,,,encrypted-tunnel,networking,browser-based,4,"used-by-malware,able-to-transfer-file,has-known-vulnerability,tunnel-other-application,pervasive-use",,ssl,no,no,
     ```
 
 
