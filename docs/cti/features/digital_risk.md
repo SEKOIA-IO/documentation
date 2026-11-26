@@ -86,11 +86,34 @@ The Sekoia connector uses a scheduled pull model.
 - Later collections use the feed pagination and checkpoint information to retrieve new events.
 - The frequency controls the time between searches for new events.
 - The page size controls how many events the connector requests per page.
-- The throttle controls the wait time between two event requests.
-
-The recommended connector values are bounded to prevent invalid configurations. You can change them when needed, but larger intervals or smaller page sizes can increase collection time.
+- The throttle controls the wait time between individual event requests.
+- The concurrency controls how many event details the connector requests at the same time. The requests remain paced by `throttle_seconds`.
 
 For the parameter limits and recommended defaults, see [Step 3: Monitor external exposure](/getting_started/intelligence_step3_monitor_external_exposure.md#review-the-connector-parameters).
+
+## Known limits
+
+### Alert names show the severity
+
+For now, a Sekoia alert name shows the severity of the Flare event. For example, an alert can be named **Flare Events High Severity Threat Exposure**.
+
+To identify the event type, such as a leaked credential, ransomware leak, or chat message, open the alert and review its event.
+
+### Large events can be truncated
+
+When a Flare event is larger than 250 kB, Sekoia truncates the end of its longest text fields so that it can store the event. The truncated fields are listed in `flare.events.truncated_fields`.
+
+The full item remains available in Flare through `event.url`.
+
+### The first collection can take up to one hour
+
+When you create a new Flare tenant or identifier, Flare sends the identifier's existing history in the initial feed. The first collection can take up to one hour.
+
+Create the Flare Events intake on the same day that you create the identifiers so that Sekoia can collect this initial history.
+
+### Event dates have different meanings
+
+The `@timestamp` field contains the date when Flare matched the item to the tenant. The original date of the item is stored in `flare.events.created_at`.
 
 ## Investigation pivot
 
