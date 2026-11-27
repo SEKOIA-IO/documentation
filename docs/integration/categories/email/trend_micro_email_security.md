@@ -1,11 +1,11 @@
 uuid: 2e9d87ed-6606-445a-90d1-9c7695b28335
-name: Trend Micro Email Security
+name: TrendIA Vision One Email and Collaboration Security (Trend Micro Email Security)
 type: intake
 
 ## Overview
-Trend Micro Email Security is a robust email protection solution that safeguards against email-borne threats such as phishing, malware, and spam, offering advanced threat detection and content filtering to secure corporate email communications effectively.
+TrendIA Vision One Email and Collaboration Security (formerly Trend Micro Email Security) is a robust email protection solution that safeguards against email-borne threats such as phishing, malware, and spam, offering advanced threat detection and content filtering to secure corporate email communications effectively.
 
-- **Vendor**: Trend Micro
+- **Vendor**: TrendIA (Trend Micro)
 - **Supported environment**: Cloud 
 - **Detection based on**: Telemetry
 - **Supported application or feature**: Email gateway

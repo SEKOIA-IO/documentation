@@ -1,15 +1,15 @@
 uuid: 064f7e8b-ce5f-474d-802e-e88fe2193365
-name: Trend Micro Apex One / Vision One Endpoint
+name:  TrendIA Vision One Endpoint (Trend Micro Apex One Endpoint)
 type: intake
 
 ## Overview
-- **Vendor**:
-- **Supported environment**:
+- **Vendor**: TrendIA (Trend Micro)
+- **Supported environment**: Cloud
 - **Version compatibility**:
 - **Detection based on**: Alert, Telemetry
 - **Supported application or feature**:
 
-Trend Micro Apex One / Vision One Endpoint is Endpoint Detection and Response (EDR) solution that detects and protects your endpoints against threats.
+Trend IA Vision One endpoint (formerly Trend Micro Apex One endpoint) is Endpoint Detection and Response (EDR) solution that detects and protects your endpoints against threats.
 
 This integration supports the following log types:
 
