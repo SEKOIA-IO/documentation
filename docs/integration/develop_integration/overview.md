@@ -121,7 +121,7 @@ The last step is to homologate your automation in order to make it available in 
 
 #### Step 1. Understand the general concepts
 
-Read [Connectors](automation/connectors.md) to understand how an asset connector differs from an event connector, and the rules it must follow to keep the asset inventory free of duplicates.
+Read [Connectors](automation/connectors.md) to understand how an asset connector differs from an event connector.
 
 #### Step 2. Write your asset connector
 
