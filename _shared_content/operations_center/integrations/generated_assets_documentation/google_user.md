@@ -14,7 +14,7 @@
 
 ## Information Collected
 
-The Google Workspace Users fetches comprehensive information and transforms it into the OCSF (Open Cybersecurity Schema Framework) format for standardized security monitoring and asset management.
+The Google Workspace Users connector fetches comprehensive information and transforms it into the OCSF (Open Cybersecurity Schema Framework) format for standardized security monitoring and asset management.
 
 
 ### API Response Examples
