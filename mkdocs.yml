@@ -280,7 +280,6 @@ nav:
       - Create asset connectors: xdr/features/modules/reveal_asset_connectors_create.md
       - Check asset connector health: xdr/features/collect/asset_connector_health.md
       - Troubleshoot asset connectors: xdr/features/modules/reveal_asset_connectors_troubleshoot.md
-      - Build a custom asset connector: xdr/features/modules/build_a_custom_asset_connector.md
       - Asset connector limits: xdr/features/modules/reveal_asset_connectors_limits.md
     - Investigate assets:
       - Explore assets context: xdr/features/modules/reveal_asset_context_panel.md
@@ -770,6 +769,7 @@ nav:
     - Automation:
       - Overview: integration/develop_integration/automation/overview.md
       - Action: integration/develop_integration/automation/action.md
+      - Asset Connector: integration/develop_integration/automation/asset_connector.md
       - Create a Module: integration/develop_integration/automation/create_a_module.md
       - Development Guidelines: integration/develop_integration/automation/development_guideline.md
       - Module: integration/develop_integration/automation/module.md
@@ -1104,6 +1104,7 @@ plugins:
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
       xdr/features/investigate/sekoia_operating_language.md: xdr/features/investigate/sol_overview.md
       xdr/features/investigate/use_custom_fields_in_cases.md: xdr/features/investigate/use_custom_fields.md
+      xdr/features/modules/build_a_custom_asset_connector.md: integration/develop_integration/automation/asset_connector.md
       xdr/sekoia_solutions.md: index.md
 - integration_by_uuid
 - sass

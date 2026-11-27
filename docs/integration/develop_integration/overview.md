@@ -11,6 +11,7 @@
 - **You want to ingest data from a product not supported by Sekoia, go to this [section](#usecase-1-you-want-to-ingest-data-from-a-product-not-supported-by-sekoia)**
 - **You want to modify an existing intake, go to this [section](#usecase-2-you-want-to-modify-an-existing-intake)**
 - **You want to create a new automation, go to this [section](#usecase-3-you-want-to-create-a-new-automation)**
+- **You want to collect assets from a product not supported by Sekoia, go to this [section](#usecase-4-you-want-to-collect-assets-from-a-product-not-supported-by-sekoia)**
 
 ## List of development usecases
 
@@ -112,3 +113,18 @@ Once you have acquired a basic understanding of automations:
 The last step is to homologate your automation in order to make it available in the automation library.
 
 - Follow these [instructions](automation/create_a_module.md#homologation-request) to homologate your automation
+
+### Usecase 4. You want to collect assets from a product not supported by Sekoia
+
+!!! note "Prerequisites"
+    An asset connector requires Python development skills, as it is custom Python code developed with the sekoia-automation SDK. Configuring it requires the Reveal module.
+
+#### Step 1. Write your asset connector
+
+Follow [Build an asset connector](automation/asset_connector.md). It explains how to declare the asset connector in a module, how to write it, and the practices that keep your asset inventory reliable.
+
+#### Step 2. Import and configure it
+
+1. Click on `+ New Integration` in the **Integrations** page, then click on `Get Started` and follow the steps given to set up your development environment
+2. Once your code is finalized, click on `Import my custom integration`, then follow the steps given to import your code from your Github or Gitlab repository
+3. Create a configuration of your asset connector by following [Create asset connectors](/xdr/features/modules/reveal_asset_connectors_create.md)

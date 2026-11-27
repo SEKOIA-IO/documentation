@@ -99,7 +99,7 @@ The connector resumes synchronization with the updated configuration.
 ## Related articles
 
 - [Create an asset connector](/xdr/features/modules/reveal_asset_connectors_create.md): How to configure a new asset connector from the integration catalog.
-- [Build a custom asset connector](/xdr/features/modules/build_a_custom_asset_connector.md): How to send valid data and avoid duplicate assets.
+- [Build an asset connector](/integration/develop_integration/automation/asset_connector.md): How to send valid data and avoid duplicate assets.
 - [Asset connector limits](/xdr/features/modules/reveal_asset_connectors_limits.md): Rate limits, caps and storage limits of asset connectors.
 - [Reveal feature enablement matrix](/xdr/features/modules/reveal_feature_enablement.md): Which data sources are required for each Reveal capability.
 - [Security controls](/xdr/features/modules/reveal_security_controls.md): How to verify connector coverage and identify visibility gaps from the asset context panel.
