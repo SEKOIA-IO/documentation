@@ -11,6 +11,8 @@ Conversions :
   ![img](x){: style=...}   -> ![img](x)                (attributs MkDocs supprimés)
   ](/xdr/page.md)          -> ](../../xdr/page.md)     (liens absolus -> relatifs)
   {!_shared_content/x.md!} -> contenu du fichier inclus (option --inline-includes)
+  {!_shared_content/x.md!} -> {% include "../.gitbook/includes/x.md" %} (option --gitbook-includes :
+                              contenu réutilisable GitBook, les inclusions générées restent telles quelles)
   ++ctrl+c++               -> `Ctrl+C`
   code  # (1)              -> code                     (marqueurs d'annotation retirés, la liste reste)
 
@@ -72,7 +74,11 @@ TO_REVIEW = {
     "attributs {: ...} / {#...} hors liens": re.compile(r'\{:[^}\n]*\}|\{\s*[#.][\w-][^}\n%]*\}\s*$'),
 }
 
+# Inclusions produites par les générateurs (intakes : SekoiaLab/integration#1839, connecteurs d'actifs : #1840)
+GENERATED_INCLUDE_RE = re.compile(r'generated|do_not_edit')
+
 stats = Counter()
+REUSABLE = {}  # contenu réutilisable à écrire (chemin -> texte), option --gitbook-includes
 CURRENT = [""]  # fichier en cours, pour les messages
 ANNOTATED = set()  # fichiers déjà signalés pour les annotations de code
 
@@ -278,9 +284,45 @@ def inline_includes(text, repo_root, depth=0):
     return INCLUDE_RE.sub(repl, text)
 
 
-def convert(text, path, docs_root, repo_root, do_includes):
+def gitbook_includes(text, path, docs_root, repo_root):
+    """{!_shared_content/x.md!} -> {% include "<relatif>/.gitbook/includes/x.md" %}.
+
+    Le fichier inclus (écrit à la main) est converti et déposé dans le dossier .gitbook/includes/ de la
+    section GitBook (premier dossier sous docs_root), où GitBook le lit comme contenu réutilisable.
+    Une inclusion imbriquée est copiée dans le contenu réutilisable. Les inclusions générées sont laissées.
+    """
+    rel = path.relative_to(docs_root)
+    section = docs_root / rel.parts[0] if len(rel.parts) > 1 else docs_root
+    includes_dir = section / ".gitbook" / "includes"
+
+    def repl(m):
+        src = m.group(1)
+        if GENERATED_INCLUDE_RE.search(src):
+            stats["inclusions générées laissées telles quelles (générateurs à adapter)"] += 1
+            return m.group(0)
+        if not (repo_root / src).exists():
+            stats["inclusions introuvables"] += 1
+            print(f"  ! {CURRENT[0]}: inclusion introuvable : {src}", file=sys.stderr)
+            return m.group(0)
+        target = includes_dir / Path(src).name
+        if target not in REUSABLE:
+            page, CURRENT[0] = CURRENT[0], target.relative_to(docs_root).as_posix()
+            content = (repo_root / src).read_text(encoding="utf-8").rstrip("\n")
+            content = inline_includes(content, repo_root, depth=1)
+            content = "\n".join(convert_blocks(content.split("\n")))
+            REUSABLE[target] = convert_inline(content, target, docs_root) + "\n"
+            CURRENT[0] = page
+        stats["inclusions -> contenu réutilisable GitBook {% include %}"] += 1
+        link = os.path.relpath(target, path.parent).replace(os.sep, "/")
+        return f'{{% include "{link}" %}}'
+    return INCLUDE_RE.sub(repl, text)
+
+
+def convert(text, path, docs_root, repo_root, do_includes, do_gitbook_includes=False):
     if do_includes:
         text = inline_includes(text, repo_root)
+    if do_gitbook_includes:
+        text = gitbook_includes(text, path, docs_root, repo_root)
     text = "\n".join(convert_blocks(text.split("\n")))
     return convert_inline(text, path, docs_root)
 
@@ -308,10 +350,15 @@ def main(argv=None):
     ap.add_argument("--exclude", action="append", default=[], help="sous-dossier à ignorer (répétable)")
     ap.add_argument("--only", action="append", default=[], help="ne traiter que ce sous-dossier (répétable)")
     ap.add_argument("--inline-includes", action="store_true", help="remplacer {!...!} par le contenu inclus")
+    ap.add_argument("--gitbook-includes", action="store_true",
+                    help="remplacer les {!...!} écrits à la main par un {%% include %%} GitBook "
+                         "(fichier converti dans .gitbook/includes/ de la section) ; les inclusions générées restent")
     ap.add_argument("--repo-root", type=Path, default=Path("."), help="base des chemins {!...!} (défaut : .)")
     ap.add_argument("--report", action="store_true",
                     help="signaler, fichier par fichier, la syntaxe à reprendre à la main (HTML, embeds...)")
     args = ap.parse_args(argv)
+    if args.inline_includes and args.gitbook_includes:
+        ap.error("--inline-includes et --gitbook-includes sont exclusifs")
 
     docs_root = args.docs_root.absolute()
     files = changed_files(args.since, args.docs_root) if args.since else sorted(docs_root.rglob("*.md"))
@@ -340,7 +387,8 @@ def main(argv=None):
         # Lecture sans normalisation des fins de ligne, pour conserver le CRLF des fichiers qui en ont
         original = path.read_bytes().decode("utf-8")
         crlf = "\r\n" in original
-        new = convert(original.replace("\r\n", "\n"), path, docs_root, args.repo_root.resolve(), args.inline_includes)
+        new = convert(original.replace("\r\n", "\n"), path, docs_root, args.repo_root.resolve(),
+                      args.inline_includes, args.gitbook_includes)
         if args.report:
             report_to_review(new)
         if crlf:
@@ -349,6 +397,18 @@ def main(argv=None):
             changed.append(rel)
             if args.write:
                 path.write_bytes(new.encode("utf-8"))
+
+    for target, content in sorted(REUSABLE.items()):
+        rel = target.relative_to(docs_root).as_posix()
+        CURRENT[0] = rel
+        if args.report:
+            report_to_review(content)
+        if target.exists() and target.read_text(encoding="utf-8") == content:
+            continue
+        changed.append(rel)
+        if args.write:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(content, encoding="utf-8")
 
     print(f"{len(changed)} fichier(s) {'convertis' if args.write else 'à convertir'}")
     for k, v in sorted(stats.items()):

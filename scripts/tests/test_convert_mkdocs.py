@@ -13,6 +13,7 @@ import convert_mkdocs as cm
 def reset_state():
     cm.stats.clear()
     cm.ANNOTATED.clear()
+    cm.REUSABLE.clear()
     cm.CURRENT[0] = "test.md"
 
 
@@ -160,3 +161,61 @@ def test_includes_are_kept_without_inline_option(docs):
     page.write_text("{!_shared_content/x.md!}\n")
     run(docs, "--only", "integration", "--write")
     assert page.read_text() == "{!_shared_content/x.md!}\n"
+
+
+# --- --gitbook-includes -------------------------------------------------------
+
+@pytest.fixture
+def shared(docs):
+    root = docs.parent / "_shared_content"
+    (root / "integration").mkdir(parents=True)
+    (root / "integration" / "detection.md").write_text(
+        "## Detection\n\n!!! note\n    See [events](/xdr/events.md).\n"
+    )
+    (root / "integration" / "outer.md").write_text("Outer\n\n{!_shared_content/integration/detection.md!}\n")
+    (root / "integration" / "generated").mkdir()
+    (root / "integration" / "generated" / "x.md").write_text("generated\n")
+    page = docs / "integration" / "categories" / "page.md"
+    page.write_text(
+        "{!_shared_content/integration/detection.md!}\n\n"
+        "{!_shared_content/integration/generated/x.md!}\n\n"
+        "{!_shared_content/integration/outer.md!}\n"
+    )
+    return page
+
+
+def test_gitbook_includes_write_reusable_content(shared, docs):
+    run(docs, "--only", "integration", "--gitbook-includes", "--write")
+    assert shared.read_text() == (
+        '{% include "../.gitbook/includes/detection.md" %}\n\n'
+        "{!_shared_content/integration/generated/x.md!}\n\n"
+        '{% include "../.gitbook/includes/outer.md" %}\n'
+    )
+    includes = docs / "integration" / ".gitbook" / "includes"
+    assert (includes / "detection.md").read_text() == (
+        '## Detection\n\n{% hint style="info" %}\nSee [events](../../../xdr/events.md).\n{% endhint %}\n'
+    )
+    # nested inclusion: copied into the reusable content, no reusable content inside another one
+    assert "{% include" not in (includes / "outer.md").read_text()
+    assert "{% hint" in (includes / "outer.md").read_text()
+    assert cm.stats["inclusions -> contenu réutilisable GitBook {% include %}"] == 2
+    assert cm.stats["inclusions générées laissées telles quelles (générateurs à adapter)"] == 1
+
+
+def test_gitbook_includes_dry_run_writes_nothing(shared, docs, capsys):
+    run(docs, "--only", "integration", "--gitbook-includes")
+    assert "{!" in shared.read_text()
+    assert not (docs / "integration" / ".gitbook").exists()
+    assert "3 fichier(s) à convertir" in capsys.readouterr().out  # page + 2 reusable contents
+
+
+def test_gitbook_includes_is_idempotent(shared, docs, capsys):
+    run(docs, "--only", "integration", "--gitbook-includes", "--write")
+    cm.REUSABLE.clear()
+    run(docs, "--only", "integration", "--gitbook-includes", "--write")
+    assert "0 fichier(s) convertis" in capsys.readouterr().out
+
+
+def test_inline_and_gitbook_includes_are_exclusive(docs):
+    with pytest.raises(SystemExit):
+        run(docs, "--inline-includes", "--gitbook-includes")
