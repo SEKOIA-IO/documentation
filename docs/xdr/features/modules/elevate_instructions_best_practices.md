@@ -12,6 +12,15 @@ The more precise and factual your instructions are, the more relevant the agent'
 
 ## What to include
 
+### Output language
+
+If your analysts need investigation text in a specific language, state it explicitly in the instructions. Elevate does not use the platform interface language as a deterministic selector for the language of the verdict explanation, findings, or reasoning answers. The surrounding context may influence the output, but an explicit instruction makes the expected language clear.
+
+??? example "Language instruction"
+    Write all investigation explanations, verdicts, findings, and reasoning answers in French. Keep product names, detection names, query syntax, and field names unchanged.
+
+The generated investigation is saved with the alert and is not translated dynamically for each viewer. If different customers or tenants need different languages, use community-level instructions. If all communities should use the same language, use a workspace-level instruction. See [Add custom instructions for an Elevate agent](/xdr/features/modules/elevate_custom_instructions.md) for the configuration steps.
+
 ### Network context
 
 Describe your internal address space, VPN ranges, and any external IP addresses or CIDR blocks that are legitimate in your environment. This helps the agent avoid flagging internal traffic as suspicious lateral movement or treating known infrastructure as a threat.
