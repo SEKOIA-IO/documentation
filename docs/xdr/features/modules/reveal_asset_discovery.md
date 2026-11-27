@@ -57,6 +57,9 @@ Atoms are similar to the observables of the Intelligence Center, but they serve 
 !!! warning "Hostname validation"
     A hostname is valid only if it contains at least one letter, contains only letters, numbers, hyphens, and underscores, and is not a valid domain. Reveal does not create an asset from an invalid hostname.
 
+!!! warning "SID validation"
+    A `sid` detection property is only taken from a Windows security identifier (`S-1-...`). Other values of these fields, such as GUIDs, claims, or application identifiers, are ignored, as are the well-known SIDs shared by every Windows host.
+
 ## Understand discovery rules
 
 ### Attach an operating system to a host

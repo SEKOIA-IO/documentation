@@ -17,7 +17,7 @@ Sekoia Self-Hosted 1.0 is the first generally available release of Sekoia Self-H
 
 **Post-installation bootstrap.** `InstanceBootstrap` declares the default storage backend and reconciles the per-community ExaLog indexes, then `ScaleServices` scales the ingestion and detection workers to their configured replica count. See [Post-installation bootstrap](/self_hosted/1.0/deployment/deployment_process.md#post-installation-bootstrap).
 
-**CTI database import.** `ImportArangoCollection` imports the Sekoia CTI database into the platform, from the Sekoia release bucket or, in air-gapped mode, from the daily CTI archive published by Sekoia. Once imported, it feeds contextualized alerts. The installation also creates the `SEKOIA Intelligence Feed` detection rule, which matches events against the indicators of the CTI database. The SHC reads the ArangoDB password from the cluster: you do not provide it. See [Import the CTI database](/self_hosted/1.0/operations/import_cti_database.md).
+**CTI database import.** `ImportArangoCollection` imports the Sekoia CTI database into the platform, from the Sekoia release bucket or, in air-gapped mode, from the CTI collections transferred to the orchestration node. Once imported, it feeds contextualized alerts. The installation also creates the `SEKOIA Intelligence Feed` detection rule, which matches events against the indicators of the CTI database. The SHC reads the ArangoDB password from the cluster: you do not provide it. See [Import the CTI database](/self_hosted/1.0/operations/import_cti_database.md).
 
 **Platform backups.** With `modules.platform_configuration.config.backups.enabled` set to `true`, the platform backs up Vault (daily encrypted snapshot, 30 kept), every PostgreSQL cluster including the ExaLog metastore (daily base backup and continuous WAL archiving, kept 30 days), ArangoDB (daily encrypted archive), and ClickHouse (encrypted daily incremental backups in monthly chains, 3 months kept). All backups go to one S3 bucket, by default `exalog-self-hosted-backups` on the platform storage, which you create beforehand. The encryption keys come from the `BACKUP_VAULT_CRYPT_KEY`, `BACKUP_ARANGO_CRYPT_KEY`, and `BACKUP_CLICKHOUSE_CRYPT_KEY` environment variables: keep a copy of them outside the platform. The `Backups` module checks the backup status from the S3 bucket, without access to the cluster, and `exec Backups -m run_now` triggers a backup of every enabled component. Backups are disabled by default. To restore from a backup, contact Sekoia support, who guides you through a restore procedure adapted to your needs. See [Back up the platform](/self_hosted/1.0/operations/backups.md).
 
@@ -152,7 +152,7 @@ The import contains the CTI objects and their relationships, but not the observa
 
 The Intelligence module, used to explore threat actors, campaigns, and observables, is not available in Sekoia Self-Hosted 1.0, even after the import.
 
-In online mode, the import downloads the CTI database from the Sekoia release bucket. In air-gapped mode, it reads the CTI archive that you download from the release bucket and extract on the orchestration node. The other detection rules and the integration connectors do not depend on the CTI database.
+In online mode, the import downloads the CTI database from the Sekoia release bucket. In air-gapped mode, it reads the two CTI collections that you download from the release bucket and transfer to the orchestration node. The other detection rules and the integration connectors do not depend on the CTI database.
 
 ### AI features
 
