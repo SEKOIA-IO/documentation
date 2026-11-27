@@ -274,7 +274,7 @@ The bundle is used by the Endpoint Agent and by every playbook action and asset 
 
 ## Related articles
 
-- [Assets](/xdr/features/collect/assets.md): Overview of asset inventory and asset discovery methods.
+- [Assets](/xdr/features/collect/assets.md): Overview of the asset model shared by all Sekoia SOC platform users, including asset types, categories, criticality, and asset properties.
 - [Create an asset connector](/xdr/features/modules/reveal_asset_connectors_create.md): How to configure an asset connector from the integration catalog.
 - [Check asset connector health](/xdr/features/collect/asset_connector_health.md): How to review asset connector status and logs.
 - [Troubleshoot the Sekoia Endpoint Agent](/integration/categories/endpoint/troubleshoot_sekoia_endpoint_agent.md): How to collect logs and diagnose Endpoint Agent issues.

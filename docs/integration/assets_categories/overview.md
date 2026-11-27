@@ -25,6 +25,8 @@ Asset connectors automatically synchronize your IT assets from various sources i
 - **Risk Management**: Understand your exposure by correlating vulnerabilities with active threats
 - **Compliance**: Track asset configurations and user access for compliance reporting
 
+An asset connector derives the category of a host or an account from the OCSF device type or user type it pushes. See [Map asset connector data to asset categories](/xdr/features/modules/reveal_asset_connector_category_mapping.md).
+
 ## Valuable Resources
 
 To enhance your experience and keep you informed about our latest developments, we recommend exploring the following resources:

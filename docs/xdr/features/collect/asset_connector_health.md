@@ -80,5 +80,6 @@ Useful information about what happened during the run, including:
 - [Asset context panel](/xdr/features/investigate/asset_context_panel.md): Full reference for the asset context panel, which displays data enriched by asset connectors including security controls, vulnerabilities, and hygiene information.
 - [Attack path visualization](/xdr/features/investigate/attack_path_visualization.md): How attack path graph enrichment depends on asset connectors providing relationship and exposure data.
 - [Integration — Asset categories](/integration/assets_categories/overview.md): Reference documentation for asset connector categories and integration setup.
-- [Collect — Assets](/xdr/features/collect/assets.md): How assets are configured and discovered in Sekoia, including the role of asset connectors in the collection pipeline.
+- [Assets](/xdr/features/collect/assets.md): Reference for the asset model shared by all Sekoia SOC platform users, including asset types, categories, and properties.
+- [Map asset connector data to asset categories](/xdr/features/modules/reveal_asset_connector_category_mapping.md): Reference for the categories and properties assigned by asset connectors.
 - [Local runners](/xdr/features/automate/playbooks-on-premises.md): How to check the status and connectivity of runners used for local asset connector jobs.

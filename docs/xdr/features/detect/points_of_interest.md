@@ -104,6 +104,6 @@ Keep the following in mind when using points of interest:
 
 ## Related links
 
-- [Asset context panel](/xdr/features/investigate/asset_context_panel.md) — Full reference for the asset context panel, where points of interest appear in the timeline and overview sections.
-- [Attack path visualization](/xdr/features/investigate/attack_path_visualization.md) — How to assess potential lateral movement paths from an asset, complementing the behavioral context provided by PoIs.
-- [Detection — IOC detection](/xdr/features/detect/iocdetection.md) — Overview of detection capabilities in Sekoia, including rule-based and analytics-driven approaches that PoIs complement.
+- [Asset context panel](/xdr/features/investigate/asset_context_panel.md): Full reference for the asset context panel, where points of interest appear in the timeline and overview sections.
+- [Attack path visualization](/xdr/features/investigate/attack_path_visualization.md): How to assess potential lateral movement paths from an asset, complementing the behavioral context provided by PoIs.
+- [Detection — IOC detection](/xdr/features/detect/iocdetection.md): Overview of detection capabilities in Sekoia, including rule-based and analytics-driven approaches that PoIs complement.

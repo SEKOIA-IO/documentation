@@ -31,6 +31,8 @@ Security teams investigate in two directions. Reactive investigations start from
 | [Application discovery](/xdr/features/modules/reveal_applications.md) | Lists software installed on an asset and maps each application to the CVEs that affect it |
 | [Attack Path Visualization](/xdr/features/investigate/attack_path_visualization.md) | Maps relationships between assets to help analysts assess lateral movement risk and blast radius |
 | [Asset risk scoring](/xdr/features/modules/asset_risk_scoring.md) | Calculates an asset-level security priority from persistent exposure, recent activity, and configured asset criticality. |
+| [Passive Asset Discovery](/xdr/features/modules/reveal_asset_discovery.md) | Creates, merges, and lightly enriches assets from supported telemetry |
+| [Asset connector category mapping](/xdr/features/modules/reveal_asset_connector_category_mapping.md) | Reference for the categories and account properties assigned by asset connectors |
  
 ## How Reveal fits into your workflows
  
@@ -47,6 +49,6 @@ To enable and configure Reveal, follow the [Getting started with Reveal](/xdr/fe
 
 ## Related links
 
-- [Collect — Assets](/xdr/features/collect/assets.md): Documentation on how assets are configured, discovered, and managed in Sekoia.
+- [Assets](/xdr/features/collect/assets.md): Overview of the asset model shared by all Sekoia SOC platform users, including asset types, categories, criticality, and asset properties.
 - [Detection — IOC detection](/xdr/features/detect/iocdetection.md): Overview of detection capabilities in Sekoia, including rule-based and analytics-driven approaches.
 - [Integration — Asset categories](/integration/assets_categories/overview.md): Reference for asset connector categories and integration setup.

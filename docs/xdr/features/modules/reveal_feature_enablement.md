@@ -21,6 +21,8 @@ Each column represents a data source. Each row represents a Reveal capability.
 - [Getting started with Reveal](/xdr/features/modules/reveal_getting_started.md): Recommended setup order for all Reveal data sources.
 - [Troubleshoot Reveal](/xdr/features/modules/reveal_troubleshoot.md): General troubleshooting for missing Reveal data.
 - [Create an asset connector](/xdr/features/modules/reveal_asset_connectors_create.md): How to configure a connector from the integration catalog.
+- [Understand passive asset discovery](/xdr/features/modules/reveal_asset_discovery.md): Overview of the asset records created from supported telemetry.
+- [Map asset connector data to asset categories](/xdr/features/modules/reveal_asset_connector_category_mapping.md): Reference for the categories and properties assigned by asset connectors.
 - [Asset context panel](/xdr/features/investigate/asset_context_panel.md): Core investigation surface for all clients.
 - [Points of Interest](/xdr/features/detect/points_of_interest.md): How Reveal surfaces behavioral anomalies on assets.
 - [Endpoint Hygiene](/xdr/features/modules/reveal_hygiene.md): How to read and interpret hygiene signals.

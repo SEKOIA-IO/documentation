@@ -329,7 +329,7 @@ A custom asset connector updates the assets your community already has, whatever
 | Software | The application with the same name and version, on the host asset with the same hostname as the device the item carries. A software without a name is ignored. | A new application is created. A new version creates a new application. |
 | Vulnerability finding | The finding whose CVEs include all the CVEs it carries, or with the same `finding_info.uid` when it has no CVE, on the host asset with the same hostname as the device the finding carries. | A new finding is created. |
 
-Give each software and each finding the device it belongs to, with the same hostname as the device item of that machine. [How a push updates an existing asset](/xdr/features/collect/assets.md#how-a-push-updates-an-existing-asset) says which properties a push overwrites, clears or keeps.
+Give each software and each finding the device it belongs to, with the same hostname as the device item of that machine. [How a push updates an existing asset](/xdr/features/modules/reveal_asset_connector_category_mapping.md#how-a-push-updates-an-existing-asset) says which properties a push overwrites, clears or keeps.
 
 Set a precise `device.type` rather than Unknown or Other, and set `user.type` when the source knows it: Sekoia derives the category of a host or an account from them, and analysts filter on that category in SOL queries.
 
