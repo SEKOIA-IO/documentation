@@ -165,24 +165,24 @@ Enable the corresponding roles:
 
 ### During installation
 
-Append the `--compliance-collector` flag to the install command:
+Append the `--compliance-collector` flag, the `--software-collector` flag, or both, to the install command. Both flags require `--intake-key`:
 
 === "Windows"
 
     ```shell
-    .\agent-latest.exe install --intake-key <INTAKE_KEY> --compliance-collector
+    .\agent-latest.exe install --intake-key <INTAKE_KEY> --compliance-collector --software-collector
     ```
 
 === "Linux"
 
     ```shell
-    ./agent-latest install --intake-key <INTAKE_KEY> --compliance-collector
+    ./agent-latest install --intake-key <INTAKE_KEY> --compliance-collector --software-collector
     ```
 
 === "macOS"
 
     ```shell
-    sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent install --intake-key <INTAKE_KEY> --compliance-collector
+    sudo /Applications/SekoiaEndpointAgent.app/Contents/MacOs/SekoiaEndpointAgent install --intake-key <INTAKE_KEY> --compliance-collector --software-collector
     ```
 
 ### After installation
