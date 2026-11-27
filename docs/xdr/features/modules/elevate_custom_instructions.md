@@ -26,7 +26,7 @@ To add instructions for a specific community:
 
 ## Choose the language of investigation text
 
-Elevate does not use the platform interface language as a deterministic selector for the language of an investigation. The language of the verdict explanation, findings, and reasoning answers can be influenced by the context provided to the agent, including custom instructions and runbook content.
+The language of the verdict explanation, findings, and reasoning answers can be influenced by the context provided to the agent, including custom instructions and runbook content.
 
 To request a consistent language, state it explicitly in the instructions. For example:
 
