@@ -171,6 +171,23 @@ Each asset connector frequently syncs assets into your unified inventory:
 - Improves **contextual accuracy** for investigations and risk assessments.  
 - Reduces analyst effort by consolidating multiple inventories into a **single, consistent asset view**.
 
+##### How a push updates an existing asset
+
+When an item an asset connector pushes matches an existing asset, the push updates the asset as follows.
+
+!!! note "Locked properties"
+    When automatic asset discovery changes a property of an asset more than 5 times in an hour, Sekoia locks the property. A push neither overwrites nor clears a locked property. The property stays locked until a user edits it.
+
+| Item | Properties | When the push carries a value | When the push leaves it empty |
+|---|---|---|---|
+| Device | OS (`device.os.name`, `device.os.type`, `device.os.type_id`), location (`device.location.city`, `device.location.country`), device type (`device.type_id`), IP address (`device.ip`, or the IP of the primary interface), MAC address, organization (`device.org.name`), firewall status | Overwrites the stored value | Clears the stored value |
+| Device | Other `device` fields, such as `device.name`, `device.desc` or `device.domain` | Overwrites the stored value | Keeps the stored value |
+| Device | Interfaces (`device.network_interfaces`), groups (`device.groups`), partitions, accounts | Replaces the stored list | Keeps the stored list |
+| User | Account type (`user.account.type`, `user.account.type_id`), organization (`user.org.name`), and the user data of `enrichments`: enabled, last logon, last password change, bad password count, number of logons, external device | Overwrites the stored value | Clears the stored value |
+| User | Administrator status, from `user.type` | Set at every push | Set to not administrator |
+| User | Other `user` fields, such as `user.full_name`, `user.display_name` or `user.ldap_person` | Overwrites the stored value | Keeps the stored value |
+| User | Groups (`user.groups`) | Replaces the stored list | Keeps the stored list |
+
 #### Automatic Asset Discovery
 
 In Sekoia.io, **Asset Discovery is the live process of passively finding and consolidating assets from your events**.
@@ -227,7 +244,12 @@ The following table lists the atom types and their related event fields that are
 
 ⚠ To be considered valid, a hostname must have at least one letter, only contain letters, numbers, hyphens and underscores, and not be a valid domain. If the Hostname is not valid, it will not be detected as an Asset.
 
+⚠ A `sid` detection property is only taken from a Windows security identifier (`S-1-...`). Other values of these fields, such as GUIDs, claims or application identifiers, are ignored, as are the well-known SIDs shared by every Windows host.
+
 #### Asset Discovery Rules
+
+!!! note "Limit on the assets discovered each day"
+    Asset discovery creates at most 10,000 hosts and 20,000 accounts per community and per day (UTC). Over the limit, the new hosts or accounts found in the events are dropped: they are created on a later day only if events name them again. The assets already in the inventory keep being updated. A community whose first asset is less than 90 days old is not limited, so that the inventory of a new community can be built.
 
 ##### Attach Operating System (OS) to Host
 
@@ -247,9 +269,18 @@ Note that this rule only applies to assets of `Host` category and that a single 
 
 This rule creates a new asset for every unseen `host.name`. It also suggests the `ipv4` and `ipv6` stored in field `host.ip` of the event as detection properties of the newly created asset.
 
+It ignores an event whose `event.outcome` or `action.outcome` is `failure`, such as a failed authentication, since the client can send any device name before it is authenticated: such an event neither creates a host nor updates an existing one. It also creates no host from a placeholder name such as `unknown`, `n/a`, `null` or `localhost`.
+
 ##### Discover unique Accounts
 
 This rule creates a new asset for every unseen `user.name`. It attaches the `user.email` and `user.id` event field values as detection property of the newly created asset.
+
+It creates no account:
+
+- from an event with an `event.outcome` or `action.outcome` other than `success`, such as a failed authentication, or from an intrusion detection event (`event.category` contains `intrusion_detection`), where the name may come from an attacker;
+- for accounts used by Windows itself rather than by a person: the ones Windows creates and drops on its own for Hyper-V virtual machines, services, IIS application pools and OpenSSH sessions, and built-in or special-purpose accounts such as `DefaultAccount`, `WDAGUtilityAccount`, `IUSR` (IIS) or `krbtgt` (Active Directory);
+- for a placeholder name such as `n/a`, `null` or `undefined`, or a generic name such as `root`, `admin`, `administrator`, `guest` or `test`;
+- from a user field that lists several people at once, such as the collaborators of a shared document, since nothing tells which name goes with which email.
 
 Questions? Please read our [FAQ](../../FAQ/Assets_qa.md).
 
@@ -391,3 +422,4 @@ This feature allows users to dive deeper into the specifics of each authenticati
 ### Going further
 
 * [Assets FAQ](/xdr/FAQ/Assets_qa.md): Answers to frequently asked questions about assets.
+* [Local runners](/xdr/features/automate/playbooks-on-premises.md): How to run eligible asset connector jobs from inside your environment

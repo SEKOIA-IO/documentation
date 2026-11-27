@@ -60,7 +60,7 @@ Get the last sign ins of an Azure AD user. Requires the AuditLog.Read.All and Di
 
 | Name      |  Type   |  Description  |
 | --------- | ------- | --------------------------- |
-| `id` | `string` | ID of the user. id or userPrincipalName should be specified. |
+| `id` | `string` | ID or userPrincipalName (UPN) of the user. |
 
 
 **Outputs**
@@ -209,4 +209,4 @@ Invalidates all the refresh tokens issued to applications for a user. Requires t
 
 ## Extra
 
-Module **`Microsoft Entra ID` v2.10.29**
+Module **`Microsoft Entra ID` v2.10.31**

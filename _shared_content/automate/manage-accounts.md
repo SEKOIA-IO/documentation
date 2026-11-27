@@ -1,4 +1,4 @@
-# Manage accounts
+# Manage accounts in playbooks
 
 You can centralize the management of your accounts to your third-party tools in the "Accounts" menu.
 

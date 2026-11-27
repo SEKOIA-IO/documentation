@@ -14,28 +14,40 @@ Bitwarden Event Logs provide an audit trail of authentication, vault usage, orga
 
 ## Configure
 
-### Generic HEC integration setup in Bitwarden
-
-Follow the official Bitwarden guide to configure Event Management forwarding with Generic HEC.
-
-[Bitwarden documentation - HTTP Event Collector](https://bitwarden.com/help/http-event-collector/)
-
 ### Create the intake in Sekoia.io
 
-1. Open your Sekoia.io workspace for your region, then go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the format `Bitwarden Event Logs`.
-2. Copy the generated Sekoia intake URL and intake key.
+1. Log in to the Sekoia.io workspace of your [region](/getting_started/regions.md), go to **Intakes** (for FRA1: [intake page](https://app.sekoia.io/operations/intakes)), and create a new intake from the format `Bitwarden Event Logs`.
+2. Copy the **intake key** displayed in the intake details (for example, `ExAmPlEiNtAkEkEy0123456789abcdef`), not the intake page URL or the UUID it contains.
+
+    ![Intake key in the intake details](/assets/integration/iam/bitwarden_event_logs/intake_key.png){: style="max-width:100%"}
+
+### Connect Generic HEC in Bitwarden
+
+1. In the Bitwarden **Admin Console**, go to **Integrations** > **Event management**.
+2. On the **Generic HEC** card, select **Connect**.
+3. Fill in the fields:
+
+    | Bitwarden field | Value |
+    |---|---|
+    | **HTTP Event Collector URL** | `https://intake.sekoia.io/jsons?intake_key=<YOUR_INTAKE_KEY>` |
+    | **HTTP Event Collector Token** | `<YOUR_INTAKE_KEY>` |
+
+    Example with the intake key `ExAmPlEiNtAkEkEy0123456789abcdef`:
+
+    | Bitwarden field | FRA1 | USA1 |
+    |---|---|---|
+    | **HTTP Event Collector URL** | `https://intake.sekoia.io/jsons?intake_key=ExAmPlEiNtAkEkEy0123456789abcdef` | `https://intake.usa1.sekoia.io/api/v1/intake-http/jsons?intake_key=ExAmPlEiNtAkEkEy0123456789abcdef` |
+    | **HTTP Event Collector Token** | `ExAmPlEiNtAkEkEy0123456789abcdef` | `ExAmPlEiNtAkEkEy0123456789abcdef` |
+
+    ![Generic HEC connection filled in for FRA1](/assets/integration/iam/bitwarden_event_logs/generic_hec_connect.png){: style="max-width:100%"}
 
     !!! warning
-        The intake URL depends on your region. For the FRA1 region, the domain is `intake.sekoia.io`. For any other region, replace it with your region's HTTP-intake domain—for example:
+        - The intake key must be in the URL: Bitwarden sends the token in an `Authorization: Splunk <token>` header, which Sekoia.io does not read. The token field is mandatory in Bitwarden but not used by Sekoia.io.
+        - For regions other than FRA1, use `https://intake.<region>.sekoia.io/api/v1/intake-http/jsons?intake_key=<YOUR_INTAKE_KEY>`. See [Regions](/getting_started/regions.md).
 
-        https://app.usa1.sekoia.io/api/v1/intake-http
+4. Select **Save**.
 
-        You can find your region's domain here: [https://docs.sekoia.com/getting_started/regions/](https://docs.sekoia.com/getting_started/regions/)
-
-3. In Bitwarden Admin Console, open Integrations > Event Management, select Generic HEC, then paste:
-   - Endpoint URL: the Sekoia intake URL
-   - Token: the Sekoia intake key
-4. Save the integration.
+For details on the Bitwarden side, see [Bitwarden documentation - Generic HEC Integration](https://bitwarden.com/help/http-event-collector/).
 
 ### Validate event ingestion
 

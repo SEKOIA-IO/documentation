@@ -61,9 +61,10 @@ According to the solution you use, the procedure will change:
 ### Create your intake
 
 1. Go to the [intake page](https://app.sekoia.io/operations/intakes) and create a new intake from the `Trend Micro Email Security`.
-2. Edit the intake configuration using your `Service URL`, `Username` and `Login ID`. All three  are required.
+2. Edit the intake configuration using your `Service URL`, `Username` and `API key`. All three are required.
 
-* `username` is your `Login ID` entered during account creating
+* `username` is your `Login ID` entered during account creation
+* `api key` is the value generated in [How to create an API token](#how-to-create-an-api-token)
 * The value of `service URL` varies according to your location:
 
 | Location                                      | Service URL                 |

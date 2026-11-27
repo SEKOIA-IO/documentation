@@ -5,19 +5,17 @@ title: Sekoia documentation
 # Welcome to Sekoia's documentation
 
 
-## The Sekoia AI SOC Platform
+## The Sekoia Autonomous Defensive Intelligence Platform
 
 The Sekoia SOC platform brings threat detection, investigation, and response into one open, cloud-native platform. It connects high-fidelity Cyber Threat Intelligence (CTI), Digital Risk, security telemetry, and Asset Intelligence to help analysts understand activity in their environment and exposure outside it.
 
-With its Agentic SOC approach, Sekoia uses AI to handle repetitive investigation tasks, enrich alerts, and support threat hunting. Analysts spend less time sorting through noise and more time responding to threats that need expert judgment.
+AI agents take on repetitive investigation work: they gather evidence, reach a verdict and show their reasoning, and analysts review and approve before any response. Teams spend less time sorting noise and more time on threats that need expert judgment, cutting mean time to detect (MTTD) and mean time to respond (MTTR).
 
-The result is faster detection, more efficient investigations, and lower operational overhead. Sekoia helps security teams reduce Mean Time to Detect (MTTD) and Mean Time to Respond (MTTR) while keeping their existing tools and data sources connected.
+![Sekoia Autonomous Defensive Intelligence Platform](/assets/sekoia_system.png){: style="max-width:100%"}
 
-![SEKOIA AI SOC Platform Overview](/assets/sekoia_system.png){: style="max-width:100%"}
+## Platform modules
 
-## Security operations platform architecture and modules
-
-Sekoia's modular security operations platform lets teams start with the capabilities they need and expand over time. Each module uses a shared data schema and workflow, helping security teams connect detection, Cyber Threat Intelligence (CTI), asset context, and AI assistance in one environment.
+The platform is modular: start with the capabilities you need and add more over time. Every module shares one data schema and one workflow, so detection, intelligence and investigation stay connected.
 
 ### Core platform modules
 
@@ -29,25 +27,25 @@ Defend also includes native Security Orchestration, Automation and Response (SOA
 
 #### [Sekoia Intelligence](/cti/index.md)
 
-Sekoia Intelligence is a Cyber Threat Intelligence platform that provides context on attacker infrastructure, malware, campaigns, and emerging threat activity. Teams can use it as a standalone CTI source or connect it to Sekoia Defend.
+Sekoia Intelligence is a cyber threat intelligence platform that gives context on attacker infrastructure, tools and behavior, researched by Sekoia's own threat analysts.
 
-When integrated, Sekoia Intelligence helps correlate threat intelligence with security events and gives analysts additional context during detection and investigation.
+Use it as a standalone CTI source, or connect it to Sekoia Defend to correlate threat intelligence with your security events automatically.
 
 Sekoia Digital Risk complements Sekoia Intelligence by monitoring organization-specific identifiers across clear, deep, and dark web sources. In Sekoia, Flare events can be collected, normalized, evaluated with detection rules, and investigated alongside security events.
 
 ### Expansion modules
 
-#### [Reveal for Asset Intelligence](/xdr/features/modules/reveal_index.md)
+#### [Sekoia Reveal: Asset Intelligence](/xdr/features/modules/reveal_index.md)
 
-Reveal adds Asset Intelligence to Sekoia Defend through continuous asset discovery and inventory. It maps alerts and suspicious activity to the systems, users, and cloud resources involved, giving analysts better context during an investigation.
+Sekoia Reveal adds asset intelligence to Sekoia Defend through continuous asset discovery and inventory. It maps alerts and suspicious activity to the systems, users and cloud resources involved, so analysts see what is at stake straight away.
 
-Reveal also helps teams identify shadow IT and short-lived cloud assets that may not appear in standard inventories.
+Reveal also finds shadow IT and short-lived cloud assets that standard inventories miss, and adds exposure context, such as vulnerabilities and hygiene, so teams fix what matters first.
 
-#### [Sekoia Elevate for an Agentic SOC](/xdr/features/modules/elevate_overview.md)
+#### [Sekoia Elevate:AI Agents](/xdr/features/modules/elevate_overview.md)
 
-Sekoia Elevate adds AI assistance to the SOC. Its intelligent agents connect related incidents across data sources, enrich alerts with relevant CTI, and help prioritize threats for investigation.
+Sekoia Elevate adds AI agents that investigate alerts end to end. They connect related incidents across data sources, enrich alerts with Sekoia CTI, and return a verdict with a confidence score and the reasoning behind it.
 
-Analysts receive more context earlier in the investigation and can focus their time on decisions that require human judgment.
+Analysts can review every step, adjust how the agents investigate, and approve any response. They get the full context earlier, and spend their time on decisions rather than data gathering.
 
 <div>
   <script async src="https://js.storylane.io/js/v2/storylane.js" data-verify-origin=""></script>
@@ -62,19 +60,21 @@ Sekoia builds its security operations platform around open integrations, portabl
 
 ### Integration-first architecture
 
-Sekoia provides hundreds of pre-built connectors and an API-first architecture for collecting security data from cloud services, SaaS applications, and on-premises systems. This gives teams a practical way to bring more telemetry into one security operations platform while keeping integration work manageable.
+Sekoia provides 350+ pre-built connectors and an API-first architecture for collecting security data from endpoint, network, cloud, email and identity sources. Bring your existing telemetry into one platform without replacing the tools you already use.
 
 ### OCSF and Sigma support
 
-Sekoia supports the Open Cybersecurity Schema Framework (OCSF) for normalizing security data and Sigma for writing portable detection rules. Open standards help teams move data between tools, reduce dependence on proprietary formats, and adapt detection logic as their environment changes.
+Sekoia supports the Open Cybersecurity Schema Framework (OCSF) to normalize security data, and Sigma for portable detection rules. Open standards make it easier to move data between tools, reuse detection content and avoid proprietary lock-in.
 
 ### Cloud-native scalability
 
-Sekoia runs on a multi-tenant, cloud-native architecture designed to process high volumes of security telemetry. Teams can expand data ingestion without deploying and maintaining the infrastructure typically associated with on-premises security platforms.
+Sekoia runs on a multi-tenant, cloud-native architecture built to process high volumes of security telemetry. Teams can grow data ingestion without deploying or maintaining the infrastructure a traditional SIEM needs.
+
+Prefer to run it yourself? Sekoia is also available as SaaS in your region, in a private cloud, or Self-Hosted.
 
 !!! info "Licensing architecture"
 
-    While **Defend** and **Intelligence** function as independent products, **Reveal** and **Elevate** are integrated modules that require an active Sekoia Defend license to operate.
+Defend and Intelligence are independent products: use either on its own, or both together. Reveal and Elevate extend Defend and need an active Sekoia Defend licence.
 
 ## Read more
 

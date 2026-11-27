@@ -235,11 +235,12 @@ nav:
       - Threat Landscape: xdr/features/report/threat_landscape.md
     - Automate:
       - Playbooks: xdr/features/automate/index.md
-      - Playbooks On-premises: xdr/features/automate/playbooks-on-premises.md
-      - Manage accounts: xdr/features/automate/manage-accounts.md
       - Navigate playbooks: xdr/features/automate/navigate_playbooks.md
+      - Keyboard shortcuts in playbooks: xdr/features/investigate/keyboard_shortcuts_playbook.md
       - Build playbooks: xdr/features/automate/build_playbooks.md
       - Organize playbooks with custom fields: xdr/features/automate/organize_playbooks_with_custom_fields.md
+      - Local runners: xdr/features/automate/playbooks-on-premises.md
+      - Manage accounts in playbooks: xdr/features/automate/manage-accounts.md
       - Restore a playbook version: xdr/features/automate/restore_a_playbook_version.md
       - Triggers: xdr/features/automate/triggers.md
       - Operators: xdr/features/automate/operators.md
@@ -281,6 +282,7 @@ nav:
       - Create asset connectors: xdr/features/modules/reveal_asset_connectors_create.md
       - Check asset connector health: xdr/features/collect/asset_connector_health.md
       - Troubleshoot asset connectors: xdr/features/modules/reveal_asset_connectors_troubleshoot.md
+      - Asset connector limits: xdr/features/modules/reveal_asset_connectors_limits.md
     - Investigate assets:
       - Explore assets context: xdr/features/modules/reveal_asset_context_panel.md
       - Asset risk scoring: xdr/features/modules/asset_risk_scoring.md
@@ -735,6 +737,7 @@ nav:
       - Triage: integration/action_library/triage.md
       - VirusTotal: integration/action_library/virustotal.md
       - Whois: integration/action_library/whois.md
+      - urlscan.io: integration/action_library/urlscan-io.md
   - List of Asset Connectors:
     - Overview: integration/assets_categories/overview.md
     - Vulnerability:
@@ -768,6 +771,7 @@ nav:
     - Automation:
       - Overview: integration/develop_integration/automation/overview.md
       - Action: integration/develop_integration/automation/action.md
+      - Asset Connector: integration/develop_integration/automation/asset_connector.md
       - Create a Module: integration/develop_integration/automation/create_a_module.md
       - Development Guidelines: integration/develop_integration/automation/development_guideline.md
       - Module: integration/develop_integration/automation/module.md
@@ -793,32 +797,34 @@ nav:
 - Self-hosted deployment:
   - Introduction: self_hosted/index.md
   - Documentation versions: self_hosted/versions.md
-  - v1.0.1:
-    - Overview: self_hosted/1.0.1/index.md
+  - v1.0:
+    - Overview: self_hosted/1.0/index.md
     - Architecture:
-      - Reference architecture: self_hosted/1.0.1/architecture/architecture.md
+      - Reference architecture: self_hosted/1.0/architecture/architecture.md
     - Deployment:
-      - Technical requirements: self_hosted/1.0.1/deployment/deployment_prerequisites.md
-      - Network requirements: self_hosted/1.0.1/deployment/network_requirements.md
-      - The deployment process: self_hosted/1.0.1/deployment/deployment_process.md
-      - Configure the deployment: self_hosted/1.0.1/deployment/deployment_configuration.md
-      - Deploy the platform: self_hosted/1.0.1/deployment/deployment_guide.md
+      - Technical requirements: self_hosted/1.0/deployment/deployment_prerequisites.md
+      - Network requirements: self_hosted/1.0/deployment/network_requirements.md
+      - The deployment process: self_hosted/1.0/deployment/deployment_process.md
+      - Configure the deployment: self_hosted/1.0/deployment/deployment_configuration.md
+      - Deploy the platform: self_hosted/1.0/deployment/deployment_guide.md
     - Operations:
-      - Set up the first administrator account: self_hosted/1.0.1/operations/first_login.md
-      - Use the SHC interface: self_hosted/1.0.1/operations/controller_interface.md
-      - Import the CTI database: self_hosted/1.0.1/operations/import_cti_database.md
-      - Back up the platform: self_hosted/1.0.1/operations/backups.md
-      - Update the security content: self_hosted/1.0.1/operations/update_security_content.md
-      - Apply a configuration change: self_hosted/1.0.1/operations/apply_configuration_change.md
-      - Rotate the certificate and credentials: self_hosted/1.0.1/operations/rotate_certificate_and_credentials.md
-      - Patch and restart the nodes: self_hosted/1.0.1/operations/node_maintenance.md
-      - Reset or destroy the platform: self_hosted/1.0.1/operations/reset_platform.md
+      - Set up the first administrator account: self_hosted/1.0/operations/first_login.md
+      - Use the SHC interface: self_hosted/1.0/operations/controller_interface.md
+      - Import the CTI database: self_hosted/1.0/operations/import_cti_database.md
+      - Back up the platform: self_hosted/1.0/operations/backups.md
+      - Update the security content: self_hosted/1.0/operations/update_security_content.md
+      - Apply a configuration change: self_hosted/1.0/operations/apply_configuration_change.md
+      - Apply a patch release: self_hosted/1.0/operations/apply_patch_release.md
+      - Rotate the certificate and credentials: self_hosted/1.0/operations/rotate_certificate_and_credentials.md
+      - Patch and restart the nodes: self_hosted/1.0/operations/node_maintenance.md
+      - Reset or destroy the platform: self_hosted/1.0/operations/reset_platform.md
     - Monitoring and troubleshooting:
-      - Monitor your platform: self_hosted/1.0.1/monitoring/monitoring_guide.md
-      - Run platform diagnostics: self_hosted/1.0.1/monitoring/run_diagnostics.md
-      - Platform alerts reference: self_hosted/1.0.1/monitoring/platform_alerts.md
-      - Debug your deployment: self_hosted/1.0.1/troubleshooting/debug_tool.md
-    - Release notes: self_hosted/1.0.1/release_notes.md
+      - Monitor your platform: self_hosted/1.0/monitoring/monitoring_guide.md
+      - Run platform diagnostics: self_hosted/1.0/monitoring/run_diagnostics.md
+      - Platform alerts reference: self_hosted/1.0/monitoring/platform_alerts.md
+      - Debug your deployment: self_hosted/1.0/troubleshooting/debug_tool.md
+      - Common issues: self_hosted/1.0/troubleshooting/common_issues.md
+    - Release notes: self_hosted/1.0/release_notes.md
 - API Documentation:
   - API Reference: developer/api.md
   - Quickstart: developer/quickstart.md
@@ -894,6 +900,27 @@ plugins:
       playbooks/overview.md: xdr/features/automate/index.md
       playbooks/triggers.md: xdr/features/automate/triggers.md
       searching/search_events.md: xdr/features/investigate/events.md
+      self_hosted/1.0.1/architecture/architecture.md: self_hosted/1.0/architecture/architecture.md
+      self_hosted/1.0.1/deployment/deployment_configuration.md: self_hosted/1.0/deployment/deployment_configuration.md
+      self_hosted/1.0.1/deployment/deployment_guide.md: self_hosted/1.0/deployment/deployment_guide.md
+      self_hosted/1.0.1/deployment/deployment_prerequisites.md: self_hosted/1.0/deployment/deployment_prerequisites.md
+      self_hosted/1.0.1/deployment/deployment_process.md: self_hosted/1.0/deployment/deployment_process.md
+      self_hosted/1.0.1/deployment/network_requirements.md: self_hosted/1.0/deployment/network_requirements.md
+      self_hosted/1.0.1/index.md: self_hosted/1.0/index.md
+      self_hosted/1.0.1/monitoring/monitoring_guide.md: self_hosted/1.0/monitoring/monitoring_guide.md
+      self_hosted/1.0.1/monitoring/platform_alerts.md: self_hosted/1.0/monitoring/platform_alerts.md
+      self_hosted/1.0.1/monitoring/run_diagnostics.md: self_hosted/1.0/monitoring/run_diagnostics.md
+      self_hosted/1.0.1/operations/apply_configuration_change.md: self_hosted/1.0/operations/apply_configuration_change.md
+      self_hosted/1.0.1/operations/backups.md: self_hosted/1.0/operations/backups.md
+      self_hosted/1.0.1/operations/controller_interface.md: self_hosted/1.0/operations/controller_interface.md
+      self_hosted/1.0.1/operations/first_login.md: self_hosted/1.0/operations/first_login.md
+      self_hosted/1.0.1/operations/import_cti_database.md: self_hosted/1.0/operations/import_cti_database.md
+      self_hosted/1.0.1/operations/node_maintenance.md: self_hosted/1.0/operations/node_maintenance.md
+      self_hosted/1.0.1/operations/reset_platform.md: self_hosted/1.0/operations/reset_platform.md
+      self_hosted/1.0.1/operations/rotate_certificate_and_credentials.md: self_hosted/1.0/operations/rotate_certificate_and_credentials.md
+      self_hosted/1.0.1/operations/update_security_content.md: self_hosted/1.0/operations/update_security_content.md
+      self_hosted/1.0.1/release_notes.md: self_hosted/1.0/release_notes.md
+      self_hosted/1.0.1/troubleshooting/debug_tool.md: self_hosted/1.0/troubleshooting/debug_tool.md
       user_center.md: getting_started/index.md
       user_center/apikeys.md: getting_started/manage_api_keys.md
       user_center/multi_factor_authentication.md: getting_started/secure_your_account.md
@@ -1079,6 +1106,7 @@ plugins:
       xdr/features/investigate/dork_language.md: xdr/features/investigate/events_query_language.md
       xdr/features/investigate/sekoia_operating_language.md: xdr/features/investigate/sol_overview.md
       xdr/features/investigate/use_custom_fields_in_cases.md: xdr/features/investigate/use_custom_fields.md
+      xdr/features/modules/build_a_custom_asset_connector.md: integration/develop_integration/automation/asset_connector.md
       xdr/sekoia_solutions.md: index.md
 - integration_by_uuid
 - sass
