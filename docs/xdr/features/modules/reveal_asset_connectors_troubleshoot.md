@@ -76,7 +76,7 @@ If a 503 persists, contact Sekoia support. A 403 or 404 persists until the confi
 !!! note "Replaying an item"
     Replaying an item can update the existing asset when its matching identifiers remain unchanged. Devices match on `hostname`, users match on email or username, and vulnerability findings match on their CVEs or, when no CVE is present, `finding_info.uid`.
 
-The logs show the error code of a 429 from version 1.27.3 of `sekoia-automation-sdk`.
+The logs show the error code of a 429 from version 1.28.0 of `sekoia-automation-sdk`.
 
 The values of the limits are in [Asset connector limits](/xdr/features/modules/reveal_asset_connectors_limits.md).
 
