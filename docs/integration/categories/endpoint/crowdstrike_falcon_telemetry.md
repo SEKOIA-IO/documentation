@@ -52,6 +52,6 @@ To set up the integration:
 {!_shared_content/operations_center/integrations/generated/10999b99-9a8d-4b92-9fbd-01e3fac01cd5.md!}
 
 
-## Further Readings
+## Related articles
 
 - [Falcon Data Replicator documentation](https://falcon.eu-1.crowdstrike.com/documentation/9/falcon-data-replicator#falcon-data-replicator-setup)

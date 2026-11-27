@@ -522,5 +522,5 @@ Restart-Service nxlog
 {!_shared_content/operations_center/detection/generated/suggested_rules_9281438c-f7c3-4001-9bcc-45fd108ba1be_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/9281438c-f7c3-4001-9bcc-45fd108ba1be.md!}
 
-## Further Readings
+## Related articles
 - [NXLog Community Edition Reference Manual](https://nxlog.co/docs/nxlog-ce/nxlog-reference-manual.html)

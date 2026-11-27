@@ -108,6 +108,6 @@ This setup guide will show you how to forward your ArubaOS logs to Sekoia.io by 
 
 {!_shared_content/operations_center/integrations/generated/d6d15297-e977-4584-9bb3-f0290b99f014.md!}
 
-## Further readings
+## Related articles
 
 - [ArubaOS documentation](https://www.arubanetworks.com/documentation/)

@@ -56,6 +56,6 @@ Set the destination url to `https://intake.sekoia.io/plain?intake_key=<intake_ke
 {!_shared_content/operations_center/detection/generated/suggested_rules_8f472113-ba5b-45b9-9a2c-944834396333_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/8f472113-ba5b-45b9-9a2c-944834396333.md!}
 
-## Further Readings
+## Related articles
 
 - [Build apps with SecurityScorecard](https://securityscorecard.readme.io/docs/build-an-app)

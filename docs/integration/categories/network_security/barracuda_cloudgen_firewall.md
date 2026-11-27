@@ -71,7 +71,7 @@ Barracuda NextGen Firewall is a unified network‐security appliance that combin
 
 {!_shared_content/operations_center/integrations/generated/fe9c462f-8907-4a4d-9a34-5ffff0a2c56f.md!}
 
-## Further readings
+## Related articles
 - [How to configure audit and reporting](https://campus.barracuda.com/product/cloudgenfirewall/doc/170820911/how-to-configure-audit-and-reporting)
 - [How to configure syslog streaming](https://campus.barracuda.com/product/cloudgenfirewall/doc/170820941/how-to-configure-syslog-streaming)
 

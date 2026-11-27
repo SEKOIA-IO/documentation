@@ -190,6 +190,6 @@ These two ways will create an Azure Event Hub and a Storage Account.
     !!! info
         Carefully store the Connection String that will be used for sekoia playbook configuration.
 
-    **Further Readings**
+    **Related articles**
 
     - [Microsoft Create an Event Hub using Azure portal](https://learn.microsoft.com/en-us/azure/event-hubs/event-hubs-create)

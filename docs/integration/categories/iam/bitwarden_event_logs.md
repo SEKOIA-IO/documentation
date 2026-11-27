@@ -63,7 +63,7 @@ For details on the Bitwarden side, see [Bitwarden documentation - Generic HEC In
 
 {!_shared_content/operations_center/integrations/generated/c9aba2bc-245e-4c66-b3fd-9bf1546bb1e8.md!}
 
-## Further readings
+## Related articles
 
 - [Bitwarden Help Center - Event Logs](https://bitwarden.com/help/event-logs/)
 - [Bitwarden Help Center - HTTP Event Collector](https://bitwarden.com/help/http-event-collector/)

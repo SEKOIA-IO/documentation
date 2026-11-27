@@ -812,7 +812,7 @@ It will automatically configure your syslog-ng server to collect and forward Win
     sudo systemctl restart syslog-ng.service
     ```
 
-## Further readings
+## Related articles
 
 - [syslog-ng Open Source Edition documentation](https://www.syslog-ng.com/technical-documents/list/syslog-ng-open-source-edition)
 - [syslog-ng macros reference](https://www.syslog-ng.com/technical-documents/doc/syslog-ng-open-source-edition/3.38/administration-guide/macros)

@@ -76,7 +76,7 @@ See GCenter documentation for more details:
 
 {!_shared_content/operations_center/integrations/generated/bba2bed2-d925-440f-a0ce-dbcae04eaf26.md!}
 
-## Further readings
+## Related articles
 
 - [GCenter 2.5.3v101 Documentation](https://docs.gatewatcher.com/en/gcenter/2.5.3/101)
 - [GCenter 2.5.3v102 Documentation](https://docs.gatewatcher.com/en/gcenter/2.5.3/102)

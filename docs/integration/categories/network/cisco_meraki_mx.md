@@ -69,6 +69,6 @@ This setup guide will show you how to provide an integration between Cisco Merak
 
 {!_shared_content/operations_center/integrations/generated/995d7daf-4e4a-42ec-b90d-9af2f7be7019.md!}
 
-## Further readings
+## Related articles
 
 - [Cisco Meraki MX documentation](https://documentation.meraki.com/MX)

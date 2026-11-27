@@ -106,7 +106,7 @@ To enable Syslog server in ESET Protect on Cloud:
 
 {!_shared_content/operations_center/integrations/generated/2ffff1fd-fed7-4a24-927a-d619f2bb584a.md!}
 
-## Further readings
+## Related articles
 
 - [Export logs to Syslog](https://help.eset.com/protect_admin/10.0/en-US/admin_server_settings_export_to_syslog.html)
 - [Export logs to Syslog server from ESET PROTECT (8.x–10.x)](https://techcenter.eset.nl/en-US/kb/articles/export-logs-to-syslog-server-from-eset-protect-8x-10x)

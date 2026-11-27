@@ -68,7 +68,7 @@ The solution to collect Check Point logs leverages the [Log Exporter](https://su
 
 {!_shared_content/operations_center/integrations/generated/f0a10c21-37d1-419f-8671-77903dc8de69.md!}
 
-## Further readings
+## Related articles
 
 - The code of the Intake format is available [here](https://github.com/SEKOIA-IO/intake-formats/tree/main/Check_Point).
 - [Log Exporter Configuration](https://supportcenter.checkpoint.com/supportcenter/portal?eventSubmit_doGoviewsolutiondetails=&solutionid=sk122323)

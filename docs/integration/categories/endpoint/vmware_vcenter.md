@@ -87,6 +87,6 @@ volumes:
 {!_shared_content/operations_center/detection/generated/suggested_rules_0642b03a-9d4a-4c88-a5e2-4597e366b8c4_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/0642b03a-9d4a-4c88-a5e2-4597e366b8c4.md!}
 
-## Further Readings
+## Related articles
 
 - [Forward vCenter Server Log Files to Remote Syslog Server](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.monitoring.doc/GUID-9633A961-A5C3-4658-B099-B81E0512DC21.html)

@@ -248,7 +248,7 @@ This setup guide will lead you into forwarding PingFederate's logs to Sekoia.io 
 
 {!_shared_content/operations_center/integrations/generated/c47d2c82-494e-400c-b804-d68fb7a60859.md!}
 
-## Further Readings
+## Related articles
 
 - [PingFederate documentation - Logging Configuration](https://docs.pingidentity.com/r/en-us/pingfederate-latest/pf_logging_configuration)
 - [PingFederate documentation - Correlating log events using attributes](https://docs.pingidentity.com/pingfederate/12.3/administrators_reference_guide/pf_correlating_log_events_attributes.html)

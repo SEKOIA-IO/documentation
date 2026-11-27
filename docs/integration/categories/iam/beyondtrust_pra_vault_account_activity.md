@@ -62,6 +62,6 @@ This integration collects the VaultAccountActivity logs.
 
 {!_shared_content/operations_center/integrations/generated/a6de059b-27c5-41a6-a881-59cde4a88d9b.md!}
 
-## Further readings
+## Related articles
 
 - [BeyondTrust Integrations](https://docs.beyondtrust.com/bt-docs/docs/integrations)

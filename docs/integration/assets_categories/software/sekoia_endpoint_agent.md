@@ -39,7 +39,7 @@ For each installed application, the agent reports its name, version, vendor, ins
 - An application the agent no longer reports for 14 days is considered uninstalled: it leaves the Applications tab, and its vulnerabilities are marked as remediated. An agent that stops reporting, for instance on a host that is turned off, keeps its last inventory.
 - Only the sources above are read. Software installed another way, such as a portable executable, an archive extracted by hand, or a Snap or Flatpak package, is not reported.
 
-## Further reading
+## Related articles
 
 - [Application inventory](/xdr/features/modules/reveal_applications.md): use the Applications tab of a host asset.
 - [Troubleshoot application inventory](/xdr/FAQ/troubleshoot_application_inventory.md): the Applications tab is empty or unavailable.

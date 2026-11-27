@@ -51,5 +51,5 @@ Start the playbook and enjoy your events.
 {!_shared_content/operations_center/integrations/generated/e0eaf2f1-02d0-4d1a-be89-f2b8be4baf4e.md!}
 
 
-## Further Readings
+## Related articles
 - [ProofPoint APIKey Management](https://help.proofpoint.com/Admin_Portal/Settings/API_Key_Management)

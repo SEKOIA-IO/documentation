@@ -87,6 +87,6 @@ This setup guide will show you how to forward your FortiProxy logs to Sekoia.io 
 
 {!_shared_content/operations_center/integrations/generated/270777d7-0c5a-42fb-b901-b7fadfb0ba48.md!}
 
-## Further readings
+## Related articles
 
 - [Configure FortiProxy Log Forwarding](https://docs.fortinet.com/document/fortiproxy/7.0.0/administration-guide/707542/log-settings#Log_Settings)

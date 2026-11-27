@@ -74,6 +74,6 @@ This setup guide will show you how to forward your Infoblox DDI logs to Sekoia.i
 
 {!_shared_content/operations_center/integrations/generated/864ade96-a96d-4a0e-ab3d-b7cb7b7db618.md!}
 
-## Further readings
+## Related articles
 
 - [Using a Syslog Server with Infoblox](https://docs.infoblox.com/space/nios90/1380844672/Specifying+Syslog+Servers)

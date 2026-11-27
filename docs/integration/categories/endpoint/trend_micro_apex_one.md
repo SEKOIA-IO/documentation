@@ -86,7 +86,7 @@ Please consult the [Syslog Forwarding](/integration/ingestion_methods/syslog/sek
 {!_shared_content/operations_center/detection/generated/suggested_rules_064f7e8b-ce5f-474d-802e-e88fe2193365_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/064f7e8b-ce5f-474d-802e-e88fe2193365.md!}
 
-## Further Readings
+## Related articles
 
 - [Trend Micro Apex One - Configure syslog forwarding](https://docs.trendmicro.com/en-us/enterprise/trend-micro-apex-central-2019-online-help/detections/logs_001/syslog-forwarding.aspx)
 - [Trend Micro Apex One - Supported Log Types and Formats](https://docs.trendmicro.com/en-us/enterprise/trend-micro-apex-central-2019-online-help/detections/logs_001/syslog-forwarding/syslog-log-types-for.aspx)

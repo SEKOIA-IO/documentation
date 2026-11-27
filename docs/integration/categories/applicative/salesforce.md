@@ -83,7 +83,7 @@ This setup guide will show you how to provide an integration between Salesforce 
 {!_shared_content/operations_center/detection/generated/suggested_rules_d2725f97-0c7b-4942-a847-983f38efb8ff_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/d2725f97-0c7b-4942-a847-983f38efb8ff.md!}
 
-## Further Readings
+## Related articles
 
 - [Salesforce Real-Time Event Monitoring feature is turned off by default](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_em_generate_event_log_files.htm&release=244&type=5)
 - [Real-Time Event Monitoring enable instructions](https://help.salesforce.com/s/articleView?id=sf.real_time_event_monitoring_enable.htm&type=5)

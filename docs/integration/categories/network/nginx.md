@@ -81,7 +81,7 @@ error_log syslog:server=REMOTE_SERVER_IP:LISTENING_PORT_UDP,tag=nginx;
 
 {!_shared_content/operations_center/integrations/generated/ab25af2e-4916-40ba-955c-34d2301c1f51.md!}
 
-## Further readings
+## Related articles
 
 - [Nginx Wiki](https://www.nginx.com/resources/wiki/start/)
 - [Rsyslog IMFile module](https://www.rsyslog.com/doc/v8-stable/configuration/modules/imfile.html)

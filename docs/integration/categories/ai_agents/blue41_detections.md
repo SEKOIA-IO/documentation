@@ -132,7 +132,7 @@ The following samples use synthetic data.
 
 {!_shared_content/operations_center/integrations/generated/547aa49e-c29a-4dbf-992b-c5cc0db19f17.md!}
 
-## Further reading
+## Related articles
 
 - [Send events using HTTPS](/integration/ingestion_methods/https/overview.md)
 - [Sekoia regions](/getting_started/regions.md)

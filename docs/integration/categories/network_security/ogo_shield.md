@@ -45,6 +45,6 @@ For `OGO Shield Satellite` owners, go to `Admin Cluster > Maintenance` and activ
 {!_shared_content/operations_center/detection/generated/suggested_rules_cf5c916e-fa26-11ed-a844-f7f4d7348199_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/cf5c916e-fa26-11ed-a844-f7f4d7348199.md!}
 
-## Further Readings
+## Related articles
 
 - [OGO Log Export](https://help.ogosecurity.com/help/log-export)

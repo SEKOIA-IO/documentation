@@ -124,6 +124,6 @@ This setup guide will lead you into forwarding FreeRADIUS's logs to Sekoia.io by
 {!_shared_content/operations_center/integrations/generated/aeb7d407-db57-44b2-90b6-7df6738d5d7f.md!}
 
 
-## Further readings
+## Related articles
 
 - [Configure FreeRADIUS Log Forwarding](https://freeradius.org/documentation/)

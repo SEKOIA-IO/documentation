@@ -70,6 +70,6 @@ Alerts:
 {!_shared_content/operations_center/detection/generated/suggested_rules_de9ca004-991e-4f5c-89c5-e075f3fb3216_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/de9ca004-991e-4f5c-89c5-e075f3fb3216.md!}
 
-## Further Readings
+## Related articles
 
 - [Netskope documentation - create an API token](https://docs.netskope.com/en/rest-api-v2-overview-312207.html)

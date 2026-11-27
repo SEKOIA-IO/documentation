@@ -113,5 +113,5 @@ This integration can collect the following datasets from Mimecast:
 
 {!_shared_content/operations_center/integrations/generated/041e915e-2fb6-4604-9b24-902c9daa2d3c.md!}
 
-## Further Readings
+## Related articles
 - [Create API 2.0 Application](https://community.mimecast.com/s/article/api-integrations-managing-api-2-0-for-cloud-gateway)

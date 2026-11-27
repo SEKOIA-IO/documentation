@@ -277,6 +277,6 @@ sudo systemctl restart rsyslog.service
 
 {!_shared_content/operations_center/integrations/generated/021e9def-5a55-4369-941e-af269b45bef1.md!}
 
-## Further readings
+## Related articles
 
 - [Configure a remote Syslog server](https://docs.cyberwatch.fr/help/en/administration/remote_syslog_configuration/)

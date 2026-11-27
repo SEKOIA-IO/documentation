@@ -72,6 +72,6 @@ In this guide, you will configure your Symantec Endpoint Protection Manager or y
 
 {!_shared_content/operations_center/integrations/generated/419bd705-fa61-496c-94fa-28d6c1f2e2a8.md!}
 
-## Further readings
+## Related articles
 
 - [Enable Syslog Forwarding for Symantec Endpoint Protection](https://techdocs.broadcom.com/us/en/symantec-security-software/endpoint-security-and-management/endpoint-protection/all/Monitoring-Reporting-and-Enforcing-Compliance/viewing-logs-v7522439-d37e464/exporting-data-to-a-syslog-server-v8442743-d15e1107.html)

@@ -115,7 +115,7 @@ This setup guide will show you how to forward your Delinea logs to Sekoia.io.
 
 {!_shared_content/operations_center/integrations/generated/049b3dfd-8f67-40b6-a22d-b86ba3b42a05.md!}
 
-## Further readings
+## Related articles
 
 - [Authenticating with Platform API | Delinea](https://docs.delinea.com/online-help/delinea-platform/api/platform-apis.htm#Creating3)
 - [Adding Users | Delinea](https://docs.delinea.com/online-help/delinea-platform/users/add-users.htm#ServiceUsers)

@@ -71,6 +71,6 @@ This setup guide will show you how to forward your IBM AIX logs to Sekoia.io by 
 
 {!_shared_content/operations_center/integrations/generated/e8cb3372-41c8-409f-8e0e-ca4e6cecf7e6.md!}
 
-## Further readings
+## Related articles
 
 - [Configuring IBM AIX to send Syslog Events](https://www.ibm.com/docs/en/dsm?topic=aado-configuring-aix-audit-dsm-send-syslog-events-qradar)

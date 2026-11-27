@@ -71,6 +71,6 @@ This setup guide will show you how to provide an integration between Cisco IOS e
 
 {!_shared_content/operations_center/integrations/generated/700f332f-d515-4bc5-8a62-49fa5f2c9206.md!}
 
-## Further readings
+## Related articles
 
 - [Cisco System Message Logging](https://www.cisco.com/c/en/us/td/docs/routers/access/wireless/software/guide/SysMsgLogging.html)

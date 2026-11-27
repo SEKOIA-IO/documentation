@@ -81,7 +81,7 @@ To enable hydrating the data lake for server:
 {!_shared_content/operations_center/detection/generated/suggested_rules_99da26fc-bf7b-4e5b-a76c-408472fcfebb_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/99da26fc-bf7b-4e5b-a76c-408472fcfebb.md!}
 
-## Further Readings
+## Related articles
 
 - [Sophos Analysis Threat Center documentation](https://doc.sophos.com/central/customer/help/en-us/ManageYourProducts/ThreatAnalysisCenter/index.html)
 - [Sophos Analysis Threat Center guide](https://community.sophos.com/intercept-x-endpoint/f/recommended-reads/130364/getting-started-with-sophos-xdr-data-lake-hydration)

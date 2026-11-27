@@ -33,7 +33,7 @@ access_log syslog:local5.info sekoiaio
 ```
 
 
-## Further Readings
+## Related articles
 
 {!_shared_content/operations_center/integrations/generated/a0dbb8f3-ca1c-4c6b-aafa-595bd430c0cb_sample.md!}
 

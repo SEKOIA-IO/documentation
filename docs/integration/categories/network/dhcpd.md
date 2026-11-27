@@ -76,6 +76,6 @@ This setup guide will show you how to forward your ISC DHCP logs to Sekoia.io by
 
 {!_shared_content/operations_center/detection/generated/suggested_rules_9044ba46-2b5d-4ebd-878a-51d62e84c8df_do_not_edit_manually.md!}
 
-## Further readings
+## Related articles
 
 - [ISC DHCP Documentation](https://www.isc.org/dhcp/)

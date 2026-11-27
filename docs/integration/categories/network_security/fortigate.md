@@ -129,6 +129,6 @@ This setup guide will show you how to forward your Fortigate logs to Sekoia.io b
 
 {!_shared_content/operations_center/integrations/generated/5702ae4e-7d8a-455f-a47b-ef64dd87c981.md!}
 
-## Further readings
+## Related articles
 
 - [Configuring a remote Syslog server for Fortigate](https://support.fortinet.com/)

@@ -66,6 +66,6 @@ The Cisco Web Security Appliance is a security device that analyzes HTTP(S) traf
 {!_shared_content/operations_center/detection/generated/suggested_rules_23b75d0c-2026-4d3e-b916-636c27ba4931_do_not_edit_manually.md!}
 
 {!_shared_content/operations_center/integrations/generated/23b75d0c-2026-4d3e-b916-636c27ba4931.md!}
-## Further readings
+## Related articles
 
 - [User Guide for AsyncOS 11.0 for Cisco Web Security Appliances](https://www.cisco.com/c/en/us/td/docs/security/wsa/wsa11-0/user_guide/b_WSA_UserGuide/b_WSA_UserGuide_chapter_010111.html)

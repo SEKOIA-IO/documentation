@@ -130,6 +130,6 @@ This setup guide describes how to forward events produced by **Kaspersky Endpoin
 
 {!_shared_content/operations_center/integrations/generated/255764ef-eaf6-4964-958e-81b9418e6584.md!}
 
-## Further readings
+## Related articles
 
 - [Kaspersky Security Center Documentation](https://support.kaspersky.com/)

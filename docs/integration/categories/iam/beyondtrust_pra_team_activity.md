@@ -62,6 +62,6 @@ This integration collects the Team logs.
 
 {!_shared_content/operations_center/integrations/generated/4703dc86-c39d-484c-abb5-46e126c6a05d.md!}
 
-## Further readings
+## Related articles
 
 - [BeyondTrust Integrations](https://docs.beyondtrust.com/bt-docs/docs/integrations)

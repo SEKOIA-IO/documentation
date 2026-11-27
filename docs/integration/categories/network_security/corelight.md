@@ -99,7 +99,7 @@ Once applied, the sensor starts pushing JSON events to Sekoia.io over HTTPS.
 {!_shared_content/operations_center/detection/generated/suggested_rules_21e0297d-93cc-4d92-90df-cefc92be563d_do_not_edit_manually.md!}
 {!_shared_content/operations_center/integrations/generated/21e0297d-93cc-4d92-90df-cefc92be563d.md!}
 
-## Further Readings
+## Related articles
 
 - [Corelight documentation](https://docs.corelight.com/)
 - [Zeek documentation](https://docs.zeek.org/)

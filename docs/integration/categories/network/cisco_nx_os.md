@@ -70,6 +70,6 @@ This setup guide will show you how to provide an integration between Cisco NX-OS
 
 {!_shared_content/operations_center/integrations/generated/591feb54-1d1f-4453-b780-b225c59e9f99.md!}
 
-## Further readings
+## Related articles
 
 - [Cisco Nexus 9000 Series Documentation](https://www.cisco.com/c/en/us/td/docs/switches/datacenter/nexus9000/sw/6-x/system_management/configuration/guide/b_Cisco_Nexus_9000_Series_NX-OS_System_Management_Configuration_Guide.html)

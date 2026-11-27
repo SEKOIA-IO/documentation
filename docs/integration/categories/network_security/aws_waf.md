@@ -48,7 +48,7 @@ To forward events produced by AWS WAF to S3, you have to:
 
 {!_shared_content/operations_center/integrations/generated/46e45417-187b-45bb-bf81-30df7b1963a0.md!}
 
-## Further Readings
+## Related articles
 - [AWS WAF Overview](https://aws.amazon.com/waf/)
 - [AWS WAF Documentation](https://docs.aws.amazon.com/waf/)
 - [AWS S3 Overview](https://aws.amazon.com/s3/)
