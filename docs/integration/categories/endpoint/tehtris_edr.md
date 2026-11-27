@@ -29,7 +29,8 @@ For both methods, start by creating the intake in Sekoia.io:
 2. Note the **Intake key** that is generated — you will need it in the configuration steps below.
 
 ---
-
+!!! note
+    The PULL method is currently being deprecated by Tehtris, we recommend using the PUSH method for a long term configuration.
 ### Method 1: API Pull
 
 #### Prerequisites
