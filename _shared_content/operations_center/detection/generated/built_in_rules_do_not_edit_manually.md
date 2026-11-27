@@ -1,4 +1,4 @@
-Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-11-10_](rules_changelog.md)).
+Rules catalog includes **1129 built-in detection rules** ([_last update on 2026-11-27_](rules_changelog.md)).
 ## Reconnaissance
 **Gather Victim Identity Information**
 
@@ -65,7 +65,7 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
 ??? abstract "Gatewatcher AionIQ V103 Network Behavior Analytics High"
     
-    Detects when network behavior analytics were requested with a high severity.
+    Detects when network behavior analytics were requested with a high severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
@@ -73,19 +73,28 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
         - 05/03/2026 - minor - Update rule type to integration
         - 08/10/2026 - major - Update rule to add severity.
+        - 23/11/2026 - minor - Adding filter on Suricata events.
             
 ??? abstract "Gatewatcher AionIQ V103 Network Behavior Analytics Low"
     
-    Detects when network behavior analytics were requested with a low severity.
+    Detects when network behavior analytics were requested with a low severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/11/2026 - minor - Adding filter on Suricata events.
+            
 ??? abstract "Gatewatcher AionIQ V103 Network Behavior Analytics Medium"
     
-    Detects when network behavior analytics were requested with a medium severity.
+    Detects when network behavior analytics were requested with a medium severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/11/2026 - minor - Adding filter on Suricata events.
+            
 ??? abstract "Internet Scanner"
     
     Detects known scanner IP addresses. Alert is only raised when the scan hits an opened port, on TCP or UDP. This could be a very noisy rule, so be careful to check your detection perimeter before activation.
@@ -351,7 +360,7 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
 ??? abstract "Gatewatcher AionIQ V103 Active CTI High"
     
-    Detects whan an event related to CTI is raised by Gatewatcher V103 with a high severity. An attacker may be gathering information with this event.
+    Detects whan an event related to CTI is raised by Gatewatcher V103 with a high severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
@@ -359,22 +368,31 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
         - 05/03/2026 - minor - Update rule type to integration
         - 06/10/2026 - major - Update rule to add severity.
+        - 23/11/2026 - minor - Adding filter on suricata events.
             
 ??? abstract "Gatewatcher AionIQ V103 Active CTI Low"
     
-    Detects when an event related to CTI is raised by Gatewatcher V103 with a low severity. An attacker may be gathering information with this event.
+    Detects when an event related to CTI is raised by Gatewatcher V103 with a low severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/11/2026 - minor - Adding filter on suricata events.
+            
 ??? abstract "Gatewatcher AionIQ V103 Active CTI Medium"
     
-    Detects when an event related to CTI is raised by Gatewatcher V103 with a medium severity. An attacker may be gathering information with this event.
+    Detects when an event related to CTI is raised by Gatewatcher V103 with a medium severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/11/2026 - minor - Adding filter on suricata events.
+            
 ??? abstract "Gatewatcher AionIQ V103 Retrohunt High"
     
-    Detects when a retrohunt event is raised by GatewatcherV103 with a high severity.
+    Detects when a retrohunt event is raised by GatewatcherV103 with a high severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
@@ -383,19 +401,28 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
         - 30/06/2025 - minor - Changing similarity on threat name.
         - 05/03/2026 - minor - Update rule type to integration
         - 08/10/2026 - major - Update rule to add severity.
+        - 23/11/2026 - minor - Adding filter on Suricata events.
             
 ??? abstract "Gatewatcher AionIQ V103 Retrohunt Low"
     
-    Detects when a retrohunt event with a low severity is raised by GatewatcherV103.
+    Detects when a retrohunt event with a low severity is raised by GatewatcherV103 and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/11/2026 - minor - Adding filter on Suricata events.
+            
 ??? abstract "Gatewatcher AionIQ V103 Retrohunt Medium"
     
-    Detects when a retrohunt event with a medium severity is raised by GatewatcherV103.
+    Detects when a retrohunt event with a medium severity is raised by GatewatcherV103 and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/11/2026 - minor - Adding filter on Suricata events.
+            
 ## Resource Development
 **Acquire Infrastructure**
 
@@ -1934,6 +1961,12 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
         - 16/01/2025 - minor - Adding filter to reduce false positives.
             
+??? abstract "Phishing Quarantined By Vade Cloud"
+    
+    Detects when an email is quarantined and tagged as phishing by Vade Cloud.
+    
+    - **Effort:** master
+    
 ??? abstract "Possible Malicious File Double Extension"
     
     Detects request to potential malicious file with double extension
@@ -2000,6 +2033,12 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
     - **Effort:** elementary
     
+??? abstract "Scam Detected By Vade Cloud"
+    
+    Detects when an email is tagged as scam by Vade Cloud.
+    
+    - **Effort:** master
+    
 ??? abstract "Scam Detected By Vade For M365"
     
     Vade Secure product Vade for M365, has detected a scam e-mail.
@@ -2026,6 +2065,12 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
         - 12/11/2025 - minor - Update rule type to integration
             
+??? abstract "Spam Detected By Vade Cloud"
+    
+    Detects when an email is tagged as spam by Vade Cloud.
+    
+    - **Effort:** master
+    
 ??? abstract "Spam Detected By Vade For M365"
     
     Vade Secure product Vade for M365, has detected a spam e-mail.
@@ -2124,6 +2169,12 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
         - 12/11/2025 - minor - Update rule type to integration
             
+??? abstract "Virus Detected By Vade Cloud"
+    
+    Detects when an email is tagged as virus by Vade Cloud.
+    
+    - **Effort:** master
+    
 ## Execution
 **Windows Management Instrumentation**
 
@@ -2740,7 +2791,7 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
             
 ??? abstract "Gatewatcher AionIQ V103 Shellcode Detect High"
     
-    Detects when a suspicious shellcode is used with a high severity.
+    Detects when a suspicious shellcode is used with a high severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
@@ -2748,19 +2799,28 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
         - 05/03/2026 - minor - Update rule type to integration
         - 08/10/2026 - major - Update rule to add severity.
+        - 23/11/2026 - minor - Adding filter on Suricata events.
             
 ??? abstract "Gatewatcher AionIQ V103 Shellcode Detect Low"
     
-    Detects when a suspicious shellcode is used with a low severity.
+    Detects when a suspicious shellcode is used with a low severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/11/2026 - minor - Adding filter on Suricata events.
+            
 ??? abstract "Gatewatcher AionIQ V103 Shellcode Detect Medium"
     
-    Detects when a suspicious shellcode is used with a medium severity.
+    Detects when a suspicious shellcode is used with a medium severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/11/2026 - minor - Adding filter on Suricata events.
+            
 ??? abstract "Generic-reverse-shell-oneliner"
     
     To bypass some security equipement or for a sack of simplicity attackers can open raw reverse shell using shell commands
@@ -4240,7 +4300,7 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
 ??? abstract "Gatewatcher AionIQ V103 Malcore High"
     
-    Detects a malcore alert by Gatewatcher AionIQ V103 with a high severity related to documents with passwords.
+    Detects a malcore alert by Gatewatcher AionIQ V103 with a high severity related to documents with passwords and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
@@ -4250,19 +4310,28 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
         - 27/01/2025 - minor - Changing field and adding filter to reduce false positives.
         - 05/03/2026 - minor - Update rule type to integration
         - 07/10/2026 - major - Update rule to add severity.
+        - 23/11/2026 - minor - Adding filter on Suricata events.
             
 ??? abstract "Gatewatcher AionIQ V103 Malcore Low"
     
-    Detects a malcore alert by Gatewatcher AionIQ V103 with a low severity related to documents with passwords.
+    Detects a malcore alert by Gatewatcher AionIQ V103 with a low severity related to documents with passwords and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/11/2026 - minor - Adding filter on Suricata events.
+            
 ??? abstract "Gatewatcher AionIQ V103 Malcore Medium"
     
-    Detects a malcore alert by Gatewatcher AionIQ V103 with a medium severity related to documents with passwords.
+    Detects a malcore alert by Gatewatcher AionIQ V103 with a medium severity related to documents with passwords and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/11/2026 - minor - Adding filter on Suricata events.
+            
 ??? abstract "Google Workspace Anomaly File Downloads"
     
     Detects a large number of file downloads.
@@ -11774,6 +11843,12 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
         - 11/12/2024 - minor - Added a default similarity based on host name and user name to avoid too many alerts.
         - 26/03/2024 - minor - Adapted the rule to remove false positives.
             
+??? abstract "Correlation Remote Local Group Enumeration"
+    
+    Detects multiple remote listing of local privileged group.
+    
+    - **Effort:** master
+    
 ??? abstract "Discovery Commands Correlation"
     
     Detects some frequent discovery commands used by some ransomware operators.
@@ -13274,7 +13349,7 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
 
 ??? abstract "Gatewatcher AionIQ V103 Dga Detect High"
     
-    Detects when an event related to dga is raised by gatewatcher with a high severity. An attacker can use this to generate a new domain for C2.
+    Detects when an event related to dga is raised by gatewatcher with a high severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
@@ -13282,19 +13357,28 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
         - 05/03/2026 - minor - Update rule type to integration
         - 08/10/2026 - major - Update rule to add severity.
+        - 23/11/2026 - minor - Adding filter on Suricata events.
             
 ??? abstract "Gatewatcher AionIQ V103 Dga Detect Low"
     
-    Detects when an event related to dga is raised by gatewatcher with a low severity. An attacker can use this to generate a new domain for C2.
+    Detects when an event related to dga is raised by gatewatcher with a low severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/11/2026 - minor - Adding filter on Suricata events.
+            
 ??? abstract "Gatewatcher AionIQ V103 Dga Detect Medium"
     
-    Detects when an event related to dga is raised by gatewatcher with a medium severity. An attacker can use this to generate a new domain for C2.
+    Detects when an event related to dga is raised by gatewatcher with a medium severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/11/2026 - minor - Adding filter on Suricata events.
+            
 **Non-Standard Port**
 
 ??? abstract "RDP Port Change Using Powershell"
@@ -13457,7 +13541,7 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
 
 ??? abstract "Gatewatcher AionIQ V103 Malicious Powershell Detect High"
     
-    Detects malicious powershell by Gatewatcher V103 with a high severity.
+    Detects malicious powershell by Gatewatcher V103 with a high severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
@@ -13465,19 +13549,28 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
         - 05/03/2026 - minor - Update rule type to integration
         - 08/10/2026 - major - Update rule to add severity.
+        - 23/11/2026 - minor - Adding filter on Suricata events.
             
 ??? abstract "Gatewatcher AionIQ V103 Malicious Powershell Detect Low"
     
-    Detects malicious powershell by Gatewatcher V103 with a low severity.
+    Detects malicious powershell by Gatewatcher V103 with a low severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/11/2026 - minor - Adding filter on Suricata events.
+            
 ??? abstract "Gatewatcher AionIQ V103 Malicious Powershell Detect Medium"
     
-    Detects malicious powershell by Gatewatcher V103 with a medium severity.
+    Detects malicious powershell by Gatewatcher V103 with a medium severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/11/2026 - minor - Adding filter on Suricata events.
+            
 **Exfiltration Over C2 Channel**
 
 ??? abstract "Claroty xDome Network Threat Detection Alert"
@@ -13520,7 +13613,7 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
             
 ??? abstract "Gatewatcher AionIQ Network Alert High"
     
-    Forward network alerts reported by Gatewatcher AionIQ with a high severity.
+    Forward network alerts reported by Gatewatcher AionIQ with a high severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
@@ -13528,22 +13621,31 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
         - 05/03/2026 - minor - Update rule type to integration
         - 06/10/2026 - major - Update rule to add severity.
+        - 12/11/2026 - minor - Adding filter on suricata events.
             
 ??? abstract "Gatewatcher AionIQ Network Alert Low"
     
-    Forward network alerts reported by Gatewatcher AionIQ with a low severity.
+    Forward network alerts reported by Gatewatcher AionIQ with a low severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/11/2026 - minor - Adding filter on suricata events.
+            
 ??? abstract "Gatewatcher AionIQ Network Alert Medium"
     
-    Forward network alerts reported by Gatewatcher AionIQ with a medium severity.
+    Forward network alerts reported by Gatewatcher AionIQ with a medium severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 12/11/2026 - minor - Adding filter on suricata events.
+            
 ??? abstract "Gatewatcher AionIQ V103 Beacon Detect High"
     
-    Detects a suspicious beacon with a high severity.
+    Detects a suspicious beacon with a high severity and with a filter on suricata events which have the opposite severity.
     
     - **Effort:** master
     
@@ -13551,19 +13653,28 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
         - 05/03/2026 - minor - Update rule type to integration
         - 07/10/2026 - major - Update rule to add severity.
+        - 23/11/2026 - minor - Adding filter on suricata events.
             
 ??? abstract "Gatewatcher AionIQ V103 Beacon Detect Low"
     
-    Detects a suspicious beacon with a low severity.
+    Detects a suspicious beacon with a low severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/11/2026 - minor - Adding filter on suricata events.
+            
 ??? abstract "Gatewatcher AionIQ V103 Beacon Detect Medium"
     
-    Detects a suspicious beacon with a medium severity.
+    Detects a suspicious beacon with a medium severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/11/2026 - minor - Adding filter on Suricata events.
+            
 ??? abstract "Gatewatcher AionIQ V103 Sigflow Alert"
     
     Detects a sigflow alert by Gatewatcher AionIQ V103.
@@ -13793,7 +13904,7 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
 ??? abstract "Gatewatcher AionIQ V103 Ransomware Detect High"
     
-    Detects when a ransomware is detected by gatewatcherV103 with a high severity.
+    Detects when a ransomware is detected by gatewatcherV103 with a high severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
@@ -13801,19 +13912,28 @@ Rules catalog includes **1124 built-in detection rules** ([_last update on 2026-
     
         - 05/03/2026 - minor - Update rule type to integration
         - 08/10/2026 - major - Update rule to add severity.
+        - 23/11/2026 - minor - Adding filter on Suricata events.
             
 ??? abstract "Gatewatcher AionIQ V103 Ransomware Detect Low"
     
-    Detects when a ransomware is detected by gatewatcherV103 with a low severity.
+    Detects when a ransomware is detected by gatewatcherV103 with a low severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/11/2026 - minor - Adding filter on Suricata events.
+            
 ??? abstract "Gatewatcher AionIQ V103 Ransomware Detect Medium"
     
-    Detects when a ransomware is detected by gatewatcherV103 with a medium severity.
+    Detects when a ransomware is detected by gatewatcherV103 with a medium severity and with a filter on Suricata events which have the opposite severity.
     
     - **Effort:** master
     
+    - **Changelog:**
+    
+        - 23/11/2026 - minor - Adding filter on Suricata events.
+            
 ??? abstract "Suncrypt Parameters"
     
     Detects SunCrypt ransomware's parameters, most of which are unique.
