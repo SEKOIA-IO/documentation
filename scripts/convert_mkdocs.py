@@ -11,11 +11,23 @@ Conversions :
   ![img](x){: style=...}   -> ![img](x)                (attributs MkDocs supprimés)
   ](/xdr/page.md)          -> ](../../xdr/page.md)     (liens absolus -> relatifs)
   {!_shared_content/x.md!} -> contenu du fichier inclus (option --inline-includes)
+  {!_shared_content/x.md!} -> {% include "../.gitbook/includes/x.md" %} (option --gitbook-includes :
+                              contenu réutilisable GitBook, les inclusions générées restent telles quelles)
+  ++ctrl+c++               -> `Ctrl+C`
+  code  # (1)              -> code                     (marqueurs d'annotation retirés, la liste reste)
+
+Les fins de ligne (LF ou CRLF) de chaque fichier sont conservées.
+
+Ce qui reste à reprendre à la main (HTML avec style, <br>, <table>, <iframe>/<video>,
+attributs hors liens) est signalé dans le rapport, fichier par fichier, sans être modifié.
 
 Usage :
   python scripts/convert_mkdocs.py docs/ --exclude integration            # simulation
   python scripts/convert_mkdocs.py docs/ --exclude integration --write
   python scripts/convert_mkdocs.py docs/ --since gitbook-last-sync --write  # fichiers modifiés seulement
+
+  # Integration team usage :
+  python scripts/convert_mkdocs.py docs/ --only integration --exclude integration/action_library
 """
 import argparse
 import os
@@ -34,7 +46,9 @@ HINT_STYLE = {
     "note": "info", "info": "info", "abstract": "info", "summary": "info", "example": "info",
     "quote": "info", "question": "info", "alternative": "info",
     "tip": "success", "tips": "success", "success": "success", "check": "success", "done": "success",
+    "information": "info", "prerequisites": "info",
     "warning": "warning", "important": "warning", "caution": "warning", "attention": "warning",
+    "warn": "warning", "disclaimer": "warning",
     "danger": "danger", "error": "danger", "failure": "danger", "bug": "danger",
 }
 ADMON_RE = re.compile(r'^(?P<ind>[ \t]*)(?P<mark>!!!|\?\?\?\+?)\s*(?P<type>[\w-]+)?\s*(?:"(?P<title>[^"]*)")?\s*$')
@@ -46,9 +60,31 @@ INCLUDE_RE = re.compile(r'\{!\s*([^!\s]+)\s*!\}')
 # Les contenus inclus sont encadrés de balises pour pouvoir être rafraîchis
 # quand le fichier source de _shared_content change (contenus générés notamment).
 MARKED_RE = re.compile(r'<!-- include:(?P<p>[^ ]+) -->\n.*?\n<!-- endinclude:(?P=p) -->', re.S)
+# Raccourcis clavier pymdownx.keys : ++ctrl+alt+del++
+KEYS_RE = re.compile(r'\+\+([A-Za-z0-9]+(?:\+[A-Za-z0-9]+)*)\+\+')
+# Annotations de code (content.code.annotate) : marqueur « # (1) » ou « // (1)! » en fin de ligne,
+# retiré seulement si le bloc est suivi de sa liste d'annotations (« 1. ... »), pour ne pas
+# toucher du code ordinaire comme « count // (2) »
+ANNOT_RE = re.compile(r'\s*(?:#|//)\s*\(\d+\)!?\s*$')
+ANNOT_LIST_RE = re.compile(r'\s*1\.\s+\S')
+# Code en ligne `...` (ou ``...``), laissé tel quel par convert_keys
+CODE_SPAN_RE = re.compile(r'(`+).*?\1')
+# Syntaxe non convertie automatiquement, signalée pour reprise à la main (hors blocs de code)
+TO_REVIEW = {
+    "HTML avec style": re.compile(r'<[a-z][\w-]*\b[^>]*\bstyle=', re.I),
+    "balises <br>": re.compile(r'<br\s*/?>', re.I),
+    "tableaux HTML": re.compile(r'<table\b', re.I),
+    "<iframe>/<video>": re.compile(r'<(?:iframe|video)\b', re.I),
+    "attributs {: ...} / {#...} hors liens": re.compile(r'\{:[^}\n]*\}|\{\s*[#.][\w-][^}\n%]*\}\s*$'),
+}
+
+# Inclusions produites par les générateurs (intakes : SekoiaLab/integration#1839, connecteurs d'actifs : #1840)
+GENERATED_INCLUDE_RE = re.compile(r'generated|do_not_edit')
 
 stats = Counter()
+REUSABLE = {}  # contenu réutilisable à écrire (chemin -> texte), option --gitbook-includes
 CURRENT = [""]  # fichier en cours, pour les messages
+ANNOTATED = set()  # fichiers déjà signalés pour les annotations de code
 
 
 def indent_width(s):
@@ -84,13 +120,15 @@ def convert_blocks(lines):
             mk = m_f.group(1)
             if fence is None:
                 fence = (mk[0], len(mk))
+                annotated = has_annotation_list(lines, i, fence)
+                line = re.sub(r'\s*\{\s*\.annotate\s*\}', '', line)
             elif mk[0] == fence[0] and len(mk) >= fence[1]:
                 fence = None
             out.append(line)
             i += 1
             continue
         if fence:
-            out.append(line)
+            out.append(strip_annotation(line) if annotated else line)
             i += 1
             continue
 
@@ -136,9 +174,70 @@ def convert_blocks(lines):
             out.append(f"{ind}{{% endtabs %}}")
             continue
 
-        out.append(line)
+        out.append(convert_keys(line))
         i += 1
     return out
+
+
+def has_annotation_list(lines, opening_fence_index, fence):
+    fence_char, fence_len = fence
+
+    def closes_fence(line):
+        match = FENCE_RE.match(line)
+        return bool(match) and match.group(1)[0] == fence_char and len(match.group(1)) >= fence_len
+
+    closing_fence_index = opening_fence_index + 1
+    while closing_fence_index < len(lines) and not closes_fence(lines[closing_fence_index]):
+        closing_fence_index += 1
+
+    next_text_index = closing_fence_index + 1
+    while next_text_index < len(lines) and lines[next_text_index].strip() == "":
+        next_text_index += 1
+
+    return next_text_index < len(lines) and bool(ANNOT_LIST_RE.match(lines[next_text_index]))
+
+
+def strip_annotation(line):
+    """Retire un marqueur d'annotation de code ; la liste d'annotations sous le bloc est conservée."""
+    new = ANNOT_RE.sub("", line)
+    if new != line:
+        stats["annotations de code retirées (liste sous le bloc à relire)"] += 1
+        if CURRENT[0] not in ANNOTATED:
+            ANNOTATED.add(CURRENT[0])
+            print(f"  ! {CURRENT[0]}: annotations de code retirées, relire la liste sous le bloc", file=sys.stderr)
+    return new
+
+
+def convert_keys(line):
+    def keys(m):
+        stats["raccourcis ++touches++"] += 1
+        return "`" + "+".join(k.capitalize() for k in m.group(1).split("+")) + "`"
+    parts, pos = [], 0
+    for m in CODE_SPAN_RE.finditer(line):
+        parts += [KEYS_RE.sub(keys, line[pos:m.start()]), m.group(0)]
+        pos = m.end()
+    parts.append(KEYS_RE.sub(keys, line[pos:]))
+    return "".join(parts)
+
+
+def report_to_review(text):
+    """Signale (sans modifier) la syntaxe que le script ne sait pas convertir, hors blocs de code."""
+    fence = None
+    for n, line in enumerate(text.split("\n"), 1):
+        m_f = FENCE_RE.match(line)
+        if m_f:
+            mk = m_f.group(1)
+            if fence is None:
+                fence = (mk[0], len(mk))
+            elif mk[0] == fence[0] and len(mk) >= fence[1]:
+                fence = None
+            continue
+        if fence:
+            continue
+        for label, rx in TO_REVIEW.items():
+            if rx.search(line):
+                stats[f"à reprendre à la main : {label}"] += 1
+                print(f"  ! {CURRENT[0]}:{n}: à reprendre à la main ({label}) : {line.strip()[:100]}", file=sys.stderr)
 
 
 def convert_inline(text, path, docs_root):
@@ -228,9 +327,45 @@ def inline_includes(text, repo_root, depth=0):
     return INCLUDE_RE.sub(repl, text)
 
 
-def convert(text, path, docs_root, repo_root, do_includes):
+def gitbook_includes(text, path, docs_root, repo_root):
+    """{!_shared_content/x.md!} -> {% include "<relatif>/.gitbook/includes/x.md" %}.
+
+    Le fichier inclus (écrit à la main) est converti et déposé dans le dossier .gitbook/includes/ de la
+    section GitBook (premier dossier sous docs_root), où GitBook le lit comme contenu réutilisable.
+    Une inclusion imbriquée est copiée dans le contenu réutilisable. Les inclusions générées sont laissées.
+    """
+    rel = path.relative_to(docs_root)
+    section = docs_root / rel.parts[0] if len(rel.parts) > 1 else docs_root
+    includes_dir = section / ".gitbook" / "includes"
+
+    def repl(m):
+        src = m.group(1)
+        if GENERATED_INCLUDE_RE.search(src):
+            stats["inclusions générées laissées telles quelles (générateurs à adapter)"] += 1
+            return m.group(0)
+        if not (repo_root / src).exists():
+            stats["inclusions introuvables"] += 1
+            print(f"  ! {CURRENT[0]}: inclusion introuvable : {src}", file=sys.stderr)
+            return m.group(0)
+        target = includes_dir / Path(src).name
+        if target not in REUSABLE:
+            page, CURRENT[0] = CURRENT[0], target.relative_to(docs_root).as_posix()
+            content = (repo_root / src).read_text(encoding="utf-8").rstrip("\n")
+            content = inline_includes(content, repo_root, depth=1)
+            content = "\n".join(convert_blocks(content.split("\n")))
+            REUSABLE[target] = convert_inline(content, target, docs_root) + "\n"
+            CURRENT[0] = page
+        stats["inclusions -> contenu réutilisable GitBook {% include %}"] += 1
+        link = os.path.relpath(target, path.parent).replace(os.sep, "/")
+        return f'{{% include "{link}" %}}'
+    return INCLUDE_RE.sub(repl, text)
+
+
+def convert(text, path, docs_root, repo_root, do_includes, do_gitbook_includes=False):
     if do_includes:
         text = inline_includes(text, repo_root)
+    if do_gitbook_includes:
+        text = gitbook_includes(text, path, docs_root, repo_root)
     text = "\n".join(convert_blocks(text.split("\n")))
     return convert_inline(text, path, docs_root)
 
@@ -243,7 +378,13 @@ def changed_files(ref, root):
     return [(top / f).absolute() for f in out.splitlines() if f.endswith(".md") and (top / f).exists()]
 
 
-def main():
+def in_scope(rel, prefix):
+    """Un dossier (et tout son contenu) ou un fichier précis."""
+    prefix = prefix.strip("/")
+    return rel == prefix or rel.startswith(prefix + "/")
+
+
+def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("docs_root", type=Path)
     ap.add_argument("--write", action="store_true")
@@ -252,8 +393,15 @@ def main():
     ap.add_argument("--exclude", action="append", default=[], help="sous-dossier à ignorer (répétable)")
     ap.add_argument("--only", action="append", default=[], help="ne traiter que ce sous-dossier (répétable)")
     ap.add_argument("--inline-includes", action="store_true", help="remplacer {!...!} par le contenu inclus")
+    ap.add_argument("--gitbook-includes", action="store_true",
+                    help="remplacer les {!...!} écrits à la main par un {%% include %%} GitBook "
+                         "(fichier converti dans .gitbook/includes/ de la section) ; les inclusions générées restent")
     ap.add_argument("--repo-root", type=Path, default=Path("."), help="base des chemins {!...!} (défaut : .)")
-    args = ap.parse_args()
+    ap.add_argument("--report", action="store_true",
+                    help="signaler, fichier par fichier, la syntaxe à reprendre à la main (HTML, embeds...)")
+    args = ap.parse_args(argv)
+    if args.inline_includes and args.gitbook_includes:
+        ap.error("--inline-includes et --gitbook-includes sont exclusifs")
 
     docs_root = args.docs_root.absolute()
     files = changed_files(args.since, args.docs_root) if args.since else sorted(docs_root.rglob("*.md"))
@@ -270,21 +418,40 @@ def main():
     for path in files:
         path = path.absolute()
         rel = path.relative_to(docs_root).as_posix()
-        if any(rel.startswith(e.strip("/") + "/") for e in args.exclude):
+        if any(in_scope(rel, e) for e in args.exclude):
             continue
-        if args.only and not any(rel.startswith(o.strip("/") + "/") for o in args.only):
+        if args.only and not any(in_scope(rel, o) for o in args.only):
             continue
         if path.is_symlink():
             stats["liens symboliques (à remplacer par de vrais fichiers, non suivis)"] += 1
             print(f"  ! lien symbolique : {rel} -> {os.readlink(path)}", file=sys.stderr)
             continue
         CURRENT[0] = rel
-        original = path.read_text(encoding="utf-8")
-        new = convert(original, path, docs_root, args.repo_root.resolve(), args.inline_includes)
+        # Lecture sans normalisation des fins de ligne, pour conserver le CRLF des fichiers qui en ont
+        original = path.read_bytes().decode("utf-8")
+        crlf = "\r\n" in original
+        new = convert(original.replace("\r\n", "\n"), path, docs_root, args.repo_root.resolve(),
+                      args.inline_includes, args.gitbook_includes)
+        if args.report:
+            report_to_review(new)
+        if crlf:
+            new = new.replace("\n", "\r\n")
         if new != original:
             changed.append(rel)
             if args.write:
-                path.write_text(new, encoding="utf-8")
+                path.write_bytes(new.encode("utf-8"))
+
+    for target, content in sorted(REUSABLE.items()):
+        rel = target.relative_to(docs_root).as_posix()
+        CURRENT[0] = rel
+        if args.report:
+            report_to_review(content)
+        if target.exists() and target.read_text(encoding="utf-8") == content:
+            continue
+        changed.append(rel)
+        if args.write:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(content, encoding="utf-8")
 
     print(f"{len(changed)} fichier(s) {'convertis' if args.write else 'à convertir'}")
     for k, v in sorted(stats.items()):

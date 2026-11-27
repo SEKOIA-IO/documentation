@@ -46,4 +46,16 @@ Toute modification de ces pages doit passer par les générateurs de l'équipe I
 - `!!!` -> `{% hint style="info|success|warning|danger" %}` ... `{% endhint %}`
 - `???` -> `<details><summary>...</summary>` ... `</details>`
 - `===` -> `{% tabs %}{% tab title="..." %}` ... `{% endtab %}{% endtabs %}`
+- `++ctrl+c++` -> `` `Ctrl+C` ``
+- Annotations de code (`# (1)` en fin de ligne) : marqueur retiré, la liste sous le bloc est conservée.
 - Liens internes : relatifs, vers le fichier `.md`.
+- `{!_shared_content/x.md!}` écrits à la main -> `{% include "../.gitbook/includes/x.md" %}` (option
+  `--gitbook-includes`) : le fichier converti est écrit dans `.gitbook/includes/` de la section, GitBook le
+  lit comme contenu réutilisable. Les inclusions générées (`generated`, `do_not_edit`) restent telles quelles.
+- Fins de ligne (LF/CRLF) conservées.
+- Le reste (HTML avec style, `<br>`, `<table>`, `<iframe>`/`<video>`) n'est pas converti :
+  `--report` le liste fichier par fichier pour reprise à la main.
+
+L'équipe Intégrations utilise le même script sur son périmètre :
+`python3 scripts/convert_mkdocs.py docs --only integration --exclude integration/action_library --gitbook-includes --report`
+(sans `--inline-includes` : les inclusions générées de `docs/integration/` sont traitées dans SekoiaLab/integration#1839 et #1840).
