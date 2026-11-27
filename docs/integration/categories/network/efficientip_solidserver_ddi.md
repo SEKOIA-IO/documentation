@@ -30,11 +30,12 @@ In this guide, you will configure the gateway to forward events to syslog.
 ### Prerequisites
 
 An internal syslog concentrator is required to collect and forward events to Sekoia.io.
+The SOLIDserver syslog forwarding for this integration must use the UDP protocol.
 
 
 ### Enable Syslog forwarding
 
-1. Log in SOLIDServer console
+1. Log in to the SOLIDServer console
 2. On the left panel, click `Administration`
 
     ![Adminstation](/assets/integration/network/efficientip_solidserver/01 - administration.png)
@@ -47,10 +48,16 @@ An internal syslog concentrator is required to collect and forward events to Sek
 
     ![syslog](/assets/integration/network/efficientip_solidserver/03 - syslog.png)
 
-5. In the `Services` drop-dwon, select the following services:
-	- `dns`
+5. Select `dns` from the `Services` drop-down and `udp` as the transport protocol.
 
-6. In the `Target server`, fill the ip address and the port of the log concentrator.
+6. In the `Target server`, enter the address of the log concentrator and a dedicated listening port.
+
+    You can configure the target with either:
+    - a hostname (for example: `syslog.internal.example`)
+    - an IPv4 address (for example: `192.0.2.10`)
+
+    Set a specific port that matches the UDP listener configured on your concentrator (for example: `514` or `10514`).
+    TCP is not supported for this integration path.
 
     ![target](/assets/integration/network/efficientip_solidserver/04 - target.png)
 
