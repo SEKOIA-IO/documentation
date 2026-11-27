@@ -471,6 +471,12 @@ The following Sekoia.io built-in rules match the intake **Sekoia.io Endpoint Age
     
     - **Effort:** intermediate
 
+??? abstract "Correlation Remote Local Group Enumeration"
+    
+    Detects multiple remote listing of local privileged group.
+    
+    - **Effort:** master
+
 ??? abstract "Correlation Supicious Powershell Drop and Exec"
     
     Detects a PowerShell process that download and exec a payload
