@@ -5,8 +5,11 @@ In this section we will see how to develop a simple module from scratch.
 A module can contain several components of the following types:
 
 * **Action**: custom code executed by Sekoia in a Playbook.
-* **Connector**: custom code executed by Sekoia to collect and ingest events.
+* **Event connector**: custom code executed by Sekoia to collect events and send them to an intake.
+* **Asset connector**: custom code executed by Sekoia to collect assets (devices, users, software, vulnerabilities) and send them to the asset inventory.
 * **Trigger**: custom code executed by Sekoia as an entrypoint of a Playbook.
+
+To choose between an event connector and an asset connector, see [Connectors](connectors.md).
 
 
 ## Technical Requirements
@@ -132,7 +135,7 @@ You may be prompted to enter your GitHub username and password or a Personal Acc
 
 ## Create your component
 
-Depending on your needs, you can choose to create an **Action**, a **Connector**, or a **Trigger**. Each section below provides detailed instructions for implementing the respective component. Select the one that best fits your use case and follow the steps provided.
+Depending on your needs, you can choose to create an **Action**, an **Event connector**, an **Asset connector**, or a **Trigger**. Each section below provides detailed instructions for implementing the respective component. Select the one that best fits your use case and follow the steps provided.
 
 === "Action"
     Our action will take three arguments:
@@ -324,9 +327,10 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
     2. Action is registered.
 
 
-=== "Connector"
-    A connector is a Python code file executed by Sekoia to collect and ingest events.
+=== "Event connector"
+    An event connector is a Python code file executed by Sekoia to collect and ingest events.
     In this example the connector will regularly pull an external API and ingest the received events in Sekoia.
+    For how the SDK runs an event connector, checkpoints and error handling, see [Build an event connector](event_connector.md).
 
     The main logic is presented here:
 
@@ -515,6 +519,14 @@ Depending on your needs, you can choose to create an **Action**, a **Connector**
 
     1. Our connector is imported.
     2. The connector is registered.
+
+
+=== "Asset connector"
+    An asset connector is a Python code file executed by Sekoia to collect assets, such as machines, user accounts, applications and vulnerability findings, and send them to the asset inventory. Unlike an event connector, it sends structured [OCSF](https://schema.ocsf.io) items, not raw events.
+
+    To declare, write and test one in your module, follow [Build an asset connector](asset_connector.md). It gives a complete example, and the practices that keep the asset inventory reliable.
+
+    Once your integration is imported, configure the asset connector from the integration catalog. See [Create asset connectors](/xdr/features/modules/reveal_asset_connectors_create.md).
 
 
 === "Trigger"

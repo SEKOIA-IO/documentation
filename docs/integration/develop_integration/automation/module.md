@@ -1,12 +1,12 @@
 # Module
 
-A Module groups a set of [triggers](trigger.md) and [actions](action.md) sharing a same interest. Most of the time, a module is associated to a product vendor.
+A Module groups a set of [triggers](trigger.md), [actions](action.md) and [connectors](connectors.md) sharing a same interest. Most of the time, a module is associated to a product vendor.
 
 A module contains the following items:
 
 - a manifest `manifest.json`
 - a pyproject file
-- a `<module_name>_module` subdirectory holding the python code for triggers and actions.
+- a `<module_name>_module` subdirectory holding the python code for triggers, actions and connectors.
 - a list of json file
 - an entrypoint `main.py`
 

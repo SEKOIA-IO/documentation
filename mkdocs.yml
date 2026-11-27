@@ -770,7 +770,9 @@ nav:
       - Overview: integration/develop_integration/automation/overview.md
       - Action: integration/develop_integration/automation/action.md
       - Asset Connector: integration/develop_integration/automation/asset_connector.md
+      - Connectors: integration/develop_integration/automation/connectors.md
       - Create a Module: integration/develop_integration/automation/create_a_module.md
+      - Event Connector: integration/develop_integration/automation/event_connector.md
       - Development Guidelines: integration/develop_integration/automation/development_guideline.md
       - Module: integration/develop_integration/automation/module.md
       - Trigger: integration/develop_integration/automation/trigger.md

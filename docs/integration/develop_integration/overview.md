@@ -51,9 +51,9 @@ Once you are done, you will create a custom intake based using this custom forma
 
 You have now successfully ingested data from a new product. If you would like to share your custom format to the cybersecurity community or let Sekoia handle the maintenance of this custom format, proceed to the next step.
 
-#### Step 3. Create your custom connector (optional)
+#### Step 3. Create your custom event connector (optional)
 
-If there are no compatible methods in Sekoia to collect events from your product, you can create a custom connector that will handle the collection process.
+If there are no compatible methods in Sekoia to collect events from your product, you can create a custom event connector that will handle the collection process.
 Sekoia will trigger this connector on a recurring basis to connect to your product and collect new events.
 
 !!! Prerequisites
@@ -117,13 +117,17 @@ The last step is to homologate your automation in order to make it available in 
 ### Usecase 4. You want to collect assets from a product not supported by Sekoia
 
 !!! note "Prerequisites"
-    An asset connector requires Python development skills, as it is custom Python code developed with the sekoia-automation SDK. Configuring it requires the Reveal module.
+    An asset connector requires Python development skills, as it is custom Python code developed with the sekoia-automation SDK. Configuring it requires the [Reveal add-on module](/xdr/features/modules/reveal_index.md).
 
-#### Step 1. Write your asset connector
+#### Step 1. Understand the general concepts
+
+Read [Connectors](automation/connectors.md) to understand how an asset connector differs from an event connector.
+
+#### Step 2. Write your asset connector
 
 Follow [Build an asset connector](automation/asset_connector.md). It explains how to declare the asset connector in a module, how to write it, and the practices that keep your asset inventory reliable.
 
-#### Step 2. Import and configure it
+#### Step 3. Import and configure it
 
 1. Click on `+ New Integration` in the **Integrations** page, then click on `Get Started` and follow the steps given to set up your development environment
 2. Once your code is finalized, click on `Import my custom integration`, then follow the steps given to import your code from your Github or Gitlab repository
