@@ -35,6 +35,7 @@ If you are new to Sekoia Self-Hosted, follow this sequence:
 | [Network requirements](/self_hosted/1.0/deployment/network_requirements.md) | Full table of required network flows, ports, and protocols. |
 | [The deployment process](/self_hosted/1.0/deployment/deployment_process.md) | High-level overview of the deployment engine, execution modes, and lifecycle operations. |
 | [Deploy the platform](/self_hosted/1.0/deployment/deployment_guide.md) | Step-by-step installation: download, verification, initialization, and post-deployment validation. |
+| [Upgrade the platform](/self_hosted/1.0/deployment/upgrade_guide.md) | Target-version configuration, upgrade steps, and failure recovery. |
 | [Configure the deployment](/self_hosted/1.0/deployment/deployment_configuration.md) | Copyable `config.yml` starter configuration and explanations for every required field. |
 
 ### Operations
