@@ -409,7 +409,7 @@ The SDK sets the version of the push format, the same for every push of the conn
 
 ## Read the push response
 
-From `sekoia-automation-sdk` 1.27.3, every refused push appears in the connector logs with its response code and error code. A 200 means that Sekoia accepted the push, not that it processed every item: when the processing fails, the connector logs `Asset push task <id> ended with the status <status>` as an error. Find the logs in the asset connectors panel: see [Troubleshoot asset connectors](/xdr/features/modules/reveal_asset_connectors_troubleshoot.md#diagnose-push-errors).
+From `sekoia-automation-sdk` 1.28.0, every refused push appears in the connector logs with its response code and error code. A 200 means that Sekoia accepted the push, not that it processed every item: when the processing fails, the connector logs `Asset push task <id> ended with the status <status>` as an error. Find the logs in the asset connectors panel: see [Troubleshoot asset connectors](/xdr/features/modules/reveal_asset_connectors_troubleshoot.md#diagnose-push-errors).
 
 | Response | Safeguard | Fix in the connector |
 |---|---|---|
