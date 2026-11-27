@@ -116,19 +116,19 @@ The last step is to homologate your automation in order to make it available in 
 
 ### Usecase 4. You want to collect assets from a product not supported by Sekoia
 
-!!! Prerequisites
-    Asset connectors require the [Reveal add-on module](/xdr/features/modules/reveal_index.md) and Python development skills.
+!!! note "Prerequisites"
+    An asset connector requires Python development skills, as it is custom Python code developed with the sekoia-automation SDK. Configuring it requires the [Reveal add-on module](/xdr/features/modules/reveal_index.md).
 
 #### Step 1. Understand the general concepts
 
 Read [Connectors](automation/connectors.md) to understand how an asset connector differs from an event connector, and the rules it must follow to keep the asset inventory free of duplicates.
 
-#### Step 2. Create your custom asset connector
+#### Step 2. Write your asset connector
+
+Follow [Build an asset connector](automation/asset_connector.md). It explains how to declare the asset connector in a module, how to write it, and the practices that keep your asset inventory reliable.
+
+#### Step 3. Import and configure it
 
 1. Click on `+ New Integration` in the **Integrations** page, then click on `Get Started` and follow the steps given to set up your development environment
-2. Follow the **Asset connector** tab of [Create a module](automation/create_a_module.md#create-your-component) to develop your module with an asset connector
-3. Once your code is finalized, click on `Import my custom integration`, then follow the steps given to import your code from your Github or Gitlab repository
-
-#### Step 3. Configure your asset connector
-
-Configure the asset connector from the integration catalog. See [Create an asset connector](/xdr/features/modules/reveal_asset_connectors_create.md).
+2. Once your code is finalized, click on `Import my custom integration`, then follow the steps given to import your code from your Github or Gitlab repository
+3. Create a configuration of your asset connector by following [Create asset connectors](/xdr/features/modules/reveal_asset_connectors_create.md)

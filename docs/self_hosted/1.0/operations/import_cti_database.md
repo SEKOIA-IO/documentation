@@ -8,57 +8,73 @@ The imported database feeds contextualized alerts and the `SEKOIA Intelligence F
 
 - The platform is installed and the SHC can retrieve its kubeconfig.
 - In online mode, the `S3_ACCESS_KEY` and `S3_SECRET_KEY` environment variables hold the Sekoia release bucket credentials provided by Sekoia, and `global.version.fetch` points to the Sekoia release bucket, as described in [Configure the deployment](/self_hosted/1.0/deployment/deployment_configuration.md#release-download-and-security-content).
-- In air-gapped mode, `global.version.fetch.offline` is `true` and the CTI archive is extracted on the orchestration node, as described in [Prepare the CTI export in air-gapped mode](#prepare-the-cti-export-in-air-gapped-mode).
+- In air-gapped mode, `global.version.fetch.offline` is `true` and both CTI collections are available locally on the orchestration node, as described in [Prepare the CTI export in air-gapped mode](#prepare-the-cti-export-in-air-gapped-mode).
 
 ## Prepare the CTI export in air-gapped mode
 
-The release archive does not include the CTI database. Sekoia publishes it as a separate archive in the release bucket, every day at 12:00 UTC: `data/cti/archives/cti-latest.tar`, with its SHA-256 checksum. The archive is an uncompressed `.tar` file that holds the latest export of each collection.
+### Quick download of the latest CTI
 
-1. On a machine with internet access, download the archive and its checksum with the bucket credentials provided by Sekoia, then verify its integrity. Keep the `cti-latest.tar` file name: the checksum file refers to it.
+On a machine with internet access, download the latest packaged export and its checksum into an empty directory. Fill in your Sekoia delivery credentials before running the commands.
 
-    ```bash
+```bash
+(
+    set -e
     export AWS_ACCESS_KEY_ID=""
     export AWS_SECRET_ACCESS_KEY=""
-    export AWS_DEFAULT_REGION="fr-par-2"
-    export ENDPOINT="https://self-hosted.delivery.sekoia.io"
-    export AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED
-    export AWS_RESPONSE_CHECKSUM_VALIDATION=WHEN_REQUIRED
+    export AWS_DEFAULT_REGION=fr-par-2
+    export AWS_ENDPOINT_URL_S3=https://self-hosted.delivery.sekoia.io
+    export AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED AWS_RESPONSE_CHECKSUM_VALIDATION=WHEN_REQUIRED
 
-    aws --endpoint-url "$ENDPOINT" s3 cp s3://self-hosted/data/cti/archives/cti-latest.tar cti-latest.tar
-    aws --endpoint-url "$ENDPOINT" s3 cp s3://self-hosted/data/cti/archives/cti-latest.tar.sha256 cti-latest.tar.sha256
-
+    aws s3 cp s3://self-hosted/data/cti/archives/cti-latest.tar cti-latest.tar
+    aws s3 cp s3://self-hosted/data/cti/archives/cti-latest.tar.sha256 cti-latest.tar.sha256
     sha256sum -c cti-latest.tar.sha256
-    ```
+)
+```
 
-    Expected output: `cti-latest.tar: OK`
+If either file is unavailable or verification fails, [download the collections individually](#manual-download). Once the check prints `cti-latest.tar: OK`, transfer the archive to `$SEKOIA_LOCAL_DIR/` on the orchestration node. Allow space for both the archive and its extracted contents. On that node, run:
 
-2. To transfer the archive to the orchestration node, run:
+```bash
+tar -xf "$SEKOIA_LOCAL_DIR/cti-latest.tar" -C "$SEKOIA_LOCAL_DIR"
+```
 
-    ```bash
-    scp cti-latest.tar user@<ORCHESTRATION_NODE>:$SEKOIA_LOCAL_DIR
-    ```
+This places both collections and their pointers under `$SEKOIA_LOCAL_DIR/data/cti/`. You can now run the import.
 
-    !!! note "Disk space"
-        The parts of the export are already compressed, so the extracted files take about as much space as the archive. Before you transfer it, make sure the orchestration node has free space for twice the size of the archive. You can delete the archive once it is extracted.
+### Manual download
 
-3. To extract the archive on the orchestration node, run:
+On a machine with internet access, open Bash in an empty directory. Use the AWS CLI with your Sekoia delivery credentials and install `jq` if needed. Each collection has its own `latest.json`. Read it once, then download the dated folder it names.
 
-    ```bash
-    tar -xf $SEKOIA_LOCAL_DIR/cti-latest.tar -C $SEKOIA_LOCAL_DIR
-    ```
+```bash
+(
+    set -e
+    export AWS_ACCESS_KEY_ID=""
+    export AWS_SECRET_ACCESS_KEY=""
+    export AWS_DEFAULT_REGION=fr-par-2
+    export AWS_ENDPOINT_URL_S3=https://self-hosted.delivery.sekoia.io
+    export AWS_REQUEST_CHECKSUM_CALCULATION=WHEN_REQUIRED AWS_RESPONSE_CHECKSUM_VALIDATION=WHEN_REQUIRED
 
-The archive extracts to `$SEKOIA_LOCAL_DIR/data/cti/`, with one directory per collection. Each directory holds a `latest.json` file that names the export to import, and the export folder itself:
+    for collection in stix_objects stix_relationships; do
+        dir="data/cti/$collection"
+        mkdir -p "$dir"
+        aws s3 cp "s3://self-hosted/$dir/latest.json" "$dir/latest.json"
+        run=$(jq -er '.run_id' "$dir/latest.json")
+        aws s3 cp --recursive "s3://self-hosted/$dir/$run/" "$dir/$run/"
+        test -s "$dir/$run/checkpoint.json"
+    done
+)
+```
+
+After both downloads succeed, transfer the staged `data/cti/` tree to the orchestration node using your air-gap transfer method. Copy the contents of the staging directory into `$SEKOIA_LOCAL_DIR/` to obtain the layout below. Keep the compressed parts and their names. For a refresh, copy both dated directories first, then replace each collection's local `latest.json` with the one from staging before starting the import.
 
 ```text
 $SEKOIA_LOCAL_DIR/data/cti/
 ├── stix_objects/
 │   ├── latest.json
-│   └── <export ID>/
+│   └── <stix_objects run_id>/
 │       ├── checkpoint.json
 │       └── part-<N>.jsonl.zst
 └── stix_relationships/
     ├── latest.json
-    └── <export ID>/
+    └── <stix_relationships run_id>/
         ├── checkpoint.json
         └── part-<N>.jsonl.zst
 ```
@@ -124,11 +140,11 @@ For example, to import the export of a given day for one run:
 exec ImportArangoCollection --set global.version.data.cti.version=2026-09-03
 ```
 
-In air-gapped mode, the SHC only finds the exports extracted on the orchestration node, and `cti-latest.tar` holds the latest export only. To import an older export, download the dated archive of that day, `data/cti/archives/cti-<YYYY-MM-DD>.tar`, instead of `cti-latest.tar`, and keep `latest`. The release bucket keeps the dated archives of the last 10 days.
+In air-gapped mode, `latest` uses the two `latest.json` files you transferred. To import an older day, copy the completed dated directory for each collection from the bucket into its corresponding local collection directory, then select that day when running the import.
 
 ## Update the CTI database
 
-The import is a snapshot: the CTI database of your platform does not update on its own. To refresh it, run the import again. In air-gapped mode, download and extract a new archive first.
+The import is a snapshot: the CTI database of your platform does not update on its own. To refresh it, run the import again. In air-gapped mode, prepare a fresh export on the orchestration node using either download method first.
 
 ## Result
 

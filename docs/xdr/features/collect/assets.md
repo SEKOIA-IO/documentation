@@ -171,6 +171,23 @@ Each asset connector frequently syncs assets into your unified inventory:
 - Improves **contextual accuracy** for investigations and risk assessments.  
 - Reduces analyst effort by consolidating multiple inventories into a **single, consistent asset view**.
 
+##### How a push updates an existing asset
+
+When an item an asset connector pushes matches an existing asset, the push updates the asset as follows.
+
+!!! note "Locked properties"
+    When automatic asset discovery changes a property of an asset more than 5 times in an hour, Sekoia locks the property. A push neither overwrites nor clears a locked property. The property stays locked until a user edits it.
+
+| Item | Properties | When the push carries a value | When the push leaves it empty |
+|---|---|---|---|
+| Device | OS (`device.os.name`, `device.os.type`, `device.os.type_id`), location (`device.location.city`, `device.location.country`), device type (`device.type_id`), IP address (`device.ip`, or the IP of the primary interface), MAC address, organization (`device.org.name`), firewall status | Overwrites the stored value | Clears the stored value |
+| Device | Other `device` fields, such as `device.name`, `device.desc` or `device.domain` | Overwrites the stored value | Keeps the stored value |
+| Device | Interfaces (`device.network_interfaces`), groups (`device.groups`), partitions, accounts | Replaces the stored list | Keeps the stored list |
+| User | Account type (`user.account.type`, `user.account.type_id`), organization (`user.org.name`), and the user data of `enrichments`: enabled, last logon, last password change, bad password count, number of logons, external device | Overwrites the stored value | Clears the stored value |
+| User | Administrator status, from `user.type` | Set at every push | Set to not administrator |
+| User | Other `user` fields, such as `user.full_name`, `user.display_name` or `user.ldap_person` | Overwrites the stored value | Keeps the stored value |
+| User | Groups (`user.groups`) | Replaces the stored list | Keeps the stored list |
+
 #### Automatic Asset Discovery
 
 In Sekoia.io, **Asset Discovery is the live process of passively finding and consolidating assets from your events**.
@@ -226,6 +243,8 @@ The following table lists the atom types and their related event fields that are
 | sid | `user.id`, `related.user`, `client.user.id` |
 
 ⚠ To be considered valid, a hostname must have at least one letter, only contain letters, numbers, hyphens and underscores, and not be a valid domain. If the Hostname is not valid, it will not be detected as an Asset.
+
+⚠ A `sid` detection property is only taken from a Windows security identifier (`S-1-...`). Other values of these fields, such as GUIDs, claims or application identifiers, are ignored, as are the well-known SIDs shared by every Windows host.
 
 #### Asset Discovery Rules
 

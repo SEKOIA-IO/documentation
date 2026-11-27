@@ -26,7 +26,7 @@ The orchestration node stores the release files that the SHC deploys. Provide 50
 | Extracted release: Docker images, Helm charts, and ArgoCD stacks | 110 GB |
 | Security content bundles, up to three versions per type | 1 GB |
 | SHC image and temporary files of the image push, in the Docker data | 10 GB |
-| CTI archive and its extracted export, in air-gapped mode | Twice the size of the CTI archive during the extraction |
+| CTI exports, in air-gapped mode | Space for both compressed collections and any earlier runs you keep locally. For the archive method, also allow space for the downloaded tar during extraction. |
 | Next release, downloaded and extracted next to the current one | 220 GB |
 
 !!! note "Orchestration node role"
