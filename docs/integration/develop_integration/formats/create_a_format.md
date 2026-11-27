@@ -170,7 +170,7 @@ To ensure the quality of contribution, the following points are reviewed in Gith
 
 Once you are done writing and testing your intake format, the last step is to request an homologation to Sekoia. Once your intake format is homologated, it will appear in the intake catalog of **Sekoia SOC platform**:
 
-- Create a pull request
+- Create a pull request against [SEKOIA-IO/intake-formats](https://github.com/SEKOIA-IO/intake-formats) with `develop` as the base branch
 - Send an email to [homologation-request@sekoia.io](mailto:homologation-request@sekoia.io) with the pull request link
 - You will get an acknowledgement from Sekoia Integration team
 - In the following days (5 days max), you will receive feedbacks in your pull request that you must take into account
