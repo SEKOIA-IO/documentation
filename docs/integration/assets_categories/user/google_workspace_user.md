@@ -2,6 +2,8 @@ uuid: 0beae7f6-e483-4bf9-b106-014ec8b25283
 name: Google Workspace User
 type: asset
 
+_**[Reveal module](/xdr/features/modules/reveal_index.md)**  — This feature requires the Reveal add-on module._
+
 ## Overview
 
 Google Workspace is Google's suite of productivity and collaboration applications. Its directory holds the user accounts of the organization, their groups, organizational units and security settings such as 2-step verification.
