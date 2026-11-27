@@ -145,7 +145,7 @@ if __name__ == "__main__":
 
 ### Dependencies
 
-- [sekoia-automation-sdk](https://pypi.org/project/sekoia-automation-sdk/) 1.27.3 or later. From this version, the connector logs the error code of every refused push.
+- [sekoia-automation-sdk](https://pypi.org/project/sekoia-automation-sdk/) 1.28.0 or later. From this version, the connector logs the error code of every refused push.
 - [sekoia-automation-models 1.5.0](https://github.com/SEKOIA-IO/sekoia-automation-models/releases/tag/v1.5.0) or later, for [`split_hostname()`](https://github.com/SEKOIA-IO/sekoia-automation-models/blob/v1.5.0/sekoia_automation_models/hostname.py). The SDK installs this package; require 1.5.0 explicitly.
 
 ## Write the asset connector
