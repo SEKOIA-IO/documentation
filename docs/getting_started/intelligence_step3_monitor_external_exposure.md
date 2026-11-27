@@ -25,9 +25,7 @@ Make sure that:
 
 !!! note "Flare tenant provisioning"
 
-```
-Sekoia creates the Flare tenant and adds the email address provided during onboarding. If you do not receive the invitation email, contact Sekoia Customer Success at [cs@sekoia.io](mailto:cs@sekoia.io).
-```
+    Sekoia creates the Flare tenant and adds the email address provided during onboarding. If you do not receive the invitation email, contact Sekoia Customer Success at [cs@sekoia.io](mailto:cs@sekoia.io).
 
 ## Objective 1: Configure Flare
 
@@ -39,9 +37,7 @@ Add the members of your organization who need access to Flare.
 
 !!! note "Required Flare permission"
 
-```
-Only Flare members with the Organization Administrator role can open the **Team** page and invite organization members.
-```
+    Only Flare members with the Organization Administrator role can open the **Team** page and invite organization members.
 
 1. Sign in to your Flare tenant.
 2. Go to **Settings &gt; Team**.
@@ -89,9 +85,7 @@ Create an API key that Sekoia can use to retrieve events from your Flare tenant.
 
 !!! warning "Store the API key securely"
 
-```
-The secret is shown only when the key is created. Store it in a password manager or another protected location.
-```
+    The secret is shown only when the key is created. Store it in a password manager or another protected location.
 
 For more information, see the [Flare Profile documentation](https://docs.flare.io/profile).
 
@@ -101,9 +95,7 @@ Create a Flare Events intake to retrieve and normalize events from Flare.
 
 !!! warning "Create the intake promptly"
 
-```
-Flare starts matching an identifier's history as soon as you create the identifier. Create the Flare Events intake on the same day as the identifiers. If you create the intake more than 24 hours later, earlier exposures might not be collected.
-```
+    Flare starts matching an identifier's history as soon as you create the identifier. Create the Flare Events intake on the same day as the identifiers. If you create the intake more than 24 hours later, earlier exposures might not be collected.
 
 ### Create the intake
 
@@ -131,11 +123,9 @@ The default values are recommended for most environments. You can modify them wi
 
 !!! note "Collection behavior"
 
-```
-The supported limits prevent invalid values from breaking the intake. Larger intervals or smaller page sizes can increase the time needed to collect events.
-```
+    The supported limits prevent invalid values from breaking the intake. Larger intervals or smaller page sizes can increase the time needed to collect events.
 
-![Flare Events trigger configuration with the recommended connector values.](/assets/intelligence_center/digital_risk_intake_config.png){: style="display: block; width: 100%; max-width: 100%; height: auto;"}
+    ![Flare Events trigger configuration with the recommended connector values.](/assets/intelligence_center/digital_risk_intake_config.png){: style="display: block; width: 100%; max-width: 100%; height: auto;"}
 
 ### Verify event reception
 
