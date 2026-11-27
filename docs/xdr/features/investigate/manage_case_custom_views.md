@@ -26,7 +26,7 @@ The new view appears in the views bar and opens on all cases. You can now config
 
 ## Configure a view
 
-A view stores filters, columns, sort order and search text. Configure any of them, then save the view.
+A view stores filters, columns, sort order and search text. Configure any of them, then save the view. The **Assigned to** filter includes **Me**, which is relative to the analyst who opens the view. In a shared view, each analyst therefore sees cases assigned to them. The **Type** filter can be set to **AI** or **manual** and saved with the view.
 
 ### Add filters
 
