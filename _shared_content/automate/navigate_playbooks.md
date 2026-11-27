@@ -127,8 +127,7 @@ The graph area is where you add and connect blocks to build a playbook.
 Each block displays:
 
 - The logo of the application or service.
-- The name of the action.
-- The block type, such as **Action**, **Operator**, or **Trigger**.
+- The name of the block. A new block takes the name of its module. To change it, see [Rename a block](#rename-a-block).
 - The block status, such as **Valid** or **In error**.
 - Connectors.
 
@@ -150,15 +149,62 @@ During a playbook run, colors indicate the status of blocks and nodes:
 | Orange | The playbook run left this node. |
 | Red | The run ended with an error. |
 
+#### Block menu
+
+Each block has a menu with the actions you can run on it. To open it, hover over the block, then click **...** on the block.
+
+| Action | Description | Shortcut |
+| --- | --- | --- |
+| **Duplicate** | Add a copy of the block to the graph. | `Ctrl` + `D` (`⌘` + `D` on macOS) |
+| **Rename** | Edit the block name directly on the block. See [Rename a block](#rename-a-block). | None |
+| **Replace** | Swap the block for another module, at the same position and with its links. See [Replace a block](#replace-a-block). | None |
+| **Delete** | Remove the block. When the block has one input link and one output link, its predecessor is linked to its successor. | `Delete` (`⌫` on macOS) |
+
+![Block menu with the Duplicate, Rename, Replace, and Delete actions](/assets/operation_center/playbooks/playbook-block-menu.png){: style="max-width:100%"}
+
+##### Replace a block
+
+Replace a block to swap its module for another one without redrawing its links. For example, move an action to its newer version, or to the same action from another integration.
+
+!!! warning "The new block starts empty"
+    The new block does not keep the configuration of the replaced block. Its arguments, account, and name are reset. The new block also gets a new identifier: update the blocks that use variables from the replaced block so that they point to the new block.
+
+To replace a block:
+
+1. Hover over the block.
+2. Click **...** on the block.
+3. Select **Replace**. The module menu opens on the panel that matches the block type, such as **Actions** for an action.
+4. Click the new module, or drag it to the graph area.
+
+The new block takes the position of the replaced block and its links:
+
+- The input links connect to the new block. A trigger has no input, so a new trigger keeps no input link.
+- Each output link keeps its output when the new block has an output with the same name. Otherwise, the link connects to the first output of the new block.
+
+To cancel, close the module menu panel before you select a module.
+
+!!! note
+    **Replace** applies to the block whose menu you opened, one block at a time.
+
+##### Rename a block
+
+To rename a block:
+
+1. Hover over the block.
+2. Click **...** on the block.
+3. Select **Rename**. The block name becomes a text field.
+4. Enter the new name.
+5. To save the name, press **Enter** or click outside the field. To cancel, press **Esc**.
+
+An empty name is ignored. The configuration panel displays the name of the module under the block name, so a renamed block still shows what it does.
+
 #### Configuration panel
 
 Click a block in the graph area to open its configuration panel. The panel content depends on the block type.
 
+The panel header displays the block name and, under it, the name of its module. To change the block name, see [Rename a block](#rename-a-block).
+
 ##### Triggers
-
-You can edit the trigger name in the header.
-
-![Trigger name field](/assets/operation_center/playbooks/playbook-trigger-name.png){: style="max-width:100%"}
 
 | Tab | Content |
 | --- | --- |
@@ -184,14 +230,14 @@ To remove a community, click **...** in the community section header, then selec
 
 | Section | Content |
 | --- | --- |
-| **Name** | Name of the operator. You can edit this value. |
+| **Name** | Name of the operator, with the operator type under it. To change it, see [Rename a block](#rename-a-block). |
 | **Cases** | Comparisons made with a variable or with values entered in a form. |
 
 **Foreach**
 
 | Section | Content |
 | --- | --- |
-| **Name** | Name of the operator. You can edit this value. |
+| **Name** | Name of the operator, with the operator type under it. To change it, see [Rename a block](#rename-a-block). |
 | **Items** | Data processed by the operator. |
 | **Variables** | Variables related to the action, including their names, descriptions, and a copy button. |
 
@@ -199,16 +245,12 @@ To remove a community, click **...** in the community section header, then selec
 
 | Section | Content |
 | --- | --- |
-| **Name** | Name of the operator. You can edit this value. |
+| **Name** | Name of the operator, with the operator type under it. To change it, see [Rename a block](#rename-a-block). |
 | **Modifications** | Modifications to apply. To add a modification, hover over the title and select **Use variable** or **Add one entry to array**. |
 | **Use a variable** | Field where you enter the value of a variable. |
 | **Add form** | Form with the **Key**, **Type**, and **Value** fields. See the [Store operator reference](/xdr/features/automate/operators.md#store). |
 
 ##### Actions
-
-You can edit the action name in the header.
-
-![Action name field](/assets/operation_center/playbooks/playbooks-action-name.png){: style="max-width:100%"}
 
 | Tab | Content |
 | --- | --- |
