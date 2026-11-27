@@ -52,6 +52,10 @@ A standardized identifier for a publicly known software vulnerability. CVEs are 
 A logic pattern that Sekoia applies to your event stream in real time to identify suspicious activity. Detection rules can be Sigma-based (pattern matching), CTI-based (indicator matching), or anomaly-based (statistical deviation). Sekoia provides over 1,000 verified rules mapped to the MITRE ATT&CK framework.
 See: [Activate detection rules](/getting_started/defend_step3_activate_detection_rules.md)
 
+**Digital Risk**
+The Sekoia product that monitors clear, deep, and dark web sources for external exposures related to an organization, its domains, accounts, and other identifiers. Digital Risk uses Flare identifiers and policies to collect matching events, apply detection rules, and investigate exposures through the source URL stored in `event.url`.
+See: [Step 3: Monitor external exposure](/getting_started/intelligence_step3_monitor_external_exposure.md)
+
 ## E
 
 **EDR (Endpoint Detection and Response)**
