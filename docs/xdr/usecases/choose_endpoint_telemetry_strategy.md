@@ -37,8 +37,8 @@ Before you start, make sure that you have:
 - API credentials for any EDR that Sekoia must query or control through playbooks.
 - Azure permissions if you plan to forward Microsoft Defender XDR events through Azure Event Hub.
 - Network access and installation permissions for hosts that will run the Sekoia Endpoint Agent or a log forwarder.
-- An active Elevate licence if you want Sekoia to investigate alerts automatically.
-- An active Reveal licence if you want to collect endpoint hygiene or application inventory data.
+- An active **Elevate** licence if you want Sekoia to investigate alerts automatically.
+- An active **Reveal** licence if you want to collect endpoint hygiene or application inventory data.
 
 ## Step 1: Choose the collection method for each part of your infrastructure
 
@@ -52,13 +52,15 @@ Your infrastructure may require several collection methods. Use the following ta
 
 You can combine these methods in the same environment. For example, you can ingest full telemetry from Microsoft Defender, query SentinelOne only when an alert requires more context, and use WEF/WEC with NXLog to collect Domain Controller events without installing an agent.
 
-## Step 2: Configure full telemetry ingestion when raw export is available
+## Step 2: Integrate endpoint telemetry 
+
+### Option A: Configure full telemetry ingestion when raw export is available
 
 Use full telemetry ingestion when your EDR can export raw endpoint events without prohibitive licensing or infrastructure costs.
 
 This method provides the most complete detection and investigation context in Sekoia. It is particularly useful when you want Sekoia to apply its own detection rules and threat intelligence matching to process, file, network, DNS, and registry activity.
 
-### 2.1 Create the EDR intake
+#### A.1 Create the EDR intake
 
 In Sekoia, open **Intakes** and create the integration that matches your endpoint source. Then configure the EDR to forward both alerts and raw endpoint telemetry to the intake.
 
@@ -79,7 +81,7 @@ Forward the event types required for detection and investigation, such as:
 - PowerShell or command execution.
 - Authentication and logon activity.
 
-### 2.2 Use normalized endpoint events
+#### A.2 Use normalized endpoint events
 
 Sekoia parses and normalizes the events received from the different endpoint sources. Your detection rules, event queries, and dashboards can therefore use the same normalized fields across EDR vendors.
 
@@ -87,7 +89,7 @@ This means that changing the EDR protecting a group of endpoints does not requir
 
 See [Intake formats overview](/integration/develop_integration/formats/overview.md), [Parsing and ECS normalization](/integration/develop_integration/formats/parser.md), and [Querying events](/xdr/features/investigate/querying_events.md).
 
-### 2.3 Investigate with Sekoia detection, CTI, and Elevate
+#### A.3 Investigate with Sekoia detection, CTI, and Elevate
 
 Once the telemetry is available in Sekoia:
 
@@ -97,13 +99,13 @@ Once the telemetry is available in Sekoia:
 
 See [The Elevate investigation method](/xdr/features/modules/elevate_investigation_method.md) for more information about how Elevate collects evidence and reaches a verdict.
 
-## Step 3: Configure on-demand querying when full export is not practical
+### Option B: Configure on-demand querying when full export is not practical
 
 Use on-demand querying when your EDR stores detailed telemetry in its own data lake, but exporting all of that telemetry to Sekoia would require an expensive add-on or create unnecessary ingestion volume.
 
 In this setup, Sekoia receives the alerts continuously and retrieves raw telemetry only when an investigation requires it.
 
-### 3.1 Ingest alerts only
+#### B.1 Ingest alerts only
 
 Create an alert intake for your EDR and forward only the alerts that require investigation in Sekoia.
 
@@ -115,13 +117,13 @@ Examples include:
 
 Sekoia can then correlate these alerts with network, identity, cloud, and other security data already available in the platform.
 
-### 3.2 Connect the EDR API
+#### B.2 Connect the EDR API
 
 Configure the EDR account in **Playbooks** so that Sekoia can communicate with the EDR through its API.
 
 This bidirectional connection allows Sekoia to retrieve additional telemetry or trigger response actions without requiring the EDR to export its entire data lake.
 
-### 3.3 Query the EDR during the investigation
+#### B.3 Query the EDR during the investigation
 
 When an alert requires more context, use Elevate and Playbooks to query the external EDR.
 
@@ -133,7 +135,7 @@ For example:
 
 See the [SentinelOne automation library](/xdr/features/automate/library/sentinelone.md) and the [HarfangLab automation library](/xdr/features/automate/library/harfanglab.md) for the available actions.
 
-## Step 4: Cover systems outside the EDR perimeter
+### Option C: Cover systems outside the EDR perimeter
 
 Use the Sekoia Endpoint Agent or existing log forwarders to cover systems that do not have an EDR, cannot run your standard EDR agent, or must remain agentless.
 
@@ -145,7 +147,7 @@ This method is particularly useful for:
 - Active Directory Domain Controllers.
 - Environments where EDR telemetry export costs are too high.
 
-### 4.1 Deploy the Sekoia Endpoint Agent
+#### C.1 Deploy the Sekoia Endpoint Agent
 
 The [Sekoia Endpoint Agent](/integration/categories/endpoint/sekoiaio.md) supports Windows, Linux, and macOS. It can collect endpoint telemetry as a standalone collector or alongside an existing EDR.
 
@@ -165,7 +167,7 @@ See [Configure the Sekoia Endpoint Agent](/integration/categories/endpoint/confi
 >
 > If your IT policy does not allow agents on Domain Controllers, use the WEF/WEC and NXLog method described below.
 
-### 4.2 Reuse existing log forwarders
+#### C.2 Reuse existing log forwarders
 
 If you already have a log collection infrastructure, reuse it instead of deploying another agent.
 
@@ -178,7 +180,7 @@ For Elastic environments, forward existing collector streams to Sekoia:
 - Use [Winlogbeat](/integration/categories/endpoint/winlogbeat.md) for Windows Event Logs.
 - Use [Linux Auditbeat](/integration/categories/endpoint/auditbeat_linux.md) for Linux audit and system activity.
 
-## Step 5: Control telemetry volume and ingestion costs
+## Step 3: Control telemetry volume and ingestion costs
 
 Once your collection methods are in place, apply filtering at the earliest possible point in the pipeline.
 
@@ -192,7 +194,7 @@ See [Log volume reduction strategies](/xdr/usecases/playbook/log_volume_reductio
 
 Filtering at the source or on the agent reduces network traffic and ingestion volume. Platform-level filtering takes place after the event has reached Sekoia, so it mainly reduces processing and storage.
 
-## Step 6: Automate response across your EDR tools
+## Step 4: Automate response across your EDR tools
 
 The collection method does not determine how you respond to an incident. Once your EDR accounts are connected to Sekoia, Playbooks can trigger investigation, enrichment, and containment actions across different endpoint products.
 
