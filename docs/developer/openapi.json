@@ -15403,26 +15403,26 @@
                   "items": {
                     "type": "string",
                     "enum": [
-                      "threat-actor",
-                      "report",
-                      "relationship",
-                      "note",
-                      "intrusion-set",
-                      "grouping",
-                      "identity",
-                      "opinion",
-                      "course-of-action",
-                      "attack-pattern",
-                      "marking-definition",
-                      "infrastructure",
-                      "tool",
                       "sighting",
-                      "indicator",
-                      "observed-data",
+                      "opinion",
                       "campaign",
+                      "infrastructure",
+                      "threat-actor",
+                      "attack-pattern",
                       "location",
+                      "tool",
                       "malware",
-                      "vulnerability"
+                      "grouping",
+                      "indicator",
+                      "relationship",
+                      "identity",
+                      "marking-definition",
+                      "vulnerability",
+                      "course-of-action",
+                      "observed-data",
+                      "intrusion-set",
+                      "note",
+                      "report"
                     ]
                   }
                 },
@@ -15431,30 +15431,30 @@
                   "items": {
                     "type": "string",
                     "enum": [
-                      "individual",
-                      "observable-relationship",
-                      "phone-number",
-                      "process",
-                      "file",
-                      "windows-registry-key",
                       "organization",
-                      "autonomous-system",
-                      "domain-name",
+                      "url",
                       "email-addr",
                       "mutex",
-                      "x509-certificate",
-                      "url",
-                      "text",
-                      "software",
-                      "email-message",
-                      "user-account",
-                      "directory",
-                      "address",
-                      "artifact",
-                      "filename",
-                      "mac-addr",
                       "ipv6-addr",
-                      "ipv4-addr"
+                      "user-account",
+                      "autonomous-system",
+                      "windows-registry-key",
+                      "artifact",
+                      "email-message",
+                      "phone-number",
+                      "domain-name",
+                      "mac-addr",
+                      "process",
+                      "ipv4-addr",
+                      "individual",
+                      "directory",
+                      "file",
+                      "software",
+                      "text",
+                      "x509-certificate",
+                      "observable-relationship",
+                      "filename",
+                      "address"
                     ]
                   }
                 },
@@ -15536,24 +15536,24 @@
                   "items": {
                     "type": "string",
                     "enum": [
-                      "kill_chain",
-                      "pattern_type",
-                      "confidence",
-                      "valid_from",
-                      "observable_types",
-                      "description",
-                      "id",
-                      "tlp",
-                      "pattern",
-                      "modified",
-                      "type",
-                      "last_seen",
                       "created",
-                      "sources",
                       "valid_until",
-                      "first_seen",
+                      "confidence",
+                      "pattern_type",
+                      "tlp",
+                      "last_seen",
+                      "modified",
                       "name",
-                      "observables"
+                      "valid_from",
+                      "pattern",
+                      "type",
+                      "observables",
+                      "kill_chain",
+                      "id",
+                      "sources",
+                      "description",
+                      "first_seen",
+                      "observable_types"
                     ]
                   }
                 },
@@ -15651,26 +15651,26 @@
                   "items": {
                     "type": "string",
                     "enum": [
-                      "threat-actor",
-                      "report",
-                      "relationship",
-                      "note",
-                      "intrusion-set",
-                      "grouping",
-                      "identity",
-                      "opinion",
-                      "course-of-action",
-                      "attack-pattern",
-                      "marking-definition",
-                      "infrastructure",
-                      "tool",
                       "sighting",
-                      "indicator",
-                      "observed-data",
+                      "opinion",
                       "campaign",
+                      "infrastructure",
+                      "threat-actor",
+                      "attack-pattern",
                       "location",
+                      "tool",
                       "malware",
-                      "vulnerability"
+                      "grouping",
+                      "indicator",
+                      "relationship",
+                      "identity",
+                      "marking-definition",
+                      "vulnerability",
+                      "course-of-action",
+                      "observed-data",
+                      "intrusion-set",
+                      "note",
+                      "report"
                     ]
                   }
                 },
@@ -15679,30 +15679,30 @@
                   "items": {
                     "type": "string",
                     "enum": [
-                      "individual",
-                      "observable-relationship",
-                      "phone-number",
-                      "process",
-                      "file",
-                      "windows-registry-key",
                       "organization",
-                      "autonomous-system",
-                      "domain-name",
+                      "url",
                       "email-addr",
                       "mutex",
-                      "x509-certificate",
-                      "url",
-                      "text",
-                      "software",
-                      "email-message",
-                      "user-account",
-                      "directory",
-                      "address",
-                      "artifact",
-                      "filename",
-                      "mac-addr",
                       "ipv6-addr",
-                      "ipv4-addr"
+                      "user-account",
+                      "autonomous-system",
+                      "windows-registry-key",
+                      "artifact",
+                      "email-message",
+                      "phone-number",
+                      "domain-name",
+                      "mac-addr",
+                      "process",
+                      "ipv4-addr",
+                      "individual",
+                      "directory",
+                      "file",
+                      "software",
+                      "text",
+                      "x509-certificate",
+                      "observable-relationship",
+                      "filename",
+                      "address"
                     ]
                   }
                 },
@@ -15784,24 +15784,24 @@
                   "items": {
                     "type": "string",
                     "enum": [
-                      "kill_chain",
-                      "pattern_type",
-                      "confidence",
-                      "valid_from",
-                      "observable_types",
-                      "description",
-                      "id",
-                      "tlp",
-                      "pattern",
-                      "modified",
-                      "type",
-                      "last_seen",
                       "created",
-                      "sources",
                       "valid_until",
-                      "first_seen",
+                      "confidence",
+                      "pattern_type",
+                      "tlp",
+                      "last_seen",
+                      "modified",
                       "name",
-                      "observables"
+                      "valid_from",
+                      "pattern",
+                      "type",
+                      "observables",
+                      "kill_chain",
+                      "id",
+                      "sources",
+                      "description",
+                      "first_seen",
+                      "observable_types"
                     ]
                   }
                 },
@@ -15916,30 +15916,30 @@
             "schema": {
               "type": "string",
               "enum": [
-                "individual",
-                "observable-relationship",
-                "phone-number",
-                "process",
-                "file",
-                "windows-registry-key",
                 "organization",
-                "autonomous-system",
-                "domain-name",
+                "url",
                 "email-addr",
                 "mutex",
-                "x509-certificate",
-                "url",
-                "text",
-                "software",
-                "email-message",
-                "user-account",
-                "directory",
-                "address",
-                "artifact",
-                "filename",
-                "mac-addr",
                 "ipv6-addr",
-                "ipv4-addr"
+                "user-account",
+                "autonomous-system",
+                "windows-registry-key",
+                "artifact",
+                "email-message",
+                "phone-number",
+                "domain-name",
+                "mac-addr",
+                "process",
+                "ipv4-addr",
+                "individual",
+                "directory",
+                "file",
+                "software",
+                "text",
+                "x509-certificate",
+                "observable-relationship",
+                "filename",
+                "address"
               ]
             }
           }
@@ -15990,30 +15990,30 @@
             "schema": {
               "type": "string",
               "enum": [
-                "individual",
-                "observable-relationship",
-                "phone-number",
-                "process",
-                "file",
-                "windows-registry-key",
                 "organization",
-                "autonomous-system",
-                "domain-name",
+                "url",
                 "email-addr",
                 "mutex",
-                "x509-certificate",
-                "url",
-                "text",
-                "software",
-                "email-message",
-                "user-account",
-                "directory",
-                "address",
-                "artifact",
-                "filename",
-                "mac-addr",
                 "ipv6-addr",
-                "ipv4-addr"
+                "user-account",
+                "autonomous-system",
+                "windows-registry-key",
+                "artifact",
+                "email-message",
+                "phone-number",
+                "domain-name",
+                "mac-addr",
+                "process",
+                "ipv4-addr",
+                "individual",
+                "directory",
+                "file",
+                "software",
+                "text",
+                "x509-certificate",
+                "observable-relationship",
+                "filename",
+                "address"
               ]
             }
           }
@@ -18102,26 +18102,26 @@
               "items": {
                 "type": "string",
                 "enum": [
-                  "threat-actor",
-                  "report",
-                  "relationship",
-                  "note",
-                  "intrusion-set",
-                  "grouping",
-                  "identity",
-                  "opinion",
-                  "course-of-action",
-                  "attack-pattern",
-                  "marking-definition",
-                  "infrastructure",
-                  "tool",
                   "sighting",
-                  "indicator",
-                  "observed-data",
+                  "opinion",
                   "campaign",
+                  "infrastructure",
+                  "threat-actor",
+                  "attack-pattern",
                   "location",
+                  "tool",
                   "malware",
-                  "vulnerability"
+                  "grouping",
+                  "indicator",
+                  "relationship",
+                  "identity",
+                  "marking-definition",
+                  "vulnerability",
+                  "course-of-action",
+                  "observed-data",
+                  "intrusion-set",
+                  "note",
+                  "report"
                 ]
               }
             }
@@ -18212,30 +18212,30 @@
               "items": {
                 "type": "string",
                 "enum": [
-                  "individual",
-                  "observable-relationship",
-                  "phone-number",
-                  "process",
-                  "file",
-                  "windows-registry-key",
                   "organization",
-                  "autonomous-system",
-                  "domain-name",
+                  "url",
                   "email-addr",
                   "mutex",
-                  "x509-certificate",
-                  "url",
-                  "text",
-                  "software",
-                  "email-message",
-                  "user-account",
-                  "directory",
-                  "address",
-                  "artifact",
-                  "filename",
-                  "mac-addr",
                   "ipv6-addr",
-                  "ipv4-addr"
+                  "user-account",
+                  "autonomous-system",
+                  "windows-registry-key",
+                  "artifact",
+                  "email-message",
+                  "phone-number",
+                  "domain-name",
+                  "mac-addr",
+                  "process",
+                  "ipv4-addr",
+                  "individual",
+                  "directory",
+                  "file",
+                  "software",
+                  "text",
+                  "x509-certificate",
+                  "observable-relationship",
+                  "filename",
+                  "address"
                 ]
               }
             }
@@ -18647,11 +18647,11 @@
                 "opinion": {
                   "type": "string",
                   "enum": [
-                    "agree",
                     "neutral",
+                    "agree",
                     "strongly-disagree",
-                    "strongly-agree",
-                    "disagree"
+                    "disagree",
+                    "strongly-agree"
                   ]
                 },
                 "tlp": {
@@ -41637,6 +41637,150 @@
         ]
       }
     },
+    "/v1/symphony/modules/{module_uuid}/hwl/documents": {
+      "get": {
+        "responses": {
+          "401": {
+            "description": "Authentication failed"
+          },
+          "403": {
+            "description": "Insufficient permissions"
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/hwl_documents_d_t_o"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Module not found"
+          }
+        },
+        "summary": "List the HWL documents of a module",
+        "description": "The documents come without their source. A table comes with its description and columns.\n\nThe following permissions are required:\n - “View integrations” (`b7413c71-cec8-49ec-9b9c-327ee328a383`)\n - “View integration accounts” (`4d119d8d-6450-4aa9-b65c-1b73714b6dd4`)",
+        "operationId": "get_module_hwl_document_list_resource",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "description": "limit a number of items (allowed range is 1-100), default is 20.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 20,
+              "minimum": 1,
+              "maximum": 100
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "description": "a number of items to skip, default is 0.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "minimum": 0
+            }
+          },
+          {
+            "in": "query",
+            "name": "match[kind]",
+            "description": "Match documents by their kind",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "connection",
+                "table",
+                "dialect"
+              ]
+            }
+          },
+          {
+            "in": "query",
+            "name": "match[name]",
+            "description": "Match documents by their name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "module_uuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "tags": [
+          "Modules"
+        ]
+      }
+    },
+    "/v1/symphony/modules/{module_uuid}/hwl/documents/{kind}/{name}": {
+      "get": {
+        "responses": {
+          "401": {
+            "description": "Authentication failed"
+          },
+          "403": {
+            "description": "Insufficient permissions"
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/hwl_document_d_t_o"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Module or document not found"
+          }
+        },
+        "summary": "Get an HWL document of a module",
+        "description": "The following permissions are required:\n - “View integrations” (`b7413c71-cec8-49ec-9b9c-327ee328a383`)\n - “View integration accounts” (`4d119d8d-6450-4aa9-b65c-1b73714b6dd4`)",
+        "operationId": "get_module_hwl_document_resource",
+        "tags": [
+          "Modules"
+        ],
+        "parameters": [
+          {
+            "name": "module_uuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "kind",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
     "/v1/symphony/node-runs/{uuid}": {
       "get": {
         "responses": {
@@ -41749,10 +41893,16 @@
           {
             "in": "query",
             "name": "match[status]",
-            "description": "Match playbook runs by their status (separated by commas): `pending`, `running`, `finished`, `error` or `pending_decision`.",
+            "description": "Match playbook runs by their status (separated by commas): `running`, `finished`, `error` or `pending_decision`.",
             "required": false,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "running",
+                "finished",
+                "error",
+                "pending_decision"
+              ]
             }
           },
           {
@@ -44141,6 +44291,47 @@
             }
           }
         }
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Invalid payload"
+          },
+          "403": {
+            "description": "Insufficient permissions"
+          },
+          "404": {
+            "description": "Webhook not found"
+          },
+          "401": {
+            "description": "Authentication failed"
+          },
+          "204": {
+            "description": "Success"
+          },
+          "409": {
+            "description": "Webhook still used by a playbook"
+          }
+        },
+        "summary": "Delete a webhook",
+        "description": "The deletion is refused while a playbook still uses the webhook, even a deactivated one.\n\nThe following permissions are required:\n - “Manage playbooks” (`1d231a6b-9010-4fa1-a9cc-9fafeabb60a0`)",
+        "operationId": "delete_webhook_resource",
+        "tags": [
+          "Webhooks"
+        ],
+        "parameters": [
+          {
+            "name": "webhook_uuid",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
       }
     }
   },
@@ -45284,11 +45475,11 @@
                 "opinion": {
                   "type": "string",
                   "enum": [
-                    "agree",
                     "neutral",
+                    "agree",
                     "strongly-disagree",
-                    "strongly-agree",
-                    "disagree"
+                    "disagree",
+                    "strongly-agree"
                   ]
                 },
                 "object_marking_refs": {
@@ -52172,7 +52363,6 @@
                       "readOnly": true,
                       "type": "string",
                       "enum": [
-                        "pending",
                         "running",
                         "finished",
                         "error",
@@ -52365,7 +52555,6 @@
                 "readOnly": true,
                 "type": "string",
                 "enum": [
-                  "pending",
                   "running",
                   "finished",
                   "error",
@@ -53837,12 +54026,12 @@
             "items": {
               "type": "string",
               "enum": [
-                "anomalous-activity",
+                "benign",
+                "malicious-activity",
+                "attribution",
                 "anonymization",
                 "compromised",
-                "attribution",
-                "malicious-activity",
-                "benign"
+                "anomalous-activity"
               ]
             }
           },
@@ -54702,26 +54891,26 @@
                   "items": {
                     "type": "string",
                     "enum": [
-                      "threat-actor",
-                      "report",
-                      "relationship",
-                      "note",
-                      "intrusion-set",
-                      "grouping",
-                      "identity",
-                      "opinion",
-                      "course-of-action",
-                      "attack-pattern",
-                      "marking-definition",
-                      "infrastructure",
-                      "tool",
                       "sighting",
-                      "indicator",
-                      "observed-data",
+                      "opinion",
                       "campaign",
+                      "infrastructure",
+                      "threat-actor",
+                      "attack-pattern",
                       "location",
+                      "tool",
                       "malware",
-                      "vulnerability"
+                      "grouping",
+                      "indicator",
+                      "relationship",
+                      "identity",
+                      "marking-definition",
+                      "vulnerability",
+                      "course-of-action",
+                      "observed-data",
+                      "intrusion-set",
+                      "note",
+                      "report"
                     ]
                   }
                 },
@@ -54730,30 +54919,30 @@
                   "items": {
                     "type": "string",
                     "enum": [
-                      "individual",
-                      "observable-relationship",
-                      "phone-number",
-                      "process",
-                      "file",
-                      "windows-registry-key",
                       "organization",
-                      "autonomous-system",
-                      "domain-name",
+                      "url",
                       "email-addr",
                       "mutex",
-                      "x509-certificate",
-                      "url",
-                      "text",
-                      "software",
-                      "email-message",
-                      "user-account",
-                      "directory",
-                      "address",
-                      "artifact",
-                      "filename",
-                      "mac-addr",
                       "ipv6-addr",
-                      "ipv4-addr"
+                      "user-account",
+                      "autonomous-system",
+                      "windows-registry-key",
+                      "artifact",
+                      "email-message",
+                      "phone-number",
+                      "domain-name",
+                      "mac-addr",
+                      "process",
+                      "ipv4-addr",
+                      "individual",
+                      "directory",
+                      "file",
+                      "software",
+                      "text",
+                      "x509-certificate",
+                      "observable-relationship",
+                      "filename",
+                      "address"
                     ]
                   }
                 },
@@ -54835,24 +55024,24 @@
                   "items": {
                     "type": "string",
                     "enum": [
-                      "kill_chain",
-                      "pattern_type",
-                      "confidence",
-                      "valid_from",
-                      "observable_types",
-                      "description",
-                      "id",
-                      "tlp",
-                      "pattern",
-                      "modified",
-                      "type",
-                      "last_seen",
                       "created",
-                      "sources",
                       "valid_until",
-                      "first_seen",
+                      "confidence",
+                      "pattern_type",
+                      "tlp",
+                      "last_seen",
+                      "modified",
                       "name",
-                      "observables"
+                      "valid_from",
+                      "pattern",
+                      "type",
+                      "observables",
+                      "kill_chain",
+                      "id",
+                      "sources",
+                      "description",
+                      "first_seen",
+                      "observable_types"
                     ]
                   }
                 },
@@ -55320,12 +55509,12 @@
                   "items": {
                     "type": "string",
                     "enum": [
-                      "anomalous-activity",
+                      "benign",
+                      "malicious-activity",
+                      "attribution",
                       "anonymization",
                       "compromised",
-                      "attribution",
-                      "malicious-activity",
-                      "benign"
+                      "anomalous-activity"
                     ]
                   }
                 },
@@ -58225,7 +58414,7 @@
               },
               "status": {
                 "type": "string",
-                "description": "Status of the playbook run: `pending`, `running`, `finished`, `error` or `pending_decision`"
+                "description": "Status of the playbook run: `running`, `finished`, `error` or `pending_decision`"
               },
               "store": {
                 "type": "object",
@@ -58441,7 +58630,7 @@
           },
           "status": {
             "type": "string",
-            "description": "Status of the playbook run: `pending`, `running`, `finished`, `error` or `pending_decision`"
+            "description": "Status of the playbook run: `running`, `finished`, `error` or `pending_decision`"
           },
           "store": {
             "type": "object",
@@ -58549,7 +58738,7 @@
                 },
                 "status": {
                   "type": "string",
-                  "description": "Status of the playbook run: `pending`, `running`, `finished`, `error` or `pending_decision`"
+                  "description": "Status of the playbook run: `running`, `finished`, `error` or `pending_decision`"
                 },
                 "store": {
                   "type": "object",
@@ -61706,11 +61895,11 @@
               "opinion": {
                 "type": "string",
                 "enum": [
-                  "agree",
                   "neutral",
+                  "agree",
                   "strongly-disagree",
-                  "strongly-agree",
-                  "disagree"
+                  "disagree",
+                  "strongly-agree"
                 ]
               },
               "object_marking_refs": {
@@ -61818,26 +62007,26 @@
                 "items": {
                   "type": "string",
                   "enum": [
-                    "threat-actor",
-                    "report",
-                    "relationship",
-                    "note",
-                    "intrusion-set",
-                    "grouping",
-                    "identity",
-                    "opinion",
-                    "course-of-action",
-                    "attack-pattern",
-                    "marking-definition",
-                    "infrastructure",
-                    "tool",
                     "sighting",
-                    "indicator",
-                    "observed-data",
+                    "opinion",
                     "campaign",
+                    "infrastructure",
+                    "threat-actor",
+                    "attack-pattern",
                     "location",
+                    "tool",
                     "malware",
-                    "vulnerability"
+                    "grouping",
+                    "indicator",
+                    "relationship",
+                    "identity",
+                    "marking-definition",
+                    "vulnerability",
+                    "course-of-action",
+                    "observed-data",
+                    "intrusion-set",
+                    "note",
+                    "report"
                   ]
                 }
               },
@@ -61846,30 +62035,30 @@
                 "items": {
                   "type": "string",
                   "enum": [
-                    "individual",
-                    "observable-relationship",
-                    "phone-number",
-                    "process",
-                    "file",
-                    "windows-registry-key",
                     "organization",
-                    "autonomous-system",
-                    "domain-name",
+                    "url",
                     "email-addr",
                     "mutex",
-                    "x509-certificate",
-                    "url",
-                    "text",
-                    "software",
-                    "email-message",
-                    "user-account",
-                    "directory",
-                    "address",
-                    "artifact",
-                    "filename",
-                    "mac-addr",
                     "ipv6-addr",
-                    "ipv4-addr"
+                    "user-account",
+                    "autonomous-system",
+                    "windows-registry-key",
+                    "artifact",
+                    "email-message",
+                    "phone-number",
+                    "domain-name",
+                    "mac-addr",
+                    "process",
+                    "ipv4-addr",
+                    "individual",
+                    "directory",
+                    "file",
+                    "software",
+                    "text",
+                    "x509-certificate",
+                    "observable-relationship",
+                    "filename",
+                    "address"
                   ]
                 }
               },
@@ -61951,24 +62140,24 @@
                 "items": {
                   "type": "string",
                   "enum": [
-                    "kill_chain",
-                    "pattern_type",
-                    "confidence",
-                    "valid_from",
-                    "observable_types",
-                    "description",
-                    "id",
-                    "tlp",
-                    "pattern",
-                    "modified",
-                    "type",
-                    "last_seen",
                     "created",
-                    "sources",
                     "valid_until",
-                    "first_seen",
+                    "confidence",
+                    "pattern_type",
+                    "tlp",
+                    "last_seen",
+                    "modified",
                     "name",
-                    "observables"
+                    "valid_from",
+                    "pattern",
+                    "type",
+                    "observables",
+                    "kill_chain",
+                    "id",
+                    "sources",
+                    "description",
+                    "first_seen",
+                    "observable_types"
                   ]
                 }
               },
@@ -65300,10 +65489,14 @@
           },
           "assets_uuid": {
             "type": "array",
-            "description": "List of assets uuids associated to the case's alerts, returned when `with_assets` is true",
+            "description": "First 50 assets uuids, in ascending order, associated to the case's alerts, returned when `with_assets` is true. The full list is returned by `/cases/{uuid}/assets`",
             "items": {
               "type": "string"
             }
+          },
+          "assets_count": {
+            "type": "integer",
+            "description": "Number of assets associated to the case's alerts, returned when `with_assets` is true"
           },
           "number_of_alerts": {
             "type": "integer"
@@ -68550,6 +68743,319 @@
         },
         "type": "object"
       },
+      "hwl_document_d_t_o": {
+        "required": [
+          "content",
+          "created_at",
+          "derived",
+          "digest",
+          "kind",
+          "name",
+          "source",
+          "updated_at"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "digest": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "content": {
+            "type": "object",
+            "additionalProperties": {}
+          },
+          "derived": {
+            "type": "object",
+            "additionalProperties": {}
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "type": "object"
+      },
+      "hwl_document_summary_d_t_o": {
+        "required": [
+          "created_at",
+          "digest",
+          "kind",
+          "name",
+          "updated_at"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "digest": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "columns": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {}
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "type": "object"
+      },
+      "hwl_documents_d_t_o": {
+        "required": [
+          "items",
+          "total"
+        ],
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/hwl_document_summary_d_t_o"
+            }
+          },
+          "total": {
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "hwl_granted_account_d_t_o": {
+        "required": [
+          "config",
+          "module_configuration_uuid",
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Value of the `_account` column for the rows of this account"
+          },
+          "module_configuration_uuid": {
+            "type": "string",
+            "description": "UUID of the module configuration"
+          },
+          "config": {
+            "type": "object",
+            "description": "Decrypted fields of the configuration that the connection uses",
+            "additionalProperties": {}
+          }
+        },
+        "type": "object"
+      },
+      "hwl_granted_table_d_t_o": {
+        "required": [
+          "content",
+          "digest",
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the document"
+          },
+          "content": {
+            "type": "object",
+            "description": "Canonical JSON of the document",
+            "additionalProperties": {}
+          },
+          "digest": {
+            "type": "string",
+            "description": "SHA-256 of the canonical JSON of the document"
+          }
+        },
+        "type": "object"
+      },
+      "hwl_named_document_d_t_o": {
+        "required": [
+          "content",
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the document"
+          },
+          "content": {
+            "type": "object",
+            "description": "Canonical JSON of the document",
+            "additionalProperties": {}
+          }
+        },
+        "type": "object"
+      },
+      "hwl_table_account_d_t_o": {
+        "required": [
+          "module_configuration_uuid",
+          "name"
+        ],
+        "properties": {
+          "module_configuration_uuid": {
+            "type": "string",
+            "description": "UUID of the module configuration"
+          },
+          "name": {
+            "type": "string",
+            "description": "Value of the `_account` column for the rows of this account"
+          }
+        },
+        "type": "object"
+      },
+      "hwl_table_column_d_t_o": {
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Type of the column"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the column"
+          }
+        },
+        "type": "object"
+      },
+      "hwl_table_d_t_o": {
+        "required": [
+          "accounts",
+          "columns",
+          "digest",
+          "module_name",
+          "module_uuid",
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the table"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the table"
+          },
+          "module_uuid": {
+            "type": "string",
+            "description": "UUID of the module defining the table"
+          },
+          "module_name": {
+            "type": "string",
+            "description": "Name of the module defining the table"
+          },
+          "digest": {
+            "type": "string",
+            "description": "SHA-256 of the canonical JSON of the table document"
+          },
+          "columns": {
+            "type": "object",
+            "description": "Columns of the table",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/hwl_table_column_d_t_o"
+            }
+          },
+          "accounts": {
+            "type": "array",
+            "description": "Configurations of the module in the community",
+            "items": {
+              "$ref": "#/components/schemas/hwl_table_account_d_t_o"
+            }
+          },
+          "grant": {
+            "type": "string",
+            "description": "Capability to query the table, with `include_grants` only"
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Expiry of the grant, with `include_grants` only"
+          }
+        },
+        "type": "object"
+      },
+      "hwl_table_grant_redemption_d_t_o": {
+        "required": [
+          "accounts",
+          "community_uuid",
+          "connection",
+          "dialects",
+          "expires_at",
+          "module_uuid",
+          "table"
+        ],
+        "properties": {
+          "community_uuid": {
+            "type": "string"
+          },
+          "module_uuid": {
+            "type": "string"
+          },
+          "table": {
+            "$ref": "#/components/schemas/hwl_granted_table_d_t_o"
+          },
+          "connection": {
+            "$ref": "#/components/schemas/hwl_named_document_d_t_o"
+          },
+          "dialects": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/hwl_named_document_d_t_o"
+            }
+          },
+          "accounts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/hwl_granted_account_d_t_o"
+            }
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "type": "object"
+      },
+      "hwl_tables_d_t_o": {
+        "required": [
+          "items",
+          "total"
+        ],
+        "properties": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/hwl_table_d_t_o"
+            }
+          },
+          "total": {
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
       "incident_item_schema": {
         "required": [
           "community_uuid",
@@ -70072,10 +70578,14 @@
           },
           "assets_uuid": {
             "type": "array",
-            "description": "List of assets uuids associated to the case's alerts, returned when `with_assets` is true",
+            "description": "First 50 assets uuids, in ascending order, associated to the case's alerts, returned when `with_assets` is true. The full list is returned by `/cases/{uuid}/assets`",
             "items": {
               "type": "string"
             }
+          },
+          "assets_count": {
+            "type": "integer",
+            "description": "Number of assets associated to the case's alerts, returned when `with_assets` is true"
           }
         },
         "type": "object"
